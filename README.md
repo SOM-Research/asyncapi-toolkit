@@ -7,10 +7,15 @@ The tools hosted in this repository aim to provide the toolset necessary to deve
 
 ## AsyncAPI Metamodel
 
-Below you can find the AsyncAPI Metamodel Derived from the AsyncAPI Xtext Grammar.
+Below you can find the simplified AsyncAPI Metamodel Derived from the AsyncAPI Xtext Grammar.
 
-![AsyncAPI Metamodel](io.github.abelgomez.asyncapi/model/AsyncApi.svg)
+![AsyncAPI Metamodel](io.github.abelgomez.asyncapi/model/AsyncApi.png)
 
+**NOTE:** This metamodel does not show the `Reference` class, which inherits from all classes named `Abstract*`, for readability purposes.
+
+## AsyncAPI Grammar
+
+See the simplified AsyncAPI/JSON Xtext Grammar in the file [`io.github.abelgomez.asyncapi/src/io/github/abelgomez/asyncapi/AsyncApi.xtext`](io.github.abelgomez.asyncapi/src/io/github/abelgomez/asyncapi/AsyncApi.xtext).
 
 ## Project Contents
 
