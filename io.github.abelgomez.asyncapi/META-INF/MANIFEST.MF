@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: io.github.abelgomez.asyncapi
+Bundle-ManifestVersion: 2
+Bundle-Name: io.github.abelgomez.asyncapi
+Bundle-Vendor: SOM Research Lab
+Bundle-Version: 0.1.0.qualifier
+Bundle-SymbolicName: io.github.abelgomez.asyncapi; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: io.github.abelgomez.asyncapi.generator,
+ io.github.abelgomez.asyncapi,
+ io.github.abelgomez.asyncapi.serializer,
+ io.github.abelgomez.asyncapi.scoping,
+ io.github.abelgomez.asyncapi.parser.antlr.internal,
+ io.github.abelgomez.asyncapi.parser.antlr,
+ io.github.abelgomez.asyncapi.validation,
+ io.github.abelgomez.asyncapi.asyncApi.util,
+ io.github.abelgomez.asyncapi.services,
+ io.github.abelgomez.asyncapi.asyncApi,
+ io.github.abelgomez.asyncapi.asyncApi.impl
+Import-Package: org.apache.log4j

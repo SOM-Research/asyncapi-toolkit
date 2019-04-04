@@ -1,0 +1,128 @@
+grammar io.github.abelgomez.asyncapi.AsyncApi with org.eclipse.xtext.common.Terminals
+
+generate asyncApi "http://io.github.abelgomez/asyncapi/AsyncApi"
+
+AsyncAPI:
+	{AsyncAPI} '{'	(
+		  ( '"asyncapi"' ':' version=VersionNumber ','? )
+		& ( '"info"' ':' info=AbstractInfo ','? ) 
+		& ( '"servers"' ':' '[' servers+=AbstractServer (',' servers+=AbstractServer)* ']' ','? )? 
+		& ( '"topics"' ':' '{' topics+=AbstractTopic (',' topics+=AbstractTopic)* '}' ','? )
+		& ( '"components"' ':' '{' components+=AbstractComponent (',' components+=AbstractComponent)* '}' ','? )?
+	) '}';
+	
+AbstractInfo:
+	Reference | Info;
+	
+Info:
+	{Info} '{' (
+		  ( '"title"' ':' title=STRING ','? ) 
+		& ( '"version"' ':' version=STRING ','? )
+		& ( '"description"' ':' description=STRING ','? )?
+		& ( '"termsOfService"' ':' termsOfService=STRING ','? )?
+		& ( '"contact"' ':' contact=AbstractContact ','? )?
+		& ( '"license"' ':' license=AbstractLicense ','? )?
+	) '}';
+
+AbstractContact:
+	Reference | Contact;
+
+Contact:
+	{Contact} '{' (
+		  ( '"name"' ':' name=STRING ','? )?
+		& ( '"url"' ':' url=STRING ','? )?
+		& ( '"email"' ':' email=STRING ','? )?
+	) '}';
+
+AbstractLicense:
+	Reference | License;
+
+License:
+	{License} '{' (
+		  ( '"name"' ':' name=STRING ','? )?
+		& ( '"url"' ':' url=STRING ','? )?
+	) '}';
+
+AbstractServer:
+	Reference | Server;
+
+Server:
+	{Server} '{' (
+		  ( '"url"' ':' title=STRING ','? )
+		& ( '"scheme"' ':' scheme=Scheme ','? )
+		& ( '"description"' ':' description=STRING ',' )?
+		& ( '"variables"' ':' '{' variables+=AbstractVariable (',' variables+=AbstractVariable)* '}' ','? )?
+	) '}';
+
+AbstractVariable:
+	Reference | Variable;
+	
+Variable:
+	{Variable} name=STRING ':' '{' (
+		  ( '"description"' ':' description=STRING ','?  )?
+		& ( '"default"' ':' default=STRING ','? )?
+		& ( '"enum"' ':' '[' ^enum+=STRING (',' ^enum+=STRING)* ']' ','? )?
+	) '}';
+
+AbstractTopic:
+	Reference | Topic;
+
+Topic:
+	{Topic} name=STRING ':' '{' (
+		  ( '"publish"' ':' publish=AbstractMessage ','?  )?
+		& ( '"subscribe"' ':' subscribe=AbstractMessage ','? )?
+	) '}';
+
+AbstractMessage:
+	Reference | Message;
+
+Message:
+	{Message} (name=STRING ':')? '{' (
+		  ( '"summary"' ':' summary=STRING ','? )?
+		& ( '"description"' ':' description=STRING ','? )?
+		& ( '"headers"' ':' headers=AbstractSchema ','? )?
+		& ( '"payload"' ':' payload=AbstractSchema ','? )?
+	) '}';
+
+AbstractSchema:
+	Reference | Schema;
+
+Schema:
+	{Schema} (name=STRING ':')? '{' (
+		  ( '"title"' ':' title=STRING ','? )?
+		& ( '"type"' ':' summary=STRING ','? )?
+		& ( '"description"' ':' description=STRING ','? )?
+		& ( '"format"' ':' format=STRING ','? )?
+		& ( '"default"' ':' default=STRING ','? )?
+		& ( '"properties"' ':' '{' schemas+=AbstractSchema (',' schemas+=AbstractSchema)* '}' ','? )?
+		& ( '"payload"' ':' '{' payloads+=AbstractSchema (',' payloads+=AbstractSchema)* '}' ','? )?
+		& ( '"enum"' ':' '[' ^enum+=STRING (',' ^enum+=STRING)* ']' ','? )?
+	) '}';
+
+AbstractComponent:
+	Reference | Component;
+
+Component:
+	{Component} (
+		  ( '"schemas"' ':' '{' schemas+=AbstractSchema (',' schemas+=AbstractSchema)* '}' ','? )?
+		& ( '"messages"' ':' '{' messages+=AbstractMessage (',' messages+=AbstractMessage)* '}' ','? )?
+	);
+
+
+Reference:
+	{Reference} (refname=STRING ':')? '{' '"$ref"' ':' uri=STRING '}';
+
+enum VersionNumber:
+	_100 = '"1.0.0"'
+	| _110 = '"1.1.0"'
+	| _120 = '"1.2.0"' ;
+	
+enum Scheme:
+	amqp = '"amqp"'
+	| amqps = '"amqps"'
+	| mqtt = '"mqtt"'
+	| mqtts = '"mqtts"'
+	| ws = '"ws"'
+	| wss = '"wss"'
+	| stomp = '"stomp"'
+	| stomps = '"stomps"';
