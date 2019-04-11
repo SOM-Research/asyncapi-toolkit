@@ -26,69 +26,69 @@ import org.eclipse.emf.ecore.EObject;
 public interface Topic extends EObject
 {
   /**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getTopic_Name()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getTopic_Name()
+   * @model
+   * @generated
+   */
   String getName();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Topic#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Topic#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
   void setName(String value);
 
   /**
-	 * Returns the value of the '<em><b>Publish</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Publish</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Publish</em>' containment reference.
-	 * @see #setPublish(AbstractMessage)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getTopic_Publish()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Publish</em>' containment reference.
+   * @see #setPublish(AbstractMessage)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getTopic_Publish()
+   * @model containment="true"
+   * @generated
+   */
   AbstractMessage getPublish();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Topic#getPublish <em>Publish</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Topic#getPublish <em>Publish</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Publish</em>' containment reference.
-	 * @see #getPublish()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Publish</em>' containment reference.
+   * @see #getPublish()
+   * @generated
+   */
   void setPublish(AbstractMessage value);
 
   /**
-	 * Returns the value of the '<em><b>Subscribe</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Subscribe</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subscribe</em>' containment reference.
-	 * @see #setSubscribe(AbstractMessage)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getTopic_Subscribe()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Subscribe</em>' containment reference.
+   * @see #setSubscribe(AbstractMessage)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getTopic_Subscribe()
+   * @model containment="true"
+   * @generated
+   */
   AbstractMessage getSubscribe();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Topic#getSubscribe <em>Subscribe</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Topic#getSubscribe <em>Subscribe</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Subscribe</em>' containment reference.
-	 * @see #getSubscribe()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Subscribe</em>' containment reference.
+   * @see #getSubscribe()
+   * @generated
+   */
   void setSubscribe(AbstractMessage value);
 
 } // Topic

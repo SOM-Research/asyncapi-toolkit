@@ -27,113 +27,113 @@ package io.github.abelgomez.asyncapi.asyncApi;
 public interface Message extends AbstractMessage
 {
   /**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessage_Name()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessage_Name()
+   * @model
+   * @generated
+   */
   String getName();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
   void setName(String value);
 
   /**
-	 * Returns the value of the '<em><b>Summary</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Summary</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Summary</em>' attribute.
-	 * @see #setSummary(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessage_Summary()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Summary</em>' attribute.
+   * @see #setSummary(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessage_Summary()
+   * @model
+   * @generated
+   */
   String getSummary();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getSummary <em>Summary</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getSummary <em>Summary</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Summary</em>' attribute.
-	 * @see #getSummary()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Summary</em>' attribute.
+   * @see #getSummary()
+   * @generated
+   */
   void setSummary(String value);
 
   /**
-	 * Returns the value of the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Description</em>' attribute.
-	 * @see #setDescription(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessage_Description()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Description</em>' attribute.
+   * @see #setDescription(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessage_Description()
+   * @model
+   * @generated
+   */
   String getDescription();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getDescription <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getDescription <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
-	 * @see #getDescription()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Description</em>' attribute.
+   * @see #getDescription()
+   * @generated
+   */
   void setDescription(String value);
 
   /**
-	 * Returns the value of the '<em><b>Headers</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Headers</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Headers</em>' containment reference.
-	 * @see #setHeaders(AbstractSchema)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessage_Headers()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Headers</em>' containment reference.
+   * @see #setHeaders(AbstractSchema)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessage_Headers()
+   * @model containment="true"
+   * @generated
+   */
   AbstractSchema getHeaders();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getHeaders <em>Headers</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getHeaders <em>Headers</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Headers</em>' containment reference.
-	 * @see #getHeaders()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Headers</em>' containment reference.
+   * @see #getHeaders()
+   * @generated
+   */
   void setHeaders(AbstractSchema value);
 
   /**
-	 * Returns the value of the '<em><b>Payload</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Payload</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payload</em>' containment reference.
-	 * @see #setPayload(AbstractSchema)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessage_Payload()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Payload</em>' containment reference.
+   * @see #setPayload(AbstractSchema)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessage_Payload()
+   * @model containment="true"
+   * @generated
+   */
   AbstractSchema getPayload();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getPayload <em>Payload</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getPayload <em>Payload</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payload</em>' containment reference.
-	 * @see #getPayload()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Payload</em>' containment reference.
+   * @see #getPayload()
+   * @generated
+   */
   void setPayload(AbstractSchema value);
 
 } // Message
