@@ -4,55 +4,48 @@
     nsPrefix="asyncApi">
   <eClassifiers xsi:type="ecore:EClass" name="AsyncAPI">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="#//VersionNumber"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="info" eType="#//AbstractInfo"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="info" eType="#//Info" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="servers" upperBound="-1"
-        eType="#//AbstractServer" containment="true"/>
+        eType="#//Server" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="topics" upperBound="-1"
-        eType="#//AbstractTopic" containment="true"/>
+        eType="#//Topic" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
-        eType="#//AbstractComponent" containment="true"/>
+        eType="#//Component" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractInfo"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Info" eSuperTypes="#//AbstractInfo">
+  <eClassifiers xsi:type="ecore:EClass" name="Info">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="termsOfService" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contact" eType="#//AbstractContact"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contact" eType="#//Contact"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="license" eType="#//AbstractLicense"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="license" eType="#//License"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractContact"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Contact" eSuperTypes="#//AbstractContact">
+  <eClassifiers xsi:type="ecore:EClass" name="Contact">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractLicense"/>
-  <eClassifiers xsi:type="ecore:EClass" name="License" eSuperTypes="#//AbstractLicense">
+  <eClassifiers xsi:type="ecore:EClass" name="License">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractServer"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Server" eSuperTypes="#//AbstractServer">
+  <eClassifiers xsi:type="ecore:EClass" name="Server">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheme" eType="#//Scheme"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
-        eType="#//AbstractVariable" containment="true"/>
+        eType="#//Variable" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractVariable"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//AbstractVariable">
+  <eClassifiers xsi:type="ecore:EClass" name="Variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="enum" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractTopic"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Topic" eSuperTypes="#//AbstractTopic">
+  <eClassifiers xsi:type="ecore:EClass" name="Topic">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="publish" eType="#//AbstractMessage"
         containment="true"/>
@@ -84,14 +77,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="enum" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractComponent"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//AbstractComponent">
+  <eClassifiers xsi:type="ecore:EClass" name="Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="schemas" upperBound="-1"
         eType="#//AbstractSchema" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
         eType="#//AbstractMessage" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="#//AbstractInfo #//AbstractContact #//AbstractLicense #//AbstractServer #//AbstractVariable #//AbstractTopic #//AbstractMessage #//AbstractSchema #//AbstractComponent">
+  <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="#//AbstractMessage #//AbstractSchema">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="refname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

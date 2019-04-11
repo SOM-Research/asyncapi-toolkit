@@ -84,10 +84,10 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *
 	 * Constraint:
 	 *     (
-	 *         (version=VersionNumber | info=AbstractInfo)? 
-	 *         (servers+=AbstractServer servers+=AbstractServer*)? 
-	 *         (topics+=AbstractTopic topics+=AbstractTopic*)? 
-	 *         (components+=AbstractComponent components+=AbstractComponent*)?
+	 *         (version=VersionNumber | info=Info)? 
+	 *         (servers+=Server servers+=Server*)? 
+	 *         (topics+=Topic topics+=Topic*)? 
+	 *         (components+=Component components+=Component*)?
 	 *     )+
 	 */
 	protected void sequence_AsyncAPI(ISerializationContext context, AsyncAPI semanticObject) {
@@ -97,7 +97,6 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     AbstractComponent returns Component
 	 *     Component returns Component
 	 *
 	 * Constraint:
@@ -110,7 +109,6 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     AbstractContact returns Contact
 	 *     Contact returns Contact
 	 *
 	 * Constraint:
@@ -123,7 +121,6 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     AbstractInfo returns Info
 	 *     Info returns Info
 	 *
 	 * Constraint:
@@ -132,8 +129,8 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         version=STRING | 
 	 *         description=STRING | 
 	 *         termsOfService=STRING | 
-	 *         contact=AbstractContact | 
-	 *         license=AbstractLicense
+	 *         contact=Contact | 
+	 *         license=License
 	 *     )*
 	 */
 	protected void sequence_Info(ISerializationContext context, Info semanticObject) {
@@ -143,7 +140,6 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     AbstractLicense returns License
 	 *     License returns License
 	 *
 	 * Constraint:
@@ -169,15 +165,8 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     AbstractInfo returns Reference
-	 *     AbstractContact returns Reference
-	 *     AbstractLicense returns Reference
-	 *     AbstractServer returns Reference
-	 *     AbstractVariable returns Reference
-	 *     AbstractTopic returns Reference
 	 *     AbstractMessage returns Reference
 	 *     AbstractSchema returns Reference
-	 *     AbstractComponent returns Reference
 	 *     Reference returns Reference
 	 *
 	 * Constraint:
@@ -211,11 +200,10 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     AbstractServer returns Server
 	 *     Server returns Server
 	 *
 	 * Constraint:
-	 *     ((title=STRING | scheme=Scheme | description=STRING)? (variables+=AbstractVariable variables+=AbstractVariable*)?)+
+	 *     ((title=STRING | scheme=Scheme | description=STRING)? (variables+=Variable variables+=Variable*)?)+
 	 */
 	protected void sequence_Server(ISerializationContext context, Server semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -224,7 +212,6 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     AbstractTopic returns Topic
 	 *     Topic returns Topic
 	 *
 	 * Constraint:
@@ -237,7 +224,6 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     AbstractVariable returns Variable
 	 *     Variable returns Variable
 	 *
 	 * Constraint:

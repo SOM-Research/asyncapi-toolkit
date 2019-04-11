@@ -5,27 +5,21 @@ generate asyncApi "http://io.github.abelgomez/asyncapi/AsyncApi"
 AsyncAPI:
 	{AsyncAPI} '{'	(
 		  ( '"asyncapi"' ':' version=VersionNumber ','? )
-		& ( '"info"' ':' info=AbstractInfo ','? ) 
-		& ( '"servers"' ':' '[' servers+=AbstractServer (',' servers+=AbstractServer)* ']' ','? )? 
-		& ( '"topics"' ':' '{' topics+=AbstractTopic (',' topics+=AbstractTopic)* '}' ','? )
-		& ( '"components"' ':' '{' components+=AbstractComponent (',' components+=AbstractComponent)* '}' ','? )?
+		& ( '"info"' ':' info=Info ','? ) 
+		& ( '"servers"' ':' '[' servers+=Server (',' servers+=Server)* ']' ','? )? 
+		& ( '"topics"' ':' '{' topics+=Topic (',' topics+=Topic)* '}' ','? )
+		& ( '"components"' ':' '{' components+=Component (',' components+=Component)* '}' ','? )?
 	) '}';
-	
-AbstractInfo:
-	Reference | Info;
-	
+		
 Info:
 	{Info} '{' (
 		  ( '"title"' ':' title=STRING ','? ) 
 		& ( '"version"' ':' version=STRING ','? )
 		& ( '"description"' ':' description=STRING ','? )?
 		& ( '"termsOfService"' ':' termsOfService=STRING ','? )?
-		& ( '"contact"' ':' contact=AbstractContact ','? )?
-		& ( '"license"' ':' license=AbstractLicense ','? )?
+		& ( '"contact"' ':' contact=Contact ','? )?
+		& ( '"license"' ':' license=License ','? )?
 	) '}';
-
-AbstractContact:
-	Reference | Contact;
 
 Contact:
 	{Contact} '{' (
@@ -34,38 +28,26 @@ Contact:
 		& ( '"email"' ':' email=STRING ','? )?
 	) '}';
 
-AbstractLicense:
-	Reference | License;
-
 License:
 	{License} '{' (
 		  ( '"name"' ':' name=STRING ','? )?
 		& ( '"url"' ':' url=STRING ','? )?
 	) '}';
 
-AbstractServer:
-	Reference | Server;
-
 Server:
 	{Server} '{' (
 		  ( '"url"' ':' title=STRING ','? )
 		& ( '"scheme"' ':' scheme=Scheme ','? )
 		& ( '"description"' ':' description=STRING ',' )?
-		& ( '"variables"' ':' '{' variables+=AbstractVariable (',' variables+=AbstractVariable)* '}' ','? )?
+		& ( '"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','? )?
 	) '}';
 
-AbstractVariable:
-	Reference | Variable;
-	
 Variable:
 	{Variable} name=STRING ':' '{' (
 		  ( '"description"' ':' description=STRING ','?  )?
 		& ( '"default"' ':' default=STRING ','? )?
 		& ( '"enum"' ':' '[' ^enum+=STRING (',' ^enum+=STRING)* ']' ','? )?
 	) '}';
-
-AbstractTopic:
-	Reference | Topic;
 
 Topic:
 	{Topic} name=STRING ':' '{' (
@@ -98,9 +80,6 @@ Schema:
 		& ( '"payload"' ':' '{' payloads+=AbstractSchema (',' payloads+=AbstractSchema)* '}' ','? )?
 		& ( '"enum"' ':' '[' ^enum+=STRING (',' ^enum+=STRING)* ']' ','? )?
 	) '}';
-
-AbstractComponent:
-	Reference | Component;
 
 Component:
 	{Component} (

@@ -35,424 +35,415 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class MessageImpl extends AbstractMessageImpl implements Message
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getSummary() <em>Summary</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSummary() <em>Summary</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSummary()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSummary()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String SUMMARY_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getSummary() <em>Summary</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSummary() <em>Summary</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSummary()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSummary()
+	 * @generated
+	 * @ordered
+	 */
   protected String summary = SUMMARY_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String DESCRIPTION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getHeaders() <em>Headers</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getHeaders() <em>Headers</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHeaders()
-   * @generated
-   * @ordered
-   */
+	 * @see #getHeaders()
+	 * @generated
+	 * @ordered
+	 */
   protected AbstractSchema headers;
 
   /**
-   * The cached value of the '{@link #getPayload() <em>Payload</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPayload() <em>Payload</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPayload()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPayload()
+	 * @generated
+	 * @ordered
+	 */
   protected AbstractSchema payload;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected MessageImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return AsyncApiPackage.Literals.MESSAGE;
-  }
+		return AsyncApiPackage.Literals.MESSAGE;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String getName()
   {
-    return name;
-  }
+		return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void setName(String newName)
   {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__NAME, oldName, name));
-  }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__NAME, oldName, name));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String getSummary()
   {
-    return summary;
-  }
+		return summary;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void setSummary(String newSummary)
   {
-    String oldSummary = summary;
-    summary = newSummary;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__SUMMARY, oldSummary, summary));
-  }
+		String oldSummary = summary;
+		summary = newSummary;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__SUMMARY, oldSummary, summary));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String getDescription()
   {
-    return description;
-  }
+		return description;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void setDescription(String newDescription)
   {
-    String oldDescription = description;
-    description = newDescription;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__DESCRIPTION, oldDescription, description));
-  }
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__DESCRIPTION, oldDescription, description));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public AbstractSchema getHeaders()
   {
-    return headers;
-  }
+		return headers;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetHeaders(AbstractSchema newHeaders, NotificationChain msgs)
   {
-    AbstractSchema oldHeaders = headers;
-    headers = newHeaders;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__HEADERS, oldHeaders, newHeaders);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		AbstractSchema oldHeaders = headers;
+		headers = newHeaders;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__HEADERS, oldHeaders, newHeaders);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void setHeaders(AbstractSchema newHeaders)
   {
-    if (newHeaders != headers)
-    {
-      NotificationChain msgs = null;
-      if (headers != null)
-        msgs = ((InternalEObject)headers).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.MESSAGE__HEADERS, null, msgs);
-      if (newHeaders != null)
-        msgs = ((InternalEObject)newHeaders).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.MESSAGE__HEADERS, null, msgs);
-      msgs = basicSetHeaders(newHeaders, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__HEADERS, newHeaders, newHeaders));
-  }
+		if (newHeaders != headers) {
+			NotificationChain msgs = null;
+			if (headers != null)
+				msgs = ((InternalEObject)headers).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.MESSAGE__HEADERS, null, msgs);
+			if (newHeaders != null)
+				msgs = ((InternalEObject)newHeaders).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.MESSAGE__HEADERS, null, msgs);
+			msgs = basicSetHeaders(newHeaders, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__HEADERS, newHeaders, newHeaders));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public AbstractSchema getPayload()
   {
-    return payload;
-  }
+		return payload;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetPayload(AbstractSchema newPayload, NotificationChain msgs)
   {
-    AbstractSchema oldPayload = payload;
-    payload = newPayload;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__PAYLOAD, oldPayload, newPayload);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		AbstractSchema oldPayload = payload;
+		payload = newPayload;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__PAYLOAD, oldPayload, newPayload);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void setPayload(AbstractSchema newPayload)
   {
-    if (newPayload != payload)
-    {
-      NotificationChain msgs = null;
-      if (payload != null)
-        msgs = ((InternalEObject)payload).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.MESSAGE__PAYLOAD, null, msgs);
-      if (newPayload != null)
-        msgs = ((InternalEObject)newPayload).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.MESSAGE__PAYLOAD, null, msgs);
-      msgs = basicSetPayload(newPayload, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__PAYLOAD, newPayload, newPayload));
-  }
+		if (newPayload != payload) {
+			NotificationChain msgs = null;
+			if (payload != null)
+				msgs = ((InternalEObject)payload).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.MESSAGE__PAYLOAD, null, msgs);
+			if (newPayload != null)
+				msgs = ((InternalEObject)newPayload).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.MESSAGE__PAYLOAD, null, msgs);
+			msgs = basicSetPayload(newPayload, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__PAYLOAD, newPayload, newPayload));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.MESSAGE__HEADERS:
-        return basicSetHeaders(null, msgs);
-      case AsyncApiPackage.MESSAGE__PAYLOAD:
-        return basicSetPayload(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.MESSAGE__HEADERS:
+				return basicSetHeaders(null, msgs);
+			case AsyncApiPackage.MESSAGE__PAYLOAD:
+				return basicSetPayload(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.MESSAGE__NAME:
-        return getName();
-      case AsyncApiPackage.MESSAGE__SUMMARY:
-        return getSummary();
-      case AsyncApiPackage.MESSAGE__DESCRIPTION:
-        return getDescription();
-      case AsyncApiPackage.MESSAGE__HEADERS:
-        return getHeaders();
-      case AsyncApiPackage.MESSAGE__PAYLOAD:
-        return getPayload();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.MESSAGE__NAME:
+				return getName();
+			case AsyncApiPackage.MESSAGE__SUMMARY:
+				return getSummary();
+			case AsyncApiPackage.MESSAGE__DESCRIPTION:
+				return getDescription();
+			case AsyncApiPackage.MESSAGE__HEADERS:
+				return getHeaders();
+			case AsyncApiPackage.MESSAGE__PAYLOAD:
+				return getPayload();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.MESSAGE__NAME:
-        setName((String)newValue);
-        return;
-      case AsyncApiPackage.MESSAGE__SUMMARY:
-        setSummary((String)newValue);
-        return;
-      case AsyncApiPackage.MESSAGE__DESCRIPTION:
-        setDescription((String)newValue);
-        return;
-      case AsyncApiPackage.MESSAGE__HEADERS:
-        setHeaders((AbstractSchema)newValue);
-        return;
-      case AsyncApiPackage.MESSAGE__PAYLOAD:
-        setPayload((AbstractSchema)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.MESSAGE__NAME:
+				setName((String)newValue);
+				return;
+			case AsyncApiPackage.MESSAGE__SUMMARY:
+				setSummary((String)newValue);
+				return;
+			case AsyncApiPackage.MESSAGE__DESCRIPTION:
+				setDescription((String)newValue);
+				return;
+			case AsyncApiPackage.MESSAGE__HEADERS:
+				setHeaders((AbstractSchema)newValue);
+				return;
+			case AsyncApiPackage.MESSAGE__PAYLOAD:
+				setPayload((AbstractSchema)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.MESSAGE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case AsyncApiPackage.MESSAGE__SUMMARY:
-        setSummary(SUMMARY_EDEFAULT);
-        return;
-      case AsyncApiPackage.MESSAGE__DESCRIPTION:
-        setDescription(DESCRIPTION_EDEFAULT);
-        return;
-      case AsyncApiPackage.MESSAGE__HEADERS:
-        setHeaders((AbstractSchema)null);
-        return;
-      case AsyncApiPackage.MESSAGE__PAYLOAD:
-        setPayload((AbstractSchema)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.MESSAGE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case AsyncApiPackage.MESSAGE__SUMMARY:
+				setSummary(SUMMARY_EDEFAULT);
+				return;
+			case AsyncApiPackage.MESSAGE__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case AsyncApiPackage.MESSAGE__HEADERS:
+				setHeaders((AbstractSchema)null);
+				return;
+			case AsyncApiPackage.MESSAGE__PAYLOAD:
+				setPayload((AbstractSchema)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.MESSAGE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AsyncApiPackage.MESSAGE__SUMMARY:
-        return SUMMARY_EDEFAULT == null ? summary != null : !SUMMARY_EDEFAULT.equals(summary);
-      case AsyncApiPackage.MESSAGE__DESCRIPTION:
-        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-      case AsyncApiPackage.MESSAGE__HEADERS:
-        return headers != null;
-      case AsyncApiPackage.MESSAGE__PAYLOAD:
-        return payload != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.MESSAGE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case AsyncApiPackage.MESSAGE__SUMMARY:
+				return SUMMARY_EDEFAULT == null ? summary != null : !SUMMARY_EDEFAULT.equals(summary);
+			case AsyncApiPackage.MESSAGE__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case AsyncApiPackage.MESSAGE__HEADERS:
+				return headers != null;
+			case AsyncApiPackage.MESSAGE__PAYLOAD:
+				return payload != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", summary: ");
-    result.append(summary);
-    result.append(", description: ");
-    result.append(description);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", summary: ");
+		result.append(summary);
+		result.append(", description: ");
+		result.append(description);
+		result.append(')');
+		return result.toString();
+	}
 
 } //MessageImpl

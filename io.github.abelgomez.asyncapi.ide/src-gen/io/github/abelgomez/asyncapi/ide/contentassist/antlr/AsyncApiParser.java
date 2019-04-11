@@ -31,15 +31,8 @@ public class AsyncApiParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, AsyncApiGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getAbstractInfoAccess().getAlternatives(), "rule__AbstractInfo__Alternatives");
-			builder.put(grammarAccess.getAbstractContactAccess().getAlternatives(), "rule__AbstractContact__Alternatives");
-			builder.put(grammarAccess.getAbstractLicenseAccess().getAlternatives(), "rule__AbstractLicense__Alternatives");
-			builder.put(grammarAccess.getAbstractServerAccess().getAlternatives(), "rule__AbstractServer__Alternatives");
-			builder.put(grammarAccess.getAbstractVariableAccess().getAlternatives(), "rule__AbstractVariable__Alternatives");
-			builder.put(grammarAccess.getAbstractTopicAccess().getAlternatives(), "rule__AbstractTopic__Alternatives");
 			builder.put(grammarAccess.getAbstractMessageAccess().getAlternatives(), "rule__AbstractMessage__Alternatives");
 			builder.put(grammarAccess.getAbstractSchemaAccess().getAlternatives(), "rule__AbstractSchema__Alternatives");
-			builder.put(grammarAccess.getAbstractComponentAccess().getAlternatives(), "rule__AbstractComponent__Alternatives");
 			builder.put(grammarAccess.getVersionNumberAccess().getAlternatives(), "rule__VersionNumber__Alternatives");
 			builder.put(grammarAccess.getSchemeAccess().getAlternatives(), "rule__Scheme__Alternatives");
 			builder.put(grammarAccess.getAsyncAPIAccess().getGroup(), "rule__AsyncAPI__Group__0");

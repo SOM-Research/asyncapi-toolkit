@@ -5,6 +5,8 @@ package io.github.abelgomez.asyncapi.asyncApi;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Variable</b></em>'.
@@ -24,84 +26,84 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Variable extends AbstractVariable
+public interface Variable extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getVariable_Name()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getVariable_Name()
+	 * @model
+	 * @generated
+	 */
   String getName();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Variable#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Variable#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Description</em>' attribute.
-   * @see #setDescription(String)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getVariable_Description()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getVariable_Description()
+	 * @model
+	 * @generated
+	 */
   String getDescription();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Variable#getDescription <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Variable#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Description</em>' attribute.
-   * @see #getDescription()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
   void setDescription(String value);
 
   /**
-   * Returns the value of the '<em><b>Default</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Default</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Default</em>' attribute.
-   * @see #setDefault(String)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getVariable_Default()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Default</em>' attribute.
+	 * @see #setDefault(String)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getVariable_Default()
+	 * @model
+	 * @generated
+	 */
   String getDefault();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Variable#getDefault <em>Default</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Variable#getDefault <em>Default</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Default</em>' attribute.
-   * @see #getDefault()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Default</em>' attribute.
+	 * @see #getDefault()
+	 * @generated
+	 */
   void setDefault(String value);
 
   /**
-   * Returns the value of the '<em><b>Enum</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Enum</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Enum</em>' attribute list.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getVariable_Enum()
-   * @model unique="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Enum</em>' attribute list.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getVariable_Enum()
+	 * @model unique="false"
+	 * @generated
+	 */
   EList<String> getEnum();
 
 } // Variable

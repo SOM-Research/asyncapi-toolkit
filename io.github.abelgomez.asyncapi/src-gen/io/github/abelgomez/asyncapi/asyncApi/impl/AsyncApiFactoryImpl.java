@@ -23,417 +23,320 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
 {
   /**
-   * Creates the default factory implementation.
-   * <!-- begin-user-doc -->
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static AsyncApiFactory init()
   {
-    try
-    {
-      AsyncApiFactory theAsyncApiFactory = (AsyncApiFactory)EPackage.Registry.INSTANCE.getEFactory(AsyncApiPackage.eNS_URI);
-      if (theAsyncApiFactory != null)
-      {
-        return theAsyncApiFactory;
-      }
-    }
-    catch (Exception exception)
-    {
-      EcorePlugin.INSTANCE.log(exception);
-    }
-    return new AsyncApiFactoryImpl();
-  }
+		try {
+			AsyncApiFactory theAsyncApiFactory = (AsyncApiFactory)EPackage.Registry.INSTANCE.getEFactory(AsyncApiPackage.eNS_URI);
+			if (theAsyncApiFactory != null) {
+				return theAsyncApiFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new AsyncApiFactoryImpl();
+	}
 
   /**
-   * Creates an instance of the factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public AsyncApiFactoryImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EObject create(EClass eClass)
   {
-    switch (eClass.getClassifierID())
-    {
-      case AsyncApiPackage.ASYNC_API: return createAsyncAPI();
-      case AsyncApiPackage.ABSTRACT_INFO: return createAbstractInfo();
-      case AsyncApiPackage.INFO: return createInfo();
-      case AsyncApiPackage.ABSTRACT_CONTACT: return createAbstractContact();
-      case AsyncApiPackage.CONTACT: return createContact();
-      case AsyncApiPackage.ABSTRACT_LICENSE: return createAbstractLicense();
-      case AsyncApiPackage.LICENSE: return createLicense();
-      case AsyncApiPackage.ABSTRACT_SERVER: return createAbstractServer();
-      case AsyncApiPackage.SERVER: return createServer();
-      case AsyncApiPackage.ABSTRACT_VARIABLE: return createAbstractVariable();
-      case AsyncApiPackage.VARIABLE: return createVariable();
-      case AsyncApiPackage.ABSTRACT_TOPIC: return createAbstractTopic();
-      case AsyncApiPackage.TOPIC: return createTopic();
-      case AsyncApiPackage.ABSTRACT_MESSAGE: return createAbstractMessage();
-      case AsyncApiPackage.MESSAGE: return createMessage();
-      case AsyncApiPackage.ABSTRACT_SCHEMA: return createAbstractSchema();
-      case AsyncApiPackage.SCHEMA: return createSchema();
-      case AsyncApiPackage.ABSTRACT_COMPONENT: return createAbstractComponent();
-      case AsyncApiPackage.COMPONENT: return createComponent();
-      case AsyncApiPackage.REFERENCE: return createReference();
-      default:
-        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eClass.getClassifierID()) {
+			case AsyncApiPackage.ASYNC_API: return createAsyncAPI();
+			case AsyncApiPackage.INFO: return createInfo();
+			case AsyncApiPackage.CONTACT: return createContact();
+			case AsyncApiPackage.LICENSE: return createLicense();
+			case AsyncApiPackage.SERVER: return createServer();
+			case AsyncApiPackage.VARIABLE: return createVariable();
+			case AsyncApiPackage.TOPIC: return createTopic();
+			case AsyncApiPackage.ABSTRACT_MESSAGE: return createAbstractMessage();
+			case AsyncApiPackage.MESSAGE: return createMessage();
+			case AsyncApiPackage.ABSTRACT_SCHEMA: return createAbstractSchema();
+			case AsyncApiPackage.SCHEMA: return createSchema();
+			case AsyncApiPackage.COMPONENT: return createComponent();
+			case AsyncApiPackage.REFERENCE: return createReference();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object createFromString(EDataType eDataType, String initialValue)
   {
-    switch (eDataType.getClassifierID())
-    {
-      case AsyncApiPackage.VERSION_NUMBER:
-        return createVersionNumberFromString(eDataType, initialValue);
-      case AsyncApiPackage.SCHEME:
-        return createSchemeFromString(eDataType, initialValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case AsyncApiPackage.VERSION_NUMBER:
+				return createVersionNumberFromString(eDataType, initialValue);
+			case AsyncApiPackage.SCHEME:
+				return createSchemeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String convertToString(EDataType eDataType, Object instanceValue)
   {
-    switch (eDataType.getClassifierID())
-    {
-      case AsyncApiPackage.VERSION_NUMBER:
-        return convertVersionNumberToString(eDataType, instanceValue);
-      case AsyncApiPackage.SCHEME:
-        return convertSchemeToString(eDataType, instanceValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case AsyncApiPackage.VERSION_NUMBER:
+				return convertVersionNumberToString(eDataType, instanceValue);
+			case AsyncApiPackage.SCHEME:
+				return convertSchemeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public AsyncAPI createAsyncAPI()
   {
-    AsyncAPIImpl asyncAPI = new AsyncAPIImpl();
-    return asyncAPI;
-  }
+		AsyncAPIImpl asyncAPI = new AsyncAPIImpl();
+		return asyncAPI;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AbstractInfo createAbstractInfo()
-  {
-    AbstractInfoImpl abstractInfo = new AbstractInfoImpl();
-    return abstractInfo;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Info createInfo()
   {
-    InfoImpl info = new InfoImpl();
-    return info;
-  }
+		InfoImpl info = new InfoImpl();
+		return info;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AbstractContact createAbstractContact()
-  {
-    AbstractContactImpl abstractContact = new AbstractContactImpl();
-    return abstractContact;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Contact createContact()
   {
-    ContactImpl contact = new ContactImpl();
-    return contact;
-  }
+		ContactImpl contact = new ContactImpl();
+		return contact;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AbstractLicense createAbstractLicense()
-  {
-    AbstractLicenseImpl abstractLicense = new AbstractLicenseImpl();
-    return abstractLicense;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public License createLicense()
   {
-    LicenseImpl license = new LicenseImpl();
-    return license;
-  }
+		LicenseImpl license = new LicenseImpl();
+		return license;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AbstractServer createAbstractServer()
-  {
-    AbstractServerImpl abstractServer = new AbstractServerImpl();
-    return abstractServer;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Server createServer()
   {
-    ServerImpl server = new ServerImpl();
-    return server;
-  }
+		ServerImpl server = new ServerImpl();
+		return server;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AbstractVariable createAbstractVariable()
-  {
-    AbstractVariableImpl abstractVariable = new AbstractVariableImpl();
-    return abstractVariable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Variable createVariable()
   {
-    VariableImpl variable = new VariableImpl();
-    return variable;
-  }
+		VariableImpl variable = new VariableImpl();
+		return variable;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AbstractTopic createAbstractTopic()
-  {
-    AbstractTopicImpl abstractTopic = new AbstractTopicImpl();
-    return abstractTopic;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Topic createTopic()
   {
-    TopicImpl topic = new TopicImpl();
-    return topic;
-  }
+		TopicImpl topic = new TopicImpl();
+		return topic;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public AbstractMessage createAbstractMessage()
   {
-    AbstractMessageImpl abstractMessage = new AbstractMessageImpl();
-    return abstractMessage;
-  }
+		AbstractMessageImpl abstractMessage = new AbstractMessageImpl();
+		return abstractMessage;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Message createMessage()
   {
-    MessageImpl message = new MessageImpl();
-    return message;
-  }
+		MessageImpl message = new MessageImpl();
+		return message;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public AbstractSchema createAbstractSchema()
   {
-    AbstractSchemaImpl abstractSchema = new AbstractSchemaImpl();
-    return abstractSchema;
-  }
+		AbstractSchemaImpl abstractSchema = new AbstractSchemaImpl();
+		return abstractSchema;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Schema createSchema()
   {
-    SchemaImpl schema = new SchemaImpl();
-    return schema;
-  }
+		SchemaImpl schema = new SchemaImpl();
+		return schema;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AbstractComponent createAbstractComponent()
-  {
-    AbstractComponentImpl abstractComponent = new AbstractComponentImpl();
-    return abstractComponent;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Component createComponent()
   {
-    ComponentImpl component = new ComponentImpl();
-    return component;
-  }
+		ComponentImpl component = new ComponentImpl();
+		return component;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Reference createReference()
   {
-    ReferenceImpl reference = new ReferenceImpl();
-    return reference;
-  }
+		ReferenceImpl reference = new ReferenceImpl();
+		return reference;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public VersionNumber createVersionNumberFromString(EDataType eDataType, String initialValue)
   {
-    VersionNumber result = VersionNumber.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
+		VersionNumber result = VersionNumber.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertVersionNumberToString(EDataType eDataType, Object instanceValue)
   {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
+		return instanceValue == null ? null : instanceValue.toString();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Scheme createSchemeFromString(EDataType eDataType, String initialValue)
   {
-    Scheme result = Scheme.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
+		Scheme result = Scheme.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertSchemeToString(EDataType eDataType, Object instanceValue)
   {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
+		return instanceValue == null ? null : instanceValue.toString();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public AsyncApiPackage getAsyncApiPackage()
   {
-    return (AsyncApiPackage)getEPackage();
-  }
+		return (AsyncApiPackage)getEPackage();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @deprecated
-   * @generated
-   */
+	 * @deprecated
+	 * @generated
+	 */
   @Deprecated
   public static AsyncApiPackage getPackage()
   {
-    return AsyncApiPackage.eINSTANCE;
-  }
+		return AsyncApiPackage.eINSTANCE;
+	}
 
 } //AsyncApiFactoryImpl

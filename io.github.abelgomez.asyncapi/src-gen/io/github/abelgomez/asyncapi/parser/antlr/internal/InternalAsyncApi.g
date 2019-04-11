@@ -155,9 +155,9 @@ ruleAsyncAPI returns [EObject current=null]
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getAsyncAPIAccess().getInfoAbstractInfoParserRuleCall_2_1_2_0());
+											newCompositeNode(grammarAccess.getAsyncAPIAccess().getInfoInfoParserRuleCall_2_1_2_0());
 										}
-										lv_info_9_0=ruleAbstractInfo
+										lv_info_9_0=ruleInfo
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getAsyncAPIRule());
@@ -166,7 +166,7 @@ ruleAsyncAPI returns [EObject current=null]
 												$current,
 												"info",
 												lv_info_9_0,
-												"io.github.abelgomez.asyncapi.AsyncApi.AbstractInfo");
+												"io.github.abelgomez.asyncapi.AsyncApi.Info");
 											afterParserOrEnumRuleCall();
 										}
 									)
@@ -203,9 +203,9 @@ ruleAsyncAPI returns [EObject current=null]
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getAsyncAPIAccess().getServersAbstractServerParserRuleCall_2_2_3_0());
+											newCompositeNode(grammarAccess.getAsyncAPIAccess().getServersServerParserRuleCall_2_2_3_0());
 										}
-										lv_servers_14_0=ruleAbstractServer
+										lv_servers_14_0=ruleServer
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getAsyncAPIRule());
@@ -214,7 +214,7 @@ ruleAsyncAPI returns [EObject current=null]
 												$current,
 												"servers",
 												lv_servers_14_0,
-												"io.github.abelgomez.asyncapi.AsyncApi.AbstractServer");
+												"io.github.abelgomez.asyncapi.AsyncApi.Server");
 											afterParserOrEnumRuleCall();
 										}
 									)
@@ -227,9 +227,9 @@ ruleAsyncAPI returns [EObject current=null]
 									(
 										(
 											{
-												newCompositeNode(grammarAccess.getAsyncAPIAccess().getServersAbstractServerParserRuleCall_2_2_4_1_0());
+												newCompositeNode(grammarAccess.getAsyncAPIAccess().getServersServerParserRuleCall_2_2_4_1_0());
 											}
-											lv_servers_16_0=ruleAbstractServer
+											lv_servers_16_0=ruleServer
 											{
 												if ($current==null) {
 													$current = createModelElementForParent(grammarAccess.getAsyncAPIRule());
@@ -238,7 +238,7 @@ ruleAsyncAPI returns [EObject current=null]
 													$current,
 													"servers",
 													lv_servers_16_0,
-													"io.github.abelgomez.asyncapi.AsyncApi.AbstractServer");
+													"io.github.abelgomez.asyncapi.AsyncApi.Server");
 												afterParserOrEnumRuleCall();
 											}
 										)
@@ -280,9 +280,9 @@ ruleAsyncAPI returns [EObject current=null]
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getAsyncAPIAccess().getTopicsAbstractTopicParserRuleCall_2_3_3_0());
+											newCompositeNode(grammarAccess.getAsyncAPIAccess().getTopicsTopicParserRuleCall_2_3_3_0());
 										}
-										lv_topics_22_0=ruleAbstractTopic
+										lv_topics_22_0=ruleTopic
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getAsyncAPIRule());
@@ -291,7 +291,7 @@ ruleAsyncAPI returns [EObject current=null]
 												$current,
 												"topics",
 												lv_topics_22_0,
-												"io.github.abelgomez.asyncapi.AsyncApi.AbstractTopic");
+												"io.github.abelgomez.asyncapi.AsyncApi.Topic");
 											afterParserOrEnumRuleCall();
 										}
 									)
@@ -304,9 +304,9 @@ ruleAsyncAPI returns [EObject current=null]
 									(
 										(
 											{
-												newCompositeNode(grammarAccess.getAsyncAPIAccess().getTopicsAbstractTopicParserRuleCall_2_3_4_1_0());
+												newCompositeNode(grammarAccess.getAsyncAPIAccess().getTopicsTopicParserRuleCall_2_3_4_1_0());
 											}
-											lv_topics_24_0=ruleAbstractTopic
+											lv_topics_24_0=ruleTopic
 											{
 												if ($current==null) {
 													$current = createModelElementForParent(grammarAccess.getAsyncAPIRule());
@@ -315,7 +315,7 @@ ruleAsyncAPI returns [EObject current=null]
 													$current,
 													"topics",
 													lv_topics_24_0,
-													"io.github.abelgomez.asyncapi.AsyncApi.AbstractTopic");
+													"io.github.abelgomez.asyncapi.AsyncApi.Topic");
 												afterParserOrEnumRuleCall();
 											}
 										)
@@ -357,9 +357,9 @@ ruleAsyncAPI returns [EObject current=null]
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getAsyncAPIAccess().getComponentsAbstractComponentParserRuleCall_2_4_3_0());
+											newCompositeNode(grammarAccess.getAsyncAPIAccess().getComponentsComponentParserRuleCall_2_4_3_0());
 										}
-										lv_components_30_0=ruleAbstractComponent
+										lv_components_30_0=ruleComponent
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getAsyncAPIRule());
@@ -368,7 +368,7 @@ ruleAsyncAPI returns [EObject current=null]
 												$current,
 												"components",
 												lv_components_30_0,
-												"io.github.abelgomez.asyncapi.AsyncApi.AbstractComponent");
+												"io.github.abelgomez.asyncapi.AsyncApi.Component");
 											afterParserOrEnumRuleCall();
 										}
 									)
@@ -381,9 +381,9 @@ ruleAsyncAPI returns [EObject current=null]
 									(
 										(
 											{
-												newCompositeNode(grammarAccess.getAsyncAPIAccess().getComponentsAbstractComponentParserRuleCall_2_4_4_1_0());
+												newCompositeNode(grammarAccess.getAsyncAPIAccess().getComponentsComponentParserRuleCall_2_4_4_1_0());
 											}
-											lv_components_32_0=ruleAbstractComponent
+											lv_components_32_0=ruleComponent
 											{
 												if ($current==null) {
 													$current = createModelElementForParent(grammarAccess.getAsyncAPIRule());
@@ -392,7 +392,7 @@ ruleAsyncAPI returns [EObject current=null]
 													$current,
 													"components",
 													lv_components_32_0,
-													"io.github.abelgomez.asyncapi.AsyncApi.AbstractComponent");
+													"io.github.abelgomez.asyncapi.AsyncApi.Component");
 												afterParserOrEnumRuleCall();
 											}
 										)
@@ -425,42 +425,6 @@ ruleAsyncAPI returns [EObject current=null]
 		otherlv_35='}'
 		{
 			newLeafNode(otherlv_35, grammarAccess.getAsyncAPIAccess().getRightCurlyBracketKeyword_3());
-		}
-	)
-;
-
-// Entry rule entryRuleAbstractInfo
-entryRuleAbstractInfo returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAbstractInfoRule()); }
-	iv_ruleAbstractInfo=ruleAbstractInfo
-	{ $current=$iv_ruleAbstractInfo.current; }
-	EOF;
-
-// Rule AbstractInfo
-ruleAbstractInfo returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getAbstractInfoAccess().getReferenceParserRuleCall_0());
-		}
-		this_Reference_0=ruleReference
-		{
-			$current = $this_Reference_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getAbstractInfoAccess().getInfoParserRuleCall_1());
-		}
-		this_Info_1=ruleInfo
-		{
-			$current = $this_Info_1.current;
-			afterParserOrEnumRuleCall();
 		}
 	)
 ;
@@ -687,9 +651,9 @@ ruleInfo returns [EObject current=null]
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getInfoAccess().getContactAbstractContactParserRuleCall_2_4_2_0());
+											newCompositeNode(grammarAccess.getInfoAccess().getContactContactParserRuleCall_2_4_2_0());
 										}
-										lv_contact_21_0=ruleAbstractContact
+										lv_contact_21_0=ruleContact
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getInfoRule());
@@ -698,7 +662,7 @@ ruleInfo returns [EObject current=null]
 												$current,
 												"contact",
 												lv_contact_21_0,
-												"io.github.abelgomez.asyncapi.AsyncApi.AbstractContact");
+												"io.github.abelgomez.asyncapi.AsyncApi.Contact");
 											afterParserOrEnumRuleCall();
 										}
 									)
@@ -731,9 +695,9 @@ ruleInfo returns [EObject current=null]
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getInfoAccess().getLicenseAbstractLicenseParserRuleCall_2_5_2_0());
+											newCompositeNode(grammarAccess.getInfoAccess().getLicenseLicenseParserRuleCall_2_5_2_0());
 										}
-										lv_license_25_0=ruleAbstractLicense
+										lv_license_25_0=ruleLicense
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getInfoRule());
@@ -742,7 +706,7 @@ ruleInfo returns [EObject current=null]
 												$current,
 												"license",
 												lv_license_25_0,
-												"io.github.abelgomez.asyncapi.AsyncApi.AbstractLicense");
+												"io.github.abelgomez.asyncapi.AsyncApi.License");
 											afterParserOrEnumRuleCall();
 										}
 									)
@@ -770,42 +734,6 @@ ruleInfo returns [EObject current=null]
 		otherlv_27='}'
 		{
 			newLeafNode(otherlv_27, grammarAccess.getInfoAccess().getRightCurlyBracketKeyword_3());
-		}
-	)
-;
-
-// Entry rule entryRuleAbstractContact
-entryRuleAbstractContact returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAbstractContactRule()); }
-	iv_ruleAbstractContact=ruleAbstractContact
-	{ $current=$iv_ruleAbstractContact.current; }
-	EOF;
-
-// Rule AbstractContact
-ruleAbstractContact returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getAbstractContactAccess().getReferenceParserRuleCall_0());
-		}
-		this_Reference_0=ruleReference
-		{
-			$current = $this_Reference_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getAbstractContactAccess().getContactParserRuleCall_1());
-		}
-		this_Contact_1=ruleContact
-		{
-			$current = $this_Contact_1.current;
-			afterParserOrEnumRuleCall();
 		}
 	)
 ;
@@ -987,42 +915,6 @@ ruleContact returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleAbstractLicense
-entryRuleAbstractLicense returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAbstractLicenseRule()); }
-	iv_ruleAbstractLicense=ruleAbstractLicense
-	{ $current=$iv_ruleAbstractLicense.current; }
-	EOF;
-
-// Rule AbstractLicense
-ruleAbstractLicense returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getAbstractLicenseAccess().getReferenceParserRuleCall_0());
-		}
-		this_Reference_0=ruleReference
-		{
-			$current = $this_Reference_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getAbstractLicenseAccess().getLicenseParserRuleCall_1());
-		}
-		this_License_1=ruleLicense
-		{
-			$current = $this_License_1.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
 // Entry rule entryRuleLicense
 entryRuleLicense returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getLicenseRule()); }
@@ -1153,42 +1045,6 @@ ruleLicense returns [EObject current=null]
 		otherlv_11='}'
 		{
 			newLeafNode(otherlv_11, grammarAccess.getLicenseAccess().getRightCurlyBracketKeyword_3());
-		}
-	)
-;
-
-// Entry rule entryRuleAbstractServer
-entryRuleAbstractServer returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAbstractServerRule()); }
-	iv_ruleAbstractServer=ruleAbstractServer
-	{ $current=$iv_ruleAbstractServer.current; }
-	EOF;
-
-// Rule AbstractServer
-ruleAbstractServer returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getAbstractServerAccess().getReferenceParserRuleCall_0());
-		}
-		this_Reference_0=ruleReference
-		{
-			$current = $this_Reference_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getAbstractServerAccess().getServerParserRuleCall_1());
-		}
-		this_Server_1=ruleServer
-		{
-			$current = $this_Server_1.current;
-			afterParserOrEnumRuleCall();
 		}
 	)
 ;
@@ -1375,9 +1231,9 @@ ruleServer returns [EObject current=null]
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getServerAccess().getVariablesAbstractVariableParserRuleCall_2_3_3_0());
+											newCompositeNode(grammarAccess.getServerAccess().getVariablesVariableParserRuleCall_2_3_3_0());
 										}
-										lv_variables_18_0=ruleAbstractVariable
+										lv_variables_18_0=ruleVariable
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getServerRule());
@@ -1386,7 +1242,7 @@ ruleServer returns [EObject current=null]
 												$current,
 												"variables",
 												lv_variables_18_0,
-												"io.github.abelgomez.asyncapi.AsyncApi.AbstractVariable");
+												"io.github.abelgomez.asyncapi.AsyncApi.Variable");
 											afterParserOrEnumRuleCall();
 										}
 									)
@@ -1399,9 +1255,9 @@ ruleServer returns [EObject current=null]
 									(
 										(
 											{
-												newCompositeNode(grammarAccess.getServerAccess().getVariablesAbstractVariableParserRuleCall_2_3_4_1_0());
+												newCompositeNode(grammarAccess.getServerAccess().getVariablesVariableParserRuleCall_2_3_4_1_0());
 											}
-											lv_variables_20_0=ruleAbstractVariable
+											lv_variables_20_0=ruleVariable
 											{
 												if ($current==null) {
 													$current = createModelElementForParent(grammarAccess.getServerRule());
@@ -1410,7 +1266,7 @@ ruleServer returns [EObject current=null]
 													$current,
 													"variables",
 													lv_variables_20_0,
-													"io.github.abelgomez.asyncapi.AsyncApi.AbstractVariable");
+													"io.github.abelgomez.asyncapi.AsyncApi.Variable");
 												afterParserOrEnumRuleCall();
 											}
 										)
@@ -1443,42 +1299,6 @@ ruleServer returns [EObject current=null]
 		otherlv_23='}'
 		{
 			newLeafNode(otherlv_23, grammarAccess.getServerAccess().getRightCurlyBracketKeyword_3());
-		}
-	)
-;
-
-// Entry rule entryRuleAbstractVariable
-entryRuleAbstractVariable returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAbstractVariableRule()); }
-	iv_ruleAbstractVariable=ruleAbstractVariable
-	{ $current=$iv_ruleAbstractVariable.current; }
-	EOF;
-
-// Rule AbstractVariable
-ruleAbstractVariable returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getAbstractVariableAccess().getReferenceParserRuleCall_0());
-		}
-		this_Reference_0=ruleReference
-		{
-			$current = $this_Reference_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getAbstractVariableAccess().getVariableParserRuleCall_1());
-		}
-		this_Variable_1=ruleVariable
-		{
-			$current = $this_Variable_1.current;
-			afterParserOrEnumRuleCall();
 		}
 	)
 ;
@@ -1710,42 +1530,6 @@ ruleVariable returns [EObject current=null]
 		otherlv_21='}'
 		{
 			newLeafNode(otherlv_21, grammarAccess.getVariableAccess().getRightCurlyBracketKeyword_5());
-		}
-	)
-;
-
-// Entry rule entryRuleAbstractTopic
-entryRuleAbstractTopic returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAbstractTopicRule()); }
-	iv_ruleAbstractTopic=ruleAbstractTopic
-	{ $current=$iv_ruleAbstractTopic.current; }
-	EOF;
-
-// Rule AbstractTopic
-ruleAbstractTopic returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getAbstractTopicAccess().getReferenceParserRuleCall_0());
-		}
-		this_Reference_0=ruleReference
-		{
-			$current = $this_Reference_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getAbstractTopicAccess().getTopicParserRuleCall_1());
-		}
-		this_Topic_1=ruleTopic
-		{
-			$current = $this_Topic_1.current;
-			afterParserOrEnumRuleCall();
 		}
 	)
 ;
@@ -2738,42 +2522,6 @@ ruleSchema returns [EObject current=null]
 		otherlv_49='}'
 		{
 			newLeafNode(otherlv_49, grammarAccess.getSchemaAccess().getRightCurlyBracketKeyword_4());
-		}
-	)
-;
-
-// Entry rule entryRuleAbstractComponent
-entryRuleAbstractComponent returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAbstractComponentRule()); }
-	iv_ruleAbstractComponent=ruleAbstractComponent
-	{ $current=$iv_ruleAbstractComponent.current; }
-	EOF;
-
-// Rule AbstractComponent
-ruleAbstractComponent returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getAbstractComponentAccess().getReferenceParserRuleCall_0());
-		}
-		this_Reference_0=ruleReference
-		{
-			$current = $this_Reference_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getAbstractComponentAccess().getComponentParserRuleCall_1());
-		}
-		this_Component_1=ruleComponent
-		{
-			$current = $this_Component_1.current;
-			afterParserOrEnumRuleCall();
 		}
 	)
 ;

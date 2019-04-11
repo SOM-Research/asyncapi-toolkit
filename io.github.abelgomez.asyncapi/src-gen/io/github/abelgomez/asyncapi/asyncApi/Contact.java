@@ -3,6 +3,7 @@
  */
 package io.github.abelgomez.asyncapi.asyncApi;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,72 +23,72 @@ package io.github.abelgomez.asyncapi.asyncApi;
  * @model
  * @generated
  */
-public interface Contact extends AbstractContact
+public interface Contact extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getContact_Name()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getContact_Name()
+	 * @model
+	 * @generated
+	 */
   String getName();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Contact#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Contact#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Url</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Url</em>' attribute.
-   * @see #setUrl(String)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getContact_Url()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Url</em>' attribute.
+	 * @see #setUrl(String)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getContact_Url()
+	 * @model
+	 * @generated
+	 */
   String getUrl();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Contact#getUrl <em>Url</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Contact#getUrl <em>Url</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Url</em>' attribute.
-   * @see #getUrl()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Url</em>' attribute.
+	 * @see #getUrl()
+	 * @generated
+	 */
   void setUrl(String value);
 
   /**
-   * Returns the value of the '<em><b>Email</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Email</em>' attribute.
-   * @see #setEmail(String)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getContact_Email()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Email</em>' attribute.
+	 * @see #setEmail(String)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getContact_Email()
+	 * @model
+	 * @generated
+	 */
   String getEmail();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Contact#getEmail <em>Email</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Contact#getEmail <em>Email</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Email</em>' attribute.
-   * @see #getEmail()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Email</em>' attribute.
+	 * @see #getEmail()
+	 * @generated
+	 */
   void setEmail(String value);
 
 } // Contact

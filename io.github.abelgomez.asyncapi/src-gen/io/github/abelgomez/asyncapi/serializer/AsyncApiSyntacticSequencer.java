@@ -200,10 +200,10 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     version=VersionNumber (ambiguity) '"asyncapi"' ':' version=VersionNumber
-	 *     version=VersionNumber (ambiguity) '"components"' ':' '{' components+=AbstractComponent
-	 *     version=VersionNumber (ambiguity) '"info"' ':' info=AbstractInfo
-	 *     version=VersionNumber (ambiguity) '"servers"' ':' '[' servers+=AbstractServer
-	 *     version=VersionNumber (ambiguity) '"topics"' ':' '{' topics+=AbstractTopic
+	 *     version=VersionNumber (ambiguity) '"components"' ':' '{' components+=Component
+	 *     version=VersionNumber (ambiguity) '"info"' ':' info=Info
+	 *     version=VersionNumber (ambiguity) '"servers"' ':' '[' servers+=Server
+	 *     version=VersionNumber (ambiguity) '"topics"' ':' '{' topics+=Topic
 	 *     version=VersionNumber (ambiguity) '}' (rule end)
 	 */
 	protected void emit_AsyncAPI_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -215,12 +215,12 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     info=AbstractInfo (ambiguity) '"asyncapi"' ':' version=VersionNumber
-	 *     info=AbstractInfo (ambiguity) '"components"' ':' '{' components+=AbstractComponent
-	 *     info=AbstractInfo (ambiguity) '"info"' ':' info=AbstractInfo
-	 *     info=AbstractInfo (ambiguity) '"servers"' ':' '[' servers+=AbstractServer
-	 *     info=AbstractInfo (ambiguity) '"topics"' ':' '{' topics+=AbstractTopic
-	 *     info=AbstractInfo (ambiguity) '}' (rule end)
+	 *     info=Info (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     info=Info (ambiguity) '"components"' ':' '{' components+=Component
+	 *     info=Info (ambiguity) '"info"' ':' info=Info
+	 *     info=Info (ambiguity) '"servers"' ':' '[' servers+=Server
+	 *     info=Info (ambiguity) '"topics"' ':' '{' topics+=Topic
+	 *     info=Info (ambiguity) '}' (rule end)
 	 */
 	protected void emit_AsyncAPI_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -231,12 +231,12 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     servers+=AbstractServer ']' (ambiguity) '"asyncapi"' ':' version=VersionNumber
-	 *     servers+=AbstractServer ']' (ambiguity) '"components"' ':' '{' components+=AbstractComponent
-	 *     servers+=AbstractServer ']' (ambiguity) '"info"' ':' info=AbstractInfo
-	 *     servers+=AbstractServer ']' (ambiguity) '"servers"' ':' '[' servers+=AbstractServer
-	 *     servers+=AbstractServer ']' (ambiguity) '"topics"' ':' '{' topics+=AbstractTopic
-	 *     servers+=AbstractServer ']' (ambiguity) '}' (rule end)
+	 *     servers+=Server ']' (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     servers+=Server ']' (ambiguity) '"components"' ':' '{' components+=Component
+	 *     servers+=Server ']' (ambiguity) '"info"' ':' info=Info
+	 *     servers+=Server ']' (ambiguity) '"servers"' ':' '[' servers+=Server
+	 *     servers+=Server ']' (ambiguity) '"topics"' ':' '{' topics+=Topic
+	 *     servers+=Server ']' (ambiguity) '}' (rule end)
 	 */
 	protected void emit_AsyncAPI_CommaKeyword_2_2_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -247,12 +247,12 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     topics+=AbstractTopic '}' (ambiguity) '"asyncapi"' ':' version=VersionNumber
-	 *     topics+=AbstractTopic '}' (ambiguity) '"components"' ':' '{' components+=AbstractComponent
-	 *     topics+=AbstractTopic '}' (ambiguity) '"info"' ':' info=AbstractInfo
-	 *     topics+=AbstractTopic '}' (ambiguity) '"servers"' ':' '[' servers+=AbstractServer
-	 *     topics+=AbstractTopic '}' (ambiguity) '"topics"' ':' '{' topics+=AbstractTopic
-	 *     topics+=AbstractTopic '}' (ambiguity) '}' (rule end)
+	 *     topics+=Topic '}' (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     topics+=Topic '}' (ambiguity) '"components"' ':' '{' components+=Component
+	 *     topics+=Topic '}' (ambiguity) '"info"' ':' info=Info
+	 *     topics+=Topic '}' (ambiguity) '"servers"' ':' '[' servers+=Server
+	 *     topics+=Topic '}' (ambiguity) '"topics"' ':' '{' topics+=Topic
+	 *     topics+=Topic '}' (ambiguity) '}' (rule end)
 	 */
 	protected void emit_AsyncAPI_CommaKeyword_2_3_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -263,12 +263,12 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     components+=AbstractComponent '}' (ambiguity) '"asyncapi"' ':' version=VersionNumber
-	 *     components+=AbstractComponent '}' (ambiguity) '"components"' ':' '{' components+=AbstractComponent
-	 *     components+=AbstractComponent '}' (ambiguity) '"info"' ':' info=AbstractInfo
-	 *     components+=AbstractComponent '}' (ambiguity) '"servers"' ':' '[' servers+=AbstractServer
-	 *     components+=AbstractComponent '}' (ambiguity) '"topics"' ':' '{' topics+=AbstractTopic
-	 *     components+=AbstractComponent '}' (ambiguity) '}' (rule end)
+	 *     components+=Component '}' (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     components+=Component '}' (ambiguity) '"components"' ':' '{' components+=Component
+	 *     components+=Component '}' (ambiguity) '"info"' ':' info=Info
+	 *     components+=Component '}' (ambiguity) '"servers"' ':' '[' servers+=Server
+	 *     components+=Component '}' (ambiguity) '"topics"' ':' '{' topics+=Topic
+	 *     components+=Component '}' (ambiguity) '}' (rule end)
 	 */
 	protected void emit_AsyncAPI_CommaKeyword_2_4_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -347,9 +347,9 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     title=STRING (ambiguity) '"contact"' ':' contact=AbstractContact
+	 *     title=STRING (ambiguity) '"contact"' ':' contact=Contact
 	 *     title=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     title=STRING (ambiguity) '"license"' ':' license=AbstractLicense
+	 *     title=STRING (ambiguity) '"license"' ':' license=License
 	 *     title=STRING (ambiguity) '"termsOfService"' ':' termsOfService=STRING
 	 *     title=STRING (ambiguity) '"title"' ':' title=STRING
 	 *     title=STRING (ambiguity) '"version"' ':' version=STRING
@@ -364,9 +364,9 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     version=STRING (ambiguity) '"contact"' ':' contact=AbstractContact
+	 *     version=STRING (ambiguity) '"contact"' ':' contact=Contact
 	 *     version=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     version=STRING (ambiguity) '"license"' ':' license=AbstractLicense
+	 *     version=STRING (ambiguity) '"license"' ':' license=License
 	 *     version=STRING (ambiguity) '"termsOfService"' ':' termsOfService=STRING
 	 *     version=STRING (ambiguity) '"title"' ':' title=STRING
 	 *     version=STRING (ambiguity) '"version"' ':' version=STRING
@@ -381,9 +381,9 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     description=STRING (ambiguity) '"contact"' ':' contact=AbstractContact
+	 *     description=STRING (ambiguity) '"contact"' ':' contact=Contact
 	 *     description=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     description=STRING (ambiguity) '"license"' ':' license=AbstractLicense
+	 *     description=STRING (ambiguity) '"license"' ':' license=License
 	 *     description=STRING (ambiguity) '"termsOfService"' ':' termsOfService=STRING
 	 *     description=STRING (ambiguity) '"title"' ':' title=STRING
 	 *     description=STRING (ambiguity) '"version"' ':' version=STRING
@@ -398,9 +398,9 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     termsOfService=STRING (ambiguity) '"contact"' ':' contact=AbstractContact
+	 *     termsOfService=STRING (ambiguity) '"contact"' ':' contact=Contact
 	 *     termsOfService=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     termsOfService=STRING (ambiguity) '"license"' ':' license=AbstractLicense
+	 *     termsOfService=STRING (ambiguity) '"license"' ':' license=License
 	 *     termsOfService=STRING (ambiguity) '"termsOfService"' ':' termsOfService=STRING
 	 *     termsOfService=STRING (ambiguity) '"title"' ':' title=STRING
 	 *     termsOfService=STRING (ambiguity) '"version"' ':' version=STRING
@@ -415,13 +415,13 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     contact=AbstractContact (ambiguity) '"contact"' ':' contact=AbstractContact
-	 *     contact=AbstractContact (ambiguity) '"description"' ':' description=STRING
-	 *     contact=AbstractContact (ambiguity) '"license"' ':' license=AbstractLicense
-	 *     contact=AbstractContact (ambiguity) '"termsOfService"' ':' termsOfService=STRING
-	 *     contact=AbstractContact (ambiguity) '"title"' ':' title=STRING
-	 *     contact=AbstractContact (ambiguity) '"version"' ':' version=STRING
-	 *     contact=AbstractContact (ambiguity) '}' (rule end)
+	 *     contact=Contact (ambiguity) '"contact"' ':' contact=Contact
+	 *     contact=Contact (ambiguity) '"description"' ':' description=STRING
+	 *     contact=Contact (ambiguity) '"license"' ':' license=License
+	 *     contact=Contact (ambiguity) '"termsOfService"' ':' termsOfService=STRING
+	 *     contact=Contact (ambiguity) '"title"' ':' title=STRING
+	 *     contact=Contact (ambiguity) '"version"' ':' version=STRING
+	 *     contact=Contact (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Info_CommaKeyword_2_4_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -432,13 +432,13 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     license=AbstractLicense (ambiguity) '"contact"' ':' contact=AbstractContact
-	 *     license=AbstractLicense (ambiguity) '"description"' ':' description=STRING
-	 *     license=AbstractLicense (ambiguity) '"license"' ':' license=AbstractLicense
-	 *     license=AbstractLicense (ambiguity) '"termsOfService"' ':' termsOfService=STRING
-	 *     license=AbstractLicense (ambiguity) '"title"' ':' title=STRING
-	 *     license=AbstractLicense (ambiguity) '"version"' ':' version=STRING
-	 *     license=AbstractLicense (ambiguity) '}' (rule end)
+	 *     license=License (ambiguity) '"contact"' ':' contact=Contact
+	 *     license=License (ambiguity) '"description"' ':' description=STRING
+	 *     license=License (ambiguity) '"license"' ':' license=License
+	 *     license=License (ambiguity) '"termsOfService"' ':' termsOfService=STRING
+	 *     license=License (ambiguity) '"title"' ':' title=STRING
+	 *     license=License (ambiguity) '"version"' ':' version=STRING
+	 *     license=License (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Info_CommaKeyword_2_5_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -690,7 +690,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     title=STRING (ambiguity) '"description"' ':' description=STRING
 	 *     title=STRING (ambiguity) '"scheme"' ':' scheme=Scheme
 	 *     title=STRING (ambiguity) '"url"' ':' title=STRING
-	 *     title=STRING (ambiguity) '"variables"' ':' '{' variables+=AbstractVariable
+	 *     title=STRING (ambiguity) '"variables"' ':' '{' variables+=Variable
 	 *     title=STRING (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Server_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -705,7 +705,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     scheme=Scheme (ambiguity) '"description"' ':' description=STRING
 	 *     scheme=Scheme (ambiguity) '"scheme"' ':' scheme=Scheme
 	 *     scheme=Scheme (ambiguity) '"url"' ':' title=STRING
-	 *     scheme=Scheme (ambiguity) '"variables"' ':' '{' variables+=AbstractVariable
+	 *     scheme=Scheme (ambiguity) '"variables"' ':' '{' variables+=Variable
 	 *     scheme=Scheme (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Server_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -717,11 +717,11 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     variables+=AbstractVariable '}' (ambiguity) '"description"' ':' description=STRING
-	 *     variables+=AbstractVariable '}' (ambiguity) '"scheme"' ':' scheme=Scheme
-	 *     variables+=AbstractVariable '}' (ambiguity) '"url"' ':' title=STRING
-	 *     variables+=AbstractVariable '}' (ambiguity) '"variables"' ':' '{' variables+=AbstractVariable
-	 *     variables+=AbstractVariable '}' (ambiguity) '}' (rule end)
+	 *     variables+=Variable '}' (ambiguity) '"description"' ':' description=STRING
+	 *     variables+=Variable '}' (ambiguity) '"scheme"' ':' scheme=Scheme
+	 *     variables+=Variable '}' (ambiguity) '"url"' ':' title=STRING
+	 *     variables+=Variable '}' (ambiguity) '"variables"' ':' '{' variables+=Variable
+	 *     variables+=Variable '}' (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Server_CommaKeyword_2_3_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

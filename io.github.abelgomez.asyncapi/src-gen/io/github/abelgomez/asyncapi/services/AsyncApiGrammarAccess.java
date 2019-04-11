@@ -43,18 +43,18 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cInfoKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Keyword cColonKeyword_2_1_1 = (Keyword)cGroup_2_1.eContents().get(1);
 		private final Assignment cInfoAssignment_2_1_2 = (Assignment)cGroup_2_1.eContents().get(2);
-		private final RuleCall cInfoAbstractInfoParserRuleCall_2_1_2_0 = (RuleCall)cInfoAssignment_2_1_2.eContents().get(0);
+		private final RuleCall cInfoInfoParserRuleCall_2_1_2_0 = (RuleCall)cInfoAssignment_2_1_2.eContents().get(0);
 		private final Keyword cCommaKeyword_2_1_3 = (Keyword)cGroup_2_1.eContents().get(3);
 		private final Group cGroup_2_2 = (Group)cUnorderedGroup_2.eContents().get(2);
 		private final Keyword cServersKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Keyword cColonKeyword_2_2_1 = (Keyword)cGroup_2_2.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_2_2_2 = (Keyword)cGroup_2_2.eContents().get(2);
 		private final Assignment cServersAssignment_2_2_3 = (Assignment)cGroup_2_2.eContents().get(3);
-		private final RuleCall cServersAbstractServerParserRuleCall_2_2_3_0 = (RuleCall)cServersAssignment_2_2_3.eContents().get(0);
+		private final RuleCall cServersServerParserRuleCall_2_2_3_0 = (RuleCall)cServersAssignment_2_2_3.eContents().get(0);
 		private final Group cGroup_2_2_4 = (Group)cGroup_2_2.eContents().get(4);
 		private final Keyword cCommaKeyword_2_2_4_0 = (Keyword)cGroup_2_2_4.eContents().get(0);
 		private final Assignment cServersAssignment_2_2_4_1 = (Assignment)cGroup_2_2_4.eContents().get(1);
-		private final RuleCall cServersAbstractServerParserRuleCall_2_2_4_1_0 = (RuleCall)cServersAssignment_2_2_4_1.eContents().get(0);
+		private final RuleCall cServersServerParserRuleCall_2_2_4_1_0 = (RuleCall)cServersAssignment_2_2_4_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_2_2_5 = (Keyword)cGroup_2_2.eContents().get(5);
 		private final Keyword cCommaKeyword_2_2_6 = (Keyword)cGroup_2_2.eContents().get(6);
 		private final Group cGroup_2_3 = (Group)cUnorderedGroup_2.eContents().get(3);
@@ -62,11 +62,11 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_2_3_1 = (Keyword)cGroup_2_3.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2_3_2 = (Keyword)cGroup_2_3.eContents().get(2);
 		private final Assignment cTopicsAssignment_2_3_3 = (Assignment)cGroup_2_3.eContents().get(3);
-		private final RuleCall cTopicsAbstractTopicParserRuleCall_2_3_3_0 = (RuleCall)cTopicsAssignment_2_3_3.eContents().get(0);
+		private final RuleCall cTopicsTopicParserRuleCall_2_3_3_0 = (RuleCall)cTopicsAssignment_2_3_3.eContents().get(0);
 		private final Group cGroup_2_3_4 = (Group)cGroup_2_3.eContents().get(4);
 		private final Keyword cCommaKeyword_2_3_4_0 = (Keyword)cGroup_2_3_4.eContents().get(0);
 		private final Assignment cTopicsAssignment_2_3_4_1 = (Assignment)cGroup_2_3_4.eContents().get(1);
-		private final RuleCall cTopicsAbstractTopicParserRuleCall_2_3_4_1_0 = (RuleCall)cTopicsAssignment_2_3_4_1.eContents().get(0);
+		private final RuleCall cTopicsTopicParserRuleCall_2_3_4_1_0 = (RuleCall)cTopicsAssignment_2_3_4_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_2_3_5 = (Keyword)cGroup_2_3.eContents().get(5);
 		private final Keyword cCommaKeyword_2_3_6 = (Keyword)cGroup_2_3.eContents().get(6);
 		private final Group cGroup_2_4 = (Group)cUnorderedGroup_2.eContents().get(4);
@@ -74,26 +74,25 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_2_4_1 = (Keyword)cGroup_2_4.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2_4_2 = (Keyword)cGroup_2_4.eContents().get(2);
 		private final Assignment cComponentsAssignment_2_4_3 = (Assignment)cGroup_2_4.eContents().get(3);
-		private final RuleCall cComponentsAbstractComponentParserRuleCall_2_4_3_0 = (RuleCall)cComponentsAssignment_2_4_3.eContents().get(0);
+		private final RuleCall cComponentsComponentParserRuleCall_2_4_3_0 = (RuleCall)cComponentsAssignment_2_4_3.eContents().get(0);
 		private final Group cGroup_2_4_4 = (Group)cGroup_2_4.eContents().get(4);
 		private final Keyword cCommaKeyword_2_4_4_0 = (Keyword)cGroup_2_4_4.eContents().get(0);
 		private final Assignment cComponentsAssignment_2_4_4_1 = (Assignment)cGroup_2_4_4.eContents().get(1);
-		private final RuleCall cComponentsAbstractComponentParserRuleCall_2_4_4_1_0 = (RuleCall)cComponentsAssignment_2_4_4_1.eContents().get(0);
+		private final RuleCall cComponentsComponentParserRuleCall_2_4_4_1_0 = (RuleCall)cComponentsAssignment_2_4_4_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_2_4_5 = (Keyword)cGroup_2_4.eContents().get(5);
 		private final Keyword cCommaKeyword_2_4_6 = (Keyword)cGroup_2_4.eContents().get(6);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//AsyncAPI:
-		//	{AsyncAPI} '{' ('"asyncapi"' ':' version=VersionNumber ','? & '"info"' ':' info=AbstractInfo ','? & ('"servers"' ':'
-		//	'[' servers+=AbstractServer (',' servers+=AbstractServer)* ']' ','?)?
-		//	& '"topics"' ':' '{' topics+=AbstractTopic (',' topics+=AbstractTopic)* '}' ','? & ('"components"' ':' '{'
-		//	components+=AbstractComponent (',' components+=AbstractComponent)* '}' ','?)?) '}';
+		//	{AsyncAPI} '{' ('"asyncapi"' ':' version=VersionNumber ','? & '"info"' ':' info=Info ','? & ('"servers"' ':' '['
+		//	servers+=Server (',' servers+=Server)* ']' ','?)?
+		//	& '"topics"' ':' '{' topics+=Topic (',' topics+=Topic)* '}' ','? & ('"components"' ':' '{' components+=Component (','
+		//	components+=Component)* '}' ','?)?) '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{AsyncAPI} '{' ('"asyncapi"' ':' version=VersionNumber ','? & '"info"' ':' info=AbstractInfo ','? & ('"servers"' ':' '['
-		//servers+=AbstractServer (',' servers+=AbstractServer)* ']' ','?)? & '"topics"' ':' '{' topics+=AbstractTopic (','
-		//topics+=AbstractTopic)* '}' ','? & ('"components"' ':' '{' components+=AbstractComponent (','
-		//components+=AbstractComponent)* '}' ','?)?) '}'
+		//{AsyncAPI} '{' ('"asyncapi"' ':' version=VersionNumber ','? & '"info"' ':' info=Info ','? & ('"servers"' ':' '['
+		//servers+=Server (',' servers+=Server)* ']' ','?)? & '"topics"' ':' '{' topics+=Topic (',' topics+=Topic)* '}' ','? &
+		//('"components"' ':' '{' components+=Component (',' components+=Component)* '}' ','?)?) '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{AsyncAPI}
@@ -102,10 +101,9 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//'"asyncapi"' ':' version=VersionNumber ','? & '"info"' ':' info=AbstractInfo ','? & ('"servers"' ':' '['
-		//servers+=AbstractServer (',' servers+=AbstractServer)* ']' ','?)? & '"topics"' ':' '{' topics+=AbstractTopic (','
-		//topics+=AbstractTopic)* '}' ','? & ('"components"' ':' '{' components+=AbstractComponent (','
-		//components+=AbstractComponent)* '}' ','?)?
+		//'"asyncapi"' ':' version=VersionNumber ','? & '"info"' ':' info=Info ','? & ('"servers"' ':' '[' servers+=Server (','
+		//servers+=Server)* ']' ','?)? & '"topics"' ':' '{' topics+=Topic (',' topics+=Topic)* '}' ','? & ('"components"' ':'
+		//'{' components+=Component (',' components+=Component)* '}' ','?)?
 		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
 		
 		//'"asyncapi"' ':' version=VersionNumber ','?
@@ -126,7 +124,7 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//','?
 		public Keyword getCommaKeyword_2_0_3() { return cCommaKeyword_2_0_3; }
 		
-		//'"info"' ':' info=AbstractInfo ','?
+		//'"info"' ':' info=Info ','?
 		public Group getGroup_2_1() { return cGroup_2_1; }
 		
 		//'"info"'
@@ -135,16 +133,16 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_2_1_1() { return cColonKeyword_2_1_1; }
 		
-		//info=AbstractInfo
+		//info=Info
 		public Assignment getInfoAssignment_2_1_2() { return cInfoAssignment_2_1_2; }
 		
-		//AbstractInfo
-		public RuleCall getInfoAbstractInfoParserRuleCall_2_1_2_0() { return cInfoAbstractInfoParserRuleCall_2_1_2_0; }
+		//Info
+		public RuleCall getInfoInfoParserRuleCall_2_1_2_0() { return cInfoInfoParserRuleCall_2_1_2_0; }
 		
 		//','?
 		public Keyword getCommaKeyword_2_1_3() { return cCommaKeyword_2_1_3; }
 		
-		//('"servers"' ':' '[' servers+=AbstractServer (',' servers+=AbstractServer)* ']' ','?)?
+		//('"servers"' ':' '[' servers+=Server (',' servers+=Server)* ']' ','?)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'"servers"'
@@ -156,23 +154,23 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//'['
 		public Keyword getLeftSquareBracketKeyword_2_2_2() { return cLeftSquareBracketKeyword_2_2_2; }
 		
-		//servers+=AbstractServer
+		//servers+=Server
 		public Assignment getServersAssignment_2_2_3() { return cServersAssignment_2_2_3; }
 		
-		//AbstractServer
-		public RuleCall getServersAbstractServerParserRuleCall_2_2_3_0() { return cServersAbstractServerParserRuleCall_2_2_3_0; }
+		//Server
+		public RuleCall getServersServerParserRuleCall_2_2_3_0() { return cServersServerParserRuleCall_2_2_3_0; }
 		
-		//(',' servers+=AbstractServer)*
+		//(',' servers+=Server)*
 		public Group getGroup_2_2_4() { return cGroup_2_2_4; }
 		
 		//','
 		public Keyword getCommaKeyword_2_2_4_0() { return cCommaKeyword_2_2_4_0; }
 		
-		//servers+=AbstractServer
+		//servers+=Server
 		public Assignment getServersAssignment_2_2_4_1() { return cServersAssignment_2_2_4_1; }
 		
-		//AbstractServer
-		public RuleCall getServersAbstractServerParserRuleCall_2_2_4_1_0() { return cServersAbstractServerParserRuleCall_2_2_4_1_0; }
+		//Server
+		public RuleCall getServersServerParserRuleCall_2_2_4_1_0() { return cServersServerParserRuleCall_2_2_4_1_0; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_2_2_5() { return cRightSquareBracketKeyword_2_2_5; }
@@ -180,7 +178,7 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//','?
 		public Keyword getCommaKeyword_2_2_6() { return cCommaKeyword_2_2_6; }
 		
-		//'"topics"' ':' '{' topics+=AbstractTopic (',' topics+=AbstractTopic)* '}' ','?
+		//'"topics"' ':' '{' topics+=Topic (',' topics+=Topic)* '}' ','?
 		public Group getGroup_2_3() { return cGroup_2_3; }
 		
 		//'"topics"'
@@ -192,23 +190,23 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2_3_2() { return cLeftCurlyBracketKeyword_2_3_2; }
 		
-		//topics+=AbstractTopic
+		//topics+=Topic
 		public Assignment getTopicsAssignment_2_3_3() { return cTopicsAssignment_2_3_3; }
 		
-		//AbstractTopic
-		public RuleCall getTopicsAbstractTopicParserRuleCall_2_3_3_0() { return cTopicsAbstractTopicParserRuleCall_2_3_3_0; }
+		//Topic
+		public RuleCall getTopicsTopicParserRuleCall_2_3_3_0() { return cTopicsTopicParserRuleCall_2_3_3_0; }
 		
-		//(',' topics+=AbstractTopic)*
+		//(',' topics+=Topic)*
 		public Group getGroup_2_3_4() { return cGroup_2_3_4; }
 		
 		//','
 		public Keyword getCommaKeyword_2_3_4_0() { return cCommaKeyword_2_3_4_0; }
 		
-		//topics+=AbstractTopic
+		//topics+=Topic
 		public Assignment getTopicsAssignment_2_3_4_1() { return cTopicsAssignment_2_3_4_1; }
 		
-		//AbstractTopic
-		public RuleCall getTopicsAbstractTopicParserRuleCall_2_3_4_1_0() { return cTopicsAbstractTopicParserRuleCall_2_3_4_1_0; }
+		//Topic
+		public RuleCall getTopicsTopicParserRuleCall_2_3_4_1_0() { return cTopicsTopicParserRuleCall_2_3_4_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_2_3_5() { return cRightCurlyBracketKeyword_2_3_5; }
@@ -216,7 +214,7 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//','?
 		public Keyword getCommaKeyword_2_3_6() { return cCommaKeyword_2_3_6; }
 		
-		//('"components"' ':' '{' components+=AbstractComponent (',' components+=AbstractComponent)* '}' ','?)?
+		//('"components"' ':' '{' components+=Component (',' components+=Component)* '}' ','?)?
 		public Group getGroup_2_4() { return cGroup_2_4; }
 		
 		//'"components"'
@@ -228,23 +226,23 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2_4_2() { return cLeftCurlyBracketKeyword_2_4_2; }
 		
-		//components+=AbstractComponent
+		//components+=Component
 		public Assignment getComponentsAssignment_2_4_3() { return cComponentsAssignment_2_4_3; }
 		
-		//AbstractComponent
-		public RuleCall getComponentsAbstractComponentParserRuleCall_2_4_3_0() { return cComponentsAbstractComponentParserRuleCall_2_4_3_0; }
+		//Component
+		public RuleCall getComponentsComponentParserRuleCall_2_4_3_0() { return cComponentsComponentParserRuleCall_2_4_3_0; }
 		
-		//(',' components+=AbstractComponent)*
+		//(',' components+=Component)*
 		public Group getGroup_2_4_4() { return cGroup_2_4_4; }
 		
 		//','
 		public Keyword getCommaKeyword_2_4_4_0() { return cCommaKeyword_2_4_4_0; }
 		
-		//components+=AbstractComponent
+		//components+=Component
 		public Assignment getComponentsAssignment_2_4_4_1() { return cComponentsAssignment_2_4_4_1; }
 		
-		//AbstractComponent
-		public RuleCall getComponentsAbstractComponentParserRuleCall_2_4_4_1_0() { return cComponentsAbstractComponentParserRuleCall_2_4_4_1_0; }
+		//Component
+		public RuleCall getComponentsComponentParserRuleCall_2_4_4_1_0() { return cComponentsComponentParserRuleCall_2_4_4_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_2_4_5() { return cRightCurlyBracketKeyword_2_4_5; }
@@ -254,25 +252,6 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
-	}
-	public class AbstractInfoElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.AbstractInfo");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cReferenceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cInfoParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//AbstractInfo:
-		//	Reference | Info;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//Reference | Info
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//Reference
-		public RuleCall getReferenceParserRuleCall_0() { return cReferenceParserRuleCall_0; }
-		
-		//Info
-		public RuleCall getInfoParserRuleCall_1() { return cInfoParserRuleCall_1; }
 	}
 	public class InfoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.Info");
@@ -308,13 +287,13 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cContactKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
 		private final Keyword cColonKeyword_2_4_1 = (Keyword)cGroup_2_4.eContents().get(1);
 		private final Assignment cContactAssignment_2_4_2 = (Assignment)cGroup_2_4.eContents().get(2);
-		private final RuleCall cContactAbstractContactParserRuleCall_2_4_2_0 = (RuleCall)cContactAssignment_2_4_2.eContents().get(0);
+		private final RuleCall cContactContactParserRuleCall_2_4_2_0 = (RuleCall)cContactAssignment_2_4_2.eContents().get(0);
 		private final Keyword cCommaKeyword_2_4_3 = (Keyword)cGroup_2_4.eContents().get(3);
 		private final Group cGroup_2_5 = (Group)cUnorderedGroup_2.eContents().get(5);
 		private final Keyword cLicenseKeyword_2_5_0 = (Keyword)cGroup_2_5.eContents().get(0);
 		private final Keyword cColonKeyword_2_5_1 = (Keyword)cGroup_2_5.eContents().get(1);
 		private final Assignment cLicenseAssignment_2_5_2 = (Assignment)cGroup_2_5.eContents().get(2);
-		private final RuleCall cLicenseAbstractLicenseParserRuleCall_2_5_2_0 = (RuleCall)cLicenseAssignment_2_5_2.eContents().get(0);
+		private final RuleCall cLicenseLicenseParserRuleCall_2_5_2_0 = (RuleCall)cLicenseAssignment_2_5_2.eContents().get(0);
 		private final Keyword cCommaKeyword_2_5_3 = (Keyword)cGroup_2_5.eContents().get(3);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
@@ -322,13 +301,13 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//	{Info} '{' ('"title"' ':' title=STRING ','? & '"version"' ':' version=STRING ','? & ('"description"' ':'
 		//	description=STRING ','?)?
 		//	& ('"termsOfService"' ':' termsOfService=STRING ','?)?
-		//	& ('"contact"' ':' contact=AbstractContact ','?)?
-		//	& ('"license"' ':' license=AbstractLicense ','?)?) '}';
+		//	& ('"contact"' ':' contact=Contact ','?)?
+		//	& ('"license"' ':' license=License ','?)?) '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Info} '{' ('"title"' ':' title=STRING ','? & '"version"' ':' version=STRING ','? & ('"description"' ':'
-		//description=STRING ','?)? & ('"termsOfService"' ':' termsOfService=STRING ','?)? & ('"contact"' ':'
-		//contact=AbstractContact ','?)? & ('"license"' ':' license=AbstractLicense ','?)?) '}'
+		//description=STRING ','?)? & ('"termsOfService"' ':' termsOfService=STRING ','?)? & ('"contact"' ':' contact=Contact
+		//','?)? & ('"license"' ':' license=License ','?)?) '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Info}
@@ -338,8 +317,8 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
 		//'"title"' ':' title=STRING ','? & '"version"' ':' version=STRING ','? & ('"description"' ':' description=STRING ','?)? &
-		//('"termsOfService"' ':' termsOfService=STRING ','?)? & ('"contact"' ':' contact=AbstractContact ','?)? & ('"license"'
-		//':' license=AbstractLicense ','?)?
+		//('"termsOfService"' ':' termsOfService=STRING ','?)? & ('"contact"' ':' contact=Contact ','?)? & ('"license"' ':'
+		//license=License ','?)?
 		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
 		
 		//'"title"' ':' title=STRING ','?
@@ -414,7 +393,7 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//','?
 		public Keyword getCommaKeyword_2_3_3() { return cCommaKeyword_2_3_3; }
 		
-		//('"contact"' ':' contact=AbstractContact ','?)?
+		//('"contact"' ':' contact=Contact ','?)?
 		public Group getGroup_2_4() { return cGroup_2_4; }
 		
 		//'"contact"'
@@ -423,16 +402,16 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_2_4_1() { return cColonKeyword_2_4_1; }
 		
-		//contact=AbstractContact
+		//contact=Contact
 		public Assignment getContactAssignment_2_4_2() { return cContactAssignment_2_4_2; }
 		
-		//AbstractContact
-		public RuleCall getContactAbstractContactParserRuleCall_2_4_2_0() { return cContactAbstractContactParserRuleCall_2_4_2_0; }
+		//Contact
+		public RuleCall getContactContactParserRuleCall_2_4_2_0() { return cContactContactParserRuleCall_2_4_2_0; }
 		
 		//','?
 		public Keyword getCommaKeyword_2_4_3() { return cCommaKeyword_2_4_3; }
 		
-		//('"license"' ':' license=AbstractLicense ','?)?
+		//('"license"' ':' license=License ','?)?
 		public Group getGroup_2_5() { return cGroup_2_5; }
 		
 		//'"license"'
@@ -441,36 +420,17 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_2_5_1() { return cColonKeyword_2_5_1; }
 		
-		//license=AbstractLicense
+		//license=License
 		public Assignment getLicenseAssignment_2_5_2() { return cLicenseAssignment_2_5_2; }
 		
-		//AbstractLicense
-		public RuleCall getLicenseAbstractLicenseParserRuleCall_2_5_2_0() { return cLicenseAbstractLicenseParserRuleCall_2_5_2_0; }
+		//License
+		public RuleCall getLicenseLicenseParserRuleCall_2_5_2_0() { return cLicenseLicenseParserRuleCall_2_5_2_0; }
 		
 		//','?
 		public Keyword getCommaKeyword_2_5_3() { return cCommaKeyword_2_5_3; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
-	}
-	public class AbstractContactElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.AbstractContact");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cReferenceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cContactParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//AbstractContact:
-		//	Reference | Contact;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//Reference | Contact
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//Reference
-		public RuleCall getReferenceParserRuleCall_0() { return cReferenceParserRuleCall_0; }
-		
-		//Contact
-		public RuleCall getContactParserRuleCall_1() { return cContactParserRuleCall_1; }
 	}
 	public class ContactElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.Contact");
@@ -574,25 +534,6 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
-	public class AbstractLicenseElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.AbstractLicense");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cReferenceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cLicenseParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//AbstractLicense:
-		//	Reference | License;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//Reference | License
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//Reference
-		public RuleCall getReferenceParserRuleCall_0() { return cReferenceParserRuleCall_0; }
-		
-		//License
-		public RuleCall getLicenseParserRuleCall_1() { return cLicenseParserRuleCall_1; }
-	}
 	public class LicenseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.License");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -669,25 +610,6 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
-	public class AbstractServerElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.AbstractServer");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cReferenceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cServerParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//AbstractServer:
-		//	Reference | Server;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//Reference | Server
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//Reference
-		public RuleCall getReferenceParserRuleCall_0() { return cReferenceParserRuleCall_0; }
-		
-		//Server
-		public RuleCall getServerParserRuleCall_1() { return cServerParserRuleCall_1; }
-	}
 	public class ServerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.Server");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -717,11 +639,11 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_2_3_1 = (Keyword)cGroup_2_3.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2_3_2 = (Keyword)cGroup_2_3.eContents().get(2);
 		private final Assignment cVariablesAssignment_2_3_3 = (Assignment)cGroup_2_3.eContents().get(3);
-		private final RuleCall cVariablesAbstractVariableParserRuleCall_2_3_3_0 = (RuleCall)cVariablesAssignment_2_3_3.eContents().get(0);
+		private final RuleCall cVariablesVariableParserRuleCall_2_3_3_0 = (RuleCall)cVariablesAssignment_2_3_3.eContents().get(0);
 		private final Group cGroup_2_3_4 = (Group)cGroup_2_3.eContents().get(4);
 		private final Keyword cCommaKeyword_2_3_4_0 = (Keyword)cGroup_2_3_4.eContents().get(0);
 		private final Assignment cVariablesAssignment_2_3_4_1 = (Assignment)cGroup_2_3_4.eContents().get(1);
-		private final RuleCall cVariablesAbstractVariableParserRuleCall_2_3_4_1_0 = (RuleCall)cVariablesAssignment_2_3_4_1.eContents().get(0);
+		private final RuleCall cVariablesVariableParserRuleCall_2_3_4_1_0 = (RuleCall)cVariablesAssignment_2_3_4_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_2_3_5 = (Keyword)cGroup_2_3.eContents().get(5);
 		private final Keyword cCommaKeyword_2_3_6 = (Keyword)cGroup_2_3.eContents().get(6);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
@@ -729,12 +651,11 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//Server:
 		//	{Server} '{' ('"url"' ':' title=STRING ','? & '"scheme"' ':' scheme=Scheme ','? & ('"description"' ':'
 		//	description=STRING ',')?
-		//	& ('"variables"' ':' '{' variables+=AbstractVariable (',' variables+=AbstractVariable)* '}' ','?)?) '}';
+		//	& ('"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','?)?) '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Server} '{' ('"url"' ':' title=STRING ','? & '"scheme"' ':' scheme=Scheme ','? & ('"description"' ':'
-		//description=STRING ',')? & ('"variables"' ':' '{' variables+=AbstractVariable (',' variables+=AbstractVariable)* '}'
-		//','?)?) '}'
+		//description=STRING ',')? & ('"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','?)?) '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Server}
@@ -744,7 +665,7 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
 		//'"url"' ':' title=STRING ','? & '"scheme"' ':' scheme=Scheme ','? & ('"description"' ':' description=STRING ',')? &
-		//('"variables"' ':' '{' variables+=AbstractVariable (',' variables+=AbstractVariable)* '}' ','?)?
+		//('"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','?)?
 		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
 		
 		//'"url"' ':' title=STRING ','?
@@ -801,7 +722,7 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//','
 		public Keyword getCommaKeyword_2_2_3() { return cCommaKeyword_2_2_3; }
 		
-		//('"variables"' ':' '{' variables+=AbstractVariable (',' variables+=AbstractVariable)* '}' ','?)?
+		//('"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','?)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
 		
 		//'"variables"'
@@ -813,23 +734,23 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2_3_2() { return cLeftCurlyBracketKeyword_2_3_2; }
 		
-		//variables+=AbstractVariable
+		//variables+=Variable
 		public Assignment getVariablesAssignment_2_3_3() { return cVariablesAssignment_2_3_3; }
 		
-		//AbstractVariable
-		public RuleCall getVariablesAbstractVariableParserRuleCall_2_3_3_0() { return cVariablesAbstractVariableParserRuleCall_2_3_3_0; }
+		//Variable
+		public RuleCall getVariablesVariableParserRuleCall_2_3_3_0() { return cVariablesVariableParserRuleCall_2_3_3_0; }
 		
-		//(',' variables+=AbstractVariable)*
+		//(',' variables+=Variable)*
 		public Group getGroup_2_3_4() { return cGroup_2_3_4; }
 		
 		//','
 		public Keyword getCommaKeyword_2_3_4_0() { return cCommaKeyword_2_3_4_0; }
 		
-		//variables+=AbstractVariable
+		//variables+=Variable
 		public Assignment getVariablesAssignment_2_3_4_1() { return cVariablesAssignment_2_3_4_1; }
 		
-		//AbstractVariable
-		public RuleCall getVariablesAbstractVariableParserRuleCall_2_3_4_1_0() { return cVariablesAbstractVariableParserRuleCall_2_3_4_1_0; }
+		//Variable
+		public RuleCall getVariablesVariableParserRuleCall_2_3_4_1_0() { return cVariablesVariableParserRuleCall_2_3_4_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_2_3_5() { return cRightCurlyBracketKeyword_2_3_5; }
@@ -839,25 +760,6 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
-	}
-	public class AbstractVariableElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.AbstractVariable");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cReferenceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cVariableParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//AbstractVariable:
-		//	Reference | Variable;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//Reference | Variable
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//Reference
-		public RuleCall getReferenceParserRuleCall_0() { return cReferenceParserRuleCall_0; }
-		
-		//Variable
-		public RuleCall getVariableParserRuleCall_1() { return cVariableParserRuleCall_1; }
 	}
 	public class VariableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.Variable");
@@ -997,25 +899,6 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-	public class AbstractTopicElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.AbstractTopic");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cReferenceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cTopicParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//AbstractTopic:
-		//	Reference | Topic;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//Reference | Topic
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//Reference
-		public RuleCall getReferenceParserRuleCall_0() { return cReferenceParserRuleCall_0; }
-		
-		//Topic
-		public RuleCall getTopicParserRuleCall_1() { return cTopicParserRuleCall_1; }
 	}
 	public class TopicElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.Topic");
@@ -1609,25 +1492,6 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
-	public class AbstractComponentElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.AbstractComponent");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cReferenceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cComponentParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//AbstractComponent:
-		//	Reference | Component;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//Reference | Component
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//Reference
-		public RuleCall getReferenceParserRuleCall_0() { return cReferenceParserRuleCall_0; }
-		
-		//Component
-		public RuleCall getComponentParserRuleCall_1() { return cComponentParserRuleCall_1; }
-	}
 	public class ComponentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.Component");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1924,23 +1788,16 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	private final AsyncAPIElements pAsyncAPI;
-	private final AbstractInfoElements pAbstractInfo;
 	private final InfoElements pInfo;
-	private final AbstractContactElements pAbstractContact;
 	private final ContactElements pContact;
-	private final AbstractLicenseElements pAbstractLicense;
 	private final LicenseElements pLicense;
-	private final AbstractServerElements pAbstractServer;
 	private final ServerElements pServer;
-	private final AbstractVariableElements pAbstractVariable;
 	private final VariableElements pVariable;
-	private final AbstractTopicElements pAbstractTopic;
 	private final TopicElements pTopic;
 	private final AbstractMessageElements pAbstractMessage;
 	private final MessageElements pMessage;
 	private final AbstractSchemaElements pAbstractSchema;
 	private final SchemaElements pSchema;
-	private final AbstractComponentElements pAbstractComponent;
 	private final ComponentElements pComponent;
 	private final ReferenceElements pReference;
 	private final VersionNumberElements eVersionNumber;
@@ -1956,23 +1813,16 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pAsyncAPI = new AsyncAPIElements();
-		this.pAbstractInfo = new AbstractInfoElements();
 		this.pInfo = new InfoElements();
-		this.pAbstractContact = new AbstractContactElements();
 		this.pContact = new ContactElements();
-		this.pAbstractLicense = new AbstractLicenseElements();
 		this.pLicense = new LicenseElements();
-		this.pAbstractServer = new AbstractServerElements();
 		this.pServer = new ServerElements();
-		this.pAbstractVariable = new AbstractVariableElements();
 		this.pVariable = new VariableElements();
-		this.pAbstractTopic = new AbstractTopicElements();
 		this.pTopic = new TopicElements();
 		this.pAbstractMessage = new AbstractMessageElements();
 		this.pMessage = new MessageElements();
 		this.pAbstractSchema = new AbstractSchemaElements();
 		this.pSchema = new SchemaElements();
-		this.pAbstractComponent = new AbstractComponentElements();
 		this.pComponent = new ComponentElements();
 		this.pReference = new ReferenceElements();
 		this.eVersionNumber = new VersionNumberElements();
@@ -2007,10 +1857,10 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//AsyncAPI:
-	//	{AsyncAPI} '{' ('"asyncapi"' ':' version=VersionNumber ','? & '"info"' ':' info=AbstractInfo ','? & ('"servers"' ':'
-	//	'[' servers+=AbstractServer (',' servers+=AbstractServer)* ']' ','?)?
-	//	& '"topics"' ':' '{' topics+=AbstractTopic (',' topics+=AbstractTopic)* '}' ','? & ('"components"' ':' '{'
-	//	components+=AbstractComponent (',' components+=AbstractComponent)* '}' ','?)?) '}';
+	//	{AsyncAPI} '{' ('"asyncapi"' ':' version=VersionNumber ','? & '"info"' ':' info=Info ','? & ('"servers"' ':' '['
+	//	servers+=Server (',' servers+=Server)* ']' ','?)?
+	//	& '"topics"' ':' '{' topics+=Topic (',' topics+=Topic)* '}' ','? & ('"components"' ':' '{' components+=Component (','
+	//	components+=Component)* '}' ','?)?) '}';
 	public AsyncAPIElements getAsyncAPIAccess() {
 		return pAsyncAPI;
 	}
@@ -2019,38 +1869,18 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		return getAsyncAPIAccess().getRule();
 	}
 	
-	//AbstractInfo:
-	//	Reference | Info;
-	public AbstractInfoElements getAbstractInfoAccess() {
-		return pAbstractInfo;
-	}
-	
-	public ParserRule getAbstractInfoRule() {
-		return getAbstractInfoAccess().getRule();
-	}
-	
 	//Info:
 	//	{Info} '{' ('"title"' ':' title=STRING ','? & '"version"' ':' version=STRING ','? & ('"description"' ':'
 	//	description=STRING ','?)?
 	//	& ('"termsOfService"' ':' termsOfService=STRING ','?)?
-	//	& ('"contact"' ':' contact=AbstractContact ','?)?
-	//	& ('"license"' ':' license=AbstractLicense ','?)?) '}';
+	//	& ('"contact"' ':' contact=Contact ','?)?
+	//	& ('"license"' ':' license=License ','?)?) '}';
 	public InfoElements getInfoAccess() {
 		return pInfo;
 	}
 	
 	public ParserRule getInfoRule() {
 		return getInfoAccess().getRule();
-	}
-	
-	//AbstractContact:
-	//	Reference | Contact;
-	public AbstractContactElements getAbstractContactAccess() {
-		return pAbstractContact;
-	}
-	
-	public ParserRule getAbstractContactRule() {
-		return getAbstractContactAccess().getRule();
 	}
 	
 	//Contact:
@@ -2065,16 +1895,6 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		return getContactAccess().getRule();
 	}
 	
-	//AbstractLicense:
-	//	Reference | License;
-	public AbstractLicenseElements getAbstractLicenseAccess() {
-		return pAbstractLicense;
-	}
-	
-	public ParserRule getAbstractLicenseRule() {
-		return getAbstractLicenseAccess().getRule();
-	}
-	
 	//License:
 	//	{License} '{' (('"name"' ':' name=STRING ','?)?
 	//	& ('"url"' ':' url=STRING ','?)?) '}';
@@ -2086,36 +1906,16 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		return getLicenseAccess().getRule();
 	}
 	
-	//AbstractServer:
-	//	Reference | Server;
-	public AbstractServerElements getAbstractServerAccess() {
-		return pAbstractServer;
-	}
-	
-	public ParserRule getAbstractServerRule() {
-		return getAbstractServerAccess().getRule();
-	}
-	
 	//Server:
 	//	{Server} '{' ('"url"' ':' title=STRING ','? & '"scheme"' ':' scheme=Scheme ','? & ('"description"' ':'
 	//	description=STRING ',')?
-	//	& ('"variables"' ':' '{' variables+=AbstractVariable (',' variables+=AbstractVariable)* '}' ','?)?) '}';
+	//	& ('"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','?)?) '}';
 	public ServerElements getServerAccess() {
 		return pServer;
 	}
 	
 	public ParserRule getServerRule() {
 		return getServerAccess().getRule();
-	}
-	
-	//AbstractVariable:
-	//	Reference | Variable;
-	public AbstractVariableElements getAbstractVariableAccess() {
-		return pAbstractVariable;
-	}
-	
-	public ParserRule getAbstractVariableRule() {
-		return getAbstractVariableAccess().getRule();
 	}
 	
 	//Variable:
@@ -2128,16 +1928,6 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getVariableRule() {
 		return getVariableAccess().getRule();
-	}
-	
-	//AbstractTopic:
-	//	Reference | Topic;
-	public AbstractTopicElements getAbstractTopicAccess() {
-		return pAbstractTopic;
-	}
-	
-	public ParserRule getAbstractTopicRule() {
-		return getAbstractTopicAccess().getRule();
 	}
 	
 	//Topic:
@@ -2199,16 +1989,6 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getSchemaRule() {
 		return getSchemaAccess().getRule();
-	}
-	
-	//AbstractComponent:
-	//	Reference | Component;
-	public AbstractComponentElements getAbstractComponentAccess() {
-		return pAbstractComponent;
-	}
-	
-	public ParserRule getAbstractComponentRule() {
-		return getAbstractComponentAccess().getRule();
 	}
 	
 	//Component:
