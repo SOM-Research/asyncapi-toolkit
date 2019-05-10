@@ -25,47 +25,47 @@ import org.eclipse.emf.ecore.EObject;
 public interface License extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getLicense_Name()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getLicense_Name()
+	 * @model
+	 * @generated
+	 */
   String getName();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.License#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.License#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Url</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Url</em>' attribute.
-   * @see #setUrl(String)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getLicense_Url()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Url</em>' attribute.
+	 * @see #setUrl(String)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getLicense_Url()
+	 * @model
+	 * @generated
+	 */
   String getUrl();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.License#getUrl <em>Url</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.License#getUrl <em>Url</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Url</em>' attribute.
-   * @see #getUrl()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Url</em>' attribute.
+	 * @see #getUrl()
+	 * @generated
+	 */
   void setUrl(String value);
 
 } // License

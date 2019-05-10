@@ -8,7 +8,7 @@ AsyncAPI:
 		& ( '"info"' ':' info=Info ','? ) 
 		& ( '"servers"' ':' '[' servers+=Server (',' servers+=Server)* ']' ','? )? 
 		& ( '"topics"' ':' '{' topics+=Topic (',' topics+=Topic)* '}' ','? )
-		& ( '"components"' ':' '{' components+=Component (',' components+=Component)* '}' ','? )?
+		& ( '"components"' ':' components=Components ','? )?
 	) '}';
 		
 Info:
@@ -59,33 +59,39 @@ AbstractMessage:
 	Reference | Message;
 
 Message:
-	{Message} (name=STRING ':')? '{' (
+	{Message} '{' (
 		  ( '"summary"' ':' summary=STRING ','? )?
 		& ( '"description"' ':' description=STRING ','? )?
 		& ( '"headers"' ':' headers=AbstractSchema ','? )?
 		& ( '"payload"' ':' payload=AbstractSchema ','? )?
 	) '}';
 
+NamedMessage:
+	{NamedMessage} name=STRING ':' message=AbstractMessage;
+
 AbstractSchema:
 	Reference | Schema;
 
 Schema:
-	{Schema} (name=STRING ':')? '{' (
+	{Schema} '{' (
 		  ( '"title"' ':' title=STRING ','? )?
-		& ( '"type"' ':' summary=STRING ','? )?
+		& ( '"type"' ':' type=STRING ','? )?
 		& ( '"description"' ':' description=STRING ','? )?
 		& ( '"format"' ':' format=STRING ','? )?
 		& ( '"default"' ':' default=STRING ','? )?
-		& ( '"properties"' ':' '{' schemas+=AbstractSchema (',' schemas+=AbstractSchema)* '}' ','? )?
-		& ( '"payload"' ':' '{' payloads+=AbstractSchema (',' payloads+=AbstractSchema)* '}' ','? )?
+		& ( '"payload"' ':' payload=AbstractSchema ','? )?
+		& ( '"properties"' ':' '{' properties+=NamedSchema (',' properties+=NamedSchema)* '}' ','? )?
 		& ( '"enum"' ':' '[' ^enum+=STRING (',' ^enum+=STRING)* ']' ','? )?
 	) '}';
 
-Component:
-	{Component} (
-		  ( '"schemas"' ':' '{' schemas+=AbstractSchema (',' schemas+=AbstractSchema)* '}' ','? )?
-		& ( '"messages"' ':' '{' messages+=AbstractMessage (',' messages+=AbstractMessage)* '}' ','? )?
-	);
+NamedSchema:
+	{NamedSchema} name=STRING ':' schema=AbstractSchema;
+
+Components:
+	{Components} '{' (
+		  ( '"schemas"' ':' '{' schemas+=NamedSchema (',' schemas+=NamedSchema)* '}' ','? )?
+		& ( '"messages"' ':' '{' messages+=NamedMessage (',' messages+=NamedMessage)* '}' ','? )?
+	) '}';
 
 
 Reference:

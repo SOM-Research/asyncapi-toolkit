@@ -3,31 +3,34 @@
  */
 package io.github.abelgomez.asyncapi.asyncApi.impl;
 
+import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
-import io.github.abelgomez.asyncapi.asyncApi.License;
+import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>License</b></em>'.
+ * An implementation of the model object '<em><b>Named Schema</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.LicenseImpl#getName <em>Name</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.LicenseImpl#getUrl <em>Url</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedSchemaImpl#getName <em>Name</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedSchemaImpl#getSchema <em>Schema</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class LicenseImpl extends MinimalEObjectImpl.Container implements License
+public class NamedSchemaImpl extends MinimalEObjectImpl.Container implements NamedSchema
 {
   /**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -50,31 +53,21 @@ public class LicenseImpl extends MinimalEObjectImpl.Container implements License
   protected String name = NAME_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
+	 * The cached value of the '{@link #getSchema() <em>Schema</em>}' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getUrl()
+	 * @see #getSchema()
 	 * @generated
 	 * @ordered
 	 */
-  protected static final String URL_EDEFAULT = null;
-
-  /**
-	 * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getUrl()
-	 * @generated
-	 * @ordered
-	 */
-  protected String url = URL_EDEFAULT;
+  protected AbstractSchema schema;
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected LicenseImpl()
+  protected NamedSchemaImpl()
   {
 		super();
 	}
@@ -87,7 +80,7 @@ public class LicenseImpl extends MinimalEObjectImpl.Container implements License
   @Override
   protected EClass eStaticClass()
   {
-		return AsyncApiPackage.Literals.LICENSE;
+		return AsyncApiPackage.Literals.NAMED_SCHEMA;
 	}
 
   /**
@@ -112,7 +105,7 @@ public class LicenseImpl extends MinimalEObjectImpl.Container implements License
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.LICENSE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.NAMED_SCHEMA__NAME, oldName, name));
 	}
 
   /**
@@ -121,9 +114,25 @@ public class LicenseImpl extends MinimalEObjectImpl.Container implements License
 	 * @generated
 	 */
   @Override
-  public String getUrl()
+  public AbstractSchema getSchema()
   {
-		return url;
+		return schema;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public NotificationChain basicSetSchema(AbstractSchema newSchema, NotificationChain msgs)
+  {
+		AbstractSchema oldSchema = schema;
+		schema = newSchema;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.NAMED_SCHEMA__SCHEMA, oldSchema, newSchema);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
   /**
@@ -132,12 +141,34 @@ public class LicenseImpl extends MinimalEObjectImpl.Container implements License
 	 * @generated
 	 */
   @Override
-  public void setUrl(String newUrl)
+  public void setSchema(AbstractSchema newSchema)
   {
-		String oldUrl = url;
-		url = newUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.LICENSE__URL, oldUrl, url));
+		if (newSchema != schema) {
+			NotificationChain msgs = null;
+			if (schema != null)
+				msgs = ((InternalEObject)schema).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.NAMED_SCHEMA__SCHEMA, null, msgs);
+			if (newSchema != null)
+				msgs = ((InternalEObject)newSchema).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.NAMED_SCHEMA__SCHEMA, null, msgs);
+			msgs = basicSetSchema(newSchema, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.NAMED_SCHEMA__SCHEMA, newSchema, newSchema));
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+		switch (featureID) {
+			case AsyncApiPackage.NAMED_SCHEMA__SCHEMA:
+				return basicSetSchema(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
   /**
@@ -149,10 +180,10 @@ public class LicenseImpl extends MinimalEObjectImpl.Container implements License
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
 		switch (featureID) {
-			case AsyncApiPackage.LICENSE__NAME:
+			case AsyncApiPackage.NAMED_SCHEMA__NAME:
 				return getName();
-			case AsyncApiPackage.LICENSE__URL:
-				return getUrl();
+			case AsyncApiPackage.NAMED_SCHEMA__SCHEMA:
+				return getSchema();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -166,11 +197,11 @@ public class LicenseImpl extends MinimalEObjectImpl.Container implements License
   public void eSet(int featureID, Object newValue)
   {
 		switch (featureID) {
-			case AsyncApiPackage.LICENSE__NAME:
+			case AsyncApiPackage.NAMED_SCHEMA__NAME:
 				setName((String)newValue);
 				return;
-			case AsyncApiPackage.LICENSE__URL:
-				setUrl((String)newValue);
+			case AsyncApiPackage.NAMED_SCHEMA__SCHEMA:
+				setSchema((AbstractSchema)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -185,11 +216,11 @@ public class LicenseImpl extends MinimalEObjectImpl.Container implements License
   public void eUnset(int featureID)
   {
 		switch (featureID) {
-			case AsyncApiPackage.LICENSE__NAME:
+			case AsyncApiPackage.NAMED_SCHEMA__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case AsyncApiPackage.LICENSE__URL:
-				setUrl(URL_EDEFAULT);
+			case AsyncApiPackage.NAMED_SCHEMA__SCHEMA:
+				setSchema((AbstractSchema)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -204,10 +235,10 @@ public class LicenseImpl extends MinimalEObjectImpl.Container implements License
   public boolean eIsSet(int featureID)
   {
 		switch (featureID) {
-			case AsyncApiPackage.LICENSE__NAME:
+			case AsyncApiPackage.NAMED_SCHEMA__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case AsyncApiPackage.LICENSE__URL:
-				return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
+			case AsyncApiPackage.NAMED_SCHEMA__SCHEMA:
+				return schema != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -225,10 +256,8 @@ public class LicenseImpl extends MinimalEObjectImpl.Container implements License
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", url: ");
-		result.append(url);
 		result.append(')');
 		return result.toString();
 	}
 
-} //LicenseImpl
+} //NamedSchemaImpl

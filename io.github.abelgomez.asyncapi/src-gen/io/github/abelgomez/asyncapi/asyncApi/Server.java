@@ -29,84 +29,84 @@ import org.eclipse.emf.ecore.EObject;
 public interface Server extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Title</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Title</em>' attribute.
-   * @see #setTitle(String)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getServer_Title()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Title</em>' attribute.
+	 * @see #setTitle(String)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getServer_Title()
+	 * @model
+	 * @generated
+	 */
   String getTitle();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getTitle <em>Title</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getTitle <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Title</em>' attribute.
-   * @see #getTitle()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Title</em>' attribute.
+	 * @see #getTitle()
+	 * @generated
+	 */
   void setTitle(String value);
 
   /**
-   * Returns the value of the '<em><b>Scheme</b></em>' attribute.
-   * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.Scheme}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Scheme</b></em>' attribute.
+	 * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.Scheme}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Scheme</em>' attribute.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Scheme
-   * @see #setScheme(Scheme)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getServer_Scheme()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Scheme</em>' attribute.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Scheme
+	 * @see #setScheme(Scheme)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getServer_Scheme()
+	 * @model
+	 * @generated
+	 */
   Scheme getScheme();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getScheme <em>Scheme</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getScheme <em>Scheme</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Scheme</em>' attribute.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Scheme
-   * @see #getScheme()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Scheme</em>' attribute.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Scheme
+	 * @see #getScheme()
+	 * @generated
+	 */
   void setScheme(Scheme value);
 
   /**
-   * Returns the value of the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Description</em>' attribute.
-   * @see #setDescription(String)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getServer_Description()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getServer_Description()
+	 * @model
+	 * @generated
+	 */
   String getDescription();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getDescription <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Description</em>' attribute.
-   * @see #getDescription()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
   void setDescription(String value);
 
   /**
-   * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
-   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.Variable}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
+	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.Variable}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Variables</em>' containment reference list.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getServer_Variables()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Variables</em>' containment reference list.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getServer_Variables()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<Variable> getVariables();
 
 } // Server
