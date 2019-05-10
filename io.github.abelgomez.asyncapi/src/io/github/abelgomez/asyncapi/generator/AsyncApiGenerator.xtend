@@ -85,7 +85,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 			 * Create payload
 			 */
 			public static final «t.publishPayloadClassName» createPayload() {
-				return new «t.publishPayloadClassName»();
+				return «t.publishPayloadClassName».create();
 			}
 			
 			«IF !t.publish.resolve.payload.isNamedSchema»
@@ -154,6 +154,18 @@ class AsyncApiGenerator extends AbstractGenerator {
 		«FOR p : s.properties»
 			«p.namedSchemaField»
 		«ENDFOR»
+
+		«FOR p : s.properties»
+			«p.namedSchemaMethod(thisTypeName)»
+		«ENDFOR»
+		
+			
+		private «thisTypeName»() {
+		}
+			
+		public static final «thisTypeName» create() {
+			return new «thisTypeName»();
+		}
 		
 		public String toJson() {
 			return toJson(false);
@@ -193,7 +205,15 @@ class AsyncApiGenerator extends AbstractGenerator {
 		«ENDIF»
 		 */
 		@SerializedName("«ns.name»")
-		public «ns.toJavaType» «ns.name.asJavaIdentifier»;
+		private «ns.toJavaType» «ns.name.asJavaIdentifier»;
+		
+	'''
+
+	def namedSchemaMethod(NamedSchema ns, String thisTypeName) '''
+		public «thisTypeName» with«ns.name»(«ns.toJavaType» «ns.name.asJavaIdentifier») {
+			this.«ns.name.asJavaIdentifier» = «ns.name.asJavaIdentifier»;
+			return this;
+		}
 		
 	'''
 
