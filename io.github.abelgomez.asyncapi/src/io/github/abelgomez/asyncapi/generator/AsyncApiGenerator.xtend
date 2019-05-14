@@ -84,8 +84,8 @@ class AsyncApiGenerator extends AbstractGenerator {
 			/**
 			 * Create payload
 			 */
-			public static final «t.publishPayloadClassName» createPayload() {
-				return «t.publishPayloadClassName».create();
+			public static final «t.publishPayloadClassName».«t.publishPayloadClassName»Builder payloadBuilder() {
+				return «t.publishPayloadClassName».«t.publishPayloadClassName»Builder.newBuilder();
 			}
 			
 			«IF !t.publish.resolve.payload.isNamedSchema»
@@ -123,7 +123,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 		 * «ns.description»
 		«ENDIF»
 		 */
-		public «IF ns.eContainer instanceof Schema»static «ENDIF»class «ns.toJavaType» {
+		public «IF ns.eContainer instanceof Schema»static «ENDIF»class «ns.toJavaType» implements Cloneable {
 			«ns.schema.resolve.schemaClassBody(ns.toJavaType)»
 		}
 		
@@ -155,16 +155,12 @@ class AsyncApiGenerator extends AbstractGenerator {
 			«p.namedSchemaField»
 		«ENDFOR»
 
-		«FOR p : s.properties»
-			«p.namedSchemaMethod(thisTypeName)»
-		«ENDFOR»
-		
 			
 		private «thisTypeName»() {
 		}
 			
-		public static final «thisTypeName» create() {
-			return new «thisTypeName»();
+		public static final «thisTypeName»Builder newBuilder() {
+			return new «thisTypeName»Builder();
 		}
 		
 		public String toJson() {
@@ -179,6 +175,38 @@ class AsyncApiGenerator extends AbstractGenerator {
 		public static «thisTypeName» fromJson(String json) {
 			Gson gson = new Gson();
 			return gson.fromJson(json, «thisTypeName».class);
+		}
+		
+		protected Object clone() throws CloneNotSupportedException {
+			«thisTypeName» clone = new «thisTypeName»();
+			«FOR p : s.properties.filter[p | !p.schema.resolve.objectType]»
+			clone.«p.name.asJavaIdentifier» = this.«p.name.asJavaIdentifier»;
+			«ENDFOR»
+			«FOR p : s.properties.filter[p | p.schema.resolve.objectType]»
+			clone.«p.name.asJavaIdentifier» = («p.toJavaType») this.«p.name.asJavaIdentifier».clone();
+			«ENDFOR»
+			return clone;
+		}
+		
+		public static class «thisTypeName»Builder {
+			
+			private «thisTypeName» instance = new «thisTypeName»();
+			
+			public static «thisTypeName»Builder newBuilder() {
+				return new «thisTypeName»Builder();
+			}
+			
+			«FOR p : s.properties»
+				«p.namedSchemaMethod(thisTypeName)»
+			«ENDFOR»
+			
+			public «thisTypeName» build() {
+				try {
+					return («thisTypeName») instance.clone();
+				} catch (CloneNotSupportedException e) {
+					throw new RuntimeException("Unable to build: " + this, e);
+				}
+			}
 		}
 	'''
 
@@ -210,8 +238,8 @@ class AsyncApiGenerator extends AbstractGenerator {
 	'''
 
 	def namedSchemaMethod(NamedSchema ns, String thisTypeName) '''
-		public «thisTypeName» with«ns.name»(«ns.toJavaType» «ns.name.asJavaIdentifier») {
-			this.«ns.name.asJavaIdentifier» = «ns.name.asJavaIdentifier»;
+		public «thisTypeName»Builder with«ns.name»(«ns.toJavaType» «ns.name.asJavaIdentifier») {
+			this.instance.«ns.name.asJavaIdentifier» = «ns.name.asJavaIdentifier»;
 			return this;
 		}
 		
