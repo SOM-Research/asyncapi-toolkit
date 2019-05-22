@@ -3,6 +3,7 @@
  */
 package io.github.abelgomez.asyncapi.asyncApi;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +16,9 @@ package io.github.abelgomez.asyncapi.asyncApi;
  * <ul>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Message#getSummary <em>Summary</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Message#getDescription <em>Description</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Message#getDeprecated <em>Deprecated</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Message#getHeaders <em>Headers</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Message#getTags <em>Tags</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Message#getPayload <em>Payload</em>}</li>
  * </ul>
  *
@@ -70,6 +73,31 @@ public interface Message extends AbstractMessage
   void setDescription(String value);
 
   /**
+	 * Returns the value of the '<em><b>Deprecated</b></em>' attribute.
+	 * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.Boolean}.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Deprecated</em>' attribute.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Boolean
+	 * @see #setDeprecated(io.github.abelgomez.asyncapi.asyncApi.Boolean)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessage_Deprecated()
+	 * @model
+	 * @generated
+	 */
+  io.github.abelgomez.asyncapi.asyncApi.Boolean getDeprecated();
+
+  /**
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getDeprecated <em>Deprecated</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Deprecated</em>' attribute.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Boolean
+	 * @see #getDeprecated()
+	 * @generated
+	 */
+  void setDeprecated(io.github.abelgomez.asyncapi.asyncApi.Boolean value);
+
+  /**
 	 * Returns the value of the '<em><b>Headers</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -90,6 +118,18 @@ public interface Message extends AbstractMessage
 	 * @generated
 	 */
   void setHeaders(AbstractSchema value);
+
+  /**
+	 * Returns the value of the '<em><b>Tags</b></em>' containment reference list.
+	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.Tag}.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tags</em>' containment reference list.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessage_Tags()
+	 * @model containment="true"
+	 * @generated
+	 */
+  EList<Tag> getTags();
 
   /**
 	 * Returns the value of the '<em><b>Payload</b></em>' containment reference.

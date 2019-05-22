@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getServers <em>Servers</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getTopics <em>Topics</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getComponents <em>Components</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getBaseTopic <em>Base Topic</em>}</li>
  * </ul>
  *
  * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI()
@@ -121,5 +122,27 @@ public interface AsyncAPI extends EObject
 	 * @generated
 	 */
   void setComponents(Components value);
+
+  /**
+	 * Returns the value of the '<em><b>Base Topic</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Base Topic</em>' attribute.
+	 * @see #setBaseTopic(String)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_BaseTopic()
+	 * @model
+	 * @generated
+	 */
+  String getBaseTopic();
+
+  /**
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getBaseTopic <em>Base Topic</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Base Topic</em>' attribute.
+	 * @see #getBaseTopic()
+	 * @generated
+	 */
+  void setBaseTopic(String value);
 
 } // AsyncAPI

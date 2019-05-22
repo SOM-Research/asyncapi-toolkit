@@ -6,14 +6,22 @@ package io.github.abelgomez.asyncapi.asyncApi.impl;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
 import io.github.abelgomez.asyncapi.asyncApi.Message;
+import io.github.abelgomez.asyncapi.asyncApi.Tag;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +33,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl#getSummary <em>Summary</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl#getDeprecated <em>Deprecated</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl#getHeaders <em>Headers</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl#getTags <em>Tags</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl#getPayload <em>Payload</em>}</li>
  * </ul>
  *
@@ -74,6 +84,26 @@ public class MessageImpl extends AbstractMessageImpl implements Message
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
+	 * The default value of the '{@link #getDeprecated() <em>Deprecated</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getDeprecated()
+	 * @generated
+	 * @ordered
+	 */
+  protected static final io.github.abelgomez.asyncapi.asyncApi.Boolean DEPRECATED_EDEFAULT = io.github.abelgomez.asyncapi.asyncApi.Boolean._TRUE;
+
+  /**
+	 * The cached value of the '{@link #getDeprecated() <em>Deprecated</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getDeprecated()
+	 * @generated
+	 * @ordered
+	 */
+  protected io.github.abelgomez.asyncapi.asyncApi.Boolean deprecated = DEPRECATED_EDEFAULT;
+
+  /**
 	 * The cached value of the '{@link #getHeaders() <em>Headers</em>}' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -82,6 +112,16 @@ public class MessageImpl extends AbstractMessageImpl implements Message
 	 * @ordered
 	 */
   protected AbstractSchema headers;
+
+  /**
+	 * The cached value of the '{@link #getTags() <em>Tags</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getTags()
+	 * @generated
+	 * @ordered
+	 */
+  protected EList<Tag> tags;
 
   /**
 	 * The cached value of the '{@link #getPayload() <em>Payload</em>}' containment reference.
@@ -170,6 +210,31 @@ public class MessageImpl extends AbstractMessageImpl implements Message
 	 * @generated
 	 */
   @Override
+  public io.github.abelgomez.asyncapi.asyncApi.Boolean getDeprecated()
+  {
+		return deprecated;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public void setDeprecated(io.github.abelgomez.asyncapi.asyncApi.Boolean newDeprecated)
+  {
+		io.github.abelgomez.asyncapi.asyncApi.Boolean oldDeprecated = deprecated;
+		deprecated = newDeprecated == null ? DEPRECATED_EDEFAULT : newDeprecated;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__DEPRECATED, oldDeprecated, deprecated));
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
   public AbstractSchema getHeaders()
   {
 		return headers;
@@ -210,6 +275,20 @@ public class MessageImpl extends AbstractMessageImpl implements Message
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__HEADERS, newHeaders, newHeaders));
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public EList<Tag> getTags()
+  {
+		if (tags == null) {
+			tags = new EObjectContainmentEList<Tag>(Tag.class, this, AsyncApiPackage.MESSAGE__TAGS);
+		}
+		return tags;
 	}
 
   /**
@@ -271,6 +350,8 @@ public class MessageImpl extends AbstractMessageImpl implements Message
 		switch (featureID) {
 			case AsyncApiPackage.MESSAGE__HEADERS:
 				return basicSetHeaders(null, msgs);
+			case AsyncApiPackage.MESSAGE__TAGS:
+				return ((InternalEList<?>)getTags()).basicRemove(otherEnd, msgs);
 			case AsyncApiPackage.MESSAGE__PAYLOAD:
 				return basicSetPayload(null, msgs);
 		}
@@ -290,8 +371,12 @@ public class MessageImpl extends AbstractMessageImpl implements Message
 				return getSummary();
 			case AsyncApiPackage.MESSAGE__DESCRIPTION:
 				return getDescription();
+			case AsyncApiPackage.MESSAGE__DEPRECATED:
+				return getDeprecated();
 			case AsyncApiPackage.MESSAGE__HEADERS:
 				return getHeaders();
+			case AsyncApiPackage.MESSAGE__TAGS:
+				return getTags();
 			case AsyncApiPackage.MESSAGE__PAYLOAD:
 				return getPayload();
 		}
@@ -303,6 +388,7 @@ public class MessageImpl extends AbstractMessageImpl implements Message
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -313,8 +399,15 @@ public class MessageImpl extends AbstractMessageImpl implements Message
 			case AsyncApiPackage.MESSAGE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
+			case AsyncApiPackage.MESSAGE__DEPRECATED:
+				setDeprecated((io.github.abelgomez.asyncapi.asyncApi.Boolean)newValue);
+				return;
 			case AsyncApiPackage.MESSAGE__HEADERS:
 				setHeaders((AbstractSchema)newValue);
+				return;
+			case AsyncApiPackage.MESSAGE__TAGS:
+				getTags().clear();
+				getTags().addAll((Collection<? extends Tag>)newValue);
 				return;
 			case AsyncApiPackage.MESSAGE__PAYLOAD:
 				setPayload((AbstractSchema)newValue);
@@ -338,8 +431,14 @@ public class MessageImpl extends AbstractMessageImpl implements Message
 			case AsyncApiPackage.MESSAGE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
+			case AsyncApiPackage.MESSAGE__DEPRECATED:
+				setDeprecated(DEPRECATED_EDEFAULT);
+				return;
 			case AsyncApiPackage.MESSAGE__HEADERS:
 				setHeaders((AbstractSchema)null);
+				return;
+			case AsyncApiPackage.MESSAGE__TAGS:
+				getTags().clear();
 				return;
 			case AsyncApiPackage.MESSAGE__PAYLOAD:
 				setPayload((AbstractSchema)null);
@@ -361,8 +460,12 @@ public class MessageImpl extends AbstractMessageImpl implements Message
 				return SUMMARY_EDEFAULT == null ? summary != null : !SUMMARY_EDEFAULT.equals(summary);
 			case AsyncApiPackage.MESSAGE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case AsyncApiPackage.MESSAGE__DEPRECATED:
+				return deprecated != DEPRECATED_EDEFAULT;
 			case AsyncApiPackage.MESSAGE__HEADERS:
 				return headers != null;
+			case AsyncApiPackage.MESSAGE__TAGS:
+				return tags != null && !tags.isEmpty();
 			case AsyncApiPackage.MESSAGE__PAYLOAD:
 				return payload != null;
 		}
@@ -384,6 +487,8 @@ public class MessageImpl extends AbstractMessageImpl implements Message
 		result.append(summary);
 		result.append(", description: ");
 		result.append(description);
+		result.append(", deprecated: ");
+		result.append(deprecated);
 		result.append(')');
 		return result.toString();
 	}

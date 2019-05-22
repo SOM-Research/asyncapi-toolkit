@@ -25,6 +25,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_AsyncAPI_CommaKeyword_2_2_6_q;
 	protected AbstractElementAlias match_AsyncAPI_CommaKeyword_2_3_6_q;
 	protected AbstractElementAlias match_AsyncAPI_CommaKeyword_2_4_3_q;
+	protected AbstractElementAlias match_AsyncAPI_CommaKeyword_2_5_3_q;
 	protected AbstractElementAlias match_Components_CommaKeyword_2_0_6_q;
 	protected AbstractElementAlias match_Components_CommaKeyword_2_1_6_q;
 	protected AbstractElementAlias match_Contact_CommaKeyword_2_0_3_q;
@@ -42,7 +43,10 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Message_CommaKeyword_2_1_3_q;
 	protected AbstractElementAlias match_Message_CommaKeyword_2_2_3_q;
 	protected AbstractElementAlias match_Message_CommaKeyword_2_3_3_q;
+	protected AbstractElementAlias match_Message_CommaKeyword_2_4_6_q;
+	protected AbstractElementAlias match_Message_CommaKeyword_2_5_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_0_3_q;
+	protected AbstractElementAlias match_Schema_CommaKeyword_2_10_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_1_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_2_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_3_3_q;
@@ -50,9 +54,13 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_5_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_6_6_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_7_6_q;
+	protected AbstractElementAlias match_Schema_CommaKeyword_2_8_3_q;
+	protected AbstractElementAlias match_Schema_CommaKeyword_2_9_6_q;
 	protected AbstractElementAlias match_Server_CommaKeyword_2_0_3_q;
 	protected AbstractElementAlias match_Server_CommaKeyword_2_1_3_q;
 	protected AbstractElementAlias match_Server_CommaKeyword_2_3_6_q;
+	protected AbstractElementAlias match_Tag_CommaKeyword_2_0_3_q;
+	protected AbstractElementAlias match_Tag_CommaKeyword_2_1_3_q;
 	protected AbstractElementAlias match_Topic_CommaKeyword_4_0_3_q;
 	protected AbstractElementAlias match_Topic_CommaKeyword_4_1_3_q;
 	protected AbstractElementAlias match_Variable_CommaKeyword_4_0_3_q;
@@ -67,6 +75,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_AsyncAPI_CommaKeyword_2_2_6_q = new TokenAlias(false, true, grammarAccess.getAsyncAPIAccess().getCommaKeyword_2_2_6());
 		match_AsyncAPI_CommaKeyword_2_3_6_q = new TokenAlias(false, true, grammarAccess.getAsyncAPIAccess().getCommaKeyword_2_3_6());
 		match_AsyncAPI_CommaKeyword_2_4_3_q = new TokenAlias(false, true, grammarAccess.getAsyncAPIAccess().getCommaKeyword_2_4_3());
+		match_AsyncAPI_CommaKeyword_2_5_3_q = new TokenAlias(false, true, grammarAccess.getAsyncAPIAccess().getCommaKeyword_2_5_3());
 		match_Components_CommaKeyword_2_0_6_q = new TokenAlias(false, true, grammarAccess.getComponentsAccess().getCommaKeyword_2_0_6());
 		match_Components_CommaKeyword_2_1_6_q = new TokenAlias(false, true, grammarAccess.getComponentsAccess().getCommaKeyword_2_1_6());
 		match_Contact_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getContactAccess().getCommaKeyword_2_0_3());
@@ -84,7 +93,10 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Message_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getMessageAccess().getCommaKeyword_2_1_3());
 		match_Message_CommaKeyword_2_2_3_q = new TokenAlias(false, true, grammarAccess.getMessageAccess().getCommaKeyword_2_2_3());
 		match_Message_CommaKeyword_2_3_3_q = new TokenAlias(false, true, grammarAccess.getMessageAccess().getCommaKeyword_2_3_3());
+		match_Message_CommaKeyword_2_4_6_q = new TokenAlias(false, true, grammarAccess.getMessageAccess().getCommaKeyword_2_4_6());
+		match_Message_CommaKeyword_2_5_3_q = new TokenAlias(false, true, grammarAccess.getMessageAccess().getCommaKeyword_2_5_3());
 		match_Schema_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_0_3());
+		match_Schema_CommaKeyword_2_10_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_10_3());
 		match_Schema_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_1_3());
 		match_Schema_CommaKeyword_2_2_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_2_3());
 		match_Schema_CommaKeyword_2_3_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_3_3());
@@ -92,9 +104,13 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Schema_CommaKeyword_2_5_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_5_3());
 		match_Schema_CommaKeyword_2_6_6_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_6_6());
 		match_Schema_CommaKeyword_2_7_6_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_7_6());
+		match_Schema_CommaKeyword_2_8_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_8_3());
+		match_Schema_CommaKeyword_2_9_6_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_9_6());
 		match_Server_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_2_0_3());
 		match_Server_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_2_1_3());
 		match_Server_CommaKeyword_2_3_6_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_2_3_6());
+		match_Tag_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getTagAccess().getCommaKeyword_2_0_3());
+		match_Tag_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getTagAccess().getCommaKeyword_2_1_3());
 		match_Topic_CommaKeyword_4_0_3_q = new TokenAlias(false, true, grammarAccess.getTopicAccess().getCommaKeyword_4_0_3());
 		match_Topic_CommaKeyword_4_1_3_q = new TokenAlias(false, true, grammarAccess.getTopicAccess().getCommaKeyword_4_1_3());
 		match_Variable_CommaKeyword_4_0_3_q = new TokenAlias(false, true, grammarAccess.getVariableAccess().getCommaKeyword_4_0_3());
@@ -124,6 +140,8 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_AsyncAPI_CommaKeyword_2_3_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_AsyncAPI_CommaKeyword_2_4_3_q.equals(syntax))
 				emit_AsyncAPI_CommaKeyword_2_4_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_AsyncAPI_CommaKeyword_2_5_3_q.equals(syntax))
+				emit_AsyncAPI_CommaKeyword_2_5_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Components_CommaKeyword_2_0_6_q.equals(syntax))
 				emit_Components_CommaKeyword_2_0_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Components_CommaKeyword_2_1_6_q.equals(syntax))
@@ -158,8 +176,14 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Message_CommaKeyword_2_2_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Message_CommaKeyword_2_3_3_q.equals(syntax))
 				emit_Message_CommaKeyword_2_3_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Message_CommaKeyword_2_4_6_q.equals(syntax))
+				emit_Message_CommaKeyword_2_4_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Message_CommaKeyword_2_5_3_q.equals(syntax))
+				emit_Message_CommaKeyword_2_5_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Schema_CommaKeyword_2_0_3_q.equals(syntax))
 				emit_Schema_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Schema_CommaKeyword_2_10_3_q.equals(syntax))
+				emit_Schema_CommaKeyword_2_10_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Schema_CommaKeyword_2_1_3_q.equals(syntax))
 				emit_Schema_CommaKeyword_2_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Schema_CommaKeyword_2_2_3_q.equals(syntax))
@@ -174,12 +198,20 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Schema_CommaKeyword_2_6_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Schema_CommaKeyword_2_7_6_q.equals(syntax))
 				emit_Schema_CommaKeyword_2_7_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Schema_CommaKeyword_2_8_3_q.equals(syntax))
+				emit_Schema_CommaKeyword_2_8_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Schema_CommaKeyword_2_9_6_q.equals(syntax))
+				emit_Schema_CommaKeyword_2_9_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Server_CommaKeyword_2_0_3_q.equals(syntax))
 				emit_Server_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Server_CommaKeyword_2_1_3_q.equals(syntax))
 				emit_Server_CommaKeyword_2_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Server_CommaKeyword_2_3_6_q.equals(syntax))
 				emit_Server_CommaKeyword_2_3_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Tag_CommaKeyword_2_0_3_q.equals(syntax))
+				emit_Tag_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Tag_CommaKeyword_2_1_3_q.equals(syntax))
+				emit_Tag_CommaKeyword_2_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Topic_CommaKeyword_4_0_3_q.equals(syntax))
 				emit_Topic_CommaKeyword_4_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Topic_CommaKeyword_4_1_3_q.equals(syntax))
@@ -200,6 +232,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     version=VersionNumber (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     version=VersionNumber (ambiguity) '"baseTopic"' ':' baseTopic=STRING
 	 *     version=VersionNumber (ambiguity) '"components"' ':' components=Components
 	 *     version=VersionNumber (ambiguity) '"info"' ':' info=Info
 	 *     version=VersionNumber (ambiguity) '"servers"' ':' '[' servers+=Server
@@ -216,6 +249,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     info=Info (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     info=Info (ambiguity) '"baseTopic"' ':' baseTopic=STRING
 	 *     info=Info (ambiguity) '"components"' ':' components=Components
 	 *     info=Info (ambiguity) '"info"' ':' info=Info
 	 *     info=Info (ambiguity) '"servers"' ':' '[' servers+=Server
@@ -232,6 +266,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     servers+=Server ']' (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     servers+=Server ']' (ambiguity) '"baseTopic"' ':' baseTopic=STRING
 	 *     servers+=Server ']' (ambiguity) '"components"' ':' components=Components
 	 *     servers+=Server ']' (ambiguity) '"info"' ':' info=Info
 	 *     servers+=Server ']' (ambiguity) '"servers"' ':' '[' servers+=Server
@@ -248,6 +283,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     topics+=Topic '}' (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     topics+=Topic '}' (ambiguity) '"baseTopic"' ':' baseTopic=STRING
 	 *     topics+=Topic '}' (ambiguity) '"components"' ':' components=Components
 	 *     topics+=Topic '}' (ambiguity) '"info"' ':' info=Info
 	 *     topics+=Topic '}' (ambiguity) '"servers"' ':' '[' servers+=Server
@@ -264,6 +300,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     components=Components (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     components=Components (ambiguity) '"baseTopic"' ':' baseTopic=STRING
 	 *     components=Components (ambiguity) '"components"' ':' components=Components
 	 *     components=Components (ambiguity) '"info"' ':' info=Info
 	 *     components=Components (ambiguity) '"servers"' ':' '[' servers+=Server
@@ -271,6 +308,23 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     components=Components (ambiguity) '}' (rule end)
 	 */
 	protected void emit_AsyncAPI_CommaKeyword_2_4_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     baseTopic=STRING (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     baseTopic=STRING (ambiguity) '"baseTopic"' ':' baseTopic=STRING
+	 *     baseTopic=STRING (ambiguity) '"components"' ':' components=Components
+	 *     baseTopic=STRING (ambiguity) '"info"' ':' info=Info
+	 *     baseTopic=STRING (ambiguity) '"servers"' ':' '[' servers+=Server
+	 *     baseTopic=STRING (ambiguity) '"topics"' ':' '{' topics+=Topic
+	 *     baseTopic=STRING (ambiguity) '}' (rule end)
+	 */
+	protected void emit_AsyncAPI_CommaKeyword_2_5_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -475,10 +529,12 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     summary=STRING (ambiguity) '"deprecated"' ':' deprecated=Boolean
 	 *     summary=STRING (ambiguity) '"description"' ':' description=STRING
 	 *     summary=STRING (ambiguity) '"headers"' ':' headers=AbstractSchema
 	 *     summary=STRING (ambiguity) '"payload"' ':' payload=AbstractSchema
 	 *     summary=STRING (ambiguity) '"summary"' ':' summary=STRING
+	 *     summary=STRING (ambiguity) '"tags"' ':' '[' tags+=Tag
 	 *     summary=STRING (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Message_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -490,10 +546,12 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     description=STRING (ambiguity) '"deprecated"' ':' deprecated=Boolean
 	 *     description=STRING (ambiguity) '"description"' ':' description=STRING
 	 *     description=STRING (ambiguity) '"headers"' ':' headers=AbstractSchema
 	 *     description=STRING (ambiguity) '"payload"' ':' payload=AbstractSchema
 	 *     description=STRING (ambiguity) '"summary"' ':' summary=STRING
+	 *     description=STRING (ambiguity) '"tags"' ':' '[' tags+=Tag
 	 *     description=STRING (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Message_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -505,11 +563,13 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     headers=AbstractSchema (ambiguity) '"description"' ':' description=STRING
-	 *     headers=AbstractSchema (ambiguity) '"headers"' ':' headers=AbstractSchema
-	 *     headers=AbstractSchema (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     headers=AbstractSchema (ambiguity) '"summary"' ':' summary=STRING
-	 *     headers=AbstractSchema (ambiguity) '}' (rule end)
+	 *     deprecated=Boolean (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     deprecated=Boolean (ambiguity) '"description"' ':' description=STRING
+	 *     deprecated=Boolean (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     deprecated=Boolean (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     deprecated=Boolean (ambiguity) '"summary"' ':' summary=STRING
+	 *     deprecated=Boolean (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     deprecated=Boolean (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Message_CommaKeyword_2_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -520,11 +580,13 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     payload=AbstractSchema (ambiguity) '"description"' ':' description=STRING
-	 *     payload=AbstractSchema (ambiguity) '"headers"' ':' headers=AbstractSchema
-	 *     payload=AbstractSchema (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     payload=AbstractSchema (ambiguity) '"summary"' ':' summary=STRING
-	 *     payload=AbstractSchema (ambiguity) '}' (rule end)
+	 *     headers=AbstractSchema (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     headers=AbstractSchema (ambiguity) '"description"' ':' description=STRING
+	 *     headers=AbstractSchema (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     headers=AbstractSchema (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     headers=AbstractSchema (ambiguity) '"summary"' ':' summary=STRING
+	 *     headers=AbstractSchema (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     headers=AbstractSchema (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Message_CommaKeyword_2_3_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -535,14 +597,51 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     title=STRING (ambiguity) '"default"' ':' default=STRING
+	 *     tags+=Tag ']' (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     tags+=Tag ']' (ambiguity) '"description"' ':' description=STRING
+	 *     tags+=Tag ']' (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     tags+=Tag ']' (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     tags+=Tag ']' (ambiguity) '"summary"' ':' summary=STRING
+	 *     tags+=Tag ']' (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     tags+=Tag ']' (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Message_CommaKeyword_2_4_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     payload=AbstractSchema (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     payload=AbstractSchema (ambiguity) '"description"' ':' description=STRING
+	 *     payload=AbstractSchema (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     payload=AbstractSchema (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     payload=AbstractSchema (ambiguity) '"summary"' ':' summary=STRING
+	 *     payload=AbstractSchema (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     payload=AbstractSchema (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Message_CommaKeyword_2_5_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     title=STRING (ambiguity) '"default"' ':' default=PrimitiveValue
 	 *     title=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     title=STRING (ambiguity) '"enum"' ':' '[' enum+=STRING
+	 *     title=STRING (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
 	 *     title=STRING (ambiguity) '"format"' ':' format=STRING
+	 *     title=STRING (ambiguity) '"items"' ':' items=AbstractSchema
 	 *     title=STRING (ambiguity) '"payload"' ':' payload=AbstractSchema
 	 *     title=STRING (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     title=STRING (ambiguity) '"required"' ':' '[' required+=STRING
 	 *     title=STRING (ambiguity) '"title"' ':' title=STRING
 	 *     title=STRING (ambiguity) '"type"' ':' type=STRING
+	 *     title=STRING (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
 	 *     title=STRING (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Schema_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -554,14 +653,39 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     type=STRING (ambiguity) '"default"' ':' default=STRING
+	 *     friendlyName=STRING (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     friendlyName=STRING (ambiguity) '"description"' ':' description=STRING
+	 *     friendlyName=STRING (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     friendlyName=STRING (ambiguity) '"format"' ':' format=STRING
+	 *     friendlyName=STRING (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     friendlyName=STRING (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     friendlyName=STRING (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     friendlyName=STRING (ambiguity) '"required"' ':' '[' required+=STRING
+	 *     friendlyName=STRING (ambiguity) '"title"' ':' title=STRING
+	 *     friendlyName=STRING (ambiguity) '"type"' ':' type=STRING
+	 *     friendlyName=STRING (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
+	 *     friendlyName=STRING (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Schema_CommaKeyword_2_10_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     type=STRING (ambiguity) '"default"' ':' default=PrimitiveValue
 	 *     type=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     type=STRING (ambiguity) '"enum"' ':' '[' enum+=STRING
+	 *     type=STRING (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
 	 *     type=STRING (ambiguity) '"format"' ':' format=STRING
+	 *     type=STRING (ambiguity) '"items"' ':' items=AbstractSchema
 	 *     type=STRING (ambiguity) '"payload"' ':' payload=AbstractSchema
 	 *     type=STRING (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     type=STRING (ambiguity) '"required"' ':' '[' required+=STRING
 	 *     type=STRING (ambiguity) '"title"' ':' title=STRING
 	 *     type=STRING (ambiguity) '"type"' ':' type=STRING
+	 *     type=STRING (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
 	 *     type=STRING (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Schema_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -573,14 +697,17 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     description=STRING (ambiguity) '"default"' ':' default=STRING
+	 *     description=STRING (ambiguity) '"default"' ':' default=PrimitiveValue
 	 *     description=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     description=STRING (ambiguity) '"enum"' ':' '[' enum+=STRING
+	 *     description=STRING (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
 	 *     description=STRING (ambiguity) '"format"' ':' format=STRING
+	 *     description=STRING (ambiguity) '"items"' ':' items=AbstractSchema
 	 *     description=STRING (ambiguity) '"payload"' ':' payload=AbstractSchema
 	 *     description=STRING (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     description=STRING (ambiguity) '"required"' ':' '[' required+=STRING
 	 *     description=STRING (ambiguity) '"title"' ':' title=STRING
 	 *     description=STRING (ambiguity) '"type"' ':' type=STRING
+	 *     description=STRING (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
 	 *     description=STRING (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Schema_CommaKeyword_2_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -592,14 +719,17 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     format=STRING (ambiguity) '"default"' ':' default=STRING
+	 *     format=STRING (ambiguity) '"default"' ':' default=PrimitiveValue
 	 *     format=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     format=STRING (ambiguity) '"enum"' ':' '[' enum+=STRING
+	 *     format=STRING (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
 	 *     format=STRING (ambiguity) '"format"' ':' format=STRING
+	 *     format=STRING (ambiguity) '"items"' ':' items=AbstractSchema
 	 *     format=STRING (ambiguity) '"payload"' ':' payload=AbstractSchema
 	 *     format=STRING (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     format=STRING (ambiguity) '"required"' ':' '[' required+=STRING
 	 *     format=STRING (ambiguity) '"title"' ':' title=STRING
 	 *     format=STRING (ambiguity) '"type"' ':' type=STRING
+	 *     format=STRING (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
 	 *     format=STRING (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Schema_CommaKeyword_2_3_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -611,15 +741,18 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     default=STRING (ambiguity) '"default"' ':' default=STRING
-	 *     default=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     default=STRING (ambiguity) '"enum"' ':' '[' enum+=STRING
-	 *     default=STRING (ambiguity) '"format"' ':' format=STRING
-	 *     default=STRING (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     default=STRING (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
-	 *     default=STRING (ambiguity) '"title"' ':' title=STRING
-	 *     default=STRING (ambiguity) '"type"' ':' type=STRING
-	 *     default=STRING (ambiguity) '}' (rule end)
+	 *     default=PrimitiveValue (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     default=PrimitiveValue (ambiguity) '"description"' ':' description=STRING
+	 *     default=PrimitiveValue (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     default=PrimitiveValue (ambiguity) '"format"' ':' format=STRING
+	 *     default=PrimitiveValue (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     default=PrimitiveValue (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     default=PrimitiveValue (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     default=PrimitiveValue (ambiguity) '"required"' ':' '[' required+=STRING
+	 *     default=PrimitiveValue (ambiguity) '"title"' ':' title=STRING
+	 *     default=PrimitiveValue (ambiguity) '"type"' ':' type=STRING
+	 *     default=PrimitiveValue (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
+	 *     default=PrimitiveValue (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Schema_CommaKeyword_2_4_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -630,14 +763,17 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     payload=AbstractSchema (ambiguity) '"default"' ':' default=STRING
+	 *     payload=AbstractSchema (ambiguity) '"default"' ':' default=PrimitiveValue
 	 *     payload=AbstractSchema (ambiguity) '"description"' ':' description=STRING
-	 *     payload=AbstractSchema (ambiguity) '"enum"' ':' '[' enum+=STRING
+	 *     payload=AbstractSchema (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
 	 *     payload=AbstractSchema (ambiguity) '"format"' ':' format=STRING
+	 *     payload=AbstractSchema (ambiguity) '"items"' ':' items=AbstractSchema
 	 *     payload=AbstractSchema (ambiguity) '"payload"' ':' payload=AbstractSchema
 	 *     payload=AbstractSchema (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     payload=AbstractSchema (ambiguity) '"required"' ':' '[' required+=STRING
 	 *     payload=AbstractSchema (ambiguity) '"title"' ':' title=STRING
 	 *     payload=AbstractSchema (ambiguity) '"type"' ':' type=STRING
+	 *     payload=AbstractSchema (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
 	 *     payload=AbstractSchema (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Schema_CommaKeyword_2_5_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -649,14 +785,17 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     properties+=NamedSchema '}' (ambiguity) '"default"' ':' default=STRING
+	 *     properties+=NamedSchema '}' (ambiguity) '"default"' ':' default=PrimitiveValue
 	 *     properties+=NamedSchema '}' (ambiguity) '"description"' ':' description=STRING
-	 *     properties+=NamedSchema '}' (ambiguity) '"enum"' ':' '[' enum+=STRING
+	 *     properties+=NamedSchema '}' (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
 	 *     properties+=NamedSchema '}' (ambiguity) '"format"' ':' format=STRING
+	 *     properties+=NamedSchema '}' (ambiguity) '"items"' ':' items=AbstractSchema
 	 *     properties+=NamedSchema '}' (ambiguity) '"payload"' ':' payload=AbstractSchema
 	 *     properties+=NamedSchema '}' (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     properties+=NamedSchema '}' (ambiguity) '"required"' ':' '[' required+=STRING
 	 *     properties+=NamedSchema '}' (ambiguity) '"title"' ':' title=STRING
 	 *     properties+=NamedSchema '}' (ambiguity) '"type"' ':' type=STRING
+	 *     properties+=NamedSchema '}' (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
 	 *     properties+=NamedSchema '}' (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Schema_CommaKeyword_2_6_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -668,17 +807,64 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     enum+=STRING ']' (ambiguity) '"default"' ':' default=STRING
-	 *     enum+=STRING ']' (ambiguity) '"description"' ':' description=STRING
-	 *     enum+=STRING ']' (ambiguity) '"enum"' ':' '[' enum+=STRING
-	 *     enum+=STRING ']' (ambiguity) '"format"' ':' format=STRING
-	 *     enum+=STRING ']' (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     enum+=STRING ']' (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
-	 *     enum+=STRING ']' (ambiguity) '"title"' ':' title=STRING
-	 *     enum+=STRING ']' (ambiguity) '"type"' ':' type=STRING
-	 *     enum+=STRING ']' (ambiguity) '}' (rule end)
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"description"' ':' description=STRING
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"format"' ':' format=STRING
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"required"' ':' '[' required+=STRING
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"title"' ':' title=STRING
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"type"' ':' type=STRING
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
+	 *     enum+=PrimitiveValue ']' (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Schema_CommaKeyword_2_7_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     items=AbstractSchema (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     items=AbstractSchema (ambiguity) '"description"' ':' description=STRING
+	 *     items=AbstractSchema (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     items=AbstractSchema (ambiguity) '"format"' ':' format=STRING
+	 *     items=AbstractSchema (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     items=AbstractSchema (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     items=AbstractSchema (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     items=AbstractSchema (ambiguity) '"required"' ':' '[' required+=STRING
+	 *     items=AbstractSchema (ambiguity) '"title"' ':' title=STRING
+	 *     items=AbstractSchema (ambiguity) '"type"' ':' type=STRING
+	 *     items=AbstractSchema (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
+	 *     items=AbstractSchema (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Schema_CommaKeyword_2_8_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     required+=STRING ']' (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     required+=STRING ']' (ambiguity) '"description"' ':' description=STRING
+	 *     required+=STRING ']' (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     required+=STRING ']' (ambiguity) '"format"' ':' format=STRING
+	 *     required+=STRING ']' (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     required+=STRING ']' (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     required+=STRING ']' (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     required+=STRING ']' (ambiguity) '"required"' ':' '[' required+=STRING
+	 *     required+=STRING ']' (ambiguity) '"title"' ':' title=STRING
+	 *     required+=STRING ']' (ambiguity) '"type"' ':' type=STRING
+	 *     required+=STRING ']' (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
+	 *     required+=STRING ']' (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Schema_CommaKeyword_2_9_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -724,6 +910,32 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     variables+=Variable '}' (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Server_CommaKeyword_2_3_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=STRING (ambiguity) '"description"' ':' description=STRING
+	 *     name=STRING (ambiguity) '"name"' ':' name=STRING
+	 *     name=STRING (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Tag_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     description=STRING (ambiguity) '"description"' ':' description=STRING
+	 *     description=STRING (ambiguity) '"name"' ':' name=STRING
+	 *     description=STRING (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Tag_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

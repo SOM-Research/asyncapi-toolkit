@@ -16,6 +16,7 @@ import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
 import io.github.abelgomez.asyncapi.asyncApi.Reference;
 import io.github.abelgomez.asyncapi.asyncApi.Schema;
 import io.github.abelgomez.asyncapi.asyncApi.Server;
+import io.github.abelgomez.asyncapi.asyncApi.Tag;
 import io.github.abelgomez.asyncapi.asyncApi.Topic;
 import io.github.abelgomez.asyncapi.asyncApi.Variable;
 import io.github.abelgomez.asyncapi.services.AsyncApiGrammarAccess;
@@ -77,6 +78,9 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case AsyncApiPackage.SERVER:
 				sequence_Server(context, (Server) semanticObject); 
 				return; 
+			case AsyncApiPackage.TAG:
+				sequence_Tag(context, (Tag) semanticObject); 
+				return; 
 			case AsyncApiPackage.TOPIC:
 				sequence_Topic(context, (Topic) semanticObject); 
 				return; 
@@ -93,7 +97,11 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     AsyncAPI returns AsyncAPI
 	 *
 	 * Constraint:
-	 *     ((version=VersionNumber | info=Info | components=Components)? (servers+=Server servers+=Server*)? (topics+=Topic topics+=Topic*)?)+
+	 *     (
+	 *         (version=VersionNumber | info=Info | components=Components | baseTopic=STRING)? 
+	 *         (servers+=Server servers+=Server*)? 
+	 *         (topics+=Topic topics+=Topic*)?
+	 *     )+
 	 */
 	protected void sequence_AsyncAPI(ISerializationContext context, AsyncAPI semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -161,7 +169,7 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Message returns Message
 	 *
 	 * Constraint:
-	 *     (summary=STRING | description=STRING | headers=AbstractSchema | payload=AbstractSchema)*
+	 *     ((summary=STRING | description=STRING | deprecated=Boolean | headers=AbstractSchema | payload=AbstractSchema)? (tags+=Tag tags+=Tag*)?)+
 	 */
 	protected void sequence_Message(ISerializationContext context, Message semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -236,11 +244,14 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *             type=STRING | 
 	 *             description=STRING | 
 	 *             format=STRING | 
-	 *             default=STRING | 
-	 *             payload=AbstractSchema
+	 *             default=PrimitiveValue | 
+	 *             payload=AbstractSchema | 
+	 *             items=AbstractSchema | 
+	 *             friendlyName=STRING
 	 *         )? 
 	 *         (properties+=NamedSchema properties+=NamedSchema*)? 
-	 *         (enum+=STRING enum+=STRING*)?
+	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)? 
+	 *         (required+=STRING required+=STRING*)?
 	 *     )+
 	 */
 	protected void sequence_Schema(ISerializationContext context, Schema semanticObject) {
@@ -256,6 +267,18 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     ((title=STRING | scheme=Scheme | description=STRING)? (variables+=Variable variables+=Variable*)?)+
 	 */
 	protected void sequence_Server(ISerializationContext context, Server semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Tag returns Tag
+	 *
+	 * Constraint:
+	 *     (name=STRING | description=STRING)*
+	 */
+	protected void sequence_Tag(ISerializationContext context, Tag semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -3,7 +3,23 @@
  */
 package io.github.abelgomez.asyncapi.asyncApi.util;
 
-import io.github.abelgomez.asyncapi.asyncApi.*;
+import io.github.abelgomez.asyncapi.asyncApi.AbstractMessage;
+import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema;
+import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI;
+import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
+import io.github.abelgomez.asyncapi.asyncApi.Components;
+import io.github.abelgomez.asyncapi.asyncApi.Contact;
+import io.github.abelgomez.asyncapi.asyncApi.Info;
+import io.github.abelgomez.asyncapi.asyncApi.License;
+import io.github.abelgomez.asyncapi.asyncApi.Message;
+import io.github.abelgomez.asyncapi.asyncApi.NamedMessage;
+import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
+import io.github.abelgomez.asyncapi.asyncApi.Reference;
+import io.github.abelgomez.asyncapi.asyncApi.Schema;
+import io.github.abelgomez.asyncapi.asyncApi.Server;
+import io.github.abelgomez.asyncapi.asyncApi.Tag;
+import io.github.abelgomez.asyncapi.asyncApi.Topic;
+import io.github.abelgomez.asyncapi.asyncApi.Variable;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -110,6 +126,10 @@ public class AsyncApiAdapterFactory extends AdapterFactoryImpl
 			@Override
 			public Adapter caseNamedMessage(NamedMessage object) {
 				return createNamedMessageAdapter();
+			}
+			@Override
+			public Adapter caseTag(Tag object) {
+				return createTagAdapter();
 			}
 			@Override
 			public Adapter caseAbstractSchema(AbstractSchema object) {
@@ -298,6 +318,21 @@ public class AsyncApiAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
   public Adapter createNamedMessageAdapter()
+  {
+		return null;
+	}
+
+  /**
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Tag <em>Tag</em>}'.
+	 * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Tag
+	 * @generated
+	 */
+  public Adapter createTagAdapter()
   {
 		return null;
 	}

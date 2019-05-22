@@ -114,6 +114,15 @@ public interface AsyncApiFactory extends EFactory
   NamedMessage createNamedMessage();
 
   /**
+	 * Returns a new object of class '<em>Tag</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Tag</em>'.
+	 * @generated
+	 */
+  Tag createTag();
+
+  /**
 	 * Returns a new object of class '<em>Abstract Schema</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

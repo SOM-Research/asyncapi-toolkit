@@ -3,7 +3,26 @@
  */
 package io.github.abelgomez.asyncapi.asyncApi.impl;
 
-import io.github.abelgomez.asyncapi.asyncApi.*;
+import io.github.abelgomez.asyncapi.asyncApi.AbstractMessage;
+import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema;
+import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI;
+import io.github.abelgomez.asyncapi.asyncApi.AsyncApiFactory;
+import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
+import io.github.abelgomez.asyncapi.asyncApi.Components;
+import io.github.abelgomez.asyncapi.asyncApi.Contact;
+import io.github.abelgomez.asyncapi.asyncApi.Info;
+import io.github.abelgomez.asyncapi.asyncApi.License;
+import io.github.abelgomez.asyncapi.asyncApi.Message;
+import io.github.abelgomez.asyncapi.asyncApi.NamedMessage;
+import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
+import io.github.abelgomez.asyncapi.asyncApi.Reference;
+import io.github.abelgomez.asyncapi.asyncApi.Schema;
+import io.github.abelgomez.asyncapi.asyncApi.Scheme;
+import io.github.abelgomez.asyncapi.asyncApi.Server;
+import io.github.abelgomez.asyncapi.asyncApi.Tag;
+import io.github.abelgomez.asyncapi.asyncApi.Topic;
+import io.github.abelgomez.asyncapi.asyncApi.Variable;
+import io.github.abelgomez.asyncapi.asyncApi.VersionNumber;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -72,6 +91,7 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
 			case AsyncApiPackage.ABSTRACT_MESSAGE: return createAbstractMessage();
 			case AsyncApiPackage.MESSAGE: return createMessage();
 			case AsyncApiPackage.NAMED_MESSAGE: return createNamedMessage();
+			case AsyncApiPackage.TAG: return createTag();
 			case AsyncApiPackage.ABSTRACT_SCHEMA: return createAbstractSchema();
 			case AsyncApiPackage.SCHEMA: return createSchema();
 			case AsyncApiPackage.NAMED_SCHEMA: return createNamedSchema();
@@ -91,6 +111,8 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
   public Object createFromString(EDataType eDataType, String initialValue)
   {
 		switch (eDataType.getClassifierID()) {
+			case AsyncApiPackage.BOOLEAN:
+				return createBooleanFromString(eDataType, initialValue);
 			case AsyncApiPackage.VERSION_NUMBER:
 				return createVersionNumberFromString(eDataType, initialValue);
 			case AsyncApiPackage.SCHEME:
@@ -109,6 +131,8 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
   public String convertToString(EDataType eDataType, Object instanceValue)
   {
 		switch (eDataType.getClassifierID()) {
+			case AsyncApiPackage.BOOLEAN:
+				return convertBooleanToString(eDataType, instanceValue);
 			case AsyncApiPackage.VERSION_NUMBER:
 				return convertVersionNumberToString(eDataType, instanceValue);
 			case AsyncApiPackage.SCHEME:
@@ -244,6 +268,18 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
 	 * @generated
 	 */
   @Override
+  public Tag createTag()
+  {
+		TagImpl tag = new TagImpl();
+		return tag;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
   public AbstractSchema createAbstractSchema()
   {
 		AbstractSchemaImpl abstractSchema = new AbstractSchemaImpl();
@@ -296,6 +332,28 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
   {
 		ReferenceImpl reference = new ReferenceImpl();
 		return reference;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public io.github.abelgomez.asyncapi.asyncApi.Boolean createBooleanFromString(EDataType eDataType, String initialValue)
+  {
+		io.github.abelgomez.asyncapi.asyncApi.Boolean result = io.github.abelgomez.asyncapi.asyncApi.Boolean.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public String convertBooleanToString(EDataType eDataType, Object instanceValue)
+  {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
   /**

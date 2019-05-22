@@ -11,6 +11,7 @@
         eType="#//Topic" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" eType="#//Components"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseTopic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Info">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -56,7 +57,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="#//AbstractMessage">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="summary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deprecated" eType="#//Boolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="headers" eType="#//AbstractSchema"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tags" upperBound="-1" eType="#//Tag"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="payload" eType="#//AbstractSchema"
         containment="true"/>
@@ -65,6 +69,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="#//AbstractMessage"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tag">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractSchema"/>
   <eClassifiers xsi:type="ecore:EClass" name="Schema" eSuperTypes="#//AbstractSchema">
@@ -79,6 +87,11 @@
         eType="#//NamedSchema" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="enum" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" eType="#//AbstractSchema"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="friendlyName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NamedSchema">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -94,6 +107,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="#//AbstractMessage #//AbstractSchema">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="refname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Boolean">
+    <eLiterals name="_true" literal="true"/>
+    <eLiterals name="_false" value="1" literal="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="VersionNumber">
     <eLiterals name="_100" literal="&quot;1.0.0&quot;"/>

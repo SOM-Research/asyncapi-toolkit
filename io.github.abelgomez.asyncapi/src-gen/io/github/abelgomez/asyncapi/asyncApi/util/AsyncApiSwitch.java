@@ -3,7 +3,23 @@
  */
 package io.github.abelgomez.asyncapi.asyncApi.util;
 
-import io.github.abelgomez.asyncapi.asyncApi.*;
+import io.github.abelgomez.asyncapi.asyncApi.AbstractMessage;
+import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema;
+import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI;
+import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
+import io.github.abelgomez.asyncapi.asyncApi.Components;
+import io.github.abelgomez.asyncapi.asyncApi.Contact;
+import io.github.abelgomez.asyncapi.asyncApi.Info;
+import io.github.abelgomez.asyncapi.asyncApi.License;
+import io.github.abelgomez.asyncapi.asyncApi.Message;
+import io.github.abelgomez.asyncapi.asyncApi.NamedMessage;
+import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
+import io.github.abelgomez.asyncapi.asyncApi.Reference;
+import io.github.abelgomez.asyncapi.asyncApi.Schema;
+import io.github.abelgomez.asyncapi.asyncApi.Server;
+import io.github.abelgomez.asyncapi.asyncApi.Tag;
+import io.github.abelgomez.asyncapi.asyncApi.Topic;
+import io.github.abelgomez.asyncapi.asyncApi.Variable;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -129,6 +145,12 @@ public class AsyncApiSwitch<T> extends Switch<T>
 			case AsyncApiPackage.NAMED_MESSAGE: {
 				NamedMessage namedMessage = (NamedMessage)theEObject;
 				T result = caseNamedMessage(namedMessage);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AsyncApiPackage.TAG: {
+				Tag tag = (Tag)theEObject;
+				T result = caseTag(tag);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -325,6 +347,22 @@ public class AsyncApiSwitch<T> extends Switch<T>
 	 * @generated
 	 */
   public T caseNamedMessage(NamedMessage object)
+  {
+		return null;
+	}
+
+  /**
+	 * Returns the result of interpreting the object as an instance of '<em>Tag</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Tag</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T caseTag(Tag object)
   {
 		return null;
 	}

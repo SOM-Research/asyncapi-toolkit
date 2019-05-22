@@ -22,6 +22,9 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getPayload <em>Payload</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getProperties <em>Properties</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getEnum <em>Enum</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getItems <em>Items</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getRequired <em>Required</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getFriendlyName <em>Friendly Name</em>}</li>
  * </ul>
  *
  * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema()
@@ -185,5 +188,61 @@ public interface Schema extends AbstractSchema
 	 * @generated
 	 */
   EList<String> getEnum();
+
+  /**
+	 * Returns the value of the '<em><b>Items</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Items</em>' containment reference.
+	 * @see #setItems(AbstractSchema)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Items()
+	 * @model containment="true"
+	 * @generated
+	 */
+  AbstractSchema getItems();
+
+  /**
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getItems <em>Items</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Items</em>' containment reference.
+	 * @see #getItems()
+	 * @generated
+	 */
+  void setItems(AbstractSchema value);
+
+  /**
+	 * Returns the value of the '<em><b>Required</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required</em>' attribute list.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Required()
+	 * @model unique="false"
+	 * @generated
+	 */
+  EList<String> getRequired();
+
+  /**
+	 * Returns the value of the '<em><b>Friendly Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Friendly Name</em>' attribute.
+	 * @see #setFriendlyName(String)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_FriendlyName()
+	 * @model
+	 * @generated
+	 */
+  String getFriendlyName();
+
+  /**
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getFriendlyName <em>Friendly Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Friendly Name</em>' attribute.
+	 * @see #getFriendlyName()
+	 * @generated
+	 */
+  void setFriendlyName(String value);
 
 } // Schema

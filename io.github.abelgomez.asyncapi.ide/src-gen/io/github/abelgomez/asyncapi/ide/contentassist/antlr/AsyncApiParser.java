@@ -33,6 +33,8 @@ public class AsyncApiParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, AsyncApiGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getAbstractMessageAccess().getAlternatives(), "rule__AbstractMessage__Alternatives");
 			builder.put(grammarAccess.getAbstractSchemaAccess().getAlternatives(), "rule__AbstractSchema__Alternatives");
+			builder.put(grammarAccess.getPrimitiveValueAccess().getAlternatives(), "rule__PrimitiveValue__Alternatives");
+			builder.put(grammarAccess.getBooleanAccess().getAlternatives(), "rule__Boolean__Alternatives");
 			builder.put(grammarAccess.getVersionNumberAccess().getAlternatives(), "rule__VersionNumber__Alternatives");
 			builder.put(grammarAccess.getSchemeAccess().getAlternatives(), "rule__Scheme__Alternatives");
 			builder.put(grammarAccess.getAsyncAPIAccess().getGroup(), "rule__AsyncAPI__Group__0");
@@ -43,6 +45,7 @@ public class AsyncApiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAsyncAPIAccess().getGroup_2_3(), "rule__AsyncAPI__Group_2_3__0");
 			builder.put(grammarAccess.getAsyncAPIAccess().getGroup_2_3_4(), "rule__AsyncAPI__Group_2_3_4__0");
 			builder.put(grammarAccess.getAsyncAPIAccess().getGroup_2_4(), "rule__AsyncAPI__Group_2_4__0");
+			builder.put(grammarAccess.getAsyncAPIAccess().getGroup_2_5(), "rule__AsyncAPI__Group_2_5__0");
 			builder.put(grammarAccess.getInfoAccess().getGroup(), "rule__Info__Group__0");
 			builder.put(grammarAccess.getInfoAccess().getGroup_2_0(), "rule__Info__Group_2_0__0");
 			builder.put(grammarAccess.getInfoAccess().getGroup_2_1(), "rule__Info__Group_2_1__0");
@@ -76,7 +79,13 @@ public class AsyncApiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMessageAccess().getGroup_2_1(), "rule__Message__Group_2_1__0");
 			builder.put(grammarAccess.getMessageAccess().getGroup_2_2(), "rule__Message__Group_2_2__0");
 			builder.put(grammarAccess.getMessageAccess().getGroup_2_3(), "rule__Message__Group_2_3__0");
+			builder.put(grammarAccess.getMessageAccess().getGroup_2_4(), "rule__Message__Group_2_4__0");
+			builder.put(grammarAccess.getMessageAccess().getGroup_2_4_4(), "rule__Message__Group_2_4_4__0");
+			builder.put(grammarAccess.getMessageAccess().getGroup_2_5(), "rule__Message__Group_2_5__0");
 			builder.put(grammarAccess.getNamedMessageAccess().getGroup(), "rule__NamedMessage__Group__0");
+			builder.put(grammarAccess.getTagAccess().getGroup(), "rule__Tag__Group__0");
+			builder.put(grammarAccess.getTagAccess().getGroup_2_0(), "rule__Tag__Group_2_0__0");
+			builder.put(grammarAccess.getTagAccess().getGroup_2_1(), "rule__Tag__Group_2_1__0");
 			builder.put(grammarAccess.getSchemaAccess().getGroup(), "rule__Schema__Group__0");
 			builder.put(grammarAccess.getSchemaAccess().getGroup_2_0(), "rule__Schema__Group_2_0__0");
 			builder.put(grammarAccess.getSchemaAccess().getGroup_2_1(), "rule__Schema__Group_2_1__0");
@@ -88,6 +97,10 @@ public class AsyncApiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSchemaAccess().getGroup_2_6_4(), "rule__Schema__Group_2_6_4__0");
 			builder.put(grammarAccess.getSchemaAccess().getGroup_2_7(), "rule__Schema__Group_2_7__0");
 			builder.put(grammarAccess.getSchemaAccess().getGroup_2_7_4(), "rule__Schema__Group_2_7_4__0");
+			builder.put(grammarAccess.getSchemaAccess().getGroup_2_8(), "rule__Schema__Group_2_8__0");
+			builder.put(grammarAccess.getSchemaAccess().getGroup_2_9(), "rule__Schema__Group_2_9__0");
+			builder.put(grammarAccess.getSchemaAccess().getGroup_2_9_4(), "rule__Schema__Group_2_9_4__0");
+			builder.put(grammarAccess.getSchemaAccess().getGroup_2_10(), "rule__Schema__Group_2_10__0");
 			builder.put(grammarAccess.getNamedSchemaAccess().getGroup(), "rule__NamedSchema__Group__0");
 			builder.put(grammarAccess.getComponentsAccess().getGroup(), "rule__Components__Group__0");
 			builder.put(grammarAccess.getComponentsAccess().getGroup_2_0(), "rule__Components__Group_2_0__0");
@@ -103,6 +116,7 @@ public class AsyncApiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAsyncAPIAccess().getTopicsAssignment_2_3_3(), "rule__AsyncAPI__TopicsAssignment_2_3_3");
 			builder.put(grammarAccess.getAsyncAPIAccess().getTopicsAssignment_2_3_4_1(), "rule__AsyncAPI__TopicsAssignment_2_3_4_1");
 			builder.put(grammarAccess.getAsyncAPIAccess().getComponentsAssignment_2_4_2(), "rule__AsyncAPI__ComponentsAssignment_2_4_2");
+			builder.put(grammarAccess.getAsyncAPIAccess().getBaseTopicAssignment_2_5_2(), "rule__AsyncAPI__BaseTopicAssignment_2_5_2");
 			builder.put(grammarAccess.getInfoAccess().getTitleAssignment_2_0_2(), "rule__Info__TitleAssignment_2_0_2");
 			builder.put(grammarAccess.getInfoAccess().getVersionAssignment_2_1_2(), "rule__Info__VersionAssignment_2_1_2");
 			builder.put(grammarAccess.getInfoAccess().getDescriptionAssignment_2_2_2(), "rule__Info__DescriptionAssignment_2_2_2");
@@ -129,10 +143,15 @@ public class AsyncApiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTopicAccess().getSubscribeAssignment_4_1_2(), "rule__Topic__SubscribeAssignment_4_1_2");
 			builder.put(grammarAccess.getMessageAccess().getSummaryAssignment_2_0_2(), "rule__Message__SummaryAssignment_2_0_2");
 			builder.put(grammarAccess.getMessageAccess().getDescriptionAssignment_2_1_2(), "rule__Message__DescriptionAssignment_2_1_2");
-			builder.put(grammarAccess.getMessageAccess().getHeadersAssignment_2_2_2(), "rule__Message__HeadersAssignment_2_2_2");
-			builder.put(grammarAccess.getMessageAccess().getPayloadAssignment_2_3_2(), "rule__Message__PayloadAssignment_2_3_2");
+			builder.put(grammarAccess.getMessageAccess().getDeprecatedAssignment_2_2_2(), "rule__Message__DeprecatedAssignment_2_2_2");
+			builder.put(grammarAccess.getMessageAccess().getHeadersAssignment_2_3_2(), "rule__Message__HeadersAssignment_2_3_2");
+			builder.put(grammarAccess.getMessageAccess().getTagsAssignment_2_4_3(), "rule__Message__TagsAssignment_2_4_3");
+			builder.put(grammarAccess.getMessageAccess().getTagsAssignment_2_4_4_1(), "rule__Message__TagsAssignment_2_4_4_1");
+			builder.put(grammarAccess.getMessageAccess().getPayloadAssignment_2_5_2(), "rule__Message__PayloadAssignment_2_5_2");
 			builder.put(grammarAccess.getNamedMessageAccess().getNameAssignment_1(), "rule__NamedMessage__NameAssignment_1");
 			builder.put(grammarAccess.getNamedMessageAccess().getMessageAssignment_3(), "rule__NamedMessage__MessageAssignment_3");
+			builder.put(grammarAccess.getTagAccess().getNameAssignment_2_0_2(), "rule__Tag__NameAssignment_2_0_2");
+			builder.put(grammarAccess.getTagAccess().getDescriptionAssignment_2_1_2(), "rule__Tag__DescriptionAssignment_2_1_2");
 			builder.put(grammarAccess.getSchemaAccess().getTitleAssignment_2_0_2(), "rule__Schema__TitleAssignment_2_0_2");
 			builder.put(grammarAccess.getSchemaAccess().getTypeAssignment_2_1_2(), "rule__Schema__TypeAssignment_2_1_2");
 			builder.put(grammarAccess.getSchemaAccess().getDescriptionAssignment_2_2_2(), "rule__Schema__DescriptionAssignment_2_2_2");
@@ -143,6 +162,10 @@ public class AsyncApiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSchemaAccess().getPropertiesAssignment_2_6_4_1(), "rule__Schema__PropertiesAssignment_2_6_4_1");
 			builder.put(grammarAccess.getSchemaAccess().getEnumAssignment_2_7_3(), "rule__Schema__EnumAssignment_2_7_3");
 			builder.put(grammarAccess.getSchemaAccess().getEnumAssignment_2_7_4_1(), "rule__Schema__EnumAssignment_2_7_4_1");
+			builder.put(grammarAccess.getSchemaAccess().getItemsAssignment_2_8_2(), "rule__Schema__ItemsAssignment_2_8_2");
+			builder.put(grammarAccess.getSchemaAccess().getRequiredAssignment_2_9_3(), "rule__Schema__RequiredAssignment_2_9_3");
+			builder.put(grammarAccess.getSchemaAccess().getRequiredAssignment_2_9_4_1(), "rule__Schema__RequiredAssignment_2_9_4_1");
+			builder.put(grammarAccess.getSchemaAccess().getFriendlyNameAssignment_2_10_2(), "rule__Schema__FriendlyNameAssignment_2_10_2");
 			builder.put(grammarAccess.getNamedSchemaAccess().getNameAssignment_1(), "rule__NamedSchema__NameAssignment_1");
 			builder.put(grammarAccess.getNamedSchemaAccess().getSchemaAssignment_3(), "rule__NamedSchema__SchemaAssignment_3");
 			builder.put(grammarAccess.getComponentsAccess().getSchemasAssignment_2_0_3(), "rule__Components__SchemasAssignment_2_0_3");
@@ -159,6 +182,7 @@ public class AsyncApiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getVariableAccess().getUnorderedGroup_4(), "rule__Variable__UnorderedGroup_4");
 			builder.put(grammarAccess.getTopicAccess().getUnorderedGroup_4(), "rule__Topic__UnorderedGroup_4");
 			builder.put(grammarAccess.getMessageAccess().getUnorderedGroup_2(), "rule__Message__UnorderedGroup_2");
+			builder.put(grammarAccess.getTagAccess().getUnorderedGroup_2(), "rule__Tag__UnorderedGroup_2");
 			builder.put(grammarAccess.getSchemaAccess().getUnorderedGroup_2(), "rule__Schema__UnorderedGroup_2");
 			builder.put(grammarAccess.getComponentsAccess().getUnorderedGroup_2(), "rule__Components__UnorderedGroup_2");
 		}

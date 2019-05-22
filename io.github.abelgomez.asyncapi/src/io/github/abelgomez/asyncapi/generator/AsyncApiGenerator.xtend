@@ -95,7 +95,34 @@ class AsyncApiGenerator extends AbstractGenerator {
 	'''
 
 	def subscribeClass(Topic t) '''
-		// TODO
+		package «t.packageName»;
+		
+		«IF t.subscribe.resolve.payload.isNamedSchema»
+		import schemas.«t.subscribePayloadClassName»;
+		«ELSE»
+		«gsonImports»
+		«ENDIF»
+		
+		/**
+		«IF t.subscribe.summary!== null»
+		 * «t.subscribe.summary»
+		«ENDIF»
+		«IF t.subscribe.description!== null»
+		 * «t.subscribe.description»
+		«ENDIF»
+		 */
+		public class «t.subscribeMessageClassName» {
+			/**
+			 * Create payload
+			 */
+			public static final «t.subscribePayloadClassName».«t.subscribePayloadClassName»Builder payloadBuilder() {
+				return «t.subscribePayloadClassName».«t.subscribePayloadClassName»Builder.newBuilder();
+			}
+			
+			«IF !t.subscribe.resolve.payload.isNamedSchema»
+			«t.subscribe.resolve.payload.resolve.unnamedSchemaClass»
+			«ENDIF»
+		}
 	'''
 	
 	def summary(AbstractMessage m) {
@@ -180,10 +207,10 @@ class AsyncApiGenerator extends AbstractGenerator {
 		protected Object clone() throws CloneNotSupportedException {
 			«thisTypeName» clone = new «thisTypeName»();
 			«FOR p : s.properties.filter[p | !p.schema.resolve.objectType]»
-			clone.«p.name.asJavaIdentifier» = this.«p.name.asJavaIdentifier»;
+			clone.«p.friendlyName.asJavaIdentifier» = this.«p.friendlyName.asJavaIdentifier»;
 			«ENDFOR»
 			«FOR p : s.properties.filter[p | p.schema.resolve.objectType]»
-			clone.«p.name.asJavaIdentifier» = («p.toJavaType») this.«p.name.asJavaIdentifier».clone();
+			clone.«p.friendlyName.asJavaIdentifier» = («p.toJavaType») this.«p.friendlyName.asJavaIdentifier».clone();
 			«ENDFOR»
 			return clone;
 		}
@@ -233,13 +260,13 @@ class AsyncApiGenerator extends AbstractGenerator {
 		«ENDIF»
 		 */
 		@SerializedName("«ns.name»")
-		private «ns.toJavaType» «ns.name.asJavaIdentifier»;
+		private «ns.toJavaType» «ns.friendlyName.asJavaIdentifier»;
 		
 	'''
 
 	def namedSchemaMethod(NamedSchema ns, String thisTypeName) '''
-		public «thisTypeName»Builder with«ns.name»(«ns.toJavaType» «ns.name.asJavaIdentifier») {
-			this.instance.«ns.name.asJavaIdentifier» = «ns.name.asJavaIdentifier»;
+		public «thisTypeName»Builder with«ns.friendlyName»(«ns.toJavaType» «ns.friendlyName.asJavaIdentifier») {
+			this.instance.«ns.friendlyName.asJavaIdentifier» = «ns.friendlyName.asJavaIdentifier»;
 			return this;
 		}
 		
@@ -254,7 +281,11 @@ class AsyncApiGenerator extends AbstractGenerator {
 	}
 	
 	def enum_(NamedSchema ns) {
-		return ns.schema.resolve.enum;
+		return ns.schema.resolve.enum.map[e | e.replaceAll("\"", "").asJavaClassName];
+	}
+
+	def friendlyName(NamedSchema ns) {
+		return (if (ns.schema.resolve.friendlyName !== null) ns.schema.resolve.friendlyName else ns.name).asJavaClassName; 
 	}
 	
 	def String publishMessageClassName(Topic t) {
@@ -320,7 +351,10 @@ class AsyncApiGenerator extends AbstractGenerator {
 	}
 	
 	def String packageName(Topic t) {
-		var segments = t.name.split("/");
+		var segments = ((if (api.baseTopic !== null) api.baseTopic else "") + t.name).split("/");
+		if (segments.exists[s | s.length == 0]) {
+			throw new RuntimeException("Empty segment in package name derived from: " + segments);
+		} 
 		return segments.map[s | s.asJavaIdentifier].join(".");
 	}
 	
@@ -430,10 +464,12 @@ class AsyncApiGenerator extends AbstractGenerator {
 //		if (schema.type === null) {
 //			throw new RuntimeException("Unexpected JSON type (null) for NamedSchema: " + s);
 //		} else 
-		if (schema.objectType) {
-			return s.name.asJavaClassName;
-		} else if (schema.enumType) {
-			return s.name.asJavaClassName;
+		if (schema.objectType || schema.enumType) {
+			if (schema.friendlyName !== null) {
+				return schema.friendlyName.asJavaClassName;
+			} else {
+				return s.name.asJavaClassName;
+			}
 		} else {
 			switch (schema.type.toLowerCase) {
 				case "string": {

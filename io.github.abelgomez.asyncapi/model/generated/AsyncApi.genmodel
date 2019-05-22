@@ -6,6 +6,10 @@
     complianceLevel="6.0" copyrightFields="false" runtimeVersion="2.17">
   <genPackages prefix="AsyncApi" basePackage="io.github.abelgomez.asyncapi" disposableProviderFactory="true"
       fileExtensions="asyncapi" ecorePackage="AsyncApi.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="AsyncApi.ecore#//Boolean">
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Boolean/_true"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Boolean/_false"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="AsyncApi.ecore#//VersionNumber">
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//VersionNumber/_100"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//VersionNumber/_110"/>
@@ -27,6 +31,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//AsyncAPI/servers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//AsyncAPI/topics"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//AsyncAPI/components"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//AsyncAPI/baseTopic"/>
     </genClasses>
     <genClasses ecoreClass="AsyncApi.ecore#//Info">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Info/title"/>
@@ -66,12 +71,18 @@
     <genClasses ecoreClass="AsyncApi.ecore#//Message">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Message/summary"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Message/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Message/deprecated"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//Message/headers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//Message/tags"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//Message/payload"/>
     </genClasses>
     <genClasses ecoreClass="AsyncApi.ecore#//NamedMessage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//NamedMessage/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//NamedMessage/message"/>
+    </genClasses>
+    <genClasses ecoreClass="AsyncApi.ecore#//Tag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Tag/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Tag/description"/>
     </genClasses>
     <genClasses ecoreClass="AsyncApi.ecore#//AbstractSchema"/>
     <genClasses ecoreClass="AsyncApi.ecore#//Schema">
@@ -83,6 +94,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//Schema/payload"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//Schema/properties"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Schema/enum"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//Schema/items"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Schema/required"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Schema/friendlyName"/>
     </genClasses>
     <genClasses ecoreClass="AsyncApi.ecore#//NamedSchema">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//NamedSchema/name"/>

@@ -40,6 +40,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getPayload <em>Payload</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getEnum <em>Enum</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getItems <em>Items</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getRequired <em>Required</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getFriendlyName <em>Friendly Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -175,6 +178,46 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
 	 * @ordered
 	 */
   protected EList<String> enum_;
+
+  /**
+	 * The cached value of the '{@link #getItems() <em>Items</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getItems()
+	 * @generated
+	 * @ordered
+	 */
+  protected AbstractSchema items;
+
+  /**
+	 * The cached value of the '{@link #getRequired() <em>Required</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getRequired()
+	 * @generated
+	 * @ordered
+	 */
+  protected EList<String> required;
+
+  /**
+	 * The default value of the '{@link #getFriendlyName() <em>Friendly Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getFriendlyName()
+	 * @generated
+	 * @ordered
+	 */
+  protected static final String FRIENDLY_NAME_EDEFAULT = null;
+
+  /**
+	 * The cached value of the '{@link #getFriendlyName() <em>Friendly Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getFriendlyName()
+	 * @generated
+	 * @ordered
+	 */
+  protected String friendlyName = FRIENDLY_NAME_EDEFAULT;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -404,6 +447,93 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
 	 * @generated
 	 */
   @Override
+  public AbstractSchema getItems()
+  {
+		return items;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public NotificationChain basicSetItems(AbstractSchema newItems, NotificationChain msgs)
+  {
+		AbstractSchema oldItems = items;
+		items = newItems;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SCHEMA__ITEMS, oldItems, newItems);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public void setItems(AbstractSchema newItems)
+  {
+		if (newItems != items) {
+			NotificationChain msgs = null;
+			if (items != null)
+				msgs = ((InternalEObject)items).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.SCHEMA__ITEMS, null, msgs);
+			if (newItems != null)
+				msgs = ((InternalEObject)newItems).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.SCHEMA__ITEMS, null, msgs);
+			msgs = basicSetItems(newItems, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SCHEMA__ITEMS, newItems, newItems));
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public EList<String> getRequired()
+  {
+		if (required == null) {
+			required = new EDataTypeEList<String>(String.class, this, AsyncApiPackage.SCHEMA__REQUIRED);
+		}
+		return required;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public String getFriendlyName()
+  {
+		return friendlyName;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public void setFriendlyName(String newFriendlyName)
+  {
+		String oldFriendlyName = friendlyName;
+		friendlyName = newFriendlyName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SCHEMA__FRIENDLY_NAME, oldFriendlyName, friendlyName));
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
 		switch (featureID) {
@@ -411,6 +541,8 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
 				return basicSetPayload(null, msgs);
 			case AsyncApiPackage.SCHEMA__PROPERTIES:
 				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+			case AsyncApiPackage.SCHEMA__ITEMS:
+				return basicSetItems(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -440,6 +572,12 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
 				return getProperties();
 			case AsyncApiPackage.SCHEMA__ENUM:
 				return getEnum();
+			case AsyncApiPackage.SCHEMA__ITEMS:
+				return getItems();
+			case AsyncApiPackage.SCHEMA__REQUIRED:
+				return getRequired();
+			case AsyncApiPackage.SCHEMA__FRIENDLY_NAME:
+				return getFriendlyName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -480,6 +618,16 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
 				getEnum().clear();
 				getEnum().addAll((Collection<? extends String>)newValue);
 				return;
+			case AsyncApiPackage.SCHEMA__ITEMS:
+				setItems((AbstractSchema)newValue);
+				return;
+			case AsyncApiPackage.SCHEMA__REQUIRED:
+				getRequired().clear();
+				getRequired().addAll((Collection<? extends String>)newValue);
+				return;
+			case AsyncApiPackage.SCHEMA__FRIENDLY_NAME:
+				setFriendlyName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -517,6 +665,15 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
 			case AsyncApiPackage.SCHEMA__ENUM:
 				getEnum().clear();
 				return;
+			case AsyncApiPackage.SCHEMA__ITEMS:
+				setItems((AbstractSchema)null);
+				return;
+			case AsyncApiPackage.SCHEMA__REQUIRED:
+				getRequired().clear();
+				return;
+			case AsyncApiPackage.SCHEMA__FRIENDLY_NAME:
+				setFriendlyName(FRIENDLY_NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -546,6 +703,12 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
 				return properties != null && !properties.isEmpty();
 			case AsyncApiPackage.SCHEMA__ENUM:
 				return enum_ != null && !enum_.isEmpty();
+			case AsyncApiPackage.SCHEMA__ITEMS:
+				return items != null;
+			case AsyncApiPackage.SCHEMA__REQUIRED:
+				return required != null && !required.isEmpty();
+			case AsyncApiPackage.SCHEMA__FRIENDLY_NAME:
+				return FRIENDLY_NAME_EDEFAULT == null ? friendlyName != null : !FRIENDLY_NAME_EDEFAULT.equals(friendlyName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -573,6 +736,10 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
 		result.append(default_);
 		result.append(", enum: ");
 		result.append(enum_);
+		result.append(", required: ");
+		result.append(required);
+		result.append(", friendlyName: ");
+		result.append(friendlyName);
 		result.append(')');
 		return result.toString();
 	}

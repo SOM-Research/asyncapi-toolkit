@@ -114,13 +114,22 @@ public interface AsyncApiPackage extends EPackage
   int ASYNC_API__COMPONENTS = 4;
 
   /**
+	 * The feature id for the '<em><b>Base Topic</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int ASYNC_API__BASE_TOPIC = 5;
+
+  /**
 	 * The number of structural features of the '<em>Async API</em>' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int ASYNC_API_FEATURE_COUNT = 5;
+  int ASYNC_API_FEATURE_COUNT = 6;
 
   /**
 	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.InfoImpl <em>Info</em>}' class.
@@ -482,13 +491,31 @@ public interface AsyncApiPackage extends EPackage
   int MESSAGE__DESCRIPTION = ABSTRACT_MESSAGE_FEATURE_COUNT + 1;
 
   /**
+	 * The feature id for the '<em><b>Deprecated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int MESSAGE__DEPRECATED = ABSTRACT_MESSAGE_FEATURE_COUNT + 2;
+
+  /**
 	 * The feature id for the '<em><b>Headers</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int MESSAGE__HEADERS = ABSTRACT_MESSAGE_FEATURE_COUNT + 2;
+  int MESSAGE__HEADERS = ABSTRACT_MESSAGE_FEATURE_COUNT + 3;
+
+  /**
+	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int MESSAGE__TAGS = ABSTRACT_MESSAGE_FEATURE_COUNT + 4;
 
   /**
 	 * The feature id for the '<em><b>Payload</b></em>' containment reference.
@@ -497,7 +524,7 @@ public interface AsyncApiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int MESSAGE__PAYLOAD = ABSTRACT_MESSAGE_FEATURE_COUNT + 3;
+  int MESSAGE__PAYLOAD = ABSTRACT_MESSAGE_FEATURE_COUNT + 5;
 
   /**
 	 * The number of structural features of the '<em>Message</em>' class.
@@ -506,7 +533,7 @@ public interface AsyncApiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int MESSAGE_FEATURE_COUNT = ABSTRACT_MESSAGE_FEATURE_COUNT + 4;
+  int MESSAGE_FEATURE_COUNT = ABSTRACT_MESSAGE_FEATURE_COUNT + 6;
 
   /**
 	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageImpl <em>Named Message</em>}' class.
@@ -546,6 +573,43 @@ public interface AsyncApiPackage extends EPackage
   int NAMED_MESSAGE_FEATURE_COUNT = 2;
 
   /**
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.TagImpl <em>Tag</em>}' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.TagImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getTag()
+	 * @generated
+	 */
+  int TAG = 10;
+
+  /**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int TAG__NAME = 0;
+
+  /**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int TAG__DESCRIPTION = 1;
+
+  /**
+	 * The number of structural features of the '<em>Tag</em>' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int TAG_FEATURE_COUNT = 2;
+
+  /**
 	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractSchemaImpl <em>Abstract Schema</em>}' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -553,7 +617,7 @@ public interface AsyncApiPackage extends EPackage
 	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractSchema()
 	 * @generated
 	 */
-  int ABSTRACT_SCHEMA = 10;
+  int ABSTRACT_SCHEMA = 11;
 
   /**
 	 * The number of structural features of the '<em>Abstract Schema</em>' class.
@@ -572,7 +636,7 @@ public interface AsyncApiPackage extends EPackage
 	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getSchema()
 	 * @generated
 	 */
-  int SCHEMA = 11;
+  int SCHEMA = 12;
 
   /**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -647,13 +711,40 @@ public interface AsyncApiPackage extends EPackage
   int SCHEMA__ENUM = ABSTRACT_SCHEMA_FEATURE_COUNT + 7;
 
   /**
+	 * The feature id for the '<em><b>Items</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SCHEMA__ITEMS = ABSTRACT_SCHEMA_FEATURE_COUNT + 8;
+
+  /**
+	 * The feature id for the '<em><b>Required</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SCHEMA__REQUIRED = ABSTRACT_SCHEMA_FEATURE_COUNT + 9;
+
+  /**
+	 * The feature id for the '<em><b>Friendly Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int SCHEMA__FRIENDLY_NAME = ABSTRACT_SCHEMA_FEATURE_COUNT + 10;
+
+  /**
 	 * The number of structural features of the '<em>Schema</em>' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int SCHEMA_FEATURE_COUNT = ABSTRACT_SCHEMA_FEATURE_COUNT + 8;
+  int SCHEMA_FEATURE_COUNT = ABSTRACT_SCHEMA_FEATURE_COUNT + 11;
 
   /**
 	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedSchemaImpl <em>Named Schema</em>}' class.
@@ -663,7 +754,7 @@ public interface AsyncApiPackage extends EPackage
 	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedSchema()
 	 * @generated
 	 */
-  int NAMED_SCHEMA = 12;
+  int NAMED_SCHEMA = 13;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -700,7 +791,7 @@ public interface AsyncApiPackage extends EPackage
 	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getComponents()
 	 * @generated
 	 */
-  int COMPONENTS = 13;
+  int COMPONENTS = 14;
 
   /**
 	 * The feature id for the '<em><b>Schemas</b></em>' containment reference list.
@@ -737,7 +828,7 @@ public interface AsyncApiPackage extends EPackage
 	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getReference()
 	 * @generated
 	 */
-  int REFERENCE = 14;
+  int REFERENCE = 15;
 
   /**
 	 * The feature id for the '<em><b>Refname</b></em>' attribute.
@@ -767,6 +858,16 @@ public interface AsyncApiPackage extends EPackage
   int REFERENCE_FEATURE_COUNT = ABSTRACT_MESSAGE_FEATURE_COUNT + 2;
 
   /**
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.Boolean <em>Boolean</em>}' enum.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Boolean
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getBoolean()
+	 * @generated
+	 */
+  int BOOLEAN = 16;
+
+  /**
 	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.VersionNumber <em>Version Number</em>}' enum.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -774,7 +875,7 @@ public interface AsyncApiPackage extends EPackage
 	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getVersionNumber()
 	 * @generated
 	 */
-  int VERSION_NUMBER = 15;
+  int VERSION_NUMBER = 17;
 
   /**
 	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.Scheme <em>Scheme</em>}' enum.
@@ -784,7 +885,7 @@ public interface AsyncApiPackage extends EPackage
 	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getScheme()
 	 * @generated
 	 */
-  int SCHEME = 16;
+  int SCHEME = 18;
 
 
   /**
@@ -851,6 +952,17 @@ public interface AsyncApiPackage extends EPackage
 	 * @generated
 	 */
   EReference getAsyncAPI_Components();
+
+  /**
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getBaseTopic <em>Base Topic</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Base Topic</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getBaseTopic()
+	 * @see #getAsyncAPI()
+	 * @generated
+	 */
+  EAttribute getAsyncAPI_BaseTopic();
 
   /**
 	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Info <em>Info</em>}'.
@@ -1197,6 +1309,17 @@ public interface AsyncApiPackage extends EPackage
   EAttribute getMessage_Description();
 
   /**
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getDeprecated <em>Deprecated</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Deprecated</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Message#getDeprecated()
+	 * @see #getMessage()
+	 * @generated
+	 */
+  EAttribute getMessage_Deprecated();
+
+  /**
 	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getHeaders <em>Headers</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1206,6 +1329,17 @@ public interface AsyncApiPackage extends EPackage
 	 * @generated
 	 */
   EReference getMessage_Headers();
+
+  /**
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getTags <em>Tags</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Tags</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Message#getTags()
+	 * @see #getMessage()
+	 * @generated
+	 */
+  EReference getMessage_Tags();
 
   /**
 	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getPayload <em>Payload</em>}'.
@@ -1249,6 +1383,38 @@ public interface AsyncApiPackage extends EPackage
 	 * @generated
 	 */
   EReference getNamedMessage_Message();
+
+  /**
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Tag <em>Tag</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Tag</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Tag
+	 * @generated
+	 */
+  EClass getTag();
+
+  /**
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Tag#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Tag#getName()
+	 * @see #getTag()
+	 * @generated
+	 */
+  EAttribute getTag_Name();
+
+  /**
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Tag#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Tag#getDescription()
+	 * @see #getTag()
+	 * @generated
+	 */
+  EAttribute getTag_Description();
 
   /**
 	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractSchema <em>Abstract Schema</em>}'.
@@ -1359,6 +1525,39 @@ public interface AsyncApiPackage extends EPackage
   EAttribute getSchema_Enum();
 
   /**
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getItems <em>Items</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Items</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getItems()
+	 * @see #getSchema()
+	 * @generated
+	 */
+  EReference getSchema_Items();
+
+  /**
+	 * Returns the meta object for the attribute list '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getRequired <em>Required</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Required</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getRequired()
+	 * @see #getSchema()
+	 * @generated
+	 */
+  EAttribute getSchema_Required();
+
+  /**
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getFriendlyName <em>Friendly Name</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Friendly Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getFriendlyName()
+	 * @see #getSchema()
+	 * @generated
+	 */
+  EAttribute getSchema_FriendlyName();
+
+  /**
 	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema <em>Named Schema</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1455,6 +1654,16 @@ public interface AsyncApiPackage extends EPackage
   EAttribute getReference_Uri();
 
   /**
+	 * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.Boolean <em>Boolean</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Boolean</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Boolean
+	 * @generated
+	 */
+  EEnum getBoolean();
+
+  /**
 	 * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.VersionNumber <em>Version Number</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1546,6 +1755,14 @@ public interface AsyncApiPackage extends EPackage
 		 * @generated
 		 */
     EReference ASYNC_API__COMPONENTS = eINSTANCE.getAsyncAPI_Components();
+
+    /**
+		 * The meta object literal for the '<em><b>Base Topic</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute ASYNC_API__BASE_TOPIC = eINSTANCE.getAsyncAPI_BaseTopic();
 
     /**
 		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.InfoImpl <em>Info</em>}' class.
@@ -1820,12 +2037,28 @@ public interface AsyncApiPackage extends EPackage
     EAttribute MESSAGE__DESCRIPTION = eINSTANCE.getMessage_Description();
 
     /**
+		 * The meta object literal for the '<em><b>Deprecated</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute MESSAGE__DEPRECATED = eINSTANCE.getMessage_Deprecated();
+
+    /**
 		 * The meta object literal for the '<em><b>Headers</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 		 * @generated
 		 */
     EReference MESSAGE__HEADERS = eINSTANCE.getMessage_Headers();
+
+    /**
+		 * The meta object literal for the '<em><b>Tags</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EReference MESSAGE__TAGS = eINSTANCE.getMessage_Tags();
 
     /**
 		 * The meta object literal for the '<em><b>Payload</b></em>' containment reference feature.
@@ -1860,6 +2093,32 @@ public interface AsyncApiPackage extends EPackage
 		 * @generated
 		 */
     EReference NAMED_MESSAGE__MESSAGE = eINSTANCE.getNamedMessage_Message();
+
+    /**
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.TagImpl <em>Tag</em>}' class.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.TagImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getTag()
+		 * @generated
+		 */
+    EClass TAG = eINSTANCE.getTag();
+
+    /**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute TAG__NAME = eINSTANCE.getTag_Name();
+
+    /**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute TAG__DESCRIPTION = eINSTANCE.getTag_Description();
 
     /**
 		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractSchemaImpl <em>Abstract Schema</em>}' class.
@@ -1946,6 +2205,30 @@ public interface AsyncApiPackage extends EPackage
     EAttribute SCHEMA__ENUM = eINSTANCE.getSchema_Enum();
 
     /**
+		 * The meta object literal for the '<em><b>Items</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EReference SCHEMA__ITEMS = eINSTANCE.getSchema_Items();
+
+    /**
+		 * The meta object literal for the '<em><b>Required</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute SCHEMA__REQUIRED = eINSTANCE.getSchema_Required();
+
+    /**
+		 * The meta object literal for the '<em><b>Friendly Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute SCHEMA__FRIENDLY_NAME = eINSTANCE.getSchema_FriendlyName();
+
+    /**
 		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedSchemaImpl <em>Named Schema</em>}' class.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2022,6 +2305,16 @@ public interface AsyncApiPackage extends EPackage
 		 * @generated
 		 */
     EAttribute REFERENCE__URI = eINSTANCE.getReference_Uri();
+
+    /**
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.Boolean <em>Boolean</em>}' enum.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @see io.github.abelgomez.asyncapi.asyncApi.Boolean
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getBoolean()
+		 * @generated
+		 */
+    EEnum BOOLEAN = eINSTANCE.getBoolean();
 
     /**
 		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.VersionNumber <em>Version Number</em>}' enum.

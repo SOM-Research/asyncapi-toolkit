@@ -40,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.AsyncAPIImpl#getServers <em>Servers</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.AsyncAPIImpl#getTopics <em>Topics</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.AsyncAPIImpl#getComponents <em>Components</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.AsyncAPIImpl#getBaseTopic <em>Base Topic</em>}</li>
  * </ul>
  *
  * @generated
@@ -105,6 +106,26 @@ public class AsyncAPIImpl extends MinimalEObjectImpl.Container implements AsyncA
 	 * @ordered
 	 */
   protected Components components;
+
+  /**
+	 * The default value of the '{@link #getBaseTopic() <em>Base Topic</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getBaseTopic()
+	 * @generated
+	 * @ordered
+	 */
+  protected static final String BASE_TOPIC_EDEFAULT = null;
+
+  /**
+	 * The cached value of the '{@link #getBaseTopic() <em>Base Topic</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getBaseTopic()
+	 * @generated
+	 * @ordered
+	 */
+  protected String baseTopic = BASE_TOPIC_EDEFAULT;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -282,6 +303,31 @@ public class AsyncAPIImpl extends MinimalEObjectImpl.Container implements AsyncA
 	 * @generated
 	 */
   @Override
+  public String getBaseTopic()
+  {
+		return baseTopic;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public void setBaseTopic(String newBaseTopic)
+  {
+		String oldBaseTopic = baseTopic;
+		baseTopic = newBaseTopic;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.ASYNC_API__BASE_TOPIC, oldBaseTopic, baseTopic));
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
 		switch (featureID) {
@@ -316,6 +362,8 @@ public class AsyncAPIImpl extends MinimalEObjectImpl.Container implements AsyncA
 				return getTopics();
 			case AsyncApiPackage.ASYNC_API__COMPONENTS:
 				return getComponents();
+			case AsyncApiPackage.ASYNC_API__BASE_TOPIC:
+				return getBaseTopic();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -347,6 +395,9 @@ public class AsyncAPIImpl extends MinimalEObjectImpl.Container implements AsyncA
 			case AsyncApiPackage.ASYNC_API__COMPONENTS:
 				setComponents((Components)newValue);
 				return;
+			case AsyncApiPackage.ASYNC_API__BASE_TOPIC:
+				setBaseTopic((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -375,6 +426,9 @@ public class AsyncAPIImpl extends MinimalEObjectImpl.Container implements AsyncA
 			case AsyncApiPackage.ASYNC_API__COMPONENTS:
 				setComponents((Components)null);
 				return;
+			case AsyncApiPackage.ASYNC_API__BASE_TOPIC:
+				setBaseTopic(BASE_TOPIC_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -398,6 +452,8 @@ public class AsyncAPIImpl extends MinimalEObjectImpl.Container implements AsyncA
 				return topics != null && !topics.isEmpty();
 			case AsyncApiPackage.ASYNC_API__COMPONENTS:
 				return components != null;
+			case AsyncApiPackage.ASYNC_API__BASE_TOPIC:
+				return BASE_TOPIC_EDEFAULT == null ? baseTopic != null : !BASE_TOPIC_EDEFAULT.equals(baseTopic);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -415,6 +471,8 @@ public class AsyncAPIImpl extends MinimalEObjectImpl.Container implements AsyncA
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (version: ");
 		result.append(version);
+		result.append(", baseTopic: ");
+		result.append(baseTopic);
 		result.append(')');
 		return result.toString();
 	}

@@ -19,6 +19,7 @@ import io.github.abelgomez.asyncapi.asyncApi.Reference;
 import io.github.abelgomez.asyncapi.asyncApi.Schema;
 import io.github.abelgomez.asyncapi.asyncApi.Scheme;
 import io.github.abelgomez.asyncapi.asyncApi.Server;
+import io.github.abelgomez.asyncapi.asyncApi.Tag;
 import io.github.abelgomez.asyncapi.asyncApi.Topic;
 import io.github.abelgomez.asyncapi.asyncApi.Variable;
 import io.github.abelgomez.asyncapi.asyncApi.VersionNumber;
@@ -114,6 +115,13 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  private EClass tagEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   private EClass abstractSchemaEClass = null;
 
   /**
@@ -143,6 +151,13 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
 	 * @generated
 	 */
   private EClass referenceEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EEnum booleanEEnum = null;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -285,6 +300,17 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
   public EReference getAsyncAPI_Components()
   {
 		return (EReference)asyncAPIEClass.getEStructuralFeatures().get(4);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public EAttribute getAsyncAPI_BaseTopic()
+  {
+		return (EAttribute)asyncAPIEClass.getEStructuralFeatures().get(5);
 	}
 
   /**
@@ -645,9 +671,31 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
 	 * @generated
 	 */
   @Override
+  public EAttribute getMessage_Deprecated()
+  {
+		return (EAttribute)messageEClass.getEStructuralFeatures().get(2);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
   public EReference getMessage_Headers()
   {
-		return (EReference)messageEClass.getEStructuralFeatures().get(2);
+		return (EReference)messageEClass.getEStructuralFeatures().get(3);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public EReference getMessage_Tags()
+  {
+		return (EReference)messageEClass.getEStructuralFeatures().get(4);
 	}
 
   /**
@@ -658,7 +706,7 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
   @Override
   public EReference getMessage_Payload()
   {
-		return (EReference)messageEClass.getEStructuralFeatures().get(3);
+		return (EReference)messageEClass.getEStructuralFeatures().get(5);
 	}
 
   /**
@@ -692,6 +740,39 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
   public EReference getNamedMessage_Message()
   {
 		return (EReference)namedMessageEClass.getEStructuralFeatures().get(1);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public EClass getTag()
+  {
+		return tagEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public EAttribute getTag_Name()
+  {
+		return (EAttribute)tagEClass.getEStructuralFeatures().get(0);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public EAttribute getTag_Description()
+  {
+		return (EAttribute)tagEClass.getEStructuralFeatures().get(1);
 	}
 
   /**
@@ -810,6 +891,39 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
 	 * @generated
 	 */
   @Override
+  public EReference getSchema_Items()
+  {
+		return (EReference)schemaEClass.getEStructuralFeatures().get(8);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public EAttribute getSchema_Required()
+  {
+		return (EAttribute)schemaEClass.getEStructuralFeatures().get(9);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public EAttribute getSchema_FriendlyName()
+  {
+		return (EAttribute)schemaEClass.getEStructuralFeatures().get(10);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
   public EClass getNamedSchema()
   {
 		return namedSchemaEClass;
@@ -909,6 +1023,17 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
 	 * @generated
 	 */
   @Override
+  public EEnum getBoolean()
+  {
+		return booleanEEnum;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
   public EEnum getVersionNumber()
   {
 		return versionNumberEEnum;
@@ -962,6 +1087,7 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
 		createEReference(asyncAPIEClass, ASYNC_API__SERVERS);
 		createEReference(asyncAPIEClass, ASYNC_API__TOPICS);
 		createEReference(asyncAPIEClass, ASYNC_API__COMPONENTS);
+		createEAttribute(asyncAPIEClass, ASYNC_API__BASE_TOPIC);
 
 		infoEClass = createEClass(INFO);
 		createEAttribute(infoEClass, INFO__TITLE);
@@ -1002,12 +1128,18 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
 		messageEClass = createEClass(MESSAGE);
 		createEAttribute(messageEClass, MESSAGE__SUMMARY);
 		createEAttribute(messageEClass, MESSAGE__DESCRIPTION);
+		createEAttribute(messageEClass, MESSAGE__DEPRECATED);
 		createEReference(messageEClass, MESSAGE__HEADERS);
+		createEReference(messageEClass, MESSAGE__TAGS);
 		createEReference(messageEClass, MESSAGE__PAYLOAD);
 
 		namedMessageEClass = createEClass(NAMED_MESSAGE);
 		createEAttribute(namedMessageEClass, NAMED_MESSAGE__NAME);
 		createEReference(namedMessageEClass, NAMED_MESSAGE__MESSAGE);
+
+		tagEClass = createEClass(TAG);
+		createEAttribute(tagEClass, TAG__NAME);
+		createEAttribute(tagEClass, TAG__DESCRIPTION);
 
 		abstractSchemaEClass = createEClass(ABSTRACT_SCHEMA);
 
@@ -1020,6 +1152,9 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
 		createEReference(schemaEClass, SCHEMA__PAYLOAD);
 		createEReference(schemaEClass, SCHEMA__PROPERTIES);
 		createEAttribute(schemaEClass, SCHEMA__ENUM);
+		createEReference(schemaEClass, SCHEMA__ITEMS);
+		createEAttribute(schemaEClass, SCHEMA__REQUIRED);
+		createEAttribute(schemaEClass, SCHEMA__FRIENDLY_NAME);
 
 		namedSchemaEClass = createEClass(NAMED_SCHEMA);
 		createEAttribute(namedSchemaEClass, NAMED_SCHEMA__NAME);
@@ -1034,6 +1169,7 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
 		createEAttribute(referenceEClass, REFERENCE__URI);
 
 		// Create enums
+		booleanEEnum = createEEnum(BOOLEAN);
 		versionNumberEEnum = createEEnum(VERSION_NUMBER);
 		schemeEEnum = createEEnum(SCHEME);
 	}
@@ -1079,6 +1215,7 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
 		initEReference(getAsyncAPI_Servers(), this.getServer(), null, "servers", null, 0, -1, AsyncAPI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAsyncAPI_Topics(), this.getTopic(), null, "topics", null, 0, -1, AsyncAPI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAsyncAPI_Components(), this.getComponents(), null, "components", null, 0, 1, AsyncAPI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAsyncAPI_BaseTopic(), ecorePackage.getEString(), "baseTopic", null, 0, 1, AsyncAPI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(infoEClass, Info.class, "Info", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInfo_Title(), ecorePackage.getEString(), "title", null, 0, 1, Info.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1119,12 +1256,18 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
 		initEClass(messageEClass, Message.class, "Message", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMessage_Summary(), ecorePackage.getEString(), "summary", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessage_Description(), ecorePackage.getEString(), "description", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessage_Deprecated(), this.getBoolean(), "deprecated", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessage_Headers(), this.getAbstractSchema(), null, "headers", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessage_Tags(), this.getTag(), null, "tags", null, 0, -1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessage_Payload(), this.getAbstractSchema(), null, "payload", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedMessageEClass, NamedMessage.class, "NamedMessage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedMessage_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNamedMessage_Message(), this.getAbstractMessage(), null, "message", null, 0, 1, NamedMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(tagEClass, Tag.class, "Tag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTag_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTag_Description(), ecorePackage.getEString(), "description", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractSchemaEClass, AbstractSchema.class, "AbstractSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1137,6 +1280,9 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
 		initEReference(getSchema_Payload(), this.getAbstractSchema(), null, "payload", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSchema_Properties(), this.getNamedSchema(), null, "properties", null, 0, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchema_Enum(), ecorePackage.getEString(), "enum", null, 0, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchema_Items(), this.getAbstractSchema(), null, "items", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSchema_Required(), ecorePackage.getEString(), "required", null, 0, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSchema_FriendlyName(), ecorePackage.getEString(), "friendlyName", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedSchemaEClass, NamedSchema.class, "NamedSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedSchema_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1151,6 +1297,10 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
 		initEAttribute(getReference_Uri(), ecorePackage.getEString(), "uri", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
+		initEEnum(booleanEEnum, io.github.abelgomez.asyncapi.asyncApi.Boolean.class, "Boolean");
+		addEEnumLiteral(booleanEEnum, io.github.abelgomez.asyncapi.asyncApi.Boolean._TRUE);
+		addEEnumLiteral(booleanEEnum, io.github.abelgomez.asyncapi.asyncApi.Boolean._FALSE);
+
 		initEEnum(versionNumberEEnum, VersionNumber.class, "VersionNumber");
 		addEEnumLiteral(versionNumberEEnum, VersionNumber._100);
 		addEEnumLiteral(versionNumberEEnum, VersionNumber._110);

@@ -9,6 +9,7 @@ AsyncAPI:
 		& ( '"servers"' ':' '[' servers+=Server (',' servers+=Server)* ']' ','? )? 
 		& ( '"topics"' ':' '{' topics+=Topic (',' topics+=Topic)* '}' ','? )
 		& ( '"components"' ':' components=Components ','? )?
+		& ( '"baseTopic"' ':' baseTopic=STRING ','? )?
 	) '}';
 		
 Info:
@@ -62,12 +63,20 @@ Message:
 	{Message} '{' (
 		  ( '"summary"' ':' summary=STRING ','? )?
 		& ( '"description"' ':' description=STRING ','? )?
+		& ( '"deprecated"' ':' deprecated=Boolean ','? )?
 		& ( '"headers"' ':' headers=AbstractSchema ','? )?
+		& ( '"tags"' ':' '[' tags+=Tag ( ',' tags+=Tag )* ']' ','? )?
 		& ( '"payload"' ':' payload=AbstractSchema ','? )?
 	) '}';
 
 NamedMessage:
 	{NamedMessage} name=STRING ':' message=AbstractMessage;
+
+Tag:
+	{Tag} '{' (
+		('"name"' ':' name=STRING ','?)?
+		& ('"description"' ':' description=STRING ','?)?
+	) '}';
 
 AbstractSchema:
 	Reference | Schema;
@@ -78,10 +87,13 @@ Schema:
 		& ( '"type"' ':' type=STRING ','? )?
 		& ( '"description"' ':' description=STRING ','? )?
 		& ( '"format"' ':' format=STRING ','? )?
-		& ( '"default"' ':' default=STRING ','? )?
+		& ( '"default"' ':' default=PrimitiveValue','? )?
 		& ( '"payload"' ':' payload=AbstractSchema ','? )?
 		& ( '"properties"' ':' '{' properties+=NamedSchema (',' properties+=NamedSchema)* '}' ','? )?
-		& ( '"enum"' ':' '[' ^enum+=STRING (',' ^enum+=STRING)* ']' ','? )?
+		& ( '"enum"' ':' '[' ^enum+=PrimitiveValue (',' ^enum+=PrimitiveValue)* ']' ','? )?
+		& ( '"items"' ':' items=AbstractSchema ','? )?
+		& ( '"required"' ':' '[' required+=STRING (',' required+=STRING)* ']' ','? )?
+		& ( '"x-friendly-name"' ':' friendlyName=STRING ','? )?
 	) '}';
 
 NamedSchema:
@@ -96,6 +108,13 @@ Components:
 
 Reference:
 	{Reference} (refname=STRING ':')? '{' '"$ref"' ':' uri=STRING '}';
+
+PrimitiveValue:
+	STRING | INT | "true" | "false";
+
+enum Boolean:
+	_true = "true"
+	| _false = "false";
 
 enum VersionNumber:
 	_100 = '"1.0.0"'
