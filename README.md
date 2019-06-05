@@ -23,8 +23,4 @@ This project contains the following plug-ins:
 
 * `io.github.abelgomez.asyncapi.ide`: Automatically generated plug-in providing the platform-independent IDE integration (e.g., services for content assist).
 
-* `io.github.abelgomez.asyncapi.tests`: Automatically generated tests plug-in for basic language features.
-
 *  `io.github.abelgomez.asyncapi.ui`: Automatically generated plug-in providing the Eclipse UI integration (editor, wizards, etc.).
-
-* `io.github.abelgomez.asyncapi.ui.tests`: Automatically generated tests plug-in for the Eclipse UI integration.
