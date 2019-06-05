@@ -39,164 +39,171 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ComponentsImpl extends MinimalEObjectImpl.Container implements Components
 {
   /**
-	 * The cached value of the '{@link #getSchemas() <em>Schemas</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getSchemas() <em>Schemas</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getSchemas()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getSchemas()
+   * @generated
+   * @ordered
+   */
   protected EList<NamedSchema> schemas;
 
   /**
-	 * The cached value of the '{@link #getMessages() <em>Messages</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getMessages() <em>Messages</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getMessages()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getMessages()
+   * @generated
+   * @ordered
+   */
   protected EList<NamedMessage> messages;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected ComponentsImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return AsyncApiPackage.Literals.COMPONENTS;
-	}
+    return AsyncApiPackage.Literals.COMPONENTS;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EList<NamedSchema> getSchemas()
   {
-		if (schemas == null) {
-			schemas = new EObjectContainmentEList<NamedSchema>(NamedSchema.class, this, AsyncApiPackage.COMPONENTS__SCHEMAS);
-		}
-		return schemas;
-	}
+    if (schemas == null)
+    {
+      schemas = new EObjectContainmentEList<NamedSchema>(NamedSchema.class, this, AsyncApiPackage.COMPONENTS__SCHEMAS);
+    }
+    return schemas;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EList<NamedMessage> getMessages()
   {
-		if (messages == null) {
-			messages = new EObjectContainmentEList<NamedMessage>(NamedMessage.class, this, AsyncApiPackage.COMPONENTS__MESSAGES);
-		}
-		return messages;
-	}
+    if (messages == null)
+    {
+      messages = new EObjectContainmentEList<NamedMessage>(NamedMessage.class, this, AsyncApiPackage.COMPONENTS__MESSAGES);
+    }
+    return messages;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case AsyncApiPackage.COMPONENTS__SCHEMAS:
-				return ((InternalEList<?>)getSchemas()).basicRemove(otherEnd, msgs);
-			case AsyncApiPackage.COMPONENTS__MESSAGES:
-				return ((InternalEList<?>)getMessages()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.COMPONENTS__SCHEMAS:
+        return ((InternalEList<?>)getSchemas()).basicRemove(otherEnd, msgs);
+      case AsyncApiPackage.COMPONENTS__MESSAGES:
+        return ((InternalEList<?>)getMessages()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case AsyncApiPackage.COMPONENTS__SCHEMAS:
-				return getSchemas();
-			case AsyncApiPackage.COMPONENTS__MESSAGES:
-				return getMessages();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.COMPONENTS__SCHEMAS:
+        return getSchemas();
+      case AsyncApiPackage.COMPONENTS__MESSAGES:
+        return getMessages();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case AsyncApiPackage.COMPONENTS__SCHEMAS:
-				getSchemas().clear();
-				getSchemas().addAll((Collection<? extends NamedSchema>)newValue);
-				return;
-			case AsyncApiPackage.COMPONENTS__MESSAGES:
-				getMessages().clear();
-				getMessages().addAll((Collection<? extends NamedMessage>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.COMPONENTS__SCHEMAS:
+        getSchemas().clear();
+        getSchemas().addAll((Collection<? extends NamedSchema>)newValue);
+        return;
+      case AsyncApiPackage.COMPONENTS__MESSAGES:
+        getMessages().clear();
+        getMessages().addAll((Collection<? extends NamedMessage>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case AsyncApiPackage.COMPONENTS__SCHEMAS:
-				getSchemas().clear();
-				return;
-			case AsyncApiPackage.COMPONENTS__MESSAGES:
-				getMessages().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.COMPONENTS__SCHEMAS:
+        getSchemas().clear();
+        return;
+      case AsyncApiPackage.COMPONENTS__MESSAGES:
+        getMessages().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case AsyncApiPackage.COMPONENTS__SCHEMAS:
-				return schemas != null && !schemas.isEmpty();
-			case AsyncApiPackage.COMPONENTS__MESSAGES:
-				return messages != null && !messages.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.COMPONENTS__SCHEMAS:
+        return schemas != null && !schemas.isEmpty();
+      case AsyncApiPackage.COMPONENTS__MESSAGES:
+        return messages != null && !messages.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
 
 } //ComponentsImpl

@@ -34,215 +34,215 @@ import org.eclipse.emf.common.util.EList;
 public interface Schema extends AbstractSchema
 {
   /**
-	 * Returns the value of the '<em><b>Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Title</em>' attribute.
-	 * @see #setTitle(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Title()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Title</em>' attribute.
+   * @see #setTitle(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Title()
+   * @model
+   * @generated
+   */
   String getTitle();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getTitle <em>Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getTitle <em>Title</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Title</em>' attribute.
-	 * @see #getTitle()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Title</em>' attribute.
+   * @see #getTitle()
+   * @generated
+   */
   void setTitle(String value);
 
   /**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see #setType(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Type()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Type</em>' attribute.
+   * @see #setType(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Type()
+   * @model
+   * @generated
+   */
   String getType();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getType <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getType <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see #getType()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Type</em>' attribute.
+   * @see #getType()
+   * @generated
+   */
   void setType(String value);
 
   /**
-	 * Returns the value of the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Description</em>' attribute.
-	 * @see #setDescription(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Description()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Description</em>' attribute.
+   * @see #setDescription(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Description()
+   * @model
+   * @generated
+   */
   String getDescription();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getDescription <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getDescription <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
-	 * @see #getDescription()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Description</em>' attribute.
+   * @see #getDescription()
+   * @generated
+   */
   void setDescription(String value);
 
   /**
-	 * Returns the value of the '<em><b>Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Format</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Format</em>' attribute.
-	 * @see #setFormat(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Format()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Format</em>' attribute.
+   * @see #setFormat(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Format()
+   * @model
+   * @generated
+   */
   String getFormat();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getFormat <em>Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getFormat <em>Format</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Format</em>' attribute.
-	 * @see #getFormat()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Format</em>' attribute.
+   * @see #getFormat()
+   * @generated
+   */
   void setFormat(String value);
 
   /**
-	 * Returns the value of the '<em><b>Default</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Default</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Default</em>' attribute.
-	 * @see #setDefault(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Default()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Default</em>' attribute.
+   * @see #setDefault(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Default()
+   * @model
+   * @generated
+   */
   String getDefault();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getDefault <em>Default</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getDefault <em>Default</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Default</em>' attribute.
-	 * @see #getDefault()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Default</em>' attribute.
+   * @see #getDefault()
+   * @generated
+   */
   void setDefault(String value);
 
   /**
-	 * Returns the value of the '<em><b>Payload</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Payload</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payload</em>' containment reference.
-	 * @see #setPayload(AbstractSchema)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Payload()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Payload</em>' containment reference.
+   * @see #setPayload(AbstractSchema)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Payload()
+   * @model containment="true"
+   * @generated
+   */
   AbstractSchema getPayload();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getPayload <em>Payload</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getPayload <em>Payload</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payload</em>' containment reference.
-	 * @see #getPayload()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Payload</em>' containment reference.
+   * @see #getPayload()
+   * @generated
+   */
   void setPayload(AbstractSchema value);
 
   /**
-	 * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
-	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema}.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Properties</em>' containment reference list.
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Properties()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Properties</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Properties()
+   * @model containment="true"
+   * @generated
+   */
   EList<NamedSchema> getProperties();
 
   /**
-	 * Returns the value of the '<em><b>Enum</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Enum</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Enum</em>' attribute list.
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Enum()
-	 * @model unique="false"
-	 * @generated
-	 */
+   * @return the value of the '<em>Enum</em>' attribute list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Enum()
+   * @model unique="false"
+   * @generated
+   */
   EList<String> getEnum();
 
   /**
-	 * Returns the value of the '<em><b>Items</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Items</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Items</em>' containment reference.
-	 * @see #setItems(AbstractSchema)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Items()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Items</em>' containment reference.
+   * @see #setItems(AbstractSchema)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Items()
+   * @model containment="true"
+   * @generated
+   */
   AbstractSchema getItems();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getItems <em>Items</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getItems <em>Items</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Items</em>' containment reference.
-	 * @see #getItems()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Items</em>' containment reference.
+   * @see #getItems()
+   * @generated
+   */
   void setItems(AbstractSchema value);
 
   /**
-	 * Returns the value of the '<em><b>Required</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Required</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Required</em>' attribute list.
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Required()
-	 * @model unique="false"
-	 * @generated
-	 */
+   * @return the value of the '<em>Required</em>' attribute list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Required()
+   * @model unique="false"
+   * @generated
+   */
   EList<String> getRequired();
 
   /**
-	 * Returns the value of the '<em><b>Friendly Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Friendly Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Friendly Name</em>' attribute.
-	 * @see #setFriendlyName(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_FriendlyName()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Friendly Name</em>' attribute.
+   * @see #setFriendlyName(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_FriendlyName()
+   * @model
+   * @generated
+   */
   String getFriendlyName();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getFriendlyName <em>Friendly Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getFriendlyName <em>Friendly Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Friendly Name</em>' attribute.
-	 * @see #getFriendlyName()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Friendly Name</em>' attribute.
+   * @see #getFriendlyName()
+   * @generated
+   */
   void setFriendlyName(String value);
 
 } // Schema

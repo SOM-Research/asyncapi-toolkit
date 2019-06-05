@@ -31,262 +31,266 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ContactImpl extends MinimalEObjectImpl.Container implements Contact
 {
   /**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
   protected String name = NAME_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getUrl()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getUrl()
+   * @generated
+   * @ordered
+   */
   protected static final String URL_EDEFAULT = null;
 
   /**
-	 * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getUrl()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getUrl()
+   * @generated
+   * @ordered
+   */
   protected String url = URL_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #getEmail() <em>Email</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getEmail() <em>Email</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getEmail()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getEmail()
+   * @generated
+   * @ordered
+   */
   protected static final String EMAIL_EDEFAULT = null;
 
   /**
-	 * The cached value of the '{@link #getEmail() <em>Email</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getEmail() <em>Email</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getEmail()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getEmail()
+   * @generated
+   * @ordered
+   */
   protected String email = EMAIL_EDEFAULT;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected ContactImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return AsyncApiPackage.Literals.CONTACT;
-	}
+    return AsyncApiPackage.Literals.CONTACT;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String getName()
   {
-		return name;
-	}
+    return name;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void setName(String newName)
   {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CONTACT__NAME, oldName, name));
-	}
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CONTACT__NAME, oldName, name));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String getUrl()
   {
-		return url;
-	}
+    return url;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void setUrl(String newUrl)
   {
-		String oldUrl = url;
-		url = newUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CONTACT__URL, oldUrl, url));
-	}
+    String oldUrl = url;
+    url = newUrl;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CONTACT__URL, oldUrl, url));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String getEmail()
   {
-		return email;
-	}
+    return email;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void setEmail(String newEmail)
   {
-		String oldEmail = email;
-		email = newEmail;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CONTACT__EMAIL, oldEmail, email));
-	}
+    String oldEmail = email;
+    email = newEmail;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CONTACT__EMAIL, oldEmail, email));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case AsyncApiPackage.CONTACT__NAME:
-				return getName();
-			case AsyncApiPackage.CONTACT__URL:
-				return getUrl();
-			case AsyncApiPackage.CONTACT__EMAIL:
-				return getEmail();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.CONTACT__NAME:
+        return getName();
+      case AsyncApiPackage.CONTACT__URL:
+        return getUrl();
+      case AsyncApiPackage.CONTACT__EMAIL:
+        return getEmail();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case AsyncApiPackage.CONTACT__NAME:
-				setName((String)newValue);
-				return;
-			case AsyncApiPackage.CONTACT__URL:
-				setUrl((String)newValue);
-				return;
-			case AsyncApiPackage.CONTACT__EMAIL:
-				setEmail((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.CONTACT__NAME:
+        setName((String)newValue);
+        return;
+      case AsyncApiPackage.CONTACT__URL:
+        setUrl((String)newValue);
+        return;
+      case AsyncApiPackage.CONTACT__EMAIL:
+        setEmail((String)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case AsyncApiPackage.CONTACT__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case AsyncApiPackage.CONTACT__URL:
-				setUrl(URL_EDEFAULT);
-				return;
-			case AsyncApiPackage.CONTACT__EMAIL:
-				setEmail(EMAIL_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.CONTACT__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case AsyncApiPackage.CONTACT__URL:
+        setUrl(URL_EDEFAULT);
+        return;
+      case AsyncApiPackage.CONTACT__EMAIL:
+        setEmail(EMAIL_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case AsyncApiPackage.CONTACT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case AsyncApiPackage.CONTACT__URL:
-				return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
-			case AsyncApiPackage.CONTACT__EMAIL:
-				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.CONTACT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AsyncApiPackage.CONTACT__URL:
+        return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
+      case AsyncApiPackage.CONTACT__EMAIL:
+        return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
+    }
+    return super.eIsSet(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String toString()
   {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", url: ");
-		result.append(url);
-		result.append(", email: ");
-		result.append(email);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", url: ");
+    result.append(url);
+    result.append(", email: ");
+    result.append(email);
+    result.append(')');
+    return result.toString();
+  }
 
 } //ContactImpl

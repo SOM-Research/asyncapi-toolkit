@@ -3420,9 +3420,9 @@ rule__Server__Group_2_0__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getServerAccess().getTitleAssignment_2_0_2()); }
-	(rule__Server__TitleAssignment_2_0_2)
-	{ after(grammarAccess.getServerAccess().getTitleAssignment_2_0_2()); }
+	{ before(grammarAccess.getServerAccess().getUrlAssignment_2_0_2()); }
+	(rule__Server__UrlAssignment_2_0_2)
+	{ after(grammarAccess.getServerAccess().getUrlAssignment_2_0_2()); }
 )
 ;
 finally {
@@ -10756,15 +10756,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Server__TitleAssignment_2_0_2
+rule__Server__UrlAssignment_2_0_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getServerAccess().getTitleSTRINGTerminalRuleCall_2_0_2_0()); }
+		{ before(grammarAccess.getServerAccess().getUrlSTRINGTerminalRuleCall_2_0_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getServerAccess().getTitleSTRINGTerminalRuleCall_2_0_2_0()); }
+		{ after(grammarAccess.getServerAccess().getUrlSTRINGTerminalRuleCall_2_0_2_0()); }
 	)
 ;
 finally {

@@ -2669,14 +2669,14 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleServer"
-    // InternalAsyncApi.g:1070:1: ruleServer returns [EObject current=null] : ( () otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?) ) ) otherlv_23= '}' ) ;
+    // InternalAsyncApi.g:1070:1: ruleServer returns [EObject current=null] : ( () otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?) ) ) otherlv_23= '}' ) ;
     public final EObject ruleServer() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
-        Token lv_title_5_0=null;
+        Token lv_url_5_0=null;
         Token otherlv_6=null;
         Token otherlv_7=null;
         Token otherlv_8=null;
@@ -2703,11 +2703,11 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAsyncApi.g:1076:2: ( ( () otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?) ) ) otherlv_23= '}' ) )
-            // InternalAsyncApi.g:1077:2: ( () otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?) ) ) otherlv_23= '}' )
+            // InternalAsyncApi.g:1076:2: ( ( () otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?) ) ) otherlv_23= '}' ) )
+            // InternalAsyncApi.g:1077:2: ( () otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?) ) ) otherlv_23= '}' )
             {
-            // InternalAsyncApi.g:1077:2: ( () otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?) ) ) otherlv_23= '}' )
-            // InternalAsyncApi.g:1078:3: () otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?) ) ) otherlv_23= '}'
+            // InternalAsyncApi.g:1077:2: ( () otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?) ) ) otherlv_23= '}' )
+            // InternalAsyncApi.g:1078:3: () otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?) ) ) otherlv_23= '}'
             {
             // InternalAsyncApi.g:1078:3: ()
             // InternalAsyncApi.g:1079:4: 
@@ -2724,19 +2724,19 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getServerAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalAsyncApi.g:1089:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?) ) )
-            // InternalAsyncApi.g:1090:4: ( ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?) )
+            // InternalAsyncApi.g:1089:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?) ) )
+            // InternalAsyncApi.g:1090:4: ( ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?) )
             {
-            // InternalAsyncApi.g:1090:4: ( ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?) )
-            // InternalAsyncApi.g:1091:5: ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?)
+            // InternalAsyncApi.g:1090:4: ( ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?) )
+            // InternalAsyncApi.g:1091:5: ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?)
             {
              
             				  getUnorderedGroupHelper().enter(grammarAccess.getServerAccess().getUnorderedGroup_2());
             				
-            // InternalAsyncApi.g:1094:5: ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?)
-            // InternalAsyncApi.g:1095:6: ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?
+            // InternalAsyncApi.g:1094:5: ( ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?)
+            // InternalAsyncApi.g:1095:6: ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+ {...}?
             {
-            // InternalAsyncApi.g:1095:6: ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+
+            // InternalAsyncApi.g:1095:6: ( ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= '\"scheme\"' otherlv_8= ':' ( (lv_scheme_9_0= ruleScheme ) ) (otherlv_10= ',' )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_11= '\"description\"' otherlv_12= ':' ( (lv_description_13_0= RULE_STRING ) ) otherlv_14= ',' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_15= '\"variables\"' otherlv_16= ':' otherlv_17= '{' ( (lv_variables_18_0= ruleVariable ) ) (otherlv_19= ',' ( (lv_variables_20_0= ruleVariable ) ) )* otherlv_21= '}' (otherlv_22= ',' )? ) ) ) ) )+
             int cnt28=0;
             loop28:
             do {
@@ -2759,28 +2759,28 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
                 switch (alt28) {
             	case 1 :
-            	    // InternalAsyncApi.g:1096:4: ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) )
+            	    // InternalAsyncApi.g:1096:4: ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) )
             	    {
-            	    // InternalAsyncApi.g:1096:4: ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) )
-            	    // InternalAsyncApi.g:1097:5: {...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) )
+            	    // InternalAsyncApi.g:1096:4: ({...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) ) )
+            	    // InternalAsyncApi.g:1097:5: {...}? => ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getServerAccess().getUnorderedGroup_2(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleServer", "getUnorderedGroupHelper().canSelect(grammarAccess.getServerAccess().getUnorderedGroup_2(), 0)");
             	    }
-            	    // InternalAsyncApi.g:1097:103: ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) )
-            	    // InternalAsyncApi.g:1098:6: ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) )
+            	    // InternalAsyncApi.g:1097:103: ( ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) ) )
+            	    // InternalAsyncApi.g:1098:6: ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getServerAccess().getUnorderedGroup_2(), 0);
             	    					
-            	    // InternalAsyncApi.g:1101:9: ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) )
-            	    // InternalAsyncApi.g:1101:10: {...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? )
+            	    // InternalAsyncApi.g:1101:9: ({...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? ) )
+            	    // InternalAsyncApi.g:1101:10: {...}? => (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleServer", "true");
             	    }
-            	    // InternalAsyncApi.g:1101:19: (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )? )
-            	    // InternalAsyncApi.g:1101:20: otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) (otherlv_6= ',' )?
+            	    // InternalAsyncApi.g:1101:19: (otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )? )
+            	    // InternalAsyncApi.g:1101:20: otherlv_3= '\"url\"' otherlv_4= ':' ( (lv_url_5_0= RULE_STRING ) ) (otherlv_6= ',' )?
             	    {
             	    otherlv_3=(Token)match(input,30,FOLLOW_4); 
 
@@ -2790,15 +2790,15 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
             	    									newLeafNode(otherlv_4, grammarAccess.getServerAccess().getColonKeyword_2_0_1());
             	    								
-            	    // InternalAsyncApi.g:1109:9: ( (lv_title_5_0= RULE_STRING ) )
-            	    // InternalAsyncApi.g:1110:10: (lv_title_5_0= RULE_STRING )
+            	    // InternalAsyncApi.g:1109:9: ( (lv_url_5_0= RULE_STRING ) )
+            	    // InternalAsyncApi.g:1110:10: (lv_url_5_0= RULE_STRING )
             	    {
-            	    // InternalAsyncApi.g:1110:10: (lv_title_5_0= RULE_STRING )
-            	    // InternalAsyncApi.g:1111:11: lv_title_5_0= RULE_STRING
+            	    // InternalAsyncApi.g:1110:10: (lv_url_5_0= RULE_STRING )
+            	    // InternalAsyncApi.g:1111:11: lv_url_5_0= RULE_STRING
             	    {
-            	    lv_title_5_0=(Token)match(input,RULE_STRING,FOLLOW_21); 
+            	    lv_url_5_0=(Token)match(input,RULE_STRING,FOLLOW_21); 
 
-            	    											newLeafNode(lv_title_5_0, grammarAccess.getServerAccess().getTitleSTRINGTerminalRuleCall_2_0_2_0());
+            	    											newLeafNode(lv_url_5_0, grammarAccess.getServerAccess().getUrlSTRINGTerminalRuleCall_2_0_2_0());
             	    										
 
             	    											if (current==null) {
@@ -2806,8 +2806,8 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
             	    											}
             	    											setWithLastConsumed(
             	    												current,
-            	    												"title",
-            	    												lv_title_5_0,
+            	    												"url",
+            	    												lv_url_5_0,
             	    												"org.eclipse.xtext.common.Terminals.STRING");
             	    										
 

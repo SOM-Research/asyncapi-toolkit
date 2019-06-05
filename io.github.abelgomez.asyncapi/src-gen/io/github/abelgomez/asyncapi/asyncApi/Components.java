@@ -27,27 +27,27 @@ import org.eclipse.emf.ecore.EObject;
 public interface Components extends EObject
 {
   /**
-	 * Returns the value of the '<em><b>Schemas</b></em>' containment reference list.
-	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Schemas</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema}.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Schemas</em>' containment reference list.
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_Schemas()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Schemas</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_Schemas()
+   * @model containment="true"
+   * @generated
+   */
   EList<NamedSchema> getSchemas();
 
   /**
-	 * Returns the value of the '<em><b>Messages</b></em>' containment reference list.
-	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedMessage}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Messages</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedMessage}.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Messages</em>' containment reference list.
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_Messages()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Messages</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_Messages()
+   * @model containment="true"
+   * @generated
+   */
   EList<NamedMessage> getMessages();
 
 } // Components

@@ -1108,9 +1108,9 @@ ruleServer returns [EObject current=null]
 								}
 								(
 									(
-										lv_title_5_0=RULE_STRING
+										lv_url_5_0=RULE_STRING
 										{
-											newLeafNode(lv_title_5_0, grammarAccess.getServerAccess().getTitleSTRINGTerminalRuleCall_2_0_2_0());
+											newLeafNode(lv_url_5_0, grammarAccess.getServerAccess().getUrlSTRINGTerminalRuleCall_2_0_2_0());
 										}
 										{
 											if ($current==null) {
@@ -1118,8 +1118,8 @@ ruleServer returns [EObject current=null]
 											}
 											setWithLastConsumed(
 												$current,
-												"title",
-												lv_title_5_0,
+												"url",
+												lv_url_5_0,
 												"org.eclipse.xtext.common.Terminals.STRING");
 										}
 									)

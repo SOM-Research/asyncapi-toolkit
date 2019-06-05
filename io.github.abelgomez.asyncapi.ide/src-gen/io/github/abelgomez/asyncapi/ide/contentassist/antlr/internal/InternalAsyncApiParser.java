@@ -10314,31 +10314,31 @@ public class InternalAsyncApiParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Server__Group_2_0__2__Impl"
-    // InternalAsyncApi.g:3417:1: rule__Server__Group_2_0__2__Impl : ( ( rule__Server__TitleAssignment_2_0_2 ) ) ;
+    // InternalAsyncApi.g:3417:1: rule__Server__Group_2_0__2__Impl : ( ( rule__Server__UrlAssignment_2_0_2 ) ) ;
     public final void rule__Server__Group_2_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAsyncApi.g:3421:1: ( ( ( rule__Server__TitleAssignment_2_0_2 ) ) )
-            // InternalAsyncApi.g:3422:1: ( ( rule__Server__TitleAssignment_2_0_2 ) )
+            // InternalAsyncApi.g:3421:1: ( ( ( rule__Server__UrlAssignment_2_0_2 ) ) )
+            // InternalAsyncApi.g:3422:1: ( ( rule__Server__UrlAssignment_2_0_2 ) )
             {
-            // InternalAsyncApi.g:3422:1: ( ( rule__Server__TitleAssignment_2_0_2 ) )
-            // InternalAsyncApi.g:3423:2: ( rule__Server__TitleAssignment_2_0_2 )
+            // InternalAsyncApi.g:3422:1: ( ( rule__Server__UrlAssignment_2_0_2 ) )
+            // InternalAsyncApi.g:3423:2: ( rule__Server__UrlAssignment_2_0_2 )
             {
-             before(grammarAccess.getServerAccess().getTitleAssignment_2_0_2()); 
-            // InternalAsyncApi.g:3424:2: ( rule__Server__TitleAssignment_2_0_2 )
-            // InternalAsyncApi.g:3424:3: rule__Server__TitleAssignment_2_0_2
+             before(grammarAccess.getServerAccess().getUrlAssignment_2_0_2()); 
+            // InternalAsyncApi.g:3424:2: ( rule__Server__UrlAssignment_2_0_2 )
+            // InternalAsyncApi.g:3424:3: rule__Server__UrlAssignment_2_0_2
             {
             pushFollow(FOLLOW_2);
-            rule__Server__TitleAssignment_2_0_2();
+            rule__Server__UrlAssignment_2_0_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getServerAccess().getTitleAssignment_2_0_2()); 
+             after(grammarAccess.getServerAccess().getUrlAssignment_2_0_2()); 
 
             }
 
@@ -33171,9 +33171,9 @@ public class InternalAsyncApiParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__License__UrlAssignment_2_1_2"
 
 
-    // $ANTLR start "rule__Server__TitleAssignment_2_0_2"
-    // InternalAsyncApi.g:10759:1: rule__Server__TitleAssignment_2_0_2 : ( RULE_STRING ) ;
-    public final void rule__Server__TitleAssignment_2_0_2() throws RecognitionException {
+    // $ANTLR start "rule__Server__UrlAssignment_2_0_2"
+    // InternalAsyncApi.g:10759:1: rule__Server__UrlAssignment_2_0_2 : ( RULE_STRING ) ;
+    public final void rule__Server__UrlAssignment_2_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -33184,9 +33184,9 @@ public class InternalAsyncApiParser extends AbstractInternalContentAssistParser 
             // InternalAsyncApi.g:10764:2: ( RULE_STRING )
             // InternalAsyncApi.g:10765:3: RULE_STRING
             {
-             before(grammarAccess.getServerAccess().getTitleSTRINGTerminalRuleCall_2_0_2_0()); 
+             before(grammarAccess.getServerAccess().getUrlSTRINGTerminalRuleCall_2_0_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getServerAccess().getTitleSTRINGTerminalRuleCall_2_0_2_0()); 
+             after(grammarAccess.getServerAccess().getUrlSTRINGTerminalRuleCall_2_0_2_0()); 
 
             }
 
@@ -33205,7 +33205,7 @@ public class InternalAsyncApiParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Server__TitleAssignment_2_0_2"
+    // $ANTLR end "rule__Server__UrlAssignment_2_0_2"
 
 
     // $ANTLR start "rule__Server__SchemeAssignment_2_1_2"

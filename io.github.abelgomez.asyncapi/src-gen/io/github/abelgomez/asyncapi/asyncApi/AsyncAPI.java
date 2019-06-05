@@ -31,118 +31,118 @@ import org.eclipse.emf.ecore.EObject;
 public interface AsyncAPI extends EObject
 {
   /**
-	 * Returns the value of the '<em><b>Version</b></em>' attribute.
-	 * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.VersionNumber}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Version</b></em>' attribute.
+   * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.VersionNumber}.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Version</em>' attribute.
-	 * @see io.github.abelgomez.asyncapi.asyncApi.VersionNumber
-	 * @see #setVersion(VersionNumber)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_Version()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Version</em>' attribute.
+   * @see io.github.abelgomez.asyncapi.asyncApi.VersionNumber
+   * @see #setVersion(VersionNumber)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_Version()
+   * @model
+   * @generated
+   */
   VersionNumber getVersion();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getVersion <em>Version</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getVersion <em>Version</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Version</em>' attribute.
-	 * @see io.github.abelgomez.asyncapi.asyncApi.VersionNumber
-	 * @see #getVersion()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Version</em>' attribute.
+   * @see io.github.abelgomez.asyncapi.asyncApi.VersionNumber
+   * @see #getVersion()
+   * @generated
+   */
   void setVersion(VersionNumber value);
 
   /**
-	 * Returns the value of the '<em><b>Info</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Info</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Info</em>' containment reference.
-	 * @see #setInfo(Info)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_Info()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Info</em>' containment reference.
+   * @see #setInfo(Info)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_Info()
+   * @model containment="true"
+   * @generated
+   */
   Info getInfo();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getInfo <em>Info</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getInfo <em>Info</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Info</em>' containment reference.
-	 * @see #getInfo()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Info</em>' containment reference.
+   * @see #getInfo()
+   * @generated
+   */
   void setInfo(Info value);
 
   /**
-	 * Returns the value of the '<em><b>Servers</b></em>' containment reference list.
-	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.Server}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Servers</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.Server}.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Servers</em>' containment reference list.
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_Servers()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Servers</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_Servers()
+   * @model containment="true"
+   * @generated
+   */
   EList<Server> getServers();
 
   /**
-	 * Returns the value of the '<em><b>Topics</b></em>' containment reference list.
-	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.Topic}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Topics</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.Topic}.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Topics</em>' containment reference list.
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_Topics()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Topics</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_Topics()
+   * @model containment="true"
+   * @generated
+   */
   EList<Topic> getTopics();
 
   /**
-	 * Returns the value of the '<em><b>Components</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Components</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Components</em>' containment reference.
-	 * @see #setComponents(Components)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_Components()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Components</em>' containment reference.
+   * @see #setComponents(Components)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_Components()
+   * @model containment="true"
+   * @generated
+   */
   Components getComponents();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getComponents <em>Components</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getComponents <em>Components</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Components</em>' containment reference.
-	 * @see #getComponents()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Components</em>' containment reference.
+   * @see #getComponents()
+   * @generated
+   */
   void setComponents(Components value);
 
   /**
-	 * Returns the value of the '<em><b>Base Topic</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Base Topic</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Base Topic</em>' attribute.
-	 * @see #setBaseTopic(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_BaseTopic()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Base Topic</em>' attribute.
+   * @see #setBaseTopic(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_BaseTopic()
+   * @model
+   * @generated
+   */
   String getBaseTopic();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getBaseTopic <em>Base Topic</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getBaseTopic <em>Base Topic</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Topic</em>' attribute.
-	 * @see #getBaseTopic()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Base Topic</em>' attribute.
+   * @see #getBaseTopic()
+   * @generated
+   */
   void setBaseTopic(String value);
 
 } // AsyncAPI

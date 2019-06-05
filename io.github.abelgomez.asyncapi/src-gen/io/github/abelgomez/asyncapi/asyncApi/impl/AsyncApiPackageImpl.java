@@ -41,1283 +41,1283 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass asyncAPIEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass infoEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass contactEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass licenseEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass serverEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass variableEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass topicEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass abstractMessageEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass messageEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass namedMessageEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass tagEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass abstractSchemaEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass schemaEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass namedSchemaEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass componentsEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EClass referenceEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EEnum booleanEEnum = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EEnum versionNumberEEnum = null;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private EEnum schemeEEnum = null;
 
   /**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
-	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
+   * Creates an instance of the model <b>Package</b>, registered with
+   * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+   * package URI value.
+   * <p>Note: the correct way to create the package is via the static
+   * factory method {@link #init init()}, which also performs
+   * initialization of the package, or returns the registered package,
+   * if one already exists.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#eNS_URI
-	 * @see #init()
-	 * @generated
-	 */
+   * @see org.eclipse.emf.ecore.EPackage.Registry
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#eNS_URI
+   * @see #init()
+   * @generated
+   */
   private AsyncApiPackageImpl()
   {
-		super(eNS_URI, AsyncApiFactory.eINSTANCE);
-	}
+    super(eNS_URI, AsyncApiFactory.eINSTANCE);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private static boolean isInited = false;
 
   /**
-	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 *
-	 * <p>This method is used to initialize {@link AsyncApiPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
+   * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+   *
+   * <p>This method is used to initialize {@link AsyncApiPackage#eINSTANCE} when that field is accessed.
+   * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #eNS_URI
-	 * @see #createPackageContents()
-	 * @see #initializePackageContents()
-	 * @generated
-	 */
+   * @see #eNS_URI
+   * @see #createPackageContents()
+   * @see #initializePackageContents()
+   * @generated
+   */
   public static AsyncApiPackage init()
   {
-		if (isInited) return (AsyncApiPackage)EPackage.Registry.INSTANCE.getEPackage(AsyncApiPackage.eNS_URI);
+    if (isInited) return (AsyncApiPackage)EPackage.Registry.INSTANCE.getEPackage(AsyncApiPackage.eNS_URI);
 
-		// Obtain or create and register package
-		Object registeredAsyncApiPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		AsyncApiPackageImpl theAsyncApiPackage = registeredAsyncApiPackage instanceof AsyncApiPackageImpl ? (AsyncApiPackageImpl)registeredAsyncApiPackage : new AsyncApiPackageImpl();
+    // Obtain or create and register package
+    Object registeredAsyncApiPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+    AsyncApiPackageImpl theAsyncApiPackage = registeredAsyncApiPackage instanceof AsyncApiPackageImpl ? (AsyncApiPackageImpl)registeredAsyncApiPackage : new AsyncApiPackageImpl();
 
-		isInited = true;
+    isInited = true;
 
-		// Create package meta-data objects
-		theAsyncApiPackage.createPackageContents();
+    // Create package meta-data objects
+    theAsyncApiPackage.createPackageContents();
 
-		// Initialize created meta-data
-		theAsyncApiPackage.initializePackageContents();
+    // Initialize created meta-data
+    theAsyncApiPackage.initializePackageContents();
 
-		// Mark meta-data to indicate it can't be changed
-		theAsyncApiPackage.freeze();
+    // Mark meta-data to indicate it can't be changed
+    theAsyncApiPackage.freeze();
 
-		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(AsyncApiPackage.eNS_URI, theAsyncApiPackage);
-		return theAsyncApiPackage;
-	}
+    // Update the registry and return the package
+    EPackage.Registry.INSTANCE.put(AsyncApiPackage.eNS_URI, theAsyncApiPackage);
+    return theAsyncApiPackage;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EClass getAsyncAPI()
   {
-		return asyncAPIEClass;
-	}
+    return asyncAPIEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getAsyncAPI_Version()
   {
-		return (EAttribute)asyncAPIEClass.getEStructuralFeatures().get(0);
-	}
+    return (EAttribute)asyncAPIEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getAsyncAPI_Info()
   {
-		return (EReference)asyncAPIEClass.getEStructuralFeatures().get(1);
-	}
+    return (EReference)asyncAPIEClass.getEStructuralFeatures().get(1);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getAsyncAPI_Servers()
   {
-		return (EReference)asyncAPIEClass.getEStructuralFeatures().get(2);
-	}
+    return (EReference)asyncAPIEClass.getEStructuralFeatures().get(2);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getAsyncAPI_Topics()
   {
-		return (EReference)asyncAPIEClass.getEStructuralFeatures().get(3);
-	}
+    return (EReference)asyncAPIEClass.getEStructuralFeatures().get(3);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getAsyncAPI_Components()
   {
-		return (EReference)asyncAPIEClass.getEStructuralFeatures().get(4);
-	}
+    return (EReference)asyncAPIEClass.getEStructuralFeatures().get(4);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getAsyncAPI_BaseTopic()
   {
-		return (EAttribute)asyncAPIEClass.getEStructuralFeatures().get(5);
-	}
+    return (EAttribute)asyncAPIEClass.getEStructuralFeatures().get(5);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EClass getInfo()
   {
-		return infoEClass;
-	}
+    return infoEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getInfo_Title()
   {
-		return (EAttribute)infoEClass.getEStructuralFeatures().get(0);
-	}
+    return (EAttribute)infoEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getInfo_Version()
   {
-		return (EAttribute)infoEClass.getEStructuralFeatures().get(1);
-	}
+    return (EAttribute)infoEClass.getEStructuralFeatures().get(1);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getInfo_Description()
   {
-		return (EAttribute)infoEClass.getEStructuralFeatures().get(2);
-	}
+    return (EAttribute)infoEClass.getEStructuralFeatures().get(2);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getInfo_TermsOfService()
   {
-		return (EAttribute)infoEClass.getEStructuralFeatures().get(3);
-	}
+    return (EAttribute)infoEClass.getEStructuralFeatures().get(3);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getInfo_Contact()
   {
-		return (EReference)infoEClass.getEStructuralFeatures().get(4);
-	}
+    return (EReference)infoEClass.getEStructuralFeatures().get(4);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getInfo_License()
   {
-		return (EReference)infoEClass.getEStructuralFeatures().get(5);
-	}
+    return (EReference)infoEClass.getEStructuralFeatures().get(5);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EClass getContact()
   {
-		return contactEClass;
-	}
+    return contactEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getContact_Name()
   {
-		return (EAttribute)contactEClass.getEStructuralFeatures().get(0);
-	}
+    return (EAttribute)contactEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getContact_Url()
   {
-		return (EAttribute)contactEClass.getEStructuralFeatures().get(1);
-	}
+    return (EAttribute)contactEClass.getEStructuralFeatures().get(1);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getContact_Email()
   {
-		return (EAttribute)contactEClass.getEStructuralFeatures().get(2);
-	}
+    return (EAttribute)contactEClass.getEStructuralFeatures().get(2);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EClass getLicense()
   {
-		return licenseEClass;
-	}
+    return licenseEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getLicense_Name()
   {
-		return (EAttribute)licenseEClass.getEStructuralFeatures().get(0);
-	}
+    return (EAttribute)licenseEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getLicense_Url()
   {
-		return (EAttribute)licenseEClass.getEStructuralFeatures().get(1);
-	}
+    return (EAttribute)licenseEClass.getEStructuralFeatures().get(1);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EClass getServer()
   {
-		return serverEClass;
-	}
+    return serverEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
-  public EAttribute getServer_Title()
+  public EAttribute getServer_Url()
   {
-		return (EAttribute)serverEClass.getEStructuralFeatures().get(0);
-	}
+    return (EAttribute)serverEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getServer_Scheme()
   {
-		return (EAttribute)serverEClass.getEStructuralFeatures().get(1);
-	}
+    return (EAttribute)serverEClass.getEStructuralFeatures().get(1);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getServer_Description()
   {
-		return (EAttribute)serverEClass.getEStructuralFeatures().get(2);
-	}
+    return (EAttribute)serverEClass.getEStructuralFeatures().get(2);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getServer_Variables()
   {
-		return (EReference)serverEClass.getEStructuralFeatures().get(3);
-	}
+    return (EReference)serverEClass.getEStructuralFeatures().get(3);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EClass getVariable()
   {
-		return variableEClass;
-	}
+    return variableEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getVariable_Name()
   {
-		return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
-	}
+    return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getVariable_Description()
   {
-		return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
-	}
+    return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getVariable_Default()
   {
-		return (EAttribute)variableEClass.getEStructuralFeatures().get(2);
-	}
+    return (EAttribute)variableEClass.getEStructuralFeatures().get(2);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getVariable_Enum()
   {
-		return (EAttribute)variableEClass.getEStructuralFeatures().get(3);
-	}
+    return (EAttribute)variableEClass.getEStructuralFeatures().get(3);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EClass getTopic()
   {
-		return topicEClass;
-	}
+    return topicEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getTopic_Name()
   {
-		return (EAttribute)topicEClass.getEStructuralFeatures().get(0);
-	}
+    return (EAttribute)topicEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getTopic_Publish()
   {
-		return (EReference)topicEClass.getEStructuralFeatures().get(1);
-	}
+    return (EReference)topicEClass.getEStructuralFeatures().get(1);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getTopic_Subscribe()
   {
-		return (EReference)topicEClass.getEStructuralFeatures().get(2);
-	}
+    return (EReference)topicEClass.getEStructuralFeatures().get(2);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EClass getAbstractMessage()
   {
-		return abstractMessageEClass;
-	}
+    return abstractMessageEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EClass getMessage()
   {
-		return messageEClass;
-	}
+    return messageEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getMessage_Summary()
   {
-		return (EAttribute)messageEClass.getEStructuralFeatures().get(0);
-	}
+    return (EAttribute)messageEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getMessage_Description()
   {
-		return (EAttribute)messageEClass.getEStructuralFeatures().get(1);
-	}
+    return (EAttribute)messageEClass.getEStructuralFeatures().get(1);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getMessage_Deprecated()
   {
-		return (EAttribute)messageEClass.getEStructuralFeatures().get(2);
-	}
+    return (EAttribute)messageEClass.getEStructuralFeatures().get(2);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getMessage_Headers()
   {
-		return (EReference)messageEClass.getEStructuralFeatures().get(3);
-	}
+    return (EReference)messageEClass.getEStructuralFeatures().get(3);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getMessage_Tags()
   {
-		return (EReference)messageEClass.getEStructuralFeatures().get(4);
-	}
+    return (EReference)messageEClass.getEStructuralFeatures().get(4);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getMessage_Payload()
   {
-		return (EReference)messageEClass.getEStructuralFeatures().get(5);
-	}
+    return (EReference)messageEClass.getEStructuralFeatures().get(5);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EClass getNamedMessage()
   {
-		return namedMessageEClass;
-	}
+    return namedMessageEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getNamedMessage_Name()
   {
-		return (EAttribute)namedMessageEClass.getEStructuralFeatures().get(0);
-	}
+    return (EAttribute)namedMessageEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getNamedMessage_Message()
   {
-		return (EReference)namedMessageEClass.getEStructuralFeatures().get(1);
-	}
+    return (EReference)namedMessageEClass.getEStructuralFeatures().get(1);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EClass getTag()
   {
-		return tagEClass;
-	}
+    return tagEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getTag_Name()
   {
-		return (EAttribute)tagEClass.getEStructuralFeatures().get(0);
-	}
+    return (EAttribute)tagEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getTag_Description()
   {
-		return (EAttribute)tagEClass.getEStructuralFeatures().get(1);
-	}
+    return (EAttribute)tagEClass.getEStructuralFeatures().get(1);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EClass getAbstractSchema()
   {
-		return abstractSchemaEClass;
-	}
+    return abstractSchemaEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EClass getSchema()
   {
-		return schemaEClass;
-	}
+    return schemaEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getSchema_Title()
   {
-		return (EAttribute)schemaEClass.getEStructuralFeatures().get(0);
-	}
+    return (EAttribute)schemaEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getSchema_Type()
   {
-		return (EAttribute)schemaEClass.getEStructuralFeatures().get(1);
-	}
+    return (EAttribute)schemaEClass.getEStructuralFeatures().get(1);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getSchema_Description()
   {
-		return (EAttribute)schemaEClass.getEStructuralFeatures().get(2);
-	}
+    return (EAttribute)schemaEClass.getEStructuralFeatures().get(2);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getSchema_Format()
   {
-		return (EAttribute)schemaEClass.getEStructuralFeatures().get(3);
-	}
+    return (EAttribute)schemaEClass.getEStructuralFeatures().get(3);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getSchema_Default()
   {
-		return (EAttribute)schemaEClass.getEStructuralFeatures().get(4);
-	}
+    return (EAttribute)schemaEClass.getEStructuralFeatures().get(4);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getSchema_Payload()
   {
-		return (EReference)schemaEClass.getEStructuralFeatures().get(5);
-	}
+    return (EReference)schemaEClass.getEStructuralFeatures().get(5);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getSchema_Properties()
   {
-		return (EReference)schemaEClass.getEStructuralFeatures().get(6);
-	}
+    return (EReference)schemaEClass.getEStructuralFeatures().get(6);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getSchema_Enum()
   {
-		return (EAttribute)schemaEClass.getEStructuralFeatures().get(7);
-	}
+    return (EAttribute)schemaEClass.getEStructuralFeatures().get(7);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getSchema_Items()
   {
-		return (EReference)schemaEClass.getEStructuralFeatures().get(8);
-	}
+    return (EReference)schemaEClass.getEStructuralFeatures().get(8);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getSchema_Required()
   {
-		return (EAttribute)schemaEClass.getEStructuralFeatures().get(9);
-	}
+    return (EAttribute)schemaEClass.getEStructuralFeatures().get(9);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getSchema_FriendlyName()
   {
-		return (EAttribute)schemaEClass.getEStructuralFeatures().get(10);
-	}
+    return (EAttribute)schemaEClass.getEStructuralFeatures().get(10);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EClass getNamedSchema()
   {
-		return namedSchemaEClass;
-	}
+    return namedSchemaEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getNamedSchema_Name()
   {
-		return (EAttribute)namedSchemaEClass.getEStructuralFeatures().get(0);
-	}
+    return (EAttribute)namedSchemaEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getNamedSchema_Schema()
   {
-		return (EReference)namedSchemaEClass.getEStructuralFeatures().get(1);
-	}
+    return (EReference)namedSchemaEClass.getEStructuralFeatures().get(1);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EClass getComponents()
   {
-		return componentsEClass;
-	}
+    return componentsEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getComponents_Schemas()
   {
-		return (EReference)componentsEClass.getEStructuralFeatures().get(0);
-	}
+    return (EReference)componentsEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EReference getComponents_Messages()
   {
-		return (EReference)componentsEClass.getEStructuralFeatures().get(1);
-	}
+    return (EReference)componentsEClass.getEStructuralFeatures().get(1);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EClass getReference()
   {
-		return referenceEClass;
-	}
+    return referenceEClass;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getReference_Refname()
   {
-		return (EAttribute)referenceEClass.getEStructuralFeatures().get(0);
-	}
+    return (EAttribute)referenceEClass.getEStructuralFeatures().get(0);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EAttribute getReference_Uri()
   {
-		return (EAttribute)referenceEClass.getEStructuralFeatures().get(1);
-	}
+    return (EAttribute)referenceEClass.getEStructuralFeatures().get(1);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EEnum getBoolean()
   {
-		return booleanEEnum;
-	}
+    return booleanEEnum;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EEnum getVersionNumber()
   {
-		return versionNumberEEnum;
-	}
+    return versionNumberEEnum;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EEnum getScheme()
   {
-		return schemeEEnum;
-	}
+    return schemeEEnum;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public AsyncApiFactory getAsyncApiFactory()
   {
-		return (AsyncApiFactory)getEFactoryInstance();
-	}
+    return (AsyncApiFactory)getEFactoryInstance();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private boolean isCreated = false;
 
   /**
-	 * Creates the meta-model objects for the package.  This method is
-	 * guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
+   * Creates the meta-model objects for the package.  This method is
+   * guarded to have no affect on any invocation but its first.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void createPackageContents()
   {
-		if (isCreated) return;
-		isCreated = true;
+    if (isCreated) return;
+    isCreated = true;
 
-		// Create classes and their features
-		asyncAPIEClass = createEClass(ASYNC_API);
-		createEAttribute(asyncAPIEClass, ASYNC_API__VERSION);
-		createEReference(asyncAPIEClass, ASYNC_API__INFO);
-		createEReference(asyncAPIEClass, ASYNC_API__SERVERS);
-		createEReference(asyncAPIEClass, ASYNC_API__TOPICS);
-		createEReference(asyncAPIEClass, ASYNC_API__COMPONENTS);
-		createEAttribute(asyncAPIEClass, ASYNC_API__BASE_TOPIC);
+    // Create classes and their features
+    asyncAPIEClass = createEClass(ASYNC_API);
+    createEAttribute(asyncAPIEClass, ASYNC_API__VERSION);
+    createEReference(asyncAPIEClass, ASYNC_API__INFO);
+    createEReference(asyncAPIEClass, ASYNC_API__SERVERS);
+    createEReference(asyncAPIEClass, ASYNC_API__TOPICS);
+    createEReference(asyncAPIEClass, ASYNC_API__COMPONENTS);
+    createEAttribute(asyncAPIEClass, ASYNC_API__BASE_TOPIC);
 
-		infoEClass = createEClass(INFO);
-		createEAttribute(infoEClass, INFO__TITLE);
-		createEAttribute(infoEClass, INFO__VERSION);
-		createEAttribute(infoEClass, INFO__DESCRIPTION);
-		createEAttribute(infoEClass, INFO__TERMS_OF_SERVICE);
-		createEReference(infoEClass, INFO__CONTACT);
-		createEReference(infoEClass, INFO__LICENSE);
+    infoEClass = createEClass(INFO);
+    createEAttribute(infoEClass, INFO__TITLE);
+    createEAttribute(infoEClass, INFO__VERSION);
+    createEAttribute(infoEClass, INFO__DESCRIPTION);
+    createEAttribute(infoEClass, INFO__TERMS_OF_SERVICE);
+    createEReference(infoEClass, INFO__CONTACT);
+    createEReference(infoEClass, INFO__LICENSE);
 
-		contactEClass = createEClass(CONTACT);
-		createEAttribute(contactEClass, CONTACT__NAME);
-		createEAttribute(contactEClass, CONTACT__URL);
-		createEAttribute(contactEClass, CONTACT__EMAIL);
+    contactEClass = createEClass(CONTACT);
+    createEAttribute(contactEClass, CONTACT__NAME);
+    createEAttribute(contactEClass, CONTACT__URL);
+    createEAttribute(contactEClass, CONTACT__EMAIL);
 
-		licenseEClass = createEClass(LICENSE);
-		createEAttribute(licenseEClass, LICENSE__NAME);
-		createEAttribute(licenseEClass, LICENSE__URL);
+    licenseEClass = createEClass(LICENSE);
+    createEAttribute(licenseEClass, LICENSE__NAME);
+    createEAttribute(licenseEClass, LICENSE__URL);
 
-		serverEClass = createEClass(SERVER);
-		createEAttribute(serverEClass, SERVER__TITLE);
-		createEAttribute(serverEClass, SERVER__SCHEME);
-		createEAttribute(serverEClass, SERVER__DESCRIPTION);
-		createEReference(serverEClass, SERVER__VARIABLES);
+    serverEClass = createEClass(SERVER);
+    createEAttribute(serverEClass, SERVER__URL);
+    createEAttribute(serverEClass, SERVER__SCHEME);
+    createEAttribute(serverEClass, SERVER__DESCRIPTION);
+    createEReference(serverEClass, SERVER__VARIABLES);
 
-		variableEClass = createEClass(VARIABLE);
-		createEAttribute(variableEClass, VARIABLE__NAME);
-		createEAttribute(variableEClass, VARIABLE__DESCRIPTION);
-		createEAttribute(variableEClass, VARIABLE__DEFAULT);
-		createEAttribute(variableEClass, VARIABLE__ENUM);
+    variableEClass = createEClass(VARIABLE);
+    createEAttribute(variableEClass, VARIABLE__NAME);
+    createEAttribute(variableEClass, VARIABLE__DESCRIPTION);
+    createEAttribute(variableEClass, VARIABLE__DEFAULT);
+    createEAttribute(variableEClass, VARIABLE__ENUM);
 
-		topicEClass = createEClass(TOPIC);
-		createEAttribute(topicEClass, TOPIC__NAME);
-		createEReference(topicEClass, TOPIC__PUBLISH);
-		createEReference(topicEClass, TOPIC__SUBSCRIBE);
+    topicEClass = createEClass(TOPIC);
+    createEAttribute(topicEClass, TOPIC__NAME);
+    createEReference(topicEClass, TOPIC__PUBLISH);
+    createEReference(topicEClass, TOPIC__SUBSCRIBE);
 
-		abstractMessageEClass = createEClass(ABSTRACT_MESSAGE);
+    abstractMessageEClass = createEClass(ABSTRACT_MESSAGE);
 
-		messageEClass = createEClass(MESSAGE);
-		createEAttribute(messageEClass, MESSAGE__SUMMARY);
-		createEAttribute(messageEClass, MESSAGE__DESCRIPTION);
-		createEAttribute(messageEClass, MESSAGE__DEPRECATED);
-		createEReference(messageEClass, MESSAGE__HEADERS);
-		createEReference(messageEClass, MESSAGE__TAGS);
-		createEReference(messageEClass, MESSAGE__PAYLOAD);
+    messageEClass = createEClass(MESSAGE);
+    createEAttribute(messageEClass, MESSAGE__SUMMARY);
+    createEAttribute(messageEClass, MESSAGE__DESCRIPTION);
+    createEAttribute(messageEClass, MESSAGE__DEPRECATED);
+    createEReference(messageEClass, MESSAGE__HEADERS);
+    createEReference(messageEClass, MESSAGE__TAGS);
+    createEReference(messageEClass, MESSAGE__PAYLOAD);
 
-		namedMessageEClass = createEClass(NAMED_MESSAGE);
-		createEAttribute(namedMessageEClass, NAMED_MESSAGE__NAME);
-		createEReference(namedMessageEClass, NAMED_MESSAGE__MESSAGE);
+    namedMessageEClass = createEClass(NAMED_MESSAGE);
+    createEAttribute(namedMessageEClass, NAMED_MESSAGE__NAME);
+    createEReference(namedMessageEClass, NAMED_MESSAGE__MESSAGE);
 
-		tagEClass = createEClass(TAG);
-		createEAttribute(tagEClass, TAG__NAME);
-		createEAttribute(tagEClass, TAG__DESCRIPTION);
+    tagEClass = createEClass(TAG);
+    createEAttribute(tagEClass, TAG__NAME);
+    createEAttribute(tagEClass, TAG__DESCRIPTION);
 
-		abstractSchemaEClass = createEClass(ABSTRACT_SCHEMA);
+    abstractSchemaEClass = createEClass(ABSTRACT_SCHEMA);
 
-		schemaEClass = createEClass(SCHEMA);
-		createEAttribute(schemaEClass, SCHEMA__TITLE);
-		createEAttribute(schemaEClass, SCHEMA__TYPE);
-		createEAttribute(schemaEClass, SCHEMA__DESCRIPTION);
-		createEAttribute(schemaEClass, SCHEMA__FORMAT);
-		createEAttribute(schemaEClass, SCHEMA__DEFAULT);
-		createEReference(schemaEClass, SCHEMA__PAYLOAD);
-		createEReference(schemaEClass, SCHEMA__PROPERTIES);
-		createEAttribute(schemaEClass, SCHEMA__ENUM);
-		createEReference(schemaEClass, SCHEMA__ITEMS);
-		createEAttribute(schemaEClass, SCHEMA__REQUIRED);
-		createEAttribute(schemaEClass, SCHEMA__FRIENDLY_NAME);
+    schemaEClass = createEClass(SCHEMA);
+    createEAttribute(schemaEClass, SCHEMA__TITLE);
+    createEAttribute(schemaEClass, SCHEMA__TYPE);
+    createEAttribute(schemaEClass, SCHEMA__DESCRIPTION);
+    createEAttribute(schemaEClass, SCHEMA__FORMAT);
+    createEAttribute(schemaEClass, SCHEMA__DEFAULT);
+    createEReference(schemaEClass, SCHEMA__PAYLOAD);
+    createEReference(schemaEClass, SCHEMA__PROPERTIES);
+    createEAttribute(schemaEClass, SCHEMA__ENUM);
+    createEReference(schemaEClass, SCHEMA__ITEMS);
+    createEAttribute(schemaEClass, SCHEMA__REQUIRED);
+    createEAttribute(schemaEClass, SCHEMA__FRIENDLY_NAME);
 
-		namedSchemaEClass = createEClass(NAMED_SCHEMA);
-		createEAttribute(namedSchemaEClass, NAMED_SCHEMA__NAME);
-		createEReference(namedSchemaEClass, NAMED_SCHEMA__SCHEMA);
+    namedSchemaEClass = createEClass(NAMED_SCHEMA);
+    createEAttribute(namedSchemaEClass, NAMED_SCHEMA__NAME);
+    createEReference(namedSchemaEClass, NAMED_SCHEMA__SCHEMA);
 
-		componentsEClass = createEClass(COMPONENTS);
-		createEReference(componentsEClass, COMPONENTS__SCHEMAS);
-		createEReference(componentsEClass, COMPONENTS__MESSAGES);
+    componentsEClass = createEClass(COMPONENTS);
+    createEReference(componentsEClass, COMPONENTS__SCHEMAS);
+    createEReference(componentsEClass, COMPONENTS__MESSAGES);
 
-		referenceEClass = createEClass(REFERENCE);
-		createEAttribute(referenceEClass, REFERENCE__REFNAME);
-		createEAttribute(referenceEClass, REFERENCE__URI);
+    referenceEClass = createEClass(REFERENCE);
+    createEAttribute(referenceEClass, REFERENCE__REFNAME);
+    createEAttribute(referenceEClass, REFERENCE__URI);
 
-		// Create enums
-		booleanEEnum = createEEnum(BOOLEAN);
-		versionNumberEEnum = createEEnum(VERSION_NUMBER);
-		schemeEEnum = createEEnum(SCHEME);
-	}
+    // Create enums
+    booleanEEnum = createEEnum(BOOLEAN);
+    versionNumberEEnum = createEEnum(VERSION_NUMBER);
+    schemeEEnum = createEEnum(SCHEME);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private boolean isInitialized = false;
 
   /**
-	 * Complete the initialization of the package and its meta-model.  This
-	 * method is guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
+   * Complete the initialization of the package and its meta-model.  This
+   * method is guarded to have no affect on any invocation but its first.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void initializePackageContents()
   {
-		if (isInitialized) return;
-		isInitialized = true;
+    if (isInitialized) return;
+    isInitialized = true;
 
-		// Initialize package
-		setName(eNAME);
-		setNsPrefix(eNS_PREFIX);
-		setNsURI(eNS_URI);
+    // Initialize package
+    setName(eNAME);
+    setNsPrefix(eNS_PREFIX);
+    setNsURI(eNS_URI);
 
-		// Create type parameters
+    // Create type parameters
 
-		// Set bounds for type parameters
+    // Set bounds for type parameters
 
-		// Add supertypes to classes
-		messageEClass.getESuperTypes().add(this.getAbstractMessage());
-		schemaEClass.getESuperTypes().add(this.getAbstractSchema());
-		referenceEClass.getESuperTypes().add(this.getAbstractMessage());
-		referenceEClass.getESuperTypes().add(this.getAbstractSchema());
+    // Add supertypes to classes
+    messageEClass.getESuperTypes().add(this.getAbstractMessage());
+    schemaEClass.getESuperTypes().add(this.getAbstractSchema());
+    referenceEClass.getESuperTypes().add(this.getAbstractMessage());
+    referenceEClass.getESuperTypes().add(this.getAbstractSchema());
 
-		// Initialize classes and features; add operations and parameters
-		initEClass(asyncAPIEClass, AsyncAPI.class, "AsyncAPI", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAsyncAPI_Version(), this.getVersionNumber(), "version", null, 0, 1, AsyncAPI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAsyncAPI_Info(), this.getInfo(), null, "info", null, 0, 1, AsyncAPI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAsyncAPI_Servers(), this.getServer(), null, "servers", null, 0, -1, AsyncAPI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAsyncAPI_Topics(), this.getTopic(), null, "topics", null, 0, -1, AsyncAPI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAsyncAPI_Components(), this.getComponents(), null, "components", null, 0, 1, AsyncAPI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAsyncAPI_BaseTopic(), ecorePackage.getEString(), "baseTopic", null, 0, 1, AsyncAPI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    // Initialize classes and features; add operations and parameters
+    initEClass(asyncAPIEClass, AsyncAPI.class, "AsyncAPI", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAsyncAPI_Version(), this.getVersionNumber(), "version", null, 0, 1, AsyncAPI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAsyncAPI_Info(), this.getInfo(), null, "info", null, 0, 1, AsyncAPI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAsyncAPI_Servers(), this.getServer(), null, "servers", null, 0, -1, AsyncAPI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAsyncAPI_Topics(), this.getTopic(), null, "topics", null, 0, -1, AsyncAPI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAsyncAPI_Components(), this.getComponents(), null, "components", null, 0, 1, AsyncAPI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAsyncAPI_BaseTopic(), ecorePackage.getEString(), "baseTopic", null, 0, 1, AsyncAPI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(infoEClass, Info.class, "Info", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInfo_Title(), ecorePackage.getEString(), "title", null, 0, 1, Info.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInfo_Version(), ecorePackage.getEString(), "version", null, 0, 1, Info.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInfo_Description(), ecorePackage.getEString(), "description", null, 0, 1, Info.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInfo_TermsOfService(), ecorePackage.getEString(), "termsOfService", null, 0, 1, Info.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInfo_Contact(), this.getContact(), null, "contact", null, 0, 1, Info.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInfo_License(), this.getLicense(), null, "license", null, 0, 1, Info.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(infoEClass, Info.class, "Info", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInfo_Title(), ecorePackage.getEString(), "title", null, 0, 1, Info.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInfo_Version(), ecorePackage.getEString(), "version", null, 0, 1, Info.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInfo_Description(), ecorePackage.getEString(), "description", null, 0, 1, Info.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInfo_TermsOfService(), ecorePackage.getEString(), "termsOfService", null, 0, 1, Info.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInfo_Contact(), this.getContact(), null, "contact", null, 0, 1, Info.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInfo_License(), this.getLicense(), null, "license", null, 0, 1, Info.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(contactEClass, Contact.class, "Contact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContact_Name(), ecorePackage.getEString(), "name", null, 0, 1, Contact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContact_Url(), ecorePackage.getEString(), "url", null, 0, 1, Contact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContact_Email(), ecorePackage.getEString(), "email", null, 0, 1, Contact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(contactEClass, Contact.class, "Contact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getContact_Name(), ecorePackage.getEString(), "name", null, 0, 1, Contact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContact_Url(), ecorePackage.getEString(), "url", null, 0, 1, Contact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContact_Email(), ecorePackage.getEString(), "email", null, 0, 1, Contact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(licenseEClass, License.class, "License", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLicense_Name(), ecorePackage.getEString(), "name", null, 0, 1, License.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLicense_Url(), ecorePackage.getEString(), "url", null, 0, 1, License.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(licenseEClass, License.class, "License", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLicense_Name(), ecorePackage.getEString(), "name", null, 0, 1, License.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLicense_Url(), ecorePackage.getEString(), "url", null, 0, 1, License.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(serverEClass, Server.class, "Server", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServer_Title(), ecorePackage.getEString(), "title", null, 0, 1, Server.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServer_Scheme(), this.getScheme(), "scheme", null, 0, 1, Server.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServer_Description(), ecorePackage.getEString(), "description", null, 0, 1, Server.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getServer_Variables(), this.getVariable(), null, "variables", null, 0, -1, Server.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(serverEClass, Server.class, "Server", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getServer_Url(), ecorePackage.getEString(), "url", null, 0, 1, Server.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getServer_Scheme(), this.getScheme(), "scheme", null, 0, 1, Server.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getServer_Description(), ecorePackage.getEString(), "description", null, 0, 1, Server.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getServer_Variables(), this.getVariable(), null, "variables", null, 0, -1, Server.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVariable_Description(), ecorePackage.getEString(), "description", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVariable_Default(), ecorePackage.getEString(), "default", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVariable_Enum(), ecorePackage.getEString(), "enum", null, 0, -1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVariable_Description(), ecorePackage.getEString(), "description", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVariable_Default(), ecorePackage.getEString(), "default", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVariable_Enum(), ecorePackage.getEString(), "enum", null, 0, -1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(topicEClass, Topic.class, "Topic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTopic_Name(), ecorePackage.getEString(), "name", null, 0, 1, Topic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTopic_Publish(), this.getAbstractMessage(), null, "publish", null, 0, 1, Topic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTopic_Subscribe(), this.getAbstractMessage(), null, "subscribe", null, 0, 1, Topic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(topicEClass, Topic.class, "Topic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTopic_Name(), ecorePackage.getEString(), "name", null, 0, 1, Topic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTopic_Publish(), this.getAbstractMessage(), null, "publish", null, 0, 1, Topic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTopic_Subscribe(), this.getAbstractMessage(), null, "subscribe", null, 0, 1, Topic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(abstractMessageEClass, AbstractMessage.class, "AbstractMessage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(abstractMessageEClass, AbstractMessage.class, "AbstractMessage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(messageEClass, Message.class, "Message", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMessage_Summary(), ecorePackage.getEString(), "summary", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMessage_Description(), ecorePackage.getEString(), "description", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMessage_Deprecated(), this.getBoolean(), "deprecated", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMessage_Headers(), this.getAbstractSchema(), null, "headers", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMessage_Tags(), this.getTag(), null, "tags", null, 0, -1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMessage_Payload(), this.getAbstractSchema(), null, "payload", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(messageEClass, Message.class, "Message", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMessage_Summary(), ecorePackage.getEString(), "summary", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMessage_Description(), ecorePackage.getEString(), "description", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMessage_Deprecated(), this.getBoolean(), "deprecated", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMessage_Headers(), this.getAbstractSchema(), null, "headers", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMessage_Tags(), this.getTag(), null, "tags", null, 0, -1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMessage_Payload(), this.getAbstractSchema(), null, "payload", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(namedMessageEClass, NamedMessage.class, "NamedMessage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNamedMessage_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNamedMessage_Message(), this.getAbstractMessage(), null, "message", null, 0, 1, NamedMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(namedMessageEClass, NamedMessage.class, "NamedMessage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNamedMessage_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNamedMessage_Message(), this.getAbstractMessage(), null, "message", null, 0, 1, NamedMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(tagEClass, Tag.class, "Tag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTag_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTag_Description(), ecorePackage.getEString(), "description", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(tagEClass, Tag.class, "Tag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTag_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTag_Description(), ecorePackage.getEString(), "description", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(abstractSchemaEClass, AbstractSchema.class, "AbstractSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(abstractSchemaEClass, AbstractSchema.class, "AbstractSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(schemaEClass, Schema.class, "Schema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSchema_Title(), ecorePackage.getEString(), "title", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSchema_Type(), ecorePackage.getEString(), "type", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSchema_Description(), ecorePackage.getEString(), "description", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSchema_Format(), ecorePackage.getEString(), "format", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSchema_Default(), ecorePackage.getEString(), "default", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSchema_Payload(), this.getAbstractSchema(), null, "payload", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSchema_Properties(), this.getNamedSchema(), null, "properties", null, 0, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSchema_Enum(), ecorePackage.getEString(), "enum", null, 0, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSchema_Items(), this.getAbstractSchema(), null, "items", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSchema_Required(), ecorePackage.getEString(), "required", null, 0, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSchema_FriendlyName(), ecorePackage.getEString(), "friendlyName", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(schemaEClass, Schema.class, "Schema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSchema_Title(), ecorePackage.getEString(), "title", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSchema_Type(), ecorePackage.getEString(), "type", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSchema_Description(), ecorePackage.getEString(), "description", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSchema_Format(), ecorePackage.getEString(), "format", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSchema_Default(), ecorePackage.getEString(), "default", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSchema_Payload(), this.getAbstractSchema(), null, "payload", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSchema_Properties(), this.getNamedSchema(), null, "properties", null, 0, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSchema_Enum(), ecorePackage.getEString(), "enum", null, 0, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSchema_Items(), this.getAbstractSchema(), null, "items", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSchema_Required(), ecorePackage.getEString(), "required", null, 0, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSchema_FriendlyName(), ecorePackage.getEString(), "friendlyName", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(namedSchemaEClass, NamedSchema.class, "NamedSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNamedSchema_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNamedSchema_Schema(), this.getAbstractSchema(), null, "schema", null, 0, 1, NamedSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(namedSchemaEClass, NamedSchema.class, "NamedSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNamedSchema_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNamedSchema_Schema(), this.getAbstractSchema(), null, "schema", null, 0, 1, NamedSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(componentsEClass, Components.class, "Components", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponents_Schemas(), this.getNamedSchema(), null, "schemas", null, 0, -1, Components.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponents_Messages(), this.getNamedMessage(), null, "messages", null, 0, -1, Components.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(componentsEClass, Components.class, "Components", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getComponents_Schemas(), this.getNamedSchema(), null, "schemas", null, 0, -1, Components.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponents_Messages(), this.getNamedMessage(), null, "messages", null, 0, -1, Components.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReference_Refname(), ecorePackage.getEString(), "refname", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReference_Uri(), ecorePackage.getEString(), "uri", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getReference_Refname(), ecorePackage.getEString(), "refname", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getReference_Uri(), ecorePackage.getEString(), "uri", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		// Initialize enums and add enum literals
-		initEEnum(booleanEEnum, io.github.abelgomez.asyncapi.asyncApi.Boolean.class, "Boolean");
-		addEEnumLiteral(booleanEEnum, io.github.abelgomez.asyncapi.asyncApi.Boolean._TRUE);
-		addEEnumLiteral(booleanEEnum, io.github.abelgomez.asyncapi.asyncApi.Boolean._FALSE);
+    // Initialize enums and add enum literals
+    initEEnum(booleanEEnum, io.github.abelgomez.asyncapi.asyncApi.Boolean.class, "Boolean");
+    addEEnumLiteral(booleanEEnum, io.github.abelgomez.asyncapi.asyncApi.Boolean._TRUE);
+    addEEnumLiteral(booleanEEnum, io.github.abelgomez.asyncapi.asyncApi.Boolean._FALSE);
 
-		initEEnum(versionNumberEEnum, VersionNumber.class, "VersionNumber");
-		addEEnumLiteral(versionNumberEEnum, VersionNumber._100);
-		addEEnumLiteral(versionNumberEEnum, VersionNumber._110);
-		addEEnumLiteral(versionNumberEEnum, VersionNumber._120);
+    initEEnum(versionNumberEEnum, VersionNumber.class, "VersionNumber");
+    addEEnumLiteral(versionNumberEEnum, VersionNumber._100);
+    addEEnumLiteral(versionNumberEEnum, VersionNumber._110);
+    addEEnumLiteral(versionNumberEEnum, VersionNumber._120);
 
-		initEEnum(schemeEEnum, Scheme.class, "Scheme");
-		addEEnumLiteral(schemeEEnum, Scheme.AMQP);
-		addEEnumLiteral(schemeEEnum, Scheme.AMQPS);
-		addEEnumLiteral(schemeEEnum, Scheme.MQTT);
-		addEEnumLiteral(schemeEEnum, Scheme.MQTTS);
-		addEEnumLiteral(schemeEEnum, Scheme.WS);
-		addEEnumLiteral(schemeEEnum, Scheme.WSS);
-		addEEnumLiteral(schemeEEnum, Scheme.STOMP);
-		addEEnumLiteral(schemeEEnum, Scheme.STOMPS);
+    initEEnum(schemeEEnum, Scheme.class, "Scheme");
+    addEEnumLiteral(schemeEEnum, Scheme.AMQP);
+    addEEnumLiteral(schemeEEnum, Scheme.AMQPS);
+    addEEnumLiteral(schemeEEnum, Scheme.MQTT);
+    addEEnumLiteral(schemeEEnum, Scheme.MQTTS);
+    addEEnumLiteral(schemeEEnum, Scheme.WS);
+    addEEnumLiteral(schemeEEnum, Scheme.WSS);
+    addEEnumLiteral(schemeEEnum, Scheme.STOMP);
+    addEEnumLiteral(schemeEEnum, Scheme.STOMPS);
 
-		// Create resource
-		createResource(eNS_URI);
-	}
+    // Create resource
+    createResource(eNS_URI);
+  }
 
 } //AsyncApiPackageImpl

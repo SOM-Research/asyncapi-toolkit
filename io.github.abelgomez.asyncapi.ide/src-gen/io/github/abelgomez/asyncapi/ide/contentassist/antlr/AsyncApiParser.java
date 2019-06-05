@@ -128,7 +128,7 @@ public class AsyncApiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getContactAccess().getEmailAssignment_2_2_2(), "rule__Contact__EmailAssignment_2_2_2");
 			builder.put(grammarAccess.getLicenseAccess().getNameAssignment_2_0_2(), "rule__License__NameAssignment_2_0_2");
 			builder.put(grammarAccess.getLicenseAccess().getUrlAssignment_2_1_2(), "rule__License__UrlAssignment_2_1_2");
-			builder.put(grammarAccess.getServerAccess().getTitleAssignment_2_0_2(), "rule__Server__TitleAssignment_2_0_2");
+			builder.put(grammarAccess.getServerAccess().getUrlAssignment_2_0_2(), "rule__Server__UrlAssignment_2_0_2");
 			builder.put(grammarAccess.getServerAccess().getSchemeAssignment_2_1_2(), "rule__Server__SchemeAssignment_2_1_2");
 			builder.put(grammarAccess.getServerAccess().getDescriptionAssignment_2_2_2(), "rule__Server__DescriptionAssignment_2_2_2");
 			builder.put(grammarAccess.getServerAccess().getVariablesAssignment_2_3_3(), "rule__Server__VariablesAssignment_2_3_3");

@@ -619,8 +619,8 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_2_0 = (Group)cUnorderedGroup_2.eContents().get(0);
 		private final Keyword cUrlKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
 		private final Keyword cColonKeyword_2_0_1 = (Keyword)cGroup_2_0.eContents().get(1);
-		private final Assignment cTitleAssignment_2_0_2 = (Assignment)cGroup_2_0.eContents().get(2);
-		private final RuleCall cTitleSTRINGTerminalRuleCall_2_0_2_0 = (RuleCall)cTitleAssignment_2_0_2.eContents().get(0);
+		private final Assignment cUrlAssignment_2_0_2 = (Assignment)cGroup_2_0.eContents().get(2);
+		private final RuleCall cUrlSTRINGTerminalRuleCall_2_0_2_0 = (RuleCall)cUrlAssignment_2_0_2.eContents().get(0);
 		private final Keyword cCommaKeyword_2_0_3 = (Keyword)cGroup_2_0.eContents().get(3);
 		private final Group cGroup_2_1 = (Group)cUnorderedGroup_2.eContents().get(1);
 		private final Keyword cSchemeKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
@@ -649,13 +649,13 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Server:
-		//	{Server} '{' ('"url"' ':' title=STRING ','? & '"scheme"' ':' scheme=Scheme ','? & ('"description"' ':'
+		//	{Server} '{' ('"url"' ':' url=STRING ','? & '"scheme"' ':' scheme=Scheme ','? & ('"description"' ':'
 		//	description=STRING ',')?
 		//	& ('"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','?)?) '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Server} '{' ('"url"' ':' title=STRING ','? & '"scheme"' ':' scheme=Scheme ','? & ('"description"' ':'
-		//description=STRING ',')? & ('"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','?)?) '}'
+		//{Server} '{' ('"url"' ':' url=STRING ','? & '"scheme"' ':' scheme=Scheme ','? & ('"description"' ':' description=STRING
+		//',')? & ('"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','?)?) '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Server}
@@ -664,11 +664,11 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//'"url"' ':' title=STRING ','? & '"scheme"' ':' scheme=Scheme ','? & ('"description"' ':' description=STRING ',')? &
+		//'"url"' ':' url=STRING ','? & '"scheme"' ':' scheme=Scheme ','? & ('"description"' ':' description=STRING ',')? &
 		//('"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','?)?
 		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
 		
-		//'"url"' ':' title=STRING ','?
+		//'"url"' ':' url=STRING ','?
 		public Group getGroup_2_0() { return cGroup_2_0; }
 		
 		//'"url"'
@@ -677,11 +677,11 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_2_0_1() { return cColonKeyword_2_0_1; }
 		
-		//title=STRING
-		public Assignment getTitleAssignment_2_0_2() { return cTitleAssignment_2_0_2; }
+		//url=STRING
+		public Assignment getUrlAssignment_2_0_2() { return cUrlAssignment_2_0_2; }
 		
 		//STRING
-		public RuleCall getTitleSTRINGTerminalRuleCall_2_0_2_0() { return cTitleSTRINGTerminalRuleCall_2_0_2_0; }
+		public RuleCall getUrlSTRINGTerminalRuleCall_2_0_2_0() { return cUrlSTRINGTerminalRuleCall_2_0_2_0; }
 		
 		//','?
 		public Keyword getCommaKeyword_2_0_3() { return cCommaKeyword_2_0_3; }
@@ -2248,7 +2248,7 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Server:
-	//	{Server} '{' ('"url"' ':' title=STRING ','? & '"scheme"' ':' scheme=Scheme ','? & ('"description"' ':'
+	//	{Server} '{' ('"url"' ':' url=STRING ','? & '"scheme"' ':' scheme=Scheme ','? & ('"description"' ':'
 	//	description=STRING ',')?
 	//	& ('"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','?)?) '}';
 	public ServerElements getServerAccess() {

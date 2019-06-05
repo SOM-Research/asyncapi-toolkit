@@ -264,7 +264,7 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Server returns Server
 	 *
 	 * Constraint:
-	 *     ((title=STRING | scheme=Scheme | description=STRING)? (variables+=Variable variables+=Variable*)?)+
+	 *     ((url=STRING | scheme=Scheme | description=STRING)? (variables+=Variable variables+=Variable*)?)+
 	 */
 	protected void sequence_Server(ISerializationContext context, Server semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

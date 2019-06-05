@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl#getScheme <em>Scheme</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl#getVariables <em>Variables</em>}</li>
@@ -43,313 +43,319 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ServerImpl extends MinimalEObjectImpl.Container implements Server
 {
   /**
-	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getTitle()
-	 * @generated
-	 * @ordered
-	 */
-  protected static final String TITLE_EDEFAULT = null;
+   * @see #getUrl()
+   * @generated
+   * @ordered
+   */
+  protected static final String URL_EDEFAULT = null;
 
   /**
-	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getTitle()
-	 * @generated
-	 * @ordered
-	 */
-  protected String title = TITLE_EDEFAULT;
+   * @see #getUrl()
+   * @generated
+   * @ordered
+   */
+  protected String url = URL_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #getScheme() <em>Scheme</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getScheme() <em>Scheme</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getScheme()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getScheme()
+   * @generated
+   * @ordered
+   */
   protected static final Scheme SCHEME_EDEFAULT = Scheme.AMQP;
 
   /**
-	 * The cached value of the '{@link #getScheme() <em>Scheme</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getScheme() <em>Scheme</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getScheme()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getScheme()
+   * @generated
+   * @ordered
+   */
   protected Scheme scheme = SCHEME_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
   protected static final String DESCRIPTION_EDEFAULT = null;
 
   /**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-	 * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getVariables()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getVariables()
+   * @generated
+   * @ordered
+   */
   protected EList<Variable> variables;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected ServerImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return AsyncApiPackage.Literals.SERVER;
-	}
+    return AsyncApiPackage.Literals.SERVER;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
-  public String getTitle()
+  public String getUrl()
   {
-		return title;
-	}
+    return url;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
-  public void setTitle(String newTitle)
+  public void setUrl(String newUrl)
   {
-		String oldTitle = title;
-		title = newTitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__TITLE, oldTitle, title));
-	}
+    String oldUrl = url;
+    url = newUrl;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__URL, oldUrl, url));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Scheme getScheme()
   {
-		return scheme;
-	}
+    return scheme;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void setScheme(Scheme newScheme)
   {
-		Scheme oldScheme = scheme;
-		scheme = newScheme == null ? SCHEME_EDEFAULT : newScheme;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__SCHEME, oldScheme, scheme));
-	}
+    Scheme oldScheme = scheme;
+    scheme = newScheme == null ? SCHEME_EDEFAULT : newScheme;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__SCHEME, oldScheme, scheme));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String getDescription()
   {
-		return description;
-	}
+    return description;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void setDescription(String newDescription)
   {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__DESCRIPTION, oldDescription, description));
-	}
+    String oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__DESCRIPTION, oldDescription, description));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EList<Variable> getVariables()
   {
-		if (variables == null) {
-			variables = new EObjectContainmentEList<Variable>(Variable.class, this, AsyncApiPackage.SERVER__VARIABLES);
-		}
-		return variables;
-	}
+    if (variables == null)
+    {
+      variables = new EObjectContainmentEList<Variable>(Variable.class, this, AsyncApiPackage.SERVER__VARIABLES);
+    }
+    return variables;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case AsyncApiPackage.SERVER__VARIABLES:
-				return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.SERVER__VARIABLES:
+        return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case AsyncApiPackage.SERVER__TITLE:
-				return getTitle();
-			case AsyncApiPackage.SERVER__SCHEME:
-				return getScheme();
-			case AsyncApiPackage.SERVER__DESCRIPTION:
-				return getDescription();
-			case AsyncApiPackage.SERVER__VARIABLES:
-				return getVariables();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.SERVER__URL:
+        return getUrl();
+      case AsyncApiPackage.SERVER__SCHEME:
+        return getScheme();
+      case AsyncApiPackage.SERVER__DESCRIPTION:
+        return getDescription();
+      case AsyncApiPackage.SERVER__VARIABLES:
+        return getVariables();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case AsyncApiPackage.SERVER__TITLE:
-				setTitle((String)newValue);
-				return;
-			case AsyncApiPackage.SERVER__SCHEME:
-				setScheme((Scheme)newValue);
-				return;
-			case AsyncApiPackage.SERVER__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case AsyncApiPackage.SERVER__VARIABLES:
-				getVariables().clear();
-				getVariables().addAll((Collection<? extends Variable>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.SERVER__URL:
+        setUrl((String)newValue);
+        return;
+      case AsyncApiPackage.SERVER__SCHEME:
+        setScheme((Scheme)newValue);
+        return;
+      case AsyncApiPackage.SERVER__DESCRIPTION:
+        setDescription((String)newValue);
+        return;
+      case AsyncApiPackage.SERVER__VARIABLES:
+        getVariables().clear();
+        getVariables().addAll((Collection<? extends Variable>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case AsyncApiPackage.SERVER__TITLE:
-				setTitle(TITLE_EDEFAULT);
-				return;
-			case AsyncApiPackage.SERVER__SCHEME:
-				setScheme(SCHEME_EDEFAULT);
-				return;
-			case AsyncApiPackage.SERVER__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case AsyncApiPackage.SERVER__VARIABLES:
-				getVariables().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.SERVER__URL:
+        setUrl(URL_EDEFAULT);
+        return;
+      case AsyncApiPackage.SERVER__SCHEME:
+        setScheme(SCHEME_EDEFAULT);
+        return;
+      case AsyncApiPackage.SERVER__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
+        return;
+      case AsyncApiPackage.SERVER__VARIABLES:
+        getVariables().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case AsyncApiPackage.SERVER__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-			case AsyncApiPackage.SERVER__SCHEME:
-				return scheme != SCHEME_EDEFAULT;
-			case AsyncApiPackage.SERVER__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case AsyncApiPackage.SERVER__VARIABLES:
-				return variables != null && !variables.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.SERVER__URL:
+        return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
+      case AsyncApiPackage.SERVER__SCHEME:
+        return scheme != SCHEME_EDEFAULT;
+      case AsyncApiPackage.SERVER__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+      case AsyncApiPackage.SERVER__VARIABLES:
+        return variables != null && !variables.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String toString()
   {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (title: ");
-		result.append(title);
-		result.append(", scheme: ");
-		result.append(scheme);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (url: ");
+    result.append(url);
+    result.append(", scheme: ");
+    result.append(scheme);
+    result.append(", description: ");
+    result.append(description);
+    result.append(')');
+    return result.toString();
+  }
 
 } //ServerImpl

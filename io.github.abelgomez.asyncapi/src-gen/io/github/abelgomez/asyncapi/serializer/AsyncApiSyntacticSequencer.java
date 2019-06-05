@@ -873,11 +873,11 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     title=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     title=STRING (ambiguity) '"scheme"' ':' scheme=Scheme
-	 *     title=STRING (ambiguity) '"url"' ':' title=STRING
-	 *     title=STRING (ambiguity) '"variables"' ':' '{' variables+=Variable
-	 *     title=STRING (ambiguity) '}' (rule end)
+	 *     url=STRING (ambiguity) '"description"' ':' description=STRING
+	 *     url=STRING (ambiguity) '"scheme"' ':' scheme=Scheme
+	 *     url=STRING (ambiguity) '"url"' ':' url=STRING
+	 *     url=STRING (ambiguity) '"variables"' ':' '{' variables+=Variable
+	 *     url=STRING (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Server_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -890,7 +890,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     scheme=Scheme (ambiguity) '"description"' ':' description=STRING
 	 *     scheme=Scheme (ambiguity) '"scheme"' ':' scheme=Scheme
-	 *     scheme=Scheme (ambiguity) '"url"' ':' title=STRING
+	 *     scheme=Scheme (ambiguity) '"url"' ':' url=STRING
 	 *     scheme=Scheme (ambiguity) '"variables"' ':' '{' variables+=Variable
 	 *     scheme=Scheme (ambiguity) '}' (rule end)
 	 */
@@ -905,7 +905,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     variables+=Variable '}' (ambiguity) '"description"' ':' description=STRING
 	 *     variables+=Variable '}' (ambiguity) '"scheme"' ':' scheme=Scheme
-	 *     variables+=Variable '}' (ambiguity) '"url"' ':' title=STRING
+	 *     variables+=Variable '}' (ambiguity) '"url"' ':' url=STRING
 	 *     variables+=Variable '}' (ambiguity) '"variables"' ':' '{' variables+=Variable
 	 *     variables+=Variable '}' (ambiguity) '}' (rule end)
 	 */
