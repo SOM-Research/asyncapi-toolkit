@@ -51,7 +51,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//License/url"/>
     </genClasses>
     <genClasses ecoreClass="AsyncApi.ecore#//Server">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Server/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Server/url"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Server/scheme"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Server/description"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//Server/variables"/>

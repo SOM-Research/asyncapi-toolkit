@@ -37,7 +37,7 @@ License:
 
 Server:
 	{Server} '{' (
-		  ( '"url"' ':' title=STRING ','? )
+		  ( '"url"' ':' url=STRING ','? )
 		& ( '"scheme"' ':' scheme=Scheme ','? )
 		& ( '"description"' ':' description=STRING ',' )?
 		& ( '"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','? )?
