@@ -36,7 +36,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 				fsa.generateFile("schemas/" + ns.toJavaType + ".java", ns.namedSchemaClassFile)
 			}
 		}
-		fsa.generateFile("ivy.xml", generateIvy)
+		fsa.generateFile("../ivy.xml", generateIvy)
 	}
 	
 	def generateIvy() '''
@@ -44,6 +44,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 	    <info organisation="com.example" module="mymodule"/>
 	    <dependencies>
 	        <dependency org="com.google.code.gson" name="gson" rev="2.8.5"/>
+	        <dependency org="org.eclipse.paho" name="org.eclipse.paho.client.mqttv3" rev="1.2.1"/>
 	    </dependencies>
 	</ivy-module>
 	'''
@@ -63,6 +64,14 @@ class AsyncApiGenerator extends AbstractGenerator {
 		import com.google.gson.annotations.SerializedName;
 	'''
 
+	def mqttImports() '''
+        import org.eclipse.paho.client.mqttv3.MqttClient;
+        import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
+        import org.eclipse.paho.client.mqttv3.MqttException;
+        import org.eclipse.paho.client.mqttv3.MqttMessage;
+        import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+	'''
+
 	def publishClass(Topic t) '''
 		package «t.packageName»;
 		
@@ -71,6 +80,8 @@ class AsyncApiGenerator extends AbstractGenerator {
 		«ELSE»
 		«gsonImports»
 		«ENDIF»
+		
+		«mqttImports»
 		
 		/**
 		«IF t.publish.summary!== null»
@@ -86,6 +97,30 @@ class AsyncApiGenerator extends AbstractGenerator {
 			 */
 			public static final «t.publishPayloadClassName».«t.publishPayloadClassName»Builder payloadBuilder() {
 				return «t.publishPayloadClassName».«t.publishPayloadClassName»Builder.newBuilder();
+			}
+			
+			public static final void publish(«t.publishPayloadClassName» payload) {
+				String topic = "«t.name»";
+				int qos = 2;
+				String broker = "«api.servers.get(0).url»";
+				String clientId = java.util.UUID.randomUUID().toString();
+				MemoryPersistence persistence = new MemoryPersistence();
+				
+				try (MqttClient client = new MqttClient(broker, clientId, persistence);) {
+				    
+				    MqttConnectOptions connOpts = new MqttConnectOptions();
+				    connOpts.setCleanSession(true);
+				    
+				    MqttMessage message = new MqttMessage(payload.toJson().getBytes());
+				    message.setQos(qos);
+				    
+				    client.connect(connOpts);
+				    client.publish(topic, message);
+				    client.disconnect();
+				    
+				} catch(MqttException e) {
+					throw new RuntimeException(e);
+				}
 			}
 			
 			«IF !t.publish.resolve.payload.isNamedSchema»
