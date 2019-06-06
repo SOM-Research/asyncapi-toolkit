@@ -9,17 +9,17 @@ The tools hosted in this repository aim to provide the toolset necessary to deve
 
 Below you can find the simplified AsyncAPI Metamodel Derived from the AsyncAPI Xtext Grammar.
 
-![AsyncAPI Metamodel](io.github.abelgomez.asyncapi/model/AsyncApi.png)
+![AsyncAPI Metamodel](plugins/io.github.abelgomez.asyncapi/model/AsyncApi.png)
 
 ## AsyncAPI Grammar
 
-See the simplified AsyncAPI/JSON Xtext Grammar in the file [`io.github.abelgomez.asyncapi/src/io/github/abelgomez/asyncapi/AsyncApi.xtext`](io.github.abelgomez.asyncapi/src/io/github/abelgomez/asyncapi/AsyncApi.xtext).
+See the simplified AsyncAPI/JSON Xtext Grammar in the file [`plugins/io.github.abelgomez.asyncapi/src/io/github/abelgomez/asyncapi/AsyncApi.xtext`](plugins/io.github.abelgomez.asyncapi/src/io/github/abelgomez/asyncapi/AsyncApi.xtext).
 
 ## Project Contents
 
 This project contains the following plug-ins:
 
-* `io.github.abelgomez.asyncapi`: Base plug-in with the [Xtext Grammar](io.github.abelgomez.asyncapi/src/io/github/abelgomez/asyncapi/AsyncApi.xtext), generator scripts, and AsyncAPI parser.
+* `io.github.abelgomez.asyncapi`: Base plug-in with the [Xtext Grammar](plugins/io.github.abelgomez.asyncapi/src/io/github/abelgomez/asyncapi/AsyncApi.xtext), generator scripts, and AsyncAPI parser.
 
 * `io.github.abelgomez.asyncapi.ide`: Automatically generated plug-in providing the platform-independent IDE integration (e.g., services for content assist).
 
