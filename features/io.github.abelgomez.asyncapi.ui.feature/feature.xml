@@ -297,7 +297,6 @@ version(s), and exceptions or additional permissions here}.&quot;
       <import plugin="io.github.abelgomez.asyncapi"/>
       <import plugin="org.eclipse.xtext.ide"/>
       <import plugin="org.eclipse.xtext.xbase.ide"/>
-      <import plugin="org.antlr.runtime" version="3.2.0" match="perfect"/>
       <import plugin="org.eclipse.xtext.ui"/>
       <import plugin="org.eclipse.xtext.ui.shared"/>
       <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
@@ -313,6 +312,7 @@ version(s), and exceptions or additional permissions here}.&quot;
       <import plugin="org.eclipse.pde.core"/>
       <import plugin="org.eclipse.ui.forms"/>
       <import plugin="org.apache.log4j"/>
+      <import feature="org.eclipse.xtext.redist" version="2.17.0.v20190304-1445"/>
    </requires>
 
    <plugin
