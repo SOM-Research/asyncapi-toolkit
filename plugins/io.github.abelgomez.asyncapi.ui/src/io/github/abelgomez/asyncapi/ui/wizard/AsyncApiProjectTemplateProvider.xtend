@@ -58,10 +58,27 @@ final class HelloWorldProject {
 			builderIds += #[JavaCore.BUILDER_ID, XtextProjectHelper.BUILDER_ID]
 			folders += "src"
 			addFile('''src/«path»/Model.asyncapi''', '''
-				/*
-				 * This is an example model
-				 */
-				Hello «name»!
+				{
+					"asyncapi": "1.2.0",
+					"info": {
+						"title": "Sample AsyncAPI specification",
+						"version": "0.1.0"
+					},
+					"servers": [
+						{
+							"url": "broker.url:{port}",
+							"scheme": "mqtt"
+						}
+					],
+					"topics": {
+					},
+					"components": {
+						"schemas" : {
+						},
+						"messages" : {
+						}
+					}
+				}
 			''')
 		])
 	}
