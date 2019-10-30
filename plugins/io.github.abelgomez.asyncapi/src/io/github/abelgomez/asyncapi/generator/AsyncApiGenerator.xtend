@@ -1,21 +1,30 @@
 package io.github.abelgomez.asyncapi.generator
 
+import io.github.abelgomez.asyncapi.asyncApi.AbstractMessage
+import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
+import io.github.abelgomez.asyncapi.asyncApi.Channel
+import io.github.abelgomez.asyncapi.asyncApi.Message
+import io.github.abelgomez.asyncapi.asyncApi.NamedMessage
+import io.github.abelgomez.asyncapi.asyncApi.NamedSchema
 import io.github.abelgomez.asyncapi.asyncApi.Reference
-import io.github.abelgomez.asyncapi.asyncApi.Topic
+import io.github.abelgomez.asyncapi.asyncApi.Schema
+import io.github.abelgomez.asyncapi.asyncApi.Server
+import io.github.abelgomez.asyncapi.asyncApi.Variable
+import java.util.List
+import java.util.Stack
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import io.github.abelgomez.asyncapi.asyncApi.AbstractMessage
-import io.github.abelgomez.asyncapi.asyncApi.Message
-import java.util.Stack
-import java.util.List
-import io.github.abelgomez.asyncapi.asyncApi.NamedMessage
-import io.github.abelgomez.asyncapi.asyncApi.NamedSchema
-import io.github.abelgomez.asyncapi.asyncApi.Schema
-import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema
+import io.github.abelgomez.asyncapi.asyncApi.Protocol
+import io.github.abelgomez.asyncapi.asyncApi.Parameter
+import io.github.abelgomez.asyncapi.asyncApi.NamedParameter
+import java.util.Map
+import java.util.HashMap
+import java.util.regex.Pattern
+import io.github.abelgomez.asyncapi.asyncApi.AbstractParameter
 
 /**
  * Generates code from your model files on save.
@@ -28,7 +37,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		api = resource.contents.findFirst[a | a instanceof AsyncAPI] as AsyncAPI;
-		for (t : api.topics) {
+		for (t : api.channels) {
 			t.messageClasses(fsa)
 		}
 		for (ns : api.components.schemas) {
@@ -49,12 +58,12 @@ class AsyncApiGenerator extends AbstractGenerator {
 	</ivy-module>
 	'''
 	
-	def void messageClasses(Topic t, IFileSystemAccess2 fsa) {
-		if (t.publish !== null) {
-			fsa.generateFile(t.path + "/" + t.publishMessageClassName + ".java", t.publishClass);
+	def void messageClasses(Channel c, IFileSystemAccess2 fsa) {
+		if (c.publish !== null && c.publish.message !== null) {
+			fsa.generateFile(c.path + "/" + c.publishMessageClassName + ".java", c.publishClass);
 		}
-		if (t.subscribe !== null) {
-			fsa.generateFile(t.path + "/" + t.subscribeMessageClassName + ".java", t.subscribeClass);
+		if (c.subscribe !== null && c.subscribe.message !== null) {
+			fsa.generateFile(c.path + "/" + c.subscribeMessageClassName + ".java", c.subscribeClass);
 		}
 	}
 
@@ -64,45 +73,49 @@ class AsyncApiGenerator extends AbstractGenerator {
 		import com.google.gson.annotations.SerializedName;
 	'''
 
-	def mqttImports() '''
-        import org.eclipse.paho.client.mqttv3.MqttClient;
-        import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
-        import org.eclipse.paho.client.mqttv3.MqttException;
-        import org.eclipse.paho.client.mqttv3.MqttMessage;
-        import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
-	'''
-
-	def publishClass(Topic t) '''
-		package «t.packageName»;
+	def publishClass(Channel c) '''
+		package Â«c.packageNameÂ»;
 		
-		«IF t.publish.resolve.payload.isNamedSchema»
-		import schemas.«t.publishPayloadClassName»;
-		«ELSE»
-		«gsonImports»
-		«ENDIF»
+		import java.util.HashMap;
+		import java.util.Map;
+		import java.util.Map.Entry;
 		
-		«mqttImports»
+		Â«IF c.publish.message.resolve.payload.isNamedSchemaÂ»
+		import schemas.Â«c.publishPayloadClassNameÂ»;
+		Â«ELSEÂ»
+		Â«gsonImportsÂ»
+		Â«ENDIFÂ»
+		
+		import org.eclipse.paho.client.mqttv3.MqttClient;
+		import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
+		import org.eclipse.paho.client.mqttv3.MqttException;
+		import org.eclipse.paho.client.mqttv3.MqttMessage;
+		import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 		
 		/**
-		«IF t.publish.summary!== null»
-		 * «t.publish.summary»
-		«ENDIF»
-		«IF t.publish.description!== null»
-		 * «t.publish.description»
-		«ENDIF»
+		Â«IF c.publish.summary!== nullÂ»
+		 * Â«c.publish.summaryÂ»
+		Â«ENDIFÂ»
+		Â«IF c.publish.description!== nullÂ»
+		 * Â«c.publish.descriptionÂ»
+		Â«ENDIFÂ»
 		 */
-		public class «t.publishMessageClassName» {
-			/**
-			 * Create payload
-			 */
-			public static final «t.publishPayloadClassName».«t.publishPayloadClassName»Builder payloadBuilder() {
-				return «t.publishPayloadClassName».«t.publishPayloadClassName»Builder.newBuilder();
+		public class Â«c.publishMessageClassNameÂ» {
+			
+			public static final String TOPIC_ID = "Â«c.nameÂ»";
+			
+			private static final int QOS = 2;
+						
+			public static final Â«c.publishPayloadClassNameÂ».Â«c.publishPayloadClassNameÂ»Builder payloadBuilder() {
+				return Â«c.publishPayloadClassNameÂ».Â«c.publishPayloadClassNameÂ»Builder.newBuilder();
 			}
 			
-			public static final void publish(«t.publishPayloadClassName» payload) {
-				String topic = "«t.name»";
-				int qos = 2;
-				String broker = "«api.servers.get(0).url»";
+			public static final void publish(Â«c.publishPayloadClassNameÂ» payload) throws MqttException {
+				publish(payload, Â«c.publishMessageClassNameÂ»Params.create());
+			}
+			
+			public static final void publish(Â«c.publishPayloadClassNameÂ» payload, Â«c.publishMessageClassNameÂ»Params params) throws MqttException {
+				String broker = "Â«api.servers.get(0).expandÂ»";
 				String clientId = java.util.UUID.randomUUID().toString();
 				MemoryPersistence persistence = new MemoryPersistence();
 				
@@ -112,51 +125,168 @@ class AsyncApiGenerator extends AbstractGenerator {
 				    connOpts.setCleanSession(true);
 				    
 				    MqttMessage message = new MqttMessage(payload.toJson().getBytes());
-				    message.setQos(qos);
+				    message.setQos(QOS);
 				    
 				    client.connect(connOpts);
-				    client.publish(topic, message);
+				    client.publish(expand(params), message);
 				    client.disconnect();
-				    
-				} catch(MqttException e) {
-					throw new RuntimeException(e);
 				}
 			}
 			
-			«IF !t.publish.resolve.payload.isNamedSchema»
-			«t.publish.resolve.payload.resolve.unnamedSchemaClass»
-			«ENDIF»
+				
+			public static String expand(Â«c.publishMessageClassNameÂ»Params params) {
+				return params.apply(TOPIC_ID);
+			}
+			Â«IF !c.parameters.emptyÂ»
+			
+			public static class Â«c.publishMessageClassNameÂ»Params {
+
+				private Map<String, Object> parameters = new HashMap<>();
+				
+				public static Â«c.publishMessageClassNameÂ»Params create() {
+					return new Â«c.publishMessageClassNameÂ»Params();
+				}
+
+				private String apply(String topic) {
+					for (Entry<String, Object> entry : parameters.entrySet()) {
+						topic = topic.replaceAll("\\{" + entry.getKey() + "\\}", entry.getValue().toString());
+					}
+					return topic;
+				}
+				Â«FOR p : c.parametersÂ»
+				
+				public Â«c.publishMessageClassNameÂ»Params withÂ«p.name.asJavaClassNameÂ»(Â«p.parameter.resolve.schema.resolve.toJavaTypeÂ» Â«p.name.asJavaIdentifierÂ») {
+					this.parameters.put("Â«p.name.asJavaIdentifierÂ»", Â«p.name.asJavaIdentifierÂ»);
+					return this;
+				}
+				Â«ENDFORÂ»
+			} 
+			Â«ENDIFÂ»
+			Â«IF !c.publish.message.resolve.payload.isNamedSchemaÂ»
+			
+			Â«c.publish.message.resolve.payload.resolve.unnamedSchemaClassÂ»
+			Â«ENDIFÂ»
 		}
 	'''
 
-	def subscribeClass(Topic t) '''
-		package «t.packageName»;
+	def subscribeClass(Channel c) '''
+		package Â«c.packageNameÂ»;
 		
-		«IF t.subscribe.resolve.payload.isNamedSchema»
-		import schemas.«t.subscribePayloadClassName»;
-		«ELSE»
-		«gsonImports»
-		«ENDIF»
+		import java.util.HashMap;
+		import java.util.Map;
+		import java.util.regex.Matcher;
+		import java.util.regex.Pattern;
+		
+		Â«IF c.subscribe.message.resolve.payload.isNamedSchemaÂ»
+		import schemas.Â«c.subscribePayloadClassNameÂ»;
+		Â«ELSEÂ»
+		Â«gsonImportsÂ»
+		Â«ENDIFÂ»
+		
+		import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
+		import org.eclipse.paho.client.mqttv3.MqttCallback;
+		import org.eclipse.paho.client.mqttv3.MqttClient;
+		import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
+		import org.eclipse.paho.client.mqttv3.MqttException;
+		import org.eclipse.paho.client.mqttv3.MqttMessage;
+		import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+
 		
 		/**
-		«IF t.subscribe.summary!== null»
-		 * «t.subscribe.summary»
-		«ENDIF»
-		«IF t.subscribe.description!== null»
-		 * «t.subscribe.description»
-		«ENDIF»
+		Â«IF c.subscribe.summary!== nullÂ»
+		 * Â«c.subscribe.summaryÂ»
+		Â«ENDIFÂ»
+		Â«IF c.subscribe.description!== nullÂ»
+		 * Â«c.subscribe.descriptionÂ»
+		Â«ENDIFÂ»
 		 */
-		public class «t.subscribeMessageClassName» {
-			/**
-			 * Create payload
-			 */
-			public static final «t.subscribePayloadClassName».«t.subscribePayloadClassName»Builder payloadBuilder() {
-				return «t.subscribePayloadClassName».«t.subscribePayloadClassName»Builder.newBuilder();
+		public class Â«c.subscribeMessageClassNameÂ» {
+			
+			public static final String TOPIC_ID = "Â«c.nameÂ»";
+			public static final String TOPIC_PATTERN = "Â«c.wildcardifyÂ»";
+			
+			private static final int QOS = 2;
+			
+			private static MqttClient client;
+				
+			static {
+				String broker = "Â«api.servers.get(0).expandÂ»";
+				String clientId = java.util.UUID.randomUUID().toString();
+				MemoryPersistence persistence = new MemoryPersistence();
+				try {
+					client = new MqttClient(broker, clientId, persistence);
+				} catch (MqttException e) {
+					throw new RuntimeException(e);
+				}
+				Runtime.getRuntime().addShutdownHook(new Thread() {
+					public void run() {
+						try {
+							client.close();
+						} catch (MqttException e) {
+						}
+					}
+				});
 			}
 			
-			«IF !t.subscribe.resolve.payload.isNamedSchema»
-			«t.subscribe.resolve.payload.resolve.unnamedSchemaClass»
-			«ENDIF»
+
+			public static final void subscribe(IÂ«c.subscribeMessageClassNameÂ»Callback callback) throws MqttException {
+			    MqttConnectOptions connOpts = new MqttConnectOptions();
+			    connOpts.setCleanSession(true);
+			    client.setCallback(new MqttCallback() {
+					@Override public void deliveryComplete(IMqttDeliveryToken token) {}
+					@Override public void connectionLost(Throwable cause) {}
+					@Override
+					public void messageArrived(String topic, MqttMessage message) throws Exception {
+						callback.messageArrived(new Â«c.subscribeMessageClassNameÂ»Params(topic), Â«c.subscribePayloadClassNameÂ».fromJson(new String(message.getPayload())));
+					}
+				});
+			    client.connect(connOpts);
+			    client.subscribe(TOPIC_PATTERN, QOS);
+			}
+			
+			public static final void unsubscribe() throws MqttException {
+			    client.unsubscribe(TOPIC_PATTERN);
+				client.disconnect();
+			}
+			
+			public interface IÂ«c.subscribeMessageClassNameÂ»Callback {
+				public void messageArrived(Â«c.subscribeMessageClassNameÂ»Params params, Â«c.subscribePayloadClassNameÂ» payload);
+			}
+			
+			Â«IF !c.parameters.emptyÂ»
+			public static class Â«c.subscribeMessageClassNameÂ»Params {
+				
+				private Map<String, Object> parameters = new HashMap<>();
+				
+				private Â«c.subscribeMessageClassNameÂ»Params(String topic) {
+					String regex = TOPIC_ID;
+					Â«FOR p : c.parametersÂ»
+					regex = regex.replaceAll("\\{Â«p.name.asJavaIdentifierÂ»\\}", "(?<Â«p.name.asJavaIdentifierÂ»>.+)");
+					Â«ENDFORÂ»
+					Pattern pattern = Pattern.compile(regex);
+					Matcher matcher = pattern.matcher(topic);
+					if (matcher.matches()) {
+						Â«FOR p : c.parametersÂ»
+						this.parameters.put("Â«p.name.asJavaIdentifierÂ»", matcher.group("Â«p.name.asJavaIdentifierÂ»"));
+						Â«ENDFORÂ»
+					}
+				}
+				
+				private Â«c.subscribeMessageClassNameÂ»Params(Map<String, Object> parameters) {
+					this.parameters.putAll(parameters);
+				}
+				Â«FOR p : c.parametersÂ»
+				
+				public Â«p.parameter.resolve.schema.resolve.toJavaTypeÂ» getÂ«p.name.asJavaClassNameÂ»() {
+					return (Â«p.parameter.resolve.schema.resolve.toJavaTypeÂ») this.parameters.get("Â«p.name.asJavaIdentifierÂ»");
+				}
+				Â«ENDFORÂ»
+			} 
+			Â«ENDIFÂ»
+			Â«IF !c.subscribe.message.resolve.payload.isNamedSchemaÂ»
+			
+			Â«c.subscribe.message.resolve.payload.resolve.unnamedSchemaClassÂ»
+			Â«ENDIFÂ»
 		}
 	'''
 	
@@ -171,58 +301,58 @@ class AsyncApiGenerator extends AbstractGenerator {
 	def namedSchemaClassFile(NamedSchema ns) '''
 		package schemas;
 		
-		«gsonImports»
+		Â«gsonImportsÂ»
 		
-		«ns.namedSchemaClass»
+		Â«ns.namedSchemaClassÂ»
 	'''
 	
 	def String namedSchemaClass(NamedSchema ns) '''
+	
 		/**
-		«IF ns.title !== null»
-		 * «ns.title»
-		«ENDIF»
-		«IF ns.description !== null»
-		 * «ns.description»
-		«ENDIF»
+		 Â«IF ns.title !== nullÂ»
+		 * Â«ns.titleÂ»
+		 Â«ENDIFÂ»
+		 Â«IF ns.description !== nullÂ»
+		 * Â«ns.descriptionÂ»
+		 Â«ENDIFÂ»
 		 */
-		public «IF ns.eContainer instanceof Schema»static «ENDIF»class «ns.toJavaType» implements Cloneable {
-			«ns.schema.resolve.schemaClassBody(ns.toJavaType)»
+		public Â«IF ns.eContainer instanceof SchemaÂ»static Â«ENDIFÂ»class Â«ns.toJavaTypeÂ» implements Cloneable {
+			Â«ns.schema.resolve.schemaClassBody(ns.toJavaType)Â»
 		}
-		
 	'''
 	
 	def String unnamedSchemaClass(Schema s) '''
+	
 		/**
-		«IF s.title !== null»
-		 * «s.title»
-		«ENDIF»
-		«IF s.description !== null»
-		 * «s.description»
-		«ENDIF»
+		 Â«IF s.title !== nullÂ»
+		 * Â«s.titleÂ»
+		 Â«ENDIFÂ»
+		 Â«IF s.description !== nullÂ»
+		 * Â«s.descriptionÂ»
+		 Â«ENDIFÂ»
 		 */
 		public static class Payload {
-			«s.schemaClassBody("Payload")»
+			Â«s.schemaClassBody("Payload")Â»
 		}
-		
 	'''
 
 	def String schemaClassBody(Schema s, String thisTypeName) '''
-		«FOR p : s.properties.filter[p | p.schema.resolve.enumType]»
-			«p.namedSchemaEnum»
-		«ENDFOR»
-		«FOR p : s.properties.filter[p | p.schema.resolve.objectType]»
-			«p.namedSchemaClass»
-		«ENDFOR»
-		«FOR p : s.properties»
-			«p.namedSchemaField»
-		«ENDFOR»
+		Â«FOR p : s.properties.filter[p | p.schema.resolve.enumType]Â»
+			Â«p.namedSchemaEnumÂ»
+		Â«ENDFORÂ»
+		Â«FOR p : s.properties.filter[p | p.schema.resolve.objectType]Â»
+			Â«p.namedSchemaClassÂ»
+		Â«ENDFORÂ»
+		Â«FOR p : s.propertiesÂ»
+			Â«p.namedSchemaFieldÂ»
+		Â«ENDFORÂ»
 
 			
-		private «thisTypeName»() {
+		private Â«thisTypeNameÂ»() {
 		}
 			
-		public static final «thisTypeName»Builder newBuilder() {
-			return new «thisTypeName»Builder();
+		public static final Â«thisTypeNameÂ»Builder newBuilder() {
+			return new Â«thisTypeNameÂ»Builder();
 		}
 		
 		public String toJson() {
@@ -234,77 +364,93 @@ class AsyncApiGenerator extends AbstractGenerator {
 			return gson.toJson(this);
 		}
 		
-		public static «thisTypeName» fromJson(String json) {
+		public static Â«thisTypeNameÂ» fromJson(String json) {
 			Gson gson = new Gson();
-			return gson.fromJson(json, «thisTypeName».class);
+			return gson.fromJson(json, Â«thisTypeNameÂ».class);
 		}
-		
+		Â«FOR p : s.propertiesÂ»
+			Â«p.namedSchemaGetterMethods(thisTypeName)Â»
+		Â«ENDFORÂ»
+
 		protected Object clone() throws CloneNotSupportedException {
-			«thisTypeName» clone = new «thisTypeName»();
-			«FOR p : s.properties.filter[p | !p.schema.resolve.objectType]»
-			clone.«p.friendlyName.asJavaIdentifier» = this.«p.friendlyName.asJavaIdentifier»;
-			«ENDFOR»
-			«FOR p : s.properties.filter[p | p.schema.resolve.objectType]»
-			clone.«p.friendlyName.asJavaIdentifier» = («p.toJavaType») this.«p.friendlyName.asJavaIdentifier».clone();
-			«ENDFOR»
+			Â«thisTypeNameÂ» clone = new Â«thisTypeNameÂ»();
+			Â«FOR p : s.properties.filter[p | !p.schema.resolve.objectType]Â»
+			clone.Â«p.friendlyName.asJavaIdentifierÂ» = this.Â«p.friendlyName.asJavaIdentifierÂ»;
+			Â«ENDFORÂ»
+			Â«FOR p : s.properties.filter[p | p.schema.resolve.objectType]Â»
+			clone.Â«p.friendlyName.asJavaIdentifierÂ» = (Â«p.toJavaTypeÂ») this.Â«p.friendlyName.asJavaIdentifierÂ».clone();
+			Â«ENDFORÂ»
 			return clone;
 		}
 		
-		public static class «thisTypeName»Builder {
+		public static class Â«thisTypeNameÂ»Builder {
 			
-			private «thisTypeName» instance = new «thisTypeName»();
+			private Â«thisTypeNameÂ» instance = new Â«thisTypeNameÂ»();
 			
-			public static «thisTypeName»Builder newBuilder() {
-				return new «thisTypeName»Builder();
+			public static Â«thisTypeNameÂ»Builder newBuilder() {
+				return new Â«thisTypeNameÂ»Builder();
 			}
 			
-			«FOR p : s.properties»
-				«p.namedSchemaMethod(thisTypeName)»
-			«ENDFOR»
+			Â«FOR p : s.propertiesÂ»
+				Â«p.namedSchemaBuilderMethods(thisTypeName)Â»
+			Â«ENDFORÂ»
 			
-			public «thisTypeName» build() {
+			public Â«thisTypeNameÂ» build() {
 				try {
-					return («thisTypeName») instance.clone();
+					return (Â«thisTypeNameÂ») instance.clone();
 				} catch (CloneNotSupportedException e) {
 					throw new RuntimeException("Unable to build: " + this, e);
 				}
 			}
 		}
+		
+		
 	'''
 
 	def namedSchemaEnum(NamedSchema ns) '''
+	
 		/**
-		«IF ns.title !== null»
-		 * «ns.title»
-		«ENDIF»
-		«IF ns.description !== null»
-		 * «ns.description»
-		«ENDIF»
+		 Â«IF ns.title !== nullÂ»
+		 * Â«ns.titleÂ»
+		 Â«ENDIFÂ»
+		 Â«IF ns.description !== nullÂ»
+		 * Â«ns.descriptionÂ»
+		 Â«ENDIFÂ»
 		 */
-		public enum «ns.toJavaType» {
-			«ns.enum_.join(", ")»;
+		public enum Â«ns.toJavaTypeÂ» {
+			Â«ns.enum_.join(", ")Â»;
 		}
-		
 	'''
 
 	def namedSchemaField(NamedSchema ns) '''
+	
 		/**
-		 * «ns.title»
-		«IF ns.description !== null»
-		 * «ns.description»
-		«ENDIF»
+		 * Â«ns.titleÂ»
+		 Â«IF ns.description !== nullÂ»
+		 * Â«ns.descriptionÂ»
+		 Â«ENDIFÂ»
 		 */
-		@SerializedName("«ns.name»")
-		private «ns.toJavaType» «ns.friendlyName.asJavaIdentifier»;
-		
+		@SerializedName("Â«ns.nameÂ»")
+		private Â«ns.toJavaTypeÂ» Â«ns.friendlyName.asJavaIdentifierÂ»;
 	'''
 
-	def namedSchemaMethod(NamedSchema ns, String thisTypeName) '''
-		public «thisTypeName»Builder with«ns.friendlyName»(«ns.toJavaType» «ns.friendlyName.asJavaIdentifier») {
-			this.instance.«ns.friendlyName.asJavaIdentifier» = «ns.friendlyName.asJavaIdentifier»;
+	def namedSchemaBuilderMethods(NamedSchema ns, String thisTypeName) '''
+	
+		public Â«thisTypeNameÂ»Builder withÂ«ns.friendlyNameÂ»(Â«ns.toJavaTypeÂ» Â«ns.friendlyName.asJavaIdentifierÂ») {
+			this.instance.Â«ns.friendlyName.asJavaIdentifierÂ» = Â«ns.friendlyName.asJavaIdentifierÂ»;
 			return this;
 		}
-		
+	'''
+
+	def namedSchemaGetterMethods(NamedSchema ns, String thisTypeName) '''
+	
+		public Â«ns.toJavaTypeÂ» getÂ«ns.friendlyNameÂ»() {
+			Â«IF ns.schema.resolve.objectTypeÂ»
+			return (Â«ns.toJavaTypeÂ») this.Â«ns.friendlyName.asJavaIdentifierÂ».clone();
+			Â«ELSEÂ»
+			return this.Â«ns.friendlyName.asJavaIdentifierÂ»;
+			Â«ENDIFÂ»
+		}
 	'''
 
 	def title(NamedSchema ns) {
@@ -320,42 +466,42 @@ class AsyncApiGenerator extends AbstractGenerator {
 	}
 
 	def friendlyName(NamedSchema ns) {
-		return (if (ns.schema.resolve.friendlyName !== null) ns.schema.resolve.friendlyName else ns.name).asJavaClassName; 
+		return (if (ns.schema.resolve.title !== null) ns.schema.resolve.title else ns.name).asJavaClassName; 
 	}
 	
-	def String publishMessageClassName(Topic t) {
-		val m = t.publish;
+	def String publishMessageClassName(Channel c) {
+		val m = c.publish.message;
 		if (m === null) {
 			throw new RuntimeException("Unexpected type of publish Message: " + m);
 		} else if (m.isNamedMessage) {
-			return m.name.asJavaClassName
+			return "Publish" + m.name.asJavaClassName
 		} else {
 			return "Publish";
 		}
 	}
 
-	def String publishPayloadClassName(Topic t) {
-		if (t.publish.resolve.payload.isNamedSchema) {
-			return t.publish.resolve.payload.name.asJavaClassName
+	def String publishPayloadClassName(Channel c) {
+		if (c.publish.message.resolve.payload.isNamedSchema) {
+			return c.publish.message.resolve.payload.name.asJavaClassName
 		} else {
 			return "Payload"
 		}
 	}
 	
-	def String subscribeMessageClassName(Topic t) {
-		val m = t.subscribe;
+	def String subscribeMessageClassName(Channel c) {
+		val m = c.subscribe.message;
 		if (m === null) {
 			throw new RuntimeException("Unexpected type of subscribe Message: " + m);
 		} else if (m.isNamedMessage) {
-			return m.name.asJavaClassName
+			return "Subscribe" + m.name.asJavaClassName
 		} else {
 			return "Subscribe";
 		}
 	}
 
-	def String subscribePayloadClassName(Topic t) {
-		if (t.subscribe.resolve.payload.isNamedSchema) {
-			return t.subscribe.resolve.payload.name.asJavaClassName;
+	def String subscribePayloadClassName(Channel c) {
+		if (c.subscribe.message.resolve.payload.isNamedSchema) {
+			return c.subscribe.message.resolve.payload.name.asJavaClassName;
 		} else {
 			return "Payload";
 		}
@@ -385,16 +531,13 @@ class AsyncApiGenerator extends AbstractGenerator {
 		}
 	}
 	
-	def String packageName(Topic t) {
-		var segments = ((if (api.baseTopic !== null) api.baseTopic else "") + t.name).split("/");
-		if (segments.exists[s | s.length == 0]) {
-			throw new RuntimeException("Empty segment in package name derived from: " + segments);
-		} 
-		return segments.map[s | s.asJavaIdentifier].join(".");
+	def String packageName(Channel c) {
+		var segments = c.name.split("/");
+		return segments.filter[s | s.length > 0].map[s | s.asJavaIdentifier].join(".");
 	}
 	
-	def String path(Topic t) {
-		return t.packageName.replaceAll("\\.", "/") ;
+	def String path(Channel c) {
+		return c.packageName.replaceAll("\\.", "/") ;
 	}
 
 	def String asJavaIdentifier(String s) {
@@ -465,6 +608,16 @@ class AsyncApiGenerator extends AbstractGenerator {
 		}
 	}
 	
+	def Parameter resolve(AbstractParameter p) {
+		if (p instanceof Parameter) {
+			return p;
+		} else if (p instanceof Reference) {
+			return (p.resolve as NamedParameter).parameter.resolve;
+		} else {
+			throw new RuntimeException("Unexpected abstract parameter: " + p);
+		}
+	}
+	
 	
 	def EObject resolve(Reference r) {
 		var stack = new Stack();
@@ -494,16 +647,21 @@ class AsyncApiGenerator extends AbstractGenerator {
 		}
 	}
 
-	def toJavaType(NamedSchema s) {
-		val schema = s.schema.resolve;
+	def String toJavaType(NamedSchema s) {
+		s.schema.resolve.toJavaType;
+	}
+	
+	def String toJavaType(Schema schema) {
 //		if (schema.type === null) {
 //			throw new RuntimeException("Unexpected JSON type (null) for NamedSchema: " + s);
 //		} else 
 		if (schema.objectType || schema.enumType) {
-			if (schema.friendlyName !== null) {
-				return schema.friendlyName.asJavaClassName;
+			if (schema.title !== null) {
+				return schema.title.asJavaClassName;
+			} else if (schema.eContainer instanceof NamedSchema) {
+				return (schema.eContainer as NamedSchema).name.asJavaClassName;
 			} else {
-				return s.name.asJavaClassName;
+				return "TYPE"
 			}
 		} else {
 			switch (schema.type.toLowerCase) {
@@ -526,7 +684,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 					return "Object";
 				}
 				case "array": {
-					return "java.util.List";
+					return "java.util.List<?>";
 				}
 			}
 		}
@@ -580,4 +738,54 @@ class AsyncApiGenerator extends AbstractGenerator {
 		} 
 		return false;
 	}
+	
+	static def String expand(Server server) {
+		var result = server.url;
+		for (Variable v : server.variables) {
+			result = result.replaceAll("\\{" + v.name + "\\}", v.^default);
+		}
+		val protocol = switch (server.protocol) {
+			case Protocol.MQTT: "tcp"
+			case Protocol.MQTTS: "ssl"
+			default: server.protocol.literal
+		}
+		return protocol + "://" + result;
+	}
+	
+	static def String wildcardify(Channel channel) {
+		val substs = new HashMap<String,String>
+		for (NamedParameter p : channel.parameters) {
+			substs.put(p.name, "+")
+		}
+		return channel.expand(substs);
+	}
+	
+	static def String expand(Channel channel, Map<String, String> substs) {
+		var result = channel.name;
+		for (NamedParameter p : channel.parameters) {
+			result = result.replaceAll("\\{" + p.name + "\\}", substs.get(p.name));
+		}
+		return result;
+	}
+	
+	static def Map<String, String> match(Channel channel, String str) {
+		val result = new HashMap<String,String>
+		var regex = channel.name
+		for (NamedParameter p : channel.parameters) {
+			regex = regex.replaceAll("\\{" + p.name + "\\}", "(?<" + p.name + ">\\w+)");
+		}
+		val pattern = Pattern.compile(regex);
+		val matcher = pattern.matcher(str)
+		if (matcher.matches) {
+			for (NamedParameter p : channel.parameters) {
+				if (matcher.group(p.name) !== null) {
+					result.put(p.name, matcher.group(p.name))
+				}
+			}
+		}
+		return result;
+	}
+	
 }
+
+
