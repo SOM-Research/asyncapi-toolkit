@@ -10,5 +10,6 @@ Require-Bundle: io.github.abelgomez.asyncapi,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: io.github.abelgomez.asyncapi.ide.contentassist.antlr,
+Export-Package: io.github.abelgomez.asyncapi.ide,
+ io.github.abelgomez.asyncapi.ide.contentassist.antlr,
  io.github.abelgomez.asyncapi.ide.contentassist.antlr.internal

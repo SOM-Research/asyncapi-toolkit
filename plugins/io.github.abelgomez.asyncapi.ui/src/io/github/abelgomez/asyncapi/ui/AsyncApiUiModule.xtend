@@ -4,10 +4,15 @@
 package io.github.abelgomez.asyncapi.ui
 
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor
+import org.eclipse.xtext.ide.editor.syntaxcoloring.ISemanticHighlightingCalculator
+import io.github.abelgomez.asyncapi.ide.KeywordsSemanticHighlightingCalculator
 
 /**
  * Use this class to register components to be used within the Eclipse IDE.
  */
 @FinalFieldsConstructor
 class AsyncApiUiModule extends AbstractAsyncApiUiModule {
+	def Class<? extends ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator() {
+        KeywordsSemanticHighlightingCalculator
+    }
 }

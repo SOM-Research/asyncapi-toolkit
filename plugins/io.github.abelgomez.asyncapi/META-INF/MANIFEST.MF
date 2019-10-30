@@ -26,4 +26,5 @@ Export-Package: io.github.abelgomez.asyncapi.generator,
  io.github.abelgomez.asyncapi.services,
  io.github.abelgomez.asyncapi.asyncApi,
  io.github.abelgomez.asyncapi.asyncApi.impl
-Import-Package: org.apache.log4j
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.ide.editor.syntaxcoloring
