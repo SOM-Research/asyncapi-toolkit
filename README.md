@@ -52,7 +52,7 @@ Pay special attention to the following files:
 
 * `src/streetlights/StreetlightsAPI.asyncapi` is an example specification of an API using the JSON format of teh AsyncAPI specification. Code in `src-gen` will be generated from the specification contained in this file.
 
-* `src/main/MainExample.java` is an example program demonstrating how to use the generated code, whichj provides an internal DSL based on fluent APIs to generate messages, and to publish and subscribe them. The example code is the following:
+* `src/main/MainExample.java` is an example program demonstrating how to use the generated code, which provides an internal DSL based on fluent APIs to generate messages, and to publish and subscribe them. The example code is the following:
 
 ```Java
 package main;
