@@ -376,7 +376,6 @@ class AsyncApiGenerator extends AbstractGenerator {
 	'''
 	
 	def String namedSchemaClass(NamedSchema ns) '''
-	
 		/**
 		 «IF ns.title !== null»
 		 * «ns.title»
@@ -391,7 +390,6 @@ class AsyncApiGenerator extends AbstractGenerator {
 	'''
 	
 	def String unnamedSchemaClass(Schema s) '''
-	
 		/**
 		 «IF s.title !== null»
 		 * «s.title»
@@ -407,13 +405,16 @@ class AsyncApiGenerator extends AbstractGenerator {
 
 	def String schemaClassBody(Schema s, String thisTypeName) '''
 		«FOR p : s.properties.filter[p | p.schema.resolve.enumType]»
-			«p.namedSchemaEnum»
+		
+		«p.namedSchemaEnum»
 		«ENDFOR»
 		«FOR p : s.properties.filter[p | p.schema.resolve.objectType]»
-			«p.namedSchemaClass»
+		
+		«p.namedSchemaClass»
 		«ENDFOR»
 		«FOR p : s.properties»
-			«p.namedSchemaField»
+		
+		«p.namedSchemaField»
 		«ENDFOR»
 
 			
@@ -438,16 +439,17 @@ class AsyncApiGenerator extends AbstractGenerator {
 			return gson.fromJson(json, «thisTypeName».class);
 		}
 		«FOR p : s.properties»
-			«p.namedSchemaGetterMethods(thisTypeName)»
+		
+		«p.namedSchemaGetterMethods(thisTypeName)»
 		«ENDFOR»
 
 		protected Object clone() throws CloneNotSupportedException {
 			«thisTypeName» clone = new «thisTypeName»();
 			«FOR p : s.properties.filter[p | !p.schema.resolve.objectType]»
-			clone.«p.friendlyName.asJavaIdentifier» = this.«p.friendlyName.asJavaIdentifier»;
+			clone.«p.friendlyIdentifierName» = this.«p.friendlyIdentifierName»;
 			«ENDFOR»
 			«FOR p : s.properties.filter[p | p.schema.resolve.objectType]»
-			clone.«p.friendlyName.asJavaIdentifier» = («p.toJavaType») this.«p.friendlyName.asJavaIdentifier».clone();
+			clone.«p.friendlyIdentifierName» = («p.toJavaType») this.«p.friendlyIdentifierName».clone();
 			«ENDFOR»
 			return clone;
 		}
@@ -459,9 +461,9 @@ class AsyncApiGenerator extends AbstractGenerator {
 			public static «thisTypeName»Builder newBuilder() {
 				return new «thisTypeName»Builder();
 			}
-			
 			«FOR p : s.properties»
-				«p.namedSchemaBuilderMethods(thisTypeName)»
+			
+			«p.namedSchemaBuilderMethods(thisTypeName)»
 			«ENDFOR»
 			
 			public «thisTypeName» build() {
@@ -472,12 +474,9 @@ class AsyncApiGenerator extends AbstractGenerator {
 				}
 			}
 		}
-		
-		
 	'''
 
 	def namedSchemaEnum(NamedSchema ns) '''
-	
 		/**
 		 «IF ns.title !== null»
 		 * «ns.title»
@@ -492,7 +491,6 @@ class AsyncApiGenerator extends AbstractGenerator {
 	'''
 
 	def namedSchemaField(NamedSchema ns) '''
-	
 		/**
 		 * «ns.title»
 		 «IF ns.description !== null»
@@ -500,24 +498,22 @@ class AsyncApiGenerator extends AbstractGenerator {
 		 «ENDIF»
 		 */
 		@SerializedName("«ns.name»")
-		private «ns.toJavaType» «ns.friendlyName.asJavaIdentifier»;
+		private «ns.toJavaType» «ns.friendlyIdentifierName»;
 	'''
 
 	def namedSchemaBuilderMethods(NamedSchema ns, String thisTypeName) '''
-	
-		public «thisTypeName»Builder with«ns.friendlyName»(«ns.toJavaType» «ns.friendlyName.asJavaIdentifier») {
-			this.instance.«ns.friendlyName.asJavaIdentifier» = «ns.friendlyName.asJavaIdentifier»;
+		public «thisTypeName»Builder with«ns.friendlyClassName»(«ns.toJavaType» «ns.friendlyIdentifierName») {
+			this.instance.«ns.friendlyIdentifierName» = «ns.friendlyIdentifierName»;
 			return this;
 		}
 	'''
 
 	def namedSchemaGetterMethods(NamedSchema ns, String thisTypeName) '''
-	
-		public «ns.toJavaType» get«ns.friendlyName»() {
+		public «ns.toJavaType» get«ns.friendlyClassName»() {
 			«IF ns.schema.resolve.objectType»
-			return («ns.toJavaType») this.«ns.friendlyName.asJavaIdentifier».clone();
+			return («ns.toJavaType») this.«ns.friendlyIdentifierName».clone();
 			«ELSE»
-			return this.«ns.friendlyName.asJavaIdentifier»;
+			return this.«ns.friendlyIdentifierName»;
 			«ENDIF»
 		}
 	'''
@@ -534,8 +530,12 @@ class AsyncApiGenerator extends AbstractGenerator {
 		return ns.schema.resolve.enum.map[e | e.replaceAll("\"", "").asJavaClassName];
 	}
 
-	def friendlyName(NamedSchema ns) {
+	def friendlyClassName(NamedSchema ns) {
 		return (if (ns.schema.resolve.title !== null) ns.schema.resolve.title else ns.name).asJavaClassName; 
+	}
+	
+	def friendlyIdentifierName(NamedSchema ns) {
+		return (if (ns.schema.resolve.title !== null) ns.schema.resolve.title else ns.name).asJavaIdentifier; 
 	}
 	
 	def String publishMessageClassName(Channel c) {
