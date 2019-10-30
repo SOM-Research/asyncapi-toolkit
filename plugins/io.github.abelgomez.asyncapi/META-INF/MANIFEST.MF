@@ -3,7 +3,7 @@ Automatic-Module-Name: io.github.abelgomez.asyncapi
 Bundle-ManifestVersion: 2
 Bundle-Name: io.github.abelgomez.asyncapi
 Bundle-Vendor: SOM Research Lab
-Bundle-Version: 0.2.0.qualifier
+Bundle-Version: 0.2.1.qualifier
 Bundle-SymbolicName: io.github.abelgomez.asyncapi; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext,
