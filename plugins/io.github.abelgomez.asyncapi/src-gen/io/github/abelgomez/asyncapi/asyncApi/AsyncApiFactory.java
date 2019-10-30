@@ -78,13 +78,22 @@ public interface AsyncApiFactory extends EFactory
   Variable createVariable();
 
   /**
-   * Returns a new object of class '<em>Topic</em>'.
+   * Returns a new object of class '<em>Channel</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Topic</em>'.
+   * @return a new object of class '<em>Channel</em>'.
    * @generated
    */
-  Topic createTopic();
+  Channel createChannel();
+
+  /**
+   * Returns a new object of class '<em>Operation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation</em>'.
+   * @generated
+   */
+  Operation createOperation();
 
   /**
    * Returns a new object of class '<em>Abstract Message</em>'.
@@ -148,6 +157,87 @@ public interface AsyncApiFactory extends EFactory
    * @generated
    */
   NamedSchema createNamedSchema();
+
+  /**
+   * Returns a new object of class '<em>Abstract Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Abstract Parameter</em>'.
+   * @generated
+   */
+  AbstractParameter createAbstractParameter();
+
+  /**
+   * Returns a new object of class '<em>Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Parameter</em>'.
+   * @generated
+   */
+  Parameter createParameter();
+
+  /**
+   * Returns a new object of class '<em>Named Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Named Parameter</em>'.
+   * @generated
+   */
+  NamedParameter createNamedParameter();
+
+  /**
+   * Returns a new object of class '<em>Abstract Operation Trait</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Abstract Operation Trait</em>'.
+   * @generated
+   */
+  AbstractOperationTrait createAbstractOperationTrait();
+
+  /**
+   * Returns a new object of class '<em>Operation Trait</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation Trait</em>'.
+   * @generated
+   */
+  OperationTrait createOperationTrait();
+
+  /**
+   * Returns a new object of class '<em>Named Operation Trait</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Named Operation Trait</em>'.
+   * @generated
+   */
+  NamedOperationTrait createNamedOperationTrait();
+
+  /**
+   * Returns a new object of class '<em>Abstract Message Trait</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Abstract Message Trait</em>'.
+   * @generated
+   */
+  AbstractMessageTrait createAbstractMessageTrait();
+
+  /**
+   * Returns a new object of class '<em>Message Trait</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message Trait</em>'.
+   * @generated
+   */
+  MessageTrait createMessageTrait();
+
+  /**
+   * Returns a new object of class '<em>Named Message Trait</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Named Message Trait</em>'.
+   * @generated
+   */
+  NamedMessageTrait createNamedMessageTrait();
 
   /**
    * Returns a new object of class '<em>Components</em>'.

@@ -1,59 +1,80 @@
-grammar io.github.abelgomez.asyncapi.AsyncApi with org.eclipse.xtext.common.Terminals
+grammar io.github.abelgomez.asyncapi.AsyncApi hidden(WS)
 
 generate asyncApi "http://io.github.abelgomez/asyncapi/AsyncApi"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 AsyncAPI:
 	{AsyncAPI} '{'	(
 		  ( '"asyncapi"' ':' version=VersionNumber ','? )
 		& ( '"info"' ':' info=Info ','? ) 
-		& ( '"servers"' ':' '[' servers+=Server (',' servers+=Server)* ']' ','? )? 
-		& ( '"topics"' ':' '{' topics+=Topic (',' topics+=Topic)* '}' ','? )
+		& ( '"servers"' ':' '{' servers+=Server (',' servers+=Server)* '}' ','? )? 
+		& ( '"channels"' ':' '{' channels+=Channel (',' channels+=Channel)* '}' ','? )
 		& ( '"components"' ':' components=Components ','? )?
-		& ( '"baseTopic"' ':' baseTopic=STRING ','? )?
+		& ( GenericJsonTuple ','? )*
 	) '}';
 		
 Info:
 	{Info} '{' (
-		  ( '"title"' ':' title=STRING ','? ) 
-		& ( '"version"' ':' version=STRING ','? )
-		& ( '"description"' ':' description=STRING ','? )?
-		& ( '"termsOfService"' ':' termsOfService=STRING ','? )?
+		  ( '"title"' ':' title=AnyString ','? ) 
+		& ( '"version"' ':' version=AnyString ','? )
+		& ( '"description"' ':' description=AnyString ','? )?
+		& ( '"termsOfService"' ':' termsOfService=AnyString ','? )?
 		& ( '"contact"' ':' contact=Contact ','? )?
 		& ( '"license"' ':' license=License ','? )?
+		& ( GenericJsonTuple ','? )*
 	) '}';
 
 Contact:
 	{Contact} '{' (
-		  ( '"name"' ':' name=STRING ','? )?
-		& ( '"url"' ':' url=STRING ','? )?
-		& ( '"email"' ':' email=STRING ','? )?
+		  ( '"name"' ':' name=AnyString ','? )?
+		& ( '"url"' ':' url=AnyString ','? )?
+		& ( '"email"' ':' email=AnyString ','? )?
+		& ( GenericJsonTuple ','? )*
 	) '}';
 
 License:
 	{License} '{' (
-		  ( '"name"' ':' name=STRING ','? )?
-		& ( '"url"' ':' url=STRING ','? )?
+		  ( '"name"' ':' name=AnyString ','? )?
+		& ( '"url"' ':' url=AnyString ','? )?
+		& ( GenericJsonTuple ','? )*
 	) '}';
 
 Server:
-	{Server} '{' (
-		  ( '"url"' ':' url=STRING ','? )
-		& ( '"scheme"' ':' scheme=Scheme ','? )
-		& ( '"description"' ':' description=STRING ',' )?
+	{Server} name=AnyString ':' '{' (
+		  ( '"url"' ':' url=AnyString ','? )
+		& ( '"protocol"' ':' protocol=Protocol ','? )
+		& ( '"description"' ':' description=AnyString ',' )?
 		& ( '"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','? )?
+		& ( GenericJsonTuple ','? )*
 	) '}';
 
 Variable:
-	{Variable} name=STRING ':' '{' (
-		  ( '"description"' ':' description=STRING ','?  )?
-		& ( '"default"' ':' default=STRING ','? )?
-		& ( '"enum"' ':' '[' ^enum+=STRING (',' ^enum+=STRING)* ']' ','? )?
+	{Variable} name=AnyString ':' '{' (
+		  ( '"description"' ':' description=AnyString ','?  )?
+		& ( '"default"' ':' default=AnyString ','? )?
+		& ( '"enum"' ':' '[' ^enum+=AnyString (',' ^enum+=AnyString)* ']' ','? )?
+		& ( GenericJsonTuple ','? )*
 	) '}';
 
-Topic:
-	{Topic} name=STRING ':' '{' (
-		  ( '"publish"' ':' publish=AbstractMessage ','?  )?
-		& ( '"subscribe"' ':' subscribe=AbstractMessage ','? )?
+Channel:
+	{Channel} name=AnyString ':' '{' (
+		  ( '"description"' ':' description=AnyString ','?  )?
+		& ( '"publish"' ':' publish=Operation ','?  )?
+		& ( '"subscribe"' ':' subscribe=Operation ','? )?
+		& ( '"parameters"' ':' '{' parameters+=NamedParameter (',' parameters+=NamedParameter)* '}' ','? )?
+		& ( '"x-title"' ':' title=AnyString ','? )?
+		& ( GenericJsonTuple ','? )*
+	) '}';
+	
+Operation:
+	{Operation} '{' (
+		  ( '"operationId"' ':' operationId=AnyString ','?  )?
+		& ( '"summary"' ':' summary=AnyString ','?  )?
+		& ( '"description"' ':' description=AnyString ','?  )?
+		& ( '"message"' ':' message=AbstractMessage ','?  )?
+		& ( '"traits"' ':' '[' traits+=AbstractOperationTrait ( ',' traits+=AbstractOperationTrait )* ']' ','?  )?
+		& ( GenericJsonTuple ','? )*
 	) '}';
 
 AbstractMessage:
@@ -61,21 +82,26 @@ AbstractMessage:
 
 Message:
 	{Message} '{' (
-		  ( '"summary"' ':' summary=STRING ','? )?
-		& ( '"description"' ':' description=STRING ','? )?
+		  ( '"name"' ':' name=AnyString ','? )?
+		& ( '"title"' ':' title=AnyString ','? )?
+		& ( '"summary"' ':' summary=AnyString ','? )?
+		& ( '"description"' ':' description=AnyString ','? )?
 		& ( '"deprecated"' ':' deprecated=Boolean ','? )?
 		& ( '"headers"' ':' headers=AbstractSchema ','? )?
 		& ( '"tags"' ':' '[' tags+=Tag ( ',' tags+=Tag )* ']' ','? )?
 		& ( '"payload"' ':' payload=AbstractSchema ','? )?
+		& ( '"traits"' ':' '[' traits+=AbstractMessageTrait ( ',' traits+=AbstractMessageTrait )* ']' ','?  )?
+		& ( GenericJsonTupleButRef ','? )*
 	) '}';
 
 NamedMessage:
-	{NamedMessage} name=STRING ':' message=AbstractMessage;
+	{NamedMessage} name=AnyString ':' message=AbstractMessage;
 
 Tag:
 	{Tag} '{' (
-		('"name"' ':' name=STRING ','?)?
-		& ('"description"' ':' description=STRING ','?)?
+		('"name"' ':' name=AnyString ','?)?
+		& ('"description"' ':' description=AnyString ','?)?
+		& ( GenericJsonTuple ','? )*
 	) '}';
 
 AbstractSchema:
@@ -83,45 +109,105 @@ AbstractSchema:
 
 Schema:
 	{Schema} '{' (
-		  ( '"title"' ':' title=STRING ','? )?
-		& ( '"type"' ':' type=STRING ','? )?
-		& ( '"description"' ':' description=STRING ','? )?
-		& ( '"format"' ':' format=STRING ','? )?
+		  ( '"title"' ':' title=AnyString ','? )?
+		& ( '"type"' ':' type=AnyString ','? )?
+		& ( '"description"' ':' description=AnyString ','? )?
+		& ( '"format"' ':' format=AnyString ','? )?
+		& ( '"minimum"' ':' minimum=INT ','? )?
+		& ( '"maximum"' ':' maximum=INT ','? )?
 		& ( '"default"' ':' default=PrimitiveValue','? )?
-		& ( '"payload"' ':' payload=AbstractSchema ','? )?
 		& ( '"properties"' ':' '{' properties+=NamedSchema (',' properties+=NamedSchema)* '}' ','? )?
 		& ( '"enum"' ':' '[' ^enum+=PrimitiveValue (',' ^enum+=PrimitiveValue)* ']' ','? )?
 		& ( '"items"' ':' items=AbstractSchema ','? )?
-		& ( '"required"' ':' '[' required+=STRING (',' required+=STRING)* ']' ','? )?
-		& ( '"x-friendly-name"' ':' friendlyName=STRING ','? )?
+		& ( '"required"' ':' '[' required+=AnyString (',' required+=AnyString)* ']' ','? )?
+		& ( GenericJsonTupleButRef ','? )*
 	) '}';
 
 NamedSchema:
-	{NamedSchema} name=STRING ':' schema=AbstractSchema;
+	{NamedSchema} name=AnyString ':' schema=AbstractSchema;
+
+AbstractParameter:
+	Reference | Parameter;
+
+Parameter:
+	{Parameter} '{' (
+		( '"description"' ':' description=AnyString ','? )?
+		& ( '"schema"' ':' schema=AbstractSchema ','? )?
+		& ( '"location"' ':' location=AnyString ','? )?
+		& ( GenericJsonTupleButRef ','? )*
+	) '}';
+
+
+NamedParameter:
+	{NamedParameter} name=AnyString ':' parameter=AbstractParameter;
+	
+AbstractOperationTrait:
+	Reference | OperationTrait;
+	
+OperationTrait:
+	{OperationTrait} '{' (
+		  ( '"operationId"' ':' operationId=AnyString ','?  )?
+		& ( '"summary"' ':' summary=AnyString ','?  )?
+		& ( '"description"' ':' description=AnyString ','?  )?
+		& ( GenericJsonTupleButRef ','? )*
+	) '}';
+
+NamedOperationTrait:
+	{NamedOperationTrait} name=AnyString ':' operationTrait=AbstractOperationTrait;
+
+AbstractMessageTrait:
+	Reference | MessageTrait;
+	
+MessageTrait:
+	{MessageTrait} '{' (
+		  ( '"summary"' ':' summary=AnyString ','? )?
+		& ( '"description"' ':' description=AnyString ','? )?
+		& ( '"deprecated"' ':' deprecated=Boolean ','? )?
+		& ( '"headers"' ':' headers=AbstractSchema ','? )?
+		& ( '"tags"' ':' '[' tags+=Tag ( ',' tags+=Tag )* ']' ','? )?
+		& ( GenericJsonTupleButRef ','? )*
+	) '}';
+
+NamedMessageTrait:
+	{NamedMessageTrait} name=AnyString ':' messageTrait=AbstractMessageTrait;
 
 Components:
 	{Components} '{' (
 		  ( '"schemas"' ':' '{' schemas+=NamedSchema (',' schemas+=NamedSchema)* '}' ','? )?
 		& ( '"messages"' ':' '{' messages+=NamedMessage (',' messages+=NamedMessage)* '}' ','? )?
+		& ( '"parameters"' ':' '{' parameters+=NamedParameter (',' parameters+=NamedParameter)* '}' ','? )?
+		& ( '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait (',' operationTraits+=NamedOperationTrait)* '}' ','? )?
+		& ( '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait (',' messageTraits+=NamedMessageTrait)* '}' ','? )?
+		& ( GenericJsonTupleButRef ','? )*
 	) '}';
 
-
 Reference:
-	{Reference} (refname=STRING ':')? '{' '"$ref"' ':' uri=STRING '}';
+	{Reference} '{' '"$ref"' ':' uri=AnyString '}';
 
-PrimitiveValue:
-	STRING | INT | "true" | "false";
+GenericJsonExpression:
+	PrimitiveValue
+	| GenericJsonObject
+	| GenericJsonArray;
+
+GenericJsonObject:
+	'{' '}' | '{' GenericJsonTuple (',' GenericJsonTuple)* '}';
+
+GenericJsonArray:
+	'[' ']' | '[' GenericJsonExpression (',' GenericJsonExpression)* ']';
+
+GenericJsonTuple: AnyString ':' GenericJsonExpression;
+
+GenericJsonTupleButRef: AnyStringButRef ':' GenericJsonExpression;
+
 
 enum Boolean:
-	_true = "true"
-	| _false = "false";
+	_false = "false"
+	| _true = "true";
 
 enum VersionNumber:
-	_100 = '"1.0.0"'
-	| _110 = '"1.1.0"'
-	| _120 = '"1.2.0"' ;
+	_200 = '"2.0.0"';
 	
-enum Scheme:
+enum Protocol:
 	amqp = '"amqp"'
 	| amqps = '"amqps"'
 	| mqtt = '"mqtt"'
@@ -130,3 +216,85 @@ enum Scheme:
 	| wss = '"wss"'
 	| stomp = '"stomp"'
 	| stomps = '"stomps"';
+
+PrimitiveValue:
+	AnyString
+	| "true" 
+	| "false"
+	| INT;
+
+AnyStringButRef:
+	STRING
+	| Keyword;
+
+AnyString:
+	STRING
+	| '"$ref"'
+	| Keyword;
+
+terminal ID:
+	'^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+	
+terminal INT returns ecore::EInt:
+	('0'..'9')+;
+	
+terminal STRING:
+	'"' ( '\\' . | !('\\'|'"') )* '"' 
+	| "'" ( '\\' . | !('\\'|"'") )* "'";
+
+terminal WS:
+	(' '|'\t'|'\r'|'\n')+;
+
+Keyword:
+	'"2.0.0"'
+	| '"amqp"'
+	| '"amqps"'
+	| '"asyncapi"'
+	| '"channels"'
+	| '"components"'
+	| '"contact"'
+	| '"default"'
+	| '"deprecated"'
+	| '"description"'
+	| '"email"'
+	| '"enum"'
+	| '"format"'
+	| '"headers"'
+	| '"info"'
+	| '"items"'
+	| '"license"'
+	| '"location"'
+	| '"maximum"'
+	| '"message"'
+	| '"messageTraits"'
+	| '"messages"'
+	| '"minimum"'
+	| '"mqtt"'
+	| '"mqtts"'
+	| '"name"'
+	| '"operationId"'
+	| '"operationTraits"'
+	| '"parameters"'
+	| '"payload"'
+	| '"properties"'
+	| '"protocol"'
+	| '"publish"'
+	| '"required"'
+	| '"schema"'
+	| '"schemas"'
+	| '"servers"'
+	| '"stomp"'
+	| '"stomps"'
+	| '"subscribe"'
+	| '"summary"'
+	| '"tags"'
+	| '"termsOfService"'
+	| '"title"'
+	| '"traits"'
+	| '"type"'
+	| '"url"'
+	| '"variables"'
+	| '"version"'
+	| '"ws"'
+	| '"wss"'
+	| '"x-title"';

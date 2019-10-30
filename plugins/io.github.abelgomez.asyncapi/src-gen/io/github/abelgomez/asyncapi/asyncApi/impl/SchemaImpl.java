@@ -36,13 +36,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getType <em>Type</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getFormat <em>Format</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getMinimum <em>Minimum</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getMaximum <em>Maximum</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getDefault <em>Default</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getPayload <em>Payload</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getEnum <em>Enum</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getItems <em>Items</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getRequired <em>Required</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getFriendlyName <em>Friendly Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -130,6 +130,46 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
   protected String format = FORMAT_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getMinimum() <em>Minimum</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMinimum()
+   * @generated
+   * @ordered
+   */
+  protected static final int MINIMUM_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMinimum()
+   * @generated
+   * @ordered
+   */
+  protected int minimum = MINIMUM_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMaximum() <em>Maximum</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMaximum()
+   * @generated
+   * @ordered
+   */
+  protected static final int MAXIMUM_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getMaximum() <em>Maximum</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMaximum()
+   * @generated
+   * @ordered
+   */
+  protected int maximum = MAXIMUM_EDEFAULT;
+
+  /**
    * The default value of the '{@link #getDefault() <em>Default</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -148,16 +188,6 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
    * @ordered
    */
   protected String default_ = DEFAULT_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getPayload() <em>Payload</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPayload()
-   * @generated
-   * @ordered
-   */
-  protected AbstractSchema payload;
 
   /**
    * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
@@ -198,26 +228,6 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
    * @ordered
    */
   protected EList<String> required;
-
-  /**
-   * The default value of the '{@link #getFriendlyName() <em>Friendly Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFriendlyName()
-   * @generated
-   * @ordered
-   */
-  protected static final String FRIENDLY_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getFriendlyName() <em>Friendly Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFriendlyName()
-   * @generated
-   * @ordered
-   */
-  protected String friendlyName = FRIENDLY_NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -346,6 +356,56 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
    * @generated
    */
   @Override
+  public int getMinimum()
+  {
+    return minimum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMinimum(int newMinimum)
+  {
+    int oldMinimum = minimum;
+    minimum = newMinimum;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SCHEMA__MINIMUM, oldMinimum, minimum));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int getMaximum()
+  {
+    return maximum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMaximum(int newMaximum)
+  {
+    int oldMaximum = maximum;
+    maximum = newMaximum;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SCHEMA__MAXIMUM, oldMaximum, maximum));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getDefault()
   {
     return default_;
@@ -363,56 +423,6 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
     default_ = newDefault;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SCHEMA__DEFAULT, oldDefault, default_));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AbstractSchema getPayload()
-  {
-    return payload;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetPayload(AbstractSchema newPayload, NotificationChain msgs)
-  {
-    AbstractSchema oldPayload = payload;
-    payload = newPayload;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SCHEMA__PAYLOAD, oldPayload, newPayload);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setPayload(AbstractSchema newPayload)
-  {
-    if (newPayload != payload)
-    {
-      NotificationChain msgs = null;
-      if (payload != null)
-        msgs = ((InternalEObject)payload).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.SCHEMA__PAYLOAD, null, msgs);
-      if (newPayload != null)
-        msgs = ((InternalEObject)newPayload).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.SCHEMA__PAYLOAD, null, msgs);
-      msgs = basicSetPayload(newPayload, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SCHEMA__PAYLOAD, newPayload, newPayload));
   }
 
   /**
@@ -516,37 +526,10 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
    * @generated
    */
   @Override
-  public String getFriendlyName()
-  {
-    return friendlyName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setFriendlyName(String newFriendlyName)
-  {
-    String oldFriendlyName = friendlyName;
-    friendlyName = newFriendlyName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SCHEMA__FRIENDLY_NAME, oldFriendlyName, friendlyName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case AsyncApiPackage.SCHEMA__PAYLOAD:
-        return basicSetPayload(null, msgs);
       case AsyncApiPackage.SCHEMA__PROPERTIES:
         return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
       case AsyncApiPackage.SCHEMA__ITEMS:
@@ -573,10 +556,12 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
         return getDescription();
       case AsyncApiPackage.SCHEMA__FORMAT:
         return getFormat();
+      case AsyncApiPackage.SCHEMA__MINIMUM:
+        return getMinimum();
+      case AsyncApiPackage.SCHEMA__MAXIMUM:
+        return getMaximum();
       case AsyncApiPackage.SCHEMA__DEFAULT:
         return getDefault();
-      case AsyncApiPackage.SCHEMA__PAYLOAD:
-        return getPayload();
       case AsyncApiPackage.SCHEMA__PROPERTIES:
         return getProperties();
       case AsyncApiPackage.SCHEMA__ENUM:
@@ -585,8 +570,6 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
         return getItems();
       case AsyncApiPackage.SCHEMA__REQUIRED:
         return getRequired();
-      case AsyncApiPackage.SCHEMA__FRIENDLY_NAME:
-        return getFriendlyName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -614,11 +597,14 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
       case AsyncApiPackage.SCHEMA__FORMAT:
         setFormat((String)newValue);
         return;
+      case AsyncApiPackage.SCHEMA__MINIMUM:
+        setMinimum((Integer)newValue);
+        return;
+      case AsyncApiPackage.SCHEMA__MAXIMUM:
+        setMaximum((Integer)newValue);
+        return;
       case AsyncApiPackage.SCHEMA__DEFAULT:
         setDefault((String)newValue);
-        return;
-      case AsyncApiPackage.SCHEMA__PAYLOAD:
-        setPayload((AbstractSchema)newValue);
         return;
       case AsyncApiPackage.SCHEMA__PROPERTIES:
         getProperties().clear();
@@ -634,9 +620,6 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
       case AsyncApiPackage.SCHEMA__REQUIRED:
         getRequired().clear();
         getRequired().addAll((Collection<? extends String>)newValue);
-        return;
-      case AsyncApiPackage.SCHEMA__FRIENDLY_NAME:
-        setFriendlyName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -664,11 +647,14 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
       case AsyncApiPackage.SCHEMA__FORMAT:
         setFormat(FORMAT_EDEFAULT);
         return;
+      case AsyncApiPackage.SCHEMA__MINIMUM:
+        setMinimum(MINIMUM_EDEFAULT);
+        return;
+      case AsyncApiPackage.SCHEMA__MAXIMUM:
+        setMaximum(MAXIMUM_EDEFAULT);
+        return;
       case AsyncApiPackage.SCHEMA__DEFAULT:
         setDefault(DEFAULT_EDEFAULT);
-        return;
-      case AsyncApiPackage.SCHEMA__PAYLOAD:
-        setPayload((AbstractSchema)null);
         return;
       case AsyncApiPackage.SCHEMA__PROPERTIES:
         getProperties().clear();
@@ -681,9 +667,6 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
         return;
       case AsyncApiPackage.SCHEMA__REQUIRED:
         getRequired().clear();
-        return;
-      case AsyncApiPackage.SCHEMA__FRIENDLY_NAME:
-        setFriendlyName(FRIENDLY_NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -707,10 +690,12 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case AsyncApiPackage.SCHEMA__FORMAT:
         return FORMAT_EDEFAULT == null ? format != null : !FORMAT_EDEFAULT.equals(format);
+      case AsyncApiPackage.SCHEMA__MINIMUM:
+        return minimum != MINIMUM_EDEFAULT;
+      case AsyncApiPackage.SCHEMA__MAXIMUM:
+        return maximum != MAXIMUM_EDEFAULT;
       case AsyncApiPackage.SCHEMA__DEFAULT:
         return DEFAULT_EDEFAULT == null ? default_ != null : !DEFAULT_EDEFAULT.equals(default_);
-      case AsyncApiPackage.SCHEMA__PAYLOAD:
-        return payload != null;
       case AsyncApiPackage.SCHEMA__PROPERTIES:
         return properties != null && !properties.isEmpty();
       case AsyncApiPackage.SCHEMA__ENUM:
@@ -719,8 +704,6 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
         return items != null;
       case AsyncApiPackage.SCHEMA__REQUIRED:
         return required != null && !required.isEmpty();
-      case AsyncApiPackage.SCHEMA__FRIENDLY_NAME:
-        return FRIENDLY_NAME_EDEFAULT == null ? friendlyName != null : !FRIENDLY_NAME_EDEFAULT.equals(friendlyName);
     }
     return super.eIsSet(featureID);
   }
@@ -744,14 +727,16 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
     result.append(description);
     result.append(", format: ");
     result.append(format);
+    result.append(", minimum: ");
+    result.append(minimum);
+    result.append(", maximum: ");
+    result.append(maximum);
     result.append(", default: ");
     result.append(default_);
     result.append(", enum: ");
     result.append(enum_);
     result.append(", required: ");
     result.append(required);
-    result.append(", friendlyName: ");
-    result.append(friendlyName);
     result.append(')');
     return result.toString();
   }

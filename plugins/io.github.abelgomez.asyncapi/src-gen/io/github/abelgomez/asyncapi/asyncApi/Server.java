@@ -16,8 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Server#getName <em>Name</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Server#getUrl <em>Url</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Server#getScheme <em>Scheme</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Server#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Server#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Server#getVariables <em>Variables</em>}</li>
  * </ul>
@@ -28,6 +29,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Server extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getServer_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
   /**
    * Returns the value of the '<em><b>Url</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -51,29 +74,29 @@ public interface Server extends EObject
   void setUrl(String value);
 
   /**
-   * Returns the value of the '<em><b>Scheme</b></em>' attribute.
-   * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.Scheme}.
+   * Returns the value of the '<em><b>Protocol</b></em>' attribute.
+   * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.Protocol}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Scheme</em>' attribute.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Scheme
-   * @see #setScheme(Scheme)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getServer_Scheme()
+   * @return the value of the '<em>Protocol</em>' attribute.
+   * @see io.github.abelgomez.asyncapi.asyncApi.Protocol
+   * @see #setProtocol(Protocol)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getServer_Protocol()
    * @model
    * @generated
    */
-  Scheme getScheme();
+  Protocol getProtocol();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getScheme <em>Scheme</em>}' attribute.
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getProtocol <em>Protocol</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Scheme</em>' attribute.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Scheme
-   * @see #getScheme()
+   * @param value the new value of the '<em>Protocol</em>' attribute.
+   * @see io.github.abelgomez.asyncapi.asyncApi.Protocol
+   * @see #getProtocol()
    * @generated
    */
-  void setScheme(Scheme value);
+  void setProtocol(Protocol value);
 
   /**
    * Returns the value of the '<em><b>Description</b></em>' attribute.

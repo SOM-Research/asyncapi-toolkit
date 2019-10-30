@@ -11,6 +11,7 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -25,47 +26,86 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_AsyncAPI_CommaKeyword_2_2_6_q;
 	protected AbstractElementAlias match_AsyncAPI_CommaKeyword_2_3_6_q;
 	protected AbstractElementAlias match_AsyncAPI_CommaKeyword_2_4_3_q;
-	protected AbstractElementAlias match_AsyncAPI_CommaKeyword_2_5_3_q;
+	protected AbstractElementAlias match_AsyncAPI___GenericJsonTupleParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a;
+	protected AbstractElementAlias match_Channel_CommaKeyword_4_0_3_q;
+	protected AbstractElementAlias match_Channel_CommaKeyword_4_1_3_q;
+	protected AbstractElementAlias match_Channel_CommaKeyword_4_2_3_q;
+	protected AbstractElementAlias match_Channel_CommaKeyword_4_3_6_q;
+	protected AbstractElementAlias match_Channel_CommaKeyword_4_4_3_q;
+	protected AbstractElementAlias match_Channel___GenericJsonTupleParserRuleCall_4_5_0_CommaKeyword_4_5_1_q__a;
 	protected AbstractElementAlias match_Components_CommaKeyword_2_0_6_q;
 	protected AbstractElementAlias match_Components_CommaKeyword_2_1_6_q;
+	protected AbstractElementAlias match_Components_CommaKeyword_2_2_6_q;
+	protected AbstractElementAlias match_Components_CommaKeyword_2_3_6_q;
+	protected AbstractElementAlias match_Components_CommaKeyword_2_4_6_q;
+	protected AbstractElementAlias match_Components___GenericJsonTupleButRefParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a;
 	protected AbstractElementAlias match_Contact_CommaKeyword_2_0_3_q;
 	protected AbstractElementAlias match_Contact_CommaKeyword_2_1_3_q;
 	protected AbstractElementAlias match_Contact_CommaKeyword_2_2_3_q;
+	protected AbstractElementAlias match_Contact___GenericJsonTupleParserRuleCall_2_3_0_CommaKeyword_2_3_1_q__a;
 	protected AbstractElementAlias match_Info_CommaKeyword_2_0_3_q;
 	protected AbstractElementAlias match_Info_CommaKeyword_2_1_3_q;
 	protected AbstractElementAlias match_Info_CommaKeyword_2_2_3_q;
 	protected AbstractElementAlias match_Info_CommaKeyword_2_3_3_q;
 	protected AbstractElementAlias match_Info_CommaKeyword_2_4_3_q;
 	protected AbstractElementAlias match_Info_CommaKeyword_2_5_3_q;
+	protected AbstractElementAlias match_Info___GenericJsonTupleParserRuleCall_2_6_0_CommaKeyword_2_6_1_q__a;
 	protected AbstractElementAlias match_License_CommaKeyword_2_0_3_q;
 	protected AbstractElementAlias match_License_CommaKeyword_2_1_3_q;
+	protected AbstractElementAlias match_License___GenericJsonTupleParserRuleCall_2_2_0_CommaKeyword_2_2_1_q__a;
+	protected AbstractElementAlias match_MessageTrait_CommaKeyword_2_0_3_q;
+	protected AbstractElementAlias match_MessageTrait_CommaKeyword_2_1_3_q;
+	protected AbstractElementAlias match_MessageTrait_CommaKeyword_2_2_3_q;
+	protected AbstractElementAlias match_MessageTrait_CommaKeyword_2_3_3_q;
+	protected AbstractElementAlias match_MessageTrait_CommaKeyword_2_4_6_q;
+	protected AbstractElementAlias match_MessageTrait___GenericJsonTupleButRefParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a;
 	protected AbstractElementAlias match_Message_CommaKeyword_2_0_3_q;
 	protected AbstractElementAlias match_Message_CommaKeyword_2_1_3_q;
 	protected AbstractElementAlias match_Message_CommaKeyword_2_2_3_q;
 	protected AbstractElementAlias match_Message_CommaKeyword_2_3_3_q;
-	protected AbstractElementAlias match_Message_CommaKeyword_2_4_6_q;
+	protected AbstractElementAlias match_Message_CommaKeyword_2_4_3_q;
 	protected AbstractElementAlias match_Message_CommaKeyword_2_5_3_q;
+	protected AbstractElementAlias match_Message_CommaKeyword_2_6_6_q;
+	protected AbstractElementAlias match_Message_CommaKeyword_2_7_3_q;
+	protected AbstractElementAlias match_Message_CommaKeyword_2_8_6_q;
+	protected AbstractElementAlias match_Message___GenericJsonTupleButRefParserRuleCall_2_9_0_CommaKeyword_2_9_1_q__a;
+	protected AbstractElementAlias match_OperationTrait_CommaKeyword_2_0_3_q;
+	protected AbstractElementAlias match_OperationTrait_CommaKeyword_2_1_3_q;
+	protected AbstractElementAlias match_OperationTrait_CommaKeyword_2_2_3_q;
+	protected AbstractElementAlias match_OperationTrait___GenericJsonTupleButRefParserRuleCall_2_3_0_CommaKeyword_2_3_1_q__a;
+	protected AbstractElementAlias match_Operation_CommaKeyword_2_0_3_q;
+	protected AbstractElementAlias match_Operation_CommaKeyword_2_1_3_q;
+	protected AbstractElementAlias match_Operation_CommaKeyword_2_2_3_q;
+	protected AbstractElementAlias match_Operation_CommaKeyword_2_3_3_q;
+	protected AbstractElementAlias match_Operation_CommaKeyword_2_4_6_q;
+	protected AbstractElementAlias match_Operation___GenericJsonTupleParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a;
+	protected AbstractElementAlias match_Parameter_CommaKeyword_2_0_3_q;
+	protected AbstractElementAlias match_Parameter_CommaKeyword_2_1_3_q;
+	protected AbstractElementAlias match_Parameter_CommaKeyword_2_2_3_q;
+	protected AbstractElementAlias match_Parameter___GenericJsonTupleButRefParserRuleCall_2_3_0_CommaKeyword_2_3_1_q__a;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_0_3_q;
-	protected AbstractElementAlias match_Schema_CommaKeyword_2_10_3_q;
+	protected AbstractElementAlias match_Schema_CommaKeyword_2_10_6_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_1_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_2_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_3_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_4_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_5_3_q;
-	protected AbstractElementAlias match_Schema_CommaKeyword_2_6_6_q;
+	protected AbstractElementAlias match_Schema_CommaKeyword_2_6_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_7_6_q;
-	protected AbstractElementAlias match_Schema_CommaKeyword_2_8_3_q;
-	protected AbstractElementAlias match_Schema_CommaKeyword_2_9_6_q;
-	protected AbstractElementAlias match_Server_CommaKeyword_2_0_3_q;
-	protected AbstractElementAlias match_Server_CommaKeyword_2_1_3_q;
-	protected AbstractElementAlias match_Server_CommaKeyword_2_3_6_q;
+	protected AbstractElementAlias match_Schema_CommaKeyword_2_8_6_q;
+	protected AbstractElementAlias match_Schema_CommaKeyword_2_9_3_q;
+	protected AbstractElementAlias match_Schema___GenericJsonTupleButRefParserRuleCall_2_11_0_CommaKeyword_2_11_1_q__a;
+	protected AbstractElementAlias match_Server_CommaKeyword_4_0_3_q;
+	protected AbstractElementAlias match_Server_CommaKeyword_4_1_3_q;
+	protected AbstractElementAlias match_Server_CommaKeyword_4_3_6_q;
+	protected AbstractElementAlias match_Server___GenericJsonTupleParserRuleCall_4_4_0_CommaKeyword_4_4_1_q__a;
 	protected AbstractElementAlias match_Tag_CommaKeyword_2_0_3_q;
 	protected AbstractElementAlias match_Tag_CommaKeyword_2_1_3_q;
-	protected AbstractElementAlias match_Topic_CommaKeyword_4_0_3_q;
-	protected AbstractElementAlias match_Topic_CommaKeyword_4_1_3_q;
+	protected AbstractElementAlias match_Tag___GenericJsonTupleParserRuleCall_2_2_0_CommaKeyword_2_2_1_q__a;
 	protected AbstractElementAlias match_Variable_CommaKeyword_4_0_3_q;
 	protected AbstractElementAlias match_Variable_CommaKeyword_4_1_3_q;
 	protected AbstractElementAlias match_Variable_CommaKeyword_4_2_6_q;
+	protected AbstractElementAlias match_Variable___GenericJsonTupleParserRuleCall_4_3_0_CommaKeyword_4_3_1_q__a;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -75,54 +115,114 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_AsyncAPI_CommaKeyword_2_2_6_q = new TokenAlias(false, true, grammarAccess.getAsyncAPIAccess().getCommaKeyword_2_2_6());
 		match_AsyncAPI_CommaKeyword_2_3_6_q = new TokenAlias(false, true, grammarAccess.getAsyncAPIAccess().getCommaKeyword_2_3_6());
 		match_AsyncAPI_CommaKeyword_2_4_3_q = new TokenAlias(false, true, grammarAccess.getAsyncAPIAccess().getCommaKeyword_2_4_3());
-		match_AsyncAPI_CommaKeyword_2_5_3_q = new TokenAlias(false, true, grammarAccess.getAsyncAPIAccess().getCommaKeyword_2_5_3());
+		match_AsyncAPI___GenericJsonTupleParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getAsyncAPIAccess().getGenericJsonTupleParserRuleCall_2_5_0()), new TokenAlias(false, true, grammarAccess.getAsyncAPIAccess().getCommaKeyword_2_5_1()));
+		match_Channel_CommaKeyword_4_0_3_q = new TokenAlias(false, true, grammarAccess.getChannelAccess().getCommaKeyword_4_0_3());
+		match_Channel_CommaKeyword_4_1_3_q = new TokenAlias(false, true, grammarAccess.getChannelAccess().getCommaKeyword_4_1_3());
+		match_Channel_CommaKeyword_4_2_3_q = new TokenAlias(false, true, grammarAccess.getChannelAccess().getCommaKeyword_4_2_3());
+		match_Channel_CommaKeyword_4_3_6_q = new TokenAlias(false, true, grammarAccess.getChannelAccess().getCommaKeyword_4_3_6());
+		match_Channel_CommaKeyword_4_4_3_q = new TokenAlias(false, true, grammarAccess.getChannelAccess().getCommaKeyword_4_4_3());
+		match_Channel___GenericJsonTupleParserRuleCall_4_5_0_CommaKeyword_4_5_1_q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getChannelAccess().getGenericJsonTupleParserRuleCall_4_5_0()), new TokenAlias(false, true, grammarAccess.getChannelAccess().getCommaKeyword_4_5_1()));
 		match_Components_CommaKeyword_2_0_6_q = new TokenAlias(false, true, grammarAccess.getComponentsAccess().getCommaKeyword_2_0_6());
 		match_Components_CommaKeyword_2_1_6_q = new TokenAlias(false, true, grammarAccess.getComponentsAccess().getCommaKeyword_2_1_6());
+		match_Components_CommaKeyword_2_2_6_q = new TokenAlias(false, true, grammarAccess.getComponentsAccess().getCommaKeyword_2_2_6());
+		match_Components_CommaKeyword_2_3_6_q = new TokenAlias(false, true, grammarAccess.getComponentsAccess().getCommaKeyword_2_3_6());
+		match_Components_CommaKeyword_2_4_6_q = new TokenAlias(false, true, grammarAccess.getComponentsAccess().getCommaKeyword_2_4_6());
+		match_Components___GenericJsonTupleButRefParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getComponentsAccess().getGenericJsonTupleButRefParserRuleCall_2_5_0()), new TokenAlias(false, true, grammarAccess.getComponentsAccess().getCommaKeyword_2_5_1()));
 		match_Contact_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getContactAccess().getCommaKeyword_2_0_3());
 		match_Contact_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getContactAccess().getCommaKeyword_2_1_3());
 		match_Contact_CommaKeyword_2_2_3_q = new TokenAlias(false, true, grammarAccess.getContactAccess().getCommaKeyword_2_2_3());
+		match_Contact___GenericJsonTupleParserRuleCall_2_3_0_CommaKeyword_2_3_1_q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getContactAccess().getGenericJsonTupleParserRuleCall_2_3_0()), new TokenAlias(false, true, grammarAccess.getContactAccess().getCommaKeyword_2_3_1()));
 		match_Info_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getInfoAccess().getCommaKeyword_2_0_3());
 		match_Info_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getInfoAccess().getCommaKeyword_2_1_3());
 		match_Info_CommaKeyword_2_2_3_q = new TokenAlias(false, true, grammarAccess.getInfoAccess().getCommaKeyword_2_2_3());
 		match_Info_CommaKeyword_2_3_3_q = new TokenAlias(false, true, grammarAccess.getInfoAccess().getCommaKeyword_2_3_3());
 		match_Info_CommaKeyword_2_4_3_q = new TokenAlias(false, true, grammarAccess.getInfoAccess().getCommaKeyword_2_4_3());
 		match_Info_CommaKeyword_2_5_3_q = new TokenAlias(false, true, grammarAccess.getInfoAccess().getCommaKeyword_2_5_3());
+		match_Info___GenericJsonTupleParserRuleCall_2_6_0_CommaKeyword_2_6_1_q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getInfoAccess().getGenericJsonTupleParserRuleCall_2_6_0()), new TokenAlias(false, true, grammarAccess.getInfoAccess().getCommaKeyword_2_6_1()));
 		match_License_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getLicenseAccess().getCommaKeyword_2_0_3());
 		match_License_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getLicenseAccess().getCommaKeyword_2_1_3());
+		match_License___GenericJsonTupleParserRuleCall_2_2_0_CommaKeyword_2_2_1_q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getLicenseAccess().getGenericJsonTupleParserRuleCall_2_2_0()), new TokenAlias(false, true, grammarAccess.getLicenseAccess().getCommaKeyword_2_2_1()));
+		match_MessageTrait_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getMessageTraitAccess().getCommaKeyword_2_0_3());
+		match_MessageTrait_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getMessageTraitAccess().getCommaKeyword_2_1_3());
+		match_MessageTrait_CommaKeyword_2_2_3_q = new TokenAlias(false, true, grammarAccess.getMessageTraitAccess().getCommaKeyword_2_2_3());
+		match_MessageTrait_CommaKeyword_2_3_3_q = new TokenAlias(false, true, grammarAccess.getMessageTraitAccess().getCommaKeyword_2_3_3());
+		match_MessageTrait_CommaKeyword_2_4_6_q = new TokenAlias(false, true, grammarAccess.getMessageTraitAccess().getCommaKeyword_2_4_6());
+		match_MessageTrait___GenericJsonTupleButRefParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getMessageTraitAccess().getGenericJsonTupleButRefParserRuleCall_2_5_0()), new TokenAlias(false, true, grammarAccess.getMessageTraitAccess().getCommaKeyword_2_5_1()));
 		match_Message_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getMessageAccess().getCommaKeyword_2_0_3());
 		match_Message_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getMessageAccess().getCommaKeyword_2_1_3());
 		match_Message_CommaKeyword_2_2_3_q = new TokenAlias(false, true, grammarAccess.getMessageAccess().getCommaKeyword_2_2_3());
 		match_Message_CommaKeyword_2_3_3_q = new TokenAlias(false, true, grammarAccess.getMessageAccess().getCommaKeyword_2_3_3());
-		match_Message_CommaKeyword_2_4_6_q = new TokenAlias(false, true, grammarAccess.getMessageAccess().getCommaKeyword_2_4_6());
+		match_Message_CommaKeyword_2_4_3_q = new TokenAlias(false, true, grammarAccess.getMessageAccess().getCommaKeyword_2_4_3());
 		match_Message_CommaKeyword_2_5_3_q = new TokenAlias(false, true, grammarAccess.getMessageAccess().getCommaKeyword_2_5_3());
+		match_Message_CommaKeyword_2_6_6_q = new TokenAlias(false, true, grammarAccess.getMessageAccess().getCommaKeyword_2_6_6());
+		match_Message_CommaKeyword_2_7_3_q = new TokenAlias(false, true, grammarAccess.getMessageAccess().getCommaKeyword_2_7_3());
+		match_Message_CommaKeyword_2_8_6_q = new TokenAlias(false, true, grammarAccess.getMessageAccess().getCommaKeyword_2_8_6());
+		match_Message___GenericJsonTupleButRefParserRuleCall_2_9_0_CommaKeyword_2_9_1_q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getMessageAccess().getGenericJsonTupleButRefParserRuleCall_2_9_0()), new TokenAlias(false, true, grammarAccess.getMessageAccess().getCommaKeyword_2_9_1()));
+		match_OperationTrait_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getOperationTraitAccess().getCommaKeyword_2_0_3());
+		match_OperationTrait_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getOperationTraitAccess().getCommaKeyword_2_1_3());
+		match_OperationTrait_CommaKeyword_2_2_3_q = new TokenAlias(false, true, grammarAccess.getOperationTraitAccess().getCommaKeyword_2_2_3());
+		match_OperationTrait___GenericJsonTupleButRefParserRuleCall_2_3_0_CommaKeyword_2_3_1_q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getOperationTraitAccess().getGenericJsonTupleButRefParserRuleCall_2_3_0()), new TokenAlias(false, true, grammarAccess.getOperationTraitAccess().getCommaKeyword_2_3_1()));
+		match_Operation_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getOperationAccess().getCommaKeyword_2_0_3());
+		match_Operation_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getOperationAccess().getCommaKeyword_2_1_3());
+		match_Operation_CommaKeyword_2_2_3_q = new TokenAlias(false, true, grammarAccess.getOperationAccess().getCommaKeyword_2_2_3());
+		match_Operation_CommaKeyword_2_3_3_q = new TokenAlias(false, true, grammarAccess.getOperationAccess().getCommaKeyword_2_3_3());
+		match_Operation_CommaKeyword_2_4_6_q = new TokenAlias(false, true, grammarAccess.getOperationAccess().getCommaKeyword_2_4_6());
+		match_Operation___GenericJsonTupleParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getOperationAccess().getGenericJsonTupleParserRuleCall_2_5_0()), new TokenAlias(false, true, grammarAccess.getOperationAccess().getCommaKeyword_2_5_1()));
+		match_Parameter_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getParameterAccess().getCommaKeyword_2_0_3());
+		match_Parameter_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getParameterAccess().getCommaKeyword_2_1_3());
+		match_Parameter_CommaKeyword_2_2_3_q = new TokenAlias(false, true, grammarAccess.getParameterAccess().getCommaKeyword_2_2_3());
+		match_Parameter___GenericJsonTupleButRefParserRuleCall_2_3_0_CommaKeyword_2_3_1_q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getParameterAccess().getGenericJsonTupleButRefParserRuleCall_2_3_0()), new TokenAlias(false, true, grammarAccess.getParameterAccess().getCommaKeyword_2_3_1()));
 		match_Schema_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_0_3());
-		match_Schema_CommaKeyword_2_10_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_10_3());
+		match_Schema_CommaKeyword_2_10_6_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_10_6());
 		match_Schema_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_1_3());
 		match_Schema_CommaKeyword_2_2_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_2_3());
 		match_Schema_CommaKeyword_2_3_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_3_3());
 		match_Schema_CommaKeyword_2_4_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_4_3());
 		match_Schema_CommaKeyword_2_5_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_5_3());
-		match_Schema_CommaKeyword_2_6_6_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_6_6());
+		match_Schema_CommaKeyword_2_6_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_6_3());
 		match_Schema_CommaKeyword_2_7_6_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_7_6());
-		match_Schema_CommaKeyword_2_8_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_8_3());
-		match_Schema_CommaKeyword_2_9_6_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_9_6());
-		match_Server_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_2_0_3());
-		match_Server_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_2_1_3());
-		match_Server_CommaKeyword_2_3_6_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_2_3_6());
+		match_Schema_CommaKeyword_2_8_6_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_8_6());
+		match_Schema_CommaKeyword_2_9_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_9_3());
+		match_Schema___GenericJsonTupleButRefParserRuleCall_2_11_0_CommaKeyword_2_11_1_q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getSchemaAccess().getGenericJsonTupleButRefParserRuleCall_2_11_0()), new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_11_1()));
+		match_Server_CommaKeyword_4_0_3_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_4_0_3());
+		match_Server_CommaKeyword_4_1_3_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_4_1_3());
+		match_Server_CommaKeyword_4_3_6_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_4_3_6());
+		match_Server___GenericJsonTupleParserRuleCall_4_4_0_CommaKeyword_4_4_1_q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getServerAccess().getGenericJsonTupleParserRuleCall_4_4_0()), new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_4_4_1()));
 		match_Tag_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getTagAccess().getCommaKeyword_2_0_3());
 		match_Tag_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getTagAccess().getCommaKeyword_2_1_3());
-		match_Topic_CommaKeyword_4_0_3_q = new TokenAlias(false, true, grammarAccess.getTopicAccess().getCommaKeyword_4_0_3());
-		match_Topic_CommaKeyword_4_1_3_q = new TokenAlias(false, true, grammarAccess.getTopicAccess().getCommaKeyword_4_1_3());
+		match_Tag___GenericJsonTupleParserRuleCall_2_2_0_CommaKeyword_2_2_1_q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getTagAccess().getGenericJsonTupleParserRuleCall_2_2_0()), new TokenAlias(false, true, grammarAccess.getTagAccess().getCommaKeyword_2_2_1()));
 		match_Variable_CommaKeyword_4_0_3_q = new TokenAlias(false, true, grammarAccess.getVariableAccess().getCommaKeyword_4_0_3());
 		match_Variable_CommaKeyword_4_1_3_q = new TokenAlias(false, true, grammarAccess.getVariableAccess().getCommaKeyword_4_1_3());
 		match_Variable_CommaKeyword_4_2_6_q = new TokenAlias(false, true, grammarAccess.getVariableAccess().getCommaKeyword_4_2_6());
+		match_Variable___GenericJsonTupleParserRuleCall_4_3_0_CommaKeyword_4_3_1_q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getVariableAccess().getGenericJsonTupleParserRuleCall_4_3_0()), new TokenAlias(false, true, grammarAccess.getVariableAccess().getCommaKeyword_4_3_1()));
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (ruleCall.getRule() == grammarAccess.getGenericJsonTupleRule())
+			return getGenericJsonTupleToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getGenericJsonTupleButRefRule())
+			return getGenericJsonTupleButRefToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * GenericJsonTuple: AnyString ':' GenericJsonExpression;
+	 */
+	protected String getGenericJsonTupleToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\"\":";
+	}
+	
+	/**
+	 * GenericJsonTupleButRef: AnyStringButRef ':' GenericJsonExpression;
+	 */
+	protected String getGenericJsonTupleButRefToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\"\":";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -140,18 +240,40 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_AsyncAPI_CommaKeyword_2_3_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_AsyncAPI_CommaKeyword_2_4_3_q.equals(syntax))
 				emit_AsyncAPI_CommaKeyword_2_4_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_AsyncAPI_CommaKeyword_2_5_3_q.equals(syntax))
-				emit_AsyncAPI_CommaKeyword_2_5_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_AsyncAPI___GenericJsonTupleParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a.equals(syntax))
+				emit_AsyncAPI___GenericJsonTupleParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Channel_CommaKeyword_4_0_3_q.equals(syntax))
+				emit_Channel_CommaKeyword_4_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Channel_CommaKeyword_4_1_3_q.equals(syntax))
+				emit_Channel_CommaKeyword_4_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Channel_CommaKeyword_4_2_3_q.equals(syntax))
+				emit_Channel_CommaKeyword_4_2_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Channel_CommaKeyword_4_3_6_q.equals(syntax))
+				emit_Channel_CommaKeyword_4_3_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Channel_CommaKeyword_4_4_3_q.equals(syntax))
+				emit_Channel_CommaKeyword_4_4_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Channel___GenericJsonTupleParserRuleCall_4_5_0_CommaKeyword_4_5_1_q__a.equals(syntax))
+				emit_Channel___GenericJsonTupleParserRuleCall_4_5_0_CommaKeyword_4_5_1_q__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Components_CommaKeyword_2_0_6_q.equals(syntax))
 				emit_Components_CommaKeyword_2_0_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Components_CommaKeyword_2_1_6_q.equals(syntax))
 				emit_Components_CommaKeyword_2_1_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Components_CommaKeyword_2_2_6_q.equals(syntax))
+				emit_Components_CommaKeyword_2_2_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Components_CommaKeyword_2_3_6_q.equals(syntax))
+				emit_Components_CommaKeyword_2_3_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Components_CommaKeyword_2_4_6_q.equals(syntax))
+				emit_Components_CommaKeyword_2_4_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Components___GenericJsonTupleButRefParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a.equals(syntax))
+				emit_Components___GenericJsonTupleButRefParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Contact_CommaKeyword_2_0_3_q.equals(syntax))
 				emit_Contact_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Contact_CommaKeyword_2_1_3_q.equals(syntax))
 				emit_Contact_CommaKeyword_2_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Contact_CommaKeyword_2_2_3_q.equals(syntax))
 				emit_Contact_CommaKeyword_2_2_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Contact___GenericJsonTupleParserRuleCall_2_3_0_CommaKeyword_2_3_1_q__a.equals(syntax))
+				emit_Contact___GenericJsonTupleParserRuleCall_2_3_0_CommaKeyword_2_3_1_q__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Info_CommaKeyword_2_0_3_q.equals(syntax))
 				emit_Info_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Info_CommaKeyword_2_1_3_q.equals(syntax))
@@ -164,10 +286,26 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Info_CommaKeyword_2_4_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Info_CommaKeyword_2_5_3_q.equals(syntax))
 				emit_Info_CommaKeyword_2_5_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Info___GenericJsonTupleParserRuleCall_2_6_0_CommaKeyword_2_6_1_q__a.equals(syntax))
+				emit_Info___GenericJsonTupleParserRuleCall_2_6_0_CommaKeyword_2_6_1_q__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_License_CommaKeyword_2_0_3_q.equals(syntax))
 				emit_License_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_License_CommaKeyword_2_1_3_q.equals(syntax))
 				emit_License_CommaKeyword_2_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_License___GenericJsonTupleParserRuleCall_2_2_0_CommaKeyword_2_2_1_q__a.equals(syntax))
+				emit_License___GenericJsonTupleParserRuleCall_2_2_0_CommaKeyword_2_2_1_q__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MessageTrait_CommaKeyword_2_0_3_q.equals(syntax))
+				emit_MessageTrait_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MessageTrait_CommaKeyword_2_1_3_q.equals(syntax))
+				emit_MessageTrait_CommaKeyword_2_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MessageTrait_CommaKeyword_2_2_3_q.equals(syntax))
+				emit_MessageTrait_CommaKeyword_2_2_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MessageTrait_CommaKeyword_2_3_3_q.equals(syntax))
+				emit_MessageTrait_CommaKeyword_2_3_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MessageTrait_CommaKeyword_2_4_6_q.equals(syntax))
+				emit_MessageTrait_CommaKeyword_2_4_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MessageTrait___GenericJsonTupleButRefParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a.equals(syntax))
+				emit_MessageTrait___GenericJsonTupleButRefParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Message_CommaKeyword_2_0_3_q.equals(syntax))
 				emit_Message_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Message_CommaKeyword_2_1_3_q.equals(syntax))
@@ -176,14 +314,50 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Message_CommaKeyword_2_2_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Message_CommaKeyword_2_3_3_q.equals(syntax))
 				emit_Message_CommaKeyword_2_3_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Message_CommaKeyword_2_4_6_q.equals(syntax))
-				emit_Message_CommaKeyword_2_4_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Message_CommaKeyword_2_4_3_q.equals(syntax))
+				emit_Message_CommaKeyword_2_4_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Message_CommaKeyword_2_5_3_q.equals(syntax))
 				emit_Message_CommaKeyword_2_5_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Message_CommaKeyword_2_6_6_q.equals(syntax))
+				emit_Message_CommaKeyword_2_6_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Message_CommaKeyword_2_7_3_q.equals(syntax))
+				emit_Message_CommaKeyword_2_7_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Message_CommaKeyword_2_8_6_q.equals(syntax))
+				emit_Message_CommaKeyword_2_8_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Message___GenericJsonTupleButRefParserRuleCall_2_9_0_CommaKeyword_2_9_1_q__a.equals(syntax))
+				emit_Message___GenericJsonTupleButRefParserRuleCall_2_9_0_CommaKeyword_2_9_1_q__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_OperationTrait_CommaKeyword_2_0_3_q.equals(syntax))
+				emit_OperationTrait_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_OperationTrait_CommaKeyword_2_1_3_q.equals(syntax))
+				emit_OperationTrait_CommaKeyword_2_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_OperationTrait_CommaKeyword_2_2_3_q.equals(syntax))
+				emit_OperationTrait_CommaKeyword_2_2_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_OperationTrait___GenericJsonTupleButRefParserRuleCall_2_3_0_CommaKeyword_2_3_1_q__a.equals(syntax))
+				emit_OperationTrait___GenericJsonTupleButRefParserRuleCall_2_3_0_CommaKeyword_2_3_1_q__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Operation_CommaKeyword_2_0_3_q.equals(syntax))
+				emit_Operation_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Operation_CommaKeyword_2_1_3_q.equals(syntax))
+				emit_Operation_CommaKeyword_2_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Operation_CommaKeyword_2_2_3_q.equals(syntax))
+				emit_Operation_CommaKeyword_2_2_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Operation_CommaKeyword_2_3_3_q.equals(syntax))
+				emit_Operation_CommaKeyword_2_3_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Operation_CommaKeyword_2_4_6_q.equals(syntax))
+				emit_Operation_CommaKeyword_2_4_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Operation___GenericJsonTupleParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a.equals(syntax))
+				emit_Operation___GenericJsonTupleParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Parameter_CommaKeyword_2_0_3_q.equals(syntax))
+				emit_Parameter_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Parameter_CommaKeyword_2_1_3_q.equals(syntax))
+				emit_Parameter_CommaKeyword_2_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Parameter_CommaKeyword_2_2_3_q.equals(syntax))
+				emit_Parameter_CommaKeyword_2_2_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Parameter___GenericJsonTupleButRefParserRuleCall_2_3_0_CommaKeyword_2_3_1_q__a.equals(syntax))
+				emit_Parameter___GenericJsonTupleButRefParserRuleCall_2_3_0_CommaKeyword_2_3_1_q__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Schema_CommaKeyword_2_0_3_q.equals(syntax))
 				emit_Schema_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Schema_CommaKeyword_2_10_3_q.equals(syntax))
-				emit_Schema_CommaKeyword_2_10_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Schema_CommaKeyword_2_10_6_q.equals(syntax))
+				emit_Schema_CommaKeyword_2_10_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Schema_CommaKeyword_2_1_3_q.equals(syntax))
 				emit_Schema_CommaKeyword_2_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Schema_CommaKeyword_2_2_3_q.equals(syntax))
@@ -194,34 +368,38 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Schema_CommaKeyword_2_4_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Schema_CommaKeyword_2_5_3_q.equals(syntax))
 				emit_Schema_CommaKeyword_2_5_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Schema_CommaKeyword_2_6_6_q.equals(syntax))
-				emit_Schema_CommaKeyword_2_6_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Schema_CommaKeyword_2_6_3_q.equals(syntax))
+				emit_Schema_CommaKeyword_2_6_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Schema_CommaKeyword_2_7_6_q.equals(syntax))
 				emit_Schema_CommaKeyword_2_7_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Schema_CommaKeyword_2_8_3_q.equals(syntax))
-				emit_Schema_CommaKeyword_2_8_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Schema_CommaKeyword_2_9_6_q.equals(syntax))
-				emit_Schema_CommaKeyword_2_9_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Server_CommaKeyword_2_0_3_q.equals(syntax))
-				emit_Server_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Server_CommaKeyword_2_1_3_q.equals(syntax))
-				emit_Server_CommaKeyword_2_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Server_CommaKeyword_2_3_6_q.equals(syntax))
-				emit_Server_CommaKeyword_2_3_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Schema_CommaKeyword_2_8_6_q.equals(syntax))
+				emit_Schema_CommaKeyword_2_8_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Schema_CommaKeyword_2_9_3_q.equals(syntax))
+				emit_Schema_CommaKeyword_2_9_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Schema___GenericJsonTupleButRefParserRuleCall_2_11_0_CommaKeyword_2_11_1_q__a.equals(syntax))
+				emit_Schema___GenericJsonTupleButRefParserRuleCall_2_11_0_CommaKeyword_2_11_1_q__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Server_CommaKeyword_4_0_3_q.equals(syntax))
+				emit_Server_CommaKeyword_4_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Server_CommaKeyword_4_1_3_q.equals(syntax))
+				emit_Server_CommaKeyword_4_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Server_CommaKeyword_4_3_6_q.equals(syntax))
+				emit_Server_CommaKeyword_4_3_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Server___GenericJsonTupleParserRuleCall_4_4_0_CommaKeyword_4_4_1_q__a.equals(syntax))
+				emit_Server___GenericJsonTupleParserRuleCall_4_4_0_CommaKeyword_4_4_1_q__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Tag_CommaKeyword_2_0_3_q.equals(syntax))
 				emit_Tag_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Tag_CommaKeyword_2_1_3_q.equals(syntax))
 				emit_Tag_CommaKeyword_2_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Topic_CommaKeyword_4_0_3_q.equals(syntax))
-				emit_Topic_CommaKeyword_4_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Topic_CommaKeyword_4_1_3_q.equals(syntax))
-				emit_Topic_CommaKeyword_4_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Tag___GenericJsonTupleParserRuleCall_2_2_0_CommaKeyword_2_2_1_q__a.equals(syntax))
+				emit_Tag___GenericJsonTupleParserRuleCall_2_2_0_CommaKeyword_2_2_1_q__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Variable_CommaKeyword_4_0_3_q.equals(syntax))
 				emit_Variable_CommaKeyword_4_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Variable_CommaKeyword_4_1_3_q.equals(syntax))
 				emit_Variable_CommaKeyword_4_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Variable_CommaKeyword_4_2_6_q.equals(syntax))
 				emit_Variable_CommaKeyword_4_2_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Variable___GenericJsonTupleParserRuleCall_4_3_0_CommaKeyword_4_3_1_q__a.equals(syntax))
+				emit_Variable___GenericJsonTupleParserRuleCall_4_3_0_CommaKeyword_4_3_1_q__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -231,13 +409,12 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     version=VersionNumber (ambiguity) '"asyncapi"' ':' version=VersionNumber
-	 *     version=VersionNumber (ambiguity) '"baseTopic"' ':' baseTopic=STRING
-	 *     version=VersionNumber (ambiguity) '"components"' ':' components=Components
-	 *     version=VersionNumber (ambiguity) '"info"' ':' info=Info
-	 *     version=VersionNumber (ambiguity) '"servers"' ':' '[' servers+=Server
-	 *     version=VersionNumber (ambiguity) '"topics"' ':' '{' topics+=Topic
-	 *     version=VersionNumber (ambiguity) '}' (rule end)
+	 *     version=VersionNumber (ambiguity) (GenericJsonTuple ','?)* '"asyncapi"' ':' version=VersionNumber
+	 *     version=VersionNumber (ambiguity) (GenericJsonTuple ','?)* '"channels"' ':' '{' channels+=Channel
+	 *     version=VersionNumber (ambiguity) (GenericJsonTuple ','?)* '"components"' ':' components=Components
+	 *     version=VersionNumber (ambiguity) (GenericJsonTuple ','?)* '"info"' ':' info=Info
+	 *     version=VersionNumber (ambiguity) (GenericJsonTuple ','?)* '"servers"' ':' '{' servers+=Server
+	 *     version=VersionNumber (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_AsyncAPI_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -248,13 +425,12 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     info=Info (ambiguity) '"asyncapi"' ':' version=VersionNumber
-	 *     info=Info (ambiguity) '"baseTopic"' ':' baseTopic=STRING
-	 *     info=Info (ambiguity) '"components"' ':' components=Components
-	 *     info=Info (ambiguity) '"info"' ':' info=Info
-	 *     info=Info (ambiguity) '"servers"' ':' '[' servers+=Server
-	 *     info=Info (ambiguity) '"topics"' ':' '{' topics+=Topic
-	 *     info=Info (ambiguity) '}' (rule end)
+	 *     info=Info (ambiguity) (GenericJsonTuple ','?)* '"asyncapi"' ':' version=VersionNumber
+	 *     info=Info (ambiguity) (GenericJsonTuple ','?)* '"channels"' ':' '{' channels+=Channel
+	 *     info=Info (ambiguity) (GenericJsonTuple ','?)* '"components"' ':' components=Components
+	 *     info=Info (ambiguity) (GenericJsonTuple ','?)* '"info"' ':' info=Info
+	 *     info=Info (ambiguity) (GenericJsonTuple ','?)* '"servers"' ':' '{' servers+=Server
+	 *     info=Info (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_AsyncAPI_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -265,13 +441,12 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     servers+=Server ']' (ambiguity) '"asyncapi"' ':' version=VersionNumber
-	 *     servers+=Server ']' (ambiguity) '"baseTopic"' ':' baseTopic=STRING
-	 *     servers+=Server ']' (ambiguity) '"components"' ':' components=Components
-	 *     servers+=Server ']' (ambiguity) '"info"' ':' info=Info
-	 *     servers+=Server ']' (ambiguity) '"servers"' ':' '[' servers+=Server
-	 *     servers+=Server ']' (ambiguity) '"topics"' ':' '{' topics+=Topic
-	 *     servers+=Server ']' (ambiguity) '}' (rule end)
+	 *     servers+=Server '}' (ambiguity) (GenericJsonTuple ','?)* '"asyncapi"' ':' version=VersionNumber
+	 *     servers+=Server '}' (ambiguity) (GenericJsonTuple ','?)* '"channels"' ':' '{' channels+=Channel
+	 *     servers+=Server '}' (ambiguity) (GenericJsonTuple ','?)* '"components"' ':' components=Components
+	 *     servers+=Server '}' (ambiguity) (GenericJsonTuple ','?)* '"info"' ':' info=Info
+	 *     servers+=Server '}' (ambiguity) (GenericJsonTuple ','?)* '"servers"' ':' '{' servers+=Server
+	 *     servers+=Server '}' (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_AsyncAPI_CommaKeyword_2_2_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -282,13 +457,12 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     topics+=Topic '}' (ambiguity) '"asyncapi"' ':' version=VersionNumber
-	 *     topics+=Topic '}' (ambiguity) '"baseTopic"' ':' baseTopic=STRING
-	 *     topics+=Topic '}' (ambiguity) '"components"' ':' components=Components
-	 *     topics+=Topic '}' (ambiguity) '"info"' ':' info=Info
-	 *     topics+=Topic '}' (ambiguity) '"servers"' ':' '[' servers+=Server
-	 *     topics+=Topic '}' (ambiguity) '"topics"' ':' '{' topics+=Topic
-	 *     topics+=Topic '}' (ambiguity) '}' (rule end)
+	 *     channels+=Channel '}' (ambiguity) (GenericJsonTuple ','?)* '"asyncapi"' ':' version=VersionNumber
+	 *     channels+=Channel '}' (ambiguity) (GenericJsonTuple ','?)* '"channels"' ':' '{' channels+=Channel
+	 *     channels+=Channel '}' (ambiguity) (GenericJsonTuple ','?)* '"components"' ':' components=Components
+	 *     channels+=Channel '}' (ambiguity) (GenericJsonTuple ','?)* '"info"' ':' info=Info
+	 *     channels+=Channel '}' (ambiguity) (GenericJsonTuple ','?)* '"servers"' ':' '{' servers+=Server
+	 *     channels+=Channel '}' (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_AsyncAPI_CommaKeyword_2_3_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -299,13 +473,12 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     components=Components (ambiguity) '"asyncapi"' ':' version=VersionNumber
-	 *     components=Components (ambiguity) '"baseTopic"' ':' baseTopic=STRING
-	 *     components=Components (ambiguity) '"components"' ':' components=Components
-	 *     components=Components (ambiguity) '"info"' ':' info=Info
-	 *     components=Components (ambiguity) '"servers"' ':' '[' servers+=Server
-	 *     components=Components (ambiguity) '"topics"' ':' '{' topics+=Topic
-	 *     components=Components (ambiguity) '}' (rule end)
+	 *     components=Components (ambiguity) (GenericJsonTuple ','?)* '"asyncapi"' ':' version=VersionNumber
+	 *     components=Components (ambiguity) (GenericJsonTuple ','?)* '"channels"' ':' '{' channels+=Channel
+	 *     components=Components (ambiguity) (GenericJsonTuple ','?)* '"components"' ':' components=Components
+	 *     components=Components (ambiguity) (GenericJsonTuple ','?)* '"info"' ':' info=Info
+	 *     components=Components (ambiguity) (GenericJsonTuple ','?)* '"servers"' ':' '{' servers+=Server
+	 *     components=Components (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_AsyncAPI_CommaKeyword_2_4_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -313,18 +486,47 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ','?
+	 *     (GenericJsonTuple ','?)*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     baseTopic=STRING (ambiguity) '"asyncapi"' ':' version=VersionNumber
-	 *     baseTopic=STRING (ambiguity) '"baseTopic"' ':' baseTopic=STRING
-	 *     baseTopic=STRING (ambiguity) '"components"' ':' components=Components
-	 *     baseTopic=STRING (ambiguity) '"info"' ':' info=Info
-	 *     baseTopic=STRING (ambiguity) '"servers"' ':' '[' servers+=Server
-	 *     baseTopic=STRING (ambiguity) '"topics"' ':' '{' topics+=Topic
-	 *     baseTopic=STRING (ambiguity) '}' (rule end)
+	 *     (rule start) '{' (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     (rule start) '{' (ambiguity) '"channels"' ':' '{' channels+=Channel
+	 *     (rule start) '{' (ambiguity) '"components"' ':' components=Components
+	 *     (rule start) '{' (ambiguity) '"info"' ':' info=Info
+	 *     (rule start) '{' (ambiguity) '"servers"' ':' '{' servers+=Server
+	 *     (rule start) '{' (ambiguity) '}' (rule start)
+	 *     channels+=Channel '}' ','? (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     channels+=Channel '}' ','? (ambiguity) '"channels"' ':' '{' channels+=Channel
+	 *     channels+=Channel '}' ','? (ambiguity) '"components"' ':' components=Components
+	 *     channels+=Channel '}' ','? (ambiguity) '"info"' ':' info=Info
+	 *     channels+=Channel '}' ','? (ambiguity) '"servers"' ':' '{' servers+=Server
+	 *     channels+=Channel '}' ','? (ambiguity) '}' (rule end)
+	 *     components=Components ','? (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     components=Components ','? (ambiguity) '"channels"' ':' '{' channels+=Channel
+	 *     components=Components ','? (ambiguity) '"components"' ':' components=Components
+	 *     components=Components ','? (ambiguity) '"info"' ':' info=Info
+	 *     components=Components ','? (ambiguity) '"servers"' ':' '{' servers+=Server
+	 *     components=Components ','? (ambiguity) '}' (rule end)
+	 *     info=Info ','? (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     info=Info ','? (ambiguity) '"channels"' ':' '{' channels+=Channel
+	 *     info=Info ','? (ambiguity) '"components"' ':' components=Components
+	 *     info=Info ','? (ambiguity) '"info"' ':' info=Info
+	 *     info=Info ','? (ambiguity) '"servers"' ':' '{' servers+=Server
+	 *     info=Info ','? (ambiguity) '}' (rule end)
+	 *     servers+=Server '}' ','? (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     servers+=Server '}' ','? (ambiguity) '"channels"' ':' '{' channels+=Channel
+	 *     servers+=Server '}' ','? (ambiguity) '"components"' ':' components=Components
+	 *     servers+=Server '}' ','? (ambiguity) '"info"' ':' info=Info
+	 *     servers+=Server '}' ','? (ambiguity) '"servers"' ':' '{' servers+=Server
+	 *     servers+=Server '}' ','? (ambiguity) '}' (rule end)
+	 *     version=VersionNumber ','? (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     version=VersionNumber ','? (ambiguity) '"channels"' ':' '{' channels+=Channel
+	 *     version=VersionNumber ','? (ambiguity) '"components"' ':' components=Components
+	 *     version=VersionNumber ','? (ambiguity) '"info"' ':' info=Info
+	 *     version=VersionNumber ','? (ambiguity) '"servers"' ':' '{' servers+=Server
+	 *     version=VersionNumber ','? (ambiguity) '}' (rule end)
 	 */
-	protected void emit_AsyncAPI_CommaKeyword_2_5_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_AsyncAPI___GenericJsonTupleParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -333,9 +535,138 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     schemas+=NamedSchema '}' (ambiguity) '"messages"' ':' '{' messages+=NamedMessage
-	 *     schemas+=NamedSchema '}' (ambiguity) '"schemas"' ':' '{' schemas+=NamedSchema
-	 *     schemas+=NamedSchema '}' (ambiguity) '}' (rule end)
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"publish"' ':' publish=Operation
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"subscribe"' ':' subscribe=Operation
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"x-title"' ':' title=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
+	 */
+	protected void emit_Channel_CommaKeyword_4_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     publish=Operation (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     publish=Operation (ambiguity) (GenericJsonTuple ','?)* '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     publish=Operation (ambiguity) (GenericJsonTuple ','?)* '"publish"' ':' publish=Operation
+	 *     publish=Operation (ambiguity) (GenericJsonTuple ','?)* '"subscribe"' ':' subscribe=Operation
+	 *     publish=Operation (ambiguity) (GenericJsonTuple ','?)* '"x-title"' ':' title=AnyString
+	 *     publish=Operation (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
+	 */
+	protected void emit_Channel_CommaKeyword_4_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     subscribe=Operation (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     subscribe=Operation (ambiguity) (GenericJsonTuple ','?)* '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     subscribe=Operation (ambiguity) (GenericJsonTuple ','?)* '"publish"' ':' publish=Operation
+	 *     subscribe=Operation (ambiguity) (GenericJsonTuple ','?)* '"subscribe"' ':' subscribe=Operation
+	 *     subscribe=Operation (ambiguity) (GenericJsonTuple ','?)* '"x-title"' ':' title=AnyString
+	 *     subscribe=Operation (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
+	 */
+	protected void emit_Channel_CommaKeyword_4_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     parameters+=NamedParameter '}' (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     parameters+=NamedParameter '}' (ambiguity) (GenericJsonTuple ','?)* '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     parameters+=NamedParameter '}' (ambiguity) (GenericJsonTuple ','?)* '"publish"' ':' publish=Operation
+	 *     parameters+=NamedParameter '}' (ambiguity) (GenericJsonTuple ','?)* '"subscribe"' ':' subscribe=Operation
+	 *     parameters+=NamedParameter '}' (ambiguity) (GenericJsonTuple ','?)* '"x-title"' ':' title=AnyString
+	 *     parameters+=NamedParameter '}' (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
+	 */
+	protected void emit_Channel_CommaKeyword_4_3_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     title=AnyString (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     title=AnyString (ambiguity) (GenericJsonTuple ','?)* '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     title=AnyString (ambiguity) (GenericJsonTuple ','?)* '"publish"' ':' publish=Operation
+	 *     title=AnyString (ambiguity) (GenericJsonTuple ','?)* '"subscribe"' ':' subscribe=Operation
+	 *     title=AnyString (ambiguity) (GenericJsonTuple ','?)* '"x-title"' ':' title=AnyString
+	 *     title=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
+	 */
+	protected void emit_Channel_CommaKeyword_4_4_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (GenericJsonTuple ','?)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     description=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     description=AnyString ','? (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     description=AnyString ','? (ambiguity) '"publish"' ':' publish=Operation
+	 *     description=AnyString ','? (ambiguity) '"subscribe"' ':' subscribe=Operation
+	 *     description=AnyString ','? (ambiguity) '"x-title"' ':' title=AnyString
+	 *     description=AnyString ','? (ambiguity) '}' (rule end)
+	 *     name=AnyString ':' '{' (ambiguity) '"description"' ':' description=AnyString
+	 *     name=AnyString ':' '{' (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     name=AnyString ':' '{' (ambiguity) '"publish"' ':' publish=Operation
+	 *     name=AnyString ':' '{' (ambiguity) '"subscribe"' ':' subscribe=Operation
+	 *     name=AnyString ':' '{' (ambiguity) '"x-title"' ':' title=AnyString
+	 *     name=AnyString ':' '{' (ambiguity) '}' (rule end)
+	 *     parameters+=NamedParameter '}' ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     parameters+=NamedParameter '}' ','? (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     parameters+=NamedParameter '}' ','? (ambiguity) '"publish"' ':' publish=Operation
+	 *     parameters+=NamedParameter '}' ','? (ambiguity) '"subscribe"' ':' subscribe=Operation
+	 *     parameters+=NamedParameter '}' ','? (ambiguity) '"x-title"' ':' title=AnyString
+	 *     parameters+=NamedParameter '}' ','? (ambiguity) '}' (rule end)
+	 *     publish=Operation ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     publish=Operation ','? (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     publish=Operation ','? (ambiguity) '"publish"' ':' publish=Operation
+	 *     publish=Operation ','? (ambiguity) '"subscribe"' ':' subscribe=Operation
+	 *     publish=Operation ','? (ambiguity) '"x-title"' ':' title=AnyString
+	 *     publish=Operation ','? (ambiguity) '}' (rule end)
+	 *     subscribe=Operation ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     subscribe=Operation ','? (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     subscribe=Operation ','? (ambiguity) '"publish"' ':' publish=Operation
+	 *     subscribe=Operation ','? (ambiguity) '"subscribe"' ':' subscribe=Operation
+	 *     subscribe=Operation ','? (ambiguity) '"x-title"' ':' title=AnyString
+	 *     subscribe=Operation ','? (ambiguity) '}' (rule end)
+	 *     title=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     title=AnyString ','? (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     title=AnyString ','? (ambiguity) '"publish"' ':' publish=Operation
+	 *     title=AnyString ','? (ambiguity) '"subscribe"' ':' subscribe=Operation
+	 *     title=AnyString ','? (ambiguity) '"x-title"' ':' title=AnyString
+	 *     title=AnyString ','? (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Channel___GenericJsonTupleParserRuleCall_4_5_0_CommaKeyword_4_5_1_q__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     schemas+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait
+	 *     schemas+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"messages"' ':' '{' messages+=NamedMessage
+	 *     schemas+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
+	 *     schemas+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     schemas+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     schemas+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
 	protected void emit_Components_CommaKeyword_2_0_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -346,9 +677,12 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     messages+=NamedMessage '}' (ambiguity) '"messages"' ':' '{' messages+=NamedMessage
-	 *     messages+=NamedMessage '}' (ambiguity) '"schemas"' ':' '{' schemas+=NamedSchema
-	 *     messages+=NamedMessage '}' (ambiguity) '}' (rule end)
+	 *     messages+=NamedMessage '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait
+	 *     messages+=NamedMessage '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"messages"' ':' '{' messages+=NamedMessage
+	 *     messages+=NamedMessage '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
+	 *     messages+=NamedMessage '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     messages+=NamedMessage '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     messages+=NamedMessage '}' (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
 	protected void emit_Components_CommaKeyword_2_1_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -359,10 +693,104 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=STRING (ambiguity) '"email"' ':' email=STRING
-	 *     name=STRING (ambiguity) '"name"' ':' name=STRING
-	 *     name=STRING (ambiguity) '"url"' ':' url=STRING
-	 *     name=STRING (ambiguity) '}' (rule end)
+	 *     parameters+=NamedParameter '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait
+	 *     parameters+=NamedParameter '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"messages"' ':' '{' messages+=NamedMessage
+	 *     parameters+=NamedParameter '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
+	 *     parameters+=NamedParameter '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     parameters+=NamedParameter '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     parameters+=NamedParameter '}' (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_Components_CommaKeyword_2_2_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     operationTraits+=NamedOperationTrait '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait
+	 *     operationTraits+=NamedOperationTrait '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"messages"' ':' '{' messages+=NamedMessage
+	 *     operationTraits+=NamedOperationTrait '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
+	 *     operationTraits+=NamedOperationTrait '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     operationTraits+=NamedOperationTrait '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     operationTraits+=NamedOperationTrait '}' (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_Components_CommaKeyword_2_3_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     messageTraits+=NamedMessageTrait '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait
+	 *     messageTraits+=NamedMessageTrait '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"messages"' ':' '{' messages+=NamedMessage
+	 *     messageTraits+=NamedMessageTrait '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
+	 *     messageTraits+=NamedMessageTrait '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     messageTraits+=NamedMessageTrait '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     messageTraits+=NamedMessageTrait '}' (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_Components_CommaKeyword_2_4_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (GenericJsonTupleButRef ','?)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) '{' (ambiguity) '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait
+	 *     (rule start) '{' (ambiguity) '"messages"' ':' '{' messages+=NamedMessage
+	 *     (rule start) '{' (ambiguity) '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
+	 *     (rule start) '{' (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     (rule start) '{' (ambiguity) '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     (rule start) '{' (ambiguity) '}' (rule start)
+	 *     messageTraits+=NamedMessageTrait '}' ','? (ambiguity) '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait
+	 *     messageTraits+=NamedMessageTrait '}' ','? (ambiguity) '"messages"' ':' '{' messages+=NamedMessage
+	 *     messageTraits+=NamedMessageTrait '}' ','? (ambiguity) '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
+	 *     messageTraits+=NamedMessageTrait '}' ','? (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     messageTraits+=NamedMessageTrait '}' ','? (ambiguity) '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     messageTraits+=NamedMessageTrait '}' ','? (ambiguity) '}' (rule end)
+	 *     messages+=NamedMessage '}' ','? (ambiguity) '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait
+	 *     messages+=NamedMessage '}' ','? (ambiguity) '"messages"' ':' '{' messages+=NamedMessage
+	 *     messages+=NamedMessage '}' ','? (ambiguity) '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
+	 *     messages+=NamedMessage '}' ','? (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     messages+=NamedMessage '}' ','? (ambiguity) '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     messages+=NamedMessage '}' ','? (ambiguity) '}' (rule end)
+	 *     operationTraits+=NamedOperationTrait '}' ','? (ambiguity) '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait
+	 *     operationTraits+=NamedOperationTrait '}' ','? (ambiguity) '"messages"' ':' '{' messages+=NamedMessage
+	 *     operationTraits+=NamedOperationTrait '}' ','? (ambiguity) '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
+	 *     operationTraits+=NamedOperationTrait '}' ','? (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     operationTraits+=NamedOperationTrait '}' ','? (ambiguity) '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     operationTraits+=NamedOperationTrait '}' ','? (ambiguity) '}' (rule end)
+	 *     parameters+=NamedParameter '}' ','? (ambiguity) '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait
+	 *     parameters+=NamedParameter '}' ','? (ambiguity) '"messages"' ':' '{' messages+=NamedMessage
+	 *     parameters+=NamedParameter '}' ','? (ambiguity) '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
+	 *     parameters+=NamedParameter '}' ','? (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     parameters+=NamedParameter '}' ','? (ambiguity) '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     parameters+=NamedParameter '}' ','? (ambiguity) '}' (rule end)
+	 *     schemas+=NamedSchema '}' ','? (ambiguity) '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait
+	 *     schemas+=NamedSchema '}' ','? (ambiguity) '"messages"' ':' '{' messages+=NamedMessage
+	 *     schemas+=NamedSchema '}' ','? (ambiguity) '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
+	 *     schemas+=NamedSchema '}' ','? (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     schemas+=NamedSchema '}' ','? (ambiguity) '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     schemas+=NamedSchema '}' ','? (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Components___GenericJsonTupleButRefParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=AnyString (ambiguity) (GenericJsonTuple ','?)* '"email"' ':' email=AnyString
+	 *     name=AnyString (ambiguity) (GenericJsonTuple ','?)* '"name"' ':' name=AnyString
+	 *     name=AnyString (ambiguity) (GenericJsonTuple ','?)* '"url"' ':' url=AnyString
+	 *     name=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_Contact_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -373,10 +801,10 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     url=STRING (ambiguity) '"email"' ':' email=STRING
-	 *     url=STRING (ambiguity) '"name"' ':' name=STRING
-	 *     url=STRING (ambiguity) '"url"' ':' url=STRING
-	 *     url=STRING (ambiguity) '}' (rule end)
+	 *     url=AnyString (ambiguity) (GenericJsonTuple ','?)* '"email"' ':' email=AnyString
+	 *     url=AnyString (ambiguity) (GenericJsonTuple ','?)* '"name"' ':' name=AnyString
+	 *     url=AnyString (ambiguity) (GenericJsonTuple ','?)* '"url"' ':' url=AnyString
+	 *     url=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_Contact_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -387,12 +815,38 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     email=STRING (ambiguity) '"email"' ':' email=STRING
-	 *     email=STRING (ambiguity) '"name"' ':' name=STRING
-	 *     email=STRING (ambiguity) '"url"' ':' url=STRING
-	 *     email=STRING (ambiguity) '}' (rule end)
+	 *     email=AnyString (ambiguity) (GenericJsonTuple ','?)* '"email"' ':' email=AnyString
+	 *     email=AnyString (ambiguity) (GenericJsonTuple ','?)* '"name"' ':' name=AnyString
+	 *     email=AnyString (ambiguity) (GenericJsonTuple ','?)* '"url"' ':' url=AnyString
+	 *     email=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_Contact_CommaKeyword_2_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (GenericJsonTuple ','?)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) '{' (ambiguity) '"email"' ':' email=AnyString
+	 *     (rule start) '{' (ambiguity) '"name"' ':' name=AnyString
+	 *     (rule start) '{' (ambiguity) '"url"' ':' url=AnyString
+	 *     (rule start) '{' (ambiguity) '}' (rule start)
+	 *     email=AnyString ','? (ambiguity) '"email"' ':' email=AnyString
+	 *     email=AnyString ','? (ambiguity) '"name"' ':' name=AnyString
+	 *     email=AnyString ','? (ambiguity) '"url"' ':' url=AnyString
+	 *     email=AnyString ','? (ambiguity) '}' (rule end)
+	 *     name=AnyString ','? (ambiguity) '"email"' ':' email=AnyString
+	 *     name=AnyString ','? (ambiguity) '"name"' ':' name=AnyString
+	 *     name=AnyString ','? (ambiguity) '"url"' ':' url=AnyString
+	 *     name=AnyString ','? (ambiguity) '}' (rule end)
+	 *     url=AnyString ','? (ambiguity) '"email"' ':' email=AnyString
+	 *     url=AnyString ','? (ambiguity) '"name"' ':' name=AnyString
+	 *     url=AnyString ','? (ambiguity) '"url"' ':' url=AnyString
+	 *     url=AnyString ','? (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Contact___GenericJsonTupleParserRuleCall_2_3_0_CommaKeyword_2_3_1_q__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -401,13 +855,13 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     title=STRING (ambiguity) '"contact"' ':' contact=Contact
-	 *     title=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     title=STRING (ambiguity) '"license"' ':' license=License
-	 *     title=STRING (ambiguity) '"termsOfService"' ':' termsOfService=STRING
-	 *     title=STRING (ambiguity) '"title"' ':' title=STRING
-	 *     title=STRING (ambiguity) '"version"' ':' version=STRING
-	 *     title=STRING (ambiguity) '}' (rule end)
+	 *     title=AnyString (ambiguity) (GenericJsonTuple ','?)* '"contact"' ':' contact=Contact
+	 *     title=AnyString (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     title=AnyString (ambiguity) (GenericJsonTuple ','?)* '"license"' ':' license=License
+	 *     title=AnyString (ambiguity) (GenericJsonTuple ','?)* '"termsOfService"' ':' termsOfService=AnyString
+	 *     title=AnyString (ambiguity) (GenericJsonTuple ','?)* '"title"' ':' title=AnyString
+	 *     title=AnyString (ambiguity) (GenericJsonTuple ','?)* '"version"' ':' version=AnyString
+	 *     title=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_Info_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -418,13 +872,13 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     version=STRING (ambiguity) '"contact"' ':' contact=Contact
-	 *     version=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     version=STRING (ambiguity) '"license"' ':' license=License
-	 *     version=STRING (ambiguity) '"termsOfService"' ':' termsOfService=STRING
-	 *     version=STRING (ambiguity) '"title"' ':' title=STRING
-	 *     version=STRING (ambiguity) '"version"' ':' version=STRING
-	 *     version=STRING (ambiguity) '}' (rule end)
+	 *     version=AnyString (ambiguity) (GenericJsonTuple ','?)* '"contact"' ':' contact=Contact
+	 *     version=AnyString (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     version=AnyString (ambiguity) (GenericJsonTuple ','?)* '"license"' ':' license=License
+	 *     version=AnyString (ambiguity) (GenericJsonTuple ','?)* '"termsOfService"' ':' termsOfService=AnyString
+	 *     version=AnyString (ambiguity) (GenericJsonTuple ','?)* '"title"' ':' title=AnyString
+	 *     version=AnyString (ambiguity) (GenericJsonTuple ','?)* '"version"' ':' version=AnyString
+	 *     version=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_Info_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -435,13 +889,13 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     description=STRING (ambiguity) '"contact"' ':' contact=Contact
-	 *     description=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     description=STRING (ambiguity) '"license"' ':' license=License
-	 *     description=STRING (ambiguity) '"termsOfService"' ':' termsOfService=STRING
-	 *     description=STRING (ambiguity) '"title"' ':' title=STRING
-	 *     description=STRING (ambiguity) '"version"' ':' version=STRING
-	 *     description=STRING (ambiguity) '}' (rule end)
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"contact"' ':' contact=Contact
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"license"' ':' license=License
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"termsOfService"' ':' termsOfService=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"title"' ':' title=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"version"' ':' version=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_Info_CommaKeyword_2_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -452,13 +906,13 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     termsOfService=STRING (ambiguity) '"contact"' ':' contact=Contact
-	 *     termsOfService=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     termsOfService=STRING (ambiguity) '"license"' ':' license=License
-	 *     termsOfService=STRING (ambiguity) '"termsOfService"' ':' termsOfService=STRING
-	 *     termsOfService=STRING (ambiguity) '"title"' ':' title=STRING
-	 *     termsOfService=STRING (ambiguity) '"version"' ':' version=STRING
-	 *     termsOfService=STRING (ambiguity) '}' (rule end)
+	 *     termsOfService=AnyString (ambiguity) (GenericJsonTuple ','?)* '"contact"' ':' contact=Contact
+	 *     termsOfService=AnyString (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     termsOfService=AnyString (ambiguity) (GenericJsonTuple ','?)* '"license"' ':' license=License
+	 *     termsOfService=AnyString (ambiguity) (GenericJsonTuple ','?)* '"termsOfService"' ':' termsOfService=AnyString
+	 *     termsOfService=AnyString (ambiguity) (GenericJsonTuple ','?)* '"title"' ':' title=AnyString
+	 *     termsOfService=AnyString (ambiguity) (GenericJsonTuple ','?)* '"version"' ':' version=AnyString
+	 *     termsOfService=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_Info_CommaKeyword_2_3_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -469,13 +923,13 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     contact=Contact (ambiguity) '"contact"' ':' contact=Contact
-	 *     contact=Contact (ambiguity) '"description"' ':' description=STRING
-	 *     contact=Contact (ambiguity) '"license"' ':' license=License
-	 *     contact=Contact (ambiguity) '"termsOfService"' ':' termsOfService=STRING
-	 *     contact=Contact (ambiguity) '"title"' ':' title=STRING
-	 *     contact=Contact (ambiguity) '"version"' ':' version=STRING
-	 *     contact=Contact (ambiguity) '}' (rule end)
+	 *     contact=Contact (ambiguity) (GenericJsonTuple ','?)* '"contact"' ':' contact=Contact
+	 *     contact=Contact (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     contact=Contact (ambiguity) (GenericJsonTuple ','?)* '"license"' ':' license=License
+	 *     contact=Contact (ambiguity) (GenericJsonTuple ','?)* '"termsOfService"' ':' termsOfService=AnyString
+	 *     contact=Contact (ambiguity) (GenericJsonTuple ','?)* '"title"' ':' title=AnyString
+	 *     contact=Contact (ambiguity) (GenericJsonTuple ','?)* '"version"' ':' version=AnyString
+	 *     contact=Contact (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_Info_CommaKeyword_2_4_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -486,15 +940,74 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     license=License (ambiguity) '"contact"' ':' contact=Contact
-	 *     license=License (ambiguity) '"description"' ':' description=STRING
-	 *     license=License (ambiguity) '"license"' ':' license=License
-	 *     license=License (ambiguity) '"termsOfService"' ':' termsOfService=STRING
-	 *     license=License (ambiguity) '"title"' ':' title=STRING
-	 *     license=License (ambiguity) '"version"' ':' version=STRING
-	 *     license=License (ambiguity) '}' (rule end)
+	 *     license=License (ambiguity) (GenericJsonTuple ','?)* '"contact"' ':' contact=Contact
+	 *     license=License (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     license=License (ambiguity) (GenericJsonTuple ','?)* '"license"' ':' license=License
+	 *     license=License (ambiguity) (GenericJsonTuple ','?)* '"termsOfService"' ':' termsOfService=AnyString
+	 *     license=License (ambiguity) (GenericJsonTuple ','?)* '"title"' ':' title=AnyString
+	 *     license=License (ambiguity) (GenericJsonTuple ','?)* '"version"' ':' version=AnyString
+	 *     license=License (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_Info_CommaKeyword_2_5_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (GenericJsonTuple ','?)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) '{' (ambiguity) '"contact"' ':' contact=Contact
+	 *     (rule start) '{' (ambiguity) '"description"' ':' description=AnyString
+	 *     (rule start) '{' (ambiguity) '"license"' ':' license=License
+	 *     (rule start) '{' (ambiguity) '"termsOfService"' ':' termsOfService=AnyString
+	 *     (rule start) '{' (ambiguity) '"title"' ':' title=AnyString
+	 *     (rule start) '{' (ambiguity) '"version"' ':' version=AnyString
+	 *     (rule start) '{' (ambiguity) '}' (rule start)
+	 *     contact=Contact ','? (ambiguity) '"contact"' ':' contact=Contact
+	 *     contact=Contact ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     contact=Contact ','? (ambiguity) '"license"' ':' license=License
+	 *     contact=Contact ','? (ambiguity) '"termsOfService"' ':' termsOfService=AnyString
+	 *     contact=Contact ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     contact=Contact ','? (ambiguity) '"version"' ':' version=AnyString
+	 *     contact=Contact ','? (ambiguity) '}' (rule end)
+	 *     description=AnyString ','? (ambiguity) '"contact"' ':' contact=Contact
+	 *     description=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     description=AnyString ','? (ambiguity) '"license"' ':' license=License
+	 *     description=AnyString ','? (ambiguity) '"termsOfService"' ':' termsOfService=AnyString
+	 *     description=AnyString ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     description=AnyString ','? (ambiguity) '"version"' ':' version=AnyString
+	 *     description=AnyString ','? (ambiguity) '}' (rule end)
+	 *     license=License ','? (ambiguity) '"contact"' ':' contact=Contact
+	 *     license=License ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     license=License ','? (ambiguity) '"license"' ':' license=License
+	 *     license=License ','? (ambiguity) '"termsOfService"' ':' termsOfService=AnyString
+	 *     license=License ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     license=License ','? (ambiguity) '"version"' ':' version=AnyString
+	 *     license=License ','? (ambiguity) '}' (rule end)
+	 *     termsOfService=AnyString ','? (ambiguity) '"contact"' ':' contact=Contact
+	 *     termsOfService=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     termsOfService=AnyString ','? (ambiguity) '"license"' ':' license=License
+	 *     termsOfService=AnyString ','? (ambiguity) '"termsOfService"' ':' termsOfService=AnyString
+	 *     termsOfService=AnyString ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     termsOfService=AnyString ','? (ambiguity) '"version"' ':' version=AnyString
+	 *     termsOfService=AnyString ','? (ambiguity) '}' (rule end)
+	 *     title=AnyString ','? (ambiguity) '"contact"' ':' contact=Contact
+	 *     title=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     title=AnyString ','? (ambiguity) '"license"' ':' license=License
+	 *     title=AnyString ','? (ambiguity) '"termsOfService"' ':' termsOfService=AnyString
+	 *     title=AnyString ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     title=AnyString ','? (ambiguity) '"version"' ':' version=AnyString
+	 *     title=AnyString ','? (ambiguity) '}' (rule end)
+	 *     version=AnyString ','? (ambiguity) '"contact"' ':' contact=Contact
+	 *     version=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     version=AnyString ','? (ambiguity) '"license"' ':' license=License
+	 *     version=AnyString ','? (ambiguity) '"termsOfService"' ':' termsOfService=AnyString
+	 *     version=AnyString ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     version=AnyString ','? (ambiguity) '"version"' ':' version=AnyString
+	 *     version=AnyString ','? (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Info___GenericJsonTupleParserRuleCall_2_6_0_CommaKeyword_2_6_1_q__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -503,9 +1016,9 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=STRING (ambiguity) '"name"' ':' name=STRING
-	 *     name=STRING (ambiguity) '"url"' ':' url=STRING
-	 *     name=STRING (ambiguity) '}' (rule end)
+	 *     name=AnyString (ambiguity) (GenericJsonTuple ','?)* '"name"' ':' name=AnyString
+	 *     name=AnyString (ambiguity) (GenericJsonTuple ','?)* '"url"' ':' url=AnyString
+	 *     name=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_License_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -516,11 +1029,30 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     url=STRING (ambiguity) '"name"' ':' name=STRING
-	 *     url=STRING (ambiguity) '"url"' ':' url=STRING
-	 *     url=STRING (ambiguity) '}' (rule end)
+	 *     url=AnyString (ambiguity) (GenericJsonTuple ','?)* '"name"' ':' name=AnyString
+	 *     url=AnyString (ambiguity) (GenericJsonTuple ','?)* '"url"' ':' url=AnyString
+	 *     url=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_License_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (GenericJsonTuple ','?)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) '{' (ambiguity) '"name"' ':' name=AnyString
+	 *     (rule start) '{' (ambiguity) '"url"' ':' url=AnyString
+	 *     (rule start) '{' (ambiguity) '}' (rule start)
+	 *     name=AnyString ','? (ambiguity) '"name"' ':' name=AnyString
+	 *     name=AnyString ','? (ambiguity) '"url"' ':' url=AnyString
+	 *     name=AnyString ','? (ambiguity) '}' (rule end)
+	 *     url=AnyString ','? (ambiguity) '"name"' ':' name=AnyString
+	 *     url=AnyString ','? (ambiguity) '"url"' ':' url=AnyString
+	 *     url=AnyString ','? (ambiguity) '}' (rule end)
+	 */
+	protected void emit_License___GenericJsonTupleParserRuleCall_2_2_0_CommaKeyword_2_2_1_q__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -529,13 +1061,142 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     summary=STRING (ambiguity) '"deprecated"' ':' deprecated=Boolean
-	 *     summary=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     summary=STRING (ambiguity) '"headers"' ':' headers=AbstractSchema
-	 *     summary=STRING (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     summary=STRING (ambiguity) '"summary"' ':' summary=STRING
-	 *     summary=STRING (ambiguity) '"tags"' ':' '[' tags+=Tag
-	 *     summary=STRING (ambiguity) '}' (rule end)
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"deprecated"' ':' deprecated=Boolean
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"headers"' ':' headers=AbstractSchema
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"tags"' ':' '[' tags+=Tag
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_MessageTrait_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"deprecated"' ':' deprecated=Boolean
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"headers"' ':' headers=AbstractSchema
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"tags"' ':' '[' tags+=Tag
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_MessageTrait_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     deprecated=Boolean (ambiguity) (GenericJsonTupleButRef ','?)* '"deprecated"' ':' deprecated=Boolean
+	 *     deprecated=Boolean (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     deprecated=Boolean (ambiguity) (GenericJsonTupleButRef ','?)* '"headers"' ':' headers=AbstractSchema
+	 *     deprecated=Boolean (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     deprecated=Boolean (ambiguity) (GenericJsonTupleButRef ','?)* '"tags"' ':' '[' tags+=Tag
+	 *     deprecated=Boolean (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_MessageTrait_CommaKeyword_2_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     headers=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"deprecated"' ':' deprecated=Boolean
+	 *     headers=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     headers=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"headers"' ':' headers=AbstractSchema
+	 *     headers=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     headers=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"tags"' ':' '[' tags+=Tag
+	 *     headers=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_MessageTrait_CommaKeyword_2_3_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     tags+=Tag ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"deprecated"' ':' deprecated=Boolean
+	 *     tags+=Tag ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     tags+=Tag ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"headers"' ':' headers=AbstractSchema
+	 *     tags+=Tag ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     tags+=Tag ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"tags"' ':' '[' tags+=Tag
+	 *     tags+=Tag ']' (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_MessageTrait_CommaKeyword_2_4_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (GenericJsonTupleButRef ','?)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) '{' (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     (rule start) '{' (ambiguity) '"description"' ':' description=AnyString
+	 *     (rule start) '{' (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     (rule start) '{' (ambiguity) '"summary"' ':' summary=AnyString
+	 *     (rule start) '{' (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     (rule start) '{' (ambiguity) '}' (rule start)
+	 *     deprecated=Boolean ','? (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     deprecated=Boolean ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     deprecated=Boolean ','? (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     deprecated=Boolean ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     deprecated=Boolean ','? (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     deprecated=Boolean ','? (ambiguity) '}' (rule end)
+	 *     description=AnyString ','? (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     description=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     description=AnyString ','? (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     description=AnyString ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     description=AnyString ','? (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     description=AnyString ','? (ambiguity) '}' (rule end)
+	 *     headers=AbstractSchema ','? (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     headers=AbstractSchema ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     headers=AbstractSchema ','? (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     headers=AbstractSchema ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     headers=AbstractSchema ','? (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     headers=AbstractSchema ','? (ambiguity) '}' (rule end)
+	 *     summary=AnyString ','? (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     summary=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     summary=AnyString ','? (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     summary=AnyString ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     summary=AnyString ','? (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     summary=AnyString ','? (ambiguity) '}' (rule end)
+	 *     tags+=Tag ']' ','? (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     tags+=Tag ']' ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     tags+=Tag ']' ','? (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     tags+=Tag ']' ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     tags+=Tag ']' ','? (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     tags+=Tag ']' ','? (ambiguity) '}' (rule end)
+	 */
+	protected void emit_MessageTrait___GenericJsonTupleButRefParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"deprecated"' ':' deprecated=Boolean
+	 *     name=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     name=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"headers"' ':' headers=AbstractSchema
+	 *     name=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"name"' ':' name=AnyString
+	 *     name=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"payload"' ':' payload=AbstractSchema
+	 *     name=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     name=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"tags"' ':' '[' tags+=Tag
+	 *     name=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     name=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     name=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
 	protected void emit_Message_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -546,13 +1207,16 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     description=STRING (ambiguity) '"deprecated"' ':' deprecated=Boolean
-	 *     description=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     description=STRING (ambiguity) '"headers"' ':' headers=AbstractSchema
-	 *     description=STRING (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     description=STRING (ambiguity) '"summary"' ':' summary=STRING
-	 *     description=STRING (ambiguity) '"tags"' ':' '[' tags+=Tag
-	 *     description=STRING (ambiguity) '}' (rule end)
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"deprecated"' ':' deprecated=Boolean
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"headers"' ':' headers=AbstractSchema
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"name"' ':' name=AnyString
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"payload"' ':' payload=AbstractSchema
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"tags"' ':' '[' tags+=Tag
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
 	protected void emit_Message_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -563,13 +1227,16 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     deprecated=Boolean (ambiguity) '"deprecated"' ':' deprecated=Boolean
-	 *     deprecated=Boolean (ambiguity) '"description"' ':' description=STRING
-	 *     deprecated=Boolean (ambiguity) '"headers"' ':' headers=AbstractSchema
-	 *     deprecated=Boolean (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     deprecated=Boolean (ambiguity) '"summary"' ':' summary=STRING
-	 *     deprecated=Boolean (ambiguity) '"tags"' ':' '[' tags+=Tag
-	 *     deprecated=Boolean (ambiguity) '}' (rule end)
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"deprecated"' ':' deprecated=Boolean
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"headers"' ':' headers=AbstractSchema
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"name"' ':' name=AnyString
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"payload"' ':' payload=AbstractSchema
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"tags"' ':' '[' tags+=Tag
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
 	protected void emit_Message_CommaKeyword_2_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -580,13 +1247,16 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     headers=AbstractSchema (ambiguity) '"deprecated"' ':' deprecated=Boolean
-	 *     headers=AbstractSchema (ambiguity) '"description"' ':' description=STRING
-	 *     headers=AbstractSchema (ambiguity) '"headers"' ':' headers=AbstractSchema
-	 *     headers=AbstractSchema (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     headers=AbstractSchema (ambiguity) '"summary"' ':' summary=STRING
-	 *     headers=AbstractSchema (ambiguity) '"tags"' ':' '[' tags+=Tag
-	 *     headers=AbstractSchema (ambiguity) '}' (rule end)
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"deprecated"' ':' deprecated=Boolean
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"headers"' ':' headers=AbstractSchema
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"name"' ':' name=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"payload"' ':' payload=AbstractSchema
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"tags"' ':' '[' tags+=Tag
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
 	protected void emit_Message_CommaKeyword_2_3_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -597,15 +1267,18 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     tags+=Tag ']' (ambiguity) '"deprecated"' ':' deprecated=Boolean
-	 *     tags+=Tag ']' (ambiguity) '"description"' ':' description=STRING
-	 *     tags+=Tag ']' (ambiguity) '"headers"' ':' headers=AbstractSchema
-	 *     tags+=Tag ']' (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     tags+=Tag ']' (ambiguity) '"summary"' ':' summary=STRING
-	 *     tags+=Tag ']' (ambiguity) '"tags"' ':' '[' tags+=Tag
-	 *     tags+=Tag ']' (ambiguity) '}' (rule end)
+	 *     deprecated=Boolean (ambiguity) (GenericJsonTupleButRef ','?)* '"deprecated"' ':' deprecated=Boolean
+	 *     deprecated=Boolean (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     deprecated=Boolean (ambiguity) (GenericJsonTupleButRef ','?)* '"headers"' ':' headers=AbstractSchema
+	 *     deprecated=Boolean (ambiguity) (GenericJsonTupleButRef ','?)* '"name"' ':' name=AnyString
+	 *     deprecated=Boolean (ambiguity) (GenericJsonTupleButRef ','?)* '"payload"' ':' payload=AbstractSchema
+	 *     deprecated=Boolean (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     deprecated=Boolean (ambiguity) (GenericJsonTupleButRef ','?)* '"tags"' ':' '[' tags+=Tag
+	 *     deprecated=Boolean (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     deprecated=Boolean (ambiguity) (GenericJsonTupleButRef ','?)* '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     deprecated=Boolean (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
-	protected void emit_Message_CommaKeyword_2_4_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Message_CommaKeyword_2_4_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -614,13 +1287,16 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     payload=AbstractSchema (ambiguity) '"deprecated"' ':' deprecated=Boolean
-	 *     payload=AbstractSchema (ambiguity) '"description"' ':' description=STRING
-	 *     payload=AbstractSchema (ambiguity) '"headers"' ':' headers=AbstractSchema
-	 *     payload=AbstractSchema (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     payload=AbstractSchema (ambiguity) '"summary"' ':' summary=STRING
-	 *     payload=AbstractSchema (ambiguity) '"tags"' ':' '[' tags+=Tag
-	 *     payload=AbstractSchema (ambiguity) '}' (rule end)
+	 *     headers=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"deprecated"' ':' deprecated=Boolean
+	 *     headers=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     headers=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"headers"' ':' headers=AbstractSchema
+	 *     headers=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"name"' ':' name=AnyString
+	 *     headers=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"payload"' ':' payload=AbstractSchema
+	 *     headers=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     headers=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"tags"' ':' '[' tags+=Tag
+	 *     headers=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     headers=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     headers=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
 	protected void emit_Message_CommaKeyword_2_5_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -631,18 +1307,450 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     title=STRING (ambiguity) '"default"' ':' default=PrimitiveValue
-	 *     title=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     title=STRING (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
-	 *     title=STRING (ambiguity) '"format"' ':' format=STRING
-	 *     title=STRING (ambiguity) '"items"' ':' items=AbstractSchema
-	 *     title=STRING (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     title=STRING (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
-	 *     title=STRING (ambiguity) '"required"' ':' '[' required+=STRING
-	 *     title=STRING (ambiguity) '"title"' ':' title=STRING
-	 *     title=STRING (ambiguity) '"type"' ':' type=STRING
-	 *     title=STRING (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
-	 *     title=STRING (ambiguity) '}' (rule end)
+	 *     tags+=Tag ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"deprecated"' ':' deprecated=Boolean
+	 *     tags+=Tag ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     tags+=Tag ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"headers"' ':' headers=AbstractSchema
+	 *     tags+=Tag ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"name"' ':' name=AnyString
+	 *     tags+=Tag ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"payload"' ':' payload=AbstractSchema
+	 *     tags+=Tag ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     tags+=Tag ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"tags"' ':' '[' tags+=Tag
+	 *     tags+=Tag ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     tags+=Tag ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     tags+=Tag ']' (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_Message_CommaKeyword_2_6_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     payload=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"deprecated"' ':' deprecated=Boolean
+	 *     payload=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     payload=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"headers"' ':' headers=AbstractSchema
+	 *     payload=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"name"' ':' name=AnyString
+	 *     payload=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"payload"' ':' payload=AbstractSchema
+	 *     payload=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     payload=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"tags"' ':' '[' tags+=Tag
+	 *     payload=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     payload=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     payload=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_Message_CommaKeyword_2_7_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     traits+=AbstractMessageTrait ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"deprecated"' ':' deprecated=Boolean
+	 *     traits+=AbstractMessageTrait ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     traits+=AbstractMessageTrait ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"headers"' ':' headers=AbstractSchema
+	 *     traits+=AbstractMessageTrait ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"name"' ':' name=AnyString
+	 *     traits+=AbstractMessageTrait ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"payload"' ':' payload=AbstractSchema
+	 *     traits+=AbstractMessageTrait ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     traits+=AbstractMessageTrait ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"tags"' ':' '[' tags+=Tag
+	 *     traits+=AbstractMessageTrait ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     traits+=AbstractMessageTrait ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     traits+=AbstractMessageTrait ']' (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_Message_CommaKeyword_2_8_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (GenericJsonTupleButRef ','?)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) '{' (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     (rule start) '{' (ambiguity) '"description"' ':' description=AnyString
+	 *     (rule start) '{' (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     (rule start) '{' (ambiguity) '"name"' ':' name=AnyString
+	 *     (rule start) '{' (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     (rule start) '{' (ambiguity) '"summary"' ':' summary=AnyString
+	 *     (rule start) '{' (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     (rule start) '{' (ambiguity) '"title"' ':' title=AnyString
+	 *     (rule start) '{' (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     (rule start) '{' (ambiguity) '}' (rule start)
+	 *     deprecated=Boolean ','? (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     deprecated=Boolean ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     deprecated=Boolean ','? (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     deprecated=Boolean ','? (ambiguity) '"name"' ':' name=AnyString
+	 *     deprecated=Boolean ','? (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     deprecated=Boolean ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     deprecated=Boolean ','? (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     deprecated=Boolean ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     deprecated=Boolean ','? (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     deprecated=Boolean ','? (ambiguity) '}' (rule end)
+	 *     description=AnyString ','? (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     description=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     description=AnyString ','? (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     description=AnyString ','? (ambiguity) '"name"' ':' name=AnyString
+	 *     description=AnyString ','? (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     description=AnyString ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     description=AnyString ','? (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     description=AnyString ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     description=AnyString ','? (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     description=AnyString ','? (ambiguity) '}' (rule end)
+	 *     headers=AbstractSchema ','? (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     headers=AbstractSchema ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     headers=AbstractSchema ','? (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     headers=AbstractSchema ','? (ambiguity) '"name"' ':' name=AnyString
+	 *     headers=AbstractSchema ','? (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     headers=AbstractSchema ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     headers=AbstractSchema ','? (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     headers=AbstractSchema ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     headers=AbstractSchema ','? (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     headers=AbstractSchema ','? (ambiguity) '}' (rule end)
+	 *     name=AnyString ','? (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     name=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     name=AnyString ','? (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     name=AnyString ','? (ambiguity) '"name"' ':' name=AnyString
+	 *     name=AnyString ','? (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     name=AnyString ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     name=AnyString ','? (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     name=AnyString ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     name=AnyString ','? (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     name=AnyString ','? (ambiguity) '}' (rule end)
+	 *     payload=AbstractSchema ','? (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     payload=AbstractSchema ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     payload=AbstractSchema ','? (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     payload=AbstractSchema ','? (ambiguity) '"name"' ':' name=AnyString
+	 *     payload=AbstractSchema ','? (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     payload=AbstractSchema ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     payload=AbstractSchema ','? (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     payload=AbstractSchema ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     payload=AbstractSchema ','? (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     payload=AbstractSchema ','? (ambiguity) '}' (rule end)
+	 *     summary=AnyString ','? (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     summary=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     summary=AnyString ','? (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     summary=AnyString ','? (ambiguity) '"name"' ':' name=AnyString
+	 *     summary=AnyString ','? (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     summary=AnyString ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     summary=AnyString ','? (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     summary=AnyString ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     summary=AnyString ','? (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     summary=AnyString ','? (ambiguity) '}' (rule end)
+	 *     tags+=Tag ']' ','? (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     tags+=Tag ']' ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     tags+=Tag ']' ','? (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     tags+=Tag ']' ','? (ambiguity) '"name"' ':' name=AnyString
+	 *     tags+=Tag ']' ','? (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     tags+=Tag ']' ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     tags+=Tag ']' ','? (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     tags+=Tag ']' ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     tags+=Tag ']' ','? (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     tags+=Tag ']' ','? (ambiguity) '}' (rule end)
+	 *     title=AnyString ','? (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     title=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     title=AnyString ','? (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     title=AnyString ','? (ambiguity) '"name"' ':' name=AnyString
+	 *     title=AnyString ','? (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     title=AnyString ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     title=AnyString ','? (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     title=AnyString ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     title=AnyString ','? (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     title=AnyString ','? (ambiguity) '}' (rule end)
+	 *     traits+=AbstractMessageTrait ']' ','? (ambiguity) '"deprecated"' ':' deprecated=Boolean
+	 *     traits+=AbstractMessageTrait ']' ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     traits+=AbstractMessageTrait ']' ','? (ambiguity) '"headers"' ':' headers=AbstractSchema
+	 *     traits+=AbstractMessageTrait ']' ','? (ambiguity) '"name"' ':' name=AnyString
+	 *     traits+=AbstractMessageTrait ']' ','? (ambiguity) '"payload"' ':' payload=AbstractSchema
+	 *     traits+=AbstractMessageTrait ']' ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     traits+=AbstractMessageTrait ']' ','? (ambiguity) '"tags"' ':' '[' tags+=Tag
+	 *     traits+=AbstractMessageTrait ']' ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     traits+=AbstractMessageTrait ']' ','? (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     traits+=AbstractMessageTrait ']' ','? (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Message___GenericJsonTupleButRefParserRuleCall_2_9_0_CommaKeyword_2_9_1_q__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     operationId=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     operationId=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"operationId"' ':' operationId=AnyString
+	 *     operationId=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     operationId=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_OperationTrait_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"operationId"' ':' operationId=AnyString
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     summary=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_OperationTrait_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"operationId"' ':' operationId=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"summary"' ':' summary=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_OperationTrait_CommaKeyword_2_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (GenericJsonTupleButRef ','?)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) '{' (ambiguity) '"description"' ':' description=AnyString
+	 *     (rule start) '{' (ambiguity) '"operationId"' ':' operationId=AnyString
+	 *     (rule start) '{' (ambiguity) '"summary"' ':' summary=AnyString
+	 *     (rule start) '{' (ambiguity) '}' (rule start)
+	 *     description=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     description=AnyString ','? (ambiguity) '"operationId"' ':' operationId=AnyString
+	 *     description=AnyString ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     description=AnyString ','? (ambiguity) '}' (rule end)
+	 *     operationId=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     operationId=AnyString ','? (ambiguity) '"operationId"' ':' operationId=AnyString
+	 *     operationId=AnyString ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     operationId=AnyString ','? (ambiguity) '}' (rule end)
+	 *     summary=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     summary=AnyString ','? (ambiguity) '"operationId"' ':' operationId=AnyString
+	 *     summary=AnyString ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     summary=AnyString ','? (ambiguity) '}' (rule end)
+	 */
+	protected void emit_OperationTrait___GenericJsonTupleButRefParserRuleCall_2_3_0_CommaKeyword_2_3_1_q__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     operationId=AnyString (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     operationId=AnyString (ambiguity) (GenericJsonTuple ','?)* '"message"' ':' message=AbstractMessage
+	 *     operationId=AnyString (ambiguity) (GenericJsonTuple ','?)* '"operationId"' ':' operationId=AnyString
+	 *     operationId=AnyString (ambiguity) (GenericJsonTuple ','?)* '"summary"' ':' summary=AnyString
+	 *     operationId=AnyString (ambiguity) (GenericJsonTuple ','?)* '"traits"' ':' '[' traits+=AbstractOperationTrait
+	 *     operationId=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
+	 */
+	protected void emit_Operation_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     summary=AnyString (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     summary=AnyString (ambiguity) (GenericJsonTuple ','?)* '"message"' ':' message=AbstractMessage
+	 *     summary=AnyString (ambiguity) (GenericJsonTuple ','?)* '"operationId"' ':' operationId=AnyString
+	 *     summary=AnyString (ambiguity) (GenericJsonTuple ','?)* '"summary"' ':' summary=AnyString
+	 *     summary=AnyString (ambiguity) (GenericJsonTuple ','?)* '"traits"' ':' '[' traits+=AbstractOperationTrait
+	 *     summary=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
+	 */
+	protected void emit_Operation_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"message"' ':' message=AbstractMessage
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"operationId"' ':' operationId=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"summary"' ':' summary=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"traits"' ':' '[' traits+=AbstractOperationTrait
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
+	 */
+	protected void emit_Operation_CommaKeyword_2_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     message=AbstractMessage (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     message=AbstractMessage (ambiguity) (GenericJsonTuple ','?)* '"message"' ':' message=AbstractMessage
+	 *     message=AbstractMessage (ambiguity) (GenericJsonTuple ','?)* '"operationId"' ':' operationId=AnyString
+	 *     message=AbstractMessage (ambiguity) (GenericJsonTuple ','?)* '"summary"' ':' summary=AnyString
+	 *     message=AbstractMessage (ambiguity) (GenericJsonTuple ','?)* '"traits"' ':' '[' traits+=AbstractOperationTrait
+	 *     message=AbstractMessage (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
+	 */
+	protected void emit_Operation_CommaKeyword_2_3_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     traits+=AbstractOperationTrait ']' (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     traits+=AbstractOperationTrait ']' (ambiguity) (GenericJsonTuple ','?)* '"message"' ':' message=AbstractMessage
+	 *     traits+=AbstractOperationTrait ']' (ambiguity) (GenericJsonTuple ','?)* '"operationId"' ':' operationId=AnyString
+	 *     traits+=AbstractOperationTrait ']' (ambiguity) (GenericJsonTuple ','?)* '"summary"' ':' summary=AnyString
+	 *     traits+=AbstractOperationTrait ']' (ambiguity) (GenericJsonTuple ','?)* '"traits"' ':' '[' traits+=AbstractOperationTrait
+	 *     traits+=AbstractOperationTrait ']' (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
+	 */
+	protected void emit_Operation_CommaKeyword_2_4_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (GenericJsonTuple ','?)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) '{' (ambiguity) '"description"' ':' description=AnyString
+	 *     (rule start) '{' (ambiguity) '"message"' ':' message=AbstractMessage
+	 *     (rule start) '{' (ambiguity) '"operationId"' ':' operationId=AnyString
+	 *     (rule start) '{' (ambiguity) '"summary"' ':' summary=AnyString
+	 *     (rule start) '{' (ambiguity) '"traits"' ':' '[' traits+=AbstractOperationTrait
+	 *     (rule start) '{' (ambiguity) '}' (rule start)
+	 *     description=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     description=AnyString ','? (ambiguity) '"message"' ':' message=AbstractMessage
+	 *     description=AnyString ','? (ambiguity) '"operationId"' ':' operationId=AnyString
+	 *     description=AnyString ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     description=AnyString ','? (ambiguity) '"traits"' ':' '[' traits+=AbstractOperationTrait
+	 *     description=AnyString ','? (ambiguity) '}' (rule end)
+	 *     message=AbstractMessage ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     message=AbstractMessage ','? (ambiguity) '"message"' ':' message=AbstractMessage
+	 *     message=AbstractMessage ','? (ambiguity) '"operationId"' ':' operationId=AnyString
+	 *     message=AbstractMessage ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     message=AbstractMessage ','? (ambiguity) '"traits"' ':' '[' traits+=AbstractOperationTrait
+	 *     message=AbstractMessage ','? (ambiguity) '}' (rule end)
+	 *     operationId=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     operationId=AnyString ','? (ambiguity) '"message"' ':' message=AbstractMessage
+	 *     operationId=AnyString ','? (ambiguity) '"operationId"' ':' operationId=AnyString
+	 *     operationId=AnyString ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     operationId=AnyString ','? (ambiguity) '"traits"' ':' '[' traits+=AbstractOperationTrait
+	 *     operationId=AnyString ','? (ambiguity) '}' (rule end)
+	 *     summary=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     summary=AnyString ','? (ambiguity) '"message"' ':' message=AbstractMessage
+	 *     summary=AnyString ','? (ambiguity) '"operationId"' ':' operationId=AnyString
+	 *     summary=AnyString ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     summary=AnyString ','? (ambiguity) '"traits"' ':' '[' traits+=AbstractOperationTrait
+	 *     summary=AnyString ','? (ambiguity) '}' (rule end)
+	 *     traits+=AbstractOperationTrait ']' ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     traits+=AbstractOperationTrait ']' ','? (ambiguity) '"message"' ':' message=AbstractMessage
+	 *     traits+=AbstractOperationTrait ']' ','? (ambiguity) '"operationId"' ':' operationId=AnyString
+	 *     traits+=AbstractOperationTrait ']' ','? (ambiguity) '"summary"' ':' summary=AnyString
+	 *     traits+=AbstractOperationTrait ']' ','? (ambiguity) '"traits"' ':' '[' traits+=AbstractOperationTrait
+	 *     traits+=AbstractOperationTrait ']' ','? (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Operation___GenericJsonTupleParserRuleCall_2_5_0_CommaKeyword_2_5_1_q__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"location"' ':' location=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"schema"' ':' schema=AbstractSchema
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_Parameter_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     schema=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     schema=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"location"' ':' location=AnyString
+	 *     schema=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"schema"' ':' schema=AbstractSchema
+	 *     schema=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_Parameter_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     location=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     location=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"location"' ':' location=AnyString
+	 *     location=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"schema"' ':' schema=AbstractSchema
+	 *     location=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
+	 */
+	protected void emit_Parameter_CommaKeyword_2_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (GenericJsonTupleButRef ','?)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) '{' (ambiguity) '"description"' ':' description=AnyString
+	 *     (rule start) '{' (ambiguity) '"location"' ':' location=AnyString
+	 *     (rule start) '{' (ambiguity) '"schema"' ':' schema=AbstractSchema
+	 *     (rule start) '{' (ambiguity) '}' (rule start)
+	 *     description=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     description=AnyString ','? (ambiguity) '"location"' ':' location=AnyString
+	 *     description=AnyString ','? (ambiguity) '"schema"' ':' schema=AbstractSchema
+	 *     description=AnyString ','? (ambiguity) '}' (rule end)
+	 *     location=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     location=AnyString ','? (ambiguity) '"location"' ':' location=AnyString
+	 *     location=AnyString ','? (ambiguity) '"schema"' ':' schema=AbstractSchema
+	 *     location=AnyString ','? (ambiguity) '}' (rule end)
+	 *     schema=AbstractSchema ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     schema=AbstractSchema ','? (ambiguity) '"location"' ':' location=AnyString
+	 *     schema=AbstractSchema ','? (ambiguity) '"schema"' ':' schema=AbstractSchema
+	 *     schema=AbstractSchema ','? (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Parameter___GenericJsonTupleButRefParserRuleCall_2_3_0_CommaKeyword_2_3_1_q__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"default"' ':' default=PrimitiveValue
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"format"' ':' format=AnyString
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"items"' ':' items=AbstractSchema
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"maximum"' ':' maximum=INT
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"minimum"' ':' minimum=INT
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"properties"' ':' '{' properties+=NamedSchema
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"required"' ':' '[' required+=AnyString
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"type"' ':' type=AnyString
+	 *     title=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
 	protected void emit_Schema_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -653,20 +1761,20 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     friendlyName=STRING (ambiguity) '"default"' ':' default=PrimitiveValue
-	 *     friendlyName=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     friendlyName=STRING (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
-	 *     friendlyName=STRING (ambiguity) '"format"' ':' format=STRING
-	 *     friendlyName=STRING (ambiguity) '"items"' ':' items=AbstractSchema
-	 *     friendlyName=STRING (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     friendlyName=STRING (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
-	 *     friendlyName=STRING (ambiguity) '"required"' ':' '[' required+=STRING
-	 *     friendlyName=STRING (ambiguity) '"title"' ':' title=STRING
-	 *     friendlyName=STRING (ambiguity) '"type"' ':' type=STRING
-	 *     friendlyName=STRING (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
-	 *     friendlyName=STRING (ambiguity) '}' (rule end)
+	 *     required+=AnyString ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"default"' ':' default=PrimitiveValue
+	 *     required+=AnyString ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     required+=AnyString ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     required+=AnyString ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"format"' ':' format=AnyString
+	 *     required+=AnyString ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"items"' ':' items=AbstractSchema
+	 *     required+=AnyString ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"maximum"' ':' maximum=INT
+	 *     required+=AnyString ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"minimum"' ':' minimum=INT
+	 *     required+=AnyString ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"properties"' ':' '{' properties+=NamedSchema
+	 *     required+=AnyString ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"required"' ':' '[' required+=AnyString
+	 *     required+=AnyString ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     required+=AnyString ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"type"' ':' type=AnyString
+	 *     required+=AnyString ']' (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
-	protected void emit_Schema_CommaKeyword_2_10_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Schema_CommaKeyword_2_10_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -675,18 +1783,18 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     type=STRING (ambiguity) '"default"' ':' default=PrimitiveValue
-	 *     type=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     type=STRING (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
-	 *     type=STRING (ambiguity) '"format"' ':' format=STRING
-	 *     type=STRING (ambiguity) '"items"' ':' items=AbstractSchema
-	 *     type=STRING (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     type=STRING (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
-	 *     type=STRING (ambiguity) '"required"' ':' '[' required+=STRING
-	 *     type=STRING (ambiguity) '"title"' ':' title=STRING
-	 *     type=STRING (ambiguity) '"type"' ':' type=STRING
-	 *     type=STRING (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
-	 *     type=STRING (ambiguity) '}' (rule end)
+	 *     type=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"default"' ':' default=PrimitiveValue
+	 *     type=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     type=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     type=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"format"' ':' format=AnyString
+	 *     type=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"items"' ':' items=AbstractSchema
+	 *     type=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"maximum"' ':' maximum=INT
+	 *     type=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"minimum"' ':' minimum=INT
+	 *     type=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"properties"' ':' '{' properties+=NamedSchema
+	 *     type=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"required"' ':' '[' required+=AnyString
+	 *     type=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     type=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"type"' ':' type=AnyString
+	 *     type=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
 	protected void emit_Schema_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -697,18 +1805,18 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     description=STRING (ambiguity) '"default"' ':' default=PrimitiveValue
-	 *     description=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     description=STRING (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
-	 *     description=STRING (ambiguity) '"format"' ':' format=STRING
-	 *     description=STRING (ambiguity) '"items"' ':' items=AbstractSchema
-	 *     description=STRING (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     description=STRING (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
-	 *     description=STRING (ambiguity) '"required"' ':' '[' required+=STRING
-	 *     description=STRING (ambiguity) '"title"' ':' title=STRING
-	 *     description=STRING (ambiguity) '"type"' ':' type=STRING
-	 *     description=STRING (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
-	 *     description=STRING (ambiguity) '}' (rule end)
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"default"' ':' default=PrimitiveValue
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"format"' ':' format=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"items"' ':' items=AbstractSchema
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"maximum"' ':' maximum=INT
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"minimum"' ':' minimum=INT
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"properties"' ':' '{' properties+=NamedSchema
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"required"' ':' '[' required+=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"type"' ':' type=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
 	protected void emit_Schema_CommaKeyword_2_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -719,18 +1827,18 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     format=STRING (ambiguity) '"default"' ':' default=PrimitiveValue
-	 *     format=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     format=STRING (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
-	 *     format=STRING (ambiguity) '"format"' ':' format=STRING
-	 *     format=STRING (ambiguity) '"items"' ':' items=AbstractSchema
-	 *     format=STRING (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     format=STRING (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
-	 *     format=STRING (ambiguity) '"required"' ':' '[' required+=STRING
-	 *     format=STRING (ambiguity) '"title"' ':' title=STRING
-	 *     format=STRING (ambiguity) '"type"' ':' type=STRING
-	 *     format=STRING (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
-	 *     format=STRING (ambiguity) '}' (rule end)
+	 *     format=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"default"' ':' default=PrimitiveValue
+	 *     format=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     format=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     format=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"format"' ':' format=AnyString
+	 *     format=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"items"' ':' items=AbstractSchema
+	 *     format=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"maximum"' ':' maximum=INT
+	 *     format=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"minimum"' ':' minimum=INT
+	 *     format=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"properties"' ':' '{' properties+=NamedSchema
+	 *     format=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"required"' ':' '[' required+=AnyString
+	 *     format=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     format=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '"type"' ':' type=AnyString
+	 *     format=AnyString (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
 	protected void emit_Schema_CommaKeyword_2_3_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -741,18 +1849,18 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     default=PrimitiveValue (ambiguity) '"default"' ':' default=PrimitiveValue
-	 *     default=PrimitiveValue (ambiguity) '"description"' ':' description=STRING
-	 *     default=PrimitiveValue (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
-	 *     default=PrimitiveValue (ambiguity) '"format"' ':' format=STRING
-	 *     default=PrimitiveValue (ambiguity) '"items"' ':' items=AbstractSchema
-	 *     default=PrimitiveValue (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     default=PrimitiveValue (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
-	 *     default=PrimitiveValue (ambiguity) '"required"' ':' '[' required+=STRING
-	 *     default=PrimitiveValue (ambiguity) '"title"' ':' title=STRING
-	 *     default=PrimitiveValue (ambiguity) '"type"' ':' type=STRING
-	 *     default=PrimitiveValue (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
-	 *     default=PrimitiveValue (ambiguity) '}' (rule end)
+	 *     minimum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"default"' ':' default=PrimitiveValue
+	 *     minimum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     minimum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     minimum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"format"' ':' format=AnyString
+	 *     minimum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"items"' ':' items=AbstractSchema
+	 *     minimum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"maximum"' ':' maximum=INT
+	 *     minimum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"minimum"' ':' minimum=INT
+	 *     minimum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"properties"' ':' '{' properties+=NamedSchema
+	 *     minimum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"required"' ':' '[' required+=AnyString
+	 *     minimum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     minimum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"type"' ':' type=AnyString
+	 *     minimum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
 	protected void emit_Schema_CommaKeyword_2_4_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -763,18 +1871,18 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     payload=AbstractSchema (ambiguity) '"default"' ':' default=PrimitiveValue
-	 *     payload=AbstractSchema (ambiguity) '"description"' ':' description=STRING
-	 *     payload=AbstractSchema (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
-	 *     payload=AbstractSchema (ambiguity) '"format"' ':' format=STRING
-	 *     payload=AbstractSchema (ambiguity) '"items"' ':' items=AbstractSchema
-	 *     payload=AbstractSchema (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     payload=AbstractSchema (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
-	 *     payload=AbstractSchema (ambiguity) '"required"' ':' '[' required+=STRING
-	 *     payload=AbstractSchema (ambiguity) '"title"' ':' title=STRING
-	 *     payload=AbstractSchema (ambiguity) '"type"' ':' type=STRING
-	 *     payload=AbstractSchema (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
-	 *     payload=AbstractSchema (ambiguity) '}' (rule end)
+	 *     maximum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"default"' ':' default=PrimitiveValue
+	 *     maximum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     maximum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     maximum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"format"' ':' format=AnyString
+	 *     maximum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"items"' ':' items=AbstractSchema
+	 *     maximum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"maximum"' ':' maximum=INT
+	 *     maximum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"minimum"' ':' minimum=INT
+	 *     maximum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"properties"' ':' '{' properties+=NamedSchema
+	 *     maximum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"required"' ':' '[' required+=AnyString
+	 *     maximum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     maximum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '"type"' ':' type=AnyString
+	 *     maximum=INT (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
 	protected void emit_Schema_CommaKeyword_2_5_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -785,20 +1893,20 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     properties+=NamedSchema '}' (ambiguity) '"default"' ':' default=PrimitiveValue
-	 *     properties+=NamedSchema '}' (ambiguity) '"description"' ':' description=STRING
-	 *     properties+=NamedSchema '}' (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
-	 *     properties+=NamedSchema '}' (ambiguity) '"format"' ':' format=STRING
-	 *     properties+=NamedSchema '}' (ambiguity) '"items"' ':' items=AbstractSchema
-	 *     properties+=NamedSchema '}' (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     properties+=NamedSchema '}' (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
-	 *     properties+=NamedSchema '}' (ambiguity) '"required"' ':' '[' required+=STRING
-	 *     properties+=NamedSchema '}' (ambiguity) '"title"' ':' title=STRING
-	 *     properties+=NamedSchema '}' (ambiguity) '"type"' ':' type=STRING
-	 *     properties+=NamedSchema '}' (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
-	 *     properties+=NamedSchema '}' (ambiguity) '}' (rule end)
+	 *     default=PrimitiveValue (ambiguity) (GenericJsonTupleButRef ','?)* '"default"' ':' default=PrimitiveValue
+	 *     default=PrimitiveValue (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     default=PrimitiveValue (ambiguity) (GenericJsonTupleButRef ','?)* '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     default=PrimitiveValue (ambiguity) (GenericJsonTupleButRef ','?)* '"format"' ':' format=AnyString
+	 *     default=PrimitiveValue (ambiguity) (GenericJsonTupleButRef ','?)* '"items"' ':' items=AbstractSchema
+	 *     default=PrimitiveValue (ambiguity) (GenericJsonTupleButRef ','?)* '"maximum"' ':' maximum=INT
+	 *     default=PrimitiveValue (ambiguity) (GenericJsonTupleButRef ','?)* '"minimum"' ':' minimum=INT
+	 *     default=PrimitiveValue (ambiguity) (GenericJsonTupleButRef ','?)* '"properties"' ':' '{' properties+=NamedSchema
+	 *     default=PrimitiveValue (ambiguity) (GenericJsonTupleButRef ','?)* '"required"' ':' '[' required+=AnyString
+	 *     default=PrimitiveValue (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     default=PrimitiveValue (ambiguity) (GenericJsonTupleButRef ','?)* '"type"' ':' type=AnyString
+	 *     default=PrimitiveValue (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
-	protected void emit_Schema_CommaKeyword_2_6_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Schema_CommaKeyword_2_6_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -807,18 +1915,18 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"default"' ':' default=PrimitiveValue
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"description"' ':' description=STRING
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"format"' ':' format=STRING
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"items"' ':' items=AbstractSchema
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"required"' ':' '[' required+=STRING
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"title"' ':' title=STRING
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"type"' ':' type=STRING
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
-	 *     enum+=PrimitiveValue ']' (ambiguity) '}' (rule end)
+	 *     properties+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"default"' ':' default=PrimitiveValue
+	 *     properties+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     properties+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     properties+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"format"' ':' format=AnyString
+	 *     properties+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"items"' ':' items=AbstractSchema
+	 *     properties+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"maximum"' ':' maximum=INT
+	 *     properties+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"minimum"' ':' minimum=INT
+	 *     properties+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"properties"' ':' '{' properties+=NamedSchema
+	 *     properties+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"required"' ':' '[' required+=AnyString
+	 *     properties+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     properties+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '"type"' ':' type=AnyString
+	 *     properties+=NamedSchema '}' (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
 	protected void emit_Schema_CommaKeyword_2_7_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -829,20 +1937,20 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     items=AbstractSchema (ambiguity) '"default"' ':' default=PrimitiveValue
-	 *     items=AbstractSchema (ambiguity) '"description"' ':' description=STRING
-	 *     items=AbstractSchema (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
-	 *     items=AbstractSchema (ambiguity) '"format"' ':' format=STRING
-	 *     items=AbstractSchema (ambiguity) '"items"' ':' items=AbstractSchema
-	 *     items=AbstractSchema (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     items=AbstractSchema (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
-	 *     items=AbstractSchema (ambiguity) '"required"' ':' '[' required+=STRING
-	 *     items=AbstractSchema (ambiguity) '"title"' ':' title=STRING
-	 *     items=AbstractSchema (ambiguity) '"type"' ':' type=STRING
-	 *     items=AbstractSchema (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
-	 *     items=AbstractSchema (ambiguity) '}' (rule end)
+	 *     enum+=PrimitiveValue ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"default"' ':' default=PrimitiveValue
+	 *     enum+=PrimitiveValue ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     enum+=PrimitiveValue ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     enum+=PrimitiveValue ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"format"' ':' format=AnyString
+	 *     enum+=PrimitiveValue ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"items"' ':' items=AbstractSchema
+	 *     enum+=PrimitiveValue ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"maximum"' ':' maximum=INT
+	 *     enum+=PrimitiveValue ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"minimum"' ':' minimum=INT
+	 *     enum+=PrimitiveValue ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"properties"' ':' '{' properties+=NamedSchema
+	 *     enum+=PrimitiveValue ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"required"' ':' '[' required+=AnyString
+	 *     enum+=PrimitiveValue ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     enum+=PrimitiveValue ']' (ambiguity) (GenericJsonTupleButRef ','?)* '"type"' ':' type=AnyString
+	 *     enum+=PrimitiveValue ']' (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
-	protected void emit_Schema_CommaKeyword_2_8_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Schema_CommaKeyword_2_8_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -851,20 +1959,174 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     required+=STRING ']' (ambiguity) '"default"' ':' default=PrimitiveValue
-	 *     required+=STRING ']' (ambiguity) '"description"' ':' description=STRING
-	 *     required+=STRING ']' (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
-	 *     required+=STRING ']' (ambiguity) '"format"' ':' format=STRING
-	 *     required+=STRING ']' (ambiguity) '"items"' ':' items=AbstractSchema
-	 *     required+=STRING ']' (ambiguity) '"payload"' ':' payload=AbstractSchema
-	 *     required+=STRING ']' (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
-	 *     required+=STRING ']' (ambiguity) '"required"' ':' '[' required+=STRING
-	 *     required+=STRING ']' (ambiguity) '"title"' ':' title=STRING
-	 *     required+=STRING ']' (ambiguity) '"type"' ':' type=STRING
-	 *     required+=STRING ']' (ambiguity) '"x-friendly-name"' ':' friendlyName=STRING
-	 *     required+=STRING ']' (ambiguity) '}' (rule end)
+	 *     items=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"default"' ':' default=PrimitiveValue
+	 *     items=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"description"' ':' description=AnyString
+	 *     items=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     items=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"format"' ':' format=AnyString
+	 *     items=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"items"' ':' items=AbstractSchema
+	 *     items=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"maximum"' ':' maximum=INT
+	 *     items=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"minimum"' ':' minimum=INT
+	 *     items=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"properties"' ':' '{' properties+=NamedSchema
+	 *     items=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"required"' ':' '[' required+=AnyString
+	 *     items=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"title"' ':' title=AnyString
+	 *     items=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '"type"' ':' type=AnyString
+	 *     items=AbstractSchema (ambiguity) (GenericJsonTupleButRef ','?)* '}' (rule end)
 	 */
-	protected void emit_Schema_CommaKeyword_2_9_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Schema_CommaKeyword_2_9_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (GenericJsonTupleButRef ','?)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) '{' (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     (rule start) '{' (ambiguity) '"description"' ':' description=AnyString
+	 *     (rule start) '{' (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     (rule start) '{' (ambiguity) '"format"' ':' format=AnyString
+	 *     (rule start) '{' (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     (rule start) '{' (ambiguity) '"maximum"' ':' maximum=INT
+	 *     (rule start) '{' (ambiguity) '"minimum"' ':' minimum=INT
+	 *     (rule start) '{' (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     (rule start) '{' (ambiguity) '"required"' ':' '[' required+=AnyString
+	 *     (rule start) '{' (ambiguity) '"title"' ':' title=AnyString
+	 *     (rule start) '{' (ambiguity) '"type"' ':' type=AnyString
+	 *     (rule start) '{' (ambiguity) '}' (rule start)
+	 *     default=PrimitiveValue ','? (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     default=PrimitiveValue ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     default=PrimitiveValue ','? (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     default=PrimitiveValue ','? (ambiguity) '"format"' ':' format=AnyString
+	 *     default=PrimitiveValue ','? (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     default=PrimitiveValue ','? (ambiguity) '"maximum"' ':' maximum=INT
+	 *     default=PrimitiveValue ','? (ambiguity) '"minimum"' ':' minimum=INT
+	 *     default=PrimitiveValue ','? (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     default=PrimitiveValue ','? (ambiguity) '"required"' ':' '[' required+=AnyString
+	 *     default=PrimitiveValue ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     default=PrimitiveValue ','? (ambiguity) '"type"' ':' type=AnyString
+	 *     default=PrimitiveValue ','? (ambiguity) '}' (rule end)
+	 *     description=AnyString ','? (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     description=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     description=AnyString ','? (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     description=AnyString ','? (ambiguity) '"format"' ':' format=AnyString
+	 *     description=AnyString ','? (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     description=AnyString ','? (ambiguity) '"maximum"' ':' maximum=INT
+	 *     description=AnyString ','? (ambiguity) '"minimum"' ':' minimum=INT
+	 *     description=AnyString ','? (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     description=AnyString ','? (ambiguity) '"required"' ':' '[' required+=AnyString
+	 *     description=AnyString ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     description=AnyString ','? (ambiguity) '"type"' ':' type=AnyString
+	 *     description=AnyString ','? (ambiguity) '}' (rule end)
+	 *     enum+=PrimitiveValue ']' ','? (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     enum+=PrimitiveValue ']' ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     enum+=PrimitiveValue ']' ','? (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     enum+=PrimitiveValue ']' ','? (ambiguity) '"format"' ':' format=AnyString
+	 *     enum+=PrimitiveValue ']' ','? (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     enum+=PrimitiveValue ']' ','? (ambiguity) '"maximum"' ':' maximum=INT
+	 *     enum+=PrimitiveValue ']' ','? (ambiguity) '"minimum"' ':' minimum=INT
+	 *     enum+=PrimitiveValue ']' ','? (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     enum+=PrimitiveValue ']' ','? (ambiguity) '"required"' ':' '[' required+=AnyString
+	 *     enum+=PrimitiveValue ']' ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     enum+=PrimitiveValue ']' ','? (ambiguity) '"type"' ':' type=AnyString
+	 *     enum+=PrimitiveValue ']' ','? (ambiguity) '}' (rule end)
+	 *     format=AnyString ','? (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     format=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     format=AnyString ','? (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     format=AnyString ','? (ambiguity) '"format"' ':' format=AnyString
+	 *     format=AnyString ','? (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     format=AnyString ','? (ambiguity) '"maximum"' ':' maximum=INT
+	 *     format=AnyString ','? (ambiguity) '"minimum"' ':' minimum=INT
+	 *     format=AnyString ','? (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     format=AnyString ','? (ambiguity) '"required"' ':' '[' required+=AnyString
+	 *     format=AnyString ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     format=AnyString ','? (ambiguity) '"type"' ':' type=AnyString
+	 *     format=AnyString ','? (ambiguity) '}' (rule end)
+	 *     items=AbstractSchema ','? (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     items=AbstractSchema ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     items=AbstractSchema ','? (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     items=AbstractSchema ','? (ambiguity) '"format"' ':' format=AnyString
+	 *     items=AbstractSchema ','? (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     items=AbstractSchema ','? (ambiguity) '"maximum"' ':' maximum=INT
+	 *     items=AbstractSchema ','? (ambiguity) '"minimum"' ':' minimum=INT
+	 *     items=AbstractSchema ','? (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     items=AbstractSchema ','? (ambiguity) '"required"' ':' '[' required+=AnyString
+	 *     items=AbstractSchema ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     items=AbstractSchema ','? (ambiguity) '"type"' ':' type=AnyString
+	 *     items=AbstractSchema ','? (ambiguity) '}' (rule end)
+	 *     maximum=INT ','? (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     maximum=INT ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     maximum=INT ','? (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     maximum=INT ','? (ambiguity) '"format"' ':' format=AnyString
+	 *     maximum=INT ','? (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     maximum=INT ','? (ambiguity) '"maximum"' ':' maximum=INT
+	 *     maximum=INT ','? (ambiguity) '"minimum"' ':' minimum=INT
+	 *     maximum=INT ','? (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     maximum=INT ','? (ambiguity) '"required"' ':' '[' required+=AnyString
+	 *     maximum=INT ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     maximum=INT ','? (ambiguity) '"type"' ':' type=AnyString
+	 *     maximum=INT ','? (ambiguity) '}' (rule end)
+	 *     minimum=INT ','? (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     minimum=INT ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     minimum=INT ','? (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     minimum=INT ','? (ambiguity) '"format"' ':' format=AnyString
+	 *     minimum=INT ','? (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     minimum=INT ','? (ambiguity) '"maximum"' ':' maximum=INT
+	 *     minimum=INT ','? (ambiguity) '"minimum"' ':' minimum=INT
+	 *     minimum=INT ','? (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     minimum=INT ','? (ambiguity) '"required"' ':' '[' required+=AnyString
+	 *     minimum=INT ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     minimum=INT ','? (ambiguity) '"type"' ':' type=AnyString
+	 *     minimum=INT ','? (ambiguity) '}' (rule end)
+	 *     properties+=NamedSchema '}' ','? (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     properties+=NamedSchema '}' ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     properties+=NamedSchema '}' ','? (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     properties+=NamedSchema '}' ','? (ambiguity) '"format"' ':' format=AnyString
+	 *     properties+=NamedSchema '}' ','? (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     properties+=NamedSchema '}' ','? (ambiguity) '"maximum"' ':' maximum=INT
+	 *     properties+=NamedSchema '}' ','? (ambiguity) '"minimum"' ':' minimum=INT
+	 *     properties+=NamedSchema '}' ','? (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     properties+=NamedSchema '}' ','? (ambiguity) '"required"' ':' '[' required+=AnyString
+	 *     properties+=NamedSchema '}' ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     properties+=NamedSchema '}' ','? (ambiguity) '"type"' ':' type=AnyString
+	 *     properties+=NamedSchema '}' ','? (ambiguity) '}' (rule end)
+	 *     required+=AnyString ']' ','? (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     required+=AnyString ']' ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     required+=AnyString ']' ','? (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     required+=AnyString ']' ','? (ambiguity) '"format"' ':' format=AnyString
+	 *     required+=AnyString ']' ','? (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     required+=AnyString ']' ','? (ambiguity) '"maximum"' ':' maximum=INT
+	 *     required+=AnyString ']' ','? (ambiguity) '"minimum"' ':' minimum=INT
+	 *     required+=AnyString ']' ','? (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     required+=AnyString ']' ','? (ambiguity) '"required"' ':' '[' required+=AnyString
+	 *     required+=AnyString ']' ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     required+=AnyString ']' ','? (ambiguity) '"type"' ':' type=AnyString
+	 *     required+=AnyString ']' ','? (ambiguity) '}' (rule end)
+	 *     title=AnyString ','? (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     title=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     title=AnyString ','? (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     title=AnyString ','? (ambiguity) '"format"' ':' format=AnyString
+	 *     title=AnyString ','? (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     title=AnyString ','? (ambiguity) '"maximum"' ':' maximum=INT
+	 *     title=AnyString ','? (ambiguity) '"minimum"' ':' minimum=INT
+	 *     title=AnyString ','? (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     title=AnyString ','? (ambiguity) '"required"' ':' '[' required+=AnyString
+	 *     title=AnyString ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     title=AnyString ','? (ambiguity) '"type"' ':' type=AnyString
+	 *     title=AnyString ','? (ambiguity) '}' (rule end)
+	 *     type=AnyString ','? (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     type=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     type=AnyString ','? (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     type=AnyString ','? (ambiguity) '"format"' ':' format=AnyString
+	 *     type=AnyString ','? (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     type=AnyString ','? (ambiguity) '"maximum"' ':' maximum=INT
+	 *     type=AnyString ','? (ambiguity) '"minimum"' ':' minimum=INT
+	 *     type=AnyString ','? (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     type=AnyString ','? (ambiguity) '"required"' ':' '[' required+=AnyString
+	 *     type=AnyString ','? (ambiguity) '"title"' ':' title=AnyString
+	 *     type=AnyString ','? (ambiguity) '"type"' ':' type=AnyString
+	 *     type=AnyString ','? (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Schema___GenericJsonTupleButRefParserRuleCall_2_11_0_CommaKeyword_2_11_1_q__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -873,13 +2135,13 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     url=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     url=STRING (ambiguity) '"scheme"' ':' scheme=Scheme
-	 *     url=STRING (ambiguity) '"url"' ':' url=STRING
-	 *     url=STRING (ambiguity) '"variables"' ':' '{' variables+=Variable
-	 *     url=STRING (ambiguity) '}' (rule end)
+	 *     url=AnyString (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     url=AnyString (ambiguity) (GenericJsonTuple ','?)* '"protocol"' ':' protocol=Protocol
+	 *     url=AnyString (ambiguity) (GenericJsonTuple ','?)* '"url"' ':' url=AnyString
+	 *     url=AnyString (ambiguity) (GenericJsonTuple ','?)* '"variables"' ':' '{' variables+=Variable
+	 *     url=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
-	protected void emit_Server_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Server_CommaKeyword_4_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -888,13 +2150,13 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     scheme=Scheme (ambiguity) '"description"' ':' description=STRING
-	 *     scheme=Scheme (ambiguity) '"scheme"' ':' scheme=Scheme
-	 *     scheme=Scheme (ambiguity) '"url"' ':' url=STRING
-	 *     scheme=Scheme (ambiguity) '"variables"' ':' '{' variables+=Variable
-	 *     scheme=Scheme (ambiguity) '}' (rule end)
+	 *     protocol=Protocol (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     protocol=Protocol (ambiguity) (GenericJsonTuple ','?)* '"protocol"' ':' protocol=Protocol
+	 *     protocol=Protocol (ambiguity) (GenericJsonTuple ','?)* '"url"' ':' url=AnyString
+	 *     protocol=Protocol (ambiguity) (GenericJsonTuple ','?)* '"variables"' ':' '{' variables+=Variable
+	 *     protocol=Protocol (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
-	protected void emit_Server_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Server_CommaKeyword_4_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -903,13 +2165,48 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     variables+=Variable '}' (ambiguity) '"description"' ':' description=STRING
-	 *     variables+=Variable '}' (ambiguity) '"scheme"' ':' scheme=Scheme
-	 *     variables+=Variable '}' (ambiguity) '"url"' ':' url=STRING
-	 *     variables+=Variable '}' (ambiguity) '"variables"' ':' '{' variables+=Variable
-	 *     variables+=Variable '}' (ambiguity) '}' (rule end)
+	 *     variables+=Variable '}' (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     variables+=Variable '}' (ambiguity) (GenericJsonTuple ','?)* '"protocol"' ':' protocol=Protocol
+	 *     variables+=Variable '}' (ambiguity) (GenericJsonTuple ','?)* '"url"' ':' url=AnyString
+	 *     variables+=Variable '}' (ambiguity) (GenericJsonTuple ','?)* '"variables"' ':' '{' variables+=Variable
+	 *     variables+=Variable '}' (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
-	protected void emit_Server_CommaKeyword_2_3_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Server_CommaKeyword_4_3_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (GenericJsonTuple ','?)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     description=AnyString ',' (ambiguity) '"description"' ':' description=AnyString
+	 *     description=AnyString ',' (ambiguity) '"protocol"' ':' protocol=Protocol
+	 *     description=AnyString ',' (ambiguity) '"url"' ':' url=AnyString
+	 *     description=AnyString ',' (ambiguity) '"variables"' ':' '{' variables+=Variable
+	 *     description=AnyString ',' (ambiguity) '}' (rule end)
+	 *     name=AnyString ':' '{' (ambiguity) '"description"' ':' description=AnyString
+	 *     name=AnyString ':' '{' (ambiguity) '"protocol"' ':' protocol=Protocol
+	 *     name=AnyString ':' '{' (ambiguity) '"url"' ':' url=AnyString
+	 *     name=AnyString ':' '{' (ambiguity) '"variables"' ':' '{' variables+=Variable
+	 *     name=AnyString ':' '{' (ambiguity) '}' (rule end)
+	 *     protocol=Protocol ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     protocol=Protocol ','? (ambiguity) '"protocol"' ':' protocol=Protocol
+	 *     protocol=Protocol ','? (ambiguity) '"url"' ':' url=AnyString
+	 *     protocol=Protocol ','? (ambiguity) '"variables"' ':' '{' variables+=Variable
+	 *     protocol=Protocol ','? (ambiguity) '}' (rule end)
+	 *     url=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     url=AnyString ','? (ambiguity) '"protocol"' ':' protocol=Protocol
+	 *     url=AnyString ','? (ambiguity) '"url"' ':' url=AnyString
+	 *     url=AnyString ','? (ambiguity) '"variables"' ':' '{' variables+=Variable
+	 *     url=AnyString ','? (ambiguity) '}' (rule end)
+	 *     variables+=Variable '}' ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     variables+=Variable '}' ','? (ambiguity) '"protocol"' ':' protocol=Protocol
+	 *     variables+=Variable '}' ','? (ambiguity) '"url"' ':' url=AnyString
+	 *     variables+=Variable '}' ','? (ambiguity) '"variables"' ':' '{' variables+=Variable
+	 *     variables+=Variable '}' ','? (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Server___GenericJsonTupleParserRuleCall_4_4_0_CommaKeyword_4_4_1_q__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -918,9 +2215,9 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     name=STRING (ambiguity) '"name"' ':' name=STRING
-	 *     name=STRING (ambiguity) '}' (rule end)
+	 *     name=AnyString (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     name=AnyString (ambiguity) (GenericJsonTuple ','?)* '"name"' ':' name=AnyString
+	 *     name=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_Tag_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -931,9 +2228,9 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     description=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     description=STRING (ambiguity) '"name"' ':' name=STRING
-	 *     description=STRING (ambiguity) '}' (rule end)
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"name"' ':' name=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_Tag_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -941,14 +2238,20 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ','?
+	 *     (GenericJsonTuple ','?)*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     publish=AbstractMessage (ambiguity) '"publish"' ':' publish=AbstractMessage
-	 *     publish=AbstractMessage (ambiguity) '"subscribe"' ':' subscribe=AbstractMessage
-	 *     publish=AbstractMessage (ambiguity) '}' (rule end)
+	 *     (rule start) '{' (ambiguity) '"description"' ':' description=AnyString
+	 *     (rule start) '{' (ambiguity) '"name"' ':' name=AnyString
+	 *     (rule start) '{' (ambiguity) '}' (rule start)
+	 *     description=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     description=AnyString ','? (ambiguity) '"name"' ':' name=AnyString
+	 *     description=AnyString ','? (ambiguity) '}' (rule end)
+	 *     name=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     name=AnyString ','? (ambiguity) '"name"' ':' name=AnyString
+	 *     name=AnyString ','? (ambiguity) '}' (rule end)
 	 */
-	protected void emit_Topic_CommaKeyword_4_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Tag___GenericJsonTupleParserRuleCall_2_2_0_CommaKeyword_2_2_1_q__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -957,23 +2260,10 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     subscribe=AbstractMessage (ambiguity) '"publish"' ':' publish=AbstractMessage
-	 *     subscribe=AbstractMessage (ambiguity) '"subscribe"' ':' subscribe=AbstractMessage
-	 *     subscribe=AbstractMessage (ambiguity) '}' (rule end)
-	 */
-	protected void emit_Topic_CommaKeyword_4_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ','?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     description=STRING (ambiguity) '"default"' ':' default=STRING
-	 *     description=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     description=STRING (ambiguity) '"enum"' ':' '[' enum+=STRING
-	 *     description=STRING (ambiguity) '}' (rule end)
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"default"' ':' default=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '"enum"' ':' '[' enum+=AnyString
+	 *     description=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_Variable_CommaKeyword_4_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -984,10 +2274,10 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     default=STRING (ambiguity) '"default"' ':' default=STRING
-	 *     default=STRING (ambiguity) '"description"' ':' description=STRING
-	 *     default=STRING (ambiguity) '"enum"' ':' '[' enum+=STRING
-	 *     default=STRING (ambiguity) '}' (rule end)
+	 *     default=AnyString (ambiguity) (GenericJsonTuple ','?)* '"default"' ':' default=AnyString
+	 *     default=AnyString (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     default=AnyString (ambiguity) (GenericJsonTuple ','?)* '"enum"' ':' '[' enum+=AnyString
+	 *     default=AnyString (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_Variable_CommaKeyword_4_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -998,12 +2288,38 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     enum+=STRING ']' (ambiguity) '"default"' ':' default=STRING
-	 *     enum+=STRING ']' (ambiguity) '"description"' ':' description=STRING
-	 *     enum+=STRING ']' (ambiguity) '"enum"' ':' '[' enum+=STRING
-	 *     enum+=STRING ']' (ambiguity) '}' (rule end)
+	 *     enum+=AnyString ']' (ambiguity) (GenericJsonTuple ','?)* '"default"' ':' default=AnyString
+	 *     enum+=AnyString ']' (ambiguity) (GenericJsonTuple ','?)* '"description"' ':' description=AnyString
+	 *     enum+=AnyString ']' (ambiguity) (GenericJsonTuple ','?)* '"enum"' ':' '[' enum+=AnyString
+	 *     enum+=AnyString ']' (ambiguity) (GenericJsonTuple ','?)* '}' (rule end)
 	 */
 	protected void emit_Variable_CommaKeyword_4_2_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (GenericJsonTuple ','?)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     default=AnyString ','? (ambiguity) '"default"' ':' default=AnyString
+	 *     default=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     default=AnyString ','? (ambiguity) '"enum"' ':' '[' enum+=AnyString
+	 *     default=AnyString ','? (ambiguity) '}' (rule end)
+	 *     description=AnyString ','? (ambiguity) '"default"' ':' default=AnyString
+	 *     description=AnyString ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     description=AnyString ','? (ambiguity) '"enum"' ':' '[' enum+=AnyString
+	 *     description=AnyString ','? (ambiguity) '}' (rule end)
+	 *     enum+=AnyString ']' ','? (ambiguity) '"default"' ':' default=AnyString
+	 *     enum+=AnyString ']' ','? (ambiguity) '"description"' ':' description=AnyString
+	 *     enum+=AnyString ']' ','? (ambiguity) '"enum"' ':' '[' enum+=AnyString
+	 *     enum+=AnyString ']' ','? (ambiguity) '}' (rule end)
+	 *     name=AnyString ':' '{' (ambiguity) '"default"' ':' default=AnyString
+	 *     name=AnyString ':' '{' (ambiguity) '"description"' ':' description=AnyString
+	 *     name=AnyString ':' '{' (ambiguity) '"enum"' ':' '[' enum+=AnyString
+	 *     name=AnyString ':' '{' (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Variable___GenericJsonTupleParserRuleCall_4_3_0_CommaKeyword_4_3_1_q__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

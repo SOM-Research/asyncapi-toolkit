@@ -21,67 +21,25 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum VersionNumber implements Enumerator
 {
   /**
-   * The '<em><b>100</b></em>' literal object.
+   * The '<em><b>200</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #_100_VALUE
+   * @see #_200_VALUE
    * @generated
    * @ordered
    */
-  _100(0, "_100", "\"1.0.0\""),
+  _200(0, "_200", "\"2.0.0\"");
 
   /**
-   * The '<em><b>110</b></em>' literal object.
+   * The '<em><b>200</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #_110_VALUE
+   * @see #_200
+   * @model literal="\"2.0.0\""
    * @generated
    * @ordered
    */
-  _110(1, "_110", "\"1.1.0\""),
-
-  /**
-   * The '<em><b>120</b></em>' literal object.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #_120_VALUE
-   * @generated
-   * @ordered
-   */
-  _120(2, "_120", "\"1.2.0\"");
-
-  /**
-   * The '<em><b>100</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #_100
-   * @model literal="\"1.0.0\""
-   * @generated
-   * @ordered
-   */
-  public static final int _100_VALUE = 0;
-
-  /**
-   * The '<em><b>110</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #_110
-   * @model literal="\"1.1.0\""
-   * @generated
-   * @ordered
-   */
-  public static final int _110_VALUE = 1;
-
-  /**
-   * The '<em><b>120</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #_120
-   * @model literal="\"1.2.0\""
-   * @generated
-   * @ordered
-   */
-  public static final int _120_VALUE = 2;
+  public static final int _200_VALUE = 0;
 
   /**
    * An array of all the '<em><b>Version Number</b></em>' enumerators.
@@ -92,9 +50,7 @@ public enum VersionNumber implements Enumerator
   private static final VersionNumber[] VALUES_ARRAY =
     new VersionNumber[]
     {
-      _100,
-      _110,
-      _120,
+      _200,
     };
 
   /**
@@ -159,9 +115,7 @@ public enum VersionNumber implements Enumerator
   {
     switch (value)
     {
-      case _100_VALUE: return _100;
-      case _110_VALUE: return _110;
-      case _120_VALUE: return _120;
+      case _200_VALUE: return _200;
     }
     return null;
   }

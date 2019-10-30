@@ -14,12 +14,15 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Message#getName <em>Name</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Message#getTitle <em>Title</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Message#getSummary <em>Summary</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Message#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Message#getDeprecated <em>Deprecated</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Message#getHeaders <em>Headers</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Message#getTags <em>Tags</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Message#getPayload <em>Payload</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Message#getTraits <em>Traits</em>}</li>
  * </ul>
  *
  * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessage()
@@ -28,6 +31,50 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Message extends AbstractMessage
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessage_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Title</em>' attribute.
+   * @see #setTitle(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessage_Title()
+   * @model
+   * @generated
+   */
+  String getTitle();
+
+  /**
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getTitle <em>Title</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Title</em>' attribute.
+   * @see #getTitle()
+   * @generated
+   */
+  void setTitle(String value);
+
   /**
    * Returns the value of the '<em><b>Summary</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -152,5 +199,17 @@ public interface Message extends AbstractMessage
    * @generated
    */
   void setPayload(AbstractSchema value);
+
+  /**
+   * Returns the value of the '<em><b>Traits</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.AbstractMessageTrait}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Traits</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessage_Traits()
+   * @model containment="true"
+   * @generated
+   */
+  EList<AbstractMessageTrait> getTraits();
 
 } // Message

@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ReferenceImpl#getRefname <em>Refname</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ReferenceImpl#getUri <em>Uri</em>}</li>
  * </ul>
  *
@@ -28,26 +27,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ReferenceImpl extends AbstractMessageImpl implements Reference
 {
-  /**
-   * The default value of the '{@link #getRefname() <em>Refname</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRefname()
-   * @generated
-   * @ordered
-   */
-  protected static final String REFNAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getRefname() <em>Refname</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRefname()
-   * @generated
-   * @ordered
-   */
-  protected String refname = REFNAME_EDEFAULT;
-
   /**
    * The default value of the '{@link #getUri() <em>Uri</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -95,31 +74,6 @@ public class ReferenceImpl extends AbstractMessageImpl implements Reference
    * @generated
    */
   @Override
-  public String getRefname()
-  {
-    return refname;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setRefname(String newRefname)
-  {
-    String oldRefname = refname;
-    refname = newRefname;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.REFERENCE__REFNAME, oldRefname, refname));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getUri()
   {
     return uri;
@@ -149,8 +103,6 @@ public class ReferenceImpl extends AbstractMessageImpl implements Reference
   {
     switch (featureID)
     {
-      case AsyncApiPackage.REFERENCE__REFNAME:
-        return getRefname();
       case AsyncApiPackage.REFERENCE__URI:
         return getUri();
     }
@@ -167,9 +119,6 @@ public class ReferenceImpl extends AbstractMessageImpl implements Reference
   {
     switch (featureID)
     {
-      case AsyncApiPackage.REFERENCE__REFNAME:
-        setRefname((String)newValue);
-        return;
       case AsyncApiPackage.REFERENCE__URI:
         setUri((String)newValue);
         return;
@@ -187,9 +136,6 @@ public class ReferenceImpl extends AbstractMessageImpl implements Reference
   {
     switch (featureID)
     {
-      case AsyncApiPackage.REFERENCE__REFNAME:
-        setRefname(REFNAME_EDEFAULT);
-        return;
       case AsyncApiPackage.REFERENCE__URI:
         setUri(URI_EDEFAULT);
         return;
@@ -207,8 +153,6 @@ public class ReferenceImpl extends AbstractMessageImpl implements Reference
   {
     switch (featureID)
     {
-      case AsyncApiPackage.REFERENCE__REFNAME:
-        return REFNAME_EDEFAULT == null ? refname != null : !REFNAME_EDEFAULT.equals(refname);
       case AsyncApiPackage.REFERENCE__URI:
         return URI_EDEFAULT == null ? uri != null : !URI_EDEFAULT.equals(uri);
     }
@@ -226,9 +170,7 @@ public class ReferenceImpl extends AbstractMessageImpl implements Reference
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (refname: ");
-    result.append(refname);
-    result.append(", uri: ");
+    result.append(" (uri: ");
     result.append(uri);
     result.append(')');
     return result.toString();

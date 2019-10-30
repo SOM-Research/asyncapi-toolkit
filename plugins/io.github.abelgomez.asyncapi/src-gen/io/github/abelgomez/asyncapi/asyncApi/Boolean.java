@@ -21,16 +21,6 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum Boolean implements Enumerator
 {
   /**
-   * The '<em><b>true</b></em>' literal object.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #_TRUE_VALUE
-   * @generated
-   * @ordered
-   */
-  _TRUE(0, "_true", "true"),
-
-  /**
    * The '<em><b>false</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -38,18 +28,17 @@ public enum Boolean implements Enumerator
    * @generated
    * @ordered
    */
-  _FALSE(1, "_false", "false");
+  _FALSE(0, "_false", "false"),
 
   /**
-   * The '<em><b>true</b></em>' literal value.
+   * The '<em><b>true</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #_TRUE
-   * @model name="_true" literal="true"
+   * @see #_TRUE_VALUE
    * @generated
    * @ordered
    */
-  public static final int _TRUE_VALUE = 0;
+  _TRUE(1, "_true", "true");
 
   /**
    * The '<em><b>false</b></em>' literal value.
@@ -60,7 +49,18 @@ public enum Boolean implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int _FALSE_VALUE = 1;
+  public static final int _FALSE_VALUE = 0;
+
+  /**
+   * The '<em><b>true</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #_TRUE
+   * @model name="_true" literal="true"
+   * @generated
+   * @ordered
+   */
+  public static final int _TRUE_VALUE = 1;
 
   /**
    * An array of all the '<em><b>Boolean</b></em>' enumerators.
@@ -71,8 +71,8 @@ public enum Boolean implements Enumerator
   private static final Boolean[] VALUES_ARRAY =
     new Boolean[]
     {
-      _TRUE,
       _FALSE,
+      _TRUE,
     };
 
   /**
@@ -137,8 +137,8 @@ public enum Boolean implements Enumerator
   {
     switch (value)
     {
-      case _TRUE_VALUE: return _TRUE;
       case _FALSE_VALUE: return _FALSE;
+      case _TRUE_VALUE: return _TRUE;
     }
     return null;
   }

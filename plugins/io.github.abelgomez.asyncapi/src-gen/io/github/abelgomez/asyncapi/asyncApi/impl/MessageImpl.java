@@ -3,6 +3,7 @@
  */
 package io.github.abelgomez.asyncapi.asyncApi.impl;
 
+import io.github.abelgomez.asyncapi.asyncApi.AbstractMessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
 import io.github.abelgomez.asyncapi.asyncApi.Message;
@@ -31,18 +32,61 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl#getName <em>Name</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl#getSummary <em>Summary</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl#getDeprecated <em>Deprecated</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl#getHeaders <em>Headers</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl#getTags <em>Tags</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl#getPayload <em>Payload</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl#getTraits <em>Traits</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MessageImpl extends AbstractMessageImpl implements Message
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTitle()
+   * @generated
+   * @ordered
+   */
+  protected static final String TITLE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTitle()
+   * @generated
+   * @ordered
+   */
+  protected String title = TITLE_EDEFAULT;
+
   /**
    * The default value of the '{@link #getSummary() <em>Summary</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -91,7 +135,7 @@ public class MessageImpl extends AbstractMessageImpl implements Message
    * @generated
    * @ordered
    */
-  protected static final io.github.abelgomez.asyncapi.asyncApi.Boolean DEPRECATED_EDEFAULT = io.github.abelgomez.asyncapi.asyncApi.Boolean._TRUE;
+  protected static final io.github.abelgomez.asyncapi.asyncApi.Boolean DEPRECATED_EDEFAULT = io.github.abelgomez.asyncapi.asyncApi.Boolean._FALSE;
 
   /**
    * The cached value of the '{@link #getDeprecated() <em>Deprecated</em>}' attribute.
@@ -134,6 +178,16 @@ public class MessageImpl extends AbstractMessageImpl implements Message
   protected AbstractSchema payload;
 
   /**
+   * The cached value of the '{@link #getTraits() <em>Traits</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTraits()
+   * @generated
+   * @ordered
+   */
+  protected EList<AbstractMessageTrait> traits;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -152,6 +206,56 @@ public class MessageImpl extends AbstractMessageImpl implements Message
   protected EClass eStaticClass()
   {
     return AsyncApiPackage.Literals.MESSAGE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getTitle()
+  {
+    return title;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setTitle(String newTitle)
+  {
+    String oldTitle = title;
+    title = newTitle;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.MESSAGE__TITLE, oldTitle, title));
   }
 
   /**
@@ -350,6 +454,21 @@ public class MessageImpl extends AbstractMessageImpl implements Message
    * @generated
    */
   @Override
+  public EList<AbstractMessageTrait> getTraits()
+  {
+    if (traits == null)
+    {
+      traits = new EObjectContainmentEList<AbstractMessageTrait>(AbstractMessageTrait.class, this, AsyncApiPackage.MESSAGE__TRAITS);
+    }
+    return traits;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -360,6 +479,8 @@ public class MessageImpl extends AbstractMessageImpl implements Message
         return ((InternalEList<?>)getTags()).basicRemove(otherEnd, msgs);
       case AsyncApiPackage.MESSAGE__PAYLOAD:
         return basicSetPayload(null, msgs);
+      case AsyncApiPackage.MESSAGE__TRAITS:
+        return ((InternalEList<?>)getTraits()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -374,6 +495,10 @@ public class MessageImpl extends AbstractMessageImpl implements Message
   {
     switch (featureID)
     {
+      case AsyncApiPackage.MESSAGE__NAME:
+        return getName();
+      case AsyncApiPackage.MESSAGE__TITLE:
+        return getTitle();
       case AsyncApiPackage.MESSAGE__SUMMARY:
         return getSummary();
       case AsyncApiPackage.MESSAGE__DESCRIPTION:
@@ -386,6 +511,8 @@ public class MessageImpl extends AbstractMessageImpl implements Message
         return getTags();
       case AsyncApiPackage.MESSAGE__PAYLOAD:
         return getPayload();
+      case AsyncApiPackage.MESSAGE__TRAITS:
+        return getTraits();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -401,6 +528,12 @@ public class MessageImpl extends AbstractMessageImpl implements Message
   {
     switch (featureID)
     {
+      case AsyncApiPackage.MESSAGE__NAME:
+        setName((String)newValue);
+        return;
+      case AsyncApiPackage.MESSAGE__TITLE:
+        setTitle((String)newValue);
+        return;
       case AsyncApiPackage.MESSAGE__SUMMARY:
         setSummary((String)newValue);
         return;
@@ -420,6 +553,10 @@ public class MessageImpl extends AbstractMessageImpl implements Message
       case AsyncApiPackage.MESSAGE__PAYLOAD:
         setPayload((AbstractSchema)newValue);
         return;
+      case AsyncApiPackage.MESSAGE__TRAITS:
+        getTraits().clear();
+        getTraits().addAll((Collection<? extends AbstractMessageTrait>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -434,6 +571,12 @@ public class MessageImpl extends AbstractMessageImpl implements Message
   {
     switch (featureID)
     {
+      case AsyncApiPackage.MESSAGE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case AsyncApiPackage.MESSAGE__TITLE:
+        setTitle(TITLE_EDEFAULT);
+        return;
       case AsyncApiPackage.MESSAGE__SUMMARY:
         setSummary(SUMMARY_EDEFAULT);
         return;
@@ -452,6 +595,9 @@ public class MessageImpl extends AbstractMessageImpl implements Message
       case AsyncApiPackage.MESSAGE__PAYLOAD:
         setPayload((AbstractSchema)null);
         return;
+      case AsyncApiPackage.MESSAGE__TRAITS:
+        getTraits().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -466,6 +612,10 @@ public class MessageImpl extends AbstractMessageImpl implements Message
   {
     switch (featureID)
     {
+      case AsyncApiPackage.MESSAGE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AsyncApiPackage.MESSAGE__TITLE:
+        return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
       case AsyncApiPackage.MESSAGE__SUMMARY:
         return SUMMARY_EDEFAULT == null ? summary != null : !SUMMARY_EDEFAULT.equals(summary);
       case AsyncApiPackage.MESSAGE__DESCRIPTION:
@@ -478,6 +628,8 @@ public class MessageImpl extends AbstractMessageImpl implements Message
         return tags != null && !tags.isEmpty();
       case AsyncApiPackage.MESSAGE__PAYLOAD:
         return payload != null;
+      case AsyncApiPackage.MESSAGE__TRAITS:
+        return traits != null && !traits.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -493,7 +645,11 @@ public class MessageImpl extends AbstractMessageImpl implements Message
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (summary: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", title: ");
+    result.append(title);
+    result.append(", summary: ");
     result.append(summary);
     result.append(", description: ");
     result.append(description);

@@ -4,7 +4,7 @@
 package io.github.abelgomez.asyncapi.asyncApi.impl;
 
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
-import io.github.abelgomez.asyncapi.asyncApi.Scheme;
+import io.github.abelgomez.asyncapi.asyncApi.Protocol;
 import io.github.abelgomez.asyncapi.asyncApi.Server;
 import io.github.abelgomez.asyncapi.asyncApi.Variable;
 
@@ -32,8 +32,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl#getName <em>Name</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl#getUrl <em>Url</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl#getScheme <em>Scheme</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl#getVariables <em>Variables</em>}</li>
  * </ul>
@@ -42,6 +43,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ServerImpl extends MinimalEObjectImpl.Container implements Server
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -63,24 +84,24 @@ public class ServerImpl extends MinimalEObjectImpl.Container implements Server
   protected String url = URL_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getScheme() <em>Scheme</em>}' attribute.
+   * The default value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getScheme()
+   * @see #getProtocol()
    * @generated
    * @ordered
    */
-  protected static final Scheme SCHEME_EDEFAULT = Scheme.AMQP;
+  protected static final Protocol PROTOCOL_EDEFAULT = Protocol.AMQP;
 
   /**
-   * The cached value of the '{@link #getScheme() <em>Scheme</em>}' attribute.
+   * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getScheme()
+   * @see #getProtocol()
    * @generated
    * @ordered
    */
-  protected Scheme scheme = SCHEME_EDEFAULT;
+  protected Protocol protocol = PROTOCOL_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -139,6 +160,31 @@ public class ServerImpl extends MinimalEObjectImpl.Container implements Server
    * @generated
    */
   @Override
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getUrl()
   {
     return url;
@@ -164,9 +210,9 @@ public class ServerImpl extends MinimalEObjectImpl.Container implements Server
    * @generated
    */
   @Override
-  public Scheme getScheme()
+  public Protocol getProtocol()
   {
-    return scheme;
+    return protocol;
   }
 
   /**
@@ -175,12 +221,12 @@ public class ServerImpl extends MinimalEObjectImpl.Container implements Server
    * @generated
    */
   @Override
-  public void setScheme(Scheme newScheme)
+  public void setProtocol(Protocol newProtocol)
   {
-    Scheme oldScheme = scheme;
-    scheme = newScheme == null ? SCHEME_EDEFAULT : newScheme;
+    Protocol oldProtocol = protocol;
+    protocol = newProtocol == null ? PROTOCOL_EDEFAULT : newProtocol;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__SCHEME, oldScheme, scheme));
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__PROTOCOL, oldProtocol, protocol));
   }
 
   /**
@@ -249,10 +295,12 @@ public class ServerImpl extends MinimalEObjectImpl.Container implements Server
   {
     switch (featureID)
     {
+      case AsyncApiPackage.SERVER__NAME:
+        return getName();
       case AsyncApiPackage.SERVER__URL:
         return getUrl();
-      case AsyncApiPackage.SERVER__SCHEME:
-        return getScheme();
+      case AsyncApiPackage.SERVER__PROTOCOL:
+        return getProtocol();
       case AsyncApiPackage.SERVER__DESCRIPTION:
         return getDescription();
       case AsyncApiPackage.SERVER__VARIABLES:
@@ -272,11 +320,14 @@ public class ServerImpl extends MinimalEObjectImpl.Container implements Server
   {
     switch (featureID)
     {
+      case AsyncApiPackage.SERVER__NAME:
+        setName((String)newValue);
+        return;
       case AsyncApiPackage.SERVER__URL:
         setUrl((String)newValue);
         return;
-      case AsyncApiPackage.SERVER__SCHEME:
-        setScheme((Scheme)newValue);
+      case AsyncApiPackage.SERVER__PROTOCOL:
+        setProtocol((Protocol)newValue);
         return;
       case AsyncApiPackage.SERVER__DESCRIPTION:
         setDescription((String)newValue);
@@ -299,11 +350,14 @@ public class ServerImpl extends MinimalEObjectImpl.Container implements Server
   {
     switch (featureID)
     {
+      case AsyncApiPackage.SERVER__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case AsyncApiPackage.SERVER__URL:
         setUrl(URL_EDEFAULT);
         return;
-      case AsyncApiPackage.SERVER__SCHEME:
-        setScheme(SCHEME_EDEFAULT);
+      case AsyncApiPackage.SERVER__PROTOCOL:
+        setProtocol(PROTOCOL_EDEFAULT);
         return;
       case AsyncApiPackage.SERVER__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
@@ -325,10 +379,12 @@ public class ServerImpl extends MinimalEObjectImpl.Container implements Server
   {
     switch (featureID)
     {
+      case AsyncApiPackage.SERVER__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AsyncApiPackage.SERVER__URL:
         return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
-      case AsyncApiPackage.SERVER__SCHEME:
-        return scheme != SCHEME_EDEFAULT;
+      case AsyncApiPackage.SERVER__PROTOCOL:
+        return protocol != PROTOCOL_EDEFAULT;
       case AsyncApiPackage.SERVER__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case AsyncApiPackage.SERVER__VARIABLES:
@@ -348,10 +404,12 @@ public class ServerImpl extends MinimalEObjectImpl.Container implements Server
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (url: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", url: ");
     result.append(url);
-    result.append(", scheme: ");
-    result.append(scheme);
+    result.append(", protocol: ");
+    result.append(protocol);
     result.append(", description: ");
     result.append(description);
     result.append(')');

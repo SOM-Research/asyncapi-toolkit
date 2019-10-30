@@ -18,13 +18,13 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getType <em>Type</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getFormat <em>Format</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMinimum <em>Minimum</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMaximum <em>Maximum</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getDefault <em>Default</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getPayload <em>Payload</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getProperties <em>Properties</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getEnum <em>Enum</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getItems <em>Items</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getRequired <em>Required</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getFriendlyName <em>Friendly Name</em>}</li>
  * </ul>
  *
  * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema()
@@ -122,6 +122,50 @@ public interface Schema extends AbstractSchema
   void setFormat(String value);
 
   /**
+   * Returns the value of the '<em><b>Minimum</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Minimum</em>' attribute.
+   * @see #setMinimum(int)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Minimum()
+   * @model
+   * @generated
+   */
+  int getMinimum();
+
+  /**
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMinimum <em>Minimum</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Minimum</em>' attribute.
+   * @see #getMinimum()
+   * @generated
+   */
+  void setMinimum(int value);
+
+  /**
+   * Returns the value of the '<em><b>Maximum</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Maximum</em>' attribute.
+   * @see #setMaximum(int)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Maximum()
+   * @model
+   * @generated
+   */
+  int getMaximum();
+
+  /**
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMaximum <em>Maximum</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Maximum</em>' attribute.
+   * @see #getMaximum()
+   * @generated
+   */
+  void setMaximum(int value);
+
+  /**
    * Returns the value of the '<em><b>Default</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -142,28 +186,6 @@ public interface Schema extends AbstractSchema
    * @generated
    */
   void setDefault(String value);
-
-  /**
-   * Returns the value of the '<em><b>Payload</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Payload</em>' containment reference.
-   * @see #setPayload(AbstractSchema)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Payload()
-   * @model containment="true"
-   * @generated
-   */
-  AbstractSchema getPayload();
-
-  /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getPayload <em>Payload</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Payload</em>' containment reference.
-   * @see #getPayload()
-   * @generated
-   */
-  void setPayload(AbstractSchema value);
 
   /**
    * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
@@ -222,27 +244,5 @@ public interface Schema extends AbstractSchema
    * @generated
    */
   EList<String> getRequired();
-
-  /**
-   * Returns the value of the '<em><b>Friendly Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Friendly Name</em>' attribute.
-   * @see #setFriendlyName(String)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_FriendlyName()
-   * @model
-   * @generated
-   */
-  String getFriendlyName();
-
-  /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getFriendlyName <em>Friendly Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Friendly Name</em>' attribute.
-   * @see #getFriendlyName()
-   * @generated
-   */
-  void setFriendlyName(String value);
 
 } // Schema

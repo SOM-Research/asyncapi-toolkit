@@ -6,18 +6,24 @@ package io.github.abelgomez.asyncapi.serializer;
 import com.google.inject.Inject;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
+import io.github.abelgomez.asyncapi.asyncApi.Channel;
 import io.github.abelgomez.asyncapi.asyncApi.Components;
 import io.github.abelgomez.asyncapi.asyncApi.Contact;
 import io.github.abelgomez.asyncapi.asyncApi.Info;
 import io.github.abelgomez.asyncapi.asyncApi.License;
 import io.github.abelgomez.asyncapi.asyncApi.Message;
+import io.github.abelgomez.asyncapi.asyncApi.MessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedMessage;
+import io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait;
+import io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait;
+import io.github.abelgomez.asyncapi.asyncApi.NamedParameter;
 import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
+import io.github.abelgomez.asyncapi.asyncApi.Operation;
+import io.github.abelgomez.asyncapi.asyncApi.OperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.Reference;
 import io.github.abelgomez.asyncapi.asyncApi.Schema;
 import io.github.abelgomez.asyncapi.asyncApi.Server;
 import io.github.abelgomez.asyncapi.asyncApi.Tag;
-import io.github.abelgomez.asyncapi.asyncApi.Topic;
 import io.github.abelgomez.asyncapi.asyncApi.Variable;
 import io.github.abelgomez.asyncapi.services.AsyncApiGrammarAccess;
 import java.util.Set;
@@ -48,6 +54,9 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case AsyncApiPackage.ASYNC_API:
 				sequence_AsyncAPI(context, (AsyncAPI) semanticObject); 
 				return; 
+			case AsyncApiPackage.CHANNEL:
+				sequence_Channel(context, (Channel) semanticObject); 
+				return; 
 			case AsyncApiPackage.COMPONENTS:
 				sequence_Components(context, (Components) semanticObject); 
 				return; 
@@ -63,11 +72,32 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case AsyncApiPackage.MESSAGE:
 				sequence_Message(context, (Message) semanticObject); 
 				return; 
+			case AsyncApiPackage.MESSAGE_TRAIT:
+				sequence_MessageTrait(context, (MessageTrait) semanticObject); 
+				return; 
 			case AsyncApiPackage.NAMED_MESSAGE:
 				sequence_NamedMessage(context, (NamedMessage) semanticObject); 
 				return; 
+			case AsyncApiPackage.NAMED_MESSAGE_TRAIT:
+				sequence_NamedMessageTrait(context, (NamedMessageTrait) semanticObject); 
+				return; 
+			case AsyncApiPackage.NAMED_OPERATION_TRAIT:
+				sequence_NamedOperationTrait(context, (NamedOperationTrait) semanticObject); 
+				return; 
+			case AsyncApiPackage.NAMED_PARAMETER:
+				sequence_NamedParameter(context, (NamedParameter) semanticObject); 
+				return; 
 			case AsyncApiPackage.NAMED_SCHEMA:
 				sequence_NamedSchema(context, (NamedSchema) semanticObject); 
+				return; 
+			case AsyncApiPackage.OPERATION:
+				sequence_Operation(context, (Operation) semanticObject); 
+				return; 
+			case AsyncApiPackage.OPERATION_TRAIT:
+				sequence_OperationTrait(context, (OperationTrait) semanticObject); 
+				return; 
+			case AsyncApiPackage.PARAMETER:
+				sequence_Parameter(context, (io.github.abelgomez.asyncapi.asyncApi.Parameter) semanticObject); 
 				return; 
 			case AsyncApiPackage.REFERENCE:
 				sequence_Reference(context, (Reference) semanticObject); 
@@ -80,9 +110,6 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case AsyncApiPackage.TAG:
 				sequence_Tag(context, (Tag) semanticObject); 
-				return; 
-			case AsyncApiPackage.TOPIC:
-				sequence_Topic(context, (Topic) semanticObject); 
 				return; 
 			case AsyncApiPackage.VARIABLE:
 				sequence_Variable(context, (Variable) semanticObject); 
@@ -97,13 +124,27 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     AsyncAPI returns AsyncAPI
 	 *
 	 * Constraint:
-	 *     (
-	 *         (version=VersionNumber | info=Info | components=Components | baseTopic=STRING)? 
-	 *         (servers+=Server servers+=Server*)? 
-	 *         (topics+=Topic topics+=Topic*)?
-	 *     )+
+	 *     ((version=VersionNumber | info=Info | components=Components)? (servers+=Server servers+=Server*)? (channels+=Channel channels+=Channel*)?)+
 	 */
 	protected void sequence_AsyncAPI(ISerializationContext context, AsyncAPI semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Channel returns Channel
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=AnyString 
+	 *         (
+	 *             (description=AnyString | publish=Operation | subscribe=Operation | title=AnyString)? 
+	 *             (parameters+=NamedParameter parameters+=NamedParameter*)?
+	 *         )+
+	 *     )
+	 */
+	protected void sequence_Channel(ISerializationContext context, Channel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -113,7 +154,13 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Components returns Components
 	 *
 	 * Constraint:
-	 *     ((schemas+=NamedSchema schemas+=NamedSchema*) | (messages+=NamedMessage messages+=NamedMessage*))*
+	 *     (
+	 *         (schemas+=NamedSchema schemas+=NamedSchema*) | 
+	 *         (messages+=NamedMessage messages+=NamedMessage*) | 
+	 *         (parameters+=NamedParameter parameters+=NamedParameter*) | 
+	 *         (operationTraits+=NamedOperationTrait operationTraits+=NamedOperationTrait*) | 
+	 *         (messageTraits+=NamedMessageTrait messageTraits+=NamedMessageTrait*)
+	 *     )*
 	 */
 	protected void sequence_Components(ISerializationContext context, Components semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -125,7 +172,7 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Contact returns Contact
 	 *
 	 * Constraint:
-	 *     (name=STRING | url=STRING | email=STRING)*
+	 *     (name=AnyString | url=AnyString | email=AnyString)*
 	 */
 	protected void sequence_Contact(ISerializationContext context, Contact semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -138,10 +185,10 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *
 	 * Constraint:
 	 *     (
-	 *         title=STRING | 
-	 *         version=STRING | 
-	 *         description=STRING | 
-	 *         termsOfService=STRING | 
+	 *         title=AnyString | 
+	 *         version=AnyString | 
+	 *         description=AnyString | 
+	 *         termsOfService=AnyString | 
 	 *         contact=Contact | 
 	 *         license=License
 	 *     )*
@@ -156,9 +203,22 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     License returns License
 	 *
 	 * Constraint:
-	 *     (name=STRING | url=STRING)*
+	 *     (name=AnyString | url=AnyString)*
 	 */
 	protected void sequence_License(ISerializationContext context, License semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractMessageTrait returns MessageTrait
+	 *     MessageTrait returns MessageTrait
+	 *
+	 * Constraint:
+	 *     ((summary=AnyString | description=AnyString | deprecated=Boolean | headers=AbstractSchema)? (tags+=Tag tags+=Tag*)?)+
+	 */
+	protected void sequence_MessageTrait(ISerializationContext context, MessageTrait semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -169,7 +229,19 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Message returns Message
 	 *
 	 * Constraint:
-	 *     ((summary=STRING | description=STRING | deprecated=Boolean | headers=AbstractSchema | payload=AbstractSchema)? (tags+=Tag tags+=Tag*)?)+
+	 *     (
+	 *         (
+	 *             name=AnyString | 
+	 *             title=AnyString | 
+	 *             summary=AnyString | 
+	 *             description=AnyString | 
+	 *             deprecated=Boolean | 
+	 *             headers=AbstractSchema | 
+	 *             payload=AbstractSchema
+	 *         )? 
+	 *         (traits+=AbstractMessageTrait traits+=AbstractMessageTrait*)? 
+	 *         (tags+=Tag tags+=Tag*)?
+	 *     )+
 	 */
 	protected void sequence_Message(ISerializationContext context, Message semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -178,10 +250,31 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     NamedMessageTrait returns NamedMessageTrait
+	 *
+	 * Constraint:
+	 *     (name=AnyString messageTrait=AbstractMessageTrait)
+	 */
+	protected void sequence_NamedMessageTrait(ISerializationContext context, NamedMessageTrait semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.NAMED_MESSAGE_TRAIT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.NAMED_MESSAGE_TRAIT__NAME));
+			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.NAMED_MESSAGE_TRAIT__MESSAGE_TRAIT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.NAMED_MESSAGE_TRAIT__MESSAGE_TRAIT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNamedMessageTraitAccess().getNameAnyStringParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getNamedMessageTraitAccess().getMessageTraitAbstractMessageTraitParserRuleCall_3_0(), semanticObject.getMessageTrait());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     NamedMessage returns NamedMessage
 	 *
 	 * Constraint:
-	 *     (name=STRING message=AbstractMessage)
+	 *     (name=AnyString message=AbstractMessage)
 	 */
 	protected void sequence_NamedMessage(ISerializationContext context, NamedMessage semanticObject) {
 		if (errorAcceptor != null) {
@@ -191,8 +284,50 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.NAMED_MESSAGE__MESSAGE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNamedMessageAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getNamedMessageAccess().getNameAnyStringParserRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getNamedMessageAccess().getMessageAbstractMessageParserRuleCall_3_0(), semanticObject.getMessage());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     NamedOperationTrait returns NamedOperationTrait
+	 *
+	 * Constraint:
+	 *     (name=AnyString operationTrait=AbstractOperationTrait)
+	 */
+	protected void sequence_NamedOperationTrait(ISerializationContext context, NamedOperationTrait semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.NAMED_OPERATION_TRAIT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.NAMED_OPERATION_TRAIT__NAME));
+			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.NAMED_OPERATION_TRAIT__OPERATION_TRAIT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.NAMED_OPERATION_TRAIT__OPERATION_TRAIT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNamedOperationTraitAccess().getNameAnyStringParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getNamedOperationTraitAccess().getOperationTraitAbstractOperationTraitParserRuleCall_3_0(), semanticObject.getOperationTrait());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     NamedParameter returns NamedParameter
+	 *
+	 * Constraint:
+	 *     (name=AnyString parameter=AbstractParameter)
+	 */
+	protected void sequence_NamedParameter(ISerializationContext context, NamedParameter semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.NAMED_PARAMETER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.NAMED_PARAMETER__NAME));
+			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.NAMED_PARAMETER__PARAMETER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.NAMED_PARAMETER__PARAMETER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNamedParameterAccess().getNameAnyStringParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getNamedParameterAccess().getParameterAbstractParameterParserRuleCall_3_0(), semanticObject.getParameter());
 		feeder.finish();
 	}
 	
@@ -202,7 +337,7 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     NamedSchema returns NamedSchema
 	 *
 	 * Constraint:
-	 *     (name=STRING schema=AbstractSchema)
+	 *     (name=AnyString schema=AbstractSchema)
 	 */
 	protected void sequence_NamedSchema(ISerializationContext context, NamedSchema semanticObject) {
 		if (errorAcceptor != null) {
@@ -212,7 +347,7 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.NAMED_SCHEMA__SCHEMA));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNamedSchemaAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getNamedSchemaAccess().getNameAnyStringParserRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getNamedSchemaAccess().getSchemaAbstractSchemaParserRuleCall_3_0(), semanticObject.getSchema());
 		feeder.finish();
 	}
@@ -220,15 +355,65 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     AbstractOperationTrait returns OperationTrait
+	 *     OperationTrait returns OperationTrait
+	 *
+	 * Constraint:
+	 *     (operationId=AnyString | summary=AnyString | description=AnyString)*
+	 */
+	protected void sequence_OperationTrait(ISerializationContext context, OperationTrait semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Operation returns Operation
+	 *
+	 * Constraint:
+	 *     (
+	 *         (operationId=AnyString | summary=AnyString | description=AnyString | message=AbstractMessage)? 
+	 *         (traits+=AbstractOperationTrait traits+=AbstractOperationTrait*)?
+	 *     )+
+	 */
+	protected void sequence_Operation(ISerializationContext context, Operation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractParameter returns Parameter
+	 *     Parameter returns Parameter
+	 *
+	 * Constraint:
+	 *     (description=AnyString | schema=AbstractSchema | location=AnyString)*
+	 */
+	protected void sequence_Parameter(ISerializationContext context, io.github.abelgomez.asyncapi.asyncApi.Parameter semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     AbstractMessage returns Reference
 	 *     AbstractSchema returns Reference
+	 *     AbstractParameter returns Reference
+	 *     AbstractOperationTrait returns Reference
+	 *     AbstractMessageTrait returns Reference
 	 *     Reference returns Reference
 	 *
 	 * Constraint:
-	 *     (refname=STRING? uri=STRING)
+	 *     uri=AnyString
 	 */
 	protected void sequence_Reference(ISerializationContext context, Reference semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.REFERENCE__URI) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.REFERENCE__URI));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getReferenceAccess().getUriAnyStringParserRuleCall_4_0(), semanticObject.getUri());
+		feeder.finish();
 	}
 	
 	
@@ -240,18 +425,18 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 * Constraint:
 	 *     (
 	 *         (
-	 *             title=STRING | 
-	 *             type=STRING | 
-	 *             description=STRING | 
-	 *             format=STRING | 
+	 *             title=AnyString | 
+	 *             type=AnyString | 
+	 *             description=AnyString | 
+	 *             format=AnyString | 
+	 *             minimum=INT | 
+	 *             maximum=INT | 
 	 *             default=PrimitiveValue | 
-	 *             payload=AbstractSchema | 
-	 *             items=AbstractSchema | 
-	 *             friendlyName=STRING
+	 *             items=AbstractSchema
 	 *         )? 
+	 *         (required+=AnyString required+=AnyString*)? 
 	 *         (properties+=NamedSchema properties+=NamedSchema*)? 
-	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)? 
-	 *         (required+=STRING required+=STRING*)?
+	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)?
 	 *     )+
 	 */
 	protected void sequence_Schema(ISerializationContext context, Schema semanticObject) {
@@ -264,7 +449,7 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Server returns Server
 	 *
 	 * Constraint:
-	 *     ((url=STRING | scheme=Scheme | description=STRING)? (variables+=Variable variables+=Variable*)?)+
+	 *     (name=AnyString ((url=AnyString | protocol=Protocol | description=AnyString)? (variables+=Variable variables+=Variable*)?)+)
 	 */
 	protected void sequence_Server(ISerializationContext context, Server semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -276,21 +461,9 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Tag returns Tag
 	 *
 	 * Constraint:
-	 *     (name=STRING | description=STRING)*
+	 *     (name=AnyString | description=AnyString)*
 	 */
 	protected void sequence_Tag(ISerializationContext context, Tag semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Topic returns Topic
-	 *
-	 * Constraint:
-	 *     (name=STRING (publish=AbstractMessage | subscribe=AbstractMessage)*)
-	 */
-	protected void sequence_Topic(ISerializationContext context, Topic semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -300,7 +473,7 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Variable returns Variable
 	 *
 	 * Constraint:
-	 *     (name=STRING ((description=STRING | default=STRING)? (enum+=STRING enum+=STRING*)?)+)
+	 *     (name=AnyString ((description=AnyString | default=AnyString)? (enum+=AnyString enum+=AnyString*)?)+)
 	 */
 	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

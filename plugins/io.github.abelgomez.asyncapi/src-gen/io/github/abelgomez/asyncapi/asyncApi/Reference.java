@@ -13,7 +13,6 @@ package io.github.abelgomez.asyncapi.asyncApi;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Reference#getRefname <em>Refname</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Reference#getUri <em>Uri</em>}</li>
  * </ul>
  *
@@ -21,30 +20,8 @@ package io.github.abelgomez.asyncapi.asyncApi;
  * @model
  * @generated
  */
-public interface Reference extends AbstractMessage, AbstractSchema
+public interface Reference extends AbstractMessage, AbstractSchema, AbstractParameter, AbstractOperationTrait, AbstractMessageTrait
 {
-  /**
-   * Returns the value of the '<em><b>Refname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Refname</em>' attribute.
-   * @see #setRefname(String)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getReference_Refname()
-   * @model
-   * @generated
-   */
-  String getRefname();
-
-  /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Reference#getRefname <em>Refname</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Refname</em>' attribute.
-   * @see #getRefname()
-   * @generated
-   */
-  void setRefname(String value);
-
   /**
    * Returns the value of the '<em><b>Uri</b></em>' attribute.
    * <!-- begin-user-doc -->

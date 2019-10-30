@@ -4,21 +4,31 @@
 package io.github.abelgomez.asyncapi.asyncApi.util;
 
 import io.github.abelgomez.asyncapi.asyncApi.AbstractMessage;
+import io.github.abelgomez.asyncapi.asyncApi.AbstractMessageTrait;
+import io.github.abelgomez.asyncapi.asyncApi.AbstractOperationTrait;
+import io.github.abelgomez.asyncapi.asyncApi.AbstractParameter;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
+import io.github.abelgomez.asyncapi.asyncApi.Channel;
 import io.github.abelgomez.asyncapi.asyncApi.Components;
 import io.github.abelgomez.asyncapi.asyncApi.Contact;
 import io.github.abelgomez.asyncapi.asyncApi.Info;
 import io.github.abelgomez.asyncapi.asyncApi.License;
 import io.github.abelgomez.asyncapi.asyncApi.Message;
+import io.github.abelgomez.asyncapi.asyncApi.MessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedMessage;
+import io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait;
+import io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait;
+import io.github.abelgomez.asyncapi.asyncApi.NamedParameter;
 import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
+import io.github.abelgomez.asyncapi.asyncApi.Operation;
+import io.github.abelgomez.asyncapi.asyncApi.OperationTrait;
+import io.github.abelgomez.asyncapi.asyncApi.Parameter;
 import io.github.abelgomez.asyncapi.asyncApi.Reference;
 import io.github.abelgomez.asyncapi.asyncApi.Schema;
 import io.github.abelgomez.asyncapi.asyncApi.Server;
 import io.github.abelgomez.asyncapi.asyncApi.Tag;
-import io.github.abelgomez.asyncapi.asyncApi.Topic;
 import io.github.abelgomez.asyncapi.asyncApi.Variable;
 
 import org.eclipse.emf.ecore.EObject;
@@ -131,10 +141,17 @@ public class AsyncApiSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AsyncApiPackage.TOPIC:
+      case AsyncApiPackage.CHANNEL:
       {
-        Topic topic = (Topic)theEObject;
-        T result = caseTopic(topic);
+        Channel channel = (Channel)theEObject;
+        T result = caseChannel(channel);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AsyncApiPackage.OPERATION:
+      {
+        Operation operation = (Operation)theEObject;
+        T result = caseOperation(operation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -189,6 +206,72 @@ public class AsyncApiSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AsyncApiPackage.ABSTRACT_PARAMETER:
+      {
+        AbstractParameter abstractParameter = (AbstractParameter)theEObject;
+        T result = caseAbstractParameter(abstractParameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AsyncApiPackage.PARAMETER:
+      {
+        Parameter parameter = (Parameter)theEObject;
+        T result = caseParameter(parameter);
+        if (result == null) result = caseAbstractParameter(parameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AsyncApiPackage.NAMED_PARAMETER:
+      {
+        NamedParameter namedParameter = (NamedParameter)theEObject;
+        T result = caseNamedParameter(namedParameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AsyncApiPackage.ABSTRACT_OPERATION_TRAIT:
+      {
+        AbstractOperationTrait abstractOperationTrait = (AbstractOperationTrait)theEObject;
+        T result = caseAbstractOperationTrait(abstractOperationTrait);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AsyncApiPackage.OPERATION_TRAIT:
+      {
+        OperationTrait operationTrait = (OperationTrait)theEObject;
+        T result = caseOperationTrait(operationTrait);
+        if (result == null) result = caseAbstractOperationTrait(operationTrait);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AsyncApiPackage.NAMED_OPERATION_TRAIT:
+      {
+        NamedOperationTrait namedOperationTrait = (NamedOperationTrait)theEObject;
+        T result = caseNamedOperationTrait(namedOperationTrait);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AsyncApiPackage.ABSTRACT_MESSAGE_TRAIT:
+      {
+        AbstractMessageTrait abstractMessageTrait = (AbstractMessageTrait)theEObject;
+        T result = caseAbstractMessageTrait(abstractMessageTrait);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AsyncApiPackage.MESSAGE_TRAIT:
+      {
+        MessageTrait messageTrait = (MessageTrait)theEObject;
+        T result = caseMessageTrait(messageTrait);
+        if (result == null) result = caseAbstractMessageTrait(messageTrait);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AsyncApiPackage.NAMED_MESSAGE_TRAIT:
+      {
+        NamedMessageTrait namedMessageTrait = (NamedMessageTrait)theEObject;
+        T result = caseNamedMessageTrait(namedMessageTrait);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AsyncApiPackage.COMPONENTS:
       {
         Components components = (Components)theEObject;
@@ -202,6 +285,9 @@ public class AsyncApiSwitch<T> extends Switch<T>
         T result = caseReference(reference);
         if (result == null) result = caseAbstractMessage(reference);
         if (result == null) result = caseAbstractSchema(reference);
+        if (result == null) result = caseAbstractParameter(reference);
+        if (result == null) result = caseAbstractOperationTrait(reference);
+        if (result == null) result = caseAbstractMessageTrait(reference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -306,17 +392,33 @@ public class AsyncApiSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Topic</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Channel</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Topic</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Channel</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTopic(Topic object)
+  public T caseChannel(Channel object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOperation(Operation object)
   {
     return null;
   }
@@ -429,6 +531,150 @@ public class AsyncApiSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNamedSchema(NamedSchema object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Abstract Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Abstract Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAbstractParameter(AbstractParameter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParameter(Parameter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Named Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Named Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNamedParameter(NamedParameter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Abstract Operation Trait</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Abstract Operation Trait</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAbstractOperationTrait(AbstractOperationTrait object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Operation Trait</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Operation Trait</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOperationTrait(OperationTrait object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Named Operation Trait</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Named Operation Trait</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNamedOperationTrait(NamedOperationTrait object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Abstract Message Trait</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Abstract Message Trait</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAbstractMessageTrait(AbstractMessageTrait object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message Trait</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message Trait</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessageTrait(MessageTrait object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Named Message Trait</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Named Message Trait</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNamedMessageTrait(NamedMessageTrait object)
   {
     return null;
   }

@@ -19,9 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getVersion <em>Version</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getInfo <em>Info</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getServers <em>Servers</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getTopics <em>Topics</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getChannels <em>Channels</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getComponents <em>Components</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getBaseTopic <em>Base Topic</em>}</li>
  * </ul>
  *
  * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI()
@@ -90,16 +89,16 @@ public interface AsyncAPI extends EObject
   EList<Server> getServers();
 
   /**
-   * Returns the value of the '<em><b>Topics</b></em>' containment reference list.
-   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.Topic}.
+   * Returns the value of the '<em><b>Channels</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.Channel}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Topics</em>' containment reference list.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_Topics()
+   * @return the value of the '<em>Channels</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_Channels()
    * @model containment="true"
    * @generated
    */
-  EList<Topic> getTopics();
+  EList<Channel> getChannels();
 
   /**
    * Returns the value of the '<em><b>Components</b></em>' containment reference.
@@ -122,27 +121,5 @@ public interface AsyncAPI extends EObject
    * @generated
    */
   void setComponents(Components value);
-
-  /**
-   * Returns the value of the '<em><b>Base Topic</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Base Topic</em>' attribute.
-   * @see #setBaseTopic(String)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_BaseTopic()
-   * @model
-   * @generated
-   */
-  String getBaseTopic();
-
-  /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getBaseTopic <em>Base Topic</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Base Topic</em>' attribute.
-   * @see #getBaseTopic()
-   * @generated
-   */
-  void setBaseTopic(String value);
 
 } // AsyncAPI

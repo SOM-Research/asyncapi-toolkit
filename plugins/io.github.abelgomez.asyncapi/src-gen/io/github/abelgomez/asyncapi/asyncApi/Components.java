@@ -18,6 +18,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Components#getSchemas <em>Schemas</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Components#getMessages <em>Messages</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Components#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Components#getOperationTraits <em>Operation Traits</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Components#getMessageTraits <em>Message Traits</em>}</li>
  * </ul>
  *
  * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents()
@@ -49,5 +52,41 @@ public interface Components extends EObject
    * @generated
    */
   EList<NamedMessage> getMessages();
+
+  /**
+   * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Parameters</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_Parameters()
+   * @model containment="true"
+   * @generated
+   */
+  EList<NamedParameter> getParameters();
+
+  /**
+   * Returns the value of the '<em><b>Operation Traits</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Operation Traits</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_OperationTraits()
+   * @model containment="true"
+   * @generated
+   */
+  EList<NamedOperationTrait> getOperationTraits();
+
+  /**
+   * Returns the value of the '<em><b>Message Traits</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Message Traits</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_MessageTraits()
+   * @model containment="true"
+   * @generated
+   */
+  EList<NamedMessageTrait> getMessageTraits();
 
 } // Components
