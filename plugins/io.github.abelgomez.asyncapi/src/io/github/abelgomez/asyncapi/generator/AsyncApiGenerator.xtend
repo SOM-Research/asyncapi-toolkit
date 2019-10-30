@@ -105,15 +105,35 @@ class AsyncApiGenerator extends AbstractGenerator {
 			public static final String TOPIC_ID = "«c.name»";
 			
 			private static final int QOS = 2;
-						
+			
+			/**
+			 * Creates a new builder that can be used to build the payload necessary to
+			 * publish in the «c.publishMessageClassName» channel
+			 * 
+			 * @return the builder
+			 */
 			public static final «c.publishPayloadClassName».«c.publishPayloadClassName»Builder payloadBuilder() {
 				return «c.publishPayloadClassName».«c.publishPayloadClassName»Builder.newBuilder();
 			}
 			
+			/**
+			 * Publishes the given {@link «c.publishPayloadClassName»} in the channel with 
+			 * no parameters
+			 * 
+			 * @param payload
+			 * @throws MqttException
+			 */
 			public static final void publish(«c.publishPayloadClassName» payload) throws MqttException {
 				publish(payload, «c.publishMessageClassName»Params.create());
 			}
 			
+			/**
+			 * Publishes the given {@link «c.publishPayloadClassName»} in the channel 
+			 * configured with the given {@link «c.publishMessageClassName»Params}
+			 * 
+			 * @param payload
+			 * @throws MqttException
+			 */
 			public static final void publish(«c.publishPayloadClassName» payload, «c.publishMessageClassName»Params params) throws MqttException {
 				String broker = "«api.servers.get(0).expand»";
 				String clientId = java.util.UUID.randomUUID().toString();
@@ -133,16 +153,31 @@ class AsyncApiGenerator extends AbstractGenerator {
 				}
 			}
 			
-				
+			/**
+			 * Expands the parameters of the {@link #TOPIC_ID} with the values given 
+			 * in {@link «c.publishMessageClassName»Params}
+			 * 
+			 * @param params
+			 * @return
+			 */
 			public static String expand(«c.publishMessageClassName»Params params) {
 				return params.apply(TOPIC_ID);
 			}
 			«IF !c.parameters.empty»
 			
+			/**
+			 * Utility class to set the parameters that can be used to configure the
+			 * {@link «c.publishMessageClassName»} channel
+			 */
 			public static class «c.publishMessageClassName»Params {
 
 				private Map<String, Object> parameters = new HashMap<>();
 				
+				/**
+				 * Method to create a new instance of «c.publishMessageClassName»Params
+				 * 
+				 * @return a new «c.publishMessageClassName»Params
+				 */
 				public static «c.publishMessageClassName»Params create() {
 					return new «c.publishMessageClassName»Params();
 				}
@@ -155,6 +190,9 @@ class AsyncApiGenerator extends AbstractGenerator {
 				}
 				«FOR p : c.parameters»
 				
+				/**
+				 * Set the <code>«p.name.asJavaIdentifier»</code> parameter
+				 */ 
 				public «c.publishMessageClassName»Params with«p.name.asJavaClassName»(«p.parameter.resolve.schema.resolve.toJavaType» «p.name.asJavaIdentifier») {
 					this.parameters.put("«p.name.asJavaIdentifier»", «p.name.asJavaIdentifier»);
 					return this;
@@ -221,17 +259,28 @@ class AsyncApiGenerator extends AbstractGenerator {
 				Runtime.getRuntime().addShutdownHook(new Thread() {
 					public void run() {
 						try {
-							client.close();
+							client.disconnectForcibly();
 						} catch (MqttException e) {
 						}
 					}
 				});
 			}
 			
-
+			/**
+			 * Subscribes to the given channel with the given
+			 * {@link I«c.subscribeMessageClassName»Callback}. Only a single subscription and
+			 * callback method is allowed per channel. If multiple subscriptions are
+			 * solicited, only the latest registered callback will be honored.
+			 * 
+			 * @param callback
+			 * @throws MqttException
+			 */
 			public static final void subscribe(I«c.subscribeMessageClassName»Callback callback) throws MqttException {
-			    MqttConnectOptions connOpts = new MqttConnectOptions();
-			    connOpts.setCleanSession(true);
+			    if (!client.isConnected()) {
+				    MqttConnectOptions connOpts = new MqttConnectOptions();
+				    connOpts.setCleanSession(true);
+				    client.connect(connOpts);
+			    }
 			    client.setCallback(new MqttCallback() {
 					@Override public void deliveryComplete(IMqttDeliveryToken token) {}
 					@Override public void connectionLost(Throwable cause) {}
@@ -240,20 +289,35 @@ class AsyncApiGenerator extends AbstractGenerator {
 						callback.messageArrived(new «c.subscribeMessageClassName»Params(topic), «c.subscribePayloadClassName».fromJson(new String(message.getPayload())));
 					}
 				});
-			    client.connect(connOpts);
 			    client.subscribe(TOPIC_PATTERN, QOS);
 			}
 			
+			/**
+			 * Unsubscribes from the given channel and closes the connection if a
+			 * subscription was previously registered
+			 * 
+			 * @throws MqttException
+			 */
 			public static final void unsubscribe() throws MqttException {
-			    client.unsubscribe(TOPIC_PATTERN);
-				client.disconnect();
+				if (client.isConnected()) {
+				    client.unsubscribe(TOPIC_PATTERN);
+					client.disconnect();
+				}
 			}
 			
+			/**
+			 * Interface that must be implemented for subscribing to the
+			 * {@link «c.subscribeMessageClassName»} channel
+			 */
 			public interface I«c.subscribeMessageClassName»Callback {
 				public void messageArrived(«c.subscribeMessageClassName»Params params, «c.subscribePayloadClassName» payload);
 			}
 			
 			«IF !c.parameters.empty»
+			/**
+			 * Utility class that can be used to retrieve the parameters used to 
+			 * configure the {@link «c.subscribeMessageClassName»} channel
+			 */
 			public static class «c.subscribeMessageClassName»Params {
 				
 				private Map<String, Object> parameters = new HashMap<>();
@@ -277,6 +341,11 @@ class AsyncApiGenerator extends AbstractGenerator {
 				}
 				«FOR p : c.parameters»
 				
+				/**
+				 * Getter for the <code>«p.name.asJavaIdentifier»</code> parameter
+				 *
+				 * @return «p.name.asJavaIdentifier»
+				 */ 
 				public «p.parameter.resolve.schema.resolve.toJavaType» get«p.name.asJavaClassName»() {
 					return («p.parameter.resolve.schema.resolve.toJavaType») this.parameters.get("«p.name.asJavaIdentifier»");
 				}
