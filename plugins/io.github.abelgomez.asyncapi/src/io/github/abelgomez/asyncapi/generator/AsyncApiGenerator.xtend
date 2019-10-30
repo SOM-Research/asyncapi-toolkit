@@ -123,6 +123,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 			 * @param payload
 			 * @throws MqttException
 			 */
+			«IF !c.parameters.empty»
 			public static final void publish(«c.publishPayloadClassName» payload) throws MqttException {
 				publish(payload, «c.publishMessageClassName»Params.create());
 			}
@@ -135,6 +136,11 @@ class AsyncApiGenerator extends AbstractGenerator {
 			 * @throws MqttException
 			 */
 			public static final void publish(«c.publishPayloadClassName» payload, «c.publishMessageClassName»Params params) throws MqttException {
+				String topic = expand(params);
+			«ELSE»
+			public static final void publish(«c.publishPayloadClassName» payload) throws MqttException {
+				String topic = TOPIC_ID;
+			«ENDIF»
 				String broker = "«api.servers.get(0).expand»";
 				String clientId = java.util.UUID.randomUUID().toString();
 				MemoryPersistence persistence = new MemoryPersistence();
@@ -148,10 +154,11 @@ class AsyncApiGenerator extends AbstractGenerator {
 				    message.setQos(QOS);
 				    
 				    client.connect(connOpts);
-				    client.publish(expand(params), message);
+				    client.publish(topic, message);
 				    client.disconnect();
 				}
 			}
+			«IF !c.parameters.empty»
 			
 			/**
 			 * Expands the parameters of the {@link #TOPIC_ID} with the values given 
@@ -163,7 +170,6 @@ class AsyncApiGenerator extends AbstractGenerator {
 			public static String expand(«c.publishMessageClassName»Params params) {
 				return params.apply(TOPIC_ID);
 			}
-			«IF !c.parameters.empty»
 			
 			/**
 			 * Utility class to set the parameters that can be used to configure the
@@ -191,10 +197,10 @@ class AsyncApiGenerator extends AbstractGenerator {
 				«FOR p : c.parameters»
 				
 				/**
-				 * Set the <code>«p.name.asJavaIdentifier»</code> parameter
+				 * Set the <code>«p.name»</code> parameter
 				 */ 
 				public «c.publishMessageClassName»Params with«p.name.asJavaClassName»(«p.parameter.resolve.schema.resolve.toJavaType» «p.name.asJavaIdentifier») {
-					this.parameters.put("«p.name.asJavaIdentifier»", «p.name.asJavaIdentifier»);
+					this.parameters.put("«p.name»", «p.name.asJavaIdentifier»);
 					return this;
 				}
 				«ENDFOR»
@@ -286,7 +292,11 @@ class AsyncApiGenerator extends AbstractGenerator {
 					@Override public void connectionLost(Throwable cause) {}
 					@Override
 					public void messageArrived(String topic, MqttMessage message) throws Exception {
+					«IF !c.parameters.empty»
 						callback.messageArrived(new «c.subscribeMessageClassName»Params(topic), «c.subscribePayloadClassName».fromJson(new String(message.getPayload())));
+					«ELSE»
+						callback.messageArrived(«c.subscribePayloadClassName».fromJson(new String(message.getPayload())));
+					«ENDIF»
 					}
 				});
 			    client.subscribe(TOPIC_PATTERN, QOS);
@@ -305,6 +315,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 				}
 			}
 			
+			«IF !c.parameters.empty»
 			/**
 			 * Interface that must be implemented for subscribing to the
 			 * {@link «c.subscribeMessageClassName»} channel
@@ -313,7 +324,6 @@ class AsyncApiGenerator extends AbstractGenerator {
 				public void messageArrived(«c.subscribeMessageClassName»Params params, «c.subscribePayloadClassName» payload);
 			}
 			
-			«IF !c.parameters.empty»
 			/**
 			 * Utility class that can be used to retrieve the parameters used to 
 			 * configure the {@link «c.subscribeMessageClassName»} channel
@@ -325,13 +335,13 @@ class AsyncApiGenerator extends AbstractGenerator {
 				private «c.subscribeMessageClassName»Params(String topic) {
 					String regex = TOPIC_ID;
 					«FOR p : c.parameters»
-					regex = regex.replaceAll("\\{«p.name.asJavaIdentifier»\\}", "(?<«p.name.asJavaIdentifier»>.+)");
+					regex = regex.replaceAll("\\{«p.name»\\}", "(?<«p.name»>.+)");
 					«ENDFOR»
 					Pattern pattern = Pattern.compile(regex);
 					Matcher matcher = pattern.matcher(topic);
 					if (matcher.matches()) {
 						«FOR p : c.parameters»
-						this.parameters.put("«p.name.asJavaIdentifier»", matcher.group("«p.name.asJavaIdentifier»"));
+						this.parameters.put("«p.name»", matcher.group("«p.name»"));
 						«ENDFOR»
 					}
 				}
@@ -342,15 +352,23 @@ class AsyncApiGenerator extends AbstractGenerator {
 				«FOR p : c.parameters»
 				
 				/**
-				 * Getter for the <code>«p.name.asJavaIdentifier»</code> parameter
+				 * Getter for the <code>«p.name»</code> parameter
 				 *
-				 * @return «p.name.asJavaIdentifier»
+				 * @return «p.name»
 				 */ 
 				public «p.parameter.resolve.schema.resolve.toJavaType» get«p.name.asJavaClassName»() {
-					return («p.parameter.resolve.schema.resolve.toJavaType») this.parameters.get("«p.name.asJavaIdentifier»");
+					return («p.parameter.resolve.schema.resolve.toJavaType») this.parameters.get("«p.name»");
 				}
 				«ENDFOR»
-			} 
+			}
+			«ELSE»
+			/**
+			 * Interface that must be implemented for subscribing to the
+			 * {@link «c.subscribeMessageClassName»} channel
+			 */
+			public interface I«c.subscribeMessageClassName»Callback {
+				public void messageArrived(«c.subscribePayloadClassName» payload);
+			}
 			«ENDIF»
 			«IF !c.subscribe.message.resolve.payload.isNamedSchema»
 			
@@ -511,7 +529,11 @@ class AsyncApiGenerator extends AbstractGenerator {
 	def namedSchemaGetterMethods(NamedSchema ns, String thisTypeName) '''
 		public «ns.toJavaType» get«ns.friendlyClassName»() {
 			«IF ns.schema.resolve.objectType»
-			return («ns.toJavaType») this.«ns.friendlyIdentifierName».clone();
+			try {
+				return («ns.toJavaType») this.«ns.friendlyIdentifierName».clone();
+			} catch (CloneNotSupportedException e) {
+				throw new RuntimeException("Unable to clone: " + «ns.friendlyIdentifierName», e);
+			}
 			«ELSE»
 			return this.«ns.friendlyIdentifierName»;
 			«ENDIF»
@@ -836,25 +858,6 @@ class AsyncApiGenerator extends AbstractGenerator {
 		}
 		return result;
 	}
-	
-	static def Map<String, String> match(Channel channel, String str) {
-		val result = new HashMap<String,String>
-		var regex = channel.name
-		for (NamedParameter p : channel.parameters) {
-			regex = regex.replaceAll("\\{" + p.name + "\\}", "(?<" + p.name + ">\\w+)");
-		}
-		val pattern = Pattern.compile(regex);
-		val matcher = pattern.matcher(str)
-		if (matcher.matches) {
-			for (NamedParameter p : channel.parameters) {
-				if (matcher.group(p.name) !== null) {
-					result.put(p.name, matcher.group(p.name))
-				}
-			}
-		}
-		return result;
-	}
-	
 }
 
 
