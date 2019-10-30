@@ -55,7 +55,6 @@ final class HelloWorldProject {
 			builderIds += #[JavaCore.BUILDER_ID, XtextProjectHelper.BUILDER_ID]
 			folders += "src"
 			folders += "src-gen"
-			addClasspathEntries = JavaCore.newContainerEntry(new Path("org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=" + projectInfo.projectName + "&ivyXmlPath=ivy.xml&confs=*&acceptedTypes=jar%2Cbundle%2Cejb%2Cmaven-plugin%2Ceclipse-plugin&alphaOrder=false&resolveInWorkspace=false&transitiveResolve=true&readOSGiMetadata=false&retrievedClasspath=false"))
 			addFile('''src/«path»/StreetlightsAPI.asyncapi''', '''
 				{
 				  "asyncapi": "2.0.0",
@@ -277,6 +276,16 @@ final class HelloWorldProject {
 					}
 				}
 			''')
+			addFile('''ivy.xml''', '''
+				<ivy-module version="2.0">
+				    <info organisation="com.example" module="mymodule"/>
+				    <dependencies>
+				        <dependency org="com.google.code.gson" name="gson" rev="2.8.5"/>
+				        <dependency org="org.eclipse.paho" name="org.eclipse.paho.client.mqttv3" rev="1.2.1"/>
+				    </dependencies>
+				</ivy-module>
+			''')
+			addClasspathEntries = JavaCore.newContainerEntry(new Path("org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=" + projectInfo.projectName + "&ivyXmlPath=ivy.xml&confs=*&acceptedTypes=jar%2Cbundle%2Cejb%2Cmaven-plugin%2Ceclipse-plugin&alphaOrder=false&resolveInWorkspace=false&transitiveResolve=true&readOSGiMetadata=false&retrievedClasspath=false"))
 		])
 	}
 }
