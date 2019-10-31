@@ -45,18 +45,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 				fsa.generateFile("schemas/" + ns.toJavaType + ".java", ns.namedSchemaClassFile)
 			}
 		}
-		fsa.generateFile("../ivy.xml", generateIvy)
 	}
-	
-	def generateIvy() '''
-	<ivy-module version="2.0">
-	    <info organisation="com.example" module="mymodule"/>
-	    <dependencies>
-	        <dependency org="com.google.code.gson" name="gson" rev="2.8.5"/>
-	        <dependency org="org.eclipse.paho" name="org.eclipse.paho.client.mqttv3" rev="1.2.1"/>
-	    </dependencies>
-	</ivy-module>
-	'''
 	
 	def void messageClasses(Channel c, IFileSystemAccess2 fsa) {
 		if (c.publish !== null && c.publish.message !== null) {
