@@ -844,17 +844,9 @@ class AsyncApiGenerator extends AbstractGenerator {
 	}
 	
 	static def String wildcardify(Channel channel) {
-		val substs = new HashMap<String,String>
-		for (NamedParameter p : channel.parameters) {
-			substs.put(p.name, "+")
-		}
-		return channel.expand(substs);
-	}
-	
-	static def String expand(Channel channel, Map<String, String> substs) {
 		var result = channel.name;
 		for (NamedParameter p : channel.parameters) {
-			result = result.replaceAll("\\{" + p.name + "\\}", substs.get(p.name));
+			result = result.replaceAll("/[^/]*\\{" + p.name + "\\}([/$])", "/+$1");
 		}
 		return result;
 	}
