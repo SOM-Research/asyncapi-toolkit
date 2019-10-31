@@ -5,8 +5,10 @@ import org.eclipse.osgi.util.NLS;
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "io.github.abelgomez.asyncapi.ui.wizard.messages"; //$NON-NLS-1$
 	
-	public static String HelloWorldProject_Label;
-	public static String HelloWorldProject_Description;
+	public static String EmptyAsyncAPIProject_Label;
+	public static String EmptyAsyncAPIProject_Description;
+	public static String StreetlightsAPIProject_Label;
+	public static String StreetlightsAPIProject_Description;
 	
 	static {
 	// initialize resource bundle
