@@ -8,7 +8,8 @@ Bundle-SymbolicName: io.github.abelgomez.asyncapi.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: io.github.abelgomez.asyncapi,
  org.eclipse.xtext.ide,
- org.eclipse.xtext.xbase.ide
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: io.github.abelgomez.asyncapi.ide,
  io.github.abelgomez.asyncapi.ide.contentassist.antlr,

@@ -9,7 +9,7 @@ AsyncAPI:
 		  ( '"asyncapi"' ':' version=VersionNumber ','? )
 		& ( '"info"' ':' info=Info ','? ) 
 		& ( '"servers"' ':' '{' servers+=Server (',' servers+=Server)* '}' ','? )? 
-		& ( '"channels"' ':' '{' channels+=Channel (',' channels+=Channel)* '}' ','? )
+		& ( '"channels"' ':' '{' channels+=Channel (',' channels+=Channel)* '}' ','? )?
 		& ( '"components"' ':' components=Components ','? )?
 		& ( GenericJsonTuple ','? )*
 	) '}';

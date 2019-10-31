@@ -82,14 +82,14 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//AsyncAPI:
 		//	{AsyncAPI} '{' ('"asyncapi"' ':' version=VersionNumber ','? & '"info"' ':' info=Info ','? & ('"servers"' ':' '{'
 		//	servers+=Server (',' servers+=Server)* '}' ','?)?
-		//	& '"channels"' ':' '{' channels+=Channel (',' channels+=Channel)* '}' ','? & ('"components"' ':'
-		//	components=Components ','?)?
+		//	& ('"channels"' ':' '{' channels+=Channel (',' channels+=Channel)* '}' ','?)?
+		//	& ('"components"' ':' components=Components ','?)?
 		//	& (GenericJsonTuple ','?)*) '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{AsyncAPI} '{' ('"asyncapi"' ':' version=VersionNumber ','? & '"info"' ':' info=Info ','? & ('"servers"' ':' '{'
-		//servers+=Server (',' servers+=Server)* '}' ','?)? & '"channels"' ':' '{' channels+=Channel (',' channels+=Channel)*
-		//'}' ','? & ('"components"' ':' components=Components ','?)? & (GenericJsonTuple ','?)*) '}'
+		//servers+=Server (',' servers+=Server)* '}' ','?)? & ('"channels"' ':' '{' channels+=Channel (',' channels+=Channel)*
+		//'}' ','?)? & ('"components"' ':' components=Components ','?)? & (GenericJsonTuple ','?)*) '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{AsyncAPI}
@@ -99,7 +99,7 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
 		//'"asyncapi"' ':' version=VersionNumber ','? & '"info"' ':' info=Info ','? & ('"servers"' ':' '{' servers+=Server (','
-		//servers+=Server)* '}' ','?)? & '"channels"' ':' '{' channels+=Channel (',' channels+=Channel)* '}' ','? &
+		//servers+=Server)* '}' ','?)? & ('"channels"' ':' '{' channels+=Channel (',' channels+=Channel)* '}' ','?)? &
 		//('"components"' ':' components=Components ','?)? & (GenericJsonTuple ','?)*
 		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
 		
@@ -175,7 +175,7 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//','?
 		public Keyword getCommaKeyword_2_2_6() { return cCommaKeyword_2_2_6; }
 		
-		//'"channels"' ':' '{' channels+=Channel (',' channels+=Channel)* '}' ','?
+		//('"channels"' ':' '{' channels+=Channel (',' channels+=Channel)* '}' ','?)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
 		
 		//'"channels"'
@@ -3967,8 +3967,8 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 	//AsyncAPI:
 	//	{AsyncAPI} '{' ('"asyncapi"' ':' version=VersionNumber ','? & '"info"' ':' info=Info ','? & ('"servers"' ':' '{'
 	//	servers+=Server (',' servers+=Server)* '}' ','?)?
-	//	& '"channels"' ':' '{' channels+=Channel (',' channels+=Channel)* '}' ','? & ('"components"' ':'
-	//	components=Components ','?)?
+	//	& ('"channels"' ':' '{' channels+=Channel (',' channels+=Channel)* '}' ','?)?
+	//	& ('"components"' ':' components=Components ','?)?
 	//	& (GenericJsonTuple ','?)*) '}';
 	public AsyncAPIElements getAsyncAPIAccess() {
 		return pAsyncAPI;

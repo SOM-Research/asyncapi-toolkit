@@ -1,16 +1,22 @@
 package io.github.abelgomez.asyncapi.generator
 
 import io.github.abelgomez.asyncapi.asyncApi.AbstractMessage
+import io.github.abelgomez.asyncapi.asyncApi.AbstractParameter
 import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
 import io.github.abelgomez.asyncapi.asyncApi.Channel
 import io.github.abelgomez.asyncapi.asyncApi.Message
 import io.github.abelgomez.asyncapi.asyncApi.NamedMessage
+import io.github.abelgomez.asyncapi.asyncApi.NamedParameter
 import io.github.abelgomez.asyncapi.asyncApi.NamedSchema
+import io.github.abelgomez.asyncapi.asyncApi.Parameter
+import io.github.abelgomez.asyncapi.asyncApi.Protocol
 import io.github.abelgomez.asyncapi.asyncApi.Reference
 import io.github.abelgomez.asyncapi.asyncApi.Schema
 import io.github.abelgomez.asyncapi.asyncApi.Server
 import io.github.abelgomez.asyncapi.asyncApi.Variable
+import java.util.Collection
+import java.util.Collections
 import java.util.List
 import java.util.Stack
 import org.eclipse.emf.ecore.EObject
@@ -18,13 +24,6 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import io.github.abelgomez.asyncapi.asyncApi.Protocol
-import io.github.abelgomez.asyncapi.asyncApi.Parameter
-import io.github.abelgomez.asyncapi.asyncApi.NamedParameter
-import java.util.Map
-import java.util.HashMap
-import java.util.regex.Pattern
-import io.github.abelgomez.asyncapi.asyncApi.AbstractParameter
 
 /**
  * Generates code from your model files on save.
@@ -40,7 +39,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 		for (t : api.channels) {
 			t.messageClasses(fsa)
 		}
-		for (ns : api.components.schemas) {
+		for (ns : api.schemas) {
 			if (!ns.schema.resolve.isBasicType) {
 				fsa.generateFile("schemas/" + ns.toJavaType + ".java", ns.namedSchemaClassFile)
 			}
@@ -668,6 +667,14 @@ class AsyncApiGenerator extends AbstractGenerator {
 		return if (Character.isDigit(retVal.charAt(0))) "_" + retVal else retVal;	
 	}
 	
+	def Collection<NamedSchema> schemas(AsyncAPI api) {
+		if (api.components !== null) {
+			return api.components.schemas
+		} else {
+			return Collections.emptyList
+		}
+	}
+
 	def Message resolve(AbstractMessage m) {
 		if (m instanceof Message) {
 			return m;
