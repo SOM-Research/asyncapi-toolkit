@@ -16,11 +16,17 @@ final class StreetlightsAPIProject {
 	val advanced = check("Advanced:", false)
 	val advancedGroup = group("Properties")
 	val path = text("Package:", "streetlights", "The package path to place the files in", advancedGroup)
+	val embeddedServer = check("Use Moquette embedded broker (see additional info)", false, "Generate code and dependencies required to deploy and use Moquette as a embedded test server.\n"  
+								+ "WARNING: The program may not finish grafecully and it may be necessary to kill the application due to a Moquette bug. " 
+								+ "See https://github.com/moquette-io/moquette/issues/506", advancedGroup)
 
 	override protected updateVariables() {
 		path.enabled = advanced.value
+		embeddedServer.enabled = advanced.enabled
+		embeddedServer.enabled = advanced.enabled
 		if (!advanced.value) {
 			path.value = "streetlights"
+			embeddedServer.value = false
 		}
 	}
 
@@ -227,6 +233,7 @@ final class StreetlightsAPIProject {
 				import java.time.LocalDateTime;
 				import java.util.UUID;
 				
+				import io.moquette.broker.Server;
 				import schemas.LightMeasuredPayload;
 				import smartylighting.streetlights._1._0.event.__streetlightId_.lighting.measured.PublishLightMeasured;
 				import smartylighting.streetlights._1._0.event.__streetlightId_.lighting.measured.PublishLightMeasured.PublishLightMeasuredParams;
@@ -234,43 +241,110 @@ final class StreetlightsAPIProject {
 				
 				public class MainExample {
 					public static void main(String[] args) throws Exception {
+						«IF embeddedServer.value»
 						
-						SubscribeLightMeasured.subscribe((params, message) -> {
-							System.err.println(MessageFormat.format(
-									"Subscription to ''{0}'' with ID ''{1}'':\n{2} lumens at {3}",
-									SubscribeLightMeasured.TOPIC_ID, params.getStreetlightId(), message.getLumens(), message.getSentAt()));
-						});
-				
-						for (int i = 0; i < 3; i++) {
-							LightMeasuredPayload payload = PublishLightMeasured.payloadBuilder()
-									.withLumens(10)
-									.withSentAt(LocalDateTime.now().toString())
-									.build();
+						// Create an embedded Moquette server
+						Server server = new Server();
+						«ENDIF»
+						try {
+							«IF embeddedServer.value»
+							// Start the embedded Moquette server
+							server.startServer();
 							
-							PublishLightMeasuredParams params = PublishLightMeasuredParams.create()
-									.withStreetlightId(UUID.randomUUID().toString());
+							«ENDIF»
+							// Register a new subscription to the LightMeasured operation
+							SubscribeLightMeasured.subscribe((params, message) -> {
+								// Inform about the message received
+								System.err.println(MessageFormat.format(
+										"Subscription to ''{0}'' with ID ''{1}'':\n{2} lumens at {3}",
+										SubscribeLightMeasured.TOPIC_ID,
+										// Notice that both the params and the message fields can be
+										// queried via getters that know about the domain being modeled 
+										params.getStreetlightId(),
+										message.getLumens(), 
+										message.getSentAt()));
+							});
+					
+							// Prepare to publish several messages
+							for (int i = 0; i < 5; i++) {
+								// Create the payload via the payloadBuiler offered by the publish  operation
+								LightMeasuredPayload payload = PublishLightMeasured.payloadBuilder()
+										// Notice that the properties of the payload can be set via
+										// setter that know about the domain (e.g., name and type of
+										// the property
+										.withLumens(10)
+										.withSentAt(LocalDateTime.now().toString())
+										.build();
+								
+								// Set the value of the parameters. Notice that a setter is also provided
+								PublishLightMeasuredParams params = PublishLightMeasuredParams.create()
+										.withStreetlightId(UUID.randomUUID().toString());
+								
+								// Inform about the message to be sent
+								System.out.println(MessageFormat.format(
+										"Publishing at ''{0}'':\n{1}",
+										PublishLightMeasured.expand(params), payload.toJson(true)));
+								
+								// Publish the LightMeasured message
+								PublishLightMeasured.publish(payload, params);
+							}
+						} finally {
+							// Unsubscribe from the topic
+							SubscribeLightMeasured.unsubscribe();
+							«IF embeddedServer.value»
 							
-							System.out.println(MessageFormat.format(
-									"Publishing at ''{0}'':\n{1}",
-									PublishLightMeasured.expand(params), payload.toJson(true)));
+							// Stop the Moquette server
+							server.stopServer();
 							
-							PublishLightMeasured.publish(payload, params);
+							// WARNING!! It may be necessary to kill the application manually due to bug
+							// https://github.com/moquette-io/moquette/issues/506
+							// in Moquette
+							«ENDIF»
 						}
-						
-						SubscribeLightMeasured.unsubscribe();
 					}
 				}
 			''')
+			addFile('''config/moquette.conf''', '''
+				port 1883
+				host 0.0.0.0
+				allow_anonymous true
+			''')
+			if (embeddedServer.value) {
+			addFile('''ivysettings.xml''', '''
+				<ivysettings>
+				    <properties file="build.properties" />
+				    <settings defaultResolver="local-chain"/>
+				    <resolvers>
+				        <ibiblio name="ibiblio-maven2" m2compatible="true"/>
+				        <ibiblio name="java-net-maven2" root="http://download.java.net/maven/2/" m2compatible="true" />
+				        <ibiblio name="maven" root="http://mvnrepository.com/artifact/" m2compatible="true" />
+				        <ibiblio name="bintray" root="https://jcenter.bintray.com" m2compatible="true" />
+				        <chain name="local-chain">
+				            <resolver ref="bintray"/>
+				            <resolver ref="maven"/>
+				            <resolver ref="ibiblio-maven2"/>
+				            <resolver ref="java-net-maven2"/>
+				        </chain>
+				    </resolvers>
+				    <modules>
+				      <module organisation="io.moquette" resolver="bintray"/>
+				    </modules>
+				</ivysettings>
+			''')
+			}
 			addFile('''ivy.xml''', '''
 				<ivy-module version="2.0">
 				    <info organisation="com.example" module="mymodule"/>
 				    <dependencies>
 				        <dependency org="com.google.code.gson" name="gson" rev="2.8.5"/>
 				        <dependency org="org.eclipse.paho" name="org.eclipse.paho.client.mqttv3" rev="1.2.1"/>
+				        «IF embeddedServer.value»
+				        <dependency org="io.moquette" name="moquette-broker" rev="0.12.1"/>
+				        «ENDIF»
 				    </dependencies>
 				</ivy-module>
 			''')
-			addClasspathEntries = JavaCore.newContainerEntry(new Path("org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=" + projectInfo.projectName + "&ivyXmlPath=ivy.xml&confs=*&acceptedTypes=jar%2Cbundle%2Cejb%2Cmaven-plugin%2Ceclipse-plugin&alphaOrder=false&resolveInWorkspace=false&transitiveResolve=true&readOSGiMetadata=false&retrievedClasspath=false"))
+			addClasspathEntries = JavaCore.newContainerEntry(new Path("org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=" + projectInfo.projectName + ( if (embeddedServer.value) "&ivySettingsPath=ivysettings.xml" else "" ) + "&ivyXmlPath=ivy.xml&confs=*&acceptedTypes=jar%2Cbundle%2Cejb%2Cmaven-plugin%2Ceclipse-plugin&alphaOrder=false&resolveInWorkspace=false&transitiveResolve=true&readOSGiMetadata=false&retrievedClasspath=false"))
 		])
 	}
 }
