@@ -15,6 +15,7 @@ import io.github.abelgomez.asyncapi.asyncApi.Channel;
 import io.github.abelgomez.asyncapi.asyncApi.Components;
 import io.github.abelgomez.asyncapi.asyncApi.Contact;
 import io.github.abelgomez.asyncapi.asyncApi.Info;
+import io.github.abelgomez.asyncapi.asyncApi.JsonType;
 import io.github.abelgomez.asyncapi.asyncApi.License;
 import io.github.abelgomez.asyncapi.asyncApi.Message;
 import io.github.abelgomez.asyncapi.asyncApi.MessageTrait;
@@ -136,6 +137,8 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
   {
     switch (eDataType.getClassifierID())
     {
+      case AsyncApiPackage.JSON_TYPE:
+        return createJsonTypeFromString(eDataType, initialValue);
       case AsyncApiPackage.BOOLEAN:
         return createBooleanFromString(eDataType, initialValue);
       case AsyncApiPackage.VERSION_NUMBER:
@@ -157,6 +160,8 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
   {
     switch (eDataType.getClassifierID())
     {
+      case AsyncApiPackage.JSON_TYPE:
+        return convertJsonTypeToString(eDataType, instanceValue);
       case AsyncApiPackage.BOOLEAN:
         return convertBooleanToString(eDataType, instanceValue);
       case AsyncApiPackage.VERSION_NUMBER:
@@ -478,6 +483,28 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
   {
     ReferenceImpl reference = new ReferenceImpl();
     return reference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JsonType createJsonTypeFromString(EDataType eDataType, String initialValue)
+  {
+    JsonType result = JsonType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertJsonTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

@@ -57,25 +57,28 @@ public interface Schema extends AbstractSchema
 
   /**
    * Returns the value of the '<em><b>Type</b></em>' attribute.
+   * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.JsonType}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' attribute.
-   * @see #setType(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.JsonType
+   * @see #setType(JsonType)
    * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_Type()
    * @model
    * @generated
    */
-  String getType();
+  JsonType getType();
 
   /**
    * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getType <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' attribute.
+   * @see io.github.abelgomez.asyncapi.asyncApi.JsonType
    * @see #getType()
    * @generated
    */
-  void setType(String value);
+  void setType(JsonType value);
 
   /**
    * Returns the value of the '<em><b>Description</b></em>' attribute.

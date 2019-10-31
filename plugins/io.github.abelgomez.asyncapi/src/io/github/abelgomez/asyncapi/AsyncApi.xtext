@@ -11,7 +11,7 @@ AsyncAPI:
 		& ( '"servers"' ':' '{' servers+=Server (',' servers+=Server)* '}' ','? )? 
 		& ( '"channels"' ':' '{' channels+=Channel (',' channels+=Channel)* '}' ','? )?
 		& ( '"components"' ':' components=Components ','? )?
-		& ( GenericJsonTuple ','? )*
+//		& ( GenericJsonTuple ','? )*
 	) '}';
 		
 Info:
@@ -22,7 +22,7 @@ Info:
 		& ( '"termsOfService"' ':' termsOfService=AnyString ','? )?
 		& ( '"contact"' ':' contact=Contact ','? )?
 		& ( '"license"' ':' license=License ','? )?
-		& ( GenericJsonTuple ','? )*
+//		& ( GenericJsonTuple ','? )*
 	) '}';
 
 Contact:
@@ -30,14 +30,14 @@ Contact:
 		  ( '"name"' ':' name=AnyString ','? )?
 		& ( '"url"' ':' url=AnyString ','? )?
 		& ( '"email"' ':' email=AnyString ','? )?
-		& ( GenericJsonTuple ','? )*
+//		& ( GenericJsonTuple ','? )*
 	) '}';
 
 License:
 	{License} '{' (
 		  ( '"name"' ':' name=AnyString ','? )?
 		& ( '"url"' ':' url=AnyString ','? )?
-		& ( GenericJsonTuple ','? )*
+//		& ( GenericJsonTuple ','? )*
 	) '}';
 
 Server:
@@ -46,7 +46,7 @@ Server:
 		& ( '"protocol"' ':' protocol=Protocol ','? )
 		& ( '"description"' ':' description=AnyString ',' )?
 		& ( '"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','? )?
-		& ( GenericJsonTuple ','? )*
+//		& ( GenericJsonTuple ','? )*
 	) '}';
 
 Variable:
@@ -54,7 +54,7 @@ Variable:
 		  ( '"description"' ':' description=AnyString ','?  )?
 		& ( '"default"' ':' default=AnyString ','? )?
 		& ( '"enum"' ':' '[' ^enum+=AnyString (',' ^enum+=AnyString)* ']' ','? )?
-		& ( GenericJsonTuple ','? )*
+//		& ( GenericJsonTuple ','? )*
 	) '}';
 
 Channel:
@@ -64,7 +64,7 @@ Channel:
 		& ( '"subscribe"' ':' subscribe=Operation ','? )?
 		& ( '"parameters"' ':' '{' parameters+=NamedParameter (',' parameters+=NamedParameter)* '}' ','? )?
 		& ( '"x-title"' ':' title=AnyString ','? )?
-		& ( GenericJsonTuple ','? )*
+//		& ( GenericJsonTuple ','? )*
 	) '}';
 	
 Operation:
@@ -74,7 +74,7 @@ Operation:
 		& ( '"description"' ':' description=AnyString ','?  )?
 		& ( '"message"' ':' message=AbstractMessage ','?  )?
 		& ( '"traits"' ':' '[' traits+=AbstractOperationTrait ( ',' traits+=AbstractOperationTrait )* ']' ','?  )?
-		& ( GenericJsonTuple ','? )*
+//		& ( GenericJsonTuple ','? )*
 	) '}';
 
 AbstractMessage:
@@ -91,7 +91,7 @@ Message:
 		& ( '"tags"' ':' '[' tags+=Tag ( ',' tags+=Tag )* ']' ','? )?
 		& ( '"payload"' ':' payload=AbstractSchema ','? )?
 		& ( '"traits"' ':' '[' traits+=AbstractMessageTrait ( ',' traits+=AbstractMessageTrait )* ']' ','?  )?
-		& ( GenericJsonTupleButRef ','? )*
+//		& ( GenericJsonTupleButRef ','? )*
 	) '}';
 
 NamedMessage:
@@ -101,7 +101,7 @@ Tag:
 	{Tag} '{' (
 		('"name"' ':' name=AnyString ','?)?
 		& ('"description"' ':' description=AnyString ','?)?
-		& ( GenericJsonTuple ','? )*
+//		& ( GenericJsonTuple ','? )*
 	) '}';
 
 AbstractSchema:
@@ -110,7 +110,7 @@ AbstractSchema:
 Schema:
 	{Schema} '{' (
 		  ( '"title"' ':' title=AnyString ','? )?
-		& ( '"type"' ':' type=AnyString ','? )?
+		& ( '"type"' ':' type=JsonType ','? )?
 		& ( '"description"' ':' description=AnyString ','? )?
 		& ( '"format"' ':' format=AnyString ','? )?
 		& ( '"minimum"' ':' minimum=INT ','? )?
@@ -120,7 +120,7 @@ Schema:
 		& ( '"enum"' ':' '[' ^enum+=PrimitiveValue (',' ^enum+=PrimitiveValue)* ']' ','? )?
 		& ( '"items"' ':' items=AbstractSchema ','? )?
 		& ( '"required"' ':' '[' required+=AnyString (',' required+=AnyString)* ']' ','? )?
-		& ( GenericJsonTupleButRef ','? )*
+//		& ( GenericJsonTupleButRef ','? )*
 	) '}';
 
 NamedSchema:
@@ -134,7 +134,7 @@ Parameter:
 		( '"description"' ':' description=AnyString ','? )?
 		& ( '"schema"' ':' schema=AbstractSchema ','? )?
 		& ( '"location"' ':' location=AnyString ','? )?
-		& ( GenericJsonTupleButRef ','? )*
+//		& ( GenericJsonTupleButRef ','? )*
 	) '}';
 
 
@@ -149,7 +149,7 @@ OperationTrait:
 		  ( '"operationId"' ':' operationId=AnyString ','?  )?
 		& ( '"summary"' ':' summary=AnyString ','?  )?
 		& ( '"description"' ':' description=AnyString ','?  )?
-		& ( GenericJsonTupleButRef ','? )*
+//		& ( GenericJsonTupleButRef ','? )*
 	) '}';
 
 NamedOperationTrait:
@@ -165,7 +165,7 @@ MessageTrait:
 		& ( '"deprecated"' ':' deprecated=Boolean ','? )?
 		& ( '"headers"' ':' headers=AbstractSchema ','? )?
 		& ( '"tags"' ':' '[' tags+=Tag ( ',' tags+=Tag )* ']' ','? )?
-		& ( GenericJsonTupleButRef ','? )*
+//		& ( GenericJsonTupleButRef ','? )*
 	) '}';
 
 NamedMessageTrait:
@@ -178,28 +178,38 @@ Components:
 		& ( '"parameters"' ':' '{' parameters+=NamedParameter (',' parameters+=NamedParameter)* '}' ','? )?
 		& ( '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait (',' operationTraits+=NamedOperationTrait)* '}' ','? )?
 		& ( '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait (',' messageTraits+=NamedMessageTrait)* '}' ','? )?
-		& ( GenericJsonTupleButRef ','? )*
+//		& ( GenericJsonTupleButRef ','? )*
 	) '}';
 
 Reference:
 	{Reference} '{' '"$ref"' ':' uri=AnyString '}';
 
-GenericJsonExpression:
-	PrimitiveValue
-	| GenericJsonObject
-	| GenericJsonArray;
+//GenericJsonExpression:
+//	PrimitiveValue
+//	| GenericJsonObject
+//	| GenericJsonArray;
+//
+//GenericJsonObject:
+//	'{' '}' | '{' GenericJsonTuple (',' GenericJsonTuple)* '}';
+//
+//GenericJsonArray:
+//	'[' ']' | '[' GenericJsonExpression (',' GenericJsonExpression)* ']';
+//
+//GenericJsonTuple: AnyString ':' GenericJsonExpression;
+//
+//GenericJsonTupleButRef: AnyStringButRef ':' GenericJsonExpression;
 
-GenericJsonObject:
-	'{' '}' | '{' GenericJsonTuple (',' GenericJsonTuple)* '}';
 
-GenericJsonArray:
-	'[' ']' | '[' GenericJsonExpression (',' GenericJsonExpression)* ']';
-
-GenericJsonTuple: AnyString ':' GenericJsonExpression;
-
-GenericJsonTupleButRef: AnyStringButRef ':' GenericJsonExpression;
-
-
+enum JsonType:
+	string = '"string"'
+	| number = '"number"'
+	| integer = '"integer"'
+	| boolean = '"boolean"'
+	| object = '"object"'
+	| array = '"array"'
+	| any = '"any"'
+	| null = '"null"';
+	
 enum Boolean:
 	_false = "false"
 	| _true = "true";
@@ -249,7 +259,10 @@ Keyword:
 	'"2.0.0"'
 	| '"amqp"'
 	| '"amqps"'
+	| '"any"'
+	| '"array"'
 	| '"asyncapi"'
+	| '"boolean"'
 	| '"channels"'
 	| '"components"'
 	| '"contact"'
@@ -261,6 +274,7 @@ Keyword:
 	| '"format"'
 	| '"headers"'
 	| '"info"'
+	| '"integer"'
 	| '"items"'
 	| '"license"'
 	| '"location"'
@@ -272,6 +286,9 @@ Keyword:
 	| '"mqtt"'
 	| '"mqtts"'
 	| '"name"'
+	| '"null"'
+	| '"number"'
+	| '"object"'
 	| '"operationId"'
 	| '"operationTraits"'
 	| '"parameters"'
@@ -285,6 +302,7 @@ Keyword:
 	| '"servers"'
 	| '"stomp"'
 	| '"stomps"'
+	| '"string"'
 	| '"subscribe"'
 	| '"summary"'
 	| '"tags"'

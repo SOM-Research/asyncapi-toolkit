@@ -94,7 +94,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AbstractSchema"/>
   <eClassifiers xsi:type="ecore:EClass" name="Schema" eSuperTypes="#//AbstractSchema">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//JsonType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -166,6 +166,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="#//AbstractMessage #//AbstractSchema #//AbstractParameter #//AbstractOperationTrait #//AbstractMessageTrait">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="JsonType">
+    <eLiterals name="string" literal="&quot;string&quot;"/>
+    <eLiterals name="number" value="1" literal="&quot;number&quot;"/>
+    <eLiterals name="integer" value="2" literal="&quot;integer&quot;"/>
+    <eLiterals name="boolean" value="3" literal="&quot;boolean&quot;"/>
+    <eLiterals name="object" value="4" literal="&quot;object&quot;"/>
+    <eLiterals name="array" value="5" literal="&quot;array&quot;"/>
+    <eLiterals name="any" value="6" literal="&quot;any&quot;"/>
+    <eLiterals name="null" value="7" literal="&quot;null&quot;"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Boolean">
     <eLiterals name="_false" literal="false"/>

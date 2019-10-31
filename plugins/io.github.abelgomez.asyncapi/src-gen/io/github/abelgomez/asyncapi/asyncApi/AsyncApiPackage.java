@@ -1318,6 +1318,16 @@ public interface AsyncApiPackage extends EPackage
   int REFERENCE_FEATURE_COUNT = ABSTRACT_MESSAGE_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.JsonType <em>Json Type</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.github.abelgomez.asyncapi.asyncApi.JsonType
+   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getJsonType()
+   * @generated
+   */
+  int JSON_TYPE = 26;
+
+  /**
    * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.Boolean <em>Boolean</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1325,7 +1335,7 @@ public interface AsyncApiPackage extends EPackage
    * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getBoolean()
    * @generated
    */
-  int BOOLEAN = 26;
+  int BOOLEAN = 27;
 
   /**
    * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.VersionNumber <em>Version Number</em>}' enum.
@@ -1335,7 +1345,7 @@ public interface AsyncApiPackage extends EPackage
    * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getVersionNumber()
    * @generated
    */
-  int VERSION_NUMBER = 27;
+  int VERSION_NUMBER = 28;
 
   /**
    * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.Protocol <em>Protocol</em>}' enum.
@@ -1345,7 +1355,7 @@ public interface AsyncApiPackage extends EPackage
    * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getProtocol()
    * @generated
    */
-  int PROTOCOL = 28;
+  int PROTOCOL = 29;
 
 
   /**
@@ -2544,6 +2554,16 @@ public interface AsyncApiPackage extends EPackage
   EAttribute getReference_Uri();
 
   /**
+   * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.JsonType <em>Json Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Json Type</em>'.
+   * @see io.github.abelgomez.asyncapi.asyncApi.JsonType
+   * @generated
+   */
+  EEnum getJsonType();
+
+  /**
    * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.Boolean <em>Boolean</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3535,6 +3555,16 @@ public interface AsyncApiPackage extends EPackage
      * @generated
      */
     EAttribute REFERENCE__URI = eINSTANCE.getReference_Uri();
+
+    /**
+     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.JsonType <em>Json Type</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.github.abelgomez.asyncapi.asyncApi.JsonType
+     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getJsonType()
+     * @generated
+     */
+    EEnum JSON_TYPE = eINSTANCE.getJsonType();
 
     /**
      * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.Boolean <em>Boolean</em>}' enum.

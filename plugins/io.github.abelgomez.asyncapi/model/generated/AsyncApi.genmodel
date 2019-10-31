@@ -6,6 +6,16 @@
     complianceLevel="6.0" copyrightFields="false" runtimeVersion="2.17">
   <genPackages prefix="AsyncApi" basePackage="io.github.abelgomez.asyncapi" disposableProviderFactory="true"
       fileExtensions="asyncapi" ecorePackage="AsyncApi.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="AsyncApi.ecore#//JsonType">
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//JsonType/string"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//JsonType/number"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//JsonType/integer"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//JsonType/boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//JsonType/object"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//JsonType/array"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//JsonType/any"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//JsonType/null"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="AsyncApi.ecore#//Boolean">
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Boolean/_false"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Boolean/_true"/>

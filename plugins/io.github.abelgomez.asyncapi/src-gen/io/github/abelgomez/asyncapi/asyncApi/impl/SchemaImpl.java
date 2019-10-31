@@ -5,6 +5,7 @@ package io.github.abelgomez.asyncapi.asyncApi.impl;
 
 import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
+import io.github.abelgomez.asyncapi.asyncApi.JsonType;
 import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
 import io.github.abelgomez.asyncapi.asyncApi.Schema;
 
@@ -77,7 +78,7 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
    * @generated
    * @ordered
    */
-  protected static final String TYPE_EDEFAULT = null;
+  protected static final JsonType TYPE_EDEFAULT = JsonType.STRING;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -87,7 +88,7 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
    * @generated
    * @ordered
    */
-  protected String type = TYPE_EDEFAULT;
+  protected JsonType type = TYPE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -281,7 +282,7 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
    * @generated
    */
   @Override
-  public String getType()
+  public JsonType getType()
   {
     return type;
   }
@@ -292,10 +293,10 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
    * @generated
    */
   @Override
-  public void setType(String newType)
+  public void setType(JsonType newType)
   {
-    String oldType = type;
-    type = newType;
+    JsonType oldType = type;
+    type = newType == null ? TYPE_EDEFAULT : newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SCHEMA__TYPE, oldType, type));
   }
@@ -589,7 +590,7 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
         setTitle((String)newValue);
         return;
       case AsyncApiPackage.SCHEMA__TYPE:
-        setType((String)newValue);
+        setType((JsonType)newValue);
         return;
       case AsyncApiPackage.SCHEMA__DESCRIPTION:
         setDescription((String)newValue);
@@ -685,7 +686,7 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
       case AsyncApiPackage.SCHEMA__TITLE:
         return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
       case AsyncApiPackage.SCHEMA__TYPE:
-        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+        return type != TYPE_EDEFAULT;
       case AsyncApiPackage.SCHEMA__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case AsyncApiPackage.SCHEMA__FORMAT:

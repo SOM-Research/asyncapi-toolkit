@@ -426,7 +426,7 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     (
 	 *         (
 	 *             title=AnyString | 
-	 *             type=AnyString | 
+	 *             type=JsonType | 
 	 *             description=AnyString | 
 	 *             format=AnyString | 
 	 *             minimum=INT | 
@@ -434,9 +434,9 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *             default=PrimitiveValue | 
 	 *             items=AbstractSchema
 	 *         )? 
-	 *         (required+=AnyString required+=AnyString*)? 
+	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)? 
 	 *         (properties+=NamedSchema properties+=NamedSchema*)? 
-	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)?
+	 *         (required+=AnyString required+=AnyString*)?
 	 *     )+
 	 */
 	protected void sequence_Schema(ISerializationContext context, Schema semanticObject) {

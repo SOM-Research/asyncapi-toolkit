@@ -15,6 +15,7 @@ import io.github.abelgomez.asyncapi.asyncApi.Channel;
 import io.github.abelgomez.asyncapi.asyncApi.Components;
 import io.github.abelgomez.asyncapi.asyncApi.Contact;
 import io.github.abelgomez.asyncapi.asyncApi.Info;
+import io.github.abelgomez.asyncapi.asyncApi.JsonType;
 import io.github.abelgomez.asyncapi.asyncApi.License;
 import io.github.abelgomez.asyncapi.asyncApi.Message;
 import io.github.abelgomez.asyncapi.asyncApi.MessageTrait;
@@ -231,6 +232,13 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   private EClass referenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum jsonTypeEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1543,6 +1551,17 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
+  public EEnum getJsonType()
+  {
+    return jsonTypeEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EEnum getBoolean()
   {
     return booleanEEnum;
@@ -1739,6 +1758,7 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
     createEAttribute(referenceEClass, REFERENCE__URI);
 
     // Create enums
+    jsonTypeEEnum = createEEnum(JSON_TYPE);
     booleanEEnum = createEEnum(BOOLEAN);
     versionNumberEEnum = createEEnum(VERSION_NUMBER);
     protocolEEnum = createEEnum(PROTOCOL);
@@ -1862,7 +1882,7 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
 
     initEClass(schemaEClass, Schema.class, "Schema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSchema_Title(), ecorePackage.getEString(), "title", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSchema_Type(), ecorePackage.getEString(), "type", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSchema_Type(), this.getJsonType(), "type", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSchema_Description(), ecorePackage.getEString(), "description", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSchema_Format(), ecorePackage.getEString(), "format", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSchema_Minimum(), ecorePackage.getEInt(), "minimum", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1923,6 +1943,16 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
     initEAttribute(getReference_Uri(), ecorePackage.getEString(), "uri", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
+    initEEnum(jsonTypeEEnum, JsonType.class, "JsonType");
+    addEEnumLiteral(jsonTypeEEnum, JsonType.STRING);
+    addEEnumLiteral(jsonTypeEEnum, JsonType.NUMBER);
+    addEEnumLiteral(jsonTypeEEnum, JsonType.INTEGER);
+    addEEnumLiteral(jsonTypeEEnum, JsonType.BOOLEAN);
+    addEEnumLiteral(jsonTypeEEnum, JsonType.OBJECT);
+    addEEnumLiteral(jsonTypeEEnum, JsonType.ARRAY);
+    addEEnumLiteral(jsonTypeEEnum, JsonType.ANY);
+    addEEnumLiteral(jsonTypeEEnum, JsonType.NULL);
+
     initEEnum(booleanEEnum, io.github.abelgomez.asyncapi.asyncApi.Boolean.class, "Boolean");
     addEEnumLiteral(booleanEEnum, io.github.abelgomez.asyncapi.asyncApi.Boolean._FALSE);
     addEEnumLiteral(booleanEEnum, io.github.abelgomez.asyncapi.asyncApi.Boolean._TRUE);

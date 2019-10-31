@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import io.github.abelgomez.asyncapi.asyncApi.JsonType
 
 /**
  * Generates code from your model files on save.
@@ -743,26 +744,26 @@ class AsyncApiGenerator extends AbstractGenerator {
 				return "TYPE"
 			}
 		} else {
-			switch (schema.type.toLowerCase) {
-				case "string": {
+			switch (schema.type) {
+				case JsonType.STRING: {
 					return "String";
 				}
-				case "number": {
+				case JsonType.NUMBER: {
 					return "Double";
 				}
-				case "integer": {
+				case JsonType.INTEGER: {
 					return "Integer";
 				}
-				case "boolean": {
+				case JsonType.BOOLEAN: {
 					return "Boolean";
 				}
-				case "null": {
+				case JsonType.NULL: {
 					return "Object";
 				}
-				case "any": {
+				case JsonType.ANY: {
 					return "Object";
 				}
-				case "array": {
+				case JsonType.ARRAY: {
 					return "java.util.List<?>";
 				}
 			}
@@ -770,7 +771,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 	}
 
 	def isObjectType(Schema s) {
-		if (s.type == "object") {
+		if (s.type == JsonType.OBJECT) {
 			return true;
 		} else if (!s.properties.isEmpty) {
 			return true;
@@ -790,32 +791,9 @@ class AsyncApiGenerator extends AbstractGenerator {
 	def isBasicType(Schema s) {
 		if (s.isObjectType) {
 			return false;
-		} else if (s !== null) {
-			switch (s.type.toLowerCase) {
-				case "string": {
-					return true;
-				}
-				case "number": {
-					return true;
-				}
-				case "integer": {
-					return true;
-				}
-				case "boolean": {
-					return true;
-				}
-				case "null": {
-					return true;
-				}
-				case "any": {
-					return true;
-				}
-				case "array": {
-					return true;
-				}
-			}
+		} else {
+			return true;
 		} 
-		return false;
 	}
 	
 	static def String expand(Server server) {
