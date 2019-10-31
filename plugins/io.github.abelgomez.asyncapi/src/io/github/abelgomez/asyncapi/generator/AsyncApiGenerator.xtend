@@ -130,7 +130,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 				String topic = TOPIC_ID;
 			«ENDIF»
 				String broker = "«api.servers.get(0).expand»";
-				String clientId = java.util.UUID.randomUUID().toString();
+				String clientId = MqttClient.generateClientId();
 				MemoryPersistence persistence = new MemoryPersistence();
 				
 				try (MqttClient client = new MqttClient(broker, clientId, persistence);) {
@@ -243,21 +243,13 @@ class AsyncApiGenerator extends AbstractGenerator {
 				
 			static {
 				String broker = "«api.servers.get(0).expand»";
-				String clientId = java.util.UUID.randomUUID().toString();
+				String clientId = MqttClient.generateClientId();
 				MemoryPersistence persistence = new MemoryPersistence();
 				try {
 					client = new MqttClient(broker, clientId, persistence);
 				} catch (MqttException e) {
 					throw new RuntimeException(e);
 				}
-				Runtime.getRuntime().addShutdownHook(new Thread() {
-					public void run() {
-						try {
-							client.disconnectForcibly();
-						} catch (MqttException e) {
-						}
-					}
-				});
 			}
 			
 			/**
