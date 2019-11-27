@@ -41,15 +41,15 @@ public class GenerateAsyncApiHandler extends AbstractHandler {
 				} else {
 					String resultFileName = ePackage.getName() + ".asyncapi";
 					IFile resultFile = ResourcesPlugin.getWorkspace().getRoot().getFile(file.getFullPath().removeLastSegments(1).append(resultFileName));
-					if (resultFile.exists()) {
-						if (MessageDialog.openQuestion(window.getShell(), "Target file already exists!", "Target file already exists. Overwrite?")) {
-							try {
-								resultFile.setContents(new ByteArrayInputStream(Ecore2AsyncApi.generate(ePackage).toString().getBytes()), IResource.FORCE | IResource.KEEP_HISTORY, new NullProgressMonitor());
-							} catch (CoreException e) {
-								ErrorDialog.openError(window.getShell(), "Error", "Error while storing the AsyncAPI specification",
-										new Status(IStatus.ERROR, AsyncapiActivator.PLUGIN_ID, e.getMessage(), e));
-							}
+					try {
+						if (!resultFile.exists()) {
+							resultFile.create(new ByteArrayInputStream(Ecore2AsyncApi.generate(ePackage).toString().getBytes()), IResource.FORCE | IResource.KEEP_HISTORY, new NullProgressMonitor());
+						} else if (resultFile.exists() && MessageDialog.openQuestion(window.getShell(), "Target file already exists!", "Target file already exists. Overwrite?")) {
+							resultFile.setContents(new ByteArrayInputStream(Ecore2AsyncApi.generate(ePackage).toString().getBytes()), IResource.FORCE | IResource.KEEP_HISTORY, new NullProgressMonitor());
 						}
+					} catch (CoreException e) {
+						ErrorDialog.openError(window.getShell(), "Error", "Error while storing the AsyncAPI specification",
+								new Status(IStatus.ERROR, AsyncapiActivator.PLUGIN_ID, e.getMessage(), e));
 					}
 				}
 			} else {
