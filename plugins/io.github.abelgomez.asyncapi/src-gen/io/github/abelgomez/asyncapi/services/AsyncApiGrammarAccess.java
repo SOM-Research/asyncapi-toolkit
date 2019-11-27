@@ -1787,53 +1787,65 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMaximumINTTerminalRuleCall_2_5_2_0 = (RuleCall)cMaximumAssignment_2_5_2.eContents().get(0);
 		private final Keyword cCommaKeyword_2_5_3 = (Keyword)cGroup_2_5.eContents().get(3);
 		private final Group cGroup_2_6 = (Group)cUnorderedGroup_2.eContents().get(6);
-		private final Keyword cDefaultKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
+		private final Keyword cMinItemsKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
 		private final Keyword cColonKeyword_2_6_1 = (Keyword)cGroup_2_6.eContents().get(1);
-		private final Assignment cDefaultAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cDefaultPrimitiveValueParserRuleCall_2_6_2_0 = (RuleCall)cDefaultAssignment_2_6_2.eContents().get(0);
+		private final Assignment cMinItemsAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
+		private final RuleCall cMinItemsINTTerminalRuleCall_2_6_2_0 = (RuleCall)cMinItemsAssignment_2_6_2.eContents().get(0);
 		private final Keyword cCommaKeyword_2_6_3 = (Keyword)cGroup_2_6.eContents().get(3);
 		private final Group cGroup_2_7 = (Group)cUnorderedGroup_2.eContents().get(7);
-		private final Keyword cPropertiesKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
+		private final Keyword cMaxItemsKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
 		private final Keyword cColonKeyword_2_7_1 = (Keyword)cGroup_2_7.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2_7_2 = (Keyword)cGroup_2_7.eContents().get(2);
-		private final Assignment cPropertiesAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cPropertiesNamedSchemaParserRuleCall_2_7_3_0 = (RuleCall)cPropertiesAssignment_2_7_3.eContents().get(0);
-		private final Group cGroup_2_7_4 = (Group)cGroup_2_7.eContents().get(4);
-		private final Keyword cCommaKeyword_2_7_4_0 = (Keyword)cGroup_2_7_4.eContents().get(0);
-		private final Assignment cPropertiesAssignment_2_7_4_1 = (Assignment)cGroup_2_7_4.eContents().get(1);
-		private final RuleCall cPropertiesNamedSchemaParserRuleCall_2_7_4_1_0 = (RuleCall)cPropertiesAssignment_2_7_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_2_7_5 = (Keyword)cGroup_2_7.eContents().get(5);
-		private final Keyword cCommaKeyword_2_7_6 = (Keyword)cGroup_2_7.eContents().get(6);
+		private final Assignment cMaxItemsAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
+		private final RuleCall cMaxItemsINTTerminalRuleCall_2_7_2_0 = (RuleCall)cMaxItemsAssignment_2_7_2.eContents().get(0);
+		private final Keyword cCommaKeyword_2_7_3 = (Keyword)cGroup_2_7.eContents().get(3);
 		private final Group cGroup_2_8 = (Group)cUnorderedGroup_2.eContents().get(8);
-		private final Keyword cEnumKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
+		private final Keyword cDefaultKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
 		private final Keyword cColonKeyword_2_8_1 = (Keyword)cGroup_2_8.eContents().get(1);
-		private final Keyword cLeftSquareBracketKeyword_2_8_2 = (Keyword)cGroup_2_8.eContents().get(2);
-		private final Assignment cEnumAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cEnumPrimitiveValueParserRuleCall_2_8_3_0 = (RuleCall)cEnumAssignment_2_8_3.eContents().get(0);
-		private final Group cGroup_2_8_4 = (Group)cGroup_2_8.eContents().get(4);
-		private final Keyword cCommaKeyword_2_8_4_0 = (Keyword)cGroup_2_8_4.eContents().get(0);
-		private final Assignment cEnumAssignment_2_8_4_1 = (Assignment)cGroup_2_8_4.eContents().get(1);
-		private final RuleCall cEnumPrimitiveValueParserRuleCall_2_8_4_1_0 = (RuleCall)cEnumAssignment_2_8_4_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_2_8_5 = (Keyword)cGroup_2_8.eContents().get(5);
-		private final Keyword cCommaKeyword_2_8_6 = (Keyword)cGroup_2_8.eContents().get(6);
+		private final Assignment cDefaultAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
+		private final RuleCall cDefaultPrimitiveValueParserRuleCall_2_8_2_0 = (RuleCall)cDefaultAssignment_2_8_2.eContents().get(0);
+		private final Keyword cCommaKeyword_2_8_3 = (Keyword)cGroup_2_8.eContents().get(3);
 		private final Group cGroup_2_9 = (Group)cUnorderedGroup_2.eContents().get(9);
-		private final Keyword cItemsKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
+		private final Keyword cPropertiesKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
 		private final Keyword cColonKeyword_2_9_1 = (Keyword)cGroup_2_9.eContents().get(1);
-		private final Assignment cItemsAssignment_2_9_2 = (Assignment)cGroup_2_9.eContents().get(2);
-		private final RuleCall cItemsAbstractSchemaParserRuleCall_2_9_2_0 = (RuleCall)cItemsAssignment_2_9_2.eContents().get(0);
-		private final Keyword cCommaKeyword_2_9_3 = (Keyword)cGroup_2_9.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_2_9_2 = (Keyword)cGroup_2_9.eContents().get(2);
+		private final Assignment cPropertiesAssignment_2_9_3 = (Assignment)cGroup_2_9.eContents().get(3);
+		private final RuleCall cPropertiesNamedSchemaParserRuleCall_2_9_3_0 = (RuleCall)cPropertiesAssignment_2_9_3.eContents().get(0);
+		private final Group cGroup_2_9_4 = (Group)cGroup_2_9.eContents().get(4);
+		private final Keyword cCommaKeyword_2_9_4_0 = (Keyword)cGroup_2_9_4.eContents().get(0);
+		private final Assignment cPropertiesAssignment_2_9_4_1 = (Assignment)cGroup_2_9_4.eContents().get(1);
+		private final RuleCall cPropertiesNamedSchemaParserRuleCall_2_9_4_1_0 = (RuleCall)cPropertiesAssignment_2_9_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2_9_5 = (Keyword)cGroup_2_9.eContents().get(5);
+		private final Keyword cCommaKeyword_2_9_6 = (Keyword)cGroup_2_9.eContents().get(6);
 		private final Group cGroup_2_10 = (Group)cUnorderedGroup_2.eContents().get(10);
-		private final Keyword cRequiredKeyword_2_10_0 = (Keyword)cGroup_2_10.eContents().get(0);
+		private final Keyword cEnumKeyword_2_10_0 = (Keyword)cGroup_2_10.eContents().get(0);
 		private final Keyword cColonKeyword_2_10_1 = (Keyword)cGroup_2_10.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_2_10_2 = (Keyword)cGroup_2_10.eContents().get(2);
-		private final Assignment cRequiredAssignment_2_10_3 = (Assignment)cGroup_2_10.eContents().get(3);
-		private final RuleCall cRequiredAnyStringParserRuleCall_2_10_3_0 = (RuleCall)cRequiredAssignment_2_10_3.eContents().get(0);
+		private final Assignment cEnumAssignment_2_10_3 = (Assignment)cGroup_2_10.eContents().get(3);
+		private final RuleCall cEnumPrimitiveValueParserRuleCall_2_10_3_0 = (RuleCall)cEnumAssignment_2_10_3.eContents().get(0);
 		private final Group cGroup_2_10_4 = (Group)cGroup_2_10.eContents().get(4);
 		private final Keyword cCommaKeyword_2_10_4_0 = (Keyword)cGroup_2_10_4.eContents().get(0);
-		private final Assignment cRequiredAssignment_2_10_4_1 = (Assignment)cGroup_2_10_4.eContents().get(1);
-		private final RuleCall cRequiredAnyStringParserRuleCall_2_10_4_1_0 = (RuleCall)cRequiredAssignment_2_10_4_1.eContents().get(0);
+		private final Assignment cEnumAssignment_2_10_4_1 = (Assignment)cGroup_2_10_4.eContents().get(1);
+		private final RuleCall cEnumPrimitiveValueParserRuleCall_2_10_4_1_0 = (RuleCall)cEnumAssignment_2_10_4_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_2_10_5 = (Keyword)cGroup_2_10.eContents().get(5);
 		private final Keyword cCommaKeyword_2_10_6 = (Keyword)cGroup_2_10.eContents().get(6);
+		private final Group cGroup_2_11 = (Group)cUnorderedGroup_2.eContents().get(11);
+		private final Keyword cItemsKeyword_2_11_0 = (Keyword)cGroup_2_11.eContents().get(0);
+		private final Keyword cColonKeyword_2_11_1 = (Keyword)cGroup_2_11.eContents().get(1);
+		private final Assignment cItemsAssignment_2_11_2 = (Assignment)cGroup_2_11.eContents().get(2);
+		private final RuleCall cItemsAbstractSchemaParserRuleCall_2_11_2_0 = (RuleCall)cItemsAssignment_2_11_2.eContents().get(0);
+		private final Keyword cCommaKeyword_2_11_3 = (Keyword)cGroup_2_11.eContents().get(3);
+		private final Group cGroup_2_12 = (Group)cUnorderedGroup_2.eContents().get(12);
+		private final Keyword cRequiredKeyword_2_12_0 = (Keyword)cGroup_2_12.eContents().get(0);
+		private final Keyword cColonKeyword_2_12_1 = (Keyword)cGroup_2_12.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_2_12_2 = (Keyword)cGroup_2_12.eContents().get(2);
+		private final Assignment cRequiredAssignment_2_12_3 = (Assignment)cGroup_2_12.eContents().get(3);
+		private final RuleCall cRequiredAnyStringParserRuleCall_2_12_3_0 = (RuleCall)cRequiredAssignment_2_12_3.eContents().get(0);
+		private final Group cGroup_2_12_4 = (Group)cGroup_2_12.eContents().get(4);
+		private final Keyword cCommaKeyword_2_12_4_0 = (Keyword)cGroup_2_12_4.eContents().get(0);
+		private final Assignment cRequiredAssignment_2_12_4_1 = (Assignment)cGroup_2_12_4.eContents().get(1);
+		private final RuleCall cRequiredAnyStringParserRuleCall_2_12_4_1_0 = (RuleCall)cRequiredAssignment_2_12_4_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_2_12_5 = (Keyword)cGroup_2_12.eContents().get(5);
+		private final Keyword cCommaKeyword_2_12_6 = (Keyword)cGroup_2_12.eContents().get(6);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Schema:
@@ -1843,6 +1855,8 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//	& ('"format"' ':' format=AnyString ','?)?
 		//	& ('"minimum"' ':' minimum=INT ','?)?
 		//	& ('"maximum"' ':' maximum=INT ','?)?
+		//	& ('"minItems"' ':' minItems=INT ','?)?
+		//	& ('"maxItems"' ':' maxItems=INT ','?)?
 		//	& ('"default"' ':' default=PrimitiveValue ','?)?
 		//	& ('"properties"' ':' '{' properties+=NamedSchema (',' properties+=NamedSchema)* '}' ','?)?
 		//	& ('"enum"' ':' '[' ^enum+=PrimitiveValue (',' ^enum+=PrimitiveValue)* ']' ','?)?
@@ -1854,10 +1868,11 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//{Schema} '{' (('"title"' ':' title=AnyString ','?)? & ('"type"' ':' type=JsonType ','?)? & ('"description"' ':'
 		//description=AnyString ','?)? & ('"format"' ':' format=AnyString ','?)? & ('"minimum"' ':' minimum=INT ','?)? &
-		//('"maximum"' ':' maximum=INT ','?)? & ('"default"' ':' default=PrimitiveValue ','?)? & ('"properties"' ':' '{'
-		//properties+=NamedSchema (',' properties+=NamedSchema)* '}' ','?)? & ('"enum"' ':' '[' ^enum+=PrimitiveValue (','
-		//^enum+=PrimitiveValue)* ']' ','?)? & ('"items"' ':' items=AbstractSchema ','?)? & ('"required"' ':' '['
-		//required+=AnyString (',' required+=AnyString)* ']' ','?)? //		& ( GenericJsonTupleButRef ','? )*
+		//('"maximum"' ':' maximum=INT ','?)? & ('"minItems"' ':' minItems=INT ','?)? & ('"maxItems"' ':' maxItems=INT ','?)? &
+		//('"default"' ':' default=PrimitiveValue ','?)? & ('"properties"' ':' '{' properties+=NamedSchema (','
+		//properties+=NamedSchema)* '}' ','?)? & ('"enum"' ':' '[' ^enum+=PrimitiveValue (',' ^enum+=PrimitiveValue)* ']' ','?)?
+		//& ('"items"' ':' items=AbstractSchema ','?)? & ('"required"' ':' '[' required+=AnyString (',' required+=AnyString)*
+		//']' ','?)? //		& ( GenericJsonTupleButRef ','? )*
 		//) '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -1869,10 +1884,10 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//('"title"' ':' title=AnyString ','?)? & ('"type"' ':' type=JsonType ','?)? & ('"description"' ':' description=AnyString
 		//','?)? & ('"format"' ':' format=AnyString ','?)? & ('"minimum"' ':' minimum=INT ','?)? & ('"maximum"' ':' maximum=INT
-		//','?)? & ('"default"' ':' default=PrimitiveValue ','?)? & ('"properties"' ':' '{' properties+=NamedSchema (','
-		//properties+=NamedSchema)* '}' ','?)? & ('"enum"' ':' '[' ^enum+=PrimitiveValue (',' ^enum+=PrimitiveValue)* ']' ','?)?
-		//& ('"items"' ':' items=AbstractSchema ','?)? & ('"required"' ':' '[' required+=AnyString (',' required+=AnyString)*
-		//']' ','?)?
+		//','?)? & ('"minItems"' ':' minItems=INT ','?)? & ('"maxItems"' ':' maxItems=INT ','?)? & ('"default"' ':'
+		//default=PrimitiveValue ','?)? & ('"properties"' ':' '{' properties+=NamedSchema (',' properties+=NamedSchema)* '}'
+		//','?)? & ('"enum"' ':' '[' ^enum+=PrimitiveValue (',' ^enum+=PrimitiveValue)* ']' ','?)? & ('"items"' ':'
+		//items=AbstractSchema ','?)? & ('"required"' ':' '[' required+=AnyString (',' required+=AnyString)* ']' ','?)?
 		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
 		
 		//('"title"' ':' title=AnyString ','?)?
@@ -1983,119 +1998,101 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//','?
 		public Keyword getCommaKeyword_2_5_3() { return cCommaKeyword_2_5_3; }
 		
-		//('"default"' ':' default=PrimitiveValue ','?)?
+		//('"minItems"' ':' minItems=INT ','?)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'"default"'
-		public Keyword getDefaultKeyword_2_6_0() { return cDefaultKeyword_2_6_0; }
+		//'"minItems"'
+		public Keyword getMinItemsKeyword_2_6_0() { return cMinItemsKeyword_2_6_0; }
 		
 		//':'
 		public Keyword getColonKeyword_2_6_1() { return cColonKeyword_2_6_1; }
 		
-		//default=PrimitiveValue
-		public Assignment getDefaultAssignment_2_6_2() { return cDefaultAssignment_2_6_2; }
+		//minItems=INT
+		public Assignment getMinItemsAssignment_2_6_2() { return cMinItemsAssignment_2_6_2; }
 		
-		//PrimitiveValue
-		public RuleCall getDefaultPrimitiveValueParserRuleCall_2_6_2_0() { return cDefaultPrimitiveValueParserRuleCall_2_6_2_0; }
+		//INT
+		public RuleCall getMinItemsINTTerminalRuleCall_2_6_2_0() { return cMinItemsINTTerminalRuleCall_2_6_2_0; }
 		
 		//','?
 		public Keyword getCommaKeyword_2_6_3() { return cCommaKeyword_2_6_3; }
 		
-		//('"properties"' ':' '{' properties+=NamedSchema (',' properties+=NamedSchema)* '}' ','?)?
+		//('"maxItems"' ':' maxItems=INT ','?)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'"properties"'
-		public Keyword getPropertiesKeyword_2_7_0() { return cPropertiesKeyword_2_7_0; }
+		//'"maxItems"'
+		public Keyword getMaxItemsKeyword_2_7_0() { return cMaxItemsKeyword_2_7_0; }
 		
 		//':'
 		public Keyword getColonKeyword_2_7_1() { return cColonKeyword_2_7_1; }
 		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2_7_2() { return cLeftCurlyBracketKeyword_2_7_2; }
+		//maxItems=INT
+		public Assignment getMaxItemsAssignment_2_7_2() { return cMaxItemsAssignment_2_7_2; }
 		
-		//properties+=NamedSchema
-		public Assignment getPropertiesAssignment_2_7_3() { return cPropertiesAssignment_2_7_3; }
-		
-		//NamedSchema
-		public RuleCall getPropertiesNamedSchemaParserRuleCall_2_7_3_0() { return cPropertiesNamedSchemaParserRuleCall_2_7_3_0; }
-		
-		//(',' properties+=NamedSchema)*
-		public Group getGroup_2_7_4() { return cGroup_2_7_4; }
-		
-		//','
-		public Keyword getCommaKeyword_2_7_4_0() { return cCommaKeyword_2_7_4_0; }
-		
-		//properties+=NamedSchema
-		public Assignment getPropertiesAssignment_2_7_4_1() { return cPropertiesAssignment_2_7_4_1; }
-		
-		//NamedSchema
-		public RuleCall getPropertiesNamedSchemaParserRuleCall_2_7_4_1_0() { return cPropertiesNamedSchemaParserRuleCall_2_7_4_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_2_7_5() { return cRightCurlyBracketKeyword_2_7_5; }
+		//INT
+		public RuleCall getMaxItemsINTTerminalRuleCall_2_7_2_0() { return cMaxItemsINTTerminalRuleCall_2_7_2_0; }
 		
 		//','?
-		public Keyword getCommaKeyword_2_7_6() { return cCommaKeyword_2_7_6; }
+		public Keyword getCommaKeyword_2_7_3() { return cCommaKeyword_2_7_3; }
 		
-		//('"enum"' ':' '[' ^enum+=PrimitiveValue (',' ^enum+=PrimitiveValue)* ']' ','?)?
+		//('"default"' ':' default=PrimitiveValue ','?)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'"enum"'
-		public Keyword getEnumKeyword_2_8_0() { return cEnumKeyword_2_8_0; }
+		//'"default"'
+		public Keyword getDefaultKeyword_2_8_0() { return cDefaultKeyword_2_8_0; }
 		
 		//':'
 		public Keyword getColonKeyword_2_8_1() { return cColonKeyword_2_8_1; }
 		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_2_8_2() { return cLeftSquareBracketKeyword_2_8_2; }
-		
-		//^enum+=PrimitiveValue
-		public Assignment getEnumAssignment_2_8_3() { return cEnumAssignment_2_8_3; }
+		//default=PrimitiveValue
+		public Assignment getDefaultAssignment_2_8_2() { return cDefaultAssignment_2_8_2; }
 		
 		//PrimitiveValue
-		public RuleCall getEnumPrimitiveValueParserRuleCall_2_8_3_0() { return cEnumPrimitiveValueParserRuleCall_2_8_3_0; }
-		
-		//(',' ^enum+=PrimitiveValue)*
-		public Group getGroup_2_8_4() { return cGroup_2_8_4; }
-		
-		//','
-		public Keyword getCommaKeyword_2_8_4_0() { return cCommaKeyword_2_8_4_0; }
-		
-		//^enum+=PrimitiveValue
-		public Assignment getEnumAssignment_2_8_4_1() { return cEnumAssignment_2_8_4_1; }
-		
-		//PrimitiveValue
-		public RuleCall getEnumPrimitiveValueParserRuleCall_2_8_4_1_0() { return cEnumPrimitiveValueParserRuleCall_2_8_4_1_0; }
-		
-		//']'
-		public Keyword getRightSquareBracketKeyword_2_8_5() { return cRightSquareBracketKeyword_2_8_5; }
+		public RuleCall getDefaultPrimitiveValueParserRuleCall_2_8_2_0() { return cDefaultPrimitiveValueParserRuleCall_2_8_2_0; }
 		
 		//','?
-		public Keyword getCommaKeyword_2_8_6() { return cCommaKeyword_2_8_6; }
+		public Keyword getCommaKeyword_2_8_3() { return cCommaKeyword_2_8_3; }
 		
-		//('"items"' ':' items=AbstractSchema ','?)?
+		//('"properties"' ':' '{' properties+=NamedSchema (',' properties+=NamedSchema)* '}' ','?)?
 		public Group getGroup_2_9() { return cGroup_2_9; }
 		
-		//'"items"'
-		public Keyword getItemsKeyword_2_9_0() { return cItemsKeyword_2_9_0; }
+		//'"properties"'
+		public Keyword getPropertiesKeyword_2_9_0() { return cPropertiesKeyword_2_9_0; }
 		
 		//':'
 		public Keyword getColonKeyword_2_9_1() { return cColonKeyword_2_9_1; }
 		
-		//items=AbstractSchema
-		public Assignment getItemsAssignment_2_9_2() { return cItemsAssignment_2_9_2; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_9_2() { return cLeftCurlyBracketKeyword_2_9_2; }
 		
-		//AbstractSchema
-		public RuleCall getItemsAbstractSchemaParserRuleCall_2_9_2_0() { return cItemsAbstractSchemaParserRuleCall_2_9_2_0; }
+		//properties+=NamedSchema
+		public Assignment getPropertiesAssignment_2_9_3() { return cPropertiesAssignment_2_9_3; }
+		
+		//NamedSchema
+		public RuleCall getPropertiesNamedSchemaParserRuleCall_2_9_3_0() { return cPropertiesNamedSchemaParserRuleCall_2_9_3_0; }
+		
+		//(',' properties+=NamedSchema)*
+		public Group getGroup_2_9_4() { return cGroup_2_9_4; }
+		
+		//','
+		public Keyword getCommaKeyword_2_9_4_0() { return cCommaKeyword_2_9_4_0; }
+		
+		//properties+=NamedSchema
+		public Assignment getPropertiesAssignment_2_9_4_1() { return cPropertiesAssignment_2_9_4_1; }
+		
+		//NamedSchema
+		public RuleCall getPropertiesNamedSchemaParserRuleCall_2_9_4_1_0() { return cPropertiesNamedSchemaParserRuleCall_2_9_4_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_9_5() { return cRightCurlyBracketKeyword_2_9_5; }
 		
 		//','?
-		public Keyword getCommaKeyword_2_9_3() { return cCommaKeyword_2_9_3; }
+		public Keyword getCommaKeyword_2_9_6() { return cCommaKeyword_2_9_6; }
 		
-		//('"required"' ':' '[' required+=AnyString (',' required+=AnyString)* ']' ','?)?
+		//('"enum"' ':' '[' ^enum+=PrimitiveValue (',' ^enum+=PrimitiveValue)* ']' ','?)?
 		public Group getGroup_2_10() { return cGroup_2_10; }
 		
-		//'"required"'
-		public Keyword getRequiredKeyword_2_10_0() { return cRequiredKeyword_2_10_0; }
+		//'"enum"'
+		public Keyword getEnumKeyword_2_10_0() { return cEnumKeyword_2_10_0; }
 		
 		//':'
 		public Keyword getColonKeyword_2_10_1() { return cColonKeyword_2_10_1; }
@@ -2103,29 +2100,83 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//'['
 		public Keyword getLeftSquareBracketKeyword_2_10_2() { return cLeftSquareBracketKeyword_2_10_2; }
 		
-		//required+=AnyString
-		public Assignment getRequiredAssignment_2_10_3() { return cRequiredAssignment_2_10_3; }
+		//^enum+=PrimitiveValue
+		public Assignment getEnumAssignment_2_10_3() { return cEnumAssignment_2_10_3; }
 		
-		//AnyString
-		public RuleCall getRequiredAnyStringParserRuleCall_2_10_3_0() { return cRequiredAnyStringParserRuleCall_2_10_3_0; }
+		//PrimitiveValue
+		public RuleCall getEnumPrimitiveValueParserRuleCall_2_10_3_0() { return cEnumPrimitiveValueParserRuleCall_2_10_3_0; }
 		
-		//(',' required+=AnyString)*
+		//(',' ^enum+=PrimitiveValue)*
 		public Group getGroup_2_10_4() { return cGroup_2_10_4; }
 		
 		//','
 		public Keyword getCommaKeyword_2_10_4_0() { return cCommaKeyword_2_10_4_0; }
 		
-		//required+=AnyString
-		public Assignment getRequiredAssignment_2_10_4_1() { return cRequiredAssignment_2_10_4_1; }
+		//^enum+=PrimitiveValue
+		public Assignment getEnumAssignment_2_10_4_1() { return cEnumAssignment_2_10_4_1; }
 		
-		//AnyString
-		public RuleCall getRequiredAnyStringParserRuleCall_2_10_4_1_0() { return cRequiredAnyStringParserRuleCall_2_10_4_1_0; }
+		//PrimitiveValue
+		public RuleCall getEnumPrimitiveValueParserRuleCall_2_10_4_1_0() { return cEnumPrimitiveValueParserRuleCall_2_10_4_1_0; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_2_10_5() { return cRightSquareBracketKeyword_2_10_5; }
 		
 		//','?
 		public Keyword getCommaKeyword_2_10_6() { return cCommaKeyword_2_10_6; }
+		
+		//('"items"' ':' items=AbstractSchema ','?)?
+		public Group getGroup_2_11() { return cGroup_2_11; }
+		
+		//'"items"'
+		public Keyword getItemsKeyword_2_11_0() { return cItemsKeyword_2_11_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2_11_1() { return cColonKeyword_2_11_1; }
+		
+		//items=AbstractSchema
+		public Assignment getItemsAssignment_2_11_2() { return cItemsAssignment_2_11_2; }
+		
+		//AbstractSchema
+		public RuleCall getItemsAbstractSchemaParserRuleCall_2_11_2_0() { return cItemsAbstractSchemaParserRuleCall_2_11_2_0; }
+		
+		//','?
+		public Keyword getCommaKeyword_2_11_3() { return cCommaKeyword_2_11_3; }
+		
+		//('"required"' ':' '[' required+=AnyString (',' required+=AnyString)* ']' ','?)?
+		public Group getGroup_2_12() { return cGroup_2_12; }
+		
+		//'"required"'
+		public Keyword getRequiredKeyword_2_12_0() { return cRequiredKeyword_2_12_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2_12_1() { return cColonKeyword_2_12_1; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_2_12_2() { return cLeftSquareBracketKeyword_2_12_2; }
+		
+		//required+=AnyString
+		public Assignment getRequiredAssignment_2_12_3() { return cRequiredAssignment_2_12_3; }
+		
+		//AnyString
+		public RuleCall getRequiredAnyStringParserRuleCall_2_12_3_0() { return cRequiredAnyStringParserRuleCall_2_12_3_0; }
+		
+		//(',' required+=AnyString)*
+		public Group getGroup_2_12_4() { return cGroup_2_12_4; }
+		
+		//','
+		public Keyword getCommaKeyword_2_12_4_0() { return cCommaKeyword_2_12_4_0; }
+		
+		//required+=AnyString
+		public Assignment getRequiredAssignment_2_12_4_1() { return cRequiredAssignment_2_12_4_1; }
+		
+		//AnyString
+		public RuleCall getRequiredAnyStringParserRuleCall_2_12_4_1_0() { return cRequiredAnyStringParserRuleCall_2_12_4_1_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_2_12_5() { return cRightSquareBracketKeyword_2_12_5; }
+		
+		//','?
+		public Keyword getCommaKeyword_2_12_6() { return cCommaKeyword_2_12_6; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
@@ -3941,6 +3992,8 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 	//	& ('"format"' ':' format=AnyString ','?)?
 	//	& ('"minimum"' ':' minimum=INT ','?)?
 	//	& ('"maximum"' ':' maximum=INT ','?)?
+	//	& ('"minItems"' ':' minItems=INT ','?)?
+	//	& ('"maxItems"' ':' maxItems=INT ','?)?
 	//	& ('"default"' ':' default=PrimitiveValue ','?)?
 	//	& ('"properties"' ':' '{' properties+=NamedSchema (',' properties+=NamedSchema)* '}' ','?)?
 	//	& ('"enum"' ':' '[' ^enum+=PrimitiveValue (',' ^enum+=PrimitiveValue)* ']' ','?)?

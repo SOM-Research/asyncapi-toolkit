@@ -73,15 +73,17 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Parameter_CommaKeyword_2_2_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_0_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_10_6_q;
+	protected AbstractElementAlias match_Schema_CommaKeyword_2_11_3_q;
+	protected AbstractElementAlias match_Schema_CommaKeyword_2_12_6_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_1_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_2_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_3_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_4_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_5_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_6_3_q;
-	protected AbstractElementAlias match_Schema_CommaKeyword_2_7_6_q;
-	protected AbstractElementAlias match_Schema_CommaKeyword_2_8_6_q;
-	protected AbstractElementAlias match_Schema_CommaKeyword_2_9_3_q;
+	protected AbstractElementAlias match_Schema_CommaKeyword_2_7_3_q;
+	protected AbstractElementAlias match_Schema_CommaKeyword_2_8_3_q;
+	protected AbstractElementAlias match_Schema_CommaKeyword_2_9_6_q;
 	protected AbstractElementAlias match_Server_CommaKeyword_4_0_3_q;
 	protected AbstractElementAlias match_Server_CommaKeyword_4_1_3_q;
 	protected AbstractElementAlias match_Server_CommaKeyword_4_3_6_q;
@@ -147,15 +149,17 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Parameter_CommaKeyword_2_2_3_q = new TokenAlias(false, true, grammarAccess.getParameterAccess().getCommaKeyword_2_2_3());
 		match_Schema_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_0_3());
 		match_Schema_CommaKeyword_2_10_6_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_10_6());
+		match_Schema_CommaKeyword_2_11_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_11_3());
+		match_Schema_CommaKeyword_2_12_6_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_12_6());
 		match_Schema_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_1_3());
 		match_Schema_CommaKeyword_2_2_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_2_3());
 		match_Schema_CommaKeyword_2_3_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_3_3());
 		match_Schema_CommaKeyword_2_4_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_4_3());
 		match_Schema_CommaKeyword_2_5_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_5_3());
 		match_Schema_CommaKeyword_2_6_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_6_3());
-		match_Schema_CommaKeyword_2_7_6_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_7_6());
-		match_Schema_CommaKeyword_2_8_6_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_8_6());
-		match_Schema_CommaKeyword_2_9_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_9_3());
+		match_Schema_CommaKeyword_2_7_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_7_3());
+		match_Schema_CommaKeyword_2_8_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_8_3());
+		match_Schema_CommaKeyword_2_9_6_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_9_6());
 		match_Server_CommaKeyword_4_0_3_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_4_0_3());
 		match_Server_CommaKeyword_4_1_3_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_4_1_3());
 		match_Server_CommaKeyword_4_3_6_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_4_3_6());
@@ -284,6 +288,10 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Schema_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Schema_CommaKeyword_2_10_6_q.equals(syntax))
 				emit_Schema_CommaKeyword_2_10_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Schema_CommaKeyword_2_11_3_q.equals(syntax))
+				emit_Schema_CommaKeyword_2_11_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Schema_CommaKeyword_2_12_6_q.equals(syntax))
+				emit_Schema_CommaKeyword_2_12_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Schema_CommaKeyword_2_1_3_q.equals(syntax))
 				emit_Schema_CommaKeyword_2_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Schema_CommaKeyword_2_2_3_q.equals(syntax))
@@ -296,12 +304,12 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Schema_CommaKeyword_2_5_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Schema_CommaKeyword_2_6_3_q.equals(syntax))
 				emit_Schema_CommaKeyword_2_6_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Schema_CommaKeyword_2_7_6_q.equals(syntax))
-				emit_Schema_CommaKeyword_2_7_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Schema_CommaKeyword_2_8_6_q.equals(syntax))
-				emit_Schema_CommaKeyword_2_8_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Schema_CommaKeyword_2_9_3_q.equals(syntax))
-				emit_Schema_CommaKeyword_2_9_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Schema_CommaKeyword_2_7_3_q.equals(syntax))
+				emit_Schema_CommaKeyword_2_7_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Schema_CommaKeyword_2_8_3_q.equals(syntax))
+				emit_Schema_CommaKeyword_2_8_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Schema_CommaKeyword_2_9_6_q.equals(syntax))
+				emit_Schema_CommaKeyword_2_9_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Server_CommaKeyword_4_0_3_q.equals(syntax))
 				emit_Server_CommaKeyword_4_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Server_CommaKeyword_4_1_3_q.equals(syntax))
@@ -1166,7 +1174,9 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     title=AnyString (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
 	 *     title=AnyString (ambiguity) '"format"' ':' format=AnyString
 	 *     title=AnyString (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     title=AnyString (ambiguity) '"maxItems"' ':' maxItems=INT
 	 *     title=AnyString (ambiguity) '"maximum"' ':' maximum=INT
+	 *     title=AnyString (ambiguity) '"minItems"' ':' minItems=INT
 	 *     title=AnyString (ambiguity) '"minimum"' ':' minimum=INT
 	 *     title=AnyString (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
 	 *     title=AnyString (ambiguity) '"required"' ':' '[' required+=AnyString
@@ -1183,12 +1193,62 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"description"' ':' description=AnyString
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"format"' ':' format=AnyString
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"maxItems"' ':' maxItems=INT
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"maximum"' ':' maximum=INT
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"minItems"' ':' minItems=INT
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"minimum"' ':' minimum=INT
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"required"' ':' '[' required+=AnyString
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"title"' ':' title=AnyString
+	 *     enum+=PrimitiveValue ']' (ambiguity) '"type"' ':' type=JsonType
+	 *     enum+=PrimitiveValue ']' (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Schema_CommaKeyword_2_10_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     items=AbstractSchema (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     items=AbstractSchema (ambiguity) '"description"' ':' description=AnyString
+	 *     items=AbstractSchema (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     items=AbstractSchema (ambiguity) '"format"' ':' format=AnyString
+	 *     items=AbstractSchema (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     items=AbstractSchema (ambiguity) '"maxItems"' ':' maxItems=INT
+	 *     items=AbstractSchema (ambiguity) '"maximum"' ':' maximum=INT
+	 *     items=AbstractSchema (ambiguity) '"minItems"' ':' minItems=INT
+	 *     items=AbstractSchema (ambiguity) '"minimum"' ':' minimum=INT
+	 *     items=AbstractSchema (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     items=AbstractSchema (ambiguity) '"required"' ':' '[' required+=AnyString
+	 *     items=AbstractSchema (ambiguity) '"title"' ':' title=AnyString
+	 *     items=AbstractSchema (ambiguity) '"type"' ':' type=JsonType
+	 *     items=AbstractSchema (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Schema_CommaKeyword_2_11_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
 	 *     required+=AnyString ']' (ambiguity) '"default"' ':' default=PrimitiveValue
 	 *     required+=AnyString ']' (ambiguity) '"description"' ':' description=AnyString
 	 *     required+=AnyString ']' (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
 	 *     required+=AnyString ']' (ambiguity) '"format"' ':' format=AnyString
 	 *     required+=AnyString ']' (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     required+=AnyString ']' (ambiguity) '"maxItems"' ':' maxItems=INT
 	 *     required+=AnyString ']' (ambiguity) '"maximum"' ':' maximum=INT
+	 *     required+=AnyString ']' (ambiguity) '"minItems"' ':' minItems=INT
 	 *     required+=AnyString ']' (ambiguity) '"minimum"' ':' minimum=INT
 	 *     required+=AnyString ']' (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
 	 *     required+=AnyString ']' (ambiguity) '"required"' ':' '[' required+=AnyString
@@ -1196,7 +1256,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     required+=AnyString ']' (ambiguity) '"type"' ':' type=JsonType
 	 *     required+=AnyString ']' (ambiguity) '}' (rule end)
 	 */
-	protected void emit_Schema_CommaKeyword_2_10_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Schema_CommaKeyword_2_12_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1210,7 +1270,9 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     type=JsonType (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
 	 *     type=JsonType (ambiguity) '"format"' ':' format=AnyString
 	 *     type=JsonType (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     type=JsonType (ambiguity) '"maxItems"' ':' maxItems=INT
 	 *     type=JsonType (ambiguity) '"maximum"' ':' maximum=INT
+	 *     type=JsonType (ambiguity) '"minItems"' ':' minItems=INT
 	 *     type=JsonType (ambiguity) '"minimum"' ':' minimum=INT
 	 *     type=JsonType (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
 	 *     type=JsonType (ambiguity) '"required"' ':' '[' required+=AnyString
@@ -1232,7 +1294,9 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     description=AnyString (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
 	 *     description=AnyString (ambiguity) '"format"' ':' format=AnyString
 	 *     description=AnyString (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     description=AnyString (ambiguity) '"maxItems"' ':' maxItems=INT
 	 *     description=AnyString (ambiguity) '"maximum"' ':' maximum=INT
+	 *     description=AnyString (ambiguity) '"minItems"' ':' minItems=INT
 	 *     description=AnyString (ambiguity) '"minimum"' ':' minimum=INT
 	 *     description=AnyString (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
 	 *     description=AnyString (ambiguity) '"required"' ':' '[' required+=AnyString
@@ -1254,7 +1318,9 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     format=AnyString (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
 	 *     format=AnyString (ambiguity) '"format"' ':' format=AnyString
 	 *     format=AnyString (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     format=AnyString (ambiguity) '"maxItems"' ':' maxItems=INT
 	 *     format=AnyString (ambiguity) '"maximum"' ':' maximum=INT
+	 *     format=AnyString (ambiguity) '"minItems"' ':' minItems=INT
 	 *     format=AnyString (ambiguity) '"minimum"' ':' minimum=INT
 	 *     format=AnyString (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
 	 *     format=AnyString (ambiguity) '"required"' ':' '[' required+=AnyString
@@ -1276,7 +1342,9 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     minimum=INT (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
 	 *     minimum=INT (ambiguity) '"format"' ':' format=AnyString
 	 *     minimum=INT (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     minimum=INT (ambiguity) '"maxItems"' ':' maxItems=INT
 	 *     minimum=INT (ambiguity) '"maximum"' ':' maximum=INT
+	 *     minimum=INT (ambiguity) '"minItems"' ':' minItems=INT
 	 *     minimum=INT (ambiguity) '"minimum"' ':' minimum=INT
 	 *     minimum=INT (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
 	 *     minimum=INT (ambiguity) '"required"' ':' '[' required+=AnyString
@@ -1298,7 +1366,9 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     maximum=INT (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
 	 *     maximum=INT (ambiguity) '"format"' ':' format=AnyString
 	 *     maximum=INT (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     maximum=INT (ambiguity) '"maxItems"' ':' maxItems=INT
 	 *     maximum=INT (ambiguity) '"maximum"' ':' maximum=INT
+	 *     maximum=INT (ambiguity) '"minItems"' ':' minItems=INT
 	 *     maximum=INT (ambiguity) '"minimum"' ':' minimum=INT
 	 *     maximum=INT (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
 	 *     maximum=INT (ambiguity) '"required"' ':' '[' required+=AnyString
@@ -1315,12 +1385,62 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     minItems=INT (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     minItems=INT (ambiguity) '"description"' ':' description=AnyString
+	 *     minItems=INT (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     minItems=INT (ambiguity) '"format"' ':' format=AnyString
+	 *     minItems=INT (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     minItems=INT (ambiguity) '"maxItems"' ':' maxItems=INT
+	 *     minItems=INT (ambiguity) '"maximum"' ':' maximum=INT
+	 *     minItems=INT (ambiguity) '"minItems"' ':' minItems=INT
+	 *     minItems=INT (ambiguity) '"minimum"' ':' minimum=INT
+	 *     minItems=INT (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     minItems=INT (ambiguity) '"required"' ':' '[' required+=AnyString
+	 *     minItems=INT (ambiguity) '"title"' ':' title=AnyString
+	 *     minItems=INT (ambiguity) '"type"' ':' type=JsonType
+	 *     minItems=INT (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Schema_CommaKeyword_2_6_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     maxItems=INT (ambiguity) '"default"' ':' default=PrimitiveValue
+	 *     maxItems=INT (ambiguity) '"description"' ':' description=AnyString
+	 *     maxItems=INT (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
+	 *     maxItems=INT (ambiguity) '"format"' ':' format=AnyString
+	 *     maxItems=INT (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     maxItems=INT (ambiguity) '"maxItems"' ':' maxItems=INT
+	 *     maxItems=INT (ambiguity) '"maximum"' ':' maximum=INT
+	 *     maxItems=INT (ambiguity) '"minItems"' ':' minItems=INT
+	 *     maxItems=INT (ambiguity) '"minimum"' ':' minimum=INT
+	 *     maxItems=INT (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
+	 *     maxItems=INT (ambiguity) '"required"' ':' '[' required+=AnyString
+	 *     maxItems=INT (ambiguity) '"title"' ':' title=AnyString
+	 *     maxItems=INT (ambiguity) '"type"' ':' type=JsonType
+	 *     maxItems=INT (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Schema_CommaKeyword_2_7_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
 	 *     default=PrimitiveValue (ambiguity) '"default"' ':' default=PrimitiveValue
 	 *     default=PrimitiveValue (ambiguity) '"description"' ':' description=AnyString
 	 *     default=PrimitiveValue (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
 	 *     default=PrimitiveValue (ambiguity) '"format"' ':' format=AnyString
 	 *     default=PrimitiveValue (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     default=PrimitiveValue (ambiguity) '"maxItems"' ':' maxItems=INT
 	 *     default=PrimitiveValue (ambiguity) '"maximum"' ':' maximum=INT
+	 *     default=PrimitiveValue (ambiguity) '"minItems"' ':' minItems=INT
 	 *     default=PrimitiveValue (ambiguity) '"minimum"' ':' minimum=INT
 	 *     default=PrimitiveValue (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
 	 *     default=PrimitiveValue (ambiguity) '"required"' ':' '[' required+=AnyString
@@ -1328,7 +1448,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     default=PrimitiveValue (ambiguity) '"type"' ':' type=JsonType
 	 *     default=PrimitiveValue (ambiguity) '}' (rule end)
 	 */
-	protected void emit_Schema_CommaKeyword_2_6_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Schema_CommaKeyword_2_8_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1342,7 +1462,9 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     properties+=NamedSchema '}' (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
 	 *     properties+=NamedSchema '}' (ambiguity) '"format"' ':' format=AnyString
 	 *     properties+=NamedSchema '}' (ambiguity) '"items"' ':' items=AbstractSchema
+	 *     properties+=NamedSchema '}' (ambiguity) '"maxItems"' ':' maxItems=INT
 	 *     properties+=NamedSchema '}' (ambiguity) '"maximum"' ':' maximum=INT
+	 *     properties+=NamedSchema '}' (ambiguity) '"minItems"' ':' minItems=INT
 	 *     properties+=NamedSchema '}' (ambiguity) '"minimum"' ':' minimum=INT
 	 *     properties+=NamedSchema '}' (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
 	 *     properties+=NamedSchema '}' (ambiguity) '"required"' ':' '[' required+=AnyString
@@ -1350,51 +1472,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     properties+=NamedSchema '}' (ambiguity) '"type"' ':' type=JsonType
 	 *     properties+=NamedSchema '}' (ambiguity) '}' (rule end)
 	 */
-	protected void emit_Schema_CommaKeyword_2_7_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ','?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"default"' ':' default=PrimitiveValue
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"description"' ':' description=AnyString
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"format"' ':' format=AnyString
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"items"' ':' items=AbstractSchema
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"maximum"' ':' maximum=INT
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"minimum"' ':' minimum=INT
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"required"' ':' '[' required+=AnyString
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"title"' ':' title=AnyString
-	 *     enum+=PrimitiveValue ']' (ambiguity) '"type"' ':' type=JsonType
-	 *     enum+=PrimitiveValue ']' (ambiguity) '}' (rule end)
-	 */
-	protected void emit_Schema_CommaKeyword_2_8_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ','?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     items=AbstractSchema (ambiguity) '"default"' ':' default=PrimitiveValue
-	 *     items=AbstractSchema (ambiguity) '"description"' ':' description=AnyString
-	 *     items=AbstractSchema (ambiguity) '"enum"' ':' '[' enum+=PrimitiveValue
-	 *     items=AbstractSchema (ambiguity) '"format"' ':' format=AnyString
-	 *     items=AbstractSchema (ambiguity) '"items"' ':' items=AbstractSchema
-	 *     items=AbstractSchema (ambiguity) '"maximum"' ':' maximum=INT
-	 *     items=AbstractSchema (ambiguity) '"minimum"' ':' minimum=INT
-	 *     items=AbstractSchema (ambiguity) '"properties"' ':' '{' properties+=NamedSchema
-	 *     items=AbstractSchema (ambiguity) '"required"' ':' '[' required+=AnyString
-	 *     items=AbstractSchema (ambiguity) '"title"' ':' title=AnyString
-	 *     items=AbstractSchema (ambiguity) '"type"' ':' type=JsonType
-	 *     items=AbstractSchema (ambiguity) '}' (rule end)
-	 */
-	protected void emit_Schema_CommaKeyword_2_9_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Schema_CommaKeyword_2_9_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -136,7 +136,11 @@ class Ecore2AsyncApi {
 			«s.properties.map[generate].join(",\n")»
 		}«ENDIF»«
 		IF s.items !== null»,
-		"items" : «s.items.generate»«ENDIF»
+		"items" : «s.items.generate»«ENDIF»«
+		IF s.type === JsonType.ARRAY && s.minItems > 0»,
+		"minItems" : «s.minItems»«ENDIF»«
+		IF s.type === JsonType.ARRAY && s.maxItems >= 0»,
+		"maxItems" : «s.maxItems»«ENDIF»
 	}'''
 	
 	static def CharSequence generate(Reference r) '''
@@ -144,8 +148,6 @@ class Ecore2AsyncApi {
 		"$ref" : "«r.uri»"
 	}'''
 	
-	
-
 	static def AsyncAPI asyncApi(EPackage ePackage) {
 		return AsyncApiFactory.eINSTANCE.createAsyncAPI => [
 			version = VersionNumber._200
@@ -255,6 +257,8 @@ class Ecore2AsyncApi {
 				schema = AsyncApiFactory.eINSTANCE.createSchema => [
 					type = JsonType.ARRAY
 					items = eStructuralFeature.EType.schema
+					minItems = eStructuralFeature.lowerBound
+					maxItems = eStructuralFeature.upperBound
 				]
 			}
 		]

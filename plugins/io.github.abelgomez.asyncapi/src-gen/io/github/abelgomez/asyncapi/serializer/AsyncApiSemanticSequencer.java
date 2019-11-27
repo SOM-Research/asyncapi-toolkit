@@ -431,12 +431,14 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *             format=AnyString | 
 	 *             minimum=INT | 
 	 *             maximum=INT | 
+	 *             minItems=INT | 
+	 *             maxItems=INT | 
 	 *             default=PrimitiveValue | 
 	 *             items=AbstractSchema
 	 *         )? 
-	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)? 
+	 *         (required+=AnyString required+=AnyString*)? 
 	 *         (properties+=NamedSchema properties+=NamedSchema*)? 
-	 *         (required+=AnyString required+=AnyString*)?
+	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)?
 	 *     )+
 	 */
 	protected void sequence_Schema(ISerializationContext context, Schema semanticObject) {

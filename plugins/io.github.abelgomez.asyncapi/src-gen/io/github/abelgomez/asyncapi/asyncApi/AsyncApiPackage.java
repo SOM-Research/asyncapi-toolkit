@@ -811,13 +811,31 @@ public interface AsyncApiPackage extends EPackage
   int SCHEMA__MAXIMUM = ABSTRACT_SCHEMA_FEATURE_COUNT + 5;
 
   /**
+   * The feature id for the '<em><b>Min Items</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCHEMA__MIN_ITEMS = ABSTRACT_SCHEMA_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Max Items</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCHEMA__MAX_ITEMS = ABSTRACT_SCHEMA_FEATURE_COUNT + 7;
+
+  /**
    * The feature id for the '<em><b>Default</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCHEMA__DEFAULT = ABSTRACT_SCHEMA_FEATURE_COUNT + 6;
+  int SCHEMA__DEFAULT = ABSTRACT_SCHEMA_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -826,7 +844,7 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCHEMA__PROPERTIES = ABSTRACT_SCHEMA_FEATURE_COUNT + 7;
+  int SCHEMA__PROPERTIES = ABSTRACT_SCHEMA_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Enum</b></em>' attribute list.
@@ -835,7 +853,7 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCHEMA__ENUM = ABSTRACT_SCHEMA_FEATURE_COUNT + 8;
+  int SCHEMA__ENUM = ABSTRACT_SCHEMA_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Items</b></em>' containment reference.
@@ -844,7 +862,7 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCHEMA__ITEMS = ABSTRACT_SCHEMA_FEATURE_COUNT + 9;
+  int SCHEMA__ITEMS = ABSTRACT_SCHEMA_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Required</b></em>' attribute list.
@@ -853,7 +871,7 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCHEMA__REQUIRED = ABSTRACT_SCHEMA_FEATURE_COUNT + 10;
+  int SCHEMA__REQUIRED = ABSTRACT_SCHEMA_FEATURE_COUNT + 12;
 
   /**
    * The number of structural features of the '<em>Schema</em>' class.
@@ -862,7 +880,7 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCHEMA_FEATURE_COUNT = ABSTRACT_SCHEMA_FEATURE_COUNT + 11;
+  int SCHEMA_FEATURE_COUNT = ABSTRACT_SCHEMA_FEATURE_COUNT + 13;
 
   /**
    * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedSchemaImpl <em>Named Schema</em>}' class.
@@ -2104,6 +2122,28 @@ public interface AsyncApiPackage extends EPackage
   EAttribute getSchema_Maximum();
 
   /**
+   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMinItems <em>Min Items</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Min Items</em>'.
+   * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getMinItems()
+   * @see #getSchema()
+   * @generated
+   */
+  EAttribute getSchema_MinItems();
+
+  /**
+   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMaxItems <em>Max Items</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Max Items</em>'.
+   * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getMaxItems()
+   * @see #getSchema()
+   * @generated
+   */
+  EAttribute getSchema_MaxItems();
+
+  /**
    * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getDefault <em>Default</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3195,6 +3235,22 @@ public interface AsyncApiPackage extends EPackage
      * @generated
      */
     EAttribute SCHEMA__MAXIMUM = eINSTANCE.getSchema_Maximum();
+
+    /**
+     * The meta object literal for the '<em><b>Min Items</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCHEMA__MIN_ITEMS = eINSTANCE.getSchema_MinItems();
+
+    /**
+     * The meta object literal for the '<em><b>Max Items</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCHEMA__MAX_ITEMS = eINSTANCE.getSchema_MaxItems();
 
     /**
      * The meta object literal for the '<em><b>Default</b></em>' attribute feature.

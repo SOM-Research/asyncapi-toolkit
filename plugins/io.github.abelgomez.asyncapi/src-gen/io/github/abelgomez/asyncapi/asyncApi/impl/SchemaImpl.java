@@ -39,6 +39,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getFormat <em>Format</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getMinimum <em>Minimum</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getMaximum <em>Maximum</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getMinItems <em>Min Items</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getMaxItems <em>Max Items</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getDefault <em>Default</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl#getEnum <em>Enum</em>}</li>
@@ -169,6 +171,46 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
    * @ordered
    */
   protected int maximum = MAXIMUM_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMinItems() <em>Min Items</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMinItems()
+   * @generated
+   * @ordered
+   */
+  protected static final int MIN_ITEMS_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getMinItems() <em>Min Items</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMinItems()
+   * @generated
+   * @ordered
+   */
+  protected int minItems = MIN_ITEMS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMaxItems() <em>Max Items</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMaxItems()
+   * @generated
+   * @ordered
+   */
+  protected static final int MAX_ITEMS_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getMaxItems() <em>Max Items</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMaxItems()
+   * @generated
+   * @ordered
+   */
+  protected int maxItems = MAX_ITEMS_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDefault() <em>Default</em>}' attribute.
@@ -407,6 +449,56 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
    * @generated
    */
   @Override
+  public int getMinItems()
+  {
+    return minItems;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMinItems(int newMinItems)
+  {
+    int oldMinItems = minItems;
+    minItems = newMinItems;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SCHEMA__MIN_ITEMS, oldMinItems, minItems));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int getMaxItems()
+  {
+    return maxItems;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMaxItems(int newMaxItems)
+  {
+    int oldMaxItems = maxItems;
+    maxItems = newMaxItems;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SCHEMA__MAX_ITEMS, oldMaxItems, maxItems));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getDefault()
   {
     return default_;
@@ -561,6 +653,10 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
         return getMinimum();
       case AsyncApiPackage.SCHEMA__MAXIMUM:
         return getMaximum();
+      case AsyncApiPackage.SCHEMA__MIN_ITEMS:
+        return getMinItems();
+      case AsyncApiPackage.SCHEMA__MAX_ITEMS:
+        return getMaxItems();
       case AsyncApiPackage.SCHEMA__DEFAULT:
         return getDefault();
       case AsyncApiPackage.SCHEMA__PROPERTIES:
@@ -603,6 +699,12 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
         return;
       case AsyncApiPackage.SCHEMA__MAXIMUM:
         setMaximum((Integer)newValue);
+        return;
+      case AsyncApiPackage.SCHEMA__MIN_ITEMS:
+        setMinItems((Integer)newValue);
+        return;
+      case AsyncApiPackage.SCHEMA__MAX_ITEMS:
+        setMaxItems((Integer)newValue);
         return;
       case AsyncApiPackage.SCHEMA__DEFAULT:
         setDefault((String)newValue);
@@ -654,6 +756,12 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
       case AsyncApiPackage.SCHEMA__MAXIMUM:
         setMaximum(MAXIMUM_EDEFAULT);
         return;
+      case AsyncApiPackage.SCHEMA__MIN_ITEMS:
+        setMinItems(MIN_ITEMS_EDEFAULT);
+        return;
+      case AsyncApiPackage.SCHEMA__MAX_ITEMS:
+        setMaxItems(MAX_ITEMS_EDEFAULT);
+        return;
       case AsyncApiPackage.SCHEMA__DEFAULT:
         setDefault(DEFAULT_EDEFAULT);
         return;
@@ -695,6 +803,10 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
         return minimum != MINIMUM_EDEFAULT;
       case AsyncApiPackage.SCHEMA__MAXIMUM:
         return maximum != MAXIMUM_EDEFAULT;
+      case AsyncApiPackage.SCHEMA__MIN_ITEMS:
+        return minItems != MIN_ITEMS_EDEFAULT;
+      case AsyncApiPackage.SCHEMA__MAX_ITEMS:
+        return maxItems != MAX_ITEMS_EDEFAULT;
       case AsyncApiPackage.SCHEMA__DEFAULT:
         return DEFAULT_EDEFAULT == null ? default_ != null : !DEFAULT_EDEFAULT.equals(default_);
       case AsyncApiPackage.SCHEMA__PROPERTIES:
@@ -732,6 +844,10 @@ public class SchemaImpl extends AbstractSchemaImpl implements Schema
     result.append(minimum);
     result.append(", maximum: ");
     result.append(maximum);
+    result.append(", minItems: ");
+    result.append(minItems);
+    result.append(", maxItems: ");
+    result.append(maxItems);
     result.append(", default: ");
     result.append(default_);
     result.append(", enum: ");

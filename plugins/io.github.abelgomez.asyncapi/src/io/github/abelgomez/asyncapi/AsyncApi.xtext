@@ -115,6 +115,8 @@ Schema:
 		& ( '"format"' ':' format=AnyString ','? )?
 		& ( '"minimum"' ':' minimum=INT ','? )?
 		& ( '"maximum"' ':' maximum=INT ','? )?
+		& ( '"minItems"' ':' minItems=INT ','? )?
+		& ( '"maxItems"' ':' maxItems=INT ','? )?
 		& ( '"default"' ':' default=PrimitiveValue','? )?
 		& ( '"properties"' ':' '{' properties+=NamedSchema (',' properties+=NamedSchema)* '}' ','? )?
 		& ( '"enum"' ':' '[' ^enum+=PrimitiveValue (',' ^enum+=PrimitiveValue)* ']' ','? )?

@@ -20,6 +20,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getFormat <em>Format</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMinimum <em>Minimum</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMaximum <em>Maximum</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMinItems <em>Min Items</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMaxItems <em>Max Items</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getDefault <em>Default</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getProperties <em>Properties</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getEnum <em>Enum</em>}</li>
@@ -167,6 +169,50 @@ public interface Schema extends AbstractSchema
    * @generated
    */
   void setMaximum(int value);
+
+  /**
+   * Returns the value of the '<em><b>Min Items</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Min Items</em>' attribute.
+   * @see #setMinItems(int)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_MinItems()
+   * @model
+   * @generated
+   */
+  int getMinItems();
+
+  /**
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMinItems <em>Min Items</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Min Items</em>' attribute.
+   * @see #getMinItems()
+   * @generated
+   */
+  void setMinItems(int value);
+
+  /**
+   * Returns the value of the '<em><b>Max Items</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Max Items</em>' attribute.
+   * @see #setMaxItems(int)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSchema_MaxItems()
+   * @model
+   * @generated
+   */
+  int getMaxItems();
+
+  /**
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMaxItems <em>Max Items</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Max Items</em>' attribute.
+   * @see #getMaxItems()
+   * @generated
+   */
+  void setMaxItems(int value);
 
   /**
    * Returns the value of the '<em><b>Default</b></em>' attribute.

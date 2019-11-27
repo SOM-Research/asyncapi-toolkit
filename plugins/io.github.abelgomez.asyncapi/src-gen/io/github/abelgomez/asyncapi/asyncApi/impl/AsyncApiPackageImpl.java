@@ -1089,7 +1089,7 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EAttribute getSchema_Default()
+  public EAttribute getSchema_MinItems()
   {
     return (EAttribute)schemaEClass.getEStructuralFeatures().get(6);
   }
@@ -1100,9 +1100,9 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EReference getSchema_Properties()
+  public EAttribute getSchema_MaxItems()
   {
-    return (EReference)schemaEClass.getEStructuralFeatures().get(7);
+    return (EAttribute)schemaEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -1111,7 +1111,7 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EAttribute getSchema_Enum()
+  public EAttribute getSchema_Default()
   {
     return (EAttribute)schemaEClass.getEStructuralFeatures().get(8);
   }
@@ -1122,7 +1122,7 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EReference getSchema_Items()
+  public EReference getSchema_Properties()
   {
     return (EReference)schemaEClass.getEStructuralFeatures().get(9);
   }
@@ -1133,9 +1133,31 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EAttribute getSchema_Required()
+  public EAttribute getSchema_Enum()
   {
     return (EAttribute)schemaEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSchema_Items()
+  {
+    return (EReference)schemaEClass.getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSchema_Required()
+  {
+    return (EAttribute)schemaEClass.getEStructuralFeatures().get(12);
   }
 
   /**
@@ -1702,6 +1724,8 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
     createEAttribute(schemaEClass, SCHEMA__FORMAT);
     createEAttribute(schemaEClass, SCHEMA__MINIMUM);
     createEAttribute(schemaEClass, SCHEMA__MAXIMUM);
+    createEAttribute(schemaEClass, SCHEMA__MIN_ITEMS);
+    createEAttribute(schemaEClass, SCHEMA__MAX_ITEMS);
     createEAttribute(schemaEClass, SCHEMA__DEFAULT);
     createEReference(schemaEClass, SCHEMA__PROPERTIES);
     createEAttribute(schemaEClass, SCHEMA__ENUM);
@@ -1887,6 +1911,8 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
     initEAttribute(getSchema_Format(), ecorePackage.getEString(), "format", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSchema_Minimum(), ecorePackage.getEInt(), "minimum", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSchema_Maximum(), ecorePackage.getEInt(), "maximum", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSchema_MinItems(), ecorePackage.getEInt(), "minItems", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSchema_MaxItems(), ecorePackage.getEInt(), "maxItems", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSchema_Default(), ecorePackage.getEString(), "default", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSchema_Properties(), this.getNamedSchema(), null, "properties", null, 0, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSchema_Enum(), ecorePackage.getEString(), "enum", null, 0, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

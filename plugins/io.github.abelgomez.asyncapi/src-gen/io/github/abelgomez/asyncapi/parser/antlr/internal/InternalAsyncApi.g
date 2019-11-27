@@ -3252,9 +3252,9 @@ ruleSchema returns [EObject current=null]
 					{
 						getUnorderedGroupHelper().select(grammarAccess.getSchemaAccess().getUnorderedGroup_2(), 6);
 					}
-								({true}?=>(otherlv_27='"default"'
+								({true}?=>(otherlv_27='"minItems"'
 								{
-									newLeafNode(otherlv_27, grammarAccess.getSchemaAccess().getDefaultKeyword_2_6_0());
+									newLeafNode(otherlv_27, grammarAccess.getSchemaAccess().getMinItemsKeyword_2_6_0());
 								}
 								otherlv_28=':'
 								{
@@ -3262,20 +3262,19 @@ ruleSchema returns [EObject current=null]
 								}
 								(
 									(
+										lv_minItems_29_0=RULE_INT
 										{
-											newCompositeNode(grammarAccess.getSchemaAccess().getDefaultPrimitiveValueParserRuleCall_2_6_2_0());
+											newLeafNode(lv_minItems_29_0, grammarAccess.getSchemaAccess().getMinItemsINTTerminalRuleCall_2_6_2_0());
 										}
-										lv_default_29_0=rulePrimitiveValue
 										{
 											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getSchemaRule());
+												$current = createModelElement(grammarAccess.getSchemaRule());
 											}
-											set(
+											setWithLastConsumed(
 												$current,
-												"default",
-												lv_default_29_0,
-												"io.github.abelgomez.asyncapi.AsyncApi.PrimitiveValue");
-											afterParserOrEnumRuleCall();
+												"minItems",
+												lv_minItems_29_0,
+												"io.github.abelgomez.asyncapi.AsyncApi.INT");
 										}
 									)
 								)
@@ -3296,70 +3295,36 @@ ruleSchema returns [EObject current=null]
 					{
 						getUnorderedGroupHelper().select(grammarAccess.getSchemaAccess().getUnorderedGroup_2(), 7);
 					}
-								({true}?=>(otherlv_31='"properties"'
+								({true}?=>(otherlv_31='"maxItems"'
 								{
-									newLeafNode(otherlv_31, grammarAccess.getSchemaAccess().getPropertiesKeyword_2_7_0());
+									newLeafNode(otherlv_31, grammarAccess.getSchemaAccess().getMaxItemsKeyword_2_7_0());
 								}
 								otherlv_32=':'
 								{
 									newLeafNode(otherlv_32, grammarAccess.getSchemaAccess().getColonKeyword_2_7_1());
 								}
-								otherlv_33='{'
-								{
-									newLeafNode(otherlv_33, grammarAccess.getSchemaAccess().getLeftCurlyBracketKeyword_2_7_2());
-								}
 								(
 									(
+										lv_maxItems_33_0=RULE_INT
 										{
-											newCompositeNode(grammarAccess.getSchemaAccess().getPropertiesNamedSchemaParserRuleCall_2_7_3_0());
+											newLeafNode(lv_maxItems_33_0, grammarAccess.getSchemaAccess().getMaxItemsINTTerminalRuleCall_2_7_2_0());
 										}
-										lv_properties_34_0=ruleNamedSchema
 										{
 											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getSchemaRule());
+												$current = createModelElement(grammarAccess.getSchemaRule());
 											}
-											add(
+											setWithLastConsumed(
 												$current,
-												"properties",
-												lv_properties_34_0,
-												"io.github.abelgomez.asyncapi.AsyncApi.NamedSchema");
-											afterParserOrEnumRuleCall();
+												"maxItems",
+												lv_maxItems_33_0,
+												"io.github.abelgomez.asyncapi.AsyncApi.INT");
 										}
 									)
 								)
 								(
-									otherlv_35=','
+									otherlv_34=','
 									{
-										newLeafNode(otherlv_35, grammarAccess.getSchemaAccess().getCommaKeyword_2_7_4_0());
-									}
-									(
-										(
-											{
-												newCompositeNode(grammarAccess.getSchemaAccess().getPropertiesNamedSchemaParserRuleCall_2_7_4_1_0());
-											}
-											lv_properties_36_0=ruleNamedSchema
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getSchemaRule());
-												}
-												add(
-													$current,
-													"properties",
-													lv_properties_36_0,
-													"io.github.abelgomez.asyncapi.AsyncApi.NamedSchema");
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-								)*
-								otherlv_37='}'
-								{
-									newLeafNode(otherlv_37, grammarAccess.getSchemaAccess().getRightCurlyBracketKeyword_2_7_5());
-								}
-								(
-									otherlv_38=','
-									{
-										newLeafNode(otherlv_38, grammarAccess.getSchemaAccess().getCommaKeyword_2_7_6());
+										newLeafNode(otherlv_34, grammarAccess.getSchemaAccess().getCommaKeyword_2_7_3());
 									}
 								)?
 								))
@@ -3373,70 +3338,37 @@ ruleSchema returns [EObject current=null]
 					{
 						getUnorderedGroupHelper().select(grammarAccess.getSchemaAccess().getUnorderedGroup_2(), 8);
 					}
-								({true}?=>(otherlv_39='"enum"'
+								({true}?=>(otherlv_35='"default"'
 								{
-									newLeafNode(otherlv_39, grammarAccess.getSchemaAccess().getEnumKeyword_2_8_0());
+									newLeafNode(otherlv_35, grammarAccess.getSchemaAccess().getDefaultKeyword_2_8_0());
 								}
-								otherlv_40=':'
+								otherlv_36=':'
 								{
-									newLeafNode(otherlv_40, grammarAccess.getSchemaAccess().getColonKeyword_2_8_1());
-								}
-								otherlv_41='['
-								{
-									newLeafNode(otherlv_41, grammarAccess.getSchemaAccess().getLeftSquareBracketKeyword_2_8_2());
+									newLeafNode(otherlv_36, grammarAccess.getSchemaAccess().getColonKeyword_2_8_1());
 								}
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getSchemaAccess().getEnumPrimitiveValueParserRuleCall_2_8_3_0());
+											newCompositeNode(grammarAccess.getSchemaAccess().getDefaultPrimitiveValueParserRuleCall_2_8_2_0());
 										}
-										lv_enum_42_0=rulePrimitiveValue
+										lv_default_37_0=rulePrimitiveValue
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getSchemaRule());
 											}
-											add(
+											set(
 												$current,
-												"enum",
-												lv_enum_42_0,
+												"default",
+												lv_default_37_0,
 												"io.github.abelgomez.asyncapi.AsyncApi.PrimitiveValue");
 											afterParserOrEnumRuleCall();
 										}
 									)
 								)
 								(
-									otherlv_43=','
+									otherlv_38=','
 									{
-										newLeafNode(otherlv_43, grammarAccess.getSchemaAccess().getCommaKeyword_2_8_4_0());
-									}
-									(
-										(
-											{
-												newCompositeNode(grammarAccess.getSchemaAccess().getEnumPrimitiveValueParserRuleCall_2_8_4_1_0());
-											}
-											lv_enum_44_0=rulePrimitiveValue
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getSchemaRule());
-												}
-												add(
-													$current,
-													"enum",
-													lv_enum_44_0,
-													"io.github.abelgomez.asyncapi.AsyncApi.PrimitiveValue");
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-								)*
-								otherlv_45=']'
-								{
-									newLeafNode(otherlv_45, grammarAccess.getSchemaAccess().getRightSquareBracketKeyword_2_8_5());
-								}
-								(
-									otherlv_46=','
-									{
-										newLeafNode(otherlv_46, grammarAccess.getSchemaAccess().getCommaKeyword_2_8_6());
+										newLeafNode(otherlv_38, grammarAccess.getSchemaAccess().getCommaKeyword_2_8_3());
 									}
 								)?
 								))
@@ -3450,37 +3382,70 @@ ruleSchema returns [EObject current=null]
 					{
 						getUnorderedGroupHelper().select(grammarAccess.getSchemaAccess().getUnorderedGroup_2(), 9);
 					}
-								({true}?=>(otherlv_47='"items"'
+								({true}?=>(otherlv_39='"properties"'
 								{
-									newLeafNode(otherlv_47, grammarAccess.getSchemaAccess().getItemsKeyword_2_9_0());
+									newLeafNode(otherlv_39, grammarAccess.getSchemaAccess().getPropertiesKeyword_2_9_0());
 								}
-								otherlv_48=':'
+								otherlv_40=':'
 								{
-									newLeafNode(otherlv_48, grammarAccess.getSchemaAccess().getColonKeyword_2_9_1());
+									newLeafNode(otherlv_40, grammarAccess.getSchemaAccess().getColonKeyword_2_9_1());
+								}
+								otherlv_41='{'
+								{
+									newLeafNode(otherlv_41, grammarAccess.getSchemaAccess().getLeftCurlyBracketKeyword_2_9_2());
 								}
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getSchemaAccess().getItemsAbstractSchemaParserRuleCall_2_9_2_0());
+											newCompositeNode(grammarAccess.getSchemaAccess().getPropertiesNamedSchemaParserRuleCall_2_9_3_0());
 										}
-										lv_items_49_0=ruleAbstractSchema
+										lv_properties_42_0=ruleNamedSchema
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getSchemaRule());
 											}
-											set(
+											add(
 												$current,
-												"items",
-												lv_items_49_0,
-												"io.github.abelgomez.asyncapi.AsyncApi.AbstractSchema");
+												"properties",
+												lv_properties_42_0,
+												"io.github.abelgomez.asyncapi.AsyncApi.NamedSchema");
 											afterParserOrEnumRuleCall();
 										}
 									)
 								)
 								(
-									otherlv_50=','
+									otherlv_43=','
 									{
-										newLeafNode(otherlv_50, grammarAccess.getSchemaAccess().getCommaKeyword_2_9_3());
+										newLeafNode(otherlv_43, grammarAccess.getSchemaAccess().getCommaKeyword_2_9_4_0());
+									}
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getSchemaAccess().getPropertiesNamedSchemaParserRuleCall_2_9_4_1_0());
+											}
+											lv_properties_44_0=ruleNamedSchema
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getSchemaRule());
+												}
+												add(
+													$current,
+													"properties",
+													lv_properties_44_0,
+													"io.github.abelgomez.asyncapi.AsyncApi.NamedSchema");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)
+								)*
+								otherlv_45='}'
+								{
+									newLeafNode(otherlv_45, grammarAccess.getSchemaAccess().getRightCurlyBracketKeyword_2_9_5());
+								}
+								(
+									otherlv_46=','
+									{
+										newLeafNode(otherlv_46, grammarAccess.getSchemaAccess().getCommaKeyword_2_9_6());
 									}
 								)?
 								))
@@ -3494,24 +3459,145 @@ ruleSchema returns [EObject current=null]
 					{
 						getUnorderedGroupHelper().select(grammarAccess.getSchemaAccess().getUnorderedGroup_2(), 10);
 					}
-								({true}?=>(otherlv_51='"required"'
+								({true}?=>(otherlv_47='"enum"'
 								{
-									newLeafNode(otherlv_51, grammarAccess.getSchemaAccess().getRequiredKeyword_2_10_0());
+									newLeafNode(otherlv_47, grammarAccess.getSchemaAccess().getEnumKeyword_2_10_0());
 								}
-								otherlv_52=':'
+								otherlv_48=':'
 								{
-									newLeafNode(otherlv_52, grammarAccess.getSchemaAccess().getColonKeyword_2_10_1());
+									newLeafNode(otherlv_48, grammarAccess.getSchemaAccess().getColonKeyword_2_10_1());
 								}
-								otherlv_53='['
+								otherlv_49='['
 								{
-									newLeafNode(otherlv_53, grammarAccess.getSchemaAccess().getLeftSquareBracketKeyword_2_10_2());
+									newLeafNode(otherlv_49, grammarAccess.getSchemaAccess().getLeftSquareBracketKeyword_2_10_2());
 								}
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getSchemaAccess().getRequiredAnyStringParserRuleCall_2_10_3_0());
+											newCompositeNode(grammarAccess.getSchemaAccess().getEnumPrimitiveValueParserRuleCall_2_10_3_0());
 										}
-										lv_required_54_0=ruleAnyString
+										lv_enum_50_0=rulePrimitiveValue
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getSchemaRule());
+											}
+											add(
+												$current,
+												"enum",
+												lv_enum_50_0,
+												"io.github.abelgomez.asyncapi.AsyncApi.PrimitiveValue");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								(
+									otherlv_51=','
+									{
+										newLeafNode(otherlv_51, grammarAccess.getSchemaAccess().getCommaKeyword_2_10_4_0());
+									}
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getSchemaAccess().getEnumPrimitiveValueParserRuleCall_2_10_4_1_0());
+											}
+											lv_enum_52_0=rulePrimitiveValue
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getSchemaRule());
+												}
+												add(
+													$current,
+													"enum",
+													lv_enum_52_0,
+													"io.github.abelgomez.asyncapi.AsyncApi.PrimitiveValue");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)
+								)*
+								otherlv_53=']'
+								{
+									newLeafNode(otherlv_53, grammarAccess.getSchemaAccess().getRightSquareBracketKeyword_2_10_5());
+								}
+								(
+									otherlv_54=','
+									{
+										newLeafNode(otherlv_54, grammarAccess.getSchemaAccess().getCommaKeyword_2_10_6());
+									}
+								)?
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSchemaAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSchemaAccess().getUnorderedGroup_2(), 11)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSchemaAccess().getUnorderedGroup_2(), 11);
+					}
+								({true}?=>(otherlv_55='"items"'
+								{
+									newLeafNode(otherlv_55, grammarAccess.getSchemaAccess().getItemsKeyword_2_11_0());
+								}
+								otherlv_56=':'
+								{
+									newLeafNode(otherlv_56, grammarAccess.getSchemaAccess().getColonKeyword_2_11_1());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getSchemaAccess().getItemsAbstractSchemaParserRuleCall_2_11_2_0());
+										}
+										lv_items_57_0=ruleAbstractSchema
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getSchemaRule());
+											}
+											set(
+												$current,
+												"items",
+												lv_items_57_0,
+												"io.github.abelgomez.asyncapi.AsyncApi.AbstractSchema");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								(
+									otherlv_58=','
+									{
+										newLeafNode(otherlv_58, grammarAccess.getSchemaAccess().getCommaKeyword_2_11_3());
+									}
+								)?
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSchemaAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSchemaAccess().getUnorderedGroup_2(), 12)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSchemaAccess().getUnorderedGroup_2(), 12);
+					}
+								({true}?=>(otherlv_59='"required"'
+								{
+									newLeafNode(otherlv_59, grammarAccess.getSchemaAccess().getRequiredKeyword_2_12_0());
+								}
+								otherlv_60=':'
+								{
+									newLeafNode(otherlv_60, grammarAccess.getSchemaAccess().getColonKeyword_2_12_1());
+								}
+								otherlv_61='['
+								{
+									newLeafNode(otherlv_61, grammarAccess.getSchemaAccess().getLeftSquareBracketKeyword_2_12_2());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getSchemaAccess().getRequiredAnyStringParserRuleCall_2_12_3_0());
+										}
+										lv_required_62_0=ruleAnyString
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getSchemaRule());
@@ -3519,23 +3605,23 @@ ruleSchema returns [EObject current=null]
 											add(
 												$current,
 												"required",
-												lv_required_54_0,
+												lv_required_62_0,
 												"io.github.abelgomez.asyncapi.AsyncApi.AnyString");
 											afterParserOrEnumRuleCall();
 										}
 									)
 								)
 								(
-									otherlv_55=','
+									otherlv_63=','
 									{
-										newLeafNode(otherlv_55, grammarAccess.getSchemaAccess().getCommaKeyword_2_10_4_0());
+										newLeafNode(otherlv_63, grammarAccess.getSchemaAccess().getCommaKeyword_2_12_4_0());
 									}
 									(
 										(
 											{
-												newCompositeNode(grammarAccess.getSchemaAccess().getRequiredAnyStringParserRuleCall_2_10_4_1_0());
+												newCompositeNode(grammarAccess.getSchemaAccess().getRequiredAnyStringParserRuleCall_2_12_4_1_0());
 											}
-											lv_required_56_0=ruleAnyString
+											lv_required_64_0=ruleAnyString
 											{
 												if ($current==null) {
 													$current = createModelElementForParent(grammarAccess.getSchemaRule());
@@ -3543,21 +3629,21 @@ ruleSchema returns [EObject current=null]
 												add(
 													$current,
 													"required",
-													lv_required_56_0,
+													lv_required_64_0,
 													"io.github.abelgomez.asyncapi.AsyncApi.AnyString");
 												afterParserOrEnumRuleCall();
 											}
 										)
 									)
 								)*
-								otherlv_57=']'
+								otherlv_65=']'
 								{
-									newLeafNode(otherlv_57, grammarAccess.getSchemaAccess().getRightSquareBracketKeyword_2_10_5());
+									newLeafNode(otherlv_65, grammarAccess.getSchemaAccess().getRightSquareBracketKeyword_2_12_5());
 								}
 								(
-									otherlv_58=','
+									otherlv_66=','
 									{
-										newLeafNode(otherlv_58, grammarAccess.getSchemaAccess().getCommaKeyword_2_10_6());
+										newLeafNode(otherlv_66, grammarAccess.getSchemaAccess().getCommaKeyword_2_12_6());
 									}
 								)?
 								))
@@ -3573,9 +3659,9 @@ ruleSchema returns [EObject current=null]
 				  getUnorderedGroupHelper().leave(grammarAccess.getSchemaAccess().getUnorderedGroup_2());
 				}
 		)
-		otherlv_59='}'
+		otherlv_67='}'
 		{
-			newLeafNode(otherlv_59, grammarAccess.getSchemaAccess().getRightCurlyBracketKeyword_3());
+			newLeafNode(otherlv_67, grammarAccess.getSchemaAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;
