@@ -205,20 +205,20 @@
               icon="icons/file.png"
               id="io.github.abelgomez.asyncapi.ui.menus.generateAsyncApiCommand"
               label="Generate AsyncAPI">
-           <visibleWhen
-                 checkEnabled="false">
-              <iterate>
-                 <adapt
-                       type="org.eclipse.core.resources.IFile">
-                    <test
-                          forcePluginActivation="true"
-                          property="org.eclipse.core.resources.extension"
-                          value="ecore">
-                    </test>
-                 </adapt>
-              </iterate>
-           </visibleWhen>
         </command>
+        <visibleWhen
+              checkEnabled="false">
+           <iterate>
+              <adapt
+                    type="org.eclipse.core.resources.IFile">
+                 <test
+                       forcePluginActivation="true"
+                       property="org.eclipse.core.resources.extension"
+                       value="ecore">
+                 </test>
+              </adapt>
+           </iterate>
+        </visibleWhen>
      </menu>
   </menuContribution>
 	</extension>
