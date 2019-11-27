@@ -308,7 +308,7 @@ This is a possible example Ecore file demonstrating these annotations:
       <details key="name" value="example/mytopic"/>
       <details key="description" value="Dummy description"/>
       <details key="publish" value="publishOp"/>
-      <details key="subscribe" value="SubscribeOp"/>
+      <details key="subscribe" value="subscribeOp"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
@@ -342,16 +342,16 @@ And the automatically generated specification for it is as follows:
 		}
 	},
 	"channels": {
-		"mytopic" : {
-			"description" : "Description",
+		"example/mytopic" : {
+			"description" : "Dummy description",
 			"publish" : {
-				"operationId" : "myop",
+				"operationId" : "publishOp",
 				"message": {
 					"$ref" : "#/components/messages/NamedArrayOfPairs"
 				}
 			},
 			"subscribe" : {
-				"operationId" : "myop",
+				"operationId" : "subscribeOp",
 				"message": {
 					"$ref" : "#/components/messages/NamedArrayOfPairs"
 				}
