@@ -320,8 +320,86 @@ This is a possible example Ecore file demonstrating these annotations:
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>
-
 ```
+
+And the automatically generated specification for it is as follows:
+
+```js
+{
+	"asyncapi": "2.0.0",
+	"info": {
+		"title" : "MyAPI",
+		"version" : "1.0.0"
+	},
+	"servers": {
+		"production" : {
+			"url" : "production.example.org:1883",
+			"protocol" : "mqtt"
+		},
+		"testing" : {
+			"url" : "testing.example.org:1883",
+			"protocol" : "mqtt"
+		}
+	},
+	"channels": {
+		"mytopic" : {
+			"description" : "Description",
+			"publish" : {
+				"operationId" : "myop",
+				"message": {
+					"$ref" : "#/components/messages/NamedArrayOfPairs"
+				}
+			},
+			"subscribe" : {
+				"operationId" : "myop",
+				"message": {
+					"$ref" : "#/components/messages/NamedArrayOfPairs"
+				}
+			}
+		}
+	},
+	"components": {
+		"messages": {
+			"NamedArrayOfPairs" : {
+				"name" : "NamedArrayOfPairs",
+				"payload" : {
+					"$ref" : "#/components/schemas/NamedArrayOfPairs"
+				}
+			}
+		},
+		"schemas": {
+			"NamedArrayOfPairs" : {
+				"type" : "object",
+				"properties" : {
+					"name" : {
+						"type" : "string"
+					},
+					"entries" : {
+						"type" : "array",
+						"items" : {
+							"$ref" : "#/components/schemas/Pair"
+						}
+					}
+				}
+			},
+			"Pair" : {
+				"type" : "object",
+				"properties" : {
+					"key" : {
+						"type" : "string"
+					},
+					"values" : {
+						"type" : "array",
+						"items" : {
+							"type" : "string"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+``` 
 
 ## AsyncAPI Grammar
 
