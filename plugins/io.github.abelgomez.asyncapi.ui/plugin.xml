@@ -53,6 +53,10 @@
 				</and>
 			</activeWhen>
 		</handler>
+  <handler
+        class="io.github.abelgomez.asyncapi.ui.handlers.GenerateAsyncApiHandler"
+        commandId="io.github.abelgomez.asyncapi.ui.commands.generateAsyncApiCommand">
+  </handler>
 	</extension>
 	<extension point="org.eclipse.core.expressions.definitions">
 		<definition id="io.github.abelgomez.asyncapi.AsyncApi.Editor.opened">
@@ -138,6 +142,15 @@
 			description="Copy the qualified name for the selected element"
 			name="Copy Qualified Name">
 	</command>
+ <category
+       id="io.github.abelgomez.asyncapi.ui.commands.category"
+       name="AsyncAPI">
+ </category>
+ <command
+       categoryId="io.github.abelgomez.asyncapi.ui.commands.category"
+       id="io.github.abelgomez.asyncapi.ui.commands.generateAsyncApiCommand"
+       name="Generate AsyncAPI">
+ </command>
 	</extension>
 	<extension point="org.eclipse.ui.menus">
 		<menuContribution
@@ -183,6 +196,31 @@
 				</visibleWhen>
 			</command>
 		</menuContribution>
+  <menuContribution
+        locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+     <menu
+           label="AsyncAPI Toolkit">
+        <command
+              commandId="io.github.abelgomez.asyncapi.ui.commands.generateAsyncApiCommand"
+              icon="icons/file.png"
+              id="io.github.abelgomez.asyncapi.ui.menus.generateAsyncApiCommand"
+              label="Generate AsyncAPI">
+           <visibleWhen
+                 checkEnabled="false">
+              <iterate>
+                 <adapt
+                       type="org.eclipse.core.resources.IFile">
+                    <test
+                          forcePluginActivation="true"
+                          property="org.eclipse.core.resources.extension"
+                          value="ecore">
+                    </test>
+                 </adapt>
+              </iterate>
+           </visibleWhen>
+        </command>
+     </menu>
+  </menuContribution>
 	</extension>
 	<extension point="org.eclipse.ui.menus">
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
@@ -438,7 +476,7 @@
 		</category>
 		<wizard
 			category="io.github.abelgomez.asyncapi.ui.category"
-			class="io.github.abelgomez.asyncapi.ui.AsyncApiExecutableExtensionFactory:org.eclipse.xtext.ui.wizard.template.TemplateNewProjectWizard"
+			class="io.github.abelgomez.asyncapi.ui.AsyncApiExecutableExtensionFactory:io.github.abelgomez.asyncapi.ui.wizard.AsyncApiTemplateNewProjectWizard"
 			id="io.github.abelgomez.asyncapi.ui.wizard.AsyncApiNewProjectWizard"
 			name="AsyncApi Project"
 			icon="icons/new_AsyncApi_proj.png"

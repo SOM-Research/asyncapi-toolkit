@@ -52,7 +52,7 @@ Pay special attention to the following files:
 
 * `src/streetlights/StreetlightsAPI.asyncapi` is an example specification (see below) of an API using the JSON format of the AsyncAPI specification. Code in `src-gen` will be generated from the specification contained in this file.
 
-```JSON
+``` js
 {
   "asyncapi": "2.0.0",
   "info": {
@@ -235,7 +235,7 @@ Pay special attention to the following files:
 
 * `src/main/MainExample.java` is an example program demonstrating how to use the generated code, which provides an internal DSL based on fluent APIs to generate messages, and to publish and subscribe them. The example code is the following:
 
-```Java
+``` java
 package main;
 
 import java.text.MessageFormat;
@@ -275,6 +275,52 @@ public class MainExample {
 		SubscribeLightMeasured.unsubscribe();
 	}
 }
+```
+
+## Generating an AsyncAPI Specification from an Ecore model
+
+It is possible to generate an skeleton AsyncAPI Specification from an Ecore model. The generator will create a reusable JSON Schema for each domain class. Channels will be created out of annotated EClasses. Moreover, hosts information can also be specificied vie EAnnotations. Currently, the following EAnnotations are allowed:
+
+
+| Ecore Element | EAnnotation Source                                         | Description
+| ------------- | ---------------------------------------------------------- | -----------
+| EPackage      | `http://io.github.abelgomez/asyncapi/eAnnotations/Server`  | List of Servers. Expect entries: `name` (Server name), `url` (Server url, including port) and `protocol` (AsyncAPI supported protocol).
+| EClass        | `http://io.github.abelgomez/asyncapi/eAnnotations/Channel` | The EClass represents the Payload of a given Channel. Expected entries: `name` (Channel name), `description` (Channel description), `publish` (publish `operationId`) and `subscribe` (subscribe `operationId`).
+
+This is a possible example Ecore file demonstrating these annotations:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="MyAPI" nsURI="http://org.example/MyAPI" nsPrefix="MyAPI">
+  <eAnnotations source="http://io.github.abelgomez/asyncapi/eAnnotations/Server">
+    <details key="name" value="production"/>
+    <details key="url" value="production.example.org:1883"/>
+    <details key="protocol" value="mqtt"/>
+  </eAnnotations>
+  <eAnnotations source="http://io.github.abelgomez/asyncapi/eAnnotations/Server">
+    <details key="name" value="testing"/>
+    <details key="url" value="testing.example.org:1883"/>
+    <details key="protocol" value="mqtt"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedArrayOfPairs">
+    <eAnnotations source="http://io.github.abelgomez/asyncapi/eAnnotations/Channel">
+      <details key="name" value="example/mytopic"/>
+      <details key="description" value="Dummy description"/>
+      <details key="publish" value="publishOp"/>
+      <details key="subscribe" value="SubscribeOp"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
+        eType="#//Pair" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pair">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
+
 ```
 
 ## AsyncAPI Grammar

@@ -9,6 +9,8 @@ public class Messages extends NLS {
 	public static String EmptyAsyncAPIProject_Description;
 	public static String StreetlightsAPIProject_Label;
 	public static String StreetlightsAPIProject_Description;
+	public static String EcoreAsyncAPIProject_Label;
+	public static String EcoreAsyncAPIProject_Description;
 	
 	static {
 	// initialize resource bundle
