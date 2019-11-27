@@ -61,12 +61,16 @@ class Ecore2AsyncApi {
 		{
 			"asyncapi": "2.0.0",
 			"info": «asyncAPI.info.generate»,
+			«IF !asyncAPI.servers.empty»
 			"servers": {
 				«asyncAPI.servers.map[generate].join(",\n")»
 			},
+			«ENDIF»
+			«IF !asyncAPI.channels.empty»
 			"channels": {
 				«asyncAPI.channels.map[generate].join(",\n")»
 			},
+			«ENDIF»
 			"components": «asyncAPI.components.generate»
 		}
 	'''
@@ -102,9 +106,11 @@ class Ecore2AsyncApi {
 
 	static def CharSequence generate(Components c) '''
 	{
+		«IF !c.messages.empty»
 		"messages": {
 			«c.messages.map[generate].join(",\n")»
 		},
+		«ENDIF»
 		"schemas": {
 			«c.schemas.map[generate].join(",\n")»
 		}
