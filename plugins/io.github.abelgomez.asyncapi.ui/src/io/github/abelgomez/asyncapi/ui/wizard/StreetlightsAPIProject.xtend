@@ -233,7 +233,9 @@ final class StreetlightsAPIProject {
 				import java.time.LocalDateTime;
 				import java.util.UUID;
 				
+				«IF embeddedServer.value»
 				import io.moquette.broker.Server;
+				«ENDIF»
 				import schemas.LightMeasuredPayload;
 				import smartylighting.streetlights._1._0.event.__streetlightId_.lighting.measured.PublishLightMeasured;
 				import smartylighting.streetlights._1._0.event.__streetlightId_.lighting.measured.PublishLightMeasured.PublishLightMeasuredParams;
