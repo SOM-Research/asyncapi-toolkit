@@ -249,30 +249,47 @@ import smartylighting.streetlights._1._0.event.__streetlightId_.lighting.measure
 
 public class MainExample {
 	public static void main(String[] args) throws Exception {
-		
-		SubscribeLightMeasured.subscribe((params, message) -> {
-			System.err.println(MessageFormat.format(
-					"Subscription to ''{0}'' with ID ''{1}'':\n{2} lumens at {3}",
-					SubscribeLightMeasured.TOPIC_ID, params.getStreetlightId(), message.getLumens(), message.getSentAt()));
-		});
-
-		for (int i = 0; i < 3; i++) {
-			LightMeasuredPayload payload = PublishLightMeasured.payloadBuilder()
-					.withLumens(10)
-					.withSentAt(LocalDateTime.now().toString())
-					.build();
-			
-			PublishLightMeasuredParams params = PublishLightMeasuredParams.create()
-					.withStreetlightId(UUID.randomUUID().toString());
-			
-			System.out.println(MessageFormat.format(
-					"Publishing at ''{0}'':\n{1}",
-					PublishLightMeasured.expand(params), payload.toJson(true)));
-			
-			PublishLightMeasured.publish(payload, params);
+		try {
+			// Register a new subscription to the LightMeasured operation
+			SubscribeLightMeasured.subscribe((params, message) -> {
+				// Inform about the message received
+				System.err.println(MessageFormat.format(
+						"Subscription to ''{0}'' with ID ''{1}'':\n{2} lumens at {3}",
+						SubscribeLightMeasured.TOPIC_ID,
+						// Notice that both the params and the message fields can be
+						// queried via getters that know about the domain being modeled 
+						params.getStreetlightId(),
+						message.getLumens(), 
+						message.getSentAt()));
+			});
+	
+			// Prepare to publish several messages
+			for (int i = 0; i < 5; i++) {
+				// Create the payload via the payloadBuiler offered by the publish  operation
+				LightMeasuredPayload payload = PublishLightMeasured.payloadBuilder()
+						// Notice that the properties of the payload can be set via
+						// setter that know about the domain (e.g., name and type of
+						// the property
+						.withLumens(10)
+						.withSentAt(LocalDateTime.now().toString())
+						.build();
+				
+				// Set the value of the parameters. Notice that a setter is also provided
+				PublishLightMeasuredParams params = PublishLightMeasuredParams.create()
+						.withStreetlightId(UUID.randomUUID().toString());
+				
+				// Inform about the message to be sent
+				System.out.println(MessageFormat.format(
+						"Publishing at ''{0}'':\n{1}",
+						PublishLightMeasured.expand(params), payload.toJson(true)));
+				
+				// Publish the LightMeasured message
+				PublishLightMeasured.publish(payload, params);
+			}
+		} finally {
+			// Unsubscribe from the topic
+			SubscribeLightMeasured.unsubscribe();
 		}
-		
-		SubscribeLightMeasured.unsubscribe();
 	}
 }
 ```
