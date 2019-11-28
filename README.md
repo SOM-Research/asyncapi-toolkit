@@ -20,7 +20,7 @@ To install the toolkit use the following update site:
 ### Prerequisites
 
 * The toolkit requires [Eclipse 4.12 (2019-06)](https://download.eclipse.org/eclipse/downloads/drops4/R-4.12-201906051800/) or [above](https://download.eclipse.org/eclipse/downloads/).
-* A MQTT broker (e.g. [mosqutitto](https://mosquitto.org/download/)) is needed for the Example project to be executable.
+* An exaternal MQTT broker (e.g. [mosqutitto](https://mosquitto.org/download/)) is recommended for the Example project to be executable (in favor of the embedded Moquette server).
 
 ## Quick Start Guide
 
