@@ -296,7 +296,7 @@ public class MainExample {
 
 ## Generating an AsyncAPI Specification from an Ecore model
 
-It is possible to generate an skeleton AsyncAPI Specification from an Ecore model. The generator will create a reusable JSON Schema for each domain class. Channels will be created out of annotated EClasses. Moreover, hosts information can also be specificied vie EAnnotations. Currently, the following EAnnotations are allowed:
+It is possible to generate an skeleton AsyncAPI Specification from an Ecore model. The generator will create a reusable JSON Schema for each domain class. Channels will be created out of annotated EClasses. Moreover, hosts information can also be specified via EAnnotations. Currently, the following EAnnotations are allowed:
 
 
 | Ecore Element | EAnnotation Source                                         | Description
