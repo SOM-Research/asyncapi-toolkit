@@ -20,7 +20,7 @@ To install the toolkit use the following update site:
 ### Prerequisites
 
 * The toolkit requires [Eclipse 4.12 (2019-06)](https://download.eclipse.org/eclipse/downloads/drops4/R-4.12-201906051800/) or [above](https://download.eclipse.org/eclipse/downloads/).
-* An exaternal MQTT broker (e.g. [mosqutitto](https://mosquitto.org/download/)) is recommended for the Example project to be executable (in favor of the embedded Moquette server).
+* An external MQTT broker (e.g. [mosqutitto](https://mosquitto.org/download/)) is recommended for the Example project to be executable (in favor of the embedded Moquette server).
 
 ## Quick Start Guide
 
@@ -296,7 +296,7 @@ public class MainExample {
 
 ## Generating an AsyncAPI Specification from an Ecore model
 
-It is possible to generate an skeleton AsyncAPI Specification from an Ecore model. The generator will create a reusable JSON Schema for each domain class. Channels will be created out of annotated EClasses. Moreover, hosts information can also be specificied vie EAnnotations. Currently, the following EAnnotations are allowed:
+It is possible to generate an skeleton AsyncAPI Specification from an Ecore model. The generator will create a reusable JSON Schema for each domain class. Channels will be created out of annotated EClasses. Moreover, hosts information can also be specified via EAnnotations. Currently, the following EAnnotations are allowed:
 
 
 | Ecore Element | EAnnotation Source                                         | Description
