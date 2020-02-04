@@ -403,11 +403,11 @@ class AsyncApiGenerator extends AbstractGenerator {
 	'''
 
 	def String schemaClassBody(Schema s, String thisTypeName) '''
-		«FOR p : s.properties.filter[p | p.schema.resolve.enumType]»
+		«FOR p : s.properties.filter[p | p.schema instanceof Schema && p.schema.resolve.enumType]»
 		
 		«p.namedSchemaEnum»
 		«ENDFOR»
-		«FOR p : s.properties.filter[p | p.schema.resolve.objectType]»
+		«FOR p : s.properties.filter[p | p.schema instanceof Schema && p.schema.resolve.objectType]»
 		
 		«p.namedSchemaClass»
 		«ENDFOR»
