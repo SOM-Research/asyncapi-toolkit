@@ -1,35 +1,37 @@
 package io.github.abelgomez.asyncapi.generator
 
-import io.github.abelgomez.asyncapi.asyncApi.AbstractMessage
+import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema
+import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiFactory
 import io.github.abelgomez.asyncapi.asyncApi.Channel
+import io.github.abelgomez.asyncapi.asyncApi.Components
+import io.github.abelgomez.asyncapi.asyncApi.Info
+import io.github.abelgomez.asyncapi.asyncApi.JsonType
 import io.github.abelgomez.asyncapi.asyncApi.NamedMessage
+import io.github.abelgomez.asyncapi.asyncApi.NamedSchema
 import io.github.abelgomez.asyncapi.asyncApi.Operation
 import io.github.abelgomez.asyncapi.asyncApi.Protocol
+import io.github.abelgomez.asyncapi.asyncApi.Reference
+import io.github.abelgomez.asyncapi.asyncApi.Schema
 import io.github.abelgomez.asyncapi.asyncApi.Server
+import io.github.abelgomez.asyncapi.asyncApi.VersionNumber
+import java.io.InputStream
+import java.util.Collections
 import org.eclipse.core.runtime.IPath
 import org.eclipse.emf.common.util.Diagnostic
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.EClass
+import org.eclipse.emf.ecore.EClassifier
+import org.eclipse.emf.ecore.EDataType
+import org.eclipse.emf.ecore.EEnum
 import org.eclipse.emf.ecore.EPackage
+import org.eclipse.emf.ecore.EReference
+import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.util.Diagnostician
 import org.eclipse.emf.ecore.util.EcoreUtil
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl
 import org.eclipse.xtext.EcoreUtil2
-import io.github.abelgomez.asyncapi.asyncApi.Reference
-import io.github.abelgomez.asyncapi.asyncApi.NamedSchema
-import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
-import io.github.abelgomez.asyncapi.asyncApi.VersionNumber
-import io.github.abelgomez.asyncapi.asyncApi.Info
-import io.github.abelgomez.asyncapi.asyncApi.Components
-import io.github.abelgomez.asyncapi.asyncApi.JsonType
-import org.eclipse.emf.ecore.EAttribute
-import org.eclipse.emf.ecore.EClassifier
-import org.eclipse.emf.ecore.EReference
-import io.github.abelgomez.asyncapi.asyncApi.Schema
-import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema
-import org.eclipse.emf.ecore.EDataType
-import org.eclipse.emf.ecore.EStructuralFeature
 
 class Ecore2AsyncApi {
 
@@ -141,6 +143,8 @@ class Ecore2AsyncApi {
 		"properties" : {
 			«s.properties.map[generate].join(",\n")»
 		}«ENDIF»«
+		IF !s.enum.empty»,
+		"enum" : «s.enum.join("[\n\t", ",\n\t", "\n]", [quote])»«ENDIF»«
 		IF s.items !== null»,
 		"items" : «s.items.generate»«ENDIF»«
 		IF s.type === JsonType.ARRAY && s.minItems > 0»,
@@ -148,6 +152,9 @@ class Ecore2AsyncApi {
 		IF s.type === JsonType.ARRAY && s.maxItems >= 0»,
 		"maxItems" : «s.maxItems»«ENDIF»
 	}'''
+	
+	static def CharSequence quote(String s) '''
+	"«s»"'''
 	
 	static def CharSequence generate(Reference r) '''
 	{
@@ -197,20 +204,20 @@ class Ecore2AsyncApi {
 				name = EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL, EANNOTATION_CHANNEL_NAME)
 				description = EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL, EANNOTATION_CHANNEL_DESCRIPTION)
 				if (EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL,
-					io.github.abelgomez.asyncapi.generator.Ecore2AsyncApi.EANNOTATION_CHANNEL_PUBLISH) !== null) {
+					Ecore2AsyncApi.EANNOTATION_CHANNEL_PUBLISH) !== null) {
 					publish = AsyncApiFactory.eINSTANCE.createOperation => [
 						operationId = EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL,
-							io.github.abelgomez.asyncapi.generator.Ecore2AsyncApi.EANNOTATION_CHANNEL_PUBLISH)
+							Ecore2AsyncApi.EANNOTATION_CHANNEL_PUBLISH)
 						message = AsyncApiFactory.eINSTANCE.createReference => [
 							uri = "#/components/messages/" + eClass.name
 						]
 					]
 				}
 				if (EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL,
-					io.github.abelgomez.asyncapi.generator.Ecore2AsyncApi.EANNOTATION_CHANNEL_SUBSCRIBE) !== null) {
+					Ecore2AsyncApi.EANNOTATION_CHANNEL_SUBSCRIBE) !== null) {
 					subscribe = AsyncApiFactory.eINSTANCE.createOperation => [
 						operationId = EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL,
-							io.github.abelgomez.asyncapi.generator.Ecore2AsyncApi.EANNOTATION_CHANNEL_SUBSCRIBE)
+							Ecore2AsyncApi.EANNOTATION_CHANNEL_SUBSCRIBE)
 						message = AsyncApiFactory.eINSTANCE.createReference => [
 							uri = "#/components/messages/" + eClass.name
 						]
@@ -224,10 +231,10 @@ class Ecore2AsyncApi {
 		return EcoreUtil2.getAllContentsOfType(ePackage, EClass).filter [
 			EAnnotations.exists [
 				source == EANNOTATION_CHANNEL &&
-					(details.get(io.github.abelgomez.asyncapi.generator.Ecore2AsyncApi.EANNOTATION_CHANNEL_PUBLISH) !==
+					(details.get(Ecore2AsyncApi.EANNOTATION_CHANNEL_PUBLISH) !==
 						null ||
 						details.get(
-							io.github.abelgomez.asyncapi.generator.Ecore2AsyncApi.EANNOTATION_CHANNEL_SUBSCRIBE) !== null
+							Ecore2AsyncApi.EANNOTATION_CHANNEL_SUBSCRIBE) !== null
 				)
 			]
 		].map [
@@ -305,6 +312,10 @@ class Ecore2AsyncApi {
 				case "EString": JsonType.STRING
 				default: JsonType.OBJECT
 			}
+			if (eDataType instanceof EEnum) {
+				type = JsonType.STRING
+				enum += (eDataType as EEnum).ELiterals.map[name]  
+			}
 		]
 	}
 
@@ -344,6 +355,18 @@ class Ecore2AsyncApi {
 			val resourceSet = new ResourceSetImpl()
 			val resource = resourceSet.getResource(uri, true)
 			if (resource !== null && resource.contents.get(0) instanceof EPackage) {
+				return resource.contents.get(0) as EPackage
+			}
+		} catch (Exception e) {
+		}
+		return null
+	}
+	
+	static def EPackage loadEPackage(InputStream stream) {
+		try {
+			val resource = new XMIResourceImpl()
+			resource.load(stream, Collections.emptyMap())
+			if (resource.contents.get(0) instanceof EPackage) {
 				return resource.contents.get(0) as EPackage
 			}
 		} catch (Exception e) {
