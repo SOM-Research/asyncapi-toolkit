@@ -10,8 +10,8 @@
 			<repository location="http://download.eclipse.org/eclipse/updates/4.11"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-			<unit id="org.apache.ivy.eclipse.ant.feature.feature.group" version="2.5.0.cr1_20180412005306"/>
-			<unit id="org.apache.ivy.feature.feature.group" version="2.5.0.cr1_20180412005306"/>
+			<unit id="org.apache.ivy.eclipse.ant.feature.feature.group" version="2.5.0.final_20191020104435"/>
+			<unit id="org.apache.ivy.feature.feature.group" version="2.5.0.final_20191020104435"/>
 			<unit id="org.apache.ivyde.eclipse.resolvevisualizer.feature.feature.group" version="2.2.0.final-201311091524-RELEASE"/>
 			<unit id="org.apache.ivyde.feature.feature.group" version="2.2.0.final-201311091524-RELEASE"/>
 			<repository location="http://www.apache.org/dist/ant/ivyde/updatesite"/>
