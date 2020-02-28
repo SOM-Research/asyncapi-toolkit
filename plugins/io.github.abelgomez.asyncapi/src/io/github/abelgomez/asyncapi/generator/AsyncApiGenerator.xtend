@@ -41,8 +41,10 @@ class AsyncApiGenerator extends AbstractGenerator {
 			t.messageClasses(fsa)
 		}
 		for (ns : api.schemas) {
-			if (!ns.schema.resolve.isBasicType) {
+			if (ns.schema.resolve.isObjectType) {
 				fsa.generateFile("schemas/" + ns.toJavaType + ".java", ns.namedSchemaClassFile)
+			} else if (ns.schema.resolve.isEnumType) {
+				fsa.generateFile("schemas/" + ns.toJavaType + ".java", ns.namedSchemaEnumFile)
 			}
 		}
 	}
@@ -372,6 +374,12 @@ class AsyncApiGenerator extends AbstractGenerator {
 		«gsonImports»
 		
 		«ns.namedSchemaClass»
+	'''
+
+	def namedSchemaEnumFile(NamedSchema ns) '''
+		package schemas;
+		
+		«ns.namedSchemaEnum»
 	'''
 	
 	def String namedSchemaClass(NamedSchema ns) '''
