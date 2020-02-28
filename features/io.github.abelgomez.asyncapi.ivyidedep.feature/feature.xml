@@ -2,7 +2,7 @@
 <feature
       id="io.github.abelgomez.asyncapi.ivyidedep.feature"
       label="AsyncAPI Toolkit IvyIDE Dependency Manager"
-      version="0.4.0.qualifier"
+      version="0.4.1.qualifier"
       provider-name="SOM Research Lab">
 
    <description url="https://github.com/SOM-Research/asyncapi-toolkit">
