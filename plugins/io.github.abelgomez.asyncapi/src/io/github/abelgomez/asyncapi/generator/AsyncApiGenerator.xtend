@@ -25,6 +25,7 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import io.github.abelgomez.asyncapi.asyncApi.JsonType
+import java.util.regex.Matcher
 
 /**
  * Generates code from your model files on save.
@@ -831,7 +832,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 	static def String wildcardify(Channel channel) {
 		var result = channel.name;
 		for (NamedParameter p : channel.parameters) {
-			result = result.replaceAll("/[^/]*\\{" + p.name + "\\}([/$])", "/+$1");
+			result = result.replaceAll("/[^/]*\\{" + p.name + "\\}[^/]*", "/+");
 		}
 		return result;
 	}
