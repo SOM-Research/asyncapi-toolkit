@@ -2,7 +2,7 @@
 <feature
       id="io.github.abelgomez.asyncapi.ui.feature"
       label="AsyncAPI Toolkit UI"
-      version="0.4.2.qualifier"
+      version="0.4.3.qualifier"
       provider-name="SOM Research Lab">
 
    <description url="https://github.com/SOM-Research/asyncapi-toolkit">
@@ -319,14 +319,14 @@ version(s), and exceptions or additional permissions here}.&quot;
          id="io.github.abelgomez.asyncapi.ide"
          download-size="0"
          install-size="0"
-         version="0.4.2.qualifier"
+         version="0.4.3.qualifier"
          unpack="false"/>
 
    <plugin
          id="io.github.abelgomez.asyncapi.ui"
          download-size="0"
          install-size="0"
-         version="0.4.2.qualifier"
+         version="0.4.3.qualifier"
          unpack="false"/>
 
 </feature>
