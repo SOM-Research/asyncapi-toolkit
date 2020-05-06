@@ -32,6 +32,10 @@ import org.eclipse.emf.ecore.util.Diagnostician
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl
 import org.eclipse.xtext.EcoreUtil2
+import io.github.abelgomez.asyncapi.asyncApi.Parameter
+import io.github.abelgomez.asyncapi.asyncApi.NamedParameter
+import io.github.abelgomez.asyncapi.asyncApi.AbstractParameter
+import java.util.List
 
 class Ecore2AsyncApi {
 
@@ -48,6 +52,14 @@ class Ecore2AsyncApi {
 	public static final String EANNOTATION_CHANNEL_DESCRIPTION = "description"
 	public static final String EANNOTATION_CHANNEL_PUBLISH = "publish"
 	public static final String EANNOTATION_CHANNEL_SUBSCRIBE = "subscribe"
+	public static final String EANNOTATION_CHANNEL_PARAMETERS= "parameters"
+
+	public static final String EANNOTATION_MESSAGE = BASE_EANNOTATION_URI + "Message"
+	public static final String EANNOTATION_MESSAGE_NAME = "name"
+
+	public static final String EANNOTATION_SCHEMA = BASE_EANNOTATION_URI + "Schema"
+	public static final String EANNOTATION_SCHEMA_NAME = "name"
+	public static final String EANNOTATION_SCHEMA_TITLE = "title"
 
 	static def CharSequence generate(EPackage ePackage) {
 		return ePackage.asyncApi.generate
@@ -92,10 +104,33 @@ class Ecore2AsyncApi {
 	static def CharSequence generate(Channel c) '''
 	"«c.name»" : {
 		"description" : "«c.description»"«
+		IF !c.parameters.empty»,
+		"parameters" : {
+			«c.parameters.map[generate].join(",\n")»
+		}«ENDIF»«
 		IF c.publish !== null»,
 		"publish" : «c.publish.generate»«ENDIF»«
 		IF c.subscribe !== null»,
 		"subscribe" : «c.subscribe.generate»«ENDIF»
+	}'''
+
+	static def CharSequence generate(NamedParameter np) '''
+	"«np.name»" : «np.parameter.generate»'''
+
+	static def CharSequence generate(AbstractParameter abp) '''
+		«if (abp instanceof Parameter)
+			abp.generate
+		else if (abp instanceof Reference)
+			abp.generate
+		»'''
+
+	static def CharSequence generate(Parameter p) '''
+	{
+		"schema" : «p.schema.generate»«
+		IF p.description !== null»,
+		"description" : "«p.description»"«ENDIF»«
+		IF p.location !== null»,
+		"location" : «p.location»«ENDIF»
 	}'''
 
 	static def CharSequence generate(Operation o) '''
@@ -139,6 +174,8 @@ class Ecore2AsyncApi {
 	static def CharSequence generate(Schema s) '''
 	{
 		"type" : "«s.type.getName»"«
+		IF s.title !== null»,
+		"title" : "«s.title»"«ENDIF»«
 		IF !s.properties.empty»,
 		"properties" : {
 			«s.properties.map[generate].join(",\n")»
@@ -201,25 +238,22 @@ class Ecore2AsyncApi {
 		].map [
 			val eClass = it
 			AsyncApiFactory.eINSTANCE.createChannel => [
-				name = EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL, EANNOTATION_CHANNEL_NAME)
-				description = EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL, EANNOTATION_CHANNEL_DESCRIPTION)
-				if (EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL,
-					Ecore2AsyncApi.EANNOTATION_CHANNEL_PUBLISH) !== null) {
+				name = eClass.channelName
+				description = eClass.channelDescription
+				parameters += eClass.channelParameters.map[namedParameter]
+				if (eClass.channelPublishOp !== null) {
 					publish = AsyncApiFactory.eINSTANCE.createOperation => [
-						operationId = EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL,
-							Ecore2AsyncApi.EANNOTATION_CHANNEL_PUBLISH)
+						operationId = eClass.channelPublishOp
 						message = AsyncApiFactory.eINSTANCE.createReference => [
-							uri = "#/components/messages/" + eClass.name
+							uri = "#/components/messages/" + eClass.messageName
 						]
 					]
 				}
-				if (EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL,
-					Ecore2AsyncApi.EANNOTATION_CHANNEL_SUBSCRIBE) !== null) {
+				if (eClass.channelSubscribeOp !== null) {
 					subscribe = AsyncApiFactory.eINSTANCE.createOperation => [
-						operationId = EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL,
-							Ecore2AsyncApi.EANNOTATION_CHANNEL_SUBSCRIBE)
+						operationId = eClass.channelSubscribeOp
 						message = AsyncApiFactory.eINSTANCE.createReference => [
-							uri = "#/components/messages/" + eClass.name
+							uri = "#/components/messages/" + eClass.messageName
 						]
 					]
 				}
@@ -230,19 +264,17 @@ class Ecore2AsyncApi {
 	static def Iterable<NamedMessage> allMessages(EPackage ePackage) {
 		return EcoreUtil2.getAllContentsOfType(ePackage, EClass).filter [
 			EAnnotations.exists [
-				source == EANNOTATION_CHANNEL &&
-					(details.get(Ecore2AsyncApi.EANNOTATION_CHANNEL_PUBLISH) !==
-						null ||
-						details.get(
-							Ecore2AsyncApi.EANNOTATION_CHANNEL_SUBSCRIBE) !== null
-				)
+				source == EANNOTATION_CHANNEL 
+					&& (details.get(EANNOTATION_CHANNEL_PUBLISH) !== null 
+						|| details.get(EANNOTATION_CHANNEL_SUBSCRIBE) !== null
+					)
 			]
 		].map [
 			val eClass = it
 			AsyncApiFactory.eINSTANCE.createNamedMessage => [
-				name = eClass.name
+				name = eClass.messageName
 				message = AsyncApiFactory.eINSTANCE.createReference => [
-					uri = "#/components/schemas/" + eClass.name
+					uri = "#/components/schemas/" + eClass.schemaName
 				]
 			]
 		]
@@ -252,15 +284,27 @@ class Ecore2AsyncApi {
 		return EcoreUtil2.getAllContentsOfType(ePackage, EClass).map [
 			val eClass = it
 			AsyncApiFactory.eINSTANCE.createNamedSchema => [
-				name = eClass.name
+				name = eClass.schemaName
 				schema = AsyncApiFactory.eINSTANCE.createSchema => [
 					type = JsonType.OBJECT
+					title = eClass.schemaTitle
 					properties += eClass.EAllStructuralFeatures.map[schema]
 				]
 			]
 		]
 	}
 
+	static def NamedParameter namedParameter(String parameterName) {
+		return AsyncApiFactory.eINSTANCE.createNamedParameter => [
+			name = parameterName
+			parameter = AsyncApiFactory.eINSTANCE.createParameter => [
+				schema = AsyncApiFactory.eINSTANCE.createSchema => [
+					type = JsonType.STRING
+				]
+			]
+		]
+	}
+	
 	static def NamedSchema schema(EStructuralFeature eStructuralFeature) {
 		return AsyncApiFactory.eINSTANCE.createNamedSchema => [
 			name = eStructuralFeature.name
@@ -273,6 +317,9 @@ class Ecore2AsyncApi {
 					minItems = eStructuralFeature.lowerBound
 					maxItems = eStructuralFeature.upperBound
 				]
+			}
+			if (eStructuralFeature.schemaTitle !== null && schema instanceof Schema) {
+				(schema as Schema).title = eStructuralFeature.schemaTitle
 			}
 		]
 	}
@@ -329,6 +376,41 @@ class Ecore2AsyncApi {
 
 	}
 
+	static def String channelName(EClass eClass) {
+		return EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL, EANNOTATION_CHANNEL_NAME)
+	}
+	
+	static def String channelDescription(EClass eClass) {
+		return EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL, EANNOTATION_CHANNEL_DESCRIPTION)
+	}
+	
+	static def List<String> channelParameters(EClass eClass) {
+		return EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL, EANNOTATION_CHANNEL_PARAMETERS).split(",").map[trim]
+	}
+	
+	static def String channelPublishOp(EClass eClass) {
+		return EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL, EANNOTATION_CHANNEL_PUBLISH)
+	}
+	
+	static def String channelSubscribeOp(EClass eClass) {
+		return EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL, EANNOTATION_CHANNEL_SUBSCRIBE)
+	}
+	
+	static def String messageName(EClass eClass) {
+		return EcoreUtil.getAnnotation(eClass, EANNOTATION_MESSAGE, EANNOTATION_MESSAGE_NAME) ?: eClass.name
+	}
+
+	static def String schemaName(EClass eClass) {
+		return EcoreUtil.getAnnotation(eClass, EANNOTATION_SCHEMA, EANNOTATION_SCHEMA_NAME) ?: eClass.name
+	}
+
+	static def String schemaTitle(EClass eClass) {
+		return EcoreUtil.getAnnotation(eClass, EANNOTATION_SCHEMA, EANNOTATION_SCHEMA_TITLE)
+	}
+	
+	static def String schemaTitle(EStructuralFeature eStructuralFeature) {
+		return EcoreUtil.getAnnotation(eStructuralFeature, EANNOTATION_SCHEMA, EANNOTATION_SCHEMA_TITLE)
+	}
 
 	// Utility public methods
 	static def String diagnoseEcoreFile(IPath path) {

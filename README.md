@@ -243,9 +243,9 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 import schemas.LightMeasuredPayload;
-import smartylighting.streetlights._1._0.event.__streetlightId_.lighting.measured.PublishLightMeasured;
-import smartylighting.streetlights._1._0.event.__streetlightId_.lighting.measured.PublishLightMeasured.PublishLightMeasuredParams;
-import smartylighting.streetlights._1._0.event.__streetlightId_.lighting.measured.SubscribeLightMeasured;
+import smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.PublishLightMeasured;
+import smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.PublishLightMeasured.PublishLightMeasuredParams;
+import smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.SubscribeLightMeasured;
 
 public class MainExample {
 	public static void main(String[] args) throws Exception {
@@ -299,10 +299,13 @@ public class MainExample {
 It is possible to generate an skeleton AsyncAPI Specification from an Ecore model. The generator will create a reusable JSON Schema for each domain class. Channels will be created out of annotated EClasses. Moreover, hosts information can also be specified via EAnnotations. Currently, the following EAnnotations are allowed:
 
 
-| Ecore Element | EAnnotation Source                                         | Description
-| ------------- | ---------------------------------------------------------- | -----------
-| EPackage      | `http://io.github.abelgomez/asyncapi/eAnnotations/Server`  | List of Servers. Expect entries: `name` (Server name), `url` (Server url, including port) and `protocol` (AsyncAPI supported protocol).
-| EClass        | `http://io.github.abelgomez/asyncapi/eAnnotations/Channel` | The EClass represents the Payload of a given Channel. Expected entries: `name` (Channel name), `description` (Channel description), `publish` (publish `operationId`) and `subscribe` (subscribe `operationId`).
+| Ecore Element      | EAnnotation Source                                         | Description
+| ------------------ | ---------------------------------------------------------- | -----------
+| EPackage           | `http://io.github.abelgomez/asyncapi/eAnnotations/Server`  | List of Servers. Expect entries: `name` (Server name), `url` (Server url, including port) and `protocol` (AsyncAPI supported protocol).
+| EClass             | `http://io.github.abelgomez/asyncapi/eAnnotations/Channel` | The EClass represents the Payload of a given Channel. Expected entries: `name` (Channel name), `description` (Channel description), `publish` (publish `operationId`) and `subscribe` (subscribe `operationId`).
+| EClass             | `http://io.github.abelgomez/asyncapi/eAnnotations/Message` | The EClass represents the Payload of a given Message. Expected entries: `name` (Message name).
+| EClass             | `http://io.github.abelgomez/asyncapi/eAnnotations/Schema`  | The EClass represents a Payload. Expected entries: `name` (Schema name), `title` (Friendly name of the Schema).
+| EStructuralFeature | `http://io.github.abelgomez/asyncapi/eAnnotations/Schema`  | The EStructuralFeature is a property part of a Payload. Expected entries: `title` (Friendly name for the property).
 
 This is a possible example Ecore file demonstrating these annotations:
 
