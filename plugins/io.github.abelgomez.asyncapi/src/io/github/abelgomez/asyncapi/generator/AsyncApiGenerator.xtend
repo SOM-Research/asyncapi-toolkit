@@ -651,7 +651,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 			}
 		}
 		val retVal = builder.toString()
-		return if (!Character.isLowerCase(retVal.charAt(0))) "_" + retVal else retVal;	
+		return if (!Character.isJavaIdentifierStart(retVal.charAt(0))) "_" + retVal else retVal;	
 	}
 
 	def String asJavaClassName(String s) {

@@ -237,9 +237,9 @@ final class StreetlightsAPIProject {
 				import io.moquette.broker.Server;
 				«ENDIF»
 				import schemas.LightMeasuredPayload;
-				import smartylighting.streetlights._1._0.event.__streetlightId_.lighting.measured.PublishLightMeasured;
-				import smartylighting.streetlights._1._0.event.__streetlightId_.lighting.measured.PublishLightMeasured.PublishLightMeasuredParams;
-				import smartylighting.streetlights._1._0.event.__streetlightId_.lighting.measured.SubscribeLightMeasured;
+				import smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.PublishLightMeasured;
+				import smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.PublishLightMeasured.PublishLightMeasuredParams;
+				import smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.SubscribeLightMeasured;
 				
 				public class MainExample {
 					public static void main(String[] args) throws Exception {
