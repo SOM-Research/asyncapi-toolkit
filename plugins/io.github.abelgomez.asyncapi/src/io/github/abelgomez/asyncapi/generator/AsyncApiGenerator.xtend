@@ -617,7 +617,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 	
 	def name(AbstractSchema s) {
 		if (s instanceof Reference) {
-			return ((s as Reference).resolve as NamedSchema).name;
+			return ((s as Reference).resolve as NamedSchema).friendlyClassName;
 		} else {
 			throw new RuntimeException("Unexpected type of Schema (expecting a Reference): " + s);
 		}
