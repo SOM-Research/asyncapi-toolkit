@@ -309,11 +309,11 @@ It is possible to generate an skeleton AsyncAPI Specification from an Ecore mode
 
 For example, starting from the following ecore class diagram:
 
-![Ecore Model Graphical](doc/ecore_model_graph.png)
+![Ecore Model Graphical](doc/annotated_ecore_graph.png)
 
 It is possible to add the following annotations:
 
-![Ecore Model Tree](doc/ecore_model_tree.png)
+![Ecore Model Tree](doc/annotated_ecore_tree.png)
 
 In XMI, this model is serialized as follows:
 
