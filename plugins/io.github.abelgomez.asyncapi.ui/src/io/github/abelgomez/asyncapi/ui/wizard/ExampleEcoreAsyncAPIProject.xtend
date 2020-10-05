@@ -77,18 +77,18 @@ final class ExampleEcoreAsyncAPIProject {
 				import schemas.Event;
 				import schemas.Sensor;
 				import schemas.Timestamp;
-				import sensors.events.PublishSensor;
-				import sensors.events.SubscribeSensor;
+				import sensors.events.PublishOp;
+				import sensors.events.SubscribeOp;
 				
 				public class MainExample {
 					public static void main(String[] args) throws Exception {
 						try {
 							// Register a new subscription to the LightMeasured operation
-							SubscribeSensor.subscribe((message) -> {
+							SubscribeOp.subscribe((message) -> {
 								// Inform about the message received
 								System.err.println(MessageFormat.format(
 										"Subscription to ''{0}'' with ID ''{1}'':\n{2}",
-										SubscribeSensor.TOPIC_ID,
+										SubscribeOp.TOPIC_ID,
 										message.getName(),
 										message.getEvents().stream().map(e -> e.toJson(true)).collect(Collectors.toList())));
 							});
@@ -96,7 +96,7 @@ final class ExampleEcoreAsyncAPIProject {
 							// Prepare to publish several messages
 							for (int i = 0; i < 5; i++) {
 								// Create the payload via the payloadBuiler offered by the publish operation
-								Sensor payload = PublishSensor.payloadBuilder()
+								Sensor payload = PublishOp.payloadBuilder()
 										// Notice that the properties of the payload can be set via
 										// setter that know about the domain (e.g., name and type of
 										// the property
@@ -119,14 +119,14 @@ final class ExampleEcoreAsyncAPIProject {
 								// Inform about the message to be sent
 								System.out.println(MessageFormat.format(
 										"Publishing at topic ''{0}'':\n{1}",
-										PublishSensor.TOPIC_ID, payload.toJson(true)));
+										PublishOp.TOPIC_ID, payload.toJson(true)));
 								
 								// Publish the LightMeasured message
-								PublishSensor.publish(payload);
+								PublishOp.publish(payload);
 							}
 						} finally {
 							// Unsubscribe from the topic
-							SubscribeSensor.unsubscribe();
+							SubscribeOp.unsubscribe();
 						}
 					}
 				}
