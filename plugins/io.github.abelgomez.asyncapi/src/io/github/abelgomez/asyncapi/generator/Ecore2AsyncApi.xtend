@@ -148,9 +148,11 @@ class Ecore2AsyncApi {
 			«c.messages.map[generate].join(",\n")»
 		},
 		«ENDIF»
+		«IF !c.messages.empty»
 		"schemas": {
 			«c.schemas.map[generate].join(",\n")»
 		}
+		«ENDIF»
 	}'''
 
 	static def CharSequence generate(NamedMessage nm) '''
@@ -240,7 +242,9 @@ class Ecore2AsyncApi {
 			AsyncApiFactory.eINSTANCE.createChannel => [
 				name = eClass.channelName
 				description = eClass.channelDescription
-				parameters += eClass.channelParameters.map[namedParameter]
+				if (eClass.channelParameters !== null) {
+					parameters += eClass.channelParameters.map[namedParameter]
+				}
 				if (eClass.channelPublishOp !== null) {
 					publish = AsyncApiFactory.eINSTANCE.createOperation => [
 						operationId = eClass.channelPublishOp
@@ -385,7 +389,7 @@ class Ecore2AsyncApi {
 	}
 	
 	static def List<String> channelParameters(EClass eClass) {
-		return EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL, EANNOTATION_CHANNEL_PARAMETERS).split(",").map[trim]
+		return EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL, EANNOTATION_CHANNEL_PARAMETERS)?.split(",")?.map[trim]
 	}
 	
 	static def String channelPublishOp(EClass eClass) {
