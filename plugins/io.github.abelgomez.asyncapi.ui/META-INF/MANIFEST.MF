@@ -3,7 +3,7 @@ Automatic-Module-Name: io.github.abelgomez.asyncapi.ui
 Bundle-ManifestVersion: 2
 Bundle-Name: io.github.abelgomez.asyncapi.ui
 Bundle-Vendor: SOM Research Lab
-Bundle-Version: 0.4.4.qualifier
+Bundle-Version: 0.4.5.qualifier
 Bundle-SymbolicName: io.github.abelgomez.asyncapi.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: io.github.abelgomez.asyncapi,
