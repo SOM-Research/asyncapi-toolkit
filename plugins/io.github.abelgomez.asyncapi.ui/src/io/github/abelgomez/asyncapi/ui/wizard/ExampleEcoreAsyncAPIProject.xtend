@@ -77,19 +77,20 @@ final class ExampleEcoreAsyncAPIProject {
 				import schemas.Event;
 				import schemas.Sensor;
 				import schemas.Timestamp;
-				import sensors.events.PublishOp;
-				import sensors.events.SubscribeOp;
+				import sensors._group_.events.PublishOp;
+				import sensors._group_.events.PublishOp.PublishOpParams;
+				import sensors._group_.events.SubscribeOp;
 				
 				public class MainExample {
 					public static void main(String[] args) throws Exception {
 						try {
 							// Register a new subscription to the LightMeasured operation
-							SubscribeOp.subscribe((message) -> {
+							SubscribeOp.subscribe((message, params) -> {
 								// Inform about the message received
 								System.err.println(MessageFormat.format(
-										"Subscription to ''{0}'' with ID ''{1}'':\n{2}",
-										SubscribeOp.TOPIC_ID,
+										"Received message from sensor ''{0}'' in group ''{1}'':\n{2}",
 										message.getName(),
+										params.getGroup(),
 										message.getEvents().stream().map(e -> e.toJson(true)).collect(Collectors.toList())));
 							});
 					
@@ -100,7 +101,7 @@ final class ExampleEcoreAsyncAPIProject {
 										// Notice that the properties of the payload can be set via
 										// setter that know about the domain (e.g., name and type of
 										// the property
-										.withName("My Sensor")
+										.withName("Sensor " + i)
 										.addToEvents(
 											Event.newBuilder()
 												.withType(Event.Type.DIED)
@@ -116,13 +117,20 @@ final class ExampleEcoreAsyncAPIProject {
 												).build()
 										).build();
 								
+								// Create the parameters
+								PublishOpParams params = PublishOpParams.create().withGroup("MyGroup");
+								
 								// Inform about the message to be sent
+								// Note that the "expand" method allows getting the TOPIC with the parameters set to 
+								// their actual values
 								System.out.println(MessageFormat.format(
-										"Publishing at topic ''{0}'':\n{1}",
-										PublishOp.TOPIC_ID, payload.toJson(true)));
+										"Publishing at topic ''{0}'' (''{1}''):\n{2}",
+										PublishOp.TOPIC_ID,
+										PublishOp.expand(params),
+										payload.toJson(true)));
 								
 								// Publish the LightMeasured message
-								PublishOp.publish(payload);
+								PublishOp.publish(payload, params);
 							}
 						} finally {
 							// Unsubscribe from the topic
@@ -147,43 +155,44 @@ final class ExampleEcoreAsyncAPIProject {
 	}
 	
 	def ecoreFileContents() '''
-				<?xml version="1.0" encoding="UTF-8"?>
-				<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-				    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Events" nsURI="http://org.example/Events" nsPrefix="Events">
-				  <eAnnotations source="http://io.github.abelgomez/asyncapi/eAnnotations/Server">
-				    <details key="name" value="production"/>
-				    <details key="url" value="localhost:1883"/>
-				    <details key="protocol" value="mqtt"/>
-				  </eAnnotations>
-				  <eClassifiers xsi:type="ecore:EClass" name="Sensor">
-				    <eAnnotations source="http://io.github.abelgomez/asyncapi/eAnnotations/Channel">
-				      <details key="name" value="sensors/events"/>
-				      <details key="description" value="Description"/>
-				      <details key="publish" value="publishOp"/>
-				      <details key="subscribe" value="subscribeOp"/>
-				    </eAnnotations>
-				    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-				    <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
-				        eType="#//Event" containment="true"/>
-				  </eClassifiers>
-				  <eClassifiers xsi:type="ecore:EClass" name="Event">
-				    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//EventType"/>
-				    <eStructuralFeatures xsi:type="ecore:EReference" name="timestamp" lowerBound="1"
-				        eType="#//Timestamp" containment="true"/>
-				  </eClassifiers>
-				  <eClassifiers xsi:type="ecore:EClass" name="Timestamp">
-				    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-				    <eStructuralFeatures xsi:type="ecore:EAttribute" name="month" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-				    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-				    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hour" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-				    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-				    <eStructuralFeatures xsi:type="ecore:EAttribute" name="second" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-				  </eClassifiers>
-				  <eClassifiers xsi:type="ecore:EEnum" name="EventType">
-				    <eLiterals name="UNDEFINED"/>
-				    <eLiterals name="STATE_CHANGED" value="1"/>
-				    <eLiterals name="DIED" value="2"/>
-				  </eClassifiers>
-				</ecore:EPackage>
+			<?xml version="1.0" encoding="UTF-8"?>
+			<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Events" nsURI="http://org.example/Events" nsPrefix="Events">
+			  <eAnnotations source="http://io.github.abelgomez/asyncapi/eAnnotations/Server">
+			    <details key="name" value="production"/>
+			    <details key="url" value="localhost:1883"/>
+			    <details key="protocol" value="mqtt"/>
+			  </eAnnotations>
+			  <eClassifiers xsi:type="ecore:EClass" name="Sensor">
+			    <eAnnotations source="http://io.github.abelgomez/asyncapi/eAnnotations/Channel">
+			      <details key="name" value="sensors/{group}/events"/>
+			      <details key="description" value="Description"/>
+			      <details key="publish" value="publishOp"/>
+			      <details key="subscribe" value="subscribeOp"/>
+			      <details key="parameters" value="group"/>
+			    </eAnnotations>
+			    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+			    <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+			        eType="#//Event" containment="true"/>
+			  </eClassifiers>
+			  <eClassifiers xsi:type="ecore:EClass" name="Event">
+			    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//EventType"/>
+			    <eStructuralFeatures xsi:type="ecore:EReference" name="timestamp" lowerBound="1"
+			        eType="#//Timestamp" containment="true"/>
+			  </eClassifiers>
+			  <eClassifiers xsi:type="ecore:EClass" name="Timestamp">
+			    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+			    <eStructuralFeatures xsi:type="ecore:EAttribute" name="month" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+			    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+			    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hour" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+			    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+			    <eStructuralFeatures xsi:type="ecore:EAttribute" name="second" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+			  </eClassifiers>
+			  <eClassifiers xsi:type="ecore:EEnum" name="EventType">
+			    <eLiterals name="UNDEFINED"/>
+			    <eLiterals name="STATE_CHANGED" value="1"/>
+			    <eLiterals name="DIED" value="2"/>
+			  </eClassifiers>
+			</ecore:EPackage>
 			'''
 }
