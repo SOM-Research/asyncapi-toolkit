@@ -105,7 +105,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 			 * @return the builder
 			 */
 			public static final «c.publishPayloadClassName».«c.publishPayloadClassName»Builder payloadBuilder() {
-				return «c.publishPayloadClassName».«c.publishPayloadClassName»Builder.newBuilder();
+				return «c.publishPayloadClassName».newBuilder();
 			}
 			
 			/**
@@ -430,7 +430,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 		}
 			
 		public static final «thisTypeName»Builder newBuilder() {
-			return new «thisTypeName»Builder();
+			return «thisTypeName»Builder.newBuilder();
 		}
 		
 		public String toJson() {
@@ -466,7 +466,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 			
 			private «thisTypeName» instance = new «thisTypeName»();
 			
-			public static «thisTypeName»Builder newBuilder() {
+			private static «thisTypeName»Builder newBuilder() {
 				return new «thisTypeName»Builder();
 			}
 			«FOR p : s.properties»
@@ -562,6 +562,9 @@ class AsyncApiGenerator extends AbstractGenerator {
 	}
 	
 	def String publishMessageClassName(Channel c) {
+		if (c.publish.operationId !== null) {
+			return c.publish.operationId.asJavaClassName; 
+		}
 		val m = c.publish.message;
 		if (m === null) {
 			throw new RuntimeException("Unexpected type of publish Message: " + m);
@@ -581,6 +584,9 @@ class AsyncApiGenerator extends AbstractGenerator {
 	}
 	
 	def String subscribeMessageClassName(Channel c) {
+		if (c.subscribe.operationId !== null) {
+			return c.subscribe.operationId.asJavaClassName; 
+		}
 		val m = c.subscribe.message;
 		if (m === null) {
 			throw new RuntimeException("Unexpected type of subscribe Message: " + m);
