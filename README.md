@@ -302,42 +302,59 @@ It is possible to generate an skeleton AsyncAPI Specification from an Ecore mode
 | Ecore Element      | EAnnotation Source                                         | Description
 | ------------------ | ---------------------------------------------------------- | -----------
 | EPackage           | `http://io.github.abelgomez/asyncapi/eAnnotations/Server`  | List of Servers. Expect entries: `name` (Server name), `url` (Server url, including port) and `protocol` (AsyncAPI supported protocol).
-| EClass             | `http://io.github.abelgomez/asyncapi/eAnnotations/Channel` | The EClass represents the Payload of a given Channel. Expected entries: `name` (Channel name), `description` (Channel description), `publish` (publish `operationId`) and `subscribe` (subscribe `operationId`).
+| EClass             | `http://io.github.abelgomez/asyncapi/eAnnotations/Channel` | The EClass represents the Payload of a given Channel. Expected entries: `name` (Channel name), `description` (Channel description), `publish` (publish `operationId`), `subscribe` (subscribe `operationId`) and `parameters` (comma-separated list of parameters used in the Channel `name`, if any).
 | EClass             | `http://io.github.abelgomez/asyncapi/eAnnotations/Message` | The EClass represents the Payload of a given Message. Expected entries: `name` (Message name).
 | EClass             | `http://io.github.abelgomez/asyncapi/eAnnotations/Schema`  | The EClass represents a Payload. Expected entries: `name` (Schema name), `title` (Friendly name of the Schema).
 | EStructuralFeature | `http://io.github.abelgomez/asyncapi/eAnnotations/Schema`  | The EStructuralFeature is a property part of a Payload. Expected entries: `title` (Friendly name for the property).
 
-This is a possible example Ecore file demonstrating these annotations:
+For example, starting from the following ecore class diagram:
+
+![Ecore Model Graphical](doc/ecore_model_graph.png)
+
+It is possible to add the following annotations:
+
+![Ecore Model Tree](doc/ecore_model_tree.png)
+
+In XMI, this model is serialized as follows:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="MyAPI" nsURI="http://org.example/MyAPI" nsPrefix="MyAPI">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Events" nsURI="http://org.example/Events" nsPrefix="Events">
   <eAnnotations source="http://io.github.abelgomez/asyncapi/eAnnotations/Server">
     <details key="name" value="production"/>
-    <details key="url" value="production.example.org:1883"/>
+    <details key="url" value="localhost:1883"/>
     <details key="protocol" value="mqtt"/>
   </eAnnotations>
-  <eAnnotations source="http://io.github.abelgomez/asyncapi/eAnnotations/Server">
-    <details key="name" value="testing"/>
-    <details key="url" value="testing.example.org:1883"/>
-    <details key="protocol" value="mqtt"/>
-  </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="NamedArrayOfPairs">
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor">
     <eAnnotations source="http://io.github.abelgomez/asyncapi/eAnnotations/Channel">
-      <details key="name" value="example/mytopic"/>
-      <details key="description" value="Dummy description"/>
+      <details key="name" value="sensors/{group}/events"/>
+      <details key="description" value="Description"/>
       <details key="publish" value="publishOp"/>
       <details key="subscribe" value="subscribeOp"/>
+      <details key="parameters" value="group"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
-        eType="#//Pair" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+        eType="#//Event" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Pair">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//EventType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timestamp" lowerBound="1"
+        eType="#//Timestamp" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Timestamp">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="month" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hour" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="second" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EventType">
+    <eLiterals name="UNDEFINED"/>
+    <eLiterals name="STATE_CHANGED" value="1"/>
+    <eLiterals name="DIED" value="2"/>
   </eClassifiers>
 </ecore:EPackage>
 ```
@@ -348,71 +365,99 @@ And the automatically generated specification for it is as follows:
 {
 	"asyncapi": "2.0.0",
 	"info": {
-		"title" : "MyAPI",
+		"title" : "Events",
 		"version" : "1.0.0"
 	},
 	"servers": {
 		"production" : {
-			"url" : "production.example.org:1883",
-			"protocol" : "mqtt"
-		},
-		"testing" : {
-			"url" : "testing.example.org:1883",
+			"url" : "localhost:1883",
 			"protocol" : "mqtt"
 		}
 	},
 	"channels": {
-		"example/mytopic" : {
-			"description" : "Dummy description",
+		"sensors/{group}/events" : {
+			"description" : "Description",
+			"parameters" : {
+				"group" : {
+					"schema" : {
+						"type" : "string"
+					}
+				}
+			},
 			"publish" : {
 				"operationId" : "publishOp",
 				"message": {
-					"$ref" : "#/components/messages/NamedArrayOfPairs"
+					"$ref" : "#/components/messages/Sensor"
 				}
 			},
 			"subscribe" : {
 				"operationId" : "subscribeOp",
 				"message": {
-					"$ref" : "#/components/messages/NamedArrayOfPairs"
+					"$ref" : "#/components/messages/Sensor"
 				}
 			}
 		}
 	},
 	"components": {
 		"messages": {
-			"NamedArrayOfPairs" : {
-				"name" : "NamedArrayOfPairs",
+			"Sensor" : {
+				"name" : "Sensor",
 				"payload" : {
-					"$ref" : "#/components/schemas/NamedArrayOfPairs"
+					"$ref" : "#/components/schemas/Sensor"
 				}
 			}
 		},
 		"schemas": {
-			"NamedArrayOfPairs" : {
+			"Sensor" : {
 				"type" : "object",
 				"properties" : {
 					"name" : {
 						"type" : "string"
 					},
-					"entries" : {
+					"events" : {
 						"type" : "array",
 						"items" : {
-							"$ref" : "#/components/schemas/Pair"
+							"$ref" : "#/components/schemas/Event"
 						}
 					}
 				}
 			},
-			"Pair" : {
+			"Event" : {
 				"type" : "object",
 				"properties" : {
-					"key" : {
-						"type" : "string"
+					"type" : {
+						"type" : "string",
+						"enum" : [
+							"UNDEFINED",
+							"STATE_CHANGED",
+							"DIED"
+						]
 					},
-					"values" : {
-						"type" : "array",
-						"items" : {
-							"type" : "string"
-						}
+					"timestamp" : {
+						"$ref" : "#/components/schemas/Timestamp"
+					}
+				}
+			},
+			"Timestamp" : {
+				"type" : "object",
+				"properties" : {
+					"year" : {
+						"type" : "integer"
+					},
+					"month" : {
+						"type" : "integer"
+					},
+					"day" : {
+						"type" : "integer"
+					},
+					"hour" : {
+						"type" : "integer"
+					},
+					"minute" : {
+						"type" : "integer"
+					},
+					"second" : {
+						"type" : "integer"
 					}
 				}
 			}
