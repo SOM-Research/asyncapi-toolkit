@@ -277,7 +277,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 					@Override
 					public void messageArrived(String topic, MqttMessage message) throws Exception {
 					«IF !c.parameters.empty»
-						callback.messageArrived(new «c.subscribeMessageClassName»Params(topic), «c.subscribePayloadClassName».fromJson(new String(message.getPayload())));
+						callback.messageArrived(«c.subscribePayloadClassName».fromJson(new String(message.getPayload())), new «c.subscribeMessageClassName»Params(topic));
 					«ELSE»
 						callback.messageArrived(«c.subscribePayloadClassName».fromJson(new String(message.getPayload())));
 					«ENDIF»
@@ -305,7 +305,7 @@ class AsyncApiGenerator extends AbstractGenerator {
 			 * {@link «c.subscribeMessageClassName»} channel
 			 */
 			public interface I«c.subscribeMessageClassName»Callback {
-				public void messageArrived(«c.subscribeMessageClassName»Params params, «c.subscribePayloadClassName» payload);
+				public void messageArrived(«c.subscribePayloadClassName» payload, «c.subscribeMessageClassName»Params params);
 			}
 			
 			/**
