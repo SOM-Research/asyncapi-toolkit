@@ -10,7 +10,7 @@
         extensions="asyncapi"
         icon="icons/file.png"
         id="io.github.abelgomez.asyncapi.AsyncApi"
-        name="AsyncApi Editor">
+        name="AsyncAPI Editor">
 		</editor>
 	</extension>
 	<extension
@@ -85,7 +85,7 @@
 		<page
 			class="io.github.abelgomez.asyncapi.ui.AsyncApiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
 			id="io.github.abelgomez.asyncapi.AsyncApi"
-			name="AsyncApi">
+			name="AsyncAPI">
 			<keywordReference id="io.github.abelgomez.asyncapi.ui.keyword_AsyncApi"/>
 		</page>
 		<page
@@ -108,7 +108,7 @@
 		<page
 			class="io.github.abelgomez.asyncapi.ui.AsyncApiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
 			id="io.github.abelgomez.asyncapi.AsyncApi"
-			name="AsyncApi">
+			name="AsyncAPI">
 			<keywordReference id="io.github.abelgomez.asyncapi.ui.keyword_AsyncApi"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
@@ -120,7 +120,7 @@
 		point="org.eclipse.ui.keywords">
 		<keyword
 			id="io.github.abelgomez.asyncapi.ui.keyword_AsyncApi"
-			label="AsyncApi"/>
+			label="AsyncAPI"/>
 	</extension>
 	<extension
 		point="org.eclipse.ui.commands">
@@ -248,7 +248,7 @@
 			base-type="org.eclipse.core.runtime.text"
 			file-extensions="asyncapi"
 			id="io.github.abelgomez.asyncapi.AsyncApi.contenttype"
-			name="AsyncApi File"
+			name="AsyncAPI File"
 			priority="normal">
 		</content-type>
 	</extension>
@@ -269,21 +269,21 @@
 	<!-- marker definitions for io.github.abelgomez.asyncapi.AsyncApi -->
 	<extension
 			id="asyncapi.check.fast"
-			name="AsyncApi Problem"
+			name="AsyncAPI Problem"
 			point="org.eclipse.core.resources.markers">
 		<super type="org.eclipse.xtext.ui.check.fast"/>
 		<persistent value="true"/>
 	</extension>
 	<extension
 			id="asyncapi.check.normal"
-			name="AsyncApi Problem"
+			name="AsyncAPI Problem"
 			point="org.eclipse.core.resources.markers">
 		<super type="org.eclipse.xtext.ui.check.normal"/>
 		<persistent value="true"/>
 	</extension>
 	<extension
 			id="asyncapi.check.expensive"
-			name="AsyncApi Problem"
+			name="AsyncAPI Problem"
 			point="org.eclipse.core.resources.markers">
 		<super type="org.eclipse.xtext.ui.check.expensive"/>
 		<persistent value="true"/>
@@ -478,7 +478,7 @@
 			category="io.github.abelgomez.asyncapi.ui.category"
 			class="io.github.abelgomez.asyncapi.ui.AsyncApiExecutableExtensionFactory:io.github.abelgomez.asyncapi.ui.wizard.AsyncApiTemplateNewProjectWizard"
 			id="io.github.abelgomez.asyncapi.ui.wizard.AsyncApiNewProjectWizard"
-			name="AsyncApi Project"
+			name="AsyncAPI Project"
 			icon="icons/new_AsyncApi_proj.png"
 			project="true">
 		</wizard>
