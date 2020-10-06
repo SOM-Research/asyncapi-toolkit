@@ -130,6 +130,15 @@
    <feature url="features/io.github.abelgomez.asyncapi.ui.feature_0.4.5.202010052247.jar" id="io.github.abelgomez.asyncapi.ui.feature" version="0.4.5.202010052247">
       <category name="AsyncAPI Toolkit"/>
    </feature>
+   <feature url="features/io.github.abelgomez.asyncapi.feature_0.4.6.202010060334.jar" id="io.github.abelgomez.asyncapi.feature" version="0.4.6.202010060334">
+      <category name="AsyncAPI Toolkit"/>
+   </feature>
+   <feature url="features/io.github.abelgomez.asyncapi.ivyidedep.feature_0.4.6.202010060334.jar" id="io.github.abelgomez.asyncapi.ivyidedep.feature" version="0.4.6.202010060334">
+      <category name="AsyncAPI Toolkit"/>
+   </feature>
+   <feature url="features/io.github.abelgomez.asyncapi.ui.feature_0.4.6.202010060334.jar" id="io.github.abelgomez.asyncapi.ui.feature" version="0.4.6.202010060334">
+      <category name="AsyncAPI Toolkit"/>
+   </feature>
    <category-def name="AsyncAPI Toolkit" label="AsyncAPI Toolkit">
       <description>
          Eclipse plug-ins to develop asynchronous APIs using AsyncAPI. AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It&apos;s protocol-agnostic, so you can use it for APIs that work over Kafka, MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to OpenAPI/Swagger so, if you&apos;re familiar with it, AsyncAPI should be easy for you.
