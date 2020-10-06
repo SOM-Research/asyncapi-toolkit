@@ -472,7 +472,7 @@
 	</extension>
 	<extension
 		point="org.eclipse.ui.newWizards">
-		<category id="io.github.abelgomez.asyncapi.ui.category" name="AsyncApi">
+		<category id="io.github.abelgomez.asyncapi.ui.category" name="AsyncAPI">
 		</category>
 		<wizard
 			category="io.github.abelgomez.asyncapi.ui.category"
