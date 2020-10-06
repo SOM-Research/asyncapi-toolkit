@@ -233,33 +233,20 @@ final class StreetlightsAPIProject {
 				import java.time.LocalDateTime;
 				import java.util.UUID;
 				
-				«IF embeddedServer.value»
-				import io.moquette.broker.Server;
-				«ENDIF»
 				import schemas.LightMeasuredPayload;
-				import smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.PublishLightMeasured;
-				import smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.PublishLightMeasured.PublishLightMeasuredParams;
-				import smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.SubscribeLightMeasured;
+				import smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.ReceiveLightMeasurement;
+				import smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.SendLightMeasurement;
+				import smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.SendLightMeasurement.SendLightMeasurementParams;
 				
 				public class MainExample {
 					public static void main(String[] args) throws Exception {
-						«IF embeddedServer.value»
-						
-						// Create an embedded Moquette server
-						Server server = new Server();
-						«ENDIF»
 						try {
-							«IF embeddedServer.value»
-							// Start the embedded Moquette server
-							server.startServer();
-							
-							«ENDIF»
 							// Register a new subscription to the LightMeasured operation
-							SubscribeLightMeasured.subscribe((params, message) -> {
+							ReceiveLightMeasurement.subscribe((message, params) -> {
 								// Inform about the message received
 								System.err.println(MessageFormat.format(
 										"Subscription to ''{0}'' with ID ''{1}'':\n{2} lumens at {3}",
-										SubscribeLightMeasured.TOPIC_ID,
+										ReceiveLightMeasurement.TOPIC_ID,
 										// Notice that both the params and the message fields can be
 										// queried via getters that know about the domain being modeled 
 										params.getStreetlightId(),
@@ -270,7 +257,7 @@ final class StreetlightsAPIProject {
 							// Prepare to publish several messages
 							for (int i = 0; i < 5; i++) {
 								// Create the payload via the payloadBuiler offered by the publish  operation
-								LightMeasuredPayload payload = PublishLightMeasured.payloadBuilder()
+								LightMeasuredPayload payload = SendLightMeasurement.payloadBuilder()
 										// Notice that the properties of the payload can be set via
 										// setter that know about the domain (e.g., name and type of
 										// the property
@@ -279,29 +266,20 @@ final class StreetlightsAPIProject {
 										.build();
 								
 								// Set the value of the parameters. Notice that a setter is also provided
-								PublishLightMeasuredParams params = PublishLightMeasuredParams.create()
+								SendLightMeasurementParams params = SendLightMeasurementParams.create()
 										.withStreetlightId(UUID.randomUUID().toString());
 								
 								// Inform about the message to be sent
 								System.out.println(MessageFormat.format(
 										"Publishing at ''{0}'':\n{1}",
-										PublishLightMeasured.expand(params), payload.toJson(true)));
+										SendLightMeasurement.expand(params), payload.toJson(true)));
 								
 								// Publish the LightMeasured message
-								PublishLightMeasured.publish(payload, params);
+								SendLightMeasurement.publish(payload, params);
 							}
 						} finally {
 							// Unsubscribe from the topic
-							SubscribeLightMeasured.unsubscribe();
-							«IF embeddedServer.value»
-							
-							// Stop the Moquette server
-							server.stopServer();
-							
-							// WARNING!! It may be necessary to kill the application manually due to bug
-							// https://github.com/moquette-io/moquette/issues/506
-							// in Moquette
-							«ENDIF»
+							ReceiveLightMeasurement.unsubscribe();
 						}
 					}
 				}
