@@ -251,16 +251,16 @@ public class MainExample {
 	public static void main(String[] args) throws Exception {
 		try {
 			// Register a new subscription to the LightMeasured operation
-			ReceiveLightMeasurement.subscribe((message, params) -> {
+			ReceiveLightMeasurement.subscribe((payload, params) -> {
 				// Inform about the message received
 				System.err.println(MessageFormat.format(
 						"Subscription to ''{0}'' with ID ''{1}'':\n{2} lumens at {3}",
 						ReceiveLightMeasurement.TOPIC_ID,
-						// Notice that both the params and the message fields can be
+						// Notice that both the params and the payload fields can be
 						// queried via getters that know about the domain being modeled 
 						params.getStreetlightId(),
-						message.getLumens(), 
-						message.getSentAt()));
+						payload.getLumens(), 
+						payload.getSentAt()));
 			});
 	
 			// Prepare to publish several messages
