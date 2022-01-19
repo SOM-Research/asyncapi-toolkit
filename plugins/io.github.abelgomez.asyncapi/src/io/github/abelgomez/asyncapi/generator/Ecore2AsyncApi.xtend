@@ -73,7 +73,7 @@ class Ecore2AsyncApi {
 	 */
 	static def CharSequence generate(AsyncAPI asyncAPI) '''
 		{
-			"asyncapi": "2.0.0",
+			"asyncapi": «asyncAPI.version»,
 			"info": «asyncAPI.info.generate»,
 			«IF !asyncAPI.servers.empty»
 			"servers": {
