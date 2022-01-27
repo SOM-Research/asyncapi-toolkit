@@ -11,8 +11,8 @@ AsyncAPI:
 		& ( '"servers"' ':' '{' servers+=Server (',' servers+=Server)* '}' ','? )? 
 		& ( '"channels"' ':' '{' channels+=Channel (',' channels+=Channel)* '}' ','? )?
 		& ( '"components"' ':' components=Components ','? )?
+		& ( '"x-sla"' ':' sla=Sla ','? )?
 //		& ( GenericJsonTuple ','? )*
-		& ( '"sla"' ':' sla=Sla ','? )?
 	) '}';
 		
 Info:
@@ -183,8 +183,7 @@ Components:
 		& ( '"parameters"' ':' '{' parameters+=NamedParameter (',' parameters+=NamedParameter)* '}' ','? )?
 		& ( '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait (',' operationTraits+=NamedOperationTrait)* '}' ','? )?
 		& ( '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait (',' messageTraits+=NamedMessageTrait)* '}' ','? )?
-		& ( '"qosMetrics"' ':' '{' qosMetrics+=NamedQoSMetric (',' qosMetrics+=NamedQoSMetric)* '}' ','? )?
-		
+		& ( '"x-qosMetrics"' ':' '{' qosMetrics+=NamedQoSMetric (',' qosMetrics+=NamedQoSMetric)* '}' ','? )?
 //		& ( GenericJsonTupleButRef ','? )*
 	) '}';
 
