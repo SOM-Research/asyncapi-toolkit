@@ -163,6 +163,9 @@ class PublishOperationClass extends OperationClass {
 		if (parametersClass !== null) {
 			result.add(parametersClass.asBuilder.fqn)
 		}
+		if (message.payload !== null) {
+			result.add(message.payload.resolve.transform.fqn)
+		}
 		return Collections.unmodifiableNavigableSet(result)
 	}
 	
@@ -206,6 +209,19 @@ class PublishOperationClass extends OperationClass {
 			server.publish(config, message.toJson().getBytes());
 		}
 		
+		«IF message.payload !== null»
+		«IF channel.parameters.isEmpty»
+		public static void publish(IServer server, «message.payload.resolve.transform.name» payload) throws «serverExceptionClass.name» {
+			«messageClass.name» message = «messageClass.name».newBuilder().withPayload(payload).build();
+			publish(server, message);
+		}
+		«ELSE»
+		public static void publish(IServer server, «parametersClass.name» params, «message.payload.resolve.transform.name» payload) throws «serverExceptionClass.name» {
+			«messageClass.name» message = «messageClass.name».newBuilder().withPayload(payload).build();
+			publish(server, params, message);
+		}
+		«ENDIF»
+		«ENDIF»
 	'''
 }
 
