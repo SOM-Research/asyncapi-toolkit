@@ -287,6 +287,14 @@ class SubscribeOperationClass extends OperationClass {
 		    });
 		}
 		
+		public static void unsubscribe(IServer server) throws «serverExceptionClass.name» {
+			«channelSubscribeConfigurationInterface.name» config = newConfiguration();
+		    if (!server.isConnected()) {
+				server.connect();
+		    }
+		    server.unsubscribe(config);
+		}
+		
 		«callbackInterface.serialize»
 	'''
 }

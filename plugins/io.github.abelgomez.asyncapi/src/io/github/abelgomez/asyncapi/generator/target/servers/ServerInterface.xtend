@@ -228,6 +228,16 @@ class ServerInterface extends AbstractType implements IClass {
 			 */
 			void subscribe(«channelSubscribeConfigurationInterface.name» config, Consumer<«receivedClass.name»> callback) throws «serverExceptionClass.name»;
 			
+			/**
+			 * Unsubscribes from the events specified in the given {@link «channelSubscribeConfigurationInterface.name»}
+			 * in the {@link «name»} 
+			 * 
+			 * @throws «serverExceptionClass.name»
+			 *         If any error prevents from unsubscribing. The underlying cause may be 
+			 *         wrapped in this {@link Exception}
+			 */
+			void unsubscribe(«channelSubscribeConfigurationInterface.name» config) throws «serverExceptionClass.name»;
+			
 			«receivedClass.serialize»
 			
 			«serverExceptionClass.serialize»

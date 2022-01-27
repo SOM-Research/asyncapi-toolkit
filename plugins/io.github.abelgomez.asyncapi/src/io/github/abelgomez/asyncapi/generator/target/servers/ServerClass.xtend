@@ -217,6 +217,18 @@ class MqttServerClass extends ServerClass implements IClass {
 				}
 			}
 			
+			@Override
+			public void unsubscribe(«channelSubscribeConfigurationInterface.name» config) throws «serverExceptionClass.name» {
+			    if (!isConnected()) {
+					connect();
+			    }
+				try {
+			    	client.unsubscribe(config.getTopicPattern());
+				} catch (MqttException e) {
+					throw new ServerException(e);
+				}
+			}
+			
 			private static Map<String, String> parseParams(String actualTopic, String topicId, List<String> parameters) {
 				Map<String, String> result = new HashMap<>();
 				String regex = topicId;
