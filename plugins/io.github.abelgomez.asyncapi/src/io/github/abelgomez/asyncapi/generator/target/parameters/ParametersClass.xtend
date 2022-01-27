@@ -109,8 +109,8 @@ class ParametersClass extends AbstractType implements IBuildableType {
 	override imports() {
 		val result = new TreeSet
 		result.add("java.util.Map")
-		result.add("java.util.Map.Entry")
 		result.add("java.util.HashMap")
+		result.add("java.util.Collections")
 		result.add(channel.api.transform.parametersInterface.fqn)
 		return Collections.unmodifiableNavigableSet(result)
 	}
@@ -158,6 +158,12 @@ class ParametersClass extends AbstractType implements IBuildableType {
 			public «parametersInterface.parameterLiteralInterface.name»[] getParameterLiterals() {
 				return LITERALS.values();
 			}
+			/**
+			 * Returns the parameters as a {@link Map}
+			 */
+			protected Map<String, String> asMap() {
+				return Collections.unmodifiableMap(parameters);
+			}
 			
 			/**
 			 * Private constructor that initializes the parameters.
@@ -190,17 +196,6 @@ class ParametersClass extends AbstractType implements IBuildableType {
 				return «np.parameter.resolve.schema.resolve.transform.name».valueOf(this.parameters.get("«np.name»"));
 			}
 			'''])»
-			
-			/**
-			 * Substitutes the parameters of the topic name passed as an argument with the
-			 * values configured in this {@link «name»}
-			 */
-			private String apply(String topic) {
-				for (Entry<String, String> entry : parameters.entrySet()) {
-					topic = topic.replaceAll("\\{" + entry.getKey() + "\\}", entry.getValue());
-				}
-				return topic;
-			}
 			
 			«asBuilder.serialize»
 		}

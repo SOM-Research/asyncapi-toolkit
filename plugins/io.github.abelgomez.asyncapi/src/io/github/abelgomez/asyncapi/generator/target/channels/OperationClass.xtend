@@ -174,7 +174,7 @@ class PublishOperationClass extends OperationClass {
 		/**
 		 * Creates a new {@link «channelPublishConfigurationInterface.name»} for the {@link «channelInterface.name»} of this operation 
 		 */
-		static «channelPublishConfigurationInterface.name» newConfiguration() {
+		public static «channelPublishConfigurationInterface.name» newConfiguration() {
 			return «channelClass.name».newPublishConfiguration();
 		}
 		«ELSE»
@@ -182,7 +182,7 @@ class PublishOperationClass extends OperationClass {
 		 * Creates a new {@link «channelPublishConfigurationInterface.name»} for the {@link «channelInterface.name»} for the 
 		 * given {@link «parametersClass.name»} 
 		 */
-		static «channelPublishConfigurationInterface.name» newConfiguration(«parametersClass.name» params) {
+		public static «channelPublishConfigurationInterface.name» newConfiguration(«parametersClass.name» params) {
 			return «channelClass.name».newPublishConfiguration(params);
 		}
 		
@@ -195,7 +195,15 @@ class PublishOperationClass extends OperationClass {
 		«ENDIF»
 	'''
 	
+	// TODO: Re-check all the conditions below... 
 	override protected serverMethods() '''
+		public static void publish(IServer server, «channelPublishConfigurationInterface.name» config, «messageInterface.name» message) throws «serverExceptionClass.name» {
+		    if (!server.isConnected()) {
+				server.connect();
+			}
+			server.publish(config, message.toJson().getBytes());
+		}
+		
 		«IF channel.parameters.isEmpty»
 		public static void publish(IServer server, «messageInterface.name» message) throws «serverExceptionClass.name» {
 			«channelPublishConfigurationInterface.name» config = newConfiguration();
@@ -203,10 +211,7 @@ class PublishOperationClass extends OperationClass {
 		public static void publish(IServer server, «parametersClass.name» params, «messageInterface.name» message) throws «serverExceptionClass.name» {
 			«channelPublishConfigurationInterface.name» config = newConfiguration(params);
 		«ENDIF»
-		    if (!server.isConnected()) {
-				server.connect();
-			}
-			server.publish(config, message.toJson().getBytes());
+		    publish(server, config, message);
 		}
 		
 		«IF message.payload !== null»
@@ -216,6 +221,11 @@ class PublishOperationClass extends OperationClass {
 			publish(server, message);
 		}
 		«ELSE»
+		public static void publish(IServer server, «channelPublishConfigurationInterface.name» config, «message.payload.resolve.transform.name» payload) throws «serverExceptionClass.name» {
+			«messageClass.name» message = «messageClass.name».newBuilder().withPayload(payload).build();
+			publish(server, config, message);
+		}
+		
 		public static void publish(IServer server, «parametersClass.name» params, «message.payload.resolve.transform.name» payload) throws «serverExceptionClass.name» {
 			«messageClass.name» message = «messageClass.name».newBuilder().withPayload(payload).build();
 			publish(server, params, message);
@@ -289,6 +299,10 @@ class SubscribeOperationClass extends OperationClass {
 	override protected serverMethods() '''
 		public static void subscribe(IServer server, «callbackInterface.name» callback) throws «serverExceptionClass.name» {
 			«channelSubscribeConfigurationInterface.name» config = newConfiguration();
+		    subscribe(server, config, callback);
+		}
+		
+		public static void subscribe(IServer server, «channelSubscribeConfigurationInterface.name» config, «callbackInterface.name» callback) throws «serverExceptionClass.name» {
 		    if (!server.isConnected()) {
 				server.connect();
 		    }

@@ -31,13 +31,19 @@ class ChannelInterface extends AbstractType implements IType {
 			return channelInterface.fqn + "." + name
 		}
 		
+		override imports() {
+			val result = new TreeSet		
+			result.add(channelInterface.api.transform.parametersInterface.parameterLiteralInterface.fqn)
+			return Collections.unmodifiableNavigableSet(result)
+		}
+		
 		override serialize() '''
 			/**
 			 * Base interface for channel configurations
 			 */
 			public interface «name» {
+				String getChannelName();
 				«channelInterface.api.transform.parametersInterface.parameterLiteralInterface.name»[] getParameterLiterals();
-				String getTopic();
 			}
 		'''
 	}
@@ -62,11 +68,18 @@ class ChannelInterface extends AbstractType implements IType {
 			return channelInterface.fqn + "." + name
 		}
 		
+		override imports() {
+			val result = new TreeSet		
+			result.add("java.util.Map")
+			return Collections.unmodifiableNavigableSet(result)
+		}
+		
 		override serialize() '''
 			/**
 			 * Base interface for publishing channel configurations
 			 */
 			public interface «name» extends «channelInterface.channelConfigurationInterface.name» {
+				Map<String, String> getParameters();
 			}
 		'''
 	}
@@ -96,7 +109,7 @@ class ChannelInterface extends AbstractType implements IType {
 			 * Base interface for subscribing channel configurations
 			 */
 			public interface «name» extends «channelInterface.channelConfigurationInterface.name» {
-				String getTopicPattern();
+				String getSubscriptionPattern();
 			}
 		'''
 	}
@@ -143,7 +156,9 @@ class ChannelInterface extends AbstractType implements IType {
 	
 	override imports() {
 		val result = new TreeSet		
-		result.add(api.transform.parametersInterface.parameterLiteralInterface.fqn)
+		result.addAll(channelConfigurationInterface.imports)
+		result.addAll(channelPublishConfigurationInterface.imports)
+		result.addAll(channelSubscribeConfigurationInterface.imports)
 		return Collections.unmodifiableNavigableSet(result)
 	}
 	

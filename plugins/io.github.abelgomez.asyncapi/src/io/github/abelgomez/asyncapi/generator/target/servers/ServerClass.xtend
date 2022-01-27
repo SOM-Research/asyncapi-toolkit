@@ -57,6 +57,7 @@ class MqttServerClass extends ServerClass implements IClass {
 		result.add("java.util.List")
 		result.add("java.util.Arrays")
 		result.add("java.util.Map")
+		result.add("java.util.Map.Entry")
 		result.add("java.util.HashMap")
 		result.add("java.util.function.Consumer")
 		result.add("java.util.stream.Collectors")
@@ -70,6 +71,7 @@ class MqttServerClass extends ServerClass implements IClass {
 		result.add("org.eclipse.paho.client.mqttv3.IMqttDeliveryToken")
 		result.add("org.eclipse.paho.client.mqttv3.persist.MemoryPersistence")
 		result.add(server.api.transform.serverInterface.fqn)
+		result.add(server.api.transform.channelInterface.channelConfigurationInterface.fqn)
 		result.add(server.api.transform.channelInterface.channelPublishConfigurationInterface.fqn)
 		result.add(server.api.transform.channelInterface.channelSubscribeConfigurationInterface.fqn)
 		return Collections.unmodifiableNavigableSet(result)
@@ -87,6 +89,14 @@ class MqttServerClass extends ServerClass implements IClass {
 		return server.api.transform.serverInterface.serverExceptionClass
 	}
 	
+	private def serverInterface() {
+		return server.api.transform.serverInterface
+	}
+	
+	private def channelConfigurationInterface() {
+		return server.api.transform.channelInterface.channelConfigurationInterface
+	}
+	 
 	private def channelPublishConfigurationInterface() {
 		return server.api.transform.channelInterface.channelPublishConfigurationInterface
 	} 
@@ -107,7 +117,7 @@ class MqttServerClass extends ServerClass implements IClass {
 		/**
 		 * «server.description»
 		 */
-		public class «name» implements «server.api.transform.serverInterface.name» {
+		public class «name» implements «serverInterface.name» {
 			
 			private static final int DEFAULT_QOS = 2;
 			
@@ -190,7 +200,7 @@ class MqttServerClass extends ServerClass implements IClass {
 					connect();
 				}
 				try {
-					client.publish(config.getTopic(), mqttMessage);
+					client.publish(retrieveTopicName(config), mqttMessage);
 				} catch (MqttException e) {
 					throw new «serverExceptionClass.name»(e);
 				}
@@ -207,11 +217,11 @@ class MqttServerClass extends ServerClass implements IClass {
 					@Override public void connectionLost(Throwable cause) {}
 					@Override public void messageArrived(String topic, MqttMessage message) throws Exception {
 						List<String> parameters = Arrays.asList(config.getParameterLiterals()).stream().map(p -> p.getName()).collect(Collectors.toList());
-						callback.accept(«receivedClass.name».from(message.getPayload(), parseParams(topic, config.getTopic(), parameters)));
+						callback.accept(«receivedClass.name».from(message.getPayload(), parseParams(topic, config.getChannelName(), parameters)));
 					}
 				});
 				try {
-			    	client.subscribe(config.getTopicPattern(), DEFAULT_QOS);
+			    	client.subscribe(config.getSubscriptionPattern(), DEFAULT_QOS);
 				} catch (MqttException e) {
 					throw new ServerException(e);
 				}
@@ -223,12 +233,30 @@ class MqttServerClass extends ServerClass implements IClass {
 					connect();
 			    }
 				try {
-			    	client.unsubscribe(config.getTopicPattern());
+			    	client.unsubscribe(config.getSubscriptionPattern());
 				} catch (MqttException e) {
 					throw new ServerException(e);
 				}
 			}
+
 			
+
+			/**
+			 * Computes the actual topic name for the given {@link «channelConfigurationInterface.name»}
+			 * in this {@link «serverInterface.name»}
+			 */
+			public static String retrieveTopicName(«channelConfigurationInterface.name» config) {
+				String topic = config.getChannelName();
+				if (config instanceof «channelPublishConfigurationInterface.name») {
+					«channelPublishConfigurationInterface.name» publishConfig = («channelPublishConfigurationInterface.name») config;
+					Map<String, String> parameters = publishConfig.getParameters();
+					for (Entry<String, String> entry : parameters.entrySet()) {
+						topic = topic.replaceAll("\\{" + entry.getKey() + "\\}", entry.getValue());
+					}
+				}
+				return topic;
+			}
+
 			private static Map<String, String> parseParams(String actualTopic, String topicId, List<String> parameters) {
 				Map<String, String> result = new HashMap<>();
 				String regex = topicId;

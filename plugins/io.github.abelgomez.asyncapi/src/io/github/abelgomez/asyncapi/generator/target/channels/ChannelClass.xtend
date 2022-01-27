@@ -52,6 +52,7 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 	
 	override imports() {
 		val result = new TreeSet
+		result.add("java.util.Collections")
 		result.add(channelInterface.fqn)
 		result.add(parametersInterface.parameterLiteralInterface.fqn)
 		if (parametersClass !== null) {
@@ -117,11 +118,11 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 						«ENDIF»
 					}
 					@Override
-					public String getTopic() {
+					public String getChannelName() {
 						return TOPIC_ID;
 					}
 					@Override
-					public String getTopicPattern() {
+					public String getSubscriptionPattern() {
 						return TOPIC_PATTERN;
 					}
 				}; 
@@ -134,12 +135,16 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 			static «channelPublishConfigurationInterface.name» newPublishConfiguration() {
 				return new  «channelPublishConfigurationInterface.name»() {
 					@Override
+					public String getChannelName() {
+						return TOPIC_ID;
+					}
+					@Override
 					public «parametersInterface.parameterLiteralInterface.name»[] getParameterLiterals() {
 						return new «parametersInterface.parameterLiteralInterface.name»[] {};
 					}
 					@Override
-					public String getTopic() {
-						return TOPIC_ID;
+					public Map<String, String> getParameters() {
+						return Collections.emptyMap();
 					}
 				}; 
 			}
@@ -153,8 +158,12 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 					public «parametersInterface.parameterLiteralInterface.name»[] getParameterLiterals() {
 						return «parametersClass.name».LITERALS.values();
 					}
-					public String getTopic() {
-						return params.apply(TOPIC_ID);
+					public String getChannelName() {
+						return TOPIC_ID;
+					}
+					@Override
+					public Map<String, String> getParameters() {
+						return Collections.unmodifiableMap(params.asMap());
 					}
 				}; 
 				
@@ -163,7 +172,7 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 			/**
 			 * Creates a new {@link «parametersClass.asBuilder.name»} for this {@link IChannel} 
 			 */
-			static «parametersClass.asBuilder.name» newParametersBuilder() {
+			public static «parametersClass.asBuilder.name» newParametersBuilder() {
 				return «parametersClass.name».newBuilder();
 			}
 			
