@@ -190,7 +190,8 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         description=AnyString | 
 	 *         termsOfService=AnyString | 
 	 *         contact=Contact | 
-	 *         license=License
+	 *         license=License | 
+	 *         basePackage=AnyString
 	 *     )*
 	 */
 	protected void sequence_Info(ISerializationContext context, Info semanticObject) {
@@ -436,9 +437,9 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *             default=PrimitiveValue | 
 	 *             items=AbstractSchema
 	 *         )? 
-	 *         (required+=AnyString required+=AnyString*)? 
+	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)? 
 	 *         (properties+=NamedSchema properties+=NamedSchema*)? 
-	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)?
+	 *         (required+=AnyString required+=AnyString*)?
 	 *     )+
 	 */
 	protected void sequence_Schema(ISerializationContext context, Schema semanticObject) {

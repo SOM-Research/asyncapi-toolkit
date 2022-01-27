@@ -44,6 +44,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Info_CommaKeyword_2_3_3_q;
 	protected AbstractElementAlias match_Info_CommaKeyword_2_4_3_q;
 	protected AbstractElementAlias match_Info_CommaKeyword_2_5_3_q;
+	protected AbstractElementAlias match_Info_CommaKeyword_2_6_3_q;
 	protected AbstractElementAlias match_License_CommaKeyword_2_0_3_q;
 	protected AbstractElementAlias match_License_CommaKeyword_2_1_3_q;
 	protected AbstractElementAlias match_MessageTrait_CommaKeyword_2_0_3_q;
@@ -86,6 +87,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_9_6_q;
 	protected AbstractElementAlias match_Server_CommaKeyword_4_0_3_q;
 	protected AbstractElementAlias match_Server_CommaKeyword_4_1_3_q;
+	protected AbstractElementAlias match_Server_CommaKeyword_4_2_3_q;
 	protected AbstractElementAlias match_Server_CommaKeyword_4_3_6_q;
 	protected AbstractElementAlias match_Tag_CommaKeyword_2_0_3_q;
 	protected AbstractElementAlias match_Tag_CommaKeyword_2_1_3_q;
@@ -120,6 +122,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Info_CommaKeyword_2_3_3_q = new TokenAlias(false, true, grammarAccess.getInfoAccess().getCommaKeyword_2_3_3());
 		match_Info_CommaKeyword_2_4_3_q = new TokenAlias(false, true, grammarAccess.getInfoAccess().getCommaKeyword_2_4_3());
 		match_Info_CommaKeyword_2_5_3_q = new TokenAlias(false, true, grammarAccess.getInfoAccess().getCommaKeyword_2_5_3());
+		match_Info_CommaKeyword_2_6_3_q = new TokenAlias(false, true, grammarAccess.getInfoAccess().getCommaKeyword_2_6_3());
 		match_License_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getLicenseAccess().getCommaKeyword_2_0_3());
 		match_License_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getLicenseAccess().getCommaKeyword_2_1_3());
 		match_MessageTrait_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getMessageTraitAccess().getCommaKeyword_2_0_3());
@@ -162,6 +165,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Schema_CommaKeyword_2_9_6_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_9_6());
 		match_Server_CommaKeyword_4_0_3_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_4_0_3());
 		match_Server_CommaKeyword_4_1_3_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_4_1_3());
+		match_Server_CommaKeyword_4_2_3_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_4_2_3());
 		match_Server_CommaKeyword_4_3_6_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_4_3_6());
 		match_Tag_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getTagAccess().getCommaKeyword_2_0_3());
 		match_Tag_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getTagAccess().getCommaKeyword_2_1_3());
@@ -230,6 +234,8 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Info_CommaKeyword_2_4_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Info_CommaKeyword_2_5_3_q.equals(syntax))
 				emit_Info_CommaKeyword_2_5_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Info_CommaKeyword_2_6_3_q.equals(syntax))
+				emit_Info_CommaKeyword_2_6_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_License_CommaKeyword_2_0_3_q.equals(syntax))
 				emit_License_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_License_CommaKeyword_2_1_3_q.equals(syntax))
@@ -314,6 +320,8 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Server_CommaKeyword_4_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Server_CommaKeyword_4_1_3_q.equals(syntax))
 				emit_Server_CommaKeyword_4_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Server_CommaKeyword_4_2_3_q.equals(syntax))
+				emit_Server_CommaKeyword_4_2_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Server_CommaKeyword_4_3_6_q.equals(syntax))
 				emit_Server_CommaKeyword_4_3_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Tag_CommaKeyword_2_0_3_q.equals(syntax))
@@ -623,6 +631,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     title=AnyString (ambiguity) '"termsOfService"' ':' termsOfService=AnyString
 	 *     title=AnyString (ambiguity) '"title"' ':' title=AnyString
 	 *     title=AnyString (ambiguity) '"version"' ':' version=AnyString
+	 *     title=AnyString (ambiguity) '"x-basePackage"' ':' basePackage=AnyString
 	 *     title=AnyString (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Info_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -640,6 +649,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     version=AnyString (ambiguity) '"termsOfService"' ':' termsOfService=AnyString
 	 *     version=AnyString (ambiguity) '"title"' ':' title=AnyString
 	 *     version=AnyString (ambiguity) '"version"' ':' version=AnyString
+	 *     version=AnyString (ambiguity) '"x-basePackage"' ':' basePackage=AnyString
 	 *     version=AnyString (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Info_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -657,6 +667,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     description=AnyString (ambiguity) '"termsOfService"' ':' termsOfService=AnyString
 	 *     description=AnyString (ambiguity) '"title"' ':' title=AnyString
 	 *     description=AnyString (ambiguity) '"version"' ':' version=AnyString
+	 *     description=AnyString (ambiguity) '"x-basePackage"' ':' basePackage=AnyString
 	 *     description=AnyString (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Info_CommaKeyword_2_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -674,6 +685,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     termsOfService=AnyString (ambiguity) '"termsOfService"' ':' termsOfService=AnyString
 	 *     termsOfService=AnyString (ambiguity) '"title"' ':' title=AnyString
 	 *     termsOfService=AnyString (ambiguity) '"version"' ':' version=AnyString
+	 *     termsOfService=AnyString (ambiguity) '"x-basePackage"' ':' basePackage=AnyString
 	 *     termsOfService=AnyString (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Info_CommaKeyword_2_3_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -691,6 +703,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     contact=Contact (ambiguity) '"termsOfService"' ':' termsOfService=AnyString
 	 *     contact=Contact (ambiguity) '"title"' ':' title=AnyString
 	 *     contact=Contact (ambiguity) '"version"' ':' version=AnyString
+	 *     contact=Contact (ambiguity) '"x-basePackage"' ':' basePackage=AnyString
 	 *     contact=Contact (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Info_CommaKeyword_2_4_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -708,9 +721,28 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     license=License (ambiguity) '"termsOfService"' ':' termsOfService=AnyString
 	 *     license=License (ambiguity) '"title"' ':' title=AnyString
 	 *     license=License (ambiguity) '"version"' ':' version=AnyString
+	 *     license=License (ambiguity) '"x-basePackage"' ':' basePackage=AnyString
 	 *     license=License (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Info_CommaKeyword_2_5_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     basePackage=AnyString (ambiguity) '"contact"' ':' contact=Contact
+	 *     basePackage=AnyString (ambiguity) '"description"' ':' description=AnyString
+	 *     basePackage=AnyString (ambiguity) '"license"' ':' license=License
+	 *     basePackage=AnyString (ambiguity) '"termsOfService"' ':' termsOfService=AnyString
+	 *     basePackage=AnyString (ambiguity) '"title"' ':' title=AnyString
+	 *     basePackage=AnyString (ambiguity) '"version"' ':' version=AnyString
+	 *     basePackage=AnyString (ambiguity) '"x-basePackage"' ':' basePackage=AnyString
+	 *     basePackage=AnyString (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Info_CommaKeyword_2_6_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1503,6 +1535,21 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     protocol=Protocol (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Server_CommaKeyword_4_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     description=AnyString (ambiguity) '"description"' ':' description=AnyString
+	 *     description=AnyString (ambiguity) '"protocol"' ':' protocol=Protocol
+	 *     description=AnyString (ambiguity) '"url"' ':' url=AnyString
+	 *     description=AnyString (ambiguity) '"variables"' ':' '{' variables+=Variable
+	 *     description=AnyString (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Server_CommaKeyword_4_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

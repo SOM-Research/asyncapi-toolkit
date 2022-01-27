@@ -693,6 +693,50 @@ ruleInfo returns [EObject current=null]
 						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getInfoAccess().getUnorderedGroup_2());
 					}
 				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getInfoAccess().getUnorderedGroup_2(), 6)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getInfoAccess().getUnorderedGroup_2(), 6);
+					}
+								({true}?=>(otherlv_27='"x-basePackage"'
+								{
+									newLeafNode(otherlv_27, grammarAccess.getInfoAccess().getXBasePackageKeyword_2_6_0());
+								}
+								otherlv_28=':'
+								{
+									newLeafNode(otherlv_28, grammarAccess.getInfoAccess().getColonKeyword_2_6_1());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getInfoAccess().getBasePackageAnyStringParserRuleCall_2_6_2_0());
+										}
+										lv_basePackage_29_0=ruleAnyString
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getInfoRule());
+											}
+											set(
+												$current,
+												"basePackage",
+												lv_basePackage_29_0,
+												"io.github.abelgomez.asyncapi.AsyncApi.AnyString");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								(
+									otherlv_30=','
+									{
+										newLeafNode(otherlv_30, grammarAccess.getInfoAccess().getCommaKeyword_2_6_3());
+									}
+								)?
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getInfoAccess().getUnorderedGroup_2());
+					}
+				)
 			)
 					)+
 					{getUnorderedGroupHelper().canLeave(grammarAccess.getInfoAccess().getUnorderedGroup_2())}?
@@ -702,9 +746,9 @@ ruleInfo returns [EObject current=null]
 				  getUnorderedGroupHelper().leave(grammarAccess.getInfoAccess().getUnorderedGroup_2());
 				}
 		)
-		otherlv_27='}'
+		otherlv_31='}'
 		{
-			newLeafNode(otherlv_27, grammarAccess.getInfoAccess().getRightCurlyBracketKeyword_3());
+			newLeafNode(otherlv_31, grammarAccess.getInfoAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;
@@ -1202,10 +1246,12 @@ ruleServer returns [EObject current=null]
 										}
 									)
 								)
-								otherlv_16=','
-								{
-									newLeafNode(otherlv_16, grammarAccess.getServerAccess().getCommaKeyword_4_2_3());
-								}
+								(
+									otherlv_16=','
+									{
+										newLeafNode(otherlv_16, grammarAccess.getServerAccess().getCommaKeyword_4_2_3());
+									}
+								)?
 								))
 					{ 
 						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getServerAccess().getUnorderedGroup_4());

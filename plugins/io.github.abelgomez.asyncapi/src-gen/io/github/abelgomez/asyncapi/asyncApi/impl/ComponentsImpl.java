@@ -45,285 +45,275 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ComponentsImpl extends MinimalEObjectImpl.Container implements Components
 {
   /**
-   * The cached value of the '{@link #getSchemas() <em>Schemas</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSchemas() <em>Schemas</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSchemas()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSchemas()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<NamedSchema> schemas;
 
   /**
-   * The cached value of the '{@link #getMessages() <em>Messages</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMessages() <em>Messages</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMessages()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMessages()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<NamedMessage> messages;
 
   /**
-   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParameters()
-   * @generated
-   * @ordered
-   */
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<NamedParameter> parameters;
 
   /**
-   * The cached value of the '{@link #getOperationTraits() <em>Operation Traits</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOperationTraits() <em>Operation Traits</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOperationTraits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getOperationTraits()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<NamedOperationTrait> operationTraits;
 
   /**
-   * The cached value of the '{@link #getMessageTraits() <em>Message Traits</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMessageTraits() <em>Message Traits</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMessageTraits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMessageTraits()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<NamedMessageTrait> messageTraits;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ComponentsImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return AsyncApiPackage.Literals.COMPONENTS;
-  }
+		return AsyncApiPackage.Literals.COMPONENTS;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EList<NamedSchema> getSchemas()
   {
-    if (schemas == null)
-    {
-      schemas = new EObjectContainmentEList<NamedSchema>(NamedSchema.class, this, AsyncApiPackage.COMPONENTS__SCHEMAS);
-    }
-    return schemas;
-  }
+		if (schemas == null) {
+			schemas = new EObjectContainmentEList<NamedSchema>(NamedSchema.class, this, AsyncApiPackage.COMPONENTS__SCHEMAS);
+		}
+		return schemas;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EList<NamedMessage> getMessages()
   {
-    if (messages == null)
-    {
-      messages = new EObjectContainmentEList<NamedMessage>(NamedMessage.class, this, AsyncApiPackage.COMPONENTS__MESSAGES);
-    }
-    return messages;
-  }
+		if (messages == null) {
+			messages = new EObjectContainmentEList<NamedMessage>(NamedMessage.class, this, AsyncApiPackage.COMPONENTS__MESSAGES);
+		}
+		return messages;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EList<NamedParameter> getParameters()
   {
-    if (parameters == null)
-    {
-      parameters = new EObjectContainmentEList<NamedParameter>(NamedParameter.class, this, AsyncApiPackage.COMPONENTS__PARAMETERS);
-    }
-    return parameters;
-  }
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<NamedParameter>(NamedParameter.class, this, AsyncApiPackage.COMPONENTS__PARAMETERS);
+		}
+		return parameters;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EList<NamedOperationTrait> getOperationTraits()
   {
-    if (operationTraits == null)
-    {
-      operationTraits = new EObjectContainmentEList<NamedOperationTrait>(NamedOperationTrait.class, this, AsyncApiPackage.COMPONENTS__OPERATION_TRAITS);
-    }
-    return operationTraits;
-  }
+		if (operationTraits == null) {
+			operationTraits = new EObjectContainmentEList<NamedOperationTrait>(NamedOperationTrait.class, this, AsyncApiPackage.COMPONENTS__OPERATION_TRAITS);
+		}
+		return operationTraits;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EList<NamedMessageTrait> getMessageTraits()
   {
-    if (messageTraits == null)
-    {
-      messageTraits = new EObjectContainmentEList<NamedMessageTrait>(NamedMessageTrait.class, this, AsyncApiPackage.COMPONENTS__MESSAGE_TRAITS);
-    }
-    return messageTraits;
-  }
+		if (messageTraits == null) {
+			messageTraits = new EObjectContainmentEList<NamedMessageTrait>(NamedMessageTrait.class, this, AsyncApiPackage.COMPONENTS__MESSAGE_TRAITS);
+		}
+		return messageTraits;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.COMPONENTS__SCHEMAS:
-        return ((InternalEList<?>)getSchemas()).basicRemove(otherEnd, msgs);
-      case AsyncApiPackage.COMPONENTS__MESSAGES:
-        return ((InternalEList<?>)getMessages()).basicRemove(otherEnd, msgs);
-      case AsyncApiPackage.COMPONENTS__PARAMETERS:
-        return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
-      case AsyncApiPackage.COMPONENTS__OPERATION_TRAITS:
-        return ((InternalEList<?>)getOperationTraits()).basicRemove(otherEnd, msgs);
-      case AsyncApiPackage.COMPONENTS__MESSAGE_TRAITS:
-        return ((InternalEList<?>)getMessageTraits()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.COMPONENTS__SCHEMAS:
+				return ((InternalEList<?>)getSchemas()).basicRemove(otherEnd, msgs);
+			case AsyncApiPackage.COMPONENTS__MESSAGES:
+				return ((InternalEList<?>)getMessages()).basicRemove(otherEnd, msgs);
+			case AsyncApiPackage.COMPONENTS__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+			case AsyncApiPackage.COMPONENTS__OPERATION_TRAITS:
+				return ((InternalEList<?>)getOperationTraits()).basicRemove(otherEnd, msgs);
+			case AsyncApiPackage.COMPONENTS__MESSAGE_TRAITS:
+				return ((InternalEList<?>)getMessageTraits()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.COMPONENTS__SCHEMAS:
-        return getSchemas();
-      case AsyncApiPackage.COMPONENTS__MESSAGES:
-        return getMessages();
-      case AsyncApiPackage.COMPONENTS__PARAMETERS:
-        return getParameters();
-      case AsyncApiPackage.COMPONENTS__OPERATION_TRAITS:
-        return getOperationTraits();
-      case AsyncApiPackage.COMPONENTS__MESSAGE_TRAITS:
-        return getMessageTraits();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.COMPONENTS__SCHEMAS:
+				return getSchemas();
+			case AsyncApiPackage.COMPONENTS__MESSAGES:
+				return getMessages();
+			case AsyncApiPackage.COMPONENTS__PARAMETERS:
+				return getParameters();
+			case AsyncApiPackage.COMPONENTS__OPERATION_TRAITS:
+				return getOperationTraits();
+			case AsyncApiPackage.COMPONENTS__MESSAGE_TRAITS:
+				return getMessageTraits();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.COMPONENTS__SCHEMAS:
-        getSchemas().clear();
-        getSchemas().addAll((Collection<? extends NamedSchema>)newValue);
-        return;
-      case AsyncApiPackage.COMPONENTS__MESSAGES:
-        getMessages().clear();
-        getMessages().addAll((Collection<? extends NamedMessage>)newValue);
-        return;
-      case AsyncApiPackage.COMPONENTS__PARAMETERS:
-        getParameters().clear();
-        getParameters().addAll((Collection<? extends NamedParameter>)newValue);
-        return;
-      case AsyncApiPackage.COMPONENTS__OPERATION_TRAITS:
-        getOperationTraits().clear();
-        getOperationTraits().addAll((Collection<? extends NamedOperationTrait>)newValue);
-        return;
-      case AsyncApiPackage.COMPONENTS__MESSAGE_TRAITS:
-        getMessageTraits().clear();
-        getMessageTraits().addAll((Collection<? extends NamedMessageTrait>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.COMPONENTS__SCHEMAS:
+				getSchemas().clear();
+				getSchemas().addAll((Collection<? extends NamedSchema>)newValue);
+				return;
+			case AsyncApiPackage.COMPONENTS__MESSAGES:
+				getMessages().clear();
+				getMessages().addAll((Collection<? extends NamedMessage>)newValue);
+				return;
+			case AsyncApiPackage.COMPONENTS__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends NamedParameter>)newValue);
+				return;
+			case AsyncApiPackage.COMPONENTS__OPERATION_TRAITS:
+				getOperationTraits().clear();
+				getOperationTraits().addAll((Collection<? extends NamedOperationTrait>)newValue);
+				return;
+			case AsyncApiPackage.COMPONENTS__MESSAGE_TRAITS:
+				getMessageTraits().clear();
+				getMessageTraits().addAll((Collection<? extends NamedMessageTrait>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.COMPONENTS__SCHEMAS:
-        getSchemas().clear();
-        return;
-      case AsyncApiPackage.COMPONENTS__MESSAGES:
-        getMessages().clear();
-        return;
-      case AsyncApiPackage.COMPONENTS__PARAMETERS:
-        getParameters().clear();
-        return;
-      case AsyncApiPackage.COMPONENTS__OPERATION_TRAITS:
-        getOperationTraits().clear();
-        return;
-      case AsyncApiPackage.COMPONENTS__MESSAGE_TRAITS:
-        getMessageTraits().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.COMPONENTS__SCHEMAS:
+				getSchemas().clear();
+				return;
+			case AsyncApiPackage.COMPONENTS__MESSAGES:
+				getMessages().clear();
+				return;
+			case AsyncApiPackage.COMPONENTS__PARAMETERS:
+				getParameters().clear();
+				return;
+			case AsyncApiPackage.COMPONENTS__OPERATION_TRAITS:
+				getOperationTraits().clear();
+				return;
+			case AsyncApiPackage.COMPONENTS__MESSAGE_TRAITS:
+				getMessageTraits().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.COMPONENTS__SCHEMAS:
-        return schemas != null && !schemas.isEmpty();
-      case AsyncApiPackage.COMPONENTS__MESSAGES:
-        return messages != null && !messages.isEmpty();
-      case AsyncApiPackage.COMPONENTS__PARAMETERS:
-        return parameters != null && !parameters.isEmpty();
-      case AsyncApiPackage.COMPONENTS__OPERATION_TRAITS:
-        return operationTraits != null && !operationTraits.isEmpty();
-      case AsyncApiPackage.COMPONENTS__MESSAGE_TRAITS:
-        return messageTraits != null && !messageTraits.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.COMPONENTS__SCHEMAS:
+				return schemas != null && !schemas.isEmpty();
+			case AsyncApiPackage.COMPONENTS__MESSAGES:
+				return messages != null && !messages.isEmpty();
+			case AsyncApiPackage.COMPONENTS__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
+			case AsyncApiPackage.COMPONENTS__OPERATION_TRAITS:
+				return operationTraits != null && !operationTraits.isEmpty();
+			case AsyncApiPackage.COMPONENTS__MESSAGE_TRAITS:
+				return messageTraits != null && !messageTraits.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //ComponentsImpl

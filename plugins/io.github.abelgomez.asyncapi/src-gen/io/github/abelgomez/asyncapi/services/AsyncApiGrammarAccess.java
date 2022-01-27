@@ -273,6 +273,12 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cLicenseAssignment_2_5_2 = (Assignment)cGroup_2_5.eContents().get(2);
 		private final RuleCall cLicenseLicenseParserRuleCall_2_5_2_0 = (RuleCall)cLicenseAssignment_2_5_2.eContents().get(0);
 		private final Keyword cCommaKeyword_2_5_3 = (Keyword)cGroup_2_5.eContents().get(3);
+		private final Group cGroup_2_6 = (Group)cUnorderedGroup_2.eContents().get(6);
+		private final Keyword cXBasePackageKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
+		private final Keyword cColonKeyword_2_6_1 = (Keyword)cGroup_2_6.eContents().get(1);
+		private final Assignment cBasePackageAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
+		private final RuleCall cBasePackageAnyStringParserRuleCall_2_6_2_0 = (RuleCall)cBasePackageAssignment_2_6_2.eContents().get(0);
+		private final Keyword cCommaKeyword_2_6_3 = (Keyword)cGroup_2_6.eContents().get(3);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Info:
@@ -281,13 +287,14 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//	& ('"termsOfService"' ':' termsOfService=AnyString ','?)?
 		//	& ('"contact"' ':' contact=Contact ','?)?
 		//	& ('"license"' ':' license=License ','?)?
+		//	& ('"x-basePackage"' ':' basePackage=AnyString ','?)?
 		//	//		& ( GenericJsonTuple ','? )*
 		//) '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Info} '{' ('"title"' ':' title=AnyString ','? & '"version"' ':' version=AnyString ','? & ('"description"' ':'
 		//description=AnyString ','?)? & ('"termsOfService"' ':' termsOfService=AnyString ','?)? & ('"contact"' ':'
-		//contact=Contact ','?)? & ('"license"' ':' license=License ','?)? //		& ( GenericJsonTuple ','? )*
+		//contact=Contact ','?)? & ('"license"' ':' license=License ','?)? & ('"x-basePackage"' ':' basePackage=AnyString ','?)? //		& ( GenericJsonTuple ','? )*
 		//) '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -299,7 +306,7 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'"title"' ':' title=AnyString ','? & '"version"' ':' version=AnyString ','? & ('"description"' ':' description=AnyString
 		//','?)? & ('"termsOfService"' ':' termsOfService=AnyString ','?)? & ('"contact"' ':' contact=Contact ','?)? &
-		//('"license"' ':' license=License ','?)?
+		//('"license"' ':' license=License ','?)? & ('"x-basePackage"' ':' basePackage=AnyString ','?)?
 		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
 		
 		//'"title"' ':' title=AnyString ','?
@@ -409,6 +416,24 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//','?
 		public Keyword getCommaKeyword_2_5_3() { return cCommaKeyword_2_5_3; }
+		
+		//('"x-basePackage"' ':' basePackage=AnyString ','?)?
+		public Group getGroup_2_6() { return cGroup_2_6; }
+		
+		//'"x-basePackage"'
+		public Keyword getXBasePackageKeyword_2_6_0() { return cXBasePackageKeyword_2_6_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2_6_1() { return cColonKeyword_2_6_1; }
+		
+		//basePackage=AnyString
+		public Assignment getBasePackageAssignment_2_6_2() { return cBasePackageAssignment_2_6_2; }
+		
+		//AnyString
+		public RuleCall getBasePackageAnyStringParserRuleCall_2_6_2_0() { return cBasePackageAnyStringParserRuleCall_2_6_2_0; }
+		
+		//','?
+		public Keyword getCommaKeyword_2_6_3() { return cCommaKeyword_2_6_3; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
@@ -640,14 +665,14 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Server:
 		//	{Server} name=AnyString ':' '{' ('"url"' ':' url=AnyString ','? & '"protocol"' ':' protocol=Protocol ','? &
-		//	('"description"' ':' description=AnyString ',')?
+		//	('"description"' ':' description=AnyString ','?)?
 		//	& ('"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','?)?
 		//	//		& ( GenericJsonTuple ','? )*
 		//) '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Server} name=AnyString ':' '{' ('"url"' ':' url=AnyString ','? & '"protocol"' ':' protocol=Protocol ','? &
-		//('"description"' ':' description=AnyString ',')? & ('"variables"' ':' '{' variables+=Variable (','
+		//('"description"' ':' description=AnyString ','?)? & ('"variables"' ':' '{' variables+=Variable (','
 		//variables+=Variable)* '}' ','?)? //		& ( GenericJsonTuple ','? )*
 		//) '}'
 		public Group getGroup() { return cGroup; }
@@ -668,7 +693,7 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
 		//'"url"' ':' url=AnyString ','? & '"protocol"' ':' protocol=Protocol ','? & ('"description"' ':' description=AnyString
-		//',')? & ('"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','?)?
+		//','?)? & ('"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','?)?
 		public UnorderedGroup getUnorderedGroup_4() { return cUnorderedGroup_4; }
 		
 		//'"url"' ':' url=AnyString ','?
@@ -707,7 +732,7 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//','?
 		public Keyword getCommaKeyword_4_1_3() { return cCommaKeyword_4_1_3; }
 		
-		//('"description"' ':' description=AnyString ',')?
+		//('"description"' ':' description=AnyString ','?)?
 		public Group getGroup_4_2() { return cGroup_4_2; }
 		
 		//'"description"'
@@ -722,7 +747,7 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 		//AnyString
 		public RuleCall getDescriptionAnyStringParserRuleCall_4_2_2_0() { return cDescriptionAnyStringParserRuleCall_4_2_2_0; }
 		
-		//','
+		//','?
 		public Keyword getCommaKeyword_4_2_3() { return cCommaKeyword_4_2_3; }
 		
 		//('"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','?)?
@@ -3825,6 +3850,7 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 	//	& ('"termsOfService"' ':' termsOfService=AnyString ','?)?
 	//	& ('"contact"' ':' contact=Contact ','?)?
 	//	& ('"license"' ':' license=License ','?)?
+	//	& ('"x-basePackage"' ':' basePackage=AnyString ','?)?
 	//	//		& ( GenericJsonTuple ','? )*
 	//) '}';
 	public InfoElements getInfoAccess() {
@@ -3864,7 +3890,7 @@ public class AsyncApiGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Server:
 	//	{Server} name=AnyString ':' '{' ('"url"' ':' url=AnyString ','? & '"protocol"' ':' protocol=Protocol ','? &
-	//	('"description"' ':' description=AnyString ',')?
+	//	('"description"' ':' description=AnyString ','?)?
 	//	& ('"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','?)?
 	//	//		& ( GenericJsonTuple ','? )*
 	//) '}';

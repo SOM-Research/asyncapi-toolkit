@@ -33,238 +33,231 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class NamedParameterImpl extends MinimalEObjectImpl.Container implements NamedParameter
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParameter()
-   * @generated
-   * @ordered
-   */
+	 * @see #getParameter()
+	 * @generated
+	 * @ordered
+	 */
   protected AbstractParameter parameter;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected NamedParameterImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return AsyncApiPackage.Literals.NAMED_PARAMETER;
-  }
+		return AsyncApiPackage.Literals.NAMED_PARAMETER;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String getName()
   {
-    return name;
-  }
+		return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void setName(String newName)
   {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.NAMED_PARAMETER__NAME, oldName, name));
-  }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.NAMED_PARAMETER__NAME, oldName, name));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public AbstractParameter getParameter()
   {
-    return parameter;
-  }
+		return parameter;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetParameter(AbstractParameter newParameter, NotificationChain msgs)
   {
-    AbstractParameter oldParameter = parameter;
-    parameter = newParameter;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.NAMED_PARAMETER__PARAMETER, oldParameter, newParameter);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		AbstractParameter oldParameter = parameter;
+		parameter = newParameter;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.NAMED_PARAMETER__PARAMETER, oldParameter, newParameter);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void setParameter(AbstractParameter newParameter)
   {
-    if (newParameter != parameter)
-    {
-      NotificationChain msgs = null;
-      if (parameter != null)
-        msgs = ((InternalEObject)parameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.NAMED_PARAMETER__PARAMETER, null, msgs);
-      if (newParameter != null)
-        msgs = ((InternalEObject)newParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.NAMED_PARAMETER__PARAMETER, null, msgs);
-      msgs = basicSetParameter(newParameter, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.NAMED_PARAMETER__PARAMETER, newParameter, newParameter));
-  }
+		if (newParameter != parameter) {
+			NotificationChain msgs = null;
+			if (parameter != null)
+				msgs = ((InternalEObject)parameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.NAMED_PARAMETER__PARAMETER, null, msgs);
+			if (newParameter != null)
+				msgs = ((InternalEObject)newParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.NAMED_PARAMETER__PARAMETER, null, msgs);
+			msgs = basicSetParameter(newParameter, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.NAMED_PARAMETER__PARAMETER, newParameter, newParameter));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.NAMED_PARAMETER__PARAMETER:
-        return basicSetParameter(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.NAMED_PARAMETER__PARAMETER:
+				return basicSetParameter(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.NAMED_PARAMETER__NAME:
-        return getName();
-      case AsyncApiPackage.NAMED_PARAMETER__PARAMETER:
-        return getParameter();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.NAMED_PARAMETER__NAME:
+				return getName();
+			case AsyncApiPackage.NAMED_PARAMETER__PARAMETER:
+				return getParameter();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.NAMED_PARAMETER__NAME:
-        setName((String)newValue);
-        return;
-      case AsyncApiPackage.NAMED_PARAMETER__PARAMETER:
-        setParameter((AbstractParameter)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.NAMED_PARAMETER__NAME:
+				setName((String)newValue);
+				return;
+			case AsyncApiPackage.NAMED_PARAMETER__PARAMETER:
+				setParameter((AbstractParameter)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.NAMED_PARAMETER__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case AsyncApiPackage.NAMED_PARAMETER__PARAMETER:
-        setParameter((AbstractParameter)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.NAMED_PARAMETER__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case AsyncApiPackage.NAMED_PARAMETER__PARAMETER:
+				setParameter((AbstractParameter)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.NAMED_PARAMETER__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AsyncApiPackage.NAMED_PARAMETER__PARAMETER:
-        return parameter != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.NAMED_PARAMETER__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case AsyncApiPackage.NAMED_PARAMETER__PARAMETER:
+				return parameter != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
+	}
 
 } //NamedParameterImpl
