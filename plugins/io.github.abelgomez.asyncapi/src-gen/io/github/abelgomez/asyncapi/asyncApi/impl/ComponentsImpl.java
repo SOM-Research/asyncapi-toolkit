@@ -9,6 +9,7 @@ import io.github.abelgomez.asyncapi.asyncApi.NamedMessage;
 import io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedParameter;
+import io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric;
 import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
 
 import java.util.Collection;
@@ -38,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ComponentsImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ComponentsImpl#getOperationTraits <em>Operation Traits</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ComponentsImpl#getMessageTraits <em>Message Traits</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.ComponentsImpl#getQosMetrics <em>Qos Metrics</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,6 +95,16 @@ public class ComponentsImpl extends MinimalEObjectImpl.Container implements Comp
 	 * @ordered
 	 */
   protected EList<NamedMessageTrait> messageTraits;
+
+  /**
+	 * The cached value of the '{@link #getQosMetrics() <em>Qos Metrics</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getQosMetrics()
+	 * @generated
+	 * @ordered
+	 */
+  protected EList<NamedQoSMetric> qosMetrics;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -191,6 +203,20 @@ public class ComponentsImpl extends MinimalEObjectImpl.Container implements Comp
 	 * @generated
 	 */
   @Override
+  public EList<NamedQoSMetric> getQosMetrics()
+  {
+		if (qosMetrics == null) {
+			qosMetrics = new EObjectContainmentEList<NamedQoSMetric>(NamedQoSMetric.class, this, AsyncApiPackage.COMPONENTS__QOS_METRICS);
+		}
+		return qosMetrics;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
 		switch (featureID) {
@@ -204,6 +230,8 @@ public class ComponentsImpl extends MinimalEObjectImpl.Container implements Comp
 				return ((InternalEList<?>)getOperationTraits()).basicRemove(otherEnd, msgs);
 			case AsyncApiPackage.COMPONENTS__MESSAGE_TRAITS:
 				return ((InternalEList<?>)getMessageTraits()).basicRemove(otherEnd, msgs);
+			case AsyncApiPackage.COMPONENTS__QOS_METRICS:
+				return ((InternalEList<?>)getQosMetrics()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -227,6 +255,8 @@ public class ComponentsImpl extends MinimalEObjectImpl.Container implements Comp
 				return getOperationTraits();
 			case AsyncApiPackage.COMPONENTS__MESSAGE_TRAITS:
 				return getMessageTraits();
+			case AsyncApiPackage.COMPONENTS__QOS_METRICS:
+				return getQosMetrics();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -261,6 +291,10 @@ public class ComponentsImpl extends MinimalEObjectImpl.Container implements Comp
 				getMessageTraits().clear();
 				getMessageTraits().addAll((Collection<? extends NamedMessageTrait>)newValue);
 				return;
+			case AsyncApiPackage.COMPONENTS__QOS_METRICS:
+				getQosMetrics().clear();
+				getQosMetrics().addAll((Collection<? extends NamedQoSMetric>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -289,6 +323,9 @@ public class ComponentsImpl extends MinimalEObjectImpl.Container implements Comp
 			case AsyncApiPackage.COMPONENTS__MESSAGE_TRAITS:
 				getMessageTraits().clear();
 				return;
+			case AsyncApiPackage.COMPONENTS__QOS_METRICS:
+				getQosMetrics().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -312,6 +349,8 @@ public class ComponentsImpl extends MinimalEObjectImpl.Container implements Comp
 				return operationTraits != null && !operationTraits.isEmpty();
 			case AsyncApiPackage.COMPONENTS__MESSAGE_TRAITS:
 				return messageTraits != null && !messageTraits.isEmpty();
+			case AsyncApiPackage.COMPONENTS__QOS_METRICS:
+				return qosMetrics != null && !qosMetrics.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

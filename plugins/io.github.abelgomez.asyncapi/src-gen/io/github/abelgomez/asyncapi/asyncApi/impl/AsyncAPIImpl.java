@@ -9,6 +9,7 @@ import io.github.abelgomez.asyncapi.asyncApi.Channel;
 import io.github.abelgomez.asyncapi.asyncApi.Components;
 import io.github.abelgomez.asyncapi.asyncApi.Info;
 import io.github.abelgomez.asyncapi.asyncApi.Server;
+import io.github.abelgomez.asyncapi.asyncApi.Sla;
 import io.github.abelgomez.asyncapi.asyncApi.VersionNumber;
 
 import java.util.Collection;
@@ -40,6 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.AsyncAPIImpl#getServers <em>Servers</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.AsyncAPIImpl#getChannels <em>Channels</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.AsyncAPIImpl#getComponents <em>Components</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.AsyncAPIImpl#getSla <em>Sla</em>}</li>
  * </ul>
  *
  * @generated
@@ -105,6 +107,16 @@ public class AsyncAPIImpl extends MinimalEObjectImpl.Container implements AsyncA
 	 * @ordered
 	 */
   protected Components components;
+
+  /**
+	 * The cached value of the '{@link #getSla() <em>Sla</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getSla()
+	 * @generated
+	 * @ordered
+	 */
+  protected Sla sla;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -282,6 +294,54 @@ public class AsyncAPIImpl extends MinimalEObjectImpl.Container implements AsyncA
 	 * @generated
 	 */
   @Override
+  public Sla getSla()
+  {
+		return sla;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public NotificationChain basicSetSla(Sla newSla, NotificationChain msgs)
+  {
+		Sla oldSla = sla;
+		sla = newSla;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.ASYNC_API__SLA, oldSla, newSla);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public void setSla(Sla newSla)
+  {
+		if (newSla != sla) {
+			NotificationChain msgs = null;
+			if (sla != null)
+				msgs = ((InternalEObject)sla).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.ASYNC_API__SLA, null, msgs);
+			if (newSla != null)
+				msgs = ((InternalEObject)newSla).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.ASYNC_API__SLA, null, msgs);
+			msgs = basicSetSla(newSla, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.ASYNC_API__SLA, newSla, newSla));
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
 		switch (featureID) {
@@ -293,6 +353,8 @@ public class AsyncAPIImpl extends MinimalEObjectImpl.Container implements AsyncA
 				return ((InternalEList<?>)getChannels()).basicRemove(otherEnd, msgs);
 			case AsyncApiPackage.ASYNC_API__COMPONENTS:
 				return basicSetComponents(null, msgs);
+			case AsyncApiPackage.ASYNC_API__SLA:
+				return basicSetSla(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -316,6 +378,8 @@ public class AsyncAPIImpl extends MinimalEObjectImpl.Container implements AsyncA
 				return getChannels();
 			case AsyncApiPackage.ASYNC_API__COMPONENTS:
 				return getComponents();
+			case AsyncApiPackage.ASYNC_API__SLA:
+				return getSla();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -347,6 +411,9 @@ public class AsyncAPIImpl extends MinimalEObjectImpl.Container implements AsyncA
 			case AsyncApiPackage.ASYNC_API__COMPONENTS:
 				setComponents((Components)newValue);
 				return;
+			case AsyncApiPackage.ASYNC_API__SLA:
+				setSla((Sla)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -375,6 +442,9 @@ public class AsyncAPIImpl extends MinimalEObjectImpl.Container implements AsyncA
 			case AsyncApiPackage.ASYNC_API__COMPONENTS:
 				setComponents((Components)null);
 				return;
+			case AsyncApiPackage.ASYNC_API__SLA:
+				setSla((Sla)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -398,6 +468,8 @@ public class AsyncAPIImpl extends MinimalEObjectImpl.Container implements AsyncA
 				return channels != null && !channels.isEmpty();
 			case AsyncApiPackage.ASYNC_API__COMPONENTS:
 				return components != null;
+			case AsyncApiPackage.ASYNC_API__SLA:
+				return sla != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -249,6 +249,132 @@ public interface AsyncApiFactory extends EFactory
   Components createComponents();
 
   /**
+	 * Returns a new object of class '<em>Sla</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Sla</em>'.
+	 * @generated
+	 */
+  Sla createSla();
+
+  /**
+	 * Returns a new object of class '<em>Guarantee Term</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Guarantee Term</em>'.
+	 * @generated
+	 */
+  GuaranteeTerm createGuaranteeTerm();
+
+  /**
+	 * Returns a new object of class '<em>Scope</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Scope</em>'.
+	 * @generated
+	 */
+  Scope createScope();
+
+  /**
+	 * Returns a new object of class '<em>Qualifying Condition</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Qualifying Condition</em>'.
+	 * @generated
+	 */
+  QualifyingCondition createQualifyingCondition();
+
+  /**
+	 * Returns a new object of class '<em>Slo</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Slo</em>'.
+	 * @generated
+	 */
+  Slo createSlo();
+
+  /**
+	 * Returns a new object of class '<em>Abstract Qo SMetric</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Abstract Qo SMetric</em>'.
+	 * @generated
+	 */
+  AbstractQoSMetric createAbstractQoSMetric();
+
+  /**
+	 * Returns a new object of class '<em>Qo SMetric</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Qo SMetric</em>'.
+	 * @generated
+	 */
+  QoSMetric createQoSMetric();
+
+  /**
+	 * Returns a new object of class '<em>Derived Qo SMetric</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Derived Qo SMetric</em>'.
+	 * @generated
+	 */
+  DerivedQoSMetric createDerivedQoSMetric();
+
+  /**
+	 * Returns a new object of class '<em>Atomic Qo SMetric</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Atomic Qo SMetric</em>'.
+	 * @generated
+	 */
+  AtomicQoSMetric createAtomicQoSMetric();
+
+  /**
+	 * Returns a new object of class '<em>Named Qo SMetric</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Named Qo SMetric</em>'.
+	 * @generated
+	 */
+  NamedQoSMetric createNamedQoSMetric();
+
+  /**
+	 * Returns a new object of class '<em>Boolean Condition</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Boolean Condition</em>'.
+	 * @generated
+	 */
+  BooleanCondition createBooleanCondition();
+
+  /**
+	 * Returns a new object of class '<em>AND Condition</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>AND Condition</em>'.
+	 * @generated
+	 */
+  ANDCondition createANDCondition();
+
+  /**
+	 * Returns a new object of class '<em>OR Condition</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>OR Condition</em>'.
+	 * @generated
+	 */
+  ORCondition createORCondition();
+
+  /**
+	 * Returns a new object of class '<em>Atomic Boolean Condition</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Atomic Boolean Condition</em>'.
+	 * @generated
+	 */
+  AtomicBooleanCondition createAtomicBooleanCondition();
+
+  /**
 	 * Returns a new object of class '<em>Reference</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

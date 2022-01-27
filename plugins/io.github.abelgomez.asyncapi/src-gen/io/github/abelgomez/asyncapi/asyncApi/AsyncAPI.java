@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getServers <em>Servers</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getChannels <em>Channels</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getComponents <em>Components</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getSla <em>Sla</em>}</li>
  * </ul>
  *
  * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI()
@@ -121,5 +122,27 @@ public interface AsyncAPI extends EObject
 	 * @generated
 	 */
   void setComponents(Components value);
+
+  /**
+	 * Returns the value of the '<em><b>Sla</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sla</em>' containment reference.
+	 * @see #setSla(Sla)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAsyncAPI_Sla()
+	 * @model containment="true"
+	 * @generated
+	 */
+  Sla getSla();
+
+  /**
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getSla <em>Sla</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sla</em>' containment reference.
+	 * @see #getSla()
+	 * @generated
+	 */
+  void setSla(Sla value);
 
 } // AsyncAPI

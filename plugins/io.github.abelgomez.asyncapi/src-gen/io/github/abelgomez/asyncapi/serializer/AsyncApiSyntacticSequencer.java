@@ -11,6 +11,7 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -25,6 +26,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_AsyncAPI_CommaKeyword_2_2_6_q;
 	protected AbstractElementAlias match_AsyncAPI_CommaKeyword_2_3_6_q;
 	protected AbstractElementAlias match_AsyncAPI_CommaKeyword_2_4_3_q;
+	protected AbstractElementAlias match_AsyncAPI_CommaKeyword_2_5_3_q;
 	protected AbstractElementAlias match_Channel_CommaKeyword_4_0_3_q;
 	protected AbstractElementAlias match_Channel_CommaKeyword_4_1_3_q;
 	protected AbstractElementAlias match_Channel_CommaKeyword_4_2_3_q;
@@ -35,9 +37,16 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Components_CommaKeyword_2_2_6_q;
 	protected AbstractElementAlias match_Components_CommaKeyword_2_3_6_q;
 	protected AbstractElementAlias match_Components_CommaKeyword_2_4_6_q;
+	protected AbstractElementAlias match_Components_CommaKeyword_2_5_6_q;
 	protected AbstractElementAlias match_Contact_CommaKeyword_2_0_3_q;
 	protected AbstractElementAlias match_Contact_CommaKeyword_2_1_3_q;
 	protected AbstractElementAlias match_Contact_CommaKeyword_2_2_3_q;
+	protected AbstractElementAlias match_DerivedQoSMetric_CommaKeyword_1_1_3_q;
+	protected AbstractElementAlias match_DerivedQoSMetric_CommaKeyword_1_2_3_q;
+	protected AbstractElementAlias match_DerivedQoSMetric_CommaKeyword_1_3_3_q;
+	protected AbstractElementAlias match_DerivedQoSMetric_CommaKeyword_1_4_3_q;
+	protected AbstractElementAlias match_DerivedQoSMetric___MetricTypeKeyword_1_0_0_ColonKeyword_1_0_1_DerivedKeyword_1_0_2_CommaKeyword_1_0_3__a;
+	protected AbstractElementAlias match_DerivedQoSMetric___MetricTypeKeyword_1_0_0_ColonKeyword_1_0_1_DerivedKeyword_1_0_2_CommaKeyword_1_0_3__p;
 	protected AbstractElementAlias match_Info_CommaKeyword_2_0_3_q;
 	protected AbstractElementAlias match_Info_CommaKeyword_2_1_3_q;
 	protected AbstractElementAlias match_Info_CommaKeyword_2_2_3_q;
@@ -72,6 +81,9 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Parameter_CommaKeyword_2_0_3_q;
 	protected AbstractElementAlias match_Parameter_CommaKeyword_2_1_3_q;
 	protected AbstractElementAlias match_Parameter_CommaKeyword_2_2_3_q;
+	protected AbstractElementAlias match_QoSMetric_CommaKeyword_3_0_3_q;
+	protected AbstractElementAlias match_QoSMetric_CommaKeyword_3_1_3_q;
+	protected AbstractElementAlias match_QoSMetric_CommaKeyword_3_2_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_0_3_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_10_6_q;
 	protected AbstractElementAlias match_Schema_CommaKeyword_2_11_3_q;
@@ -103,6 +115,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_AsyncAPI_CommaKeyword_2_2_6_q = new TokenAlias(false, true, grammarAccess.getAsyncAPIAccess().getCommaKeyword_2_2_6());
 		match_AsyncAPI_CommaKeyword_2_3_6_q = new TokenAlias(false, true, grammarAccess.getAsyncAPIAccess().getCommaKeyword_2_3_6());
 		match_AsyncAPI_CommaKeyword_2_4_3_q = new TokenAlias(false, true, grammarAccess.getAsyncAPIAccess().getCommaKeyword_2_4_3());
+		match_AsyncAPI_CommaKeyword_2_5_3_q = new TokenAlias(false, true, grammarAccess.getAsyncAPIAccess().getCommaKeyword_2_5_3());
 		match_Channel_CommaKeyword_4_0_3_q = new TokenAlias(false, true, grammarAccess.getChannelAccess().getCommaKeyword_4_0_3());
 		match_Channel_CommaKeyword_4_1_3_q = new TokenAlias(false, true, grammarAccess.getChannelAccess().getCommaKeyword_4_1_3());
 		match_Channel_CommaKeyword_4_2_3_q = new TokenAlias(false, true, grammarAccess.getChannelAccess().getCommaKeyword_4_2_3());
@@ -113,9 +126,16 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Components_CommaKeyword_2_2_6_q = new TokenAlias(false, true, grammarAccess.getComponentsAccess().getCommaKeyword_2_2_6());
 		match_Components_CommaKeyword_2_3_6_q = new TokenAlias(false, true, grammarAccess.getComponentsAccess().getCommaKeyword_2_3_6());
 		match_Components_CommaKeyword_2_4_6_q = new TokenAlias(false, true, grammarAccess.getComponentsAccess().getCommaKeyword_2_4_6());
+		match_Components_CommaKeyword_2_5_6_q = new TokenAlias(false, true, grammarAccess.getComponentsAccess().getCommaKeyword_2_5_6());
 		match_Contact_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getContactAccess().getCommaKeyword_2_0_3());
 		match_Contact_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getContactAccess().getCommaKeyword_2_1_3());
 		match_Contact_CommaKeyword_2_2_3_q = new TokenAlias(false, true, grammarAccess.getContactAccess().getCommaKeyword_2_2_3());
+		match_DerivedQoSMetric_CommaKeyword_1_1_3_q = new TokenAlias(false, true, grammarAccess.getDerivedQoSMetricAccess().getCommaKeyword_1_1_3());
+		match_DerivedQoSMetric_CommaKeyword_1_2_3_q = new TokenAlias(false, true, grammarAccess.getDerivedQoSMetricAccess().getCommaKeyword_1_2_3());
+		match_DerivedQoSMetric_CommaKeyword_1_3_3_q = new TokenAlias(false, true, grammarAccess.getDerivedQoSMetricAccess().getCommaKeyword_1_3_3());
+		match_DerivedQoSMetric_CommaKeyword_1_4_3_q = new TokenAlias(false, true, grammarAccess.getDerivedQoSMetricAccess().getCommaKeyword_1_4_3());
+		match_DerivedQoSMetric___MetricTypeKeyword_1_0_0_ColonKeyword_1_0_1_DerivedKeyword_1_0_2_CommaKeyword_1_0_3__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getDerivedQoSMetricAccess().getMetricTypeKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getDerivedQoSMetricAccess().getColonKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getDerivedQoSMetricAccess().getDerivedKeyword_1_0_2()), new TokenAlias(false, false, grammarAccess.getDerivedQoSMetricAccess().getCommaKeyword_1_0_3()));
+		match_DerivedQoSMetric___MetricTypeKeyword_1_0_0_ColonKeyword_1_0_1_DerivedKeyword_1_0_2_CommaKeyword_1_0_3__p = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getDerivedQoSMetricAccess().getMetricTypeKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getDerivedQoSMetricAccess().getColonKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getDerivedQoSMetricAccess().getDerivedKeyword_1_0_2()), new TokenAlias(false, false, grammarAccess.getDerivedQoSMetricAccess().getCommaKeyword_1_0_3()));
 		match_Info_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getInfoAccess().getCommaKeyword_2_0_3());
 		match_Info_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getInfoAccess().getCommaKeyword_2_1_3());
 		match_Info_CommaKeyword_2_2_3_q = new TokenAlias(false, true, grammarAccess.getInfoAccess().getCommaKeyword_2_2_3());
@@ -150,6 +170,9 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Parameter_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getParameterAccess().getCommaKeyword_2_0_3());
 		match_Parameter_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getParameterAccess().getCommaKeyword_2_1_3());
 		match_Parameter_CommaKeyword_2_2_3_q = new TokenAlias(false, true, grammarAccess.getParameterAccess().getCommaKeyword_2_2_3());
+		match_QoSMetric_CommaKeyword_3_0_3_q = new TokenAlias(false, true, grammarAccess.getQoSMetricAccess().getCommaKeyword_3_0_3());
+		match_QoSMetric_CommaKeyword_3_1_3_q = new TokenAlias(false, true, grammarAccess.getQoSMetricAccess().getCommaKeyword_3_1_3());
+		match_QoSMetric_CommaKeyword_3_2_3_q = new TokenAlias(false, true, grammarAccess.getQoSMetricAccess().getCommaKeyword_3_2_3());
 		match_Schema_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_0_3());
 		match_Schema_CommaKeyword_2_10_6_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_10_6());
 		match_Schema_CommaKeyword_2_11_3_q = new TokenAlias(false, true, grammarAccess.getSchemaAccess().getCommaKeyword_2_11_3());
@@ -196,6 +219,8 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_AsyncAPI_CommaKeyword_2_3_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_AsyncAPI_CommaKeyword_2_4_3_q.equals(syntax))
 				emit_AsyncAPI_CommaKeyword_2_4_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_AsyncAPI_CommaKeyword_2_5_3_q.equals(syntax))
+				emit_AsyncAPI_CommaKeyword_2_5_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Channel_CommaKeyword_4_0_3_q.equals(syntax))
 				emit_Channel_CommaKeyword_4_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Channel_CommaKeyword_4_1_3_q.equals(syntax))
@@ -216,12 +241,26 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Components_CommaKeyword_2_3_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Components_CommaKeyword_2_4_6_q.equals(syntax))
 				emit_Components_CommaKeyword_2_4_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Components_CommaKeyword_2_5_6_q.equals(syntax))
+				emit_Components_CommaKeyword_2_5_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Contact_CommaKeyword_2_0_3_q.equals(syntax))
 				emit_Contact_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Contact_CommaKeyword_2_1_3_q.equals(syntax))
 				emit_Contact_CommaKeyword_2_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Contact_CommaKeyword_2_2_3_q.equals(syntax))
 				emit_Contact_CommaKeyword_2_2_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DerivedQoSMetric_CommaKeyword_1_1_3_q.equals(syntax))
+				emit_DerivedQoSMetric_CommaKeyword_1_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DerivedQoSMetric_CommaKeyword_1_2_3_q.equals(syntax))
+				emit_DerivedQoSMetric_CommaKeyword_1_2_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DerivedQoSMetric_CommaKeyword_1_3_3_q.equals(syntax))
+				emit_DerivedQoSMetric_CommaKeyword_1_3_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DerivedQoSMetric_CommaKeyword_1_4_3_q.equals(syntax))
+				emit_DerivedQoSMetric_CommaKeyword_1_4_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DerivedQoSMetric___MetricTypeKeyword_1_0_0_ColonKeyword_1_0_1_DerivedKeyword_1_0_2_CommaKeyword_1_0_3__a.equals(syntax))
+				emit_DerivedQoSMetric___MetricTypeKeyword_1_0_0_ColonKeyword_1_0_1_DerivedKeyword_1_0_2_CommaKeyword_1_0_3__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DerivedQoSMetric___MetricTypeKeyword_1_0_0_ColonKeyword_1_0_1_DerivedKeyword_1_0_2_CommaKeyword_1_0_3__p.equals(syntax))
+				emit_DerivedQoSMetric___MetricTypeKeyword_1_0_0_ColonKeyword_1_0_1_DerivedKeyword_1_0_2_CommaKeyword_1_0_3__p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Info_CommaKeyword_2_0_3_q.equals(syntax))
 				emit_Info_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Info_CommaKeyword_2_1_3_q.equals(syntax))
@@ -290,6 +329,12 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Parameter_CommaKeyword_2_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Parameter_CommaKeyword_2_2_3_q.equals(syntax))
 				emit_Parameter_CommaKeyword_2_2_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_QoSMetric_CommaKeyword_3_0_3_q.equals(syntax))
+				emit_QoSMetric_CommaKeyword_3_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_QoSMetric_CommaKeyword_3_1_3_q.equals(syntax))
+				emit_QoSMetric_CommaKeyword_3_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_QoSMetric_CommaKeyword_3_2_3_q.equals(syntax))
+				emit_QoSMetric_CommaKeyword_3_2_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Schema_CommaKeyword_2_0_3_q.equals(syntax))
 				emit_Schema_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Schema_CommaKeyword_2_10_6_q.equals(syntax))
@@ -348,6 +393,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     version=VersionNumber (ambiguity) '"components"' ':' components=Components
 	 *     version=VersionNumber (ambiguity) '"info"' ':' info=Info
 	 *     version=VersionNumber (ambiguity) '"servers"' ':' '{' servers+=Server
+	 *     version=VersionNumber (ambiguity) '"x-sla"' ':' sla=Sla
 	 *     version=VersionNumber (ambiguity) '}' (rule end)
 	 */
 	protected void emit_AsyncAPI_CommaKeyword_2_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -364,6 +410,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     info=Info (ambiguity) '"components"' ':' components=Components
 	 *     info=Info (ambiguity) '"info"' ':' info=Info
 	 *     info=Info (ambiguity) '"servers"' ':' '{' servers+=Server
+	 *     info=Info (ambiguity) '"x-sla"' ':' sla=Sla
 	 *     info=Info (ambiguity) '}' (rule end)
 	 */
 	protected void emit_AsyncAPI_CommaKeyword_2_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -380,6 +427,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     servers+=Server '}' (ambiguity) '"components"' ':' components=Components
 	 *     servers+=Server '}' (ambiguity) '"info"' ':' info=Info
 	 *     servers+=Server '}' (ambiguity) '"servers"' ':' '{' servers+=Server
+	 *     servers+=Server '}' (ambiguity) '"x-sla"' ':' sla=Sla
 	 *     servers+=Server '}' (ambiguity) '}' (rule end)
 	 */
 	protected void emit_AsyncAPI_CommaKeyword_2_2_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -396,6 +444,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     channels+=Channel '}' (ambiguity) '"components"' ':' components=Components
 	 *     channels+=Channel '}' (ambiguity) '"info"' ':' info=Info
 	 *     channels+=Channel '}' (ambiguity) '"servers"' ':' '{' servers+=Server
+	 *     channels+=Channel '}' (ambiguity) '"x-sla"' ':' sla=Sla
 	 *     channels+=Channel '}' (ambiguity) '}' (rule end)
 	 */
 	protected void emit_AsyncAPI_CommaKeyword_2_3_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -412,9 +461,27 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     components=Components (ambiguity) '"components"' ':' components=Components
 	 *     components=Components (ambiguity) '"info"' ':' info=Info
 	 *     components=Components (ambiguity) '"servers"' ':' '{' servers+=Server
+	 *     components=Components (ambiguity) '"x-sla"' ':' sla=Sla
 	 *     components=Components (ambiguity) '}' (rule end)
 	 */
 	protected void emit_AsyncAPI_CommaKeyword_2_4_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     sla=Sla (ambiguity) '"asyncapi"' ':' version=VersionNumber
+	 *     sla=Sla (ambiguity) '"channels"' ':' '{' channels+=Channel
+	 *     sla=Sla (ambiguity) '"components"' ':' components=Components
+	 *     sla=Sla (ambiguity) '"info"' ':' info=Info
+	 *     sla=Sla (ambiguity) '"servers"' ':' '{' servers+=Server
+	 *     sla=Sla (ambiguity) '"x-sla"' ':' sla=Sla
+	 *     sla=Sla (ambiguity) '}' (rule end)
+	 */
+	protected void emit_AsyncAPI_CommaKeyword_2_5_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -508,6 +575,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     schemas+=NamedSchema '}' (ambiguity) '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
 	 *     schemas+=NamedSchema '}' (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
 	 *     schemas+=NamedSchema '}' (ambiguity) '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     schemas+=NamedSchema '}' (ambiguity) '"x-qosMetrics"' ':' '{' qosMetrics+=NamedQoSMetric
 	 *     schemas+=NamedSchema '}' (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Components_CommaKeyword_2_0_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -524,6 +592,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     messages+=NamedMessage '}' (ambiguity) '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
 	 *     messages+=NamedMessage '}' (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
 	 *     messages+=NamedMessage '}' (ambiguity) '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     messages+=NamedMessage '}' (ambiguity) '"x-qosMetrics"' ':' '{' qosMetrics+=NamedQoSMetric
 	 *     messages+=NamedMessage '}' (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Components_CommaKeyword_2_1_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -540,6 +609,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     parameters+=NamedParameter '}' (ambiguity) '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
 	 *     parameters+=NamedParameter '}' (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
 	 *     parameters+=NamedParameter '}' (ambiguity) '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     parameters+=NamedParameter '}' (ambiguity) '"x-qosMetrics"' ':' '{' qosMetrics+=NamedQoSMetric
 	 *     parameters+=NamedParameter '}' (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Components_CommaKeyword_2_2_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -556,6 +626,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     operationTraits+=NamedOperationTrait '}' (ambiguity) '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
 	 *     operationTraits+=NamedOperationTrait '}' (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
 	 *     operationTraits+=NamedOperationTrait '}' (ambiguity) '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     operationTraits+=NamedOperationTrait '}' (ambiguity) '"x-qosMetrics"' ':' '{' qosMetrics+=NamedQoSMetric
 	 *     operationTraits+=NamedOperationTrait '}' (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Components_CommaKeyword_2_3_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -572,9 +643,27 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     messageTraits+=NamedMessageTrait '}' (ambiguity) '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
 	 *     messageTraits+=NamedMessageTrait '}' (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
 	 *     messageTraits+=NamedMessageTrait '}' (ambiguity) '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     messageTraits+=NamedMessageTrait '}' (ambiguity) '"x-qosMetrics"' ':' '{' qosMetrics+=NamedQoSMetric
 	 *     messageTraits+=NamedMessageTrait '}' (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Components_CommaKeyword_2_4_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     qosMetrics+=NamedQoSMetric '}' (ambiguity) '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait
+	 *     qosMetrics+=NamedQoSMetric '}' (ambiguity) '"messages"' ':' '{' messages+=NamedMessage
+	 *     qosMetrics+=NamedQoSMetric '}' (ambiguity) '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait
+	 *     qosMetrics+=NamedQoSMetric '}' (ambiguity) '"parameters"' ':' '{' parameters+=NamedParameter
+	 *     qosMetrics+=NamedQoSMetric '}' (ambiguity) '"schemas"' ':' '{' schemas+=NamedSchema
+	 *     qosMetrics+=NamedQoSMetric '}' (ambiguity) '"x-qosMetrics"' ':' '{' qosMetrics+=NamedQoSMetric
+	 *     qosMetrics+=NamedQoSMetric '}' (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Components_CommaKeyword_2_5_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -617,6 +706,151 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     email=AnyString (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Contact_CommaKeyword_2_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     window=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* '"aggregationFunction"' ':' aggregationFunction=AnyString
+	 *     window=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* '"atomicMetric"' ':' atomicMetric=AbstractQoSMetric
+	 *     window=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* '"window"' ':' window=AnyString
+	 *     window=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* '"windowUnit"' ':' windowUnit=WindowUnit
+	 *     window=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* ',' '"dataType"' ':' dataType=QoSMetricType
+	 *     window=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* ',' '"description"' ':' description=AnyString
+	 *     window=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* ',' '"unit"' ':' unit=QoSMetricUnit
+	 *     window=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* ',' '}' (rule end)
+	 *     window=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* (rule end)
+	 */
+	protected void emit_DerivedQoSMetric_CommaKeyword_1_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     windowUnit=WindowUnit (ambiguity) ('"metricType"' ':' '"derived"' ',')* '"aggregationFunction"' ':' aggregationFunction=AnyString
+	 *     windowUnit=WindowUnit (ambiguity) ('"metricType"' ':' '"derived"' ',')* '"atomicMetric"' ':' atomicMetric=AbstractQoSMetric
+	 *     windowUnit=WindowUnit (ambiguity) ('"metricType"' ':' '"derived"' ',')* '"window"' ':' window=AnyString
+	 *     windowUnit=WindowUnit (ambiguity) ('"metricType"' ':' '"derived"' ',')* '"windowUnit"' ':' windowUnit=WindowUnit
+	 *     windowUnit=WindowUnit (ambiguity) ('"metricType"' ':' '"derived"' ',')* ',' '"dataType"' ':' dataType=QoSMetricType
+	 *     windowUnit=WindowUnit (ambiguity) ('"metricType"' ':' '"derived"' ',')* ',' '"description"' ':' description=AnyString
+	 *     windowUnit=WindowUnit (ambiguity) ('"metricType"' ':' '"derived"' ',')* ',' '"unit"' ':' unit=QoSMetricUnit
+	 *     windowUnit=WindowUnit (ambiguity) ('"metricType"' ':' '"derived"' ',')* ',' '}' (rule end)
+	 *     windowUnit=WindowUnit (ambiguity) ('"metricType"' ':' '"derived"' ',')* (rule end)
+	 */
+	protected void emit_DerivedQoSMetric_CommaKeyword_1_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     aggregationFunction=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* '"aggregationFunction"' ':' aggregationFunction=AnyString
+	 *     aggregationFunction=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* '"atomicMetric"' ':' atomicMetric=AbstractQoSMetric
+	 *     aggregationFunction=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* '"window"' ':' window=AnyString
+	 *     aggregationFunction=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* '"windowUnit"' ':' windowUnit=WindowUnit
+	 *     aggregationFunction=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* ',' '"dataType"' ':' dataType=QoSMetricType
+	 *     aggregationFunction=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* ',' '"description"' ':' description=AnyString
+	 *     aggregationFunction=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* ',' '"unit"' ':' unit=QoSMetricUnit
+	 *     aggregationFunction=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* ',' '}' (rule end)
+	 *     aggregationFunction=AnyString (ambiguity) ('"metricType"' ':' '"derived"' ',')* (rule end)
+	 */
+	protected void emit_DerivedQoSMetric_CommaKeyword_1_3_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     atomicMetric=AbstractQoSMetric (ambiguity) ('"metricType"' ':' '"derived"' ',')* '"aggregationFunction"' ':' aggregationFunction=AnyString
+	 *     atomicMetric=AbstractQoSMetric (ambiguity) ('"metricType"' ':' '"derived"' ',')* '"atomicMetric"' ':' atomicMetric=AbstractQoSMetric
+	 *     atomicMetric=AbstractQoSMetric (ambiguity) ('"metricType"' ':' '"derived"' ',')* '"window"' ':' window=AnyString
+	 *     atomicMetric=AbstractQoSMetric (ambiguity) ('"metricType"' ':' '"derived"' ',')* '"windowUnit"' ':' windowUnit=WindowUnit
+	 *     atomicMetric=AbstractQoSMetric (ambiguity) ('"metricType"' ':' '"derived"' ',')* ',' '"dataType"' ':' dataType=QoSMetricType
+	 *     atomicMetric=AbstractQoSMetric (ambiguity) ('"metricType"' ':' '"derived"' ',')* ',' '"description"' ':' description=AnyString
+	 *     atomicMetric=AbstractQoSMetric (ambiguity) ('"metricType"' ':' '"derived"' ',')* ',' '"unit"' ':' unit=QoSMetricUnit
+	 *     atomicMetric=AbstractQoSMetric (ambiguity) ('"metricType"' ':' '"derived"' ',')* ',' '}' (rule end)
+	 *     atomicMetric=AbstractQoSMetric (ambiguity) ('"metricType"' ':' '"derived"' ',')* (rule end)
+	 */
+	protected void emit_DerivedQoSMetric_CommaKeyword_1_4_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('"metricType"' ':' '"derived"' ',')*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) '{' (ambiguity) '"aggregationFunction"' ':' aggregationFunction=AnyString
+	 *     (rule start) '{' (ambiguity) '"atomicMetric"' ':' atomicMetric=AbstractQoSMetric
+	 *     (rule start) '{' (ambiguity) '"window"' ':' window=AnyString
+	 *     (rule start) '{' (ambiguity) '"windowUnit"' ':' windowUnit=WindowUnit
+	 *     (rule start) (ambiguity) '"aggregationFunction"' ':' aggregationFunction=AnyString
+	 *     (rule start) (ambiguity) '"atomicMetric"' ':' atomicMetric=AbstractQoSMetric
+	 *     (rule start) (ambiguity) '"window"' ':' window=AnyString
+	 *     (rule start) (ambiguity) '"windowUnit"' ':' windowUnit=WindowUnit
+	 *     aggregationFunction=AnyString ','? (ambiguity) '"aggregationFunction"' ':' aggregationFunction=AnyString
+	 *     aggregationFunction=AnyString ','? (ambiguity) '"atomicMetric"' ':' atomicMetric=AbstractQoSMetric
+	 *     aggregationFunction=AnyString ','? (ambiguity) '"window"' ':' window=AnyString
+	 *     aggregationFunction=AnyString ','? (ambiguity) '"windowUnit"' ':' windowUnit=WindowUnit
+	 *     aggregationFunction=AnyString ','? (ambiguity) ',' '"dataType"' ':' dataType=QoSMetricType
+	 *     aggregationFunction=AnyString ','? (ambiguity) ',' '"description"' ':' description=AnyString
+	 *     aggregationFunction=AnyString ','? (ambiguity) ',' '"unit"' ':' unit=QoSMetricUnit
+	 *     aggregationFunction=AnyString ','? (ambiguity) ',' '}' (rule end)
+	 *     aggregationFunction=AnyString ','? (ambiguity) (rule end)
+	 *     atomicMetric=AbstractQoSMetric ','? (ambiguity) '"aggregationFunction"' ':' aggregationFunction=AnyString
+	 *     atomicMetric=AbstractQoSMetric ','? (ambiguity) '"atomicMetric"' ':' atomicMetric=AbstractQoSMetric
+	 *     atomicMetric=AbstractQoSMetric ','? (ambiguity) '"window"' ':' window=AnyString
+	 *     atomicMetric=AbstractQoSMetric ','? (ambiguity) '"windowUnit"' ':' windowUnit=WindowUnit
+	 *     atomicMetric=AbstractQoSMetric ','? (ambiguity) ',' '"dataType"' ':' dataType=QoSMetricType
+	 *     atomicMetric=AbstractQoSMetric ','? (ambiguity) ',' '"description"' ':' description=AnyString
+	 *     atomicMetric=AbstractQoSMetric ','? (ambiguity) ',' '"unit"' ':' unit=QoSMetricUnit
+	 *     atomicMetric=AbstractQoSMetric ','? (ambiguity) ',' '}' (rule end)
+	 *     atomicMetric=AbstractQoSMetric ','? (ambiguity) (rule end)
+	 *     window=AnyString ','? (ambiguity) '"aggregationFunction"' ':' aggregationFunction=AnyString
+	 *     window=AnyString ','? (ambiguity) '"atomicMetric"' ':' atomicMetric=AbstractQoSMetric
+	 *     window=AnyString ','? (ambiguity) '"window"' ':' window=AnyString
+	 *     window=AnyString ','? (ambiguity) '"windowUnit"' ':' windowUnit=WindowUnit
+	 *     window=AnyString ','? (ambiguity) ',' '"dataType"' ':' dataType=QoSMetricType
+	 *     window=AnyString ','? (ambiguity) ',' '"description"' ':' description=AnyString
+	 *     window=AnyString ','? (ambiguity) ',' '"unit"' ':' unit=QoSMetricUnit
+	 *     window=AnyString ','? (ambiguity) ',' '}' (rule end)
+	 *     window=AnyString ','? (ambiguity) (rule end)
+	 *     windowUnit=WindowUnit ','? (ambiguity) '"aggregationFunction"' ':' aggregationFunction=AnyString
+	 *     windowUnit=WindowUnit ','? (ambiguity) '"atomicMetric"' ':' atomicMetric=AbstractQoSMetric
+	 *     windowUnit=WindowUnit ','? (ambiguity) '"window"' ':' window=AnyString
+	 *     windowUnit=WindowUnit ','? (ambiguity) '"windowUnit"' ':' windowUnit=WindowUnit
+	 *     windowUnit=WindowUnit ','? (ambiguity) ',' '"dataType"' ':' dataType=QoSMetricType
+	 *     windowUnit=WindowUnit ','? (ambiguity) ',' '"description"' ':' description=AnyString
+	 *     windowUnit=WindowUnit ','? (ambiguity) ',' '"unit"' ':' unit=QoSMetricUnit
+	 *     windowUnit=WindowUnit ','? (ambiguity) ',' '}' (rule end)
+	 *     windowUnit=WindowUnit ','? (ambiguity) (rule end)
+	 */
+	protected void emit_DerivedQoSMetric___MetricTypeKeyword_1_0_0_ColonKeyword_1_0_1_DerivedKeyword_1_0_2_CommaKeyword_1_0_3__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('"metricType"' ':' '"derived"' ',')+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) '{' (ambiguity) ',' '"dataType"' ':' dataType=QoSMetricType
+	 *     (rule start) '{' (ambiguity) ',' '"description"' ':' description=AnyString
+	 *     (rule start) '{' (ambiguity) ',' '"unit"' ':' unit=QoSMetricUnit
+	 *     (rule start) '{' (ambiguity) ',' '}' (rule start)
+	 *     (rule start) (ambiguity) (rule start)
+	 */
+	protected void emit_DerivedQoSMetric___MetricTypeKeyword_1_0_0_ColonKeyword_1_0_1_DerivedKeyword_1_0_2_CommaKeyword_1_0_3__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1193,6 +1427,48 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     location=AnyString (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Parameter_CommaKeyword_2_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     description=AnyString (ambiguity) '"dataType"' ':' dataType=QoSMetricType
+	 *     description=AnyString (ambiguity) '"description"' ':' description=AnyString
+	 *     description=AnyString (ambiguity) '"unit"' ':' unit=QoSMetricUnit
+	 *     description=AnyString (ambiguity) '}' (rule end)
+	 */
+	protected void emit_QoSMetric_CommaKeyword_3_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     unit=QoSMetricUnit (ambiguity) '"dataType"' ':' dataType=QoSMetricType
+	 *     unit=QoSMetricUnit (ambiguity) '"description"' ':' description=AnyString
+	 *     unit=QoSMetricUnit (ambiguity) '"unit"' ':' unit=QoSMetricUnit
+	 *     unit=QoSMetricUnit (ambiguity) '}' (rule end)
+	 */
+	protected void emit_QoSMetric_CommaKeyword_3_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     dataType=QoSMetricType (ambiguity) '"dataType"' ':' dataType=QoSMetricType
+	 *     dataType=QoSMetricType (ambiguity) '"description"' ':' description=AnyString
+	 *     dataType=QoSMetricType (ambiguity) '"unit"' ':' unit=QoSMetricUnit
+	 *     dataType=QoSMetricType (ambiguity) '}' (rule end)
+	 */
+	protected void emit_QoSMetric_CommaKeyword_3_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

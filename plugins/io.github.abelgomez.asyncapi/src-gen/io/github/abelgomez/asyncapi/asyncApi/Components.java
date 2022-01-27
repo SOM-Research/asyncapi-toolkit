@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Components#getParameters <em>Parameters</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Components#getOperationTraits <em>Operation Traits</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Components#getMessageTraits <em>Message Traits</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.Components#getQosMetrics <em>Qos Metrics</em>}</li>
  * </ul>
  *
  * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents()
@@ -88,5 +89,17 @@ public interface Components extends EObject
 	 * @generated
 	 */
   EList<NamedMessageTrait> getMessageTraits();
+
+  /**
+	 * Returns the value of the '<em><b>Qos Metrics</b></em>' containment reference list.
+	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric}.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Qos Metrics</em>' containment reference list.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_QosMetrics()
+	 * @model containment="true"
+	 * @generated
+	 */
+  EList<NamedQoSMetric> getQosMetrics();
 
 } // Components

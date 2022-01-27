@@ -3,17 +3,24 @@
  */
 package io.github.abelgomez.asyncapi.asyncApi.impl;
 
+import io.github.abelgomez.asyncapi.asyncApi.ANDCondition;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractMessage;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractMessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractOperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractParameter;
+import io.github.abelgomez.asyncapi.asyncApi.AbstractQoSMetric;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiFactory;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
+import io.github.abelgomez.asyncapi.asyncApi.AtomicBooleanCondition;
+import io.github.abelgomez.asyncapi.asyncApi.AtomicQoSMetric;
+import io.github.abelgomez.asyncapi.asyncApi.BooleanCondition;
 import io.github.abelgomez.asyncapi.asyncApi.Channel;
 import io.github.abelgomez.asyncapi.asyncApi.Components;
 import io.github.abelgomez.asyncapi.asyncApi.Contact;
+import io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric;
+import io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm;
 import io.github.abelgomez.asyncapi.asyncApi.Info;
 import io.github.abelgomez.asyncapi.asyncApi.JsonType;
 import io.github.abelgomez.asyncapi.asyncApi.License;
@@ -23,17 +30,28 @@ import io.github.abelgomez.asyncapi.asyncApi.NamedMessage;
 import io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedParameter;
+import io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric;
 import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
+import io.github.abelgomez.asyncapi.asyncApi.ORCondition;
 import io.github.abelgomez.asyncapi.asyncApi.Operation;
 import io.github.abelgomez.asyncapi.asyncApi.OperationTrait;
+import io.github.abelgomez.asyncapi.asyncApi.Operator;
 import io.github.abelgomez.asyncapi.asyncApi.Parameter;
 import io.github.abelgomez.asyncapi.asyncApi.Protocol;
+import io.github.abelgomez.asyncapi.asyncApi.QoSMetric;
+import io.github.abelgomez.asyncapi.asyncApi.QoSMetricType;
+import io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit;
+import io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition;
 import io.github.abelgomez.asyncapi.asyncApi.Reference;
 import io.github.abelgomez.asyncapi.asyncApi.Schema;
+import io.github.abelgomez.asyncapi.asyncApi.Scope;
 import io.github.abelgomez.asyncapi.asyncApi.Server;
+import io.github.abelgomez.asyncapi.asyncApi.Sla;
+import io.github.abelgomez.asyncapi.asyncApi.Slo;
 import io.github.abelgomez.asyncapi.asyncApi.Tag;
 import io.github.abelgomez.asyncapi.asyncApi.Variable;
 import io.github.abelgomez.asyncapi.asyncApi.VersionNumber;
+import io.github.abelgomez.asyncapi.asyncApi.WindowUnit;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -117,6 +135,20 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
 			case AsyncApiPackage.MESSAGE_TRAIT: return createMessageTrait();
 			case AsyncApiPackage.NAMED_MESSAGE_TRAIT: return createNamedMessageTrait();
 			case AsyncApiPackage.COMPONENTS: return createComponents();
+			case AsyncApiPackage.SLA: return createSla();
+			case AsyncApiPackage.GUARANTEE_TERM: return createGuaranteeTerm();
+			case AsyncApiPackage.SCOPE: return createScope();
+			case AsyncApiPackage.QUALIFYING_CONDITION: return createQualifyingCondition();
+			case AsyncApiPackage.SLO: return createSlo();
+			case AsyncApiPackage.ABSTRACT_QO_SMETRIC: return createAbstractQoSMetric();
+			case AsyncApiPackage.QO_SMETRIC: return createQoSMetric();
+			case AsyncApiPackage.DERIVED_QO_SMETRIC: return createDerivedQoSMetric();
+			case AsyncApiPackage.ATOMIC_QO_SMETRIC: return createAtomicQoSMetric();
+			case AsyncApiPackage.NAMED_QO_SMETRIC: return createNamedQoSMetric();
+			case AsyncApiPackage.BOOLEAN_CONDITION: return createBooleanCondition();
+			case AsyncApiPackage.AND_CONDITION: return createANDCondition();
+			case AsyncApiPackage.OR_CONDITION: return createORCondition();
+			case AsyncApiPackage.ATOMIC_BOOLEAN_CONDITION: return createAtomicBooleanCondition();
 			case AsyncApiPackage.REFERENCE: return createReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -132,6 +164,14 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
   public Object createFromString(EDataType eDataType, String initialValue)
   {
 		switch (eDataType.getClassifierID()) {
+			case AsyncApiPackage.WINDOW_UNIT:
+				return createWindowUnitFromString(eDataType, initialValue);
+			case AsyncApiPackage.QO_SMETRIC_UNIT:
+				return createQoSMetricUnitFromString(eDataType, initialValue);
+			case AsyncApiPackage.QO_SMETRIC_TYPE:
+				return createQoSMetricTypeFromString(eDataType, initialValue);
+			case AsyncApiPackage.OPERATOR:
+				return createOperatorFromString(eDataType, initialValue);
 			case AsyncApiPackage.JSON_TYPE:
 				return createJsonTypeFromString(eDataType, initialValue);
 			case AsyncApiPackage.BOOLEAN:
@@ -154,6 +194,14 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
   public String convertToString(EDataType eDataType, Object instanceValue)
   {
 		switch (eDataType.getClassifierID()) {
+			case AsyncApiPackage.WINDOW_UNIT:
+				return convertWindowUnitToString(eDataType, instanceValue);
+			case AsyncApiPackage.QO_SMETRIC_UNIT:
+				return convertQoSMetricUnitToString(eDataType, instanceValue);
+			case AsyncApiPackage.QO_SMETRIC_TYPE:
+				return convertQoSMetricTypeToString(eDataType, instanceValue);
+			case AsyncApiPackage.OPERATOR:
+				return convertOperatorToString(eDataType, instanceValue);
 			case AsyncApiPackage.JSON_TYPE:
 				return convertJsonTypeToString(eDataType, instanceValue);
 			case AsyncApiPackage.BOOLEAN:
@@ -473,10 +521,266 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
 	 * @generated
 	 */
   @Override
+  public Sla createSla()
+  {
+		SlaImpl sla = new SlaImpl();
+		return sla;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public GuaranteeTerm createGuaranteeTerm()
+  {
+		GuaranteeTermImpl guaranteeTerm = new GuaranteeTermImpl();
+		return guaranteeTerm;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public Scope createScope()
+  {
+		ScopeImpl scope = new ScopeImpl();
+		return scope;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public QualifyingCondition createQualifyingCondition()
+  {
+		QualifyingConditionImpl qualifyingCondition = new QualifyingConditionImpl();
+		return qualifyingCondition;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public Slo createSlo()
+  {
+		SloImpl slo = new SloImpl();
+		return slo;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public AbstractQoSMetric createAbstractQoSMetric()
+  {
+		AbstractQoSMetricImpl abstractQoSMetric = new AbstractQoSMetricImpl();
+		return abstractQoSMetric;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public QoSMetric createQoSMetric()
+  {
+		QoSMetricImpl qoSMetric = new QoSMetricImpl();
+		return qoSMetric;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public DerivedQoSMetric createDerivedQoSMetric()
+  {
+		DerivedQoSMetricImpl derivedQoSMetric = new DerivedQoSMetricImpl();
+		return derivedQoSMetric;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public AtomicQoSMetric createAtomicQoSMetric()
+  {
+		AtomicQoSMetricImpl atomicQoSMetric = new AtomicQoSMetricImpl();
+		return atomicQoSMetric;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public NamedQoSMetric createNamedQoSMetric()
+  {
+		NamedQoSMetricImpl namedQoSMetric = new NamedQoSMetricImpl();
+		return namedQoSMetric;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public BooleanCondition createBooleanCondition()
+  {
+		BooleanConditionImpl booleanCondition = new BooleanConditionImpl();
+		return booleanCondition;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public ANDCondition createANDCondition()
+  {
+		ANDConditionImpl andCondition = new ANDConditionImpl();
+		return andCondition;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public ORCondition createORCondition()
+  {
+		ORConditionImpl orCondition = new ORConditionImpl();
+		return orCondition;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
+  public AtomicBooleanCondition createAtomicBooleanCondition()
+  {
+		AtomicBooleanConditionImpl atomicBooleanCondition = new AtomicBooleanConditionImpl();
+		return atomicBooleanCondition;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  @Override
   public Reference createReference()
   {
 		ReferenceImpl reference = new ReferenceImpl();
 		return reference;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public WindowUnit createWindowUnitFromString(EDataType eDataType, String initialValue)
+  {
+		WindowUnit result = WindowUnit.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public String convertWindowUnitToString(EDataType eDataType, Object instanceValue)
+  {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public QoSMetricUnit createQoSMetricUnitFromString(EDataType eDataType, String initialValue)
+  {
+		QoSMetricUnit result = QoSMetricUnit.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public String convertQoSMetricUnitToString(EDataType eDataType, Object instanceValue)
+  {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public QoSMetricType createQoSMetricTypeFromString(EDataType eDataType, String initialValue)
+  {
+		QoSMetricType result = QoSMetricType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public String convertQoSMetricTypeToString(EDataType eDataType, Object instanceValue)
+  {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public Operator createOperatorFromString(EDataType eDataType, String initialValue)
+  {
+		Operator result = Operator.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public String convertOperatorToString(EDataType eDataType, Object instanceValue)
+  {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
   /**
