@@ -4,6 +4,7 @@ import io.github.abelgomez.asyncapi.asyncApi.Schema
 import java.util.Collections
 import java.util.TreeSet
 
+import static extension io.github.abelgomez.asyncapi.generator.TransformationContext.*
 import static extension io.github.abelgomez.asyncapi.generator.ModelExtensions.*
 import static extension java.text.MessageFormat.*
 
@@ -23,6 +24,7 @@ class SchemaClass extends SchemaAbstractType {
 		val result = new TreeSet		
 		result.add("com.google.gson.Gson")
 		result.add("com.google.gson.annotations.SerializedName")
+		result.add(schema.api.transform.jsonSerializableInterface.fqn)
 		referencedClasses.forEach[nc | result.addAll(nc.imports)]
 		return Collections.unmodifiableNavigableSet(result)
 	}
@@ -35,7 +37,7 @@ class SchemaClass extends SchemaAbstractType {
 		
 		«ENDIF»
 		«javadoc»
-		«classModifiers» class «name» {
+		«classModifiers» class «name» implements «schema.api.transform.jsonSerializableInterface.name» {
 			«nestedClasses.join(System.lineSeparator, System.lineSeparator, "", [c | c.serialize])»
 			«referencedClasses.join(System.lineSeparator, System.lineSeparator, System.lineSeparator, [rc | rc.asProperty.declare])»
 			/**
