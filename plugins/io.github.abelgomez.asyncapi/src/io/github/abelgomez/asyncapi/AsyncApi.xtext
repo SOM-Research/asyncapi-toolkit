@@ -12,6 +12,7 @@ AsyncAPI:
 		& ( '"channels"' ':' '{' channels+=Channel (',' channels+=Channel)* '}' ','? )?
 		& ( '"components"' ':' components=Components ','? )?
 //		& ( GenericJsonTuple ','? )*
+		& ( '"sla"' ':' sla=Sla ','? )?
 	) '}';
 		
 Info:
@@ -174,6 +175,7 @@ MessageTrait:
 NamedMessageTrait:
 	{NamedMessageTrait} name=AnyString ':' messageTrait=AbstractMessageTrait;
 
+
 Components:
 	{Components} '{' (
 		  ( '"schemas"' ':' '{' schemas+=NamedSchema (',' schemas+=NamedSchema)* '}' ','? )?
@@ -181,8 +183,84 @@ Components:
 		& ( '"parameters"' ':' '{' parameters+=NamedParameter (',' parameters+=NamedParameter)* '}' ','? )?
 		& ( '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait (',' operationTraits+=NamedOperationTrait)* '}' ','? )?
 		& ( '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait (',' messageTraits+=NamedMessageTrait)* '}' ','? )?
+		& ( '"qosMetrics"' ':' '{' qosMetrics+=NamedQoSMetric (',' qosMetrics+=NamedQoSMetric)* '}' ','? )?
+		
 //		& ( GenericJsonTupleButRef ','? )*
 	) '}';
+
+
+Sla:
+	{Sla} '{' (
+		  ( '"guaranteeTerm"' ':' guaranteeTerm+=GuaranteeTerm (',' guaranteeTerm+=GuaranteeTerm)* )
+	) '}';
+	
+GuaranteeTerm:
+	{GuaranteeTerm} '{' (
+		  ( '"scopes"' ':' '{' scopes+=Scope (',' scope+=Scope)* '}' ',' )
+		  ( '"qualifyingConditions"' ':' '{' qualifyingConditions+=QualifyingCondition (',' qualifyingCondition+=QualifyingCondition)* '}'',')?
+		  ( '"slos"' ':' '{' slos+=Slo (',' slo+=Slo)* '}')	  
+	) '}';
+
+Scope:
+	{Scope}(
+	   name=AnyString ':' '{' '"$ref"' ':' ( reference= [Channel|AnyString] |  reference= [Operation])'}' 
+	);
+ 
+QualifyingCondition:
+	{QualifyingCondition} name=AnyString ':' condition=BooleanCondition  
+;
+	
+Slo:
+	{Slo} name=AnyString ':' condition=BooleanCondition 
+;		
+	
+AbstractQoSMetric:
+	Reference | QoSMetric;
+	
+QoSMetric:
+	('{' 
+		(AtomicQoSMetric | DerivedQoSMetric) ','
+		(
+		  ( '"description"' ':' description=AnyString ','? )?
+		& ( '"unit"' ':' unit=QoSMetricUnit ','? )
+		& ( '"dataType"' ':' dataType=QoSMetricType ','? )			
+		)
+	'}');
+
+ DerivedQoSMetric:
+	{DerivedQoSMetric}(
+	      ('"metricType"' ':'  '"derived"' ',' )	
+		& ('"window"' ':'  window = AnyString ','? )
+		& ('"windowUnit"' ':'  windowUnit = WindowUnit ','? )
+		& ('"aggregationFunction"' ':'  aggregationFunction = AnyString ','? )
+		& ('"atomicMetric"' ':'  atomicMetric = AbstractQoSMetric  ','? )
+	)
+;
+
+AtomicQoSMetric:	
+	{AtomicQoSMetric} ('"metricType"' ':' '"atomic"' )   
+; 
+
+NamedQoSMetric:
+	{NamedQoSMetric} name=AnyString ':' qosMetric=AbstractQoSMetric;
+
+BooleanCondition:
+	ANDCondition | ORCondition | AtomicBooleanCondition;
+
+ANDCondition:
+  {ANDCondition} '{' '"AND"' ':'  '['  conditions+=BooleanCondition (',' conditions+=BooleanCondition)* ']' '}' ;
+  	
+ORCondition:
+  {ANDCondition} '{' '"OR"' ':' '['  conditions+=BooleanCondition (',' conditions+=BooleanCondition)* ']' '}';
+
+AtomicBooleanCondition:
+	{AtomicBooleanCondition}
+		'{'
+	    '"qosMetric"' ':'  qosMetric = AbstractQoSMetric   ','
+	    '"operator"' ':' operator = Operator ','
+	    '"value"' ':' value = AnyString   
+	   	'}'
+;
 
 Reference:
 	{Reference} '{' '"$ref"' ':' uri=AnyString '}';
@@ -202,6 +280,38 @@ Reference:
 //
 //GenericJsonTupleButRef: AnyStringButRef ':' GenericJsonExpression;
 
+
+enum WindowUnit:
+	seconds = '"seconds"'
+	| minutes = '"minutes"'
+	| hours = '"hours"'
+	| days = '"days"'
+	| messages = '"messages"'
+;
+
+enum QoSMetricUnit:
+	milliseconds = '"milliseconds"'
+	| seconds = '"seconds"'
+	| minutes = '"minutes"'
+	| hours = '"hours"'
+	| null = '"null"'
+;
+
+
+enum QoSMetricType:
+	real = '"real"'
+	| integer = '"integer"'
+	| boolean = '"boolean"'
+;
+
+enum Operator: 
+	greater = '">"'
+	| greater_equal = '">="'
+	| equal = '"="'
+	| less_equal = '"<="'
+	| less = '"<"'	
+;
+	
 
 enum JsonType:
 	string = '"string"'
