@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="io.github.abelgomez.asyncapi.feature">
+      <category name="AsyncAPI Toolkit"/>
+   </feature>
+   <feature id="io.github.abelgomez.asyncapi.ivyidedep.feature">
+      <category name="AsyncAPI Toolkit"/>
+   </feature>
+   <feature id="io.github.abelgomez.asyncapi.ui.feature">
+      <category name="AsyncAPI Toolkit"/>
+   </feature>
+   <category-def name="AsyncAPI Toolkit" label="AsyncAPI Toolkit">
+      <description>
+         Eclipse plug-ins to develop asynchronous APIs using AsyncAPI. AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It&apos;s protocol-agnostic, so you can use it for APIs that work over Kafka, MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to OpenAPI/Swagger so, if you&apos;re familiar with it, AsyncAPI should be easy for you.
+      </description>
+   </category-def>
+   <repository-reference location="https://www.apache.org/dist/ant/ivyde/updatesite/" enabled="true" />
+   <repository-reference location="https://download.eclipse.org/releases/2021-12/" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/eclipse/updates/4.22/" enabled="true" />
+</site>
