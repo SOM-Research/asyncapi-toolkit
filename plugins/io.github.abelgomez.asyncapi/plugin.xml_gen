@@ -2,7 +2,7 @@
 <?eclipse version="3.0"?>
 <plugin>
 	<extension point="org.eclipse.emf.ecore.generated_package">
-		<package 
+		<package
 			uri = "http://io.github.abelgomez/asyncapi/AsyncApi"
 			class = "io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage"
 			genModel = "model/generated/AsyncApi.genmodel" />
