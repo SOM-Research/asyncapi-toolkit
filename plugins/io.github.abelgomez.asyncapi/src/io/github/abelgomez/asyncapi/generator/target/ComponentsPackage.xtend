@@ -28,9 +28,9 @@ class ComponentsPackage extends AbstractPackage {
 	}
 	
 	def initialize() {
-		messageClasses.addAll(components.nestedMessages.map[nm | nm.transform])
-		schemasClasses.addAll(components.nestedSchemas.map[ns | ns.transform])
-		Assertions.assertTrue(!components.nestedParameters.exists[p | !p.schema.resolve.isBasicType], "Parameters of non-primitive types are not supported")
+		messageClasses.addAll(components?.nestedMessages.map[nm | nm.transform])
+		schemasClasses.addAll(components?.nestedSchemas.map[ns | ns.transform])
+		Assertions.assertTrue(!components?.nestedParameters.exists[p | !p.schema.resolve.isBasicType], "Parameters of non-primitive types are not supported")
 	}
 
 	override name() {

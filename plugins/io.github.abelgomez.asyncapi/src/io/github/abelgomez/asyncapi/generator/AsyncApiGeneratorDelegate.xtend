@@ -37,10 +37,13 @@ class AsyncApiGeneratorDelegate {
 
 	def generate() {
 		TransformationContext.initialize()
-		api.transform.saveContents(fsa, context)
-		api.channels.forEach[c | c.transform.saveContents(fsa, context)]
-		api.components.transform.saveContents(fsa, context)
-		TransformationContext.cleanup()
+		try {
+			api?.transform?.saveContents(fsa, context)
+			api?.channels?.forEach[c | c.transform?.saveContents(fsa, context)]
+			api?.components?.transform?.saveContents(fsa, context)
+		} finally {
+			TransformationContext.cleanup()
+		}
 	}
 
 }
