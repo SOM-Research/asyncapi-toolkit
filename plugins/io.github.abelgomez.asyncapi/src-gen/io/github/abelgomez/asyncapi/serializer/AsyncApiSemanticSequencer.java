@@ -345,8 +345,8 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 * Constraint:
 	 *     (
 	 *         (window=AnyString | windowUnit=WindowUnit | aggregationFunction=AnyString | atomicMetric=AbstractQoSMetric)* 
-	 *         unit=QoSMetricUnit? 
-	 *         ((description=AnyString | dataType=QoSMetricType)? unit=QoSMetricUnit?)*
+	 *         dataType=QoSMetricType? 
+	 *         ((description=AnyString | unit=QoSMetricUnit)? dataType=QoSMetricType?)*
 	 *     )
 	 */
 	protected void sequence_DerivedQoSMetric_QoSMetric(ISerializationContext context, DerivedQoSMetric semanticObject) {
@@ -680,8 +680,8 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *             items=AbstractSchema
 	 *         )? 
 	 *         (required+=AnyString required+=AnyString*)? 
-	 *         (properties+=NamedSchema properties+=NamedSchema*)? 
-	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)?
+	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)? 
+	 *         (properties+=NamedSchema properties+=NamedSchema*)?
 	 *     )+
 	 */
 	protected void sequence_Schema(ISerializationContext context, Schema semanticObject) {
