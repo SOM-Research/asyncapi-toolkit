@@ -19,5 +19,9 @@
 			<repository location="http://download.eclipse.org/eclipse/updates/4.22"/>
 			<unit id="org.eclipse.platform.sdk" version="4.22.0.I20211124-1800"/>
 		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20211213173813/repository"/>
+			<unit id="javax.xml.stream" version="1.0.1.v201004272200"/>
+		</location>
 	</locations>
 </target>
