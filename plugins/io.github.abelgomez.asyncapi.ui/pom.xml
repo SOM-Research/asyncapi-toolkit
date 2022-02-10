@@ -12,7 +12,7 @@
 	<artifactId>io.github.abelgomez.asyncapi.ui</artifactId>
 	<version>0.4.6-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
-	<name>[bundle] io.github.abelgomez.asyncapi.ui</name>
+	<name>[bundle] AsyncAPI Toolkit UI Plug-in</name>
 	<organization>
 		<name>SOM Research Lab</name>
 	</organization>

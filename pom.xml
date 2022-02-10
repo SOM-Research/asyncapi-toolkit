@@ -6,6 +6,8 @@
 	<properties>
 		<tycho.version>2.5.0</tycho.version>
 		<xtext.version>2.25.0</xtext.version>
+		<mwe2.version>2.12.1</mwe2.version>
+		<antlr.generator.version>[2.1.1, 3)</antlr.generator.version>
 		<maven.clean.version>3.1.0</maven.clean.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
