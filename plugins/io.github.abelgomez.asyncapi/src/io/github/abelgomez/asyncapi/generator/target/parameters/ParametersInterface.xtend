@@ -56,7 +56,7 @@ class ParametersInterface extends AbstractType implements IType {
 	}
 	
 	override pkg() {
-		api.transform.pkg + "." + "infra"
+		api.transform.fqn + "." + "infra"
 	}
 	
 	override fqn() {

@@ -143,7 +143,7 @@ class ServerInterface extends AbstractType implements IClass {
 	}
 	
 	override pkg() {
-		api.transform.pkg + "." + "infra"
+		api.transform.fqn + "." + "infra"
 	}
 	
 	override fqn() {

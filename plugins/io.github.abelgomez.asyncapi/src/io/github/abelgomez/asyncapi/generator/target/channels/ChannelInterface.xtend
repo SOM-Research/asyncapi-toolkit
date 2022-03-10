@@ -24,7 +24,7 @@ class ChannelInterface extends AbstractType implements IType {
 		}
 		
 		override pkg() {
-			return channelInterface.api.transform.pkg + "." + "infra"
+			return channelInterface.pkg + "." + "infra"
 		}
 		
 		override fqn() {
@@ -61,7 +61,7 @@ class ChannelInterface extends AbstractType implements IType {
 		}
 		
 		override pkg() {
-			return channelInterface.api.transform.pkg + "." + "infra"
+			return channelInterface.pkg + "." + "infra"
 		}
 		
 		override fqn() {
@@ -135,7 +135,7 @@ class ChannelInterface extends AbstractType implements IType {
 	}
 	
 	override pkg() {
-		return api.transform.pkg + "." + "infra"
+		return api.transform.fqn + "." + "infra"
 	}
 	
 	override fqn() {
