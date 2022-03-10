@@ -42,11 +42,11 @@
     </setupTask>
     <setupTask
         xsi:type="setup.p2:P2Task"
-        label="Eclipse Project Updates - 4.21">
+        label="Eclipse Project Updates - 4.19">
       <requirement
           name="org.eclipse.releng.tools.feature.group"/>
       <repository
-          url="http://download.eclipse.org/eclipse/updates/4.21/"/>
+          url="http://download.eclipse.org/eclipse/updates/4.19/"/>
     </setupTask>
     <setupTask
         xsi:type="git:GitCloneTask"
