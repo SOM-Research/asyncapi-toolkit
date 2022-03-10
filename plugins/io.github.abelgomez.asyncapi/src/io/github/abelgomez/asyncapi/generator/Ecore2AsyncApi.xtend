@@ -263,7 +263,7 @@ class Ecore2AsyncApi {
 	}
 	
 	static def String messageName(EClass eClass) {
-		return EcoreUtil.getAnnotation(eClass, EANNOTATION_MESSAGE, EANNOTATION_MESSAGE_NAME) ?: eClass.name
+		return EcoreUtil.getAnnotation(eClass, EANNOTATION_MESSAGE, EANNOTATION_MESSAGE_NAME) ?: eClass.name + "Message"
 	}
 
 	static def String schemaName(EClass eClass) {
