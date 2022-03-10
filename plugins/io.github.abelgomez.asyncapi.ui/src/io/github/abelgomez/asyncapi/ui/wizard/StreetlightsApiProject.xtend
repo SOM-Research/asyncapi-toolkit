@@ -213,13 +213,13 @@ final class StreetlightsApiProject extends AbstractAsyncApiProjectTemplate {
 				import java.util.UUID;
 				
 				import streetlights.api.components.schemas.LightMeasuredPayload;
+				import streetlights.api.infra.IChannel.IChannelPublishConfiguration;
+				import streetlights.api.infra.IServer;
 				import streetlights.api.servers.ProductionServer;
 				import streetlights.api.smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.MeasuredChannel;
 				import streetlights.api.smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.MeasuredChannel.MeasuredChannelParameters;
 				import streetlights.api.smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.ReceiveLightMeasurementOperation;
 				import streetlights.api.smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.SendLightMeasurementOperation;
-				import streetlights.infra.IChannel.IChannelPublishConfiguration;
-				import streetlights.infra.IServer;
 				
 				/**
 				 * Example program demonstrating how the generated code can be used. To execute
