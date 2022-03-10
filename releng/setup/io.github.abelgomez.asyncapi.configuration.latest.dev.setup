@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Configuration
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
+    xmlns:jdt="http://www.eclipse.org/oomph/setup/jdt/1.0"
+    xmlns:pde="http://www.eclipse.org/oomph/setup/pde/1.0"
+    xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/pde/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/PDE.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore"
+    label="AsyncAPI Toolkit Developers Installation Configuration">
+  <installation
+      name="io.github.abelgomez.asyncapi.installation.dev"
+      label="AsyncAPI Toolkit Developers Installation">
+    <setupTask
+        xsi:type="setup:VariableTask"
+        type="FOLDER"
+        name="git.location"
+        value="${installation.location/git}"
+        label="Cloning location">
+      <description>Location to store git projects</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="Eclipse 2021-09">
+      <requirement
+          name="org.eclipse.egit.feature.group"/>
+      <requirement
+          name="org.eclipse.m2e.feature.feature.group"/>
+      <requirement
+          name="org.eclipse.emf.sdk.feature.group"/>
+      <requirement
+          name="org.eclipse.oomph.setup.sdk.feature.group"/>
+      <requirement
+          name="org.eclipse.xtext.sdk.feature.group"/>
+      <requirement
+          name="org.eclipse.m2e.pde.feature.feature.group"/>
+      <repository
+          url="http://download.eclipse.org/releases/2021-09/"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="Eclipse Project Updates - 4.21">
+      <requirement
+          name="org.eclipse.releng.tools.feature.group"/>
+      <repository
+          url="http://download.eclipse.org/eclipse/updates/4.21/"/>
+    </setupTask>
+    <setupTask
+        xsi:type="git:GitCloneTask"
+        location="${git.location/asyncapi-toolkit}"
+        remoteURI="https://github.com/SOM-Research/asyncapi-toolkit.git"
+        checkoutBranch="master"/>
+    <setupTask
+        xsi:type="projects:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${git.location/asyncapi-toolkit}"
+          locateNestedProjects="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="pde:TargetPlatformTask"
+        name="AsyncAPI Toolkit  SDK Target Platform"/>
+    <setupTask
+        xsi:type="jdt:JRETask"
+        version="JavaSE-11"
+        location="${jre.location-11}"/>
+    <productVersion
+        href="index:/org.eclipse.setup#//@productCatalogs[name='org.eclipse.applications']/@products[name='eclipse.platform.sdk']/@versions[name='4.21']"/>
+    <description>AsyncAPI Toolkit Developers Installation.</description>
+  </installation>
+  <description>The AsyncAPI Toolkit Developers Configuration allows developing the AsyncAPI Toolkit.</description>
+</setup:Configuration>
