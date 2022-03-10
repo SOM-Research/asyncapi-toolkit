@@ -14,6 +14,5 @@
 	<modules>
 		<module>io.github.abelgomez.asyncapi.feature</module>
 		<module>io.github.abelgomez.asyncapi.ui.feature</module>
-		<module>io.github.abelgomez.asyncapi.ivyidedep.feature</module>
 	</modules>
 </project>
