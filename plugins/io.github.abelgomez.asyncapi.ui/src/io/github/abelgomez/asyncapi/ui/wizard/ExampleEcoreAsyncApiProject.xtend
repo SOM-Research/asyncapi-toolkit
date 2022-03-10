@@ -53,36 +53,41 @@ final class ExampleEcoreAsyncApiProject extends AbstractAsyncApiProjectTemplate 
 		super.createProjectFactory => [
 			addFile('''src/main/resources/«path»/Events.ecore''', ecoreFileContents())
 			addFile('''src/main/resources/«path»/Events.asyncapi''', Ecore2AsyncApi.generate(loadEPackage(new ByteArrayInputStream(ecoreFileContents().toString().bytes))))
-			addFile('''src/main/java/MainExample.java''', '''
+			addFile('''src/main/java/main/MainExample.java''', '''
 				package main;
 				
 				import java.text.MessageFormat;
 				import java.util.stream.Collectors;
 				
-				import schemas.Event;
-				import schemas.Sensor;
-				import schemas.Timestamp;
-				import sensors._group_.events.PublishOp;
-				import sensors._group_.events.PublishOp.PublishOpParams;
-				import sensors._group_.events.SubscribeOp;
+				import events.components.schemas.Event;
+				import events.components.schemas.Sensor;
+				import events.components.schemas.Timestamp;
+				import events.infra.IChannel.IChannelPublishConfiguration;
+				import events.infra.IServer;
+				import events.sensors._group_.events.EventsChannel.EventsChannelParameters;
+				import events.sensors._group_.events.PublishOperation;
+				import events.sensors._group_.events.SubscribeOperation;
+				import events.servers.ProductionServer;
 				
-				public class MainExample {
+				public class MainExample  {
 					public static void main(String[] args) throws Exception {
+						// Create a connection to the Production server
+						IServer production = ProductionServer.create();
 						try {
 							// Register a new subscription to the LightMeasured operation
-							SubscribeOp.subscribe((message, params) -> {
+							SubscribeOperation.subscribe(production, (message, params) -> {
 								// Inform about the message received
 								System.err.println(MessageFormat.format(
 										"Received message from sensor ''{0}'' in group ''{1}'':\n{2}",
-										message.getName(),
+										message.getPayload().getName(),
 										params.getGroup(),
-										message.getEvents().stream().map(e -> e.toJson(true)).collect(Collectors.toList())));
+										message.getPayload().getEvents().stream().map(e -> e.toJson(true)).collect(Collectors.toList())));
 							});
 					
 							// Prepare to publish several messages
 							for (int i = 0; i < 5; i++) {
-								// Create the payload via the payloadBuiler offered by the publish operation
-								Sensor payload = PublishOp.payloadBuilder()
+								// Create the payload via the its builder
+								Sensor payload = Sensor.newBuilder()
 										// Notice that the properties of the payload can be set via
 										// setter that know about the domain (e.g., name and type of
 										// the property
@@ -103,23 +108,23 @@ final class ExampleEcoreAsyncApiProject extends AbstractAsyncApiProjectTemplate 
 										).build();
 								
 								// Create the parameters
-								PublishOpParams params = PublishOpParams.create().withGroup("MyGroup");
-								
+								EventsChannelParameters params = PublishOperation.newParametersBuilder().withGroup("MyGroup").build();
+								IChannelPublishConfiguration configuration = PublishOperation.newConfiguration(params);
 								// Inform about the message to be sent
-								// Note that the "expand" method allows getting the TOPIC with the parameters set to 
+								// Note that the "retrieveTopicName" method allows getting the topic (channel) with the parameters set to 
 								// their actual values
 								System.out.println(MessageFormat.format(
 										"Publishing at topic ''{0}'' (''{1}''):\n{2}",
-										PublishOp.TOPIC_ID,
-										PublishOp.expand(params),
+										configuration.getChannelName(),
+										ProductionServer.retrieveTopicName(configuration),
 										payload.toJson(true)));
 								
 								// Publish the LightMeasured message
-								PublishOp.publish(payload, params);
+								PublishOperation.publish(production, configuration, payload);
 							}
 						} finally {
 							// Unsubscribe from the topic
-							SubscribeOp.unsubscribe();
+							SubscribeOperation.unsubscribe(production);
 						}
 					}
 				}
@@ -140,8 +145,8 @@ final class ExampleEcoreAsyncApiProject extends AbstractAsyncApiProjectTemplate 
 			    <eAnnotations source="http://io.github.abelgomez/asyncapi/eAnnotations/Channel">
 			      <details key="name" value="sensors/{group}/events"/>
 			      <details key="description" value="Description"/>
-			      <details key="publish" value="publishOp"/>
-			      <details key="subscribe" value="subscribeOp"/>
+			      <details key="publish" value="publish"/>
+			      <details key="subscribe" value="subscribe"/>
 			      <details key="parameters" value="group"/>
 			    </eAnnotations>
 			    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
