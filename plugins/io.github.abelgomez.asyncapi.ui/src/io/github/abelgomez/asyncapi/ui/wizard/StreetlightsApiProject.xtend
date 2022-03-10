@@ -1,50 +1,31 @@
 package io.github.abelgomez.asyncapi.ui.wizard
 
-import org.eclipse.core.runtime.Path
-import org.eclipse.core.runtime.Status
-import org.eclipse.jdt.core.JavaCore
-import org.eclipse.xtext.ui.XtextProjectHelper
 import org.eclipse.xtext.ui.util.PluginProjectFactory
-import org.eclipse.xtext.ui.wizard.template.IProjectGenerator
-import org.eclipse.xtext.ui.wizard.template.ProjectTemplate
 
-import static org.eclipse.core.runtime.IStatus.*
+final class StreetlightsApiProject extends AbstractAsyncApiProjectTemplate {
+	def StreetlightsApiProject() {
+		path.value = "streetlights"
+	}
 
-@ProjectTemplate(label="Streetlights API Example Project", icon="asyncapi_project_template.png", description="<p><b>Streetlights API</b></p>
-<p>This is an example for AsyncApi v2.0.0. You can set the package the file is created in.</p>")
-final class StreetlightsAPIProject {
-	val advanced = check("Advanced:", false)
-	val advancedGroup = group("Properties")
-	val path = text("Package:", "streetlights", "The package path to place the files in", advancedGroup)
-	val embeddedServer = check("Use Moquette embedded broker (see additional info)", false, "Generate code and dependencies required to deploy and use Moquette as a embedded test server.\n", advancedGroup)
+	override getLabel() {
+		"Streetlights API Example Project"
+	}
+
+	override getDescription() {
+		"<p><b>Streetlights API</b></p><p>This is an example for AsyncApi v2.0.0. You can set the package the file is created in.</p>"
+	}
 
 	override protected updateVariables() {
-		path.enabled = advanced.value
-		embeddedServer.enabled = advanced.enabled
-		embeddedServer.enabled = advanced.enabled
+		super.updateVariables
 		if (!advanced.value) {
 			path.value = "streetlights"
-			embeddedServer.value = false
 		}
 	}
 
-	override protected validate() {
-		if (path.value.matches('[a-z][a-z0-9_]*(/[a-z][a-z0-9_]*)*'))
-			null
-		else
-			new Status(ERROR, "Wizard", "'" + path + "' is not a valid package name")
-	}
 
-	override generateProjects(IProjectGenerator generator) {
-		generator.generate(new PluginProjectFactory => [
-			projectName = projectInfo.projectName
-			location = projectInfo.locationPath
-			projectDefaultCharset = "UTF-8"
-			projectNatures += #[JavaCore.NATURE_ID, "org.eclipse.pde.PluginNature", XtextProjectHelper.NATURE_ID]
-			builderIds += #[JavaCore.BUILDER_ID, XtextProjectHelper.BUILDER_ID]
-			folders += "src"
-			folders += "src-gen"
-			addFile('''src/«path»/StreetlightsAPI.asyncapi''', '''
+	override createProjectFactory() {
+		super.createProjectFactory => [
+			addFile('''src/main/resources/«path»/StreetlightsAPI.asyncapi''', '''
 				{
 				  "asyncapi": "2.0.0",
 				  "info": {
@@ -224,16 +205,13 @@ final class StreetlightsAPIProject {
 				  }
 				}
 			''')
-			addFile('''src/main/MainExample.java''', '''
+			addFile('''src/main/java/main/MainExample.java''', '''
 				package main;
 				
 				import java.text.MessageFormat;
 				import java.time.LocalDateTime;
 				import java.util.UUID;
 				
-				«IF embeddedServer.value»
-				import io.moquette.broker.Server;
-				«ENDIF»
 				import streetlights.api.components.schemas.LightMeasuredPayload;
 				import streetlights.api.servers.ProductionServer;
 				import streetlights.api.smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.MeasuredChannel;
@@ -243,20 +221,20 @@ final class StreetlightsAPIProject {
 				import streetlights.infra.IChannel.IChannelPublishConfiguration;
 				import streetlights.infra.IServer;
 				
+				/**
+				 * Example program demonstrating how the generated code can be used. To execute
+				 * this example program using an embedded Moquette MQTT server, see the
+				 * <code>src/test/java</code> directory and execute the {@link TestMainExample}
+				 * Junit class.
+				 * 
+				 * @author agomez
+				 *
+				 */
 				public class MainExample {
 					public static void main(String[] args) throws Exception {
-						«IF embeddedServer.value»
-						// Create an embedded Moquette server
-						Server server = new Server();
-						«ENDIF»
 						// Create a connection to the Production server
 						IServer production = ProductionServer.create();
 						try {
-							«IF embeddedServer.value»
-							// Start the embedded Moquette server
-							server.startServer();
-							
-							«ENDIF»
 							// Register a new subscription to the LightMeasured operation
 							ReceiveLightMeasurementOperation.subscribe(production, 
 									(message, params) -> {
@@ -300,12 +278,45 @@ final class StreetlightsAPIProject {
 						} finally {
 							// Unsubscribe from the topic
 							ReceiveLightMeasurementOperation.unsubscribe(production);
-							«IF embeddedServer.value»
-							
-							// Stop the Moquette server
-							server.stopServer();
-							«ENDIF»
 						}
+					}
+				}
+			''')
+			addFile('''src/test/java/main/TestMainExample.java''', '''
+				package main;
+				
+				import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+				
+				import java.io.IOException;
+				
+				import org.junit.jupiter.api.BeforeEach;
+				import org.junit.jupiter.api.AfterEach;
+				import org.junit.jupiter.api.Test;
+				
+				import io.moquette.broker.Server;
+				
+				class TestMainExample {
+					
+					Server server;
+					
+					@BeforeEach
+					void setup() throws IOException {
+						// Create an embedded Moquette server and start it
+						server = new Server();
+						server.startServer();
+					}
+				
+					@Test
+					void test() {
+						// Assert that the main program runs without throwing exceptions
+						assertDoesNotThrow(() -> MainExample.main(new String[] {}));
+					}
+					
+					@AfterEach
+					void tearDown() {
+						// Stop the embedded Moquette Server
+						server.stopServer();
+						server = null;
 					}
 				}
 			''')
@@ -314,19 +325,15 @@ final class StreetlightsAPIProject {
 				host 0.0.0.0
 				allow_anonymous true
 			''')
-			addFile('''ivy.xml''', '''
-				<ivy-module version="2.0">
-				    <info organisation="com.example" module="mymodule"/>
-				    <dependencies>
-				        <dependency org="com.google.code.gson" name="gson" rev="2.8.5"/>
-				        <dependency org="org.eclipse.paho" name="org.eclipse.paho.client.mqttv3" rev="1.2.1"/>
-				        «IF embeddedServer.value»
-				        <dependency org="io.moquette" name="moquette-broker" rev="0.15"/>
-				        «ENDIF»
-				    </dependencies>
-				</ivy-module>
-			''')
-			addClasspathEntries = JavaCore.newContainerEntry(new Path("org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=" + projectInfo.projectName + "&ivyXmlPath=ivy.xml&confs=*&acceptedTypes=jar%2Cbundle%2Cejb%2Cmaven-plugin%2Ceclipse-plugin&alphaOrder=false&resolveInWorkspace=false&transitiveResolve=true&readOSGiMetadata=false&retrievedClasspath=true&retrievedClasspathPattern=lib%2F%5Btype%5Ds%2F%5Bartifact%5D-%5Brevision%5D.%5Bext%5D&retrievedClasspathSync=true&retrievedClasspathTypes=*"))
-		])
+		]
 	}
+	
+	override pomDependencies() '''
+		<dependency>
+		      <groupId>io.moquette</groupId>
+		      <artifactId>moquette-broker</artifactId>
+		      <version>0.15</version>
+		</dependency>
+		«super.pomDependencies»
+	'''
 }

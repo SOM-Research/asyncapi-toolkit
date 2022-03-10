@@ -10,6 +10,7 @@ import io.github.abelgomez.asyncapi.asyncApi.Server
 import io.github.abelgomez.asyncapi.generator.infra.ITargetElement
 import io.github.abelgomez.asyncapi.generator.target.ChannelPackage
 import io.github.abelgomez.asyncapi.generator.target.ComponentsPackage
+import io.github.abelgomez.asyncapi.generator.target.PomFile
 import io.github.abelgomez.asyncapi.generator.target.RootPackage
 import io.github.abelgomez.asyncapi.generator.target.channels.OperationClass
 import io.github.abelgomez.asyncapi.generator.target.messages.MessageClass
@@ -22,25 +23,29 @@ import org.eclipse.xtext.generator.IGeneratorContext
 
 import static extension io.github.abelgomez.asyncapi.generator.TransformationContext.*
 
+
 class AsyncApiGeneratorDelegate {
 
+	public static val SRC_FOLDER = "src/main/java" 
+
 	val IFileSystemAccess2 fsa
-	val IGeneratorContext context
+	val IGeneratorContext generatorContext
 
 	val AsyncAPI api
 
 	new(IFileSystemAccess2 fsa, IGeneratorContext context, AsyncAPI api) {
 		this.fsa = fsa
-		this.context = context
+		this.generatorContext = context
 		this.api = api
 	}
 
 	def generate() {
 		TransformationContext.initialize()
 		try {
-			api?.transform?.saveContents(fsa, context)
-			api?.channels?.forEach[c | c.transform?.saveContents(fsa, context)]
-			api?.components?.transform?.saveContents(fsa, context)
+			api?.transform?.saveContents(fsa, generatorContext)
+			api?.channels?.forEach[c | c.transform?.saveContents(fsa, generatorContext)]
+			api?.components?.transform?.saveContents(fsa, generatorContext)
+			PomFile.createFrom(api).generate(fsa)
 		} finally {
 			TransformationContext.cleanup()
 		}

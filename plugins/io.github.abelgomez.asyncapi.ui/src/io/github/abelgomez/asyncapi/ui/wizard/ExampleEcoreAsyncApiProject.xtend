@@ -39,36 +39,21 @@ import java.util.stream.Collectors
 import java.io.InputStream
 import java.io.ByteArrayInputStream
 
-@ProjectTemplate(label="Example AsyncAPI Project from Ecore", icon="asyncapi_project_template.png", description="<p><b>Example Ecore project</b></p>
-<p>Creates a new AsyncAPI v2.0.0 project from using an example Ecore file. You can set the package the file is created in.</p>")
-final class ExampleEcoreAsyncAPIProject {
-	val advanced = check("Advanced:", false)
-	val advancedGroup = group("Properties")
-	val path = text("Package:", "example", "The package path to place the files in", advancedGroup)
-
-	override getVariables() {
-		super.getVariables()
+final class ExampleEcoreAsyncApiProject extends AbstractAsyncApiProjectTemplate {
+	
+	override getLabel() {
+		"Example AsyncAPI Project from Ecore"
 	}
 
-	override protected updateVariables() {
-		path.enabled = advanced.value
-		if (!advanced.value) {
-			path.value = "example"
-		}
+	override getDescription() {
+		"<p><b>Example Ecore project</b></p><p>Creates a new AsyncAPI v2.0.0 project from using an example Ecore file. You can set the package the file is created in.</p>"
 	}
 
-	override generateProjects(IProjectGenerator generator) {
-		generator.generate(new PluginProjectFactory => [
-			projectName = projectInfo.projectName
-			location = projectInfo.locationPath
-			projectDefaultCharset = "UTF-8"
-			projectNatures += #[JavaCore.NATURE_ID, "org.eclipse.pde.PluginNature", XtextProjectHelper.NATURE_ID]
-			builderIds += #[JavaCore.BUILDER_ID, XtextProjectHelper.BUILDER_ID]
-			folders += "src"
-			folders += "src-gen"
-			addFile('''src/«path»/Events.ecore''', ecoreFileContents())
-			addFile('''src/«path»/Events.asyncapi''', Ecore2AsyncApi.generate(loadEPackage(new ByteArrayInputStream(ecoreFileContents().toString().bytes))))
-			addFile('''src/main/MainExample.java''', '''
+	override createProjectFactory() {
+		super.createProjectFactory => [
+			addFile('''src/main/resources/«path»/Events.ecore''', ecoreFileContents())
+			addFile('''src/main/resources/«path»/Events.asyncapi''', Ecore2AsyncApi.generate(loadEPackage(new ByteArrayInputStream(ecoreFileContents().toString().bytes))))
+			addFile('''src/main/java/MainExample.java''', '''
 				package main;
 				
 				import java.text.MessageFormat;
@@ -139,19 +124,7 @@ final class ExampleEcoreAsyncAPIProject {
 					}
 				}
 			''')
-			addFile('''ivy.xml''', '''
-				<ivy-module version="2.0">
-				    <info organisation="com.example" module="mymodule"/>
-				    <dependencies>
-				        <dependency org="com.google.code.gson" name="gson" rev="2.8.5"/>
-				        <dependency org="org.eclipse.paho" name="org.eclipse.paho.client.mqttv3" rev="1.2.1"/>
-				    </dependencies>
-				</ivy-module>
-			''')
-			addClasspathEntries = JavaCore.newContainerEntry(
-				new Path("org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=" + projectInfo.projectName +
-					"&ivyXmlPath=ivy.xml&confs=*&acceptedTypes=jar%2Cbundle%2Cejb%2Cmaven-plugin%2Ceclipse-plugin&alphaOrder=false&resolveInWorkspace=false&transitiveResolve=true&readOSGiMetadata=false&retrievedClasspath=false"))
-		])
+		]
 	}
 	
 	def ecoreFileContents() '''

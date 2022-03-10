@@ -3,6 +3,11 @@
  */
 package io.github.abelgomez.asyncapi
 
+import org.eclipse.xtext.generator.IFileSystemAccess
+import org.eclipse.xtext.generator.IOutputConfigurationProvider
+import org.eclipse.xtext.generator.OutputConfiguration
+import org.eclipse.xtext.generator.OutputConfigurationProvider
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
@@ -10,5 +15,23 @@ class AsyncApiRuntimeModule extends AbstractAsyncApiRuntimeModule {
 	
 	override bindIValueConverterService() {
 		CustomStringConverters
+	}
+	
+	def Class<? extends IOutputConfigurationProvider> bindIOutputConfigurationProvider() {
+		MyOutputConfigurationProvider
+	}
+}
+
+class MyOutputConfigurationProvider extends OutputConfigurationProvider {
+	override getOutputConfigurations() {
+		val defaultOutput = new OutputConfiguration(IFileSystemAccess.DEFAULT_OUTPUT);
+		defaultOutput.setDescription("Output Folder");
+		defaultOutput.setOutputDirectory("generated");
+		defaultOutput.setOverrideExistingResources(true);
+		defaultOutput.setCreateOutputDirectory(true);
+		defaultOutput.setCleanUpDerivedResources(true);
+		defaultOutput.setSetDerivedProperty(true);
+		defaultOutput.setKeepLocalHistory(true);
+		return newHashSet(defaultOutput);
 	}
 }

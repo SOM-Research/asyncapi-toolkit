@@ -1,6 +1,9 @@
 package io.github.abelgomez.asyncapi.ui.wizard
 
 import io.github.abelgomez.asyncapi.generator.Ecore2AsyncApi
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.util.stream.Collectors
 import org.eclipse.core.resources.IContainer
 import org.eclipse.core.resources.IFile
 import org.eclipse.core.resources.IResource
@@ -8,7 +11,6 @@ import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.IStatus
 import org.eclipse.core.runtime.Path
 import org.eclipse.core.runtime.Status
-import org.eclipse.jdt.core.JavaCore
 import org.eclipse.jface.viewers.Viewer
 import org.eclipse.jface.viewers.ViewerFilter
 import org.eclipse.swt.SWT
@@ -21,41 +23,29 @@ import org.eclipse.ui.dialogs.ElementTreeSelectionDialog
 import org.eclipse.ui.dialogs.ISelectionStatusValidator
 import org.eclipse.ui.model.BaseWorkbenchContentProvider
 import org.eclipse.ui.model.WorkbenchLabelProvider
-import org.eclipse.xtext.ui.XtextProjectHelper
-import org.eclipse.xtext.ui.util.PluginProjectFactory
 import org.eclipse.xtext.ui.wizard.template.ContainerTemplateVariable
 import org.eclipse.xtext.ui.wizard.template.GroupTemplateVariable
-import org.eclipse.xtext.ui.wizard.template.IProjectGenerator
 import org.eclipse.xtext.ui.wizard.template.ParameterComposite
-import org.eclipse.xtext.ui.wizard.template.ProjectTemplate
 import org.eclipse.xtext.ui.wizard.template.StringTemplateVariable
 
 import static io.github.abelgomez.asyncapi.generator.Ecore2AsyncApi.*
 import static org.eclipse.core.runtime.IStatus.*
-import org.eclipse.core.runtime.NullProgressMonitor
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.util.stream.Collectors
 
-@ProjectTemplate(label="AsyncAPI Project from Ecore", icon="asyncapi_project_template.png", description="<p><b>Ecore project</b></p>
-<p>Creates a new AsyncAPI v2.0.0 project from an AsyncAPI-annotated Ecore file. You can set the package the file is created in.</p>")
-final class EcoreAsyncAPIProject {
+final class EcoreAsyncApiProject extends AbstractAsyncApiProjectTemplate  {
 	val inputGroup = group3("Input file")
 	val file = file("Ecore:", "", "Input Ecore file", inputGroup)
-	val advanced = check("Advanced:", false)
-	val advancedGroup = group("Properties")
-	val path = text("Package:", "example", "The package path to place the files in", advancedGroup)
 
-	override getVariables() {
-		super.getVariables()
+	override getLabel() {
+		"AsyncAPI Project from Ecore"
+	}
+	
+	override getDescription() {
+		"<p><b>Ecore project</b></p><p>Creates a new AsyncAPI v2.0.0 project from an AsyncAPI-annotated Ecore file. You can set the package the file is created in.</p>"
 	}
 
 	override protected updateVariables() {
+		super.updateVariables
 		file.enabled = false
-		path.enabled = advanced.value
-		if (!advanced.value) {
-			path.value = "example"
-		}
 	}
 
 	override validate() {
@@ -65,30 +55,21 @@ final class EcoreAsyncAPIProject {
 			val diagnose = diagnoseEcoreFile(new Path(file.value))
 			if (diagnose !== null) {
 				return new Status(ERROR, "Wizard", "'" + file + "' is not a valid Ecore file: " + diagnose)
-			} else if (!path.value.matches('[a-z][a-z0-9_]*(/[a-z][a-z0-9_]*)*')) {
-				return new Status(ERROR, "Wizard", "'" + path + "' is not a valid package name")
 			} else {
-				return null
+				return super.validate
 			}
 		}
 	}
 
-	override generateProjects(IProjectGenerator generator) {
+	override createProjectFactory() {
 		val ePackage = loadEPackage(new Path(file.value))
-		generator.generate(new PluginProjectFactory => [
-			projectName = projectInfo.projectName
-			location = projectInfo.locationPath
-			projectDefaultCharset = "UTF-8"
-			projectNatures += #[JavaCore.NATURE_ID, "org.eclipse.pde.PluginNature", XtextProjectHelper.NATURE_ID]
-			builderIds += #[JavaCore.BUILDER_ID, XtextProjectHelper.BUILDER_ID]
-			folders += "src"
-			folders += "src-gen"
-			addFile('''src/«path»/«new Path(file.value).lastSegment»''',
+		super.createProjectFactory => [
+			addFile('''src/main/resources/«path»/«new Path(file.value).lastSegment»''',
 				new BufferedReader(
 					new InputStreamReader(ResourcesPlugin.workspace.root.getFile(new Path(file.value)).contents)).lines.
 					collect(Collectors.joining(System.lineSeparator)))
-			addFile('''src/«path»/«ePackage.name».asyncapi''', Ecore2AsyncApi.generate(ePackage))
-			addFile('''src/main/Main.java''', '''
+			addFile('''src/main/resources/«path»/«ePackage.name».asyncapi''', Ecore2AsyncApi.generate(ePackage))
+			addFile('''src/main/java/main/Main.java''', '''
 				package main;
 				
 				public class Main {
@@ -97,19 +78,7 @@ final class EcoreAsyncAPIProject {
 					}
 				}
 			''')
-			addFile('''ivy.xml''', '''
-				<ivy-module version="2.0">
-				    <info organisation="com.example" module="mymodule"/>
-				    <dependencies>
-				        <dependency org="com.google.code.gson" name="gson" rev="2.8.5"/>
-				        <dependency org="org.eclipse.paho" name="org.eclipse.paho.client.mqttv3" rev="1.2.1"/>
-				    </dependencies>
-				</ivy-module>
-			''')
-			addClasspathEntries = JavaCore.newContainerEntry(
-				new Path("org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=" + projectInfo.projectName +
-					"&ivyXmlPath=ivy.xml&confs=*&acceptedTypes=jar%2Cbundle%2Cejb%2Cmaven-plugin%2Ceclipse-plugin&alphaOrder=false&resolveInWorkspace=false&transitiveResolve=true&readOSGiMetadata=false&retrievedClasspath=false"))
-		])
+		]
 	}
 
 	protected def Group3TemplateVariable group3(String name) {

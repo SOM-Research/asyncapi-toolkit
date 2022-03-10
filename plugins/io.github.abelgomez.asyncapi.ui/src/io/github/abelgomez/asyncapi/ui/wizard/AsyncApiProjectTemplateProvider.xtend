@@ -12,7 +12,7 @@ import org.eclipse.xtext.ui.wizard.template.IProjectTemplateProvider
  */
 class AsyncApiProjectTemplateProvider implements IProjectTemplateProvider {
 	override getProjectTemplates() {
-		#[new StreetlightsAPIProject, new EmptyAsyncAPIProject, new ExampleEcoreAsyncAPIProject, new EcoreAsyncAPIProject]
+		#[new EmptyAsyncApiProject, new StreetlightsApiProject, new EcoreAsyncApiProject, new ExampleEcoreAsyncApiProject ]
 	}
 }
 
