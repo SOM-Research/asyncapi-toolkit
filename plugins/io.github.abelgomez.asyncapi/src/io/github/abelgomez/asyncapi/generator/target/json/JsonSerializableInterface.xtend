@@ -35,8 +35,8 @@ class JsonSerializableInterface extends AbstractType implements IType {
 	
 	override imports() {
 		val result = new TreeSet		
-		result.add("com.google.gson.Gson")
-		result.add("com.google.gson.GsonBuilder")
+		result += "com.google.gson.Gson"
+		result += "com.google.gson.GsonBuilder"
 		return Collections.unmodifiableNavigableSet(result)
 	}
 	

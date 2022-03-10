@@ -146,13 +146,13 @@ class MessageClass extends AbstractType implements IClass, IBuildableType {
 
 	override imports() {
 		val result = new TreeSet		
-		result.add("com.google.gson.Gson")
-		result.add("com.google.gson.annotations.SerializedName")
-		result.add(message.api.transform.messageInterface.fqn)
+		result += "com.google.gson.Gson"
+		result += "com.google.gson.annotations.SerializedName"
+		result += message.api.transform.messageInterface.fqn
 		if (message.headers.isRef)
-			result.add(message.headers.resolve.transform.fqn)
+			result += message.headers.resolve.transform.fqn
 		if (message.payload.isRef)
-			result.add(message.payload.resolve.transform.fqn)
+			result += message.payload.resolve.transform.fqn
 		return Collections.unmodifiableNavigableSet(result)
 	}
 

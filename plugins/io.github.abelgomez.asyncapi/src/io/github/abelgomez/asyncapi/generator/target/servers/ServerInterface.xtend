@@ -33,9 +33,9 @@ class ServerInterface extends AbstractType implements IClass {
 		
 		override imports() {
 			val result = new TreeSet
-			result.add("java.util.Map")
-			result.add("java.util.HashMap")
-			result.add("java.util.Collections")
+			result += "java.util.Map"
+			result += "java.util.HashMap"
+			result += "java.util.Collections"
 			return Collections.unmodifiableNavigableSet(result)
 		}
 		
@@ -160,10 +160,10 @@ class ServerInterface extends AbstractType implements IClass {
 	
 	override imports() {
 		val result = new TreeSet		
-		result.add("java.util.function.Consumer")
-		result.add(channelPublishConfigurationInterface.fqn)
-		result.add(channelSubscribeConfigurationInterface.fqn)
-		result.addAll(receivedClass.imports)
+		result += "java.util.function.Consumer"
+		result += channelPublishConfigurationInterface.fqn
+		result += channelSubscribeConfigurationInterface.fqn
+		result += receivedClass.imports
 		return Collections.unmodifiableNavigableSet(result)
 	}
 	

@@ -52,13 +52,13 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 	
 	override imports() {
 		val result = new TreeSet
-		result.add("java.util.Collections")
-		result.add(channelInterface.fqn)
-		result.add(parametersInterface.parameterLiteralInterface.fqn)
+		result += "java.util.Collections"
+		result += channelInterface.fqn
+		result += parametersInterface.parameterLiteralInterface.fqn
 		if (parametersClass !== null) {
-			result.add(parametersInterface.fqn)
-			result.add(parametersClass.asBuilder.fqn)
-			result.addAll(parametersClass.imports)
+			result += parametersInterface.fqn
+			result += parametersClass.asBuilder.fqn
+			result += parametersClass.imports
 		}
 		return Collections.unmodifiableNavigableSet(result)
 	}

@@ -112,7 +112,7 @@ class MessageInterface extends AbstractType implements IType {
 	
 	override imports() {
 		val result = new TreeSet		
-		result.add(api.transform.jsonSerializableInterface.fqn)
+		result += api.transform.jsonSerializableInterface.fqn
 		return Collections.unmodifiableNavigableSet(result)
 	}
 	

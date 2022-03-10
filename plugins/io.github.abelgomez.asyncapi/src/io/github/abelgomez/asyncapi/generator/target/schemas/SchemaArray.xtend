@@ -27,10 +27,10 @@ class SchemaArray extends SchemaAbstractType {
 
 	override imports() {
 		val NavigableSet<String> result = new TreeSet
-		result.add("java.util.List")
-		result.add("java.util.ArrayList")
-		result.add("java.util.Collections")
-		result.add("com.google.gson.annotations.SerializedName")
+		result += "java.util.List"
+		result += "java.util.ArrayList"
+		result += "java.util.Collections"
+		result += "com.google.gson.annotations.SerializedName"
 		return result
 	}
 

@@ -54,26 +54,26 @@ class MqttServerClass extends ServerClass implements IClass {
 		
 	override imports() {
 		val result = new TreeSet		
-		result.add("java.util.List")
-		result.add("java.util.Arrays")
-		result.add("java.util.Map")
-		result.add("java.util.Map.Entry")
-		result.add("java.util.HashMap")
-		result.add("java.util.function.Consumer")
-		result.add("java.util.stream.Collectors")
-		result.add("java.util.regex.Pattern")
-		result.add("java.util.regex.Matcher")
-		result.add("org.eclipse.paho.client.mqttv3.MqttClient")
-		result.add("org.eclipse.paho.client.mqttv3.MqttConnectOptions")
-		result.add("org.eclipse.paho.client.mqttv3.MqttException")
-		result.add("org.eclipse.paho.client.mqttv3.MqttMessage")
-		result.add("org.eclipse.paho.client.mqttv3.MqttCallback")
-		result.add("org.eclipse.paho.client.mqttv3.IMqttDeliveryToken")
-		result.add("org.eclipse.paho.client.mqttv3.persist.MemoryPersistence")
-		result.add(server.api.transform.serverInterface.fqn)
-		result.add(server.api.transform.channelInterface.channelConfigurationInterface.fqn)
-		result.add(server.api.transform.channelInterface.channelPublishConfigurationInterface.fqn)
-		result.add(server.api.transform.channelInterface.channelSubscribeConfigurationInterface.fqn)
+		result += "java.util.List"
+		result += "java.util.Arrays"
+		result += "java.util.Map"
+		result += "java.util.Map.Entry"
+		result += "java.util.HashMap"
+		result += "java.util.function.Consumer"
+		result += "java.util.stream.Collectors"
+		result += "java.util.regex.Pattern"
+		result += "java.util.regex.Matcher"
+		result += "org.eclipse.paho.client.mqttv3.MqttClient"
+		result += "org.eclipse.paho.client.mqttv3.MqttConnectOptions"
+		result += "org.eclipse.paho.client.mqttv3.MqttException"
+		result += "org.eclipse.paho.client.mqttv3.MqttMessage"
+		result += "org.eclipse.paho.client.mqttv3.MqttCallback"
+		result += "org.eclipse.paho.client.mqttv3.IMqttDeliveryToken"
+		result += "org.eclipse.paho.client.mqttv3.persist.MemoryPersistence"
+		result += server.api.transform.serverInterface.fqn
+		result += server.api.transform.channelInterface.channelConfigurationInterface.fqn
+		result += server.api.transform.channelInterface.channelPublishConfigurationInterface.fqn
+		result += server.api.transform.channelInterface.channelSubscribeConfigurationInterface.fqn
 		return Collections.unmodifiableNavigableSet(result)
 	}
 	

@@ -98,16 +98,16 @@ abstract class OperationClass extends AbstractType implements IClass, ISerializa
 
 	override imports() {
 		val result = new TreeSet		
-		result.add(serverInterface.fqn)
-		result.add(serverExceptionClass.fqn)
-		result.add(message.resolve.transform.asBuilder.fqn)
+		result += serverInterface.fqn
+		result += serverExceptionClass.fqn
+		result += message.resolve.transform.asBuilder.fqn
 		if (nestedMessage !== null) {
-			result.addAll(nestedMessage.imports)
+			result += nestedMessage.imports
 		} else if (operation.message.isRef) {
-			result.add(operation.message.resolve.transform.fqn)
+			result += operation.message.resolve.transform.fqn
 		}
 		if (parametersClass !== null) {
-			result.add(parametersClass.fqn)
+			result += parametersClass.fqn
 		}
 		return Collections.unmodifiableNavigableSet(result)
 	}
@@ -157,14 +157,14 @@ class PublishOperationClass extends OperationClass {
 	
 	override imports() {
 		val result = new TreeSet		
-		result.addAll(super.imports)
-		result.add(channelPublishConfigurationInterface.fqn)
-		result.add(messageInterface.fqn)
+		result += super.imports
+		result += channelPublishConfigurationInterface.fqn
+		result += messageInterface.fqn
 		if (parametersClass !== null) {
-			result.add(parametersClass.asBuilder.fqn)
+			result += parametersClass.asBuilder.fqn
 		}
 		if (message.payload !== null) {
-			result.add(message.payload.resolve.transform.fqn)
+			result += message.payload.resolve.transform.fqn
 		}
 		return Collections.unmodifiableNavigableSet(result)
 	}
@@ -281,9 +281,9 @@ class SubscribeOperationClass extends OperationClass {
 	
 	override imports() {
 		val result = new TreeSet		
-		result.addAll(super.imports)
-		result.add(channelSubscribeConfigurationInterface.fqn)
-		result.add(channelSubscribeConfigurationInterface.fqn)
+		result += super.imports
+		result += channelSubscribeConfigurationInterface.fqn
+		result += channelSubscribeConfigurationInterface.fqn
 		return Collections.unmodifiableNavigableSet(result)
 	}
 	

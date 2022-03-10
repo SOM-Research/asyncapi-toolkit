@@ -108,10 +108,10 @@ class ParametersClass extends AbstractType implements IBuildableType {
 	
 	override imports() {
 		val result = new TreeSet
-		result.add("java.util.Map")
-		result.add("java.util.HashMap")
-		result.add("java.util.Collections")
-		result.add(channel.api.transform.parametersInterface.fqn)
+		result += "java.util.Map"
+		result += "java.util.HashMap"
+		result += "java.util.Collections"
+		result += channel.api.transform.parametersInterface.fqn
 		return Collections.unmodifiableNavigableSet(result)
 	}
 
