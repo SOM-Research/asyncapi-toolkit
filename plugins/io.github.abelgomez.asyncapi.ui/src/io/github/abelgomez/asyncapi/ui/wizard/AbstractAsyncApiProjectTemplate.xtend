@@ -24,8 +24,8 @@ abstract class AbstractAsyncApiProjectTemplate extends AbstractProjectTemplate {
 	protected static final String SRC_RSC = "src/main/resources"
 	protected static final String TEST_JAVA = "src/test/java"
 	protected static final String TEST_RSC = "src/test/resources"
-	protected static final String GEN_JAVA = AsyncApiOutputConfigurationProvider.GEN_DIRECTORY + "/src/test/java"
-	protected static final String GEN_RSC = AsyncApiOutputConfigurationProvider.GEN_DIRECTORY + "/src/test/resources"
+	protected static final String GEN_JAVA = AsyncApiOutputConfigurationProvider.GEN_DIRECTORY + "/src/main/java"
+	protected static final String GEN_RSC = AsyncApiOutputConfigurationProvider.GEN_DIRECTORY + "/src/main/resources"
 	
 	protected val advanced = check("Advanced:", false)
 	protected val advancedGroup = group("Properties")

@@ -12,7 +12,7 @@ final class EmptyAsyncApiProject extends AbstractAsyncApiProjectTemplate {
 	
 	override createProjectFactory() {
 		super.createProjectFactory => [
-			addFile('''«SRC_RSC»/«path»/example.asyncapi''', '''
+			addFile('''«SRC_JAVA»/«path»/example.asyncapi''', '''
 				{
 				  "asyncapi": "2.0.0",
 				  "info": {

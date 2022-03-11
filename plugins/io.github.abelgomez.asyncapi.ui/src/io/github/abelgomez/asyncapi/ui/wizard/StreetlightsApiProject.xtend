@@ -25,7 +25,7 @@ final class StreetlightsApiProject extends AbstractAsyncApiProjectTemplate {
 
 	override createProjectFactory() {
 		super.createProjectFactory => [
-			addFile('''«SRC_RSC»/«path»/StreetlightsAPI.asyncapi''', '''
+			addFile('''«SRC_JAVA»/«path»/StreetlightsAPI.asyncapi''', '''
 				{
 				  "asyncapi": "2.0.0",
 				  "info": {
