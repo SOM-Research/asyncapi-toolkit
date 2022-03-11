@@ -51,9 +51,9 @@ final class ExampleEcoreAsyncApiProject extends AbstractAsyncApiProjectTemplate 
 
 	override createProjectFactory() {
 		super.createProjectFactory => [
-			addFile('''src/main/resources/«path»/Events.ecore''', ecoreFileContents())
-			addFile('''src/main/resources/«path»/Events.asyncapi''', Ecore2AsyncApi.generate(loadEPackage(new ByteArrayInputStream(ecoreFileContents().toString().bytes))))
-			addFile('''src/main/java/main/MainExample.java''', '''
+			addFile('''«SRC_RSC»/«path»/Events.ecore''', ecoreFileContents())
+			addFile('''«SRC_RSC»/«path»/Events.asyncapi''', Ecore2AsyncApi.generate(loadEPackage(new ByteArrayInputStream(ecoreFileContents().toString().bytes))))
+			addFile('''«SRC_JAVA»/main/MainExample.java''', '''
 				package main;
 				
 				import java.text.MessageFormat;

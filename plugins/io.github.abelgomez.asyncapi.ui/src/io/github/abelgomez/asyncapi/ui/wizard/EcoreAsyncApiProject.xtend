@@ -64,12 +64,12 @@ final class EcoreAsyncApiProject extends AbstractAsyncApiProjectTemplate  {
 	override createProjectFactory() {
 		val ePackage = loadEPackage(new Path(file.value))
 		super.createProjectFactory => [
-			addFile('''src/main/resources/«path»/«new Path(file.value).lastSegment»''',
+			addFile('''«SRC_RSC»/«path»/«new Path(file.value).lastSegment»''',
 				new BufferedReader(
 					new InputStreamReader(ResourcesPlugin.workspace.root.getFile(new Path(file.value)).contents)).lines.
 					collect(Collectors.joining(System.lineSeparator)))
-			addFile('''src/main/resources/«path»/«ePackage.name».asyncapi''', Ecore2AsyncApi.generate(ePackage))
-			addFile('''src/main/java/main/Main.java''', '''
+			addFile('''«SRC_RSC»/«path»/«ePackage.name».asyncapi''', Ecore2AsyncApi.generate(ePackage))
+			addFile('''«SRC_JAVA»/main/Main.java''', '''
 				package main;
 				
 				public class Main {

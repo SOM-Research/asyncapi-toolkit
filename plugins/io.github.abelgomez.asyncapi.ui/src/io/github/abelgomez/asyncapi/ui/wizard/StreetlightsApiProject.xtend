@@ -25,7 +25,7 @@ final class StreetlightsApiProject extends AbstractAsyncApiProjectTemplate {
 
 	override createProjectFactory() {
 		super.createProjectFactory => [
-			addFile('''src/main/resources/«path»/StreetlightsAPI.asyncapi''', '''
+			addFile('''«SRC_RSC»/«path»/StreetlightsAPI.asyncapi''', '''
 				{
 				  "asyncapi": "2.0.0",
 				  "info": {
@@ -205,7 +205,7 @@ final class StreetlightsApiProject extends AbstractAsyncApiProjectTemplate {
 				  }
 				}
 			''')
-			addFile('''src/main/java/main/MainExample.java''', '''
+			addFile('''«SRC_JAVA»/main/MainExample.java''', '''
 				package main;
 				
 				import java.text.MessageFormat;
@@ -282,7 +282,7 @@ final class StreetlightsApiProject extends AbstractAsyncApiProjectTemplate {
 					}
 				}
 			''')
-			addFile('''src/test/java/main/TestMainExample.java''', '''
+			addFile('''«TEST_JAVA»/main/TestMainExample.java''', '''
 				package main;
 				
 				import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;

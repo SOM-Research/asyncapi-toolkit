@@ -1,13 +1,15 @@
 package io.github.abelgomez.asyncapi.ui.wizard
 
+import io.github.abelgomez.asyncapi.AsyncApiOutputConfigurationProvider
 import org.eclipse.core.resources.IResourceDelta
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.resources.WorkspaceJob
 import org.eclipse.core.runtime.IProgressMonitor
 import org.eclipse.core.runtime.Status
 import org.eclipse.core.runtime.SubMonitor
+import org.eclipse.jdt.core.JavaCore
 import org.eclipse.m2e.core.MavenPlugin
-import org.eclipse.m2e.core.project.ResolverConfiguration
+import org.eclipse.m2e.core.internal.IMavenConstants
 import org.eclipse.swt.widgets.Shell
 import org.eclipse.xtext.ui.XtextProjectHelper
 import org.eclipse.xtext.ui.util.PluginProjectFactory
@@ -17,6 +19,14 @@ import org.eclipse.xtext.ui.wizard.template.IProjectGenerator
 import static org.eclipse.core.runtime.IStatus.*
 
 abstract class AbstractAsyncApiProjectTemplate extends AbstractProjectTemplate {
+	
+	protected static final String SRC_JAVA = "src/main/java"
+	protected static final String SRC_RSC = "src/main/resources"
+	protected static final String TEST_JAVA = "src/test/java"
+	protected static final String TEST_RSC = "src/test/resources"
+	protected static final String GEN_JAVA = AsyncApiOutputConfigurationProvider.GEN_DIRECTORY + "/src/test/java"
+	protected static final String GEN_RSC = AsyncApiOutputConfigurationProvider.GEN_DIRECTORY + "/src/test/resources"
+	
 	protected val advanced = check("Advanced:", false)
 	protected val advancedGroup = group("Properties")
 	protected val path = text("Package:", "example", "The package path to place the files in", advancedGroup)
@@ -52,7 +62,7 @@ abstract class AbstractAsyncApiProjectTemplate extends AbstractProjectTemplate {
 					 * the dependencies, the classpath, and the source directories, among
 					 * other things
 					 */
-					val delta = e.delta.findMember(project.getFile("generated/root.pom.xml").fullPath)
+					val delta = e.delta.findMember(project.getFile(AsyncApiOutputConfigurationProvider.ROOT_POM_FILE).fullPath)
 					if (delta !== null && delta.kind == IResourceDelta.ADDED) {
 						// Once the file is created for the first time, we unregister this listener 
 						// to avoid loops when the code is recreated
@@ -60,9 +70,8 @@ abstract class AbstractAsyncApiProjectTemplate extends AbstractProjectTemplate {
 						WorkspaceJob.create("Setting up new project...", [ m |
 							val subMonitor = SubMonitor.convert(m, 3);
 							val configurationManager = MavenPlugin.getProjectConfigurationManager();
-							configurationManager.enableMavenNature(project, new ResolverConfiguration(), subMonitor.split(1));
-							configurationManager.updateProjectConfiguration(project, subMonitor.split(2));
-							project.getFolder("bin")?.delete(false, true, subMonitor.split(3))
+							configurationManager.updateProjectConfiguration(project, subMonitor.split(1));
+							project.getFolder("bin")?.delete(false, true, subMonitor.split(2))
 						]).schedule
 					}]
 				)
@@ -72,15 +81,19 @@ abstract class AbstractAsyncApiProjectTemplate extends AbstractProjectTemplate {
 			projectName = projectInfo.projectName
 			location = projectInfo.locationPath
 			projectDefaultCharset = "UTF-8"
+			projectNatures += JavaCore.NATURE_ID
+			projectNatures += IMavenConstants.NATURE_ID
 			projectNatures += XtextProjectHelper.NATURE_ID
+			builderIds += JavaCore.BUILDER_ID
+			builderIds += IMavenConstants.BUILDER_ID
 			builderIds += XtextProjectHelper.BUILDER_ID
 			// Manually create folders
-			folders += "src/main/java"
-			folders += "src/main/resources"
-			folders += "src/test/java"
-			folders += "src/test/resources"
-			folders += "generated/src/main/java"
-			folders += "generated/src/main/resources"
+			folders += SRC_JAVA
+			folders += SRC_RSC
+			folders += TEST_JAVA
+			folders += TEST_RSC
+			folders += GEN_JAVA
+			folders += GEN_RSC
 			addFile("pom.xml", pomXml)
 		]
 	}
@@ -104,10 +117,10 @@ abstract class AbstractAsyncApiProjectTemplate extends AbstractProjectTemplate {
 				</plugins>
 				<resources>
 					<resource>
-						<directory>src/main/resources</directory>
+						<directory>«SRC_RSC»</directory>
 					</resource>
 					<resource>
-						<directory>generated/src/main/resources</directory>
+						<directory>«GEN_RSC»</directory>
 					</resource>
 				</resources>
 			</build>
@@ -142,7 +155,7 @@ abstract class AbstractAsyncApiProjectTemplate extends AbstractProjectTemplate {
 			<groupId>io.github.abelgomez.asyncapi.generated</groupId>
 			<artifactId>root</artifactId>
 			<version>0.0.0-SNAPSHOT</version>
-			<relativePath>generated/root.pom.xml</relativePath>
+			<relativePath>«AsyncApiOutputConfigurationProvider.ROOT_POM_FILE»</relativePath>
 		</parent>
 	'''
 
@@ -200,7 +213,7 @@ abstract class AbstractAsyncApiProjectTemplate extends AbstractProjectTemplate {
 					</goals>
 					<configuration>
 						<sources>
-							<source>generated/src/main/java/</source>
+							<source>«GEN_JAVA»</source>
 						</sources>
 					</configuration>
 				</execution>

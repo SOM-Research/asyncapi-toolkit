@@ -9,6 +9,8 @@ import static extension io.github.abelgomez.asyncapi.generator.TransformationCon
 
 class PomFile implements IGenerable, ISerializable {
 
+	public static final String POM_FILE = "pom.xml"
+
 	AsyncAPI api;
 	RootPomFile rootPomFile;
 	
@@ -22,7 +24,7 @@ class PomFile implements IGenerable, ISerializable {
 	}
 
 	override filename() {
-		"pom.xml"
+		POM_FILE
 	}
 		
 	override generate(IFileSystemAccess2 fsa) {
@@ -48,13 +50,15 @@ class PomFile implements IGenerable, ISerializable {
 }
 
 class RootPomFile implements IGenerable, ISerializable {
+	
+	public static final String ROOT_POM_FILE = "root.pom.xml"
 
 	static def create() {
 		return new RootPomFile()
 	}
 	
 	override filename() {
-		"root.pom.xml"
+		ROOT_POM_FILE
 	}
 		
 	override generate(IFileSystemAccess2 fsa) {
