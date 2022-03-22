@@ -1,9 +1,11 @@
 package io.github.abelgomez.asyncapi.generator.target.servers
 
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
+import io.github.abelgomez.asyncapi.asyncApi.Protocol
 import io.github.abelgomez.asyncapi.asyncApi.Server
 import io.github.abelgomez.asyncapi.generator.infra.IClass
 import io.github.abelgomez.asyncapi.generator.target.AbstractType
+import io.github.abelgomez.asyncapi.generator.utils.Assertions
 import java.util.Collections
 import java.util.TreeSet
 
@@ -11,8 +13,6 @@ import static extension io.github.abelgomez.asyncapi.generator.ModelExtensions.*
 import static extension io.github.abelgomez.asyncapi.generator.TransformationContext.*
 import static extension io.github.abelgomez.asyncapi.generator.utils.StringUtils.*
 import static extension java.text.MessageFormat.*
-import io.github.abelgomez.asyncapi.asyncApi.Protocol
-import io.github.abelgomez.asyncapi.generator.utils.Assertions
 
 abstract class ServerClass extends AbstractType implements IClass {
 
@@ -56,6 +56,7 @@ class MqttServerClass extends ServerClass implements IClass {
 		val result = new TreeSet		
 		result += "java.util.List"
 		result += "java.util.Arrays"
+		result += "java.util.ArrayList"
 		result += "java.util.Map"
 		result += "java.util.Map.Entry"
 		result += "java.util.HashMap"
@@ -70,6 +71,8 @@ class MqttServerClass extends ServerClass implements IClass {
 		result += "org.eclipse.paho.client.mqttv3.MqttCallback"
 		result += "org.eclipse.paho.client.mqttv3.IMqttDeliveryToken"
 		result += "org.eclipse.paho.client.mqttv3.persist.MemoryPersistence"
+		result += "com.google.common.collect.ArrayListMultimap"
+		result += "com.google.common.collect.Multimap"
 		result += server.api.transform.serverInterface.fqn
 		result += server.api.transform.channelInterface.channelConfigurationInterface.fqn
 		result += server.api.transform.channelInterface.channelPublishConfigurationInterface.fqn
@@ -151,6 +154,11 @@ class MqttServerClass extends ServerClass implements IClass {
 			 */
 			MqttConnectOptions options = new MqttConnectOptions();
 			
+			/**
+			 * MqttCallbacks
+			 */
+			Multimap<String, Entry<IChannelSubscribeConfiguration, MqttCallback>> callbacks = ArrayListMultimap.create();
+			
 			public static «name» create() throws «serverExceptionClass.name» {
 				return new «name»();
 			}
@@ -162,6 +170,25 @@ class MqttServerClass extends ServerClass implements IClass {
 				MemoryPersistence persistence = new MemoryPersistence();
 				try {
 					client = new MqttClient(broker, clientId, persistence);
+					client.setCallback(new MqttCallback() {
+						@Override public void deliveryComplete(IMqttDeliveryToken token) {}
+						@Override public void connectionLost(Throwable cause) {}
+						@Override public void messageArrived(String topic, MqttMessage message) throws Exception {
+							for (Entry<String, Entry<IChannelSubscribeConfiguration, MqttCallback>> entry : callbacks.entries()) {
+								IChannelSubscribeConfiguration config = entry.getValue().getKey();
+								MqttCallback callback = entry.getValue().getValue();
+								List<String> parameters = Arrays.asList(config.getParameterLiterals()).stream().map(p -> p.getName()).collect(Collectors.toList());
+								String regex = config.getSubscriptionPattern();
+								for (String param : parameters) {
+									regex = regex.replaceAll(String.format("\\{%s\\}", param), String.format("(?<%s>.+)", param));
+								}
+								Matcher matcher = Pattern.compile(regex).matcher(topic);
+								if (matcher.matches()) {
+									callback.messageArrived(topic, message);
+								}
+							}
+						}
+					});
 				} catch (MqttException e) {
 					throw new ServerException(e);
 				} 
@@ -212,14 +239,14 @@ class MqttServerClass extends ServerClass implements IClass {
 			    if (!isConnected()) {
 					connect();
 			    }
-			    client.setCallback(new MqttCallback() {
+			    callbacks.put(config.getSubscriptionPattern(), Map.entry(config, new MqttCallback() {
 					@Override public void deliveryComplete(IMqttDeliveryToken token) {}
 					@Override public void connectionLost(Throwable cause) {}
 					@Override public void messageArrived(String topic, MqttMessage message) throws Exception {
 						List<String> parameters = Arrays.asList(config.getParameterLiterals()).stream().map(p -> p.getName()).collect(Collectors.toList());
 						callback.accept(«receivedClass.name».from(message.getPayload(), parseParams(topic, config.getChannelName(), parameters)));
 					}
-				});
+				}));
 				try {
 			    	client.subscribe(config.getSubscriptionPattern(), DEFAULT_QOS);
 				} catch (MqttException e) {
