@@ -59,6 +59,7 @@ class MqttServerClass extends ServerClass implements IClass {
 		result += "java.util.ArrayList"
 		result += "java.util.Map"
 		result += "java.util.Map.Entry"
+		result += "java.util.Optional"
 		result += "java.util.HashMap"
 		result += "java.util.function.Consumer"
 		result += "java.util.stream.Collectors"
@@ -71,8 +72,6 @@ class MqttServerClass extends ServerClass implements IClass {
 		result += "org.eclipse.paho.client.mqttv3.MqttCallback"
 		result += "org.eclipse.paho.client.mqttv3.IMqttDeliveryToken"
 		result += "org.eclipse.paho.client.mqttv3.persist.MemoryPersistence"
-		result += "com.google.common.collect.ArrayListMultimap"
-		result += "com.google.common.collect.Multimap"
 		result += server.api.transform.serverInterface.fqn
 		result += server.api.transform.channelInterface.channelConfigurationInterface.fqn
 		result += server.api.transform.channelInterface.channelPublishConfigurationInterface.fqn
@@ -157,7 +156,7 @@ class MqttServerClass extends ServerClass implements IClass {
 			/**
 			 * MqttCallbacks
 			 */
-			Multimap<String, Entry<IChannelSubscribeConfiguration, MqttCallback>> callbacks = ArrayListMultimap.create();
+			List<Entry<IChannelSubscribeConfiguration, Consumer<Received>>> callbacks = new ArrayList<>();
 			
 			public static «name» create() throws «serverExceptionClass.name» {
 				return new «name»();
@@ -174,18 +173,12 @@ class MqttServerClass extends ServerClass implements IClass {
 						@Override public void deliveryComplete(IMqttDeliveryToken token) {}
 						@Override public void connectionLost(Throwable cause) {}
 						@Override public void messageArrived(String topic, MqttMessage message) throws Exception {
-							for (Entry<String, Entry<IChannelSubscribeConfiguration, MqttCallback>> entry : callbacks.entries()) {
-								IChannelSubscribeConfiguration config = entry.getValue().getKey();
-								MqttCallback callback = entry.getValue().getValue();
+							for (Entry<IChannelSubscribeConfiguration, Consumer<Received>> entry : callbacks) {
+								IChannelSubscribeConfiguration config = entry.getKey();
+								Consumer<Received> callback = entry.getValue();
 								List<String> parameters = Arrays.asList(config.getParameterLiterals()).stream().map(p -> p.getName()).collect(Collectors.toList());
-								String regex = config.getSubscriptionPattern();
-								for (String param : parameters) {
-									regex = regex.replaceAll(String.format("\\{%s\\}", param), String.format("(?<%s>.+)", param));
-								}
-								Matcher matcher = Pattern.compile(regex).matcher(topic);
-								if (matcher.matches()) {
-									callback.messageArrived(topic, message);
-								}
+								Optional<Map<String, String>> params = parseParams(topic, config.getChannelName(), parameters);
+								params.ifPresent(p -> callback.accept(Received.from(message.getPayload(), p)));
 							}
 						}
 					});
@@ -239,14 +232,7 @@ class MqttServerClass extends ServerClass implements IClass {
 			    if (!isConnected()) {
 					connect();
 			    }
-			    callbacks.put(config.getSubscriptionPattern(), Map.entry(config, new MqttCallback() {
-					@Override public void deliveryComplete(IMqttDeliveryToken token) {}
-					@Override public void connectionLost(Throwable cause) {}
-					@Override public void messageArrived(String topic, MqttMessage message) throws Exception {
-						List<String> parameters = Arrays.asList(config.getParameterLiterals()).stream().map(p -> p.getName()).collect(Collectors.toList());
-						callback.accept(«receivedClass.name».from(message.getPayload(), parseParams(topic, config.getChannelName(), parameters)));
-					}
-				}));
+			    callbacks.add(Map.entry(config, callback));
 				try {
 			    	client.subscribe(config.getSubscriptionPattern(), DEFAULT_QOS);
 				} catch (MqttException e) {
@@ -266,8 +252,6 @@ class MqttServerClass extends ServerClass implements IClass {
 				}
 			}
 
-			
-
 			/**
 			 * Computes the actual topic name for the given {@link «channelConfigurationInterface.name»}
 			 * in this {@link «serverInterface.name»}
@@ -284,7 +268,13 @@ class MqttServerClass extends ServerClass implements IClass {
 				return topic;
 			}
 
-			private static Map<String, String> parseParams(String actualTopic, String topicId, List<String> parameters) {
+			/**
+			 * Returns a {@link Map} containing the parsed parameters if <code>actualTopic</code> 
+			 * matches the <code>topicId</code> pattern.
+			 * 
+			 * The returned {@link Optional} will be empty if the pattern does not match
+			 */
+			private static Optional<Map<String, String>> parseParams(String actualTopic, String topicId, List<String> parameters) {
 				Map<String, String> result = new HashMap<>();
 				String regex = topicId;
 				for (String param : parameters) {
@@ -295,8 +285,10 @@ class MqttServerClass extends ServerClass implements IClass {
 					for (String p : parameters) {
 						result.put(p, matcher.group(p));
 					}
+					return Optional.of(result);
+				} else {
+					return Optional.empty();
 				}
-				return result;
 			}
 		}
 	'''

@@ -71,7 +71,6 @@ class RootPomFile implements IGenerable, ISerializable {
 			<properties>
 		        <com.google.code.gson.version>2.8.9</com.google.code.gson.version>
 		        <org.eclipse.paho.version>1.2.5</org.eclipse.paho.version>
-		        <com.google.guava.version>31.1-jre</com.google.guava.version>
 			</properties>
 			<groupId>io.github.abelgomez.asyncapi.generated</groupId>
 			<artifactId>root</artifactId>
@@ -87,11 +86,6 @@ class RootPomFile implements IGenerable, ISerializable {
 					<groupId>org.eclipse.paho</groupId>
 					<artifactId>org.eclipse.paho.client.mqttv3</artifactId>
 					<version>${org.eclipse.paho.version}</version>
-				</dependency>
-				<dependency>
-				    <groupId>com.google.guava</groupId>
-				    <artifactId>guava</artifactId>
-				    <version>${com.google.guava.version}</version>
 				</dependency>
 			</dependencies>
 			<build>
