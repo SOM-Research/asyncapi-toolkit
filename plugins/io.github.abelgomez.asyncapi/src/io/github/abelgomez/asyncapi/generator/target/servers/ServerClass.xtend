@@ -72,6 +72,7 @@ class MqttServerClass extends ServerClass implements IClass {
 		result += "org.eclipse.paho.client.mqttv3.MqttCallback"
 		result += "org.eclipse.paho.client.mqttv3.IMqttDeliveryToken"
 		result += "org.eclipse.paho.client.mqttv3.persist.MemoryPersistence"
+		result += server.api.transform.parametersInterface.parameterLiteralInterface.fqn
 		result += server.api.transform.serverInterface.fqn
 		result += server.api.transform.channelInterface.channelConfigurationInterface.fqn
 		result += server.api.transform.channelInterface.channelPublishConfigurationInterface.fqn
@@ -176,8 +177,7 @@ class MqttServerClass extends ServerClass implements IClass {
 							for (Entry<IChannelSubscribeConfiguration, Consumer<Received>> entry : callbacks) {
 								IChannelSubscribeConfiguration config = entry.getKey();
 								Consumer<Received> callback = entry.getValue();
-								List<String> parameters = Arrays.asList(config.getParameterLiterals()).stream().map(p -> p.getName()).collect(Collectors.toList());
-								Optional<Map<String, String>> params = parseParams(topic, config.getChannelName(), parameters);
+								Optional<Map<String, String>> params = parseParams(topic, config.getChannelName(), config.getParameterLiterals());
 								params.ifPresent(p -> callback.accept(Received.from(message.getPayload(), p)));
 							}
 						}
@@ -274,16 +274,16 @@ class MqttServerClass extends ServerClass implements IClass {
 			 * 
 			 * The returned {@link Optional} will be empty if the pattern does not match
 			 */
-			private static Optional<Map<String, String>> parseParams(String actualTopic, String topicId, List<String> parameters) {
+			private static Optional<Map<String, String>> parseParams(String actualTopic, String topicId, IParameterLiteral[] parameters) {
 				Map<String, String> result = new HashMap<>();
 				String regex = topicId;
-				for (String param : parameters) {
-					regex = regex.replaceAll(String.format("\\{%s\\}", param), String.format("(?<%s>.+)", param));
+				for (IParameterLiteral param : parameters) {
+					regex = regex.replaceAll(String.format("\\{%s\\}", param.getName()), String.format("(?<%s>.+)", param.getName()));
 				}
 				Matcher matcher = Pattern.compile(regex).matcher(actualTopic);
 				if (matcher.matches()) {
-					for (String p : parameters) {
-						result.put(p, matcher.group(p));
+					for (IParameterLiteral param : parameters) {
+						result.put(param.getName(), matcher.group(param.getName()));
 					}
 					return Optional.of(result);
 				} else {
