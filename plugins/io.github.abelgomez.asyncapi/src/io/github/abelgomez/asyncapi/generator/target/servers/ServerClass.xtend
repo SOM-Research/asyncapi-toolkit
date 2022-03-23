@@ -174,6 +174,11 @@ class MqttServerClass extends ServerClass implements IClass {
 						@Override public void deliveryComplete(IMqttDeliveryToken token) {}
 						@Override public void connectionLost(Throwable cause) {}
 						@Override public void messageArrived(String topic, MqttMessage message) throws Exception {
+							// Subscriptions are done using wildcards, and the topic name we receive here
+							// is already instantiated with actual data.
+							// Thus, it is not possible to lookup for the Callbacks to be executed
+							// using "more elegant " options (such as a Map or a Cache), and we must do
+							// a linear search for matches instead 
 							for (Entry<IChannelSubscribeConfiguration, Consumer<Received>> entry : callbacks) {
 								IChannelSubscribeConfiguration config = entry.getKey();
 								Consumer<Received> callback = entry.getValue();
