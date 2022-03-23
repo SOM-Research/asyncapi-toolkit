@@ -118,7 +118,13 @@ class MqttServerClass extends ServerClass implements IClass {
 		«imports.join(System.lineSeparator, [i | "import {0};".format(i)])»
 		
 		/**
+		 *
+		 * <code>«server.name»</code> server at <code>«scheme»:«server.expandUrl»</code>.
+		 «IF server.description !== null»
+		 *
 		 * «server.description»
+		 «ENDIF»
+		 *
 		 */
 		public class «name» implements «serverInterface.name» {
 			
