@@ -30,9 +30,21 @@ final class EmptyAsyncApiProject extends AbstractAsyncApiProjectTemplate {
 			addFile('''«SRC_JAVA»/main/Main.java''', '''
 				package main;
 				
+				import example.api.infra.IServer;
+				import example.api.servers.ProductionServer;
+				
 				public class Main {
 					public static void main(String[] args) throws Exception {
-						// TODO: Put your code here
+						// Create a connection to the Production server
+						IServer production = ProductionServer.create();
+						try {
+							
+							// TODO: Put your code here
+						
+						} finally {
+							// Disconnect
+							production.disconnect();
+						}
 					}
 				}
 			''')

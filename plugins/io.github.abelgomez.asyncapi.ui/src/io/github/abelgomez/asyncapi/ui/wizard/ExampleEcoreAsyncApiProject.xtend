@@ -123,8 +123,9 @@ final class ExampleEcoreAsyncApiProject extends AbstractAsyncApiProjectTemplate 
 								PublishOperation.publish(production, configuration, payload);
 							}
 						} finally {
-							// Unsubscribe from the topic
+							// Unsubscribe from the topic and disconnect
 							SubscribeOperation.unsubscribe(production);
+							production.disconnect();
 						}
 					}
 				}

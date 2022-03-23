@@ -276,8 +276,9 @@ final class StreetlightsApiProject extends AbstractAsyncApiProjectTemplate {
 								SendLightMeasurementOperation.publish(production, config, payload);
 							}
 						} finally {
-							// Unsubscribe from the topic
+							// Unsubscribe from the topic and disconnect
 							ReceiveLightMeasurementOperation.unsubscribe(production);
+							production.disconnect();
 						}
 					}
 				}
