@@ -159,11 +159,6 @@ class MqttServerClass extends ServerClass implements IClass {
 			 */
 			private List<Entry<IChannelSubscribeConfiguration, Consumer<Received>>> callbacks = new ArrayList<>();
 
-			/**
-			 * Cache to optimize the computation of topic patterns
-			 */
-			//private List<Entry<IChannelSubscribeConfiguration, Consumer<Received>>> callbacks = new ArrayList<>();
-			
 			public static «name» create() throws «serverExceptionClass.name» {
 				return new «name»();
 			}
