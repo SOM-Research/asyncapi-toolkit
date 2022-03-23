@@ -53,6 +53,8 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 	override imports() {
 		val result = new TreeSet
 		result += "java.util.Collections"
+		result += "java.util.Arrays"
+		result += "java.util.List"
 		result += channelInterface.fqn
 		result += parametersInterface.parameterLiteralInterface.fqn
 		if (parametersClass !== null) {
@@ -110,11 +112,11 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 			static «channelSubscribeConfigurationInterface.name» newSubscribeConfiguration() {
 				return new  «channelSubscribeConfigurationInterface.name»() {
 					@Override
-					public «parametersInterface.parameterLiteralInterface.name»[] getParameterLiterals() {
+					public List<«parametersInterface.parameterLiteralInterface.name»> getParameterLiterals() {
 						«IF channel.parameters.isEmpty»
-						return new «parametersInterface.parameterLiteralInterface.name»[] {};
+						return Arrays.asList(new «parametersInterface.parameterLiteralInterface.name»[] {});
 						«ELSE»
-						return «parametersClass.name».LITERALS.values();
+						return Arrays.asList(«parametersClass.name».LITERALS.values());
 						«ENDIF»
 					}
 					@Override
@@ -139,8 +141,8 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 						return TOPIC_ID;
 					}
 					@Override
-					public «parametersInterface.parameterLiteralInterface.name»[] getParameterLiterals() {
-						return new «parametersInterface.parameterLiteralInterface.name»[] {};
+					public List<«parametersInterface.parameterLiteralInterface.name»> getParameterLiterals() {
+						return Arrays.asList(new «parametersInterface.parameterLiteralInterface.name»[] {});
 					}
 					@Override
 					public Map<String, String> getParameters() {
@@ -155,8 +157,8 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 			 */
 			static «channelPublishConfigurationInterface.name» newPublishConfiguration(«parametersClass.name» params) {
 				return new  «channelPublishConfigurationInterface.name»() {
-					public «parametersInterface.parameterLiteralInterface.name»[] getParameterLiterals() {
-						return «parametersClass.name».LITERALS.values();
+					public List<«parametersInterface.parameterLiteralInterface.name»> getParameterLiterals() {
+						return Arrays.asList(«parametersClass.name».LITERALS.values());
 					}
 					public String getChannelName() {
 						return TOPIC_ID;

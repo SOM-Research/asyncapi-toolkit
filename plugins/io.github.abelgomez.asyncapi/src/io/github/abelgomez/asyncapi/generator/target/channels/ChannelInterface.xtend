@@ -33,6 +33,7 @@ class ChannelInterface extends AbstractType implements IType {
 		
 		override imports() {
 			val result = new TreeSet		
+			result += "java.util.List"
 			result += channelInterface.api.transform.parametersInterface.parameterLiteralInterface.fqn
 			return Collections.unmodifiableNavigableSet(result)
 		}
@@ -43,7 +44,7 @@ class ChannelInterface extends AbstractType implements IType {
 			 */
 			public interface «name» {
 				String getChannelName();
-				«channelInterface.api.transform.parametersInterface.parameterLiteralInterface.name»[] getParameterLiterals();
+				List<«channelInterface.api.transform.parametersInterface.parameterLiteralInterface.name»> getParameterLiterals();
 			}
 		'''
 	}

@@ -3,8 +3,11 @@ package io.github.abelgomez.asyncapi.generator.target.parameters
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
 import io.github.abelgomez.asyncapi.generator.infra.IType
 import io.github.abelgomez.asyncapi.generator.target.AbstractType
+import java.util.Collections
+import java.util.TreeSet
 
 import static extension io.github.abelgomez.asyncapi.generator.TransformationContext.*
+import static extension java.text.MessageFormat.*
 
 class ParametersInterface extends AbstractType implements IType {
 
@@ -67,8 +70,18 @@ class ParametersInterface extends AbstractType implements IType {
 		return parameterLiteralInterface
 	}
 	
+	override imports() {
+		val result = new TreeSet
+		result += "java.util.List"
+		return Collections.unmodifiableNavigableSet(result)
+	}
+	
 	override serialize() '''
 		package «pkg»;
+		
+		«IF !imports.empty»
+		«imports.join(System.lineSeparator, System.lineSeparator, System.lineSeparator, [i | "import {0};".format(i)])»
+		«ENDIF»
 		
 		/**
 		 * Base interface for parameters
@@ -77,7 +90,7 @@ class ParametersInterface extends AbstractType implements IType {
 			
 			«parameterLiteralInterface.serialize»
 			
-			IParameterLiteral[] getParameterLiterals();
+			List<IParameterLiteral> getParameterLiterals();
 		}
 	'''
 }

@@ -111,6 +111,8 @@ class ParametersClass extends AbstractType implements IBuildableType {
 		result += "java.util.Map"
 		result += "java.util.HashMap"
 		result += "java.util.Collections"
+		result += "java.util.List"
+		result += "java.util.Arrays"
 		result += channel.api.transform.parametersInterface.fqn
 		return Collections.unmodifiableNavigableSet(result)
 	}
@@ -155,8 +157,8 @@ class ParametersClass extends AbstractType implements IBuildableType {
 			
 						
 			@Override
-			public «parametersInterface.parameterLiteralInterface.name»[] getParameterLiterals() {
-				return LITERALS.values();
+			public List<«parametersInterface.parameterLiteralInterface.name»> getParameterLiterals() {
+				return Arrays.asList(LITERALS.values());
 			}
 			/**
 			 * Returns the parameters as a {@link Map}

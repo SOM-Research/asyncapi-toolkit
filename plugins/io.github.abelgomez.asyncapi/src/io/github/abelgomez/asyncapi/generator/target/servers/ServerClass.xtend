@@ -55,14 +55,11 @@ class MqttServerClass extends ServerClass implements IClass {
 	override imports() {
 		val result = new TreeSet		
 		result += "java.util.List"
-		result += "java.util.Arrays"
 		result += "java.util.ArrayList"
 		result += "java.util.Map"
 		result += "java.util.Map.Entry"
-		result += "java.util.Optional"
 		result += "java.util.HashMap"
 		result += "java.util.function.Consumer"
-		result += "java.util.stream.Collectors"
 		result += "java.util.regex.Pattern"
 		result += "java.util.regex.Matcher"
 		result += "org.eclipse.paho.client.mqttv3.MqttClient"
@@ -72,6 +69,9 @@ class MqttServerClass extends ServerClass implements IClass {
 		result += "org.eclipse.paho.client.mqttv3.MqttCallback"
 		result += "org.eclipse.paho.client.mqttv3.IMqttDeliveryToken"
 		result += "org.eclipse.paho.client.mqttv3.persist.MemoryPersistence"
+		result += "com.google.common.cache.CacheBuilder"
+		result += "com.google.common.cache.CacheLoader"
+		result += "com.google.common.cache.LoadingCache"
 		result += server.api.transform.parametersInterface.parameterLiteralInterface.fqn
 		result += server.api.transform.serverInterface.fqn
 		result += server.api.transform.channelInterface.channelConfigurationInterface.fqn
@@ -155,9 +155,14 @@ class MqttServerClass extends ServerClass implements IClass {
 			MqttConnectOptions options = new MqttConnectOptions();
 			
 			/**
-			 * MqttCallbacks
+			 * Mqtt Callbacks
 			 */
-			List<Entry<IChannelSubscribeConfiguration, Consumer<Received>>> callbacks = new ArrayList<>();
+			private List<Entry<IChannelSubscribeConfiguration, Consumer<Received>>> callbacks = new ArrayList<>();
+
+			/**
+			 * Cache to optimize the computation of topic patterns
+			 */
+			//private List<Entry<IChannelSubscribeConfiguration, Consumer<Received>>> callbacks = new ArrayList<>();
 			
 			public static «name» create() throws «serverExceptionClass.name» {
 				return new «name»();
@@ -177,12 +182,14 @@ class MqttServerClass extends ServerClass implements IClass {
 							for (Entry<IChannelSubscribeConfiguration, Consumer<Received>> entry : callbacks) {
 								IChannelSubscribeConfiguration config = entry.getKey();
 								Consumer<Received> callback = entry.getValue();
-								Optional<Map<String, String>> params = parseParams(topic, config.getChannelName(), config.getParameterLiterals());
-								params.ifPresent(p -> callback.accept(Received.from(message.getPayload(), p)));
+								if (matches(topic, config.getChannelName(), config.getParameterLiterals())) {
+									callback.accept(Received.from(message.getPayload(), 
+											parseParams(topic, config.getChannelName(), config.getParameterLiterals())));
+								}
 							}
 						}
 					});
-				} catch (MqttException e) {
+				} catch (Exception e) {
 					throw new ServerException(e);
 				} 
 			}
@@ -269,25 +276,47 @@ class MqttServerClass extends ServerClass implements IClass {
 			}
 
 			/**
+			 * Cache to optimize the computation of topic patterns
+			 */
+			private LoadingCache<Entry<String, List<IParameterLiteral>>, String> topicPatternCache = CacheBuilder.newBuilder()
+					.build(new CacheLoader<>() {
+						@Override
+						public String load(Entry<String, List<IParameterLiteral>> key) {
+							String regex = key.getKey();
+							for (IParameterLiteral param : key.getValue()) {
+								regex = regex.replaceAll(String.format("\\{%s\\}", param.getName()), String.format("(?<%s>.+)", param.getName()));
+							}
+							return regex;
+						}
+					});
+			
+			/**
 			 * Returns a {@link Map} containing the parsed parameters if <code>actualTopic</code> 
 			 * matches the <code>topicId</code> pattern.
-			 * 
-			 * The returned {@link Optional} will be empty if the pattern does not match
 			 */
-			private static Optional<Map<String, String>> parseParams(String actualTopic, String topicId, IParameterLiteral[] parameters) {
+			private Map<String, String> parseParams(String actualTopic, String topicId, List<IParameterLiteral> parameters) {
 				Map<String, String> result = new HashMap<>();
-				String regex = topicId;
-				for (IParameterLiteral param : parameters) {
-					regex = regex.replaceAll(String.format("\\{%s\\}", param.getName()), String.format("(?<%s>.+)", param.getName()));
-				}
+				String regex = topicPatternCache.getUnchecked(Map.entry(topicId, parameters));
 				Matcher matcher = Pattern.compile(regex).matcher(actualTopic);
 				if (matcher.matches()) {
 					for (IParameterLiteral param : parameters) {
 						result.put(param.getName(), matcher.group(param.getName()));
 					}
-					return Optional.of(result);
+				}
+				return result;
+			}
+			
+			/**
+			 * Returns whether if <code>actualTopic</code> matches the <code>topicId</code>
+			 * pattern when all its {@link IParameterLiteral}s are converted to wildcards
+			 */
+			private boolean matches(String actualTopic, String topicId, List<IParameterLiteral> parameters) {
+				String regex = topicPatternCache.getUnchecked(Map.entry(topicId, parameters));
+				Matcher matcher = Pattern.compile(regex).matcher(actualTopic);
+				if (matcher.matches()) {
+					return true;
 				} else {
-					return Optional.empty();
+					return false;
 				}
 			}
 		}
