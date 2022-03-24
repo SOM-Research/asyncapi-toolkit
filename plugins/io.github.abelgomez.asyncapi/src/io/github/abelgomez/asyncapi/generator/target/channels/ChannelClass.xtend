@@ -52,12 +52,20 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 	
 	override imports() {
 		val result = new TreeSet
-		result += "java.util.Collections"
 		result += "java.util.Arrays"
 		result += "java.util.List"
-		result += "java.util.Map.Entry"
 		result += channelInterface.fqn
 		result += parametersInterface.parameterLiteralInterface.fqn
+		if (channel.publish !== null || channel.subscribe !== null) {
+			result += operationInterface.fqn
+		}
+		if (channel.publish !== null) {
+			result += "java.util.Collections"
+			result += "java.util.Map"
+		}
+		if (!channel.parameters.isEmpty) {
+			result += "java.util.Map.Entry"
+		}
 		if (parametersClass !== null) {
 			result += parametersInterface.fqn
 			result += parametersClass.asBuilder.fqn
@@ -72,6 +80,10 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 	
 	private def channelInterface() {
 		return channel.api.transform.channelInterface
+	}
+	
+	private def operationInterface() {
+		return channel.api.transform.operationInterface
 	}
 	
 	private def channelPublishConfigurationInterface() {
@@ -108,6 +120,12 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 			private «name»() {
 			}
 			
+			@Override
+			public String getName() {
+				return TOPIC_ID;
+			}
+			
+			«IF channel.subscribe !== null»
 			/**
 			 * Creates a new {@link «channelSubscribeConfigurationInterface.name»} for this {@link IChannel} 
 			 */
@@ -121,9 +139,15 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 					public «name» getChannel() {
 						return «name».this;
 					}
+					@Override
+					public Class<? extends «channelInterface.operationInterface.name»> getOperation() {
+						return «channel.subscribe.transform.name».class;
+					}
 				}; 
 			}
-
+			«ENDIF»
+			
+			«IF channel.publish !== null»
 			«IF channel.parameters.isEmpty»
 			/**
 			 * Creates a new {@link «channelPublishConfigurationInterface.name»} for this {@link IChannel} 
@@ -137,6 +161,14 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 					@Override
 					public «name» getChannel() {
 						return «name».this;
+					}
+					@Override
+					public String getActualChannelName() {
+						return getChannel().getName();
+					}
+					@Override
+					public Class<? extends «channelInterface.operationInterface.name»> getOperation() {
+						return «channel.publish.transform.name».class;
 					}
 				}; 
 			}
@@ -164,6 +196,10 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 						}
 						return topic;
 					}
+					@Override
+					public Class<? extends «channelInterface.operationInterface.name»> getOperation() {
+						return «channel.publish.transform.name».class;
+					}
 				}; 
 				
 			}
@@ -175,10 +211,9 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 				return «parametersClass.name».newBuilder();
 			}
 			
-			@Override
-			public String getName() {
-				return TOPIC_ID;
-			}
+			«parametersClass.serialize»
+			«ENDIF»
+			«ENDIF»
 			
 			@Override
 			public List<«parametersInterface.parameterLiteralInterface.name»> getParameterLiterals() {
@@ -188,9 +223,6 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 				return Arrays.asList(«parametersClass.name».LITERALS.values());
 				«ENDIF»
 			}
-			
-			«parametersClass.serialize»
-			«ENDIF»
 		}
 	'''
 }

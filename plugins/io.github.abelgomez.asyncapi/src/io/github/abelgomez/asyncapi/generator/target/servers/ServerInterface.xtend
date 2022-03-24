@@ -202,10 +202,34 @@ class ServerInterface extends AbstractType implements IClass {
 		public interface «name» {
 			
 			/**
-			 * Gracefully disconnect this {@link «name»} from all {@link «api.transform.channelInterface.name»}s
+			 * Creates a connection to this {@link «name»} for the given {@link «api.transform.operationInterface.name»}
 			 * 
 			 * @throws «serverExceptionClass.name»
-			 *         if any error prevents from disconnecting on any {@link «api.transform.channelInterface.name»}.
+			 *         if any error prevents from connecting. The underlying cause may be 
+			 *         wrapped in this {@link Exception}
+			 */
+			void connect(Class <? extends «api.transform.operationInterface.name»> operation) throws «serverExceptionClass.name»;
+			
+			/**
+			 * Checks if theres an open connection to this {@link «name»} for the given {@link «api.transform.operationInterface.name»}
+			 */
+			boolean isConnected(Class <? extends «api.transform.operationInterface.name»> operation);
+			
+			/**
+			 * Closes the connection to this {@link «name»} for the given {@link «api.transform.operationInterface.name»}
+			 * 
+			 * @throws «serverExceptionClass.name»
+			 *         if any error prevents from disconnecting. The underlying cause may be 
+			 *         wrapped in this {@link Exception}
+			 */
+			void disconnect(Class <? extends «api.transform.operationInterface.name»> operation) throws «serverExceptionClass.name»;
+			
+
+			/**
+			 * Gracefully disconnect this {@link «name»} for all {@link «api.transform.operationInterface.name»}s
+			 * 
+			 * @throws «serverExceptionClass.name»
+			 *         if any error prevents from disconnecting on any {@link «api.transform.operationInterface.name»}.
 			 *         In any case, all clients will be attemted for disconnection.
 			 *         The underlying causes will be wrapped in this {@link Exception}. In
 			 *         such a case, client code can examine the actual {@link Exception}s
@@ -214,11 +238,11 @@ class ServerInterface extends AbstractType implements IClass {
 			void disconnect() throws «serverExceptionClass.name»;
 
 			/**
-			 * Disconnect this {@link «name»} from all {@link «api.transform.channelInterface.name»}s.
+			 * Disconnect this {@link «name»} for all {@link «api.transform.operationInterface.name»}s.
 			 * The disconnection will be forced if <code>force</code> is <code>true</code>
 			 * 
 			 * @throws «serverExceptionClass.name»
-			 *         if any error prevents from disconnecting on any {@link «api.transform.channelInterface.name»}.
+			 *         if any error prevents from disconnecting on any {@link «api.transform.operationInterface.name»}.
 			 *         In any case, all clients will be attemted for disconnection.
 			 *         The underlying causes will be wrapped in this {@link Exception}. In
 			 *         such a case, client code can examine the actual {@link Exception}s
@@ -227,7 +251,7 @@ class ServerInterface extends AbstractType implements IClass {
 			void disconnect(boolean force) throws «serverExceptionClass.name»;
 
 			/**
-			 * Silently try to disconnect this {@link «name»} from all {@link «api.transform.channelInterface.name»}s.
+			 * Silently try to disconnect this {@link «name»} for all {@link «api.transform.operationInterface.name»}s.
 			 * If any error ocurrs while trying to disconnect, it will be ignored and the program will continue.
 			 */
 			void disconnectSilently();

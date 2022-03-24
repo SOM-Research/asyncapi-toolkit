@@ -57,7 +57,6 @@ class MqttServerClass extends ServerClass implements IClass {
 		result += "java.text.MessageFormat"
 		result += "java.util.List"
 		result += "java.util.Map"
-		result += "java.util.Map.Entry"
 		result += "java.util.HashMap"
 		result += "java.util.function.Consumer"
 		result += "java.util.regex.Pattern"
@@ -70,6 +69,7 @@ class MqttServerClass extends ServerClass implements IClass {
 		result += "org.eclipse.paho.client.mqttv3.IMqttDeliveryToken"
 		result += "org.eclipse.paho.client.mqttv3.persist.MemoryPersistence"
 		result += server.api.transform.parametersInterface.parameterLiteralInterface.fqn
+		result += operationInterface.fqn
 		result += channelInterface.fqn
 		result += serverInterface.fqn
 		result += channelPublishConfigurationInterface.fqn
@@ -95,6 +95,10 @@ class MqttServerClass extends ServerClass implements IClass {
 	
 	private def channelInterface() {
 		return server.api.transform.channelInterface
+	}
+	
+	private def operationInterface() {
+		return server.api.transform.operationInterface
 	}
 	
 	private def channelPublishConfigurationInterface() {
@@ -124,8 +128,6 @@ class MqttServerClass extends ServerClass implements IClass {
 		 *
 		 */
 		public class «name» implements «serverInterface.name» {
-			
-			private enum Operation { PUBLISH, SUBSCRIBE };
 			
 			private static final int DEFAULT_QOS = 2;
 			
@@ -157,7 +159,7 @@ class MqttServerClass extends ServerClass implements IClass {
 			/**
 			 * Map containing the registered {@link MqttClient}s for the different {@link «channelInterface.name»}s
 			 */
-			private Map<Entry<«channelInterface.name», Operation>, MqttClient> clients = new HashMap<>();
+			private Map<Class <? extends «operationInterface.name»>, MqttClient> clients = new HashMap<>();
 
 			/**
 			 * Map containing the registered {@link MqttCallbacks}s for the different {@link MqttClients}s
@@ -173,9 +175,10 @@ class MqttServerClass extends ServerClass implements IClass {
 				options.setCleanSession(true);
 			}
 			
-			private void connect(«channelInterface.name» channel, Operation operation) throws «serverExceptionClass.name» {
-				if (!isConnected(channel, operation)) {
-					MqttClient client = getClientFor(channel, operation);
+			@Override
+			public void connect(Class <? extends «operationInterface.name»> operation) throws «serverExceptionClass.name» {
+				if (!isConnected(operation)) {
+					MqttClient client = getClientFor(operation);
 					try {
 				    	client.connect(options);
 					} catch (MqttException e) {
@@ -184,9 +187,22 @@ class MqttServerClass extends ServerClass implements IClass {
 				} 
 			}
 			
-			private boolean isConnected(«channelInterface.name» channel, Operation operation) {
-				MqttClient client = clients.get(Map.entry(channel, operation));
+			@Override
+			public boolean isConnected(Class <? extends «operationInterface.name»> operation) {
+				MqttClient client = clients.get(operation);
 			    return client != null ? client.isConnected() : false;
+			}
+
+			@Override
+			public void disconnect(Class <? extends «operationInterface.name»> operation) throws «serverExceptionClass.name» {
+				if (isConnected(operation)) {
+					MqttClient client = getClientFor(operation);
+					try {
+				    	client.disconnect();
+					} catch (MqttException e) {
+						throw new ServerException(e);
+					}	
+				} 
 			}
 			
 			@Override
@@ -227,8 +243,8 @@ class MqttServerClass extends ServerClass implements IClass {
 			public void publish(«channelPublishConfigurationInterface.name» config, byte[] data) throws «serverExceptionClass.name» {
 			    MqttMessage mqttMessage = new MqttMessage(data);
 			    mqttMessage.setQos(DEFAULT_QOS);
-				MqttClient client = getClientFor(config.getChannel(), Operation.PUBLISH);
-				connect(config.getChannel(), Operation.PUBLISH);
+				MqttClient client = getClientFor(config.getOperation());
+				connect(config.getOperation());
 				try {
 					client.publish(config.getActualChannelName(), mqttMessage);
 				} catch (MqttException e) {
@@ -239,13 +255,13 @@ class MqttServerClass extends ServerClass implements IClass {
 			
 			@Override
 			public void subscribe(«channelSubscribeConfigurationInterface.name» config, Consumer<«receivedClass.name»> callback) throws «serverExceptionClass.name» {
-			    MqttClient client = getClientFor(config.getChannel(), Operation.SUBSCRIBE);
+			    MqttClient client = getClientFor(config.getOperation());
 			    if (callbacks.containsKey(client)) {
 			    	throw new IllegalStateException(
 			    		MessageFormat.format("Callback function already registered for ''{0}''. Unsubscribe from ''{0}'' before trying to register a new callback.", 
 			    		config.getChannel().getName()));
 			    }
-				connect(config.getChannel(), Operation.SUBSCRIBE);
+				connect(config.getOperation());
 				client.setCallback(new MqttCallback() {
 					@Override
 					public void messageArrived(String topic, MqttMessage message) throws Exception {
@@ -270,8 +286,8 @@ class MqttServerClass extends ServerClass implements IClass {
 			
 			@Override
 			public void unsubscribe(«channelSubscribeConfigurationInterface.name» config) throws «serverExceptionClass.name» {
-				MqttClient client = getClientFor(config.getChannel(), Operation.SUBSCRIBE);
-				connect(config.getChannel(), Operation.SUBSCRIBE);
+				MqttClient client = getClientFor(config.getOperation());
+				connect(config.getOperation());
 				try {
 			    	client.unsubscribe(config.getSubscriptionPattern());
 			    	client.setCallback(null);
@@ -281,15 +297,15 @@ class MqttServerClass extends ServerClass implements IClass {
 				}
 			}
 			
-			private MqttClient getClientFor(«channelInterface.name» channel, Operation operation) throws «serverExceptionClass.name» {
-				MqttClient client = clients.get(Map.entry(channel, operation));
+			private MqttClient getClientFor(Class <? extends «operationInterface.name»> operation) throws «serverExceptionClass.name» {
+				MqttClient client = clients.get(operation);
 				if (client == null) {
 					String broker = SCHEME + "://" + URL;
 					String clientId = MqttClient.generateClientId();
 					try {
 						MemoryPersistence persistence = new MemoryPersistence();
 						client = new MqttClient(broker, clientId, persistence);
-						clients.put(Map.entry(channel, operation), client);
+						clients.put(operation, client);
 					} catch (Exception e) {
 						throw new «serverExceptionClass.name»(e);
 					}

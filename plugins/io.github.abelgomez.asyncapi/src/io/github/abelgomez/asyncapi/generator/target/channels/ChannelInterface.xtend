@@ -44,10 +44,16 @@ class ChannelInterface extends AbstractType implements IType {
 			 */
 			public interface «name» {
 				/**
-				 * Returns the {@link «channelInterface.name»} to which this 
+				 * Returns the {@link «channelInterface.name»} instance to which this 
 				 * configuration belongs to
 				 */
-				IChannel getChannel();
+				«channelInterface.name» getChannel();
+				
+				/**
+				 * Returns the {@link «channelInterface.operationInterface.name»} class associated 
+				 * to this configuration
+				 */
+				Class<? extends «channelInterface.operationInterface.name»> getOperation();
 			}
 		'''
 	}
@@ -150,6 +156,10 @@ class ChannelInterface extends AbstractType implements IType {
 	
 	override fqn() {
 		return pkg + "." + name
+	}
+	
+	def operationInterface() {
+		return api.transform.operationInterface
 	}
 	
 	def channelConfigurationInterface() {
