@@ -24,21 +24,23 @@
     </setupTask>
     <setupTask
         xsi:type="setup.p2:P2Task"
-        label="Eclipse 2021-09">
+        label="Eclipse 2022-03">
       <requirement
           name="org.eclipse.egit.feature.group"/>
       <requirement
-          name="org.eclipse.m2e.feature.feature.group"/>
-      <requirement
           name="org.eclipse.emf.sdk.feature.group"/>
       <requirement
-          name="org.eclipse.oomph.setup.sdk.feature.group"/>
+          name="org.eclipse.papyrus.sdk.feature.feature.group"/>
+      <requirement
+          name="org.eclipse.m2e.pde.feature.feature.group"/>
       <requirement
           name="org.eclipse.xtext.sdk.feature.group"/>
       <requirement
-          name="org.eclipse.m2e.pde.feature.feature.group"/>
+          name="org.eclipse.oomph.setup.sdk.feature.group"/>
+      <requirement
+          name="org.eclipse.m2e.feature.feature.group"/>
       <repository
-          url="http://download.eclipse.org/releases/2021-09/"/>
+          url="http://download.eclipse.org/releases/2022-03/"/>
     </setupTask>
     <setupTask
         xsi:type="setup.p2:P2Task"
@@ -67,7 +69,7 @@
         version="JavaSE-11"
         location="${jre.location-11}"/>
     <productVersion
-        href="index:/org.eclipse.setup#//@productCatalogs[name='org.eclipse.applications']/@products[name='eclipse.platform.sdk']/@versions[name='4.21']"/>
+        href="index:/org.eclipse.setup#//@productCatalogs[name='org.eclipse.applications']/@products[name='eclipse.platform.sdk']/@versions[name='4.23']"/>
     <description>AsyncAPI Toolkit Developers Installation.</description>
   </installation>
   <description>The AsyncAPI Toolkit Developers Configuration allows developing the AsyncAPI Toolkit.</description>
