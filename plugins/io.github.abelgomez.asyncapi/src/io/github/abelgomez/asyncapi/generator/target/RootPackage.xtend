@@ -2,6 +2,7 @@ package io.github.abelgomez.asyncapi.generator.target
 
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
 import io.github.abelgomez.asyncapi.generator.target.channels.ChannelInterface
+import io.github.abelgomez.asyncapi.generator.target.channels.OperationInterface
 import io.github.abelgomez.asyncapi.generator.target.json.JsonSerializableInterface
 import io.github.abelgomez.asyncapi.generator.target.messages.MessageInterface
 import io.github.abelgomez.asyncapi.generator.target.parameters.ParametersInterface
@@ -17,6 +18,7 @@ class RootPackage extends AbstractPackage {
 	ServersPackage serversPackage
 	ServerInterface serverInterface
 	ChannelInterface channelInterface
+	OperationInterface operationInterface
 	ParametersInterface parametersInterface
 	MessageInterface messageInterface
 	JsonSerializableInterface jsonSerializableInterface
@@ -35,6 +37,7 @@ class RootPackage extends AbstractPackage {
 		serversPackage = ServersPackage.createFrom(api.servers)
 		serverInterface = ServerInterface.createFrom(api)
 		channelInterface = ChannelInterface.createFrom(api)
+		operationInterface = OperationInterface.createFrom(api)
 		parametersInterface = ParametersInterface.createFrom(api)
 		messageInterface = MessageInterface.createFrom(api)
 		jsonSerializableInterface = JsonSerializableInterface.createFrom(api)
@@ -50,6 +53,10 @@ class RootPackage extends AbstractPackage {
 
 	def channelInterface() {
 		return channelInterface
+	}
+
+	def operationInterface() {
+		return operationInterface
 	}
 	
 	def parametersInterface() {
@@ -76,6 +83,7 @@ class RootPackage extends AbstractPackage {
 		serversPackage.saveContents(fsa, context)
 		serverInterface?.generate(fsa)
 		channelInterface?.generate(fsa)
+		operationInterface?.generate(fsa)
 		parametersInterface?.generate(fsa)
 		messageInterface?.generate(fsa)
 		jsonSerializableInterface?.generate(fsa)

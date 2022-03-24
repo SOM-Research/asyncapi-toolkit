@@ -88,11 +88,6 @@ class RootPomFile implements IGenerable, ISerializable {
 					<artifactId>org.eclipse.paho.client.mqttv3</artifactId>
 					<version>${org.eclipse.paho.version}</version>
 				</dependency>
-				<dependency>
-				    <groupId>com.google.guava</groupId>
-				    <artifactId>guava</artifactId>
-				    <version>${com.google.guava.version}</version>
-				</dependency>
 			</dependencies>
 			<build>
 				<plugins>

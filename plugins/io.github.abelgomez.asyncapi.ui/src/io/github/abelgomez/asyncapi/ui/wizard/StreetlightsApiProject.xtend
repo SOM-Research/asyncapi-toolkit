@@ -270,7 +270,7 @@ final class StreetlightsApiProject extends AbstractAsyncApiProjectTemplate {
 								// Inform about the message to be sent
 								System.out.println(MessageFormat.format(
 										"Publishing at ''{0}'':\n{1}",
-										ProductionServer.retrieveTopicName(config),
+										config.getActualChannelName(),
 										payload.toJson(true)));
 								
 								SendLightMeasurementOperation.publish(production, config, payload);

@@ -36,6 +36,8 @@ class ServerInterface extends AbstractType implements IClass {
 			result += "java.util.Map"
 			result += "java.util.HashMap"
 			result += "java.util.Collections"
+			result += "java.util.List"
+			result += "java.util.ArrayList"
 			return Collections.unmodifiableNavigableSet(result)
 		}
 		
@@ -57,7 +59,7 @@ class ServerInterface extends AbstractType implements IClass {
 				}
 				
 				/**
-				 * Private constructor. use the {@link #from} method instead
+				 * Private constructor. Use the {@link #from} method instead
 				 */
 				private «name»(byte[] data, Map<String, String> parameters) {
 					this.data = data;
@@ -116,8 +118,22 @@ class ServerInterface extends AbstractType implements IClass {
 				
 				private static final long serialVersionUID = 1L;
 				
+				private List<Exception> exceptions = new ArrayList<Exception>();
+				    
+				public List<Exception> getExceptions() {
+					return Collections.unmodifiableList(exceptions);
+				}
+				
+				public «name»() {
+					super();
+				}
+
 				public «name»(Throwable t) {
 					super(t);
+				}
+				
+				public void addException(Exception e) {
+					exceptions.add(e);
 				}
 			}
 		'''
@@ -186,54 +202,69 @@ class ServerInterface extends AbstractType implements IClass {
 		public interface «name» {
 			
 			/**
-			 * Perform a connection to the {@link «name»}
+			 * Gracefully disconnect this {@link «name»} from all {@link «api.transform.channelInterface.name»}s
 			 * 
 			 * @throws «serverExceptionClass.name»
-			 *         If any error prevents from connecting. The underlying cause may be 
-			 *         wrapped in this {@link Exception}
-			 */
-			void connect() throws «serverExceptionClass.name»;
-			
-			/**
-			 * Check if the {@link «name»} is connected
-			 */
-			boolean isConnected();
-			
-			/**
-			 * Disconnect from the {@link «name»}
-			 * 
-			 * @throws «serverExceptionClass.name»
-			 *         If any error prevents from disconnecting. The underlying cause may be 
-			 *         wrapped in this {@link Exception}
+			 *         if any error prevents from disconnecting on any {@link «api.transform.channelInterface.name»}.
+			 *         In any case, all clients will be attemted for disconnection.
+			 *         The underlying causes will be wrapped in this {@link Exception}. In
+			 *         such a case, client code can examine the actual {@link Exception}s
+			 *         by calling {@link «serverExceptionClass.name»#getExceptions()}
 			 */
 			void disconnect() throws «serverExceptionClass.name»;
+
+			/**
+			 * Disconnect this {@link «name»} from all {@link «api.transform.channelInterface.name»}s.
+			 * The disconnection will be forced if <code>force</code> is <code>true</code>
+			 * 
+			 * @throws «serverExceptionClass.name»
+			 *         if any error prevents from disconnecting on any {@link «api.transform.channelInterface.name»}.
+			 *         In any case, all clients will be attemted for disconnection.
+			 *         The underlying causes will be wrapped in this {@link Exception}. In
+			 *         such a case, client code can examine the actual {@link Exception}s
+			 *         by calling {@link «serverExceptionClass.name»#getExceptions()}
+			 */
+			void disconnect(boolean force) throws «serverExceptionClass.name»;
+
+			/**
+			 * Silently try to disconnect this {@link «name»} from all {@link «api.transform.channelInterface.name»}s.
+			 * If any error ocurrs while trying to disconnect, it will be ignored and the program will continue.
+			 */
+			void disconnectSilently();
 			
 			/**
 			 * Publish the given <code>data</code> in the {@link «name»} according to the
-			 * given {@link «channelPublishConfigurationInterface.name»}
+			 * given {@link «channelPublishConfigurationInterface.name»}. If {@link «name»}
+			 * is not connected to {@link «channelPublishConfigurationInterface.name»}, a connection 
+			 * is done prior to the publication. 
 			 * 
 			 * @throws «serverExceptionClass.name»
-			 *         If any error prevents from publishing. The underlying cause may be 
+			 *         if any error prevents from publishing. The underlying cause may be 
 			 *         wrapped in this {@link Exception}
 			 */
 			void publish(«channelPublishConfigurationInterface.name» config, byte[] data) throws «serverExceptionClass.name»;
 			
 			/**
 			 * Subscribes to the events specified in the given {@link «channelSubscribeConfigurationInterface.name»}
-			 * in the {@link «name»} 
+			 * in the {@link «name»}. If {@link «name»} is not connected to 
+			 * {@link «channelPublishConfigurationInterface.name»}, a connection is done prior to the subscription.
 			 * 
 			 * @throws «serverExceptionClass.name»
-			 *         If any error prevents from subscribing. The underlying cause may be 
+			 *         if any error prevents from subscribing. The underlying cause may be 
 			 *         wrapped in this {@link Exception}
+			 * @throws IllegalStateException if a {@link Consumer<«receivedClass.name»>} callback is already registered.
+			 *                               In such a case, it is necessary to call
+			 *                               {@link #unsubscribe(«name»)} first
 			 */
 			void subscribe(«channelSubscribeConfigurationInterface.name» config, Consumer<«receivedClass.name»> callback) throws «serverExceptionClass.name»;
 			
 			/**
 			 * Unsubscribes from the events specified in the given {@link «channelSubscribeConfigurationInterface.name»}
-			 * in the {@link «name»} 
+			 * in the {@link «name»}. If {@link «name»} is not connected to 
+			 * {@link «channelPublishConfigurationInterface.name»}, a connection is done prior to the unsubscription.
 			 * 
 			 * @throws «serverExceptionClass.name»
-			 *         If any error prevents from unsubscribing. The underlying cause may be 
+			 *         if any error prevents from unsubscribing. The underlying cause may be 
 			 *         wrapped in this {@link Exception}
 			 */
 			void unsubscribe(«channelSubscribeConfigurationInterface.name» config) throws «serverExceptionClass.name»;

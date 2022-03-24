@@ -115,8 +115,8 @@ final class ExampleEcoreAsyncApiProject extends AbstractAsyncApiProjectTemplate 
 								// their actual values
 								System.out.println(MessageFormat.format(
 										"Publishing at topic ''{0}'' (''{1}''):\n{2}",
-										configuration.getChannelName(),
-										ProductionServer.retrieveTopicName(configuration),
+										configuration.getChannel().getName(),
+										configuration.getActualChannelName(),
 										payload.toJson(true)));
 								
 								// Publish the LightMeasured message

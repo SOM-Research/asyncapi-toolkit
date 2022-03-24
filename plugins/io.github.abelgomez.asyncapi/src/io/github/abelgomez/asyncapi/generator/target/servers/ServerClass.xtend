@@ -54,8 +54,8 @@ class MqttServerClass extends ServerClass implements IClass {
 		
 	override imports() {
 		val result = new TreeSet		
+		result += "java.text.MessageFormat"
 		result += "java.util.List"
-		result += "java.util.ArrayList"
 		result += "java.util.Map"
 		result += "java.util.Map.Entry"
 		result += "java.util.HashMap"
@@ -69,14 +69,11 @@ class MqttServerClass extends ServerClass implements IClass {
 		result += "org.eclipse.paho.client.mqttv3.MqttCallback"
 		result += "org.eclipse.paho.client.mqttv3.IMqttDeliveryToken"
 		result += "org.eclipse.paho.client.mqttv3.persist.MemoryPersistence"
-		result += "com.google.common.cache.CacheBuilder"
-		result += "com.google.common.cache.CacheLoader"
-		result += "com.google.common.cache.LoadingCache"
 		result += server.api.transform.parametersInterface.parameterLiteralInterface.fqn
-		result += server.api.transform.serverInterface.fqn
-		result += server.api.transform.channelInterface.channelConfigurationInterface.fqn
-		result += server.api.transform.channelInterface.channelPublishConfigurationInterface.fqn
-		result += server.api.transform.channelInterface.channelSubscribeConfigurationInterface.fqn
+		result += channelInterface.fqn
+		result += serverInterface.fqn
+		result += channelPublishConfigurationInterface.fqn
+		result += channelSubscribeConfigurationInterface.fqn
 		return Collections.unmodifiableNavigableSet(result)
 	}
 	
@@ -96,10 +93,10 @@ class MqttServerClass extends ServerClass implements IClass {
 		return server.api.transform.serverInterface
 	}
 	
-	private def channelConfigurationInterface() {
-		return server.api.transform.channelInterface.channelConfigurationInterface
+	private def channelInterface() {
+		return server.api.transform.channelInterface
 	}
-	 
+	
 	private def channelPublishConfigurationInterface() {
 		return server.api.transform.channelInterface.channelPublishConfigurationInterface
 	} 
@@ -128,6 +125,8 @@ class MqttServerClass extends ServerClass implements IClass {
 		 */
 		public class «name» implements «serverInterface.name» {
 			
+			private enum Operation { PUBLISH, SUBSCRIBE };
+			
 			private static final int DEFAULT_QOS = 2;
 			
 			/**
@@ -149,79 +148,78 @@ class MqttServerClass extends ServerClass implements IClass {
 			 * Server URL
 			 */
 			public static final String URL = "«server.expandUrl»";
-			
-			/**
-			 * Connection client to Server
-			 */
-			private MqttClient client;
-			
+
 			/**
 			 * Connection options
 			 */
 			MqttConnectOptions options = new MqttConnectOptions();
-			
-			/**
-			 * Mqtt Callbacks
-			 */
-			private List<Entry<IChannelSubscribeConfiguration, Consumer<Received>>> callbacks = new ArrayList<>();
 
+			/**
+			 * Map containing the registered {@link MqttClient}s for the different {@link «channelInterface.name»}s
+			 */
+			private Map<Entry<«channelInterface.name», Operation>, MqttClient> clients = new HashMap<>();
+
+			/**
+			 * Map containing the registered {@link MqttCallbacks}s for the different {@link MqttClients}s
+			 */
+			private Map<MqttClient, Consumer<«receivedClass.name»>> callbacks = new HashMap<>();
+			
+			
 			public static «name» create() throws «serverExceptionClass.name» {
 				return new «name»();
 			}
 			
 			private «name»() throws «serverExceptionClass.name» {
-			    options.setCleanSession(true);
-				String broker = SCHEME + "://" + URL;
-				String clientId = MqttClient.generateClientId();
-				MemoryPersistence persistence = new MemoryPersistence();
-				try {
-					client = new MqttClient(broker, clientId, persistence);
-					client.setCallback(new MqttCallback() {
-						@Override public void deliveryComplete(IMqttDeliveryToken token) {}
-						@Override public void connectionLost(Throwable cause) {}
-						@Override public void messageArrived(String topic, MqttMessage message) throws Exception {
-							// Subscriptions are done using wildcards, and the topic name we receive here
-							// is already instantiated with actual data.
-							// Thus, it is not possible to lookup for the Callbacks to be executed
-							// using "more elegant " options (such as a Map or a Cache), and we must do
-							// a linear search for matches instead 
-							for (Entry<IChannelSubscribeConfiguration, Consumer<Received>> entry : callbacks) {
-								IChannelSubscribeConfiguration config = entry.getKey();
-								Consumer<Received> callback = entry.getValue();
-								if (matches(topic, config.getChannelName(), config.getParameterLiterals())) {
-									callback.accept(Received.from(message.getPayload(), 
-											parseParams(topic, config.getChannelName(), config.getParameterLiterals())));
-								}
-							}
-						}
-					});
-				} catch (Exception e) {
-					throw new ServerException(e);
-				} 
+				options.setCleanSession(true);
 			}
 			
-			@Override
-			public void connect() throws «serverExceptionClass.name» {
-				if (!isConnected()) {
+			private void connect(«channelInterface.name» channel, Operation operation) throws «serverExceptionClass.name» {
+				if (!isConnected(channel, operation)) {
+					MqttClient client = getClientFor(channel, operation);
 					try {
-				    	client.connect();
+				    	client.connect(options);
 					} catch (MqttException e) {
 						throw new ServerException(e);
 					}	
 				} 
 			}
 			
-			@Override
-			public boolean isConnected() {
-			    return client.isConnected();
+			private boolean isConnected(«channelInterface.name» channel, Operation operation) {
+				MqttClient client = clients.get(Map.entry(channel, operation));
+			    return client != null ? client.isConnected() : false;
 			}
 			
 			@Override
 			public void disconnect() throws «serverExceptionClass.name» {
-				try {
-					client.disconnect();
-				} catch (MqttException e) {
-					throw new ServerException(e);
+				disconnect(false);
+			}
+
+			@Override
+			public void disconnect(boolean force) throws «serverExceptionClass.name» {
+				ServerException failure = new ServerException();
+				for (MqttClient client : clients.values()) {
+					try {
+						if (force) { 
+							client.disconnectForcibly();
+						} else {
+							client.disconnect();
+						}
+					} catch (MqttException e) {
+						failure.addException(e); 
+					}
+				} 
+				if (!failure.getExceptions().isEmpty()) {
+					throw failure;
+				}
+			}
+
+			@Override
+			public void disconnectSilently() {
+				for (MqttClient client : clients.values()) {
+					try {
+				    	client.disconnect();
+					} catch (MqttException e) {
+					}
 				} 
 			}
 			
@@ -229,11 +227,10 @@ class MqttServerClass extends ServerClass implements IClass {
 			public void publish(«channelPublishConfigurationInterface.name» config, byte[] data) throws «serverExceptionClass.name» {
 			    MqttMessage mqttMessage = new MqttMessage(data);
 			    mqttMessage.setQos(DEFAULT_QOS);
-			    if (!isConnected()) {
-					connect();
-				}
+				MqttClient client = getClientFor(config.getChannel(), Operation.PUBLISH);
+				connect(config.getChannel(), Operation.PUBLISH);
 				try {
-					client.publish(retrieveTopicName(config), mqttMessage);
+					client.publish(config.getActualChannelName(), mqttMessage);
 				} catch (MqttException e) {
 					throw new «serverExceptionClass.name»(e);
 				}
@@ -242,10 +239,28 @@ class MqttServerClass extends ServerClass implements IClass {
 			
 			@Override
 			public void subscribe(«channelSubscribeConfigurationInterface.name» config, Consumer<«receivedClass.name»> callback) throws «serverExceptionClass.name» {
-			    if (!isConnected()) {
-					connect();
+			    MqttClient client = getClientFor(config.getChannel(), Operation.SUBSCRIBE);
+			    if (callbacks.containsKey(client)) {
+			    	throw new IllegalStateException(
+			    		MessageFormat.format("Callback function already registered for ''{0}''. Unsubscribe from ''{0}'' before trying to register a new callback.", 
+			    		config.getChannel().getName()));
 			    }
-			    callbacks.add(Map.entry(config, callback));
+				connect(config.getChannel(), Operation.SUBSCRIBE);
+				client.setCallback(new MqttCallback() {
+					@Override
+					public void messageArrived(String topic, MqttMessage message) throws Exception {
+						callback.accept(Received.from(message.getPayload(),
+						parseParams(topic, config.getChannel().getName(), config.getChannel().getParameterLiterals())));
+					}
+					@Override
+					public void deliveryComplete(IMqttDeliveryToken token) {
+					}
+					@Override
+					public void connectionLost(Throwable cause) {
+					}
+				});
+				callbacks.put(client, callback);
+
 				try {
 			    	client.subscribe(config.getSubscriptionPattern(), DEFAULT_QOS);
 				} catch (MqttException e) {
@@ -255,54 +270,43 @@ class MqttServerClass extends ServerClass implements IClass {
 			
 			@Override
 			public void unsubscribe(«channelSubscribeConfigurationInterface.name» config) throws «serverExceptionClass.name» {
-			    if (!isConnected()) {
-					connect();
-			    }
+				MqttClient client = getClientFor(config.getChannel(), Operation.SUBSCRIBE);
+				connect(config.getChannel(), Operation.SUBSCRIBE);
 				try {
 			    	client.unsubscribe(config.getSubscriptionPattern());
+			    	client.setCallback(null);
+			    	callbacks.remove(client);
 				} catch (MqttException e) {
 					throw new ServerException(e);
 				}
 			}
-
-			/**
-			 * Computes the actual topic name for the given {@link «channelConfigurationInterface.name»}
-			 * in this {@link «serverInterface.name»}
-			 */
-			public static String retrieveTopicName(«channelConfigurationInterface.name» config) {
-				String topic = config.getChannelName();
-				if (config instanceof «channelPublishConfigurationInterface.name») {
-					«channelPublishConfigurationInterface.name» publishConfig = («channelPublishConfigurationInterface.name») config;
-					Map<String, String> parameters = publishConfig.getParameters();
-					for (Entry<String, String> entry : parameters.entrySet()) {
-						topic = topic.replaceAll("\\{" + entry.getKey() + "\\}", entry.getValue());
+			
+			private MqttClient getClientFor(«channelInterface.name» channel, Operation operation) throws «serverExceptionClass.name» {
+				MqttClient client = clients.get(Map.entry(channel, operation));
+				if (client == null) {
+					String broker = SCHEME + "://" + URL;
+					String clientId = MqttClient.generateClientId();
+					try {
+						MemoryPersistence persistence = new MemoryPersistence();
+						client = new MqttClient(broker, clientId, persistence);
+						clients.put(Map.entry(channel, operation), client);
+					} catch (Exception e) {
+						throw new «serverExceptionClass.name»(e);
 					}
 				}
-				return topic;
+				return client;
 			}
 
-			/**
-			 * Cache to optimize the computation of topic patterns
-			 */
-			private LoadingCache<Entry<String, List<IParameterLiteral>>, String> topicPatternCache = CacheBuilder.newBuilder()
-					.build(new CacheLoader<>() {
-						@Override
-						public String load(Entry<String, List<IParameterLiteral>> key) {
-							String regex = key.getKey();
-							for (IParameterLiteral param : key.getValue()) {
-								regex = regex.replaceAll(String.format("\\{%s\\}", param.getName()), String.format("(?<%s>.+)", param.getName()));
-							}
-							return regex;
-						}
-					});
-			
 			/**
 			 * Returns a {@link Map} containing the parsed parameters if <code>actualTopic</code> 
 			 * matches the <code>topicId</code> pattern.
 			 */
-			private Map<String, String> parseParams(String actualTopic, String topicId, List<IParameterLiteral> parameters) {
+			private static Map<String, String> parseParams(String actualTopic, String topicId, List<IParameterLiteral> parameters) {
 				Map<String, String> result = new HashMap<>();
-				String regex = topicPatternCache.getUnchecked(Map.entry(topicId, parameters));
+				String regex = topicId;
+				for (IParameterLiteral param : parameters) {
+					regex = regex.replaceAll(String.format("\\{%s\\}", param.getName()), String.format("(?<%s>.+)", param.getName()));
+				}
 				Matcher matcher = Pattern.compile(regex).matcher(actualTopic);
 				if (matcher.matches()) {
 					for (IParameterLiteral param : parameters) {
@@ -310,20 +314,6 @@ class MqttServerClass extends ServerClass implements IClass {
 					}
 				}
 				return result;
-			}
-			
-			/**
-			 * Returns whether if <code>actualTopic</code> matches the <code>topicId</code>
-			 * pattern when all its {@link IParameterLiteral}s are converted to wildcards
-			 */
-			private boolean matches(String actualTopic, String topicId, List<IParameterLiteral> parameters) {
-				String regex = topicPatternCache.getUnchecked(Map.entry(topicId, parameters));
-				Matcher matcher = Pattern.compile(regex).matcher(actualTopic);
-				if (matcher.matches()) {
-					return true;
-				} else {
-					return false;
-				}
 			}
 		}
 	'''
