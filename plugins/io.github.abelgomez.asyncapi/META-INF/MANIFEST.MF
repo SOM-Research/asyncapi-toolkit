@@ -16,16 +16,17 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtend.lib;bundle-version="2.14.0",
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: io.github.abelgomez.asyncapi.generator,
- io.github.abelgomez.asyncapi,
- io.github.abelgomez.asyncapi.serializer,
- io.github.abelgomez.asyncapi.scoping,
- io.github.abelgomez.asyncapi.parser.antlr.internal,
- io.github.abelgomez.asyncapi.parser.antlr,
- io.github.abelgomez.asyncapi.validation,
- io.github.abelgomez.asyncapi.asyncApi.util,
- io.github.abelgomez.asyncapi.services,
+Export-Package: io.github.abelgomez.asyncapi,
  io.github.abelgomez.asyncapi.asyncApi,
- io.github.abelgomez.asyncapi.asyncApi.impl
+ io.github.abelgomez.asyncapi.asyncApi.impl,
+ io.github.abelgomez.asyncapi.asyncApi.util,
+ io.github.abelgomez.asyncapi.generator,
+ io.github.abelgomez.asyncapi.m2m,
+ io.github.abelgomez.asyncapi.parser.antlr,
+ io.github.abelgomez.asyncapi.parser.antlr.internal,
+ io.github.abelgomez.asyncapi.scoping,
+ io.github.abelgomez.asyncapi.serializer,
+ io.github.abelgomez.asyncapi.services,
+ io.github.abelgomez.asyncapi.validation
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.ide.editor.syntaxcoloring

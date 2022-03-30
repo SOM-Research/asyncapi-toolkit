@@ -55,8 +55,8 @@
 			</activeWhen>
 		</handler>
   <handler
-        class="io.github.abelgomez.asyncapi.ui.handlers.GenerateAsyncApiHandler"
-        commandId="io.github.abelgomez.asyncapi.ui.commands.generateAsyncApiCommand">
+        class="io.github.abelgomez.asyncapi.ui.handlers.Ecore2AsyncApiHandler"
+        commandId="io.github.abelgomez.asyncapi.ui.commands.ecore2AsyncApiCommand">
   </handler>
 	</extension>
 	<extension point="org.eclipse.core.expressions.definitions">
@@ -149,8 +149,8 @@
  </category>
  <command
        categoryId="io.github.abelgomez.asyncapi.ui.commands.category"
-       id="io.github.abelgomez.asyncapi.ui.commands.generateAsyncApiCommand"
-       name="Generate AsyncAPI">
+       id="io.github.abelgomez.asyncapi.ui.commands.ecore2AsyncApiCommand"
+       name="Generate AsyncAPI from Ecore">
  </command>
 	</extension>
 	<extension point="org.eclipse.ui.menus">
@@ -202,9 +202,9 @@
      <menu
            label="AsyncAPI Toolkit">
         <command
-              commandId="io.github.abelgomez.asyncapi.ui.commands.generateAsyncApiCommand"
+              commandId="io.github.abelgomez.asyncapi.ui.commands.ecore2AsyncApiCommand"
               icon="icons/file.png"
-              id="io.github.abelgomez.asyncapi.ui.menus.generateAsyncApiCommand"
+              id="io.github.abelgomez.asyncapi.ui.menus.ecore2AsyncApiCommand"
               label="Generate AsyncAPI">
         </command>
         <visibleWhen

@@ -17,7 +17,7 @@ import io.github.abelgomez.asyncapi.asyncApi.Schema
 import io.github.abelgomez.asyncapi.asyncApi.Server
 
 class AsyncApi2Json {
-		/**
+	/**
 	 * Generate the textual representation of an AsyncAPI instance. Although
 	 * we can use an XtextResource for the serialization, until we have a
 	 * proper formatter this is the most direct way to get a properly

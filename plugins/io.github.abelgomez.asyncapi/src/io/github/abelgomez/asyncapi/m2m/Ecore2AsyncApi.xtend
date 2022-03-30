@@ -1,4 +1,4 @@
-package io.github.abelgomez.asyncapi.generator
+package io.github.abelgomez.asyncapi.m2m
 
 import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
@@ -32,8 +32,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl
 import org.eclipse.xtext.EcoreUtil2
 
-import static extension io.github.abelgomez.asyncapi.generator.AsyncApi2Json.*
-
 class Ecore2AsyncApi {
 
 	public static final String BASE_EANNOTATION_URI = "http://io.github.abelgomez/asyncapi/eAnnotations/"
@@ -57,10 +55,6 @@ class Ecore2AsyncApi {
 	public static final String EANNOTATION_SCHEMA = BASE_EANNOTATION_URI + "Schema"
 	public static final String EANNOTATION_SCHEMA_NAME = "name"
 	public static final String EANNOTATION_SCHEMA_TITLE = "title"
-
-	static def CharSequence generate(EPackage ePackage) {
-		return ePackage.asyncApi.generate
-	}
 
 	static def AsyncAPI asyncApi(EPackage ePackage) {
 		return AsyncApiFactory.eINSTANCE.createAsyncAPI => [

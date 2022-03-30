@@ -1,43 +1,9 @@
 package io.github.abelgomez.asyncapi.ui.wizard
 
-import io.github.abelgomez.asyncapi.generator.Ecore2AsyncApi
-import org.eclipse.core.resources.IContainer
-import org.eclipse.core.resources.IFile
-import org.eclipse.core.resources.IResource
-import org.eclipse.core.resources.ResourcesPlugin
-import org.eclipse.core.runtime.IStatus
-import org.eclipse.core.runtime.Path
-import org.eclipse.core.runtime.Status
-import org.eclipse.jdt.core.JavaCore
-import org.eclipse.jface.viewers.Viewer
-import org.eclipse.jface.viewers.ViewerFilter
-import org.eclipse.swt.SWT
-import org.eclipse.swt.events.SelectionAdapter
-import org.eclipse.swt.events.SelectionEvent
-import org.eclipse.swt.layout.GridLayout
-import org.eclipse.swt.widgets.Button
-import org.eclipse.swt.widgets.Composite
-import org.eclipse.ui.dialogs.ElementTreeSelectionDialog
-import org.eclipse.ui.dialogs.ISelectionStatusValidator
-import org.eclipse.ui.model.BaseWorkbenchContentProvider
-import org.eclipse.ui.model.WorkbenchLabelProvider
-import org.eclipse.xtext.ui.XtextProjectHelper
-import org.eclipse.xtext.ui.util.PluginProjectFactory
-import org.eclipse.xtext.ui.wizard.template.ContainerTemplateVariable
-import org.eclipse.xtext.ui.wizard.template.GroupTemplateVariable
-import org.eclipse.xtext.ui.wizard.template.IProjectGenerator
-import org.eclipse.xtext.ui.wizard.template.ParameterComposite
-import org.eclipse.xtext.ui.wizard.template.ProjectTemplate
-import org.eclipse.xtext.ui.wizard.template.StringTemplateVariable
-
-import static io.github.abelgomez.asyncapi.generator.Ecore2AsyncApi.*
-import static org.eclipse.core.runtime.IStatus.*
-import org.eclipse.core.runtime.NullProgressMonitor
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.util.stream.Collectors
-import java.io.InputStream
 import java.io.ByteArrayInputStream
+
+import static extension io.github.abelgomez.asyncapi.generator.AsyncApi2Json.*
+import static extension io.github.abelgomez.asyncapi.m2m.Ecore2AsyncApi.*
 
 final class ExampleEcoreAsyncApiProject extends AbstractAsyncApiProjectTemplate {
 	
@@ -52,7 +18,7 @@ final class ExampleEcoreAsyncApiProject extends AbstractAsyncApiProjectTemplate 
 	override createProjectFactory() {
 		super.createProjectFactory => [
 			addFile('''«SRC_JAVA»/«path»/Events.ecore''', ecoreFileContents())
-			addFile('''«SRC_JAVA»/«path»/Events.asyncapi''', Ecore2AsyncApi.generate(loadEPackage(new ByteArrayInputStream(ecoreFileContents().toString().bytes))))
+			addFile('''«SRC_JAVA»/«path»/Events.asyncapi''', new ByteArrayInputStream(ecoreFileContents.toString.bytes).loadEPackage.asyncApi.generate)
 			addFile('''«SRC_JAVA»/main/MainExample.java''', '''
 				package main;
 				

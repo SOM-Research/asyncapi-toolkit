@@ -1,6 +1,5 @@
 package io.github.abelgomez.asyncapi.ui.wizard
 
-import io.github.abelgomez.asyncapi.generator.Ecore2AsyncApi
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.util.stream.Collectors
@@ -28,8 +27,10 @@ import org.eclipse.xtext.ui.wizard.template.GroupTemplateVariable
 import org.eclipse.xtext.ui.wizard.template.ParameterComposite
 import org.eclipse.xtext.ui.wizard.template.StringTemplateVariable
 
-import static io.github.abelgomez.asyncapi.generator.Ecore2AsyncApi.*
 import static org.eclipse.core.runtime.IStatus.*
+
+import static extension io.github.abelgomez.asyncapi.generator.AsyncApi2Json.*
+import static extension io.github.abelgomez.asyncapi.m2m.Ecore2AsyncApi.*
 
 final class EcoreAsyncApiProject extends AbstractAsyncApiProjectTemplate  {
 	val inputGroup = group3("Input file")
@@ -52,7 +53,7 @@ final class EcoreAsyncApiProject extends AbstractAsyncApiProjectTemplate  {
 		if (file.value.trim.isEmpty) {
 			return new Status(ERROR, "Wizard", "Please specify an Ecore file")
 		} else {
-			val diagnose = diagnoseEcoreFile(new Path(file.value))
+			val diagnose = new Path(file.value).diagnoseEcoreFile
 			if (diagnose !== null) {
 				return new Status(ERROR, "Wizard", "'" + file + "' is not a valid Ecore file: " + diagnose)
 			} else {
@@ -62,13 +63,13 @@ final class EcoreAsyncApiProject extends AbstractAsyncApiProjectTemplate  {
 	}
 
 	override createProjectFactory() {
-		val ePackage = loadEPackage(new Path(file.value))
+		val ePackage = new Path(file.value).loadEPackage
 		super.createProjectFactory => [
 			addFile('''«SRC_JAVA»/«path»/«new Path(file.value).lastSegment»''',
 				new BufferedReader(
 					new InputStreamReader(ResourcesPlugin.workspace.root.getFile(new Path(file.value)).contents)).lines.
 					collect(Collectors.joining(System.lineSeparator)))
-			addFile('''«SRC_JAVA»/«path»/«ePackage.name».asyncapi''', Ecore2AsyncApi.generate(ePackage))
+			addFile('''«SRC_JAVA»/«path»/«ePackage.name».asyncapi''', ePackage.asyncApi.generate)
 			addFile('''«SRC_JAVA»/main/Main.java''', '''
 				package main;
 				

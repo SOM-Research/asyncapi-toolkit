@@ -20,10 +20,11 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import io.github.abelgomez.asyncapi.generator.Ecore2AsyncApi;
+import io.github.abelgomez.asyncapi.generator.AsyncApi2Json;
+import io.github.abelgomez.asyncapi.m2m.Ecore2AsyncApi;
 import io.github.abelgomez.asyncapi.ui.internal.AsyncapiActivator;
 
-public class GenerateAsyncApiHandler extends AbstractHandler {
+public class Ecore2AsyncApiHandler extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -42,10 +43,11 @@ public class GenerateAsyncApiHandler extends AbstractHandler {
 					String resultFileName = ePackage.getName() + ".asyncapi";
 					IFile resultFile = ResourcesPlugin.getWorkspace().getRoot().getFile(file.getFullPath().removeLastSegments(1).append(resultFileName));
 					try {
+						byte[] contents = AsyncApi2Json.generate(Ecore2AsyncApi.asyncApi(ePackage)).toString().getBytes();
 						if (!resultFile.exists()) {
-							resultFile.create(new ByteArrayInputStream(Ecore2AsyncApi.generate(ePackage).toString().getBytes()), IResource.FORCE | IResource.KEEP_HISTORY, new NullProgressMonitor());
+							resultFile.create(new ByteArrayInputStream(contents), IResource.FORCE | IResource.KEEP_HISTORY, new NullProgressMonitor());
 						} else if (resultFile.exists() && MessageDialog.openQuestion(window.getShell(), "Target file already exists!", "Target file already exists. Overwrite?")) {
-							resultFile.setContents(new ByteArrayInputStream(Ecore2AsyncApi.generate(ePackage).toString().getBytes()), IResource.FORCE | IResource.KEEP_HISTORY, new NullProgressMonitor());
+							resultFile.setContents(new ByteArrayInputStream(contents), IResource.FORCE | IResource.KEEP_HISTORY, new NullProgressMonitor());
 						}
 					} catch (CoreException e) {
 						ErrorDialog.openError(window.getShell(), "Error", "Error while storing the AsyncAPI specification",
