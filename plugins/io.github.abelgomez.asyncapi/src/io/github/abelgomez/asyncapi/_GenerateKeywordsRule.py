@@ -5,7 +5,7 @@ import re
 ASYNCAPI_GRAMMAR_FILE = 'AsyncApi.xtext'
 
 with open(ASYNCAPI_GRAMMAR_FILE, 'r') as file:
-    keywords = re.findall("'\"\w.+\"'", file.read())
+    keywords = re.findall("'\"\S+\"'", file.read())
     keywords = list(dict.fromkeys(keywords))
     keywords.sort()
     print('Keyword:\n\t', end='')

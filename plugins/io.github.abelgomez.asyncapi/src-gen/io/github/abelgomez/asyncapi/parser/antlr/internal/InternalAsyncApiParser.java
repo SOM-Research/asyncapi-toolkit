@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_WS", "'{'", "'\"asyncapi\"'", "':'", "','", "'\"info\"'", "'\"servers\"'", "'}'", "'\"channels\"'", "'\"components\"'", "'\"x-sla\"'", "'\"title\"'", "'\"version\"'", "'\"description\"'", "'\"termsOfService\"'", "'\"contact\"'", "'\"license\"'", "'\"x-basePackage\"'", "'\"name\"'", "'\"url\"'", "'\"email\"'", "'\"protocol\"'", "'\"variables\"'", "'\"default\"'", "'\"enum\"'", "'['", "']'", "'\"publish\"'", "'\"subscribe\"'", "'\"parameters\"'", "'\"x-title\"'", "'\"operationId\"'", "'\"summary\"'", "'\"message\"'", "'\"traits\"'", "'\"deprecated\"'", "'\"headers\"'", "'\"tags\"'", "'\"payload\"'", "'\"type\"'", "'\"format\"'", "'\"minimum\"'", "'\"maximum\"'", "'\"minItems\"'", "'\"maxItems\"'", "'\"properties\"'", "'\"items\"'", "'\"required\"'", "'\"schema\"'", "'\"location\"'", "'\"schemas\"'", "'\"messages\"'", "'\"operationTraits\"'", "'\"messageTraits\"'", "'\"x-qosMetrics\"'", "'\"guaranteeTerm\"'", "'\"scopes\"'", "'\"qualifyingConditions\"'", "'\"slos\"'", "'\"$ref\"'", "'\"unit\"'", "'\"dataType\"'", "'\"metricType\"'", "'\"derived\"'", "'\"window\"'", "'\"windowUnit\"'", "'\"aggregationFunction\"'", "'\"atomicMetric\"'", "'\"atomic\"'", "'\"AND\"'", "'\"OR\"'", "'\"qosMetric\"'", "'\"operator\"'", "'\"value\"'", "'true'", "'false'", "'\"2.0.0\"'", "'\"amqp\"'", "'\"amqps\"'", "'\"any\"'", "'\"array\"'", "'\"boolean\"'", "'\"integer\"'", "'\"mqtt\"'", "'\"mqtts\"'", "'\"null\"'", "'\"number\"'", "'\"object\"'", "'\"stomp\"'", "'\"stomps\"'", "'\"string\"'", "'\"ws\"'", "'\"wss\"'", "'\"seconds\"'", "'\"minutes\"'", "'\"hours\"'", "'\"days\"'", "'\"milliseconds\"'", "'\"real\"'", "'\">\"'", "'\">=\"'", "'\"=\"'", "'\"<=\"'", "'\"<\"'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_WS", "'{'", "'\"asyncapi\"'", "':'", "','", "'\"info\"'", "'\"servers\"'", "'}'", "'\"channels\"'", "'\"components\"'", "'\"x-sla\"'", "'\"title\"'", "'\"version\"'", "'\"description\"'", "'\"termsOfService\"'", "'\"contact\"'", "'\"license\"'", "'\"x-basePackage\"'", "'\"name\"'", "'\"url\"'", "'\"email\"'", "'\"protocol\"'", "'\"variables\"'", "'\"default\"'", "'\"enum\"'", "'['", "']'", "'\"publish\"'", "'\"subscribe\"'", "'\"parameters\"'", "'\"x-title\"'", "'\"operationId\"'", "'\"summary\"'", "'\"message\"'", "'\"traits\"'", "'\"deprecated\"'", "'\"headers\"'", "'\"tags\"'", "'\"payload\"'", "'\"type\"'", "'\"format\"'", "'\"minimum\"'", "'\"maximum\"'", "'\"minItems\"'", "'\"maxItems\"'", "'\"properties\"'", "'\"items\"'", "'\"required\"'", "'\"schema\"'", "'\"location\"'", "'\"schemas\"'", "'\"messages\"'", "'\"operationTraits\"'", "'\"messageTraits\"'", "'\"x-qosMetrics\"'", "'\"guaranteeTerm\"'", "'\"scopes\"'", "'\"qualifyingConditions\"'", "'\"slos\"'", "'\"$ref\"'", "'\"unit\"'", "'\"dataType\"'", "'\"metricType\"'", "'\"derived\"'", "'\"window\"'", "'\"windowUnit\"'", "'\"aggregationFunction\"'", "'\"atomicMetric\"'", "'\"atomic\"'", "'\"AND\"'", "'\"OR\"'", "'\"qosMetric\"'", "'\"operator\"'", "'\"value\"'", "'true'", "'false'", "'\"2.0.0\"'", "'\"<\"'", "'\"<=\"'", "'\"=\"'", "'\">\"'", "'\">=\"'", "'\"amqp\"'", "'\"amqps\"'", "'\"any\"'", "'\"array\"'", "'\"boolean\"'", "'\"days\"'", "'\"hours\"'", "'\"integer\"'", "'\"milliseconds\"'", "'\"minutes\"'", "'\"mqtt\"'", "'\"mqtts\"'", "'\"null\"'", "'\"number\"'", "'\"object\"'", "'\"real\"'", "'\"seconds\"'", "'\"stomp\"'", "'\"stomps\"'", "'\"string\"'", "'\"ws\"'", "'\"wss\"'"
     };
     public static final int T__50=50;
     public static final int T__59=59;
@@ -14166,7 +14166,7 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
             int alt120=2;
             int LA120_0 = input.LA(1);
 
-            if ( (LA120_0==RULE_STRING||LA120_0==9||(LA120_0>=12 && LA120_0<=13)||(LA120_0>=15 && LA120_0<=16)||(LA120_0>=18 && LA120_0<=23)||(LA120_0>=25 && LA120_0<=31)||(LA120_0>=34 && LA120_0<=49)||(LA120_0>=52 && LA120_0<=60)||LA120_0==66||(LA120_0>=83 && LA120_0<=99)) ) {
+            if ( (LA120_0==RULE_STRING||LA120_0==9||(LA120_0>=12 && LA120_0<=13)||(LA120_0>=15 && LA120_0<=31)||(LA120_0>=34 && LA120_0<=80)||(LA120_0>=83 && LA120_0<=110)) ) {
                 alt120=1;
             }
             else if ( (LA120_0==RULE_ID) ) {
@@ -17207,12 +17207,14 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
             case 13:
             case 15:
             case 16:
+            case 17:
             case 18:
             case 19:
             case 20:
             case 21:
             case 22:
             case 23:
+            case 24:
             case 25:
             case 26:
             case 27:
@@ -17236,6 +17238,8 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
             case 47:
             case 48:
             case 49:
+            case 50:
+            case 51:
             case 52:
             case 53:
             case 54:
@@ -17245,7 +17249,26 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
             case 58:
             case 59:
             case 60:
+            case 61:
+            case 62:
+            case 63:
+            case 64:
+            case 65:
             case 66:
+            case 67:
+            case 68:
+            case 69:
+            case 70:
+            case 71:
+            case 72:
+            case 73:
+            case 74:
+            case 75:
+            case 76:
+            case 77:
+            case 78:
+            case 79:
+            case 80:
             case 83:
             case 84:
             case 85:
@@ -17263,6 +17286,17 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
             case 97:
             case 98:
             case 99:
+            case 100:
+            case 101:
+            case 102:
+            case 103:
+            case 104:
+            case 105:
+            case 106:
+            case 107:
+            case 108:
+            case 109:
+            case 110:
                 {
                 alt135=1;
                 }
@@ -17438,12 +17472,14 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
             case 13:
             case 15:
             case 16:
+            case 17:
             case 18:
             case 19:
             case 20:
             case 21:
             case 22:
             case 23:
+            case 24:
             case 25:
             case 26:
             case 27:
@@ -17467,6 +17503,8 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
             case 47:
             case 48:
             case 49:
+            case 50:
+            case 51:
             case 52:
             case 53:
             case 54:
@@ -17476,6 +17514,25 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
             case 58:
             case 59:
             case 60:
+            case 61:
+            case 62:
+            case 63:
+            case 64:
+            case 65:
+            case 67:
+            case 68:
+            case 69:
+            case 70:
+            case 71:
+            case 72:
+            case 73:
+            case 74:
+            case 75:
+            case 76:
+            case 77:
+            case 78:
+            case 79:
+            case 80:
             case 83:
             case 84:
             case 85:
@@ -17493,6 +17550,17 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
             case 97:
             case 98:
             case 99:
+            case 100:
+            case 101:
+            case 102:
+            case 103:
+            case 104:
+            case 105:
+            case 106:
+            case 107:
+            case 108:
+            case 109:
+            case 110:
                 {
                 alt136=3;
                 }
@@ -17608,7 +17676,7 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKeyword"
-    // InternalAsyncApi.g:6965:1: ruleKeyword returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '\"2.0.0\"' | kw= '\"amqp\"' | kw= '\"amqps\"' | kw= '\"any\"' | kw= '\"array\"' | kw= '\"asyncapi\"' | kw= '\"boolean\"' | kw= '\"channels\"' | kw= '\"components\"' | kw= '\"contact\"' | kw= '\"default\"' | kw= '\"deprecated\"' | kw= '\"description\"' | kw= '\"email\"' | kw= '\"enum\"' | kw= '\"format\"' | kw= '\"headers\"' | kw= '\"info\"' | kw= '\"integer\"' | kw= '\"items\"' | kw= '\"license\"' | kw= '\"location\"' | kw= '\"maximum\"' | kw= '\"message\"' | kw= '\"messageTraits\"' | kw= '\"messages\"' | kw= '\"minimum\"' | kw= '\"mqtt\"' | kw= '\"mqtts\"' | kw= '\"name\"' | kw= '\"null\"' | kw= '\"number\"' | kw= '\"object\"' | kw= '\"operationId\"' | kw= '\"operationTraits\"' | kw= '\"parameters\"' | kw= '\"payload\"' | kw= '\"properties\"' | kw= '\"protocol\"' | kw= '\"publish\"' | kw= '\"required\"' | kw= '\"schema\"' | kw= '\"schemas\"' | kw= '\"servers\"' | kw= '\"stomp\"' | kw= '\"stomps\"' | kw= '\"string\"' | kw= '\"subscribe\"' | kw= '\"summary\"' | kw= '\"tags\"' | kw= '\"termsOfService\"' | kw= '\"title\"' | kw= '\"traits\"' | kw= '\"type\"' | kw= '\"url\"' | kw= '\"variables\"' | kw= '\"version\"' | kw= '\"ws\"' | kw= '\"wss\"' | kw= '\"x-title\"' ) ;
+    // InternalAsyncApi.g:6965:1: ruleKeyword returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '\"$ref\"' | kw= '\"2.0.0\"' | kw= '\"<\"' | kw= '\"<=\"' | kw= '\"=\"' | kw= '\">\"' | kw= '\">=\"' | kw= '\"AND\"' | kw= '\"OR\"' | kw= '\"aggregationFunction\"' | kw= '\"amqp\"' | kw= '\"amqps\"' | kw= '\"any\"' | kw= '\"array\"' | kw= '\"asyncapi\"' | kw= '\"atomic\"' | kw= '\"atomicMetric\"' | kw= '\"boolean\"' | kw= '\"channels\"' | kw= '\"components\"' | kw= '\"contact\"' | kw= '\"dataType\"' | kw= '\"days\"' | kw= '\"default\"' | kw= '\"deprecated\"' | kw= '\"derived\"' | kw= '\"description\"' | kw= '\"email\"' | kw= '\"enum\"' | kw= '\"format\"' | kw= '\"guaranteeTerm\"' | kw= '\"headers\"' | kw= '\"hours\"' | kw= '\"info\"' | kw= '\"integer\"' | kw= '\"items\"' | kw= '\"license\"' | kw= '\"location\"' | kw= '\"maxItems\"' | kw= '\"maximum\"' | kw= '\"message\"' | kw= '\"messageTraits\"' | kw= '\"messages\"' | kw= '\"metricType\"' | kw= '\"milliseconds\"' | kw= '\"minItems\"' | kw= '\"minimum\"' | kw= '\"minutes\"' | kw= '\"mqtt\"' | kw= '\"mqtts\"' | kw= '\"name\"' | kw= '\"null\"' | kw= '\"number\"' | kw= '\"object\"' | kw= '\"operationId\"' | kw= '\"operationTraits\"' | kw= '\"operator\"' | kw= '\"parameters\"' | kw= '\"payload\"' | kw= '\"properties\"' | kw= '\"protocol\"' | kw= '\"publish\"' | kw= '\"qosMetric\"' | kw= '\"qualifyingConditions\"' | kw= '\"real\"' | kw= '\"required\"' | kw= '\"schema\"' | kw= '\"schemas\"' | kw= '\"scopes\"' | kw= '\"seconds\"' | kw= '\"servers\"' | kw= '\"slos\"' | kw= '\"stomp\"' | kw= '\"stomps\"' | kw= '\"string\"' | kw= '\"subscribe\"' | kw= '\"summary\"' | kw= '\"tags\"' | kw= '\"termsOfService\"' | kw= '\"title\"' | kw= '\"traits\"' | kw= '\"type\"' | kw= '\"unit\"' | kw= '\"url\"' | kw= '\"value\"' | kw= '\"variables\"' | kw= '\"version\"' | kw= '\"window\"' | kw= '\"windowUnit\"' | kw= '\"ws\"' | kw= '\"wss\"' | kw= '\"x-basePackage\"' | kw= '\"x-qosMetrics\"' | kw= '\"x-sla\"' | kw= '\"x-title\"' ) ;
     public final AntlrDatatypeRuleToken ruleKeyword() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -17618,38 +17686,38 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAsyncApi.g:6971:2: ( (kw= '\"2.0.0\"' | kw= '\"amqp\"' | kw= '\"amqps\"' | kw= '\"any\"' | kw= '\"array\"' | kw= '\"asyncapi\"' | kw= '\"boolean\"' | kw= '\"channels\"' | kw= '\"components\"' | kw= '\"contact\"' | kw= '\"default\"' | kw= '\"deprecated\"' | kw= '\"description\"' | kw= '\"email\"' | kw= '\"enum\"' | kw= '\"format\"' | kw= '\"headers\"' | kw= '\"info\"' | kw= '\"integer\"' | kw= '\"items\"' | kw= '\"license\"' | kw= '\"location\"' | kw= '\"maximum\"' | kw= '\"message\"' | kw= '\"messageTraits\"' | kw= '\"messages\"' | kw= '\"minimum\"' | kw= '\"mqtt\"' | kw= '\"mqtts\"' | kw= '\"name\"' | kw= '\"null\"' | kw= '\"number\"' | kw= '\"object\"' | kw= '\"operationId\"' | kw= '\"operationTraits\"' | kw= '\"parameters\"' | kw= '\"payload\"' | kw= '\"properties\"' | kw= '\"protocol\"' | kw= '\"publish\"' | kw= '\"required\"' | kw= '\"schema\"' | kw= '\"schemas\"' | kw= '\"servers\"' | kw= '\"stomp\"' | kw= '\"stomps\"' | kw= '\"string\"' | kw= '\"subscribe\"' | kw= '\"summary\"' | kw= '\"tags\"' | kw= '\"termsOfService\"' | kw= '\"title\"' | kw= '\"traits\"' | kw= '\"type\"' | kw= '\"url\"' | kw= '\"variables\"' | kw= '\"version\"' | kw= '\"ws\"' | kw= '\"wss\"' | kw= '\"x-title\"' ) )
-            // InternalAsyncApi.g:6972:2: (kw= '\"2.0.0\"' | kw= '\"amqp\"' | kw= '\"amqps\"' | kw= '\"any\"' | kw= '\"array\"' | kw= '\"asyncapi\"' | kw= '\"boolean\"' | kw= '\"channels\"' | kw= '\"components\"' | kw= '\"contact\"' | kw= '\"default\"' | kw= '\"deprecated\"' | kw= '\"description\"' | kw= '\"email\"' | kw= '\"enum\"' | kw= '\"format\"' | kw= '\"headers\"' | kw= '\"info\"' | kw= '\"integer\"' | kw= '\"items\"' | kw= '\"license\"' | kw= '\"location\"' | kw= '\"maximum\"' | kw= '\"message\"' | kw= '\"messageTraits\"' | kw= '\"messages\"' | kw= '\"minimum\"' | kw= '\"mqtt\"' | kw= '\"mqtts\"' | kw= '\"name\"' | kw= '\"null\"' | kw= '\"number\"' | kw= '\"object\"' | kw= '\"operationId\"' | kw= '\"operationTraits\"' | kw= '\"parameters\"' | kw= '\"payload\"' | kw= '\"properties\"' | kw= '\"protocol\"' | kw= '\"publish\"' | kw= '\"required\"' | kw= '\"schema\"' | kw= '\"schemas\"' | kw= '\"servers\"' | kw= '\"stomp\"' | kw= '\"stomps\"' | kw= '\"string\"' | kw= '\"subscribe\"' | kw= '\"summary\"' | kw= '\"tags\"' | kw= '\"termsOfService\"' | kw= '\"title\"' | kw= '\"traits\"' | kw= '\"type\"' | kw= '\"url\"' | kw= '\"variables\"' | kw= '\"version\"' | kw= '\"ws\"' | kw= '\"wss\"' | kw= '\"x-title\"' )
+            // InternalAsyncApi.g:6971:2: ( (kw= '\"$ref\"' | kw= '\"2.0.0\"' | kw= '\"<\"' | kw= '\"<=\"' | kw= '\"=\"' | kw= '\">\"' | kw= '\">=\"' | kw= '\"AND\"' | kw= '\"OR\"' | kw= '\"aggregationFunction\"' | kw= '\"amqp\"' | kw= '\"amqps\"' | kw= '\"any\"' | kw= '\"array\"' | kw= '\"asyncapi\"' | kw= '\"atomic\"' | kw= '\"atomicMetric\"' | kw= '\"boolean\"' | kw= '\"channels\"' | kw= '\"components\"' | kw= '\"contact\"' | kw= '\"dataType\"' | kw= '\"days\"' | kw= '\"default\"' | kw= '\"deprecated\"' | kw= '\"derived\"' | kw= '\"description\"' | kw= '\"email\"' | kw= '\"enum\"' | kw= '\"format\"' | kw= '\"guaranteeTerm\"' | kw= '\"headers\"' | kw= '\"hours\"' | kw= '\"info\"' | kw= '\"integer\"' | kw= '\"items\"' | kw= '\"license\"' | kw= '\"location\"' | kw= '\"maxItems\"' | kw= '\"maximum\"' | kw= '\"message\"' | kw= '\"messageTraits\"' | kw= '\"messages\"' | kw= '\"metricType\"' | kw= '\"milliseconds\"' | kw= '\"minItems\"' | kw= '\"minimum\"' | kw= '\"minutes\"' | kw= '\"mqtt\"' | kw= '\"mqtts\"' | kw= '\"name\"' | kw= '\"null\"' | kw= '\"number\"' | kw= '\"object\"' | kw= '\"operationId\"' | kw= '\"operationTraits\"' | kw= '\"operator\"' | kw= '\"parameters\"' | kw= '\"payload\"' | kw= '\"properties\"' | kw= '\"protocol\"' | kw= '\"publish\"' | kw= '\"qosMetric\"' | kw= '\"qualifyingConditions\"' | kw= '\"real\"' | kw= '\"required\"' | kw= '\"schema\"' | kw= '\"schemas\"' | kw= '\"scopes\"' | kw= '\"seconds\"' | kw= '\"servers\"' | kw= '\"slos\"' | kw= '\"stomp\"' | kw= '\"stomps\"' | kw= '\"string\"' | kw= '\"subscribe\"' | kw= '\"summary\"' | kw= '\"tags\"' | kw= '\"termsOfService\"' | kw= '\"title\"' | kw= '\"traits\"' | kw= '\"type\"' | kw= '\"unit\"' | kw= '\"url\"' | kw= '\"value\"' | kw= '\"variables\"' | kw= '\"version\"' | kw= '\"window\"' | kw= '\"windowUnit\"' | kw= '\"ws\"' | kw= '\"wss\"' | kw= '\"x-basePackage\"' | kw= '\"x-qosMetrics\"' | kw= '\"x-sla\"' | kw= '\"x-title\"' ) )
+            // InternalAsyncApi.g:6972:2: (kw= '\"$ref\"' | kw= '\"2.0.0\"' | kw= '\"<\"' | kw= '\"<=\"' | kw= '\"=\"' | kw= '\">\"' | kw= '\">=\"' | kw= '\"AND\"' | kw= '\"OR\"' | kw= '\"aggregationFunction\"' | kw= '\"amqp\"' | kw= '\"amqps\"' | kw= '\"any\"' | kw= '\"array\"' | kw= '\"asyncapi\"' | kw= '\"atomic\"' | kw= '\"atomicMetric\"' | kw= '\"boolean\"' | kw= '\"channels\"' | kw= '\"components\"' | kw= '\"contact\"' | kw= '\"dataType\"' | kw= '\"days\"' | kw= '\"default\"' | kw= '\"deprecated\"' | kw= '\"derived\"' | kw= '\"description\"' | kw= '\"email\"' | kw= '\"enum\"' | kw= '\"format\"' | kw= '\"guaranteeTerm\"' | kw= '\"headers\"' | kw= '\"hours\"' | kw= '\"info\"' | kw= '\"integer\"' | kw= '\"items\"' | kw= '\"license\"' | kw= '\"location\"' | kw= '\"maxItems\"' | kw= '\"maximum\"' | kw= '\"message\"' | kw= '\"messageTraits\"' | kw= '\"messages\"' | kw= '\"metricType\"' | kw= '\"milliseconds\"' | kw= '\"minItems\"' | kw= '\"minimum\"' | kw= '\"minutes\"' | kw= '\"mqtt\"' | kw= '\"mqtts\"' | kw= '\"name\"' | kw= '\"null\"' | kw= '\"number\"' | kw= '\"object\"' | kw= '\"operationId\"' | kw= '\"operationTraits\"' | kw= '\"operator\"' | kw= '\"parameters\"' | kw= '\"payload\"' | kw= '\"properties\"' | kw= '\"protocol\"' | kw= '\"publish\"' | kw= '\"qosMetric\"' | kw= '\"qualifyingConditions\"' | kw= '\"real\"' | kw= '\"required\"' | kw= '\"schema\"' | kw= '\"schemas\"' | kw= '\"scopes\"' | kw= '\"seconds\"' | kw= '\"servers\"' | kw= '\"slos\"' | kw= '\"stomp\"' | kw= '\"stomps\"' | kw= '\"string\"' | kw= '\"subscribe\"' | kw= '\"summary\"' | kw= '\"tags\"' | kw= '\"termsOfService\"' | kw= '\"title\"' | kw= '\"traits\"' | kw= '\"type\"' | kw= '\"unit\"' | kw= '\"url\"' | kw= '\"value\"' | kw= '\"variables\"' | kw= '\"version\"' | kw= '\"window\"' | kw= '\"windowUnit\"' | kw= '\"ws\"' | kw= '\"wss\"' | kw= '\"x-basePackage\"' | kw= '\"x-qosMetrics\"' | kw= '\"x-sla\"' | kw= '\"x-title\"' )
             {
-            // InternalAsyncApi.g:6972:2: (kw= '\"2.0.0\"' | kw= '\"amqp\"' | kw= '\"amqps\"' | kw= '\"any\"' | kw= '\"array\"' | kw= '\"asyncapi\"' | kw= '\"boolean\"' | kw= '\"channels\"' | kw= '\"components\"' | kw= '\"contact\"' | kw= '\"default\"' | kw= '\"deprecated\"' | kw= '\"description\"' | kw= '\"email\"' | kw= '\"enum\"' | kw= '\"format\"' | kw= '\"headers\"' | kw= '\"info\"' | kw= '\"integer\"' | kw= '\"items\"' | kw= '\"license\"' | kw= '\"location\"' | kw= '\"maximum\"' | kw= '\"message\"' | kw= '\"messageTraits\"' | kw= '\"messages\"' | kw= '\"minimum\"' | kw= '\"mqtt\"' | kw= '\"mqtts\"' | kw= '\"name\"' | kw= '\"null\"' | kw= '\"number\"' | kw= '\"object\"' | kw= '\"operationId\"' | kw= '\"operationTraits\"' | kw= '\"parameters\"' | kw= '\"payload\"' | kw= '\"properties\"' | kw= '\"protocol\"' | kw= '\"publish\"' | kw= '\"required\"' | kw= '\"schema\"' | kw= '\"schemas\"' | kw= '\"servers\"' | kw= '\"stomp\"' | kw= '\"stomps\"' | kw= '\"string\"' | kw= '\"subscribe\"' | kw= '\"summary\"' | kw= '\"tags\"' | kw= '\"termsOfService\"' | kw= '\"title\"' | kw= '\"traits\"' | kw= '\"type\"' | kw= '\"url\"' | kw= '\"variables\"' | kw= '\"version\"' | kw= '\"ws\"' | kw= '\"wss\"' | kw= '\"x-title\"' )
-            int alt137=60;
+            // InternalAsyncApi.g:6972:2: (kw= '\"$ref\"' | kw= '\"2.0.0\"' | kw= '\"<\"' | kw= '\"<=\"' | kw= '\"=\"' | kw= '\">\"' | kw= '\">=\"' | kw= '\"AND\"' | kw= '\"OR\"' | kw= '\"aggregationFunction\"' | kw= '\"amqp\"' | kw= '\"amqps\"' | kw= '\"any\"' | kw= '\"array\"' | kw= '\"asyncapi\"' | kw= '\"atomic\"' | kw= '\"atomicMetric\"' | kw= '\"boolean\"' | kw= '\"channels\"' | kw= '\"components\"' | kw= '\"contact\"' | kw= '\"dataType\"' | kw= '\"days\"' | kw= '\"default\"' | kw= '\"deprecated\"' | kw= '\"derived\"' | kw= '\"description\"' | kw= '\"email\"' | kw= '\"enum\"' | kw= '\"format\"' | kw= '\"guaranteeTerm\"' | kw= '\"headers\"' | kw= '\"hours\"' | kw= '\"info\"' | kw= '\"integer\"' | kw= '\"items\"' | kw= '\"license\"' | kw= '\"location\"' | kw= '\"maxItems\"' | kw= '\"maximum\"' | kw= '\"message\"' | kw= '\"messageTraits\"' | kw= '\"messages\"' | kw= '\"metricType\"' | kw= '\"milliseconds\"' | kw= '\"minItems\"' | kw= '\"minimum\"' | kw= '\"minutes\"' | kw= '\"mqtt\"' | kw= '\"mqtts\"' | kw= '\"name\"' | kw= '\"null\"' | kw= '\"number\"' | kw= '\"object\"' | kw= '\"operationId\"' | kw= '\"operationTraits\"' | kw= '\"operator\"' | kw= '\"parameters\"' | kw= '\"payload\"' | kw= '\"properties\"' | kw= '\"protocol\"' | kw= '\"publish\"' | kw= '\"qosMetric\"' | kw= '\"qualifyingConditions\"' | kw= '\"real\"' | kw= '\"required\"' | kw= '\"schema\"' | kw= '\"schemas\"' | kw= '\"scopes\"' | kw= '\"seconds\"' | kw= '\"servers\"' | kw= '\"slos\"' | kw= '\"stomp\"' | kw= '\"stomps\"' | kw= '\"string\"' | kw= '\"subscribe\"' | kw= '\"summary\"' | kw= '\"tags\"' | kw= '\"termsOfService\"' | kw= '\"title\"' | kw= '\"traits\"' | kw= '\"type\"' | kw= '\"unit\"' | kw= '\"url\"' | kw= '\"value\"' | kw= '\"variables\"' | kw= '\"version\"' | kw= '\"window\"' | kw= '\"windowUnit\"' | kw= '\"ws\"' | kw= '\"wss\"' | kw= '\"x-basePackage\"' | kw= '\"x-qosMetrics\"' | kw= '\"x-sla\"' | kw= '\"x-title\"' )
+            int alt137=95;
             switch ( input.LA(1) ) {
-            case 83:
+            case 66:
                 {
                 alt137=1;
                 }
                 break;
-            case 84:
+            case 83:
                 {
                 alt137=2;
                 }
                 break;
-            case 85:
+            case 84:
                 {
                 alt137=3;
                 }
                 break;
-            case 86:
+            case 85:
                 {
                 alt137=4;
                 }
                 break;
-            case 87:
+            case 86:
                 {
                 alt137=5;
                 }
                 break;
-            case 9:
+            case 87:
                 {
                 alt137=6;
                 }
@@ -17659,269 +17727,444 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                 alt137=7;
                 }
                 break;
-            case 15:
+            case 76:
                 {
                 alt137=8;
                 }
                 break;
-            case 16:
+            case 77:
                 {
                 alt137=9;
                 }
                 break;
-            case 22:
+            case 73:
                 {
                 alt137=10;
                 }
                 break;
-            case 30:
+            case 89:
                 {
                 alt137=11;
                 }
                 break;
-            case 42:
+            case 90:
                 {
                 alt137=12;
                 }
                 break;
-            case 20:
+            case 91:
                 {
                 alt137=13;
                 }
                 break;
-            case 27:
+            case 92:
                 {
                 alt137=14;
                 }
                 break;
-            case 31:
+            case 9:
                 {
                 alt137=15;
                 }
                 break;
-            case 47:
+            case 75:
                 {
                 alt137=16;
                 }
                 break;
-            case 43:
+            case 74:
                 {
                 alt137=17;
                 }
                 break;
-            case 12:
+            case 93:
                 {
                 alt137=18;
                 }
                 break;
-            case 89:
+            case 15:
                 {
                 alt137=19;
                 }
                 break;
-            case 53:
+            case 16:
                 {
                 alt137=20;
                 }
                 break;
-            case 23:
+            case 22:
                 {
                 alt137=21;
                 }
                 break;
-            case 56:
+            case 68:
                 {
                 alt137=22;
                 }
                 break;
-            case 49:
+            case 94:
                 {
                 alt137=23;
                 }
                 break;
-            case 40:
+            case 30:
                 {
                 alt137=24;
                 }
                 break;
-            case 60:
+            case 42:
                 {
                 alt137=25;
                 }
                 break;
-            case 58:
+            case 70:
                 {
                 alt137=26;
                 }
                 break;
-            case 48:
+            case 20:
                 {
                 alt137=27;
                 }
                 break;
-            case 90:
+            case 27:
                 {
                 alt137=28;
                 }
                 break;
-            case 91:
+            case 31:
                 {
                 alt137=29;
                 }
                 break;
-            case 25:
+            case 47:
                 {
                 alt137=30;
                 }
                 break;
-            case 92:
+            case 62:
                 {
                 alt137=31;
                 }
                 break;
-            case 93:
+            case 43:
                 {
                 alt137=32;
                 }
                 break;
-            case 94:
+            case 95:
                 {
                 alt137=33;
                 }
                 break;
-            case 38:
+            case 12:
                 {
                 alt137=34;
                 }
                 break;
-            case 59:
+            case 96:
                 {
                 alt137=35;
                 }
                 break;
-            case 36:
+            case 53:
                 {
                 alt137=36;
                 }
                 break;
-            case 45:
+            case 23:
                 {
                 alt137=37;
                 }
                 break;
-            case 52:
+            case 56:
                 {
                 alt137=38;
                 }
                 break;
-            case 28:
+            case 51:
                 {
                 alt137=39;
                 }
                 break;
-            case 34:
+            case 49:
                 {
                 alt137=40;
                 }
                 break;
-            case 54:
+            case 40:
                 {
                 alt137=41;
                 }
                 break;
-            case 55:
+            case 60:
                 {
                 alt137=42;
                 }
                 break;
-            case 57:
+            case 58:
                 {
                 alt137=43;
                 }
                 break;
-            case 13:
+            case 69:
                 {
                 alt137=44;
                 }
                 break;
-            case 95:
+            case 97:
                 {
                 alt137=45;
                 }
                 break;
-            case 96:
+            case 50:
                 {
                 alt137=46;
                 }
                 break;
-            case 97:
+            case 48:
                 {
                 alt137=47;
                 }
                 break;
-            case 35:
+            case 98:
                 {
                 alt137=48;
                 }
                 break;
-            case 39:
+            case 99:
                 {
                 alt137=49;
                 }
                 break;
-            case 44:
+            case 100:
                 {
                 alt137=50;
                 }
                 break;
-            case 21:
+            case 25:
                 {
                 alt137=51;
                 }
                 break;
-            case 18:
+            case 101:
                 {
                 alt137=52;
                 }
                 break;
-            case 41:
+            case 102:
                 {
                 alt137=53;
                 }
                 break;
-            case 46:
+            case 103:
                 {
                 alt137=54;
                 }
                 break;
-            case 26:
+            case 38:
                 {
                 alt137=55;
                 }
                 break;
-            case 29:
+            case 59:
                 {
                 alt137=56;
                 }
                 break;
-            case 19:
+            case 79:
                 {
                 alt137=57;
                 }
                 break;
-            case 98:
+            case 36:
                 {
                 alt137=58;
                 }
                 break;
-            case 99:
+            case 45:
                 {
                 alt137=59;
                 }
                 break;
-            case 37:
+            case 52:
                 {
                 alt137=60;
+                }
+                break;
+            case 28:
+                {
+                alt137=61;
+                }
+                break;
+            case 34:
+                {
+                alt137=62;
+                }
+                break;
+            case 78:
+                {
+                alt137=63;
+                }
+                break;
+            case 64:
+                {
+                alt137=64;
+                }
+                break;
+            case 104:
+                {
+                alt137=65;
+                }
+                break;
+            case 54:
+                {
+                alt137=66;
+                }
+                break;
+            case 55:
+                {
+                alt137=67;
+                }
+                break;
+            case 57:
+                {
+                alt137=68;
+                }
+                break;
+            case 63:
+                {
+                alt137=69;
+                }
+                break;
+            case 105:
+                {
+                alt137=70;
+                }
+                break;
+            case 13:
+                {
+                alt137=71;
+                }
+                break;
+            case 65:
+                {
+                alt137=72;
+                }
+                break;
+            case 106:
+                {
+                alt137=73;
+                }
+                break;
+            case 107:
+                {
+                alt137=74;
+                }
+                break;
+            case 108:
+                {
+                alt137=75;
+                }
+                break;
+            case 35:
+                {
+                alt137=76;
+                }
+                break;
+            case 39:
+                {
+                alt137=77;
+                }
+                break;
+            case 44:
+                {
+                alt137=78;
+                }
+                break;
+            case 21:
+                {
+                alt137=79;
+                }
+                break;
+            case 18:
+                {
+                alt137=80;
+                }
+                break;
+            case 41:
+                {
+                alt137=81;
+                }
+                break;
+            case 46:
+                {
+                alt137=82;
+                }
+                break;
+            case 67:
+                {
+                alt137=83;
+                }
+                break;
+            case 26:
+                {
+                alt137=84;
+                }
+                break;
+            case 80:
+                {
+                alt137=85;
+                }
+                break;
+            case 29:
+                {
+                alt137=86;
+                }
+                break;
+            case 19:
+                {
+                alt137=87;
+                }
+                break;
+            case 71:
+                {
+                alt137=88;
+                }
+                break;
+            case 72:
+                {
+                alt137=89;
+                }
+                break;
+            case 109:
+                {
+                alt137=90;
+                }
+                break;
+            case 110:
+                {
+                alt137=91;
+                }
+                break;
+            case 24:
+                {
+                alt137=92;
+                }
+                break;
+            case 61:
+                {
+                alt137=93;
+                }
+                break;
+            case 17:
+                {
+                alt137=94;
+                }
+                break;
+            case 37:
+                {
+                alt137=95;
                 }
                 break;
             default:
@@ -17933,661 +18176,1046 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
             switch (alt137) {
                 case 1 :
-                    // InternalAsyncApi.g:6973:3: kw= '\"2.0.0\"'
+                    // InternalAsyncApi.g:6973:3: kw= '\"$ref\"'
                     {
-                    kw=(Token)match(input,83,FOLLOW_2); 
+                    kw=(Token)match(input,66,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkDigitTwoFullStopDigitZeroFullStopDigitZeroQuotationMarkKeyword_0());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getRefKeyword_0());
                     		
 
                     }
                     break;
                 case 2 :
-                    // InternalAsyncApi.g:6979:3: kw= '\"amqp\"'
+                    // InternalAsyncApi.g:6979:3: kw= '\"2.0.0\"'
                     {
-                    kw=(Token)match(input,84,FOLLOW_2); 
+                    kw=(Token)match(input,83,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getAmqpKeyword_1());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkDigitTwoFullStopDigitZeroFullStopDigitZeroQuotationMarkKeyword_1());
                     		
 
                     }
                     break;
                 case 3 :
-                    // InternalAsyncApi.g:6985:3: kw= '\"amqps\"'
+                    // InternalAsyncApi.g:6985:3: kw= '\"<\"'
                     {
-                    kw=(Token)match(input,85,FOLLOW_2); 
+                    kw=(Token)match(input,84,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getAmqpsKeyword_2());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkLessThanSignQuotationMarkKeyword_2());
                     		
 
                     }
                     break;
                 case 4 :
-                    // InternalAsyncApi.g:6991:3: kw= '\"any\"'
+                    // InternalAsyncApi.g:6991:3: kw= '\"<=\"'
                     {
-                    kw=(Token)match(input,86,FOLLOW_2); 
+                    kw=(Token)match(input,85,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getAnyKeyword_3());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkLessThanSignEqualsSignQuotationMarkKeyword_3());
                     		
 
                     }
                     break;
                 case 5 :
-                    // InternalAsyncApi.g:6997:3: kw= '\"array\"'
+                    // InternalAsyncApi.g:6997:3: kw= '\"=\"'
                     {
-                    kw=(Token)match(input,87,FOLLOW_2); 
+                    kw=(Token)match(input,86,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getArrayKeyword_4());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkEqualsSignQuotationMarkKeyword_4());
                     		
 
                     }
                     break;
                 case 6 :
-                    // InternalAsyncApi.g:7003:3: kw= '\"asyncapi\"'
+                    // InternalAsyncApi.g:7003:3: kw= '\">\"'
                     {
-                    kw=(Token)match(input,9,FOLLOW_2); 
+                    kw=(Token)match(input,87,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getAsyncapiKeyword_5());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkGreaterThanSignQuotationMarkKeyword_5());
                     		
 
                     }
                     break;
                 case 7 :
-                    // InternalAsyncApi.g:7009:3: kw= '\"boolean\"'
+                    // InternalAsyncApi.g:7009:3: kw= '\">=\"'
                     {
                     kw=(Token)match(input,88,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getBooleanKeyword_6());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkGreaterThanSignEqualsSignQuotationMarkKeyword_6());
                     		
 
                     }
                     break;
                 case 8 :
-                    // InternalAsyncApi.g:7015:3: kw= '\"channels\"'
+                    // InternalAsyncApi.g:7015:3: kw= '\"AND\"'
                     {
-                    kw=(Token)match(input,15,FOLLOW_2); 
+                    kw=(Token)match(input,76,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getChannelsKeyword_7());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getANDKeyword_7());
                     		
 
                     }
                     break;
                 case 9 :
-                    // InternalAsyncApi.g:7021:3: kw= '\"components\"'
+                    // InternalAsyncApi.g:7021:3: kw= '\"OR\"'
                     {
-                    kw=(Token)match(input,16,FOLLOW_2); 
+                    kw=(Token)match(input,77,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getComponentsKeyword_8());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getORKeyword_8());
                     		
 
                     }
                     break;
                 case 10 :
-                    // InternalAsyncApi.g:7027:3: kw= '\"contact\"'
+                    // InternalAsyncApi.g:7027:3: kw= '\"aggregationFunction\"'
                     {
-                    kw=(Token)match(input,22,FOLLOW_2); 
+                    kw=(Token)match(input,73,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getContactKeyword_9());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getAggregationFunctionKeyword_9());
                     		
 
                     }
                     break;
                 case 11 :
-                    // InternalAsyncApi.g:7033:3: kw= '\"default\"'
+                    // InternalAsyncApi.g:7033:3: kw= '\"amqp\"'
                     {
-                    kw=(Token)match(input,30,FOLLOW_2); 
+                    kw=(Token)match(input,89,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getDefaultKeyword_10());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getAmqpKeyword_10());
                     		
 
                     }
                     break;
                 case 12 :
-                    // InternalAsyncApi.g:7039:3: kw= '\"deprecated\"'
+                    // InternalAsyncApi.g:7039:3: kw= '\"amqps\"'
                     {
-                    kw=(Token)match(input,42,FOLLOW_2); 
+                    kw=(Token)match(input,90,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getDeprecatedKeyword_11());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getAmqpsKeyword_11());
                     		
 
                     }
                     break;
                 case 13 :
-                    // InternalAsyncApi.g:7045:3: kw= '\"description\"'
+                    // InternalAsyncApi.g:7045:3: kw= '\"any\"'
                     {
-                    kw=(Token)match(input,20,FOLLOW_2); 
+                    kw=(Token)match(input,91,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getDescriptionKeyword_12());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getAnyKeyword_12());
                     		
 
                     }
                     break;
                 case 14 :
-                    // InternalAsyncApi.g:7051:3: kw= '\"email\"'
+                    // InternalAsyncApi.g:7051:3: kw= '\"array\"'
                     {
-                    kw=(Token)match(input,27,FOLLOW_2); 
+                    kw=(Token)match(input,92,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getEmailKeyword_13());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getArrayKeyword_13());
                     		
 
                     }
                     break;
                 case 15 :
-                    // InternalAsyncApi.g:7057:3: kw= '\"enum\"'
+                    // InternalAsyncApi.g:7057:3: kw= '\"asyncapi\"'
                     {
-                    kw=(Token)match(input,31,FOLLOW_2); 
+                    kw=(Token)match(input,9,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getEnumKeyword_14());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getAsyncapiKeyword_14());
                     		
 
                     }
                     break;
                 case 16 :
-                    // InternalAsyncApi.g:7063:3: kw= '\"format\"'
+                    // InternalAsyncApi.g:7063:3: kw= '\"atomic\"'
                     {
-                    kw=(Token)match(input,47,FOLLOW_2); 
+                    kw=(Token)match(input,75,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getFormatKeyword_15());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getAtomicKeyword_15());
                     		
 
                     }
                     break;
                 case 17 :
-                    // InternalAsyncApi.g:7069:3: kw= '\"headers\"'
+                    // InternalAsyncApi.g:7069:3: kw= '\"atomicMetric\"'
                     {
-                    kw=(Token)match(input,43,FOLLOW_2); 
+                    kw=(Token)match(input,74,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getHeadersKeyword_16());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getAtomicMetricKeyword_16());
                     		
 
                     }
                     break;
                 case 18 :
-                    // InternalAsyncApi.g:7075:3: kw= '\"info\"'
+                    // InternalAsyncApi.g:7075:3: kw= '\"boolean\"'
                     {
-                    kw=(Token)match(input,12,FOLLOW_2); 
+                    kw=(Token)match(input,93,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getInfoKeyword_17());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getBooleanKeyword_17());
                     		
 
                     }
                     break;
                 case 19 :
-                    // InternalAsyncApi.g:7081:3: kw= '\"integer\"'
+                    // InternalAsyncApi.g:7081:3: kw= '\"channels\"'
                     {
-                    kw=(Token)match(input,89,FOLLOW_2); 
+                    kw=(Token)match(input,15,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getIntegerKeyword_18());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getChannelsKeyword_18());
                     		
 
                     }
                     break;
                 case 20 :
-                    // InternalAsyncApi.g:7087:3: kw= '\"items\"'
+                    // InternalAsyncApi.g:7087:3: kw= '\"components\"'
                     {
-                    kw=(Token)match(input,53,FOLLOW_2); 
+                    kw=(Token)match(input,16,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getItemsKeyword_19());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getComponentsKeyword_19());
                     		
 
                     }
                     break;
                 case 21 :
-                    // InternalAsyncApi.g:7093:3: kw= '\"license\"'
+                    // InternalAsyncApi.g:7093:3: kw= '\"contact\"'
                     {
-                    kw=(Token)match(input,23,FOLLOW_2); 
+                    kw=(Token)match(input,22,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getLicenseKeyword_20());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getContactKeyword_20());
                     		
 
                     }
                     break;
                 case 22 :
-                    // InternalAsyncApi.g:7099:3: kw= '\"location\"'
+                    // InternalAsyncApi.g:7099:3: kw= '\"dataType\"'
                     {
-                    kw=(Token)match(input,56,FOLLOW_2); 
+                    kw=(Token)match(input,68,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getLocationKeyword_21());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getDataTypeKeyword_21());
                     		
 
                     }
                     break;
                 case 23 :
-                    // InternalAsyncApi.g:7105:3: kw= '\"maximum\"'
+                    // InternalAsyncApi.g:7105:3: kw= '\"days\"'
                     {
-                    kw=(Token)match(input,49,FOLLOW_2); 
+                    kw=(Token)match(input,94,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMaximumKeyword_22());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getDaysKeyword_22());
                     		
 
                     }
                     break;
                 case 24 :
-                    // InternalAsyncApi.g:7111:3: kw= '\"message\"'
+                    // InternalAsyncApi.g:7111:3: kw= '\"default\"'
                     {
-                    kw=(Token)match(input,40,FOLLOW_2); 
+                    kw=(Token)match(input,30,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessageKeyword_23());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getDefaultKeyword_23());
                     		
 
                     }
                     break;
                 case 25 :
-                    // InternalAsyncApi.g:7117:3: kw= '\"messageTraits\"'
+                    // InternalAsyncApi.g:7117:3: kw= '\"deprecated\"'
                     {
-                    kw=(Token)match(input,60,FOLLOW_2); 
+                    kw=(Token)match(input,42,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessageTraitsKeyword_24());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getDeprecatedKeyword_24());
                     		
 
                     }
                     break;
                 case 26 :
-                    // InternalAsyncApi.g:7123:3: kw= '\"messages\"'
+                    // InternalAsyncApi.g:7123:3: kw= '\"derived\"'
                     {
-                    kw=(Token)match(input,58,FOLLOW_2); 
+                    kw=(Token)match(input,70,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessagesKeyword_25());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getDerivedKeyword_25());
                     		
 
                     }
                     break;
                 case 27 :
-                    // InternalAsyncApi.g:7129:3: kw= '\"minimum\"'
+                    // InternalAsyncApi.g:7129:3: kw= '\"description\"'
                     {
-                    kw=(Token)match(input,48,FOLLOW_2); 
+                    kw=(Token)match(input,20,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMinimumKeyword_26());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getDescriptionKeyword_26());
                     		
 
                     }
                     break;
                 case 28 :
-                    // InternalAsyncApi.g:7135:3: kw= '\"mqtt\"'
+                    // InternalAsyncApi.g:7135:3: kw= '\"email\"'
                     {
-                    kw=(Token)match(input,90,FOLLOW_2); 
+                    kw=(Token)match(input,27,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMqttKeyword_27());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getEmailKeyword_27());
                     		
 
                     }
                     break;
                 case 29 :
-                    // InternalAsyncApi.g:7141:3: kw= '\"mqtts\"'
+                    // InternalAsyncApi.g:7141:3: kw= '\"enum\"'
                     {
-                    kw=(Token)match(input,91,FOLLOW_2); 
+                    kw=(Token)match(input,31,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMqttsKeyword_28());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getEnumKeyword_28());
                     		
 
                     }
                     break;
                 case 30 :
-                    // InternalAsyncApi.g:7147:3: kw= '\"name\"'
+                    // InternalAsyncApi.g:7147:3: kw= '\"format\"'
                     {
-                    kw=(Token)match(input,25,FOLLOW_2); 
+                    kw=(Token)match(input,47,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getNameKeyword_29());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getFormatKeyword_29());
                     		
 
                     }
                     break;
                 case 31 :
-                    // InternalAsyncApi.g:7153:3: kw= '\"null\"'
+                    // InternalAsyncApi.g:7153:3: kw= '\"guaranteeTerm\"'
                     {
-                    kw=(Token)match(input,92,FOLLOW_2); 
+                    kw=(Token)match(input,62,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getNullKeyword_30());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getGuaranteeTermKeyword_30());
                     		
 
                     }
                     break;
                 case 32 :
-                    // InternalAsyncApi.g:7159:3: kw= '\"number\"'
+                    // InternalAsyncApi.g:7159:3: kw= '\"headers\"'
                     {
-                    kw=(Token)match(input,93,FOLLOW_2); 
+                    kw=(Token)match(input,43,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getNumberKeyword_31());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getHeadersKeyword_31());
                     		
 
                     }
                     break;
                 case 33 :
-                    // InternalAsyncApi.g:7165:3: kw= '\"object\"'
+                    // InternalAsyncApi.g:7165:3: kw= '\"hours\"'
                     {
-                    kw=(Token)match(input,94,FOLLOW_2); 
+                    kw=(Token)match(input,95,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getObjectKeyword_32());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getHoursKeyword_32());
                     		
 
                     }
                     break;
                 case 34 :
-                    // InternalAsyncApi.g:7171:3: kw= '\"operationId\"'
+                    // InternalAsyncApi.g:7171:3: kw= '\"info\"'
                     {
-                    kw=(Token)match(input,38,FOLLOW_2); 
+                    kw=(Token)match(input,12,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperationIdKeyword_33());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getInfoKeyword_33());
                     		
 
                     }
                     break;
                 case 35 :
-                    // InternalAsyncApi.g:7177:3: kw= '\"operationTraits\"'
+                    // InternalAsyncApi.g:7177:3: kw= '\"integer\"'
                     {
-                    kw=(Token)match(input,59,FOLLOW_2); 
+                    kw=(Token)match(input,96,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperationTraitsKeyword_34());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getIntegerKeyword_34());
                     		
 
                     }
                     break;
                 case 36 :
-                    // InternalAsyncApi.g:7183:3: kw= '\"parameters\"'
+                    // InternalAsyncApi.g:7183:3: kw= '\"items\"'
                     {
-                    kw=(Token)match(input,36,FOLLOW_2); 
+                    kw=(Token)match(input,53,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getParametersKeyword_35());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getItemsKeyword_35());
                     		
 
                     }
                     break;
                 case 37 :
-                    // InternalAsyncApi.g:7189:3: kw= '\"payload\"'
+                    // InternalAsyncApi.g:7189:3: kw= '\"license\"'
                     {
-                    kw=(Token)match(input,45,FOLLOW_2); 
+                    kw=(Token)match(input,23,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getPayloadKeyword_36());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getLicenseKeyword_36());
                     		
 
                     }
                     break;
                 case 38 :
-                    // InternalAsyncApi.g:7195:3: kw= '\"properties\"'
+                    // InternalAsyncApi.g:7195:3: kw= '\"location\"'
                     {
-                    kw=(Token)match(input,52,FOLLOW_2); 
+                    kw=(Token)match(input,56,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getPropertiesKeyword_37());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getLocationKeyword_37());
                     		
 
                     }
                     break;
                 case 39 :
-                    // InternalAsyncApi.g:7201:3: kw= '\"protocol\"'
+                    // InternalAsyncApi.g:7201:3: kw= '\"maxItems\"'
                     {
-                    kw=(Token)match(input,28,FOLLOW_2); 
+                    kw=(Token)match(input,51,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getProtocolKeyword_38());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMaxItemsKeyword_38());
                     		
 
                     }
                     break;
                 case 40 :
-                    // InternalAsyncApi.g:7207:3: kw= '\"publish\"'
+                    // InternalAsyncApi.g:7207:3: kw= '\"maximum\"'
                     {
-                    kw=(Token)match(input,34,FOLLOW_2); 
+                    kw=(Token)match(input,49,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getPublishKeyword_39());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMaximumKeyword_39());
                     		
 
                     }
                     break;
                 case 41 :
-                    // InternalAsyncApi.g:7213:3: kw= '\"required\"'
+                    // InternalAsyncApi.g:7213:3: kw= '\"message\"'
                     {
-                    kw=(Token)match(input,54,FOLLOW_2); 
+                    kw=(Token)match(input,40,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getRequiredKeyword_40());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessageKeyword_40());
                     		
 
                     }
                     break;
                 case 42 :
-                    // InternalAsyncApi.g:7219:3: kw= '\"schema\"'
+                    // InternalAsyncApi.g:7219:3: kw= '\"messageTraits\"'
                     {
-                    kw=(Token)match(input,55,FOLLOW_2); 
+                    kw=(Token)match(input,60,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getSchemaKeyword_41());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessageTraitsKeyword_41());
                     		
 
                     }
                     break;
                 case 43 :
-                    // InternalAsyncApi.g:7225:3: kw= '\"schemas\"'
+                    // InternalAsyncApi.g:7225:3: kw= '\"messages\"'
                     {
-                    kw=(Token)match(input,57,FOLLOW_2); 
+                    kw=(Token)match(input,58,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getSchemasKeyword_42());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessagesKeyword_42());
                     		
 
                     }
                     break;
                 case 44 :
-                    // InternalAsyncApi.g:7231:3: kw= '\"servers\"'
+                    // InternalAsyncApi.g:7231:3: kw= '\"metricType\"'
                     {
-                    kw=(Token)match(input,13,FOLLOW_2); 
+                    kw=(Token)match(input,69,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getServersKeyword_43());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMetricTypeKeyword_43());
                     		
 
                     }
                     break;
                 case 45 :
-                    // InternalAsyncApi.g:7237:3: kw= '\"stomp\"'
+                    // InternalAsyncApi.g:7237:3: kw= '\"milliseconds\"'
                     {
-                    kw=(Token)match(input,95,FOLLOW_2); 
+                    kw=(Token)match(input,97,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getStompKeyword_44());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMillisecondsKeyword_44());
                     		
 
                     }
                     break;
                 case 46 :
-                    // InternalAsyncApi.g:7243:3: kw= '\"stomps\"'
+                    // InternalAsyncApi.g:7243:3: kw= '\"minItems\"'
                     {
-                    kw=(Token)match(input,96,FOLLOW_2); 
+                    kw=(Token)match(input,50,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getStompsKeyword_45());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMinItemsKeyword_45());
                     		
 
                     }
                     break;
                 case 47 :
-                    // InternalAsyncApi.g:7249:3: kw= '\"string\"'
+                    // InternalAsyncApi.g:7249:3: kw= '\"minimum\"'
                     {
-                    kw=(Token)match(input,97,FOLLOW_2); 
+                    kw=(Token)match(input,48,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getStringKeyword_46());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMinimumKeyword_46());
                     		
 
                     }
                     break;
                 case 48 :
-                    // InternalAsyncApi.g:7255:3: kw= '\"subscribe\"'
+                    // InternalAsyncApi.g:7255:3: kw= '\"minutes\"'
                     {
-                    kw=(Token)match(input,35,FOLLOW_2); 
+                    kw=(Token)match(input,98,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getSubscribeKeyword_47());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMinutesKeyword_47());
                     		
 
                     }
                     break;
                 case 49 :
-                    // InternalAsyncApi.g:7261:3: kw= '\"summary\"'
+                    // InternalAsyncApi.g:7261:3: kw= '\"mqtt\"'
                     {
-                    kw=(Token)match(input,39,FOLLOW_2); 
+                    kw=(Token)match(input,99,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getSummaryKeyword_48());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMqttKeyword_48());
                     		
 
                     }
                     break;
                 case 50 :
-                    // InternalAsyncApi.g:7267:3: kw= '\"tags\"'
+                    // InternalAsyncApi.g:7267:3: kw= '\"mqtts\"'
                     {
-                    kw=(Token)match(input,44,FOLLOW_2); 
+                    kw=(Token)match(input,100,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getTagsKeyword_49());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getMqttsKeyword_49());
                     		
 
                     }
                     break;
                 case 51 :
-                    // InternalAsyncApi.g:7273:3: kw= '\"termsOfService\"'
+                    // InternalAsyncApi.g:7273:3: kw= '\"name\"'
                     {
-                    kw=(Token)match(input,21,FOLLOW_2); 
+                    kw=(Token)match(input,25,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getTermsOfServiceKeyword_50());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getNameKeyword_50());
                     		
 
                     }
                     break;
                 case 52 :
-                    // InternalAsyncApi.g:7279:3: kw= '\"title\"'
+                    // InternalAsyncApi.g:7279:3: kw= '\"null\"'
                     {
-                    kw=(Token)match(input,18,FOLLOW_2); 
+                    kw=(Token)match(input,101,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getTitleKeyword_51());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getNullKeyword_51());
                     		
 
                     }
                     break;
                 case 53 :
-                    // InternalAsyncApi.g:7285:3: kw= '\"traits\"'
+                    // InternalAsyncApi.g:7285:3: kw= '\"number\"'
                     {
-                    kw=(Token)match(input,41,FOLLOW_2); 
+                    kw=(Token)match(input,102,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getTraitsKeyword_52());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getNumberKeyword_52());
                     		
 
                     }
                     break;
                 case 54 :
-                    // InternalAsyncApi.g:7291:3: kw= '\"type\"'
+                    // InternalAsyncApi.g:7291:3: kw= '\"object\"'
                     {
-                    kw=(Token)match(input,46,FOLLOW_2); 
+                    kw=(Token)match(input,103,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getTypeKeyword_53());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getObjectKeyword_53());
                     		
 
                     }
                     break;
                 case 55 :
-                    // InternalAsyncApi.g:7297:3: kw= '\"url\"'
+                    // InternalAsyncApi.g:7297:3: kw= '\"operationId\"'
                     {
-                    kw=(Token)match(input,26,FOLLOW_2); 
+                    kw=(Token)match(input,38,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getUrlKeyword_54());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperationIdKeyword_54());
                     		
 
                     }
                     break;
                 case 56 :
-                    // InternalAsyncApi.g:7303:3: kw= '\"variables\"'
+                    // InternalAsyncApi.g:7303:3: kw= '\"operationTraits\"'
                     {
-                    kw=(Token)match(input,29,FOLLOW_2); 
+                    kw=(Token)match(input,59,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getVariablesKeyword_55());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperationTraitsKeyword_55());
                     		
 
                     }
                     break;
                 case 57 :
-                    // InternalAsyncApi.g:7309:3: kw= '\"version\"'
+                    // InternalAsyncApi.g:7309:3: kw= '\"operator\"'
                     {
-                    kw=(Token)match(input,19,FOLLOW_2); 
+                    kw=(Token)match(input,79,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getVersionKeyword_56());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperatorKeyword_56());
                     		
 
                     }
                     break;
                 case 58 :
-                    // InternalAsyncApi.g:7315:3: kw= '\"ws\"'
+                    // InternalAsyncApi.g:7315:3: kw= '\"parameters\"'
                     {
-                    kw=(Token)match(input,98,FOLLOW_2); 
+                    kw=(Token)match(input,36,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getWsKeyword_57());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getParametersKeyword_57());
                     		
 
                     }
                     break;
                 case 59 :
-                    // InternalAsyncApi.g:7321:3: kw= '\"wss\"'
+                    // InternalAsyncApi.g:7321:3: kw= '\"payload\"'
                     {
-                    kw=(Token)match(input,99,FOLLOW_2); 
+                    kw=(Token)match(input,45,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getWssKeyword_58());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getPayloadKeyword_58());
                     		
 
                     }
                     break;
                 case 60 :
-                    // InternalAsyncApi.g:7327:3: kw= '\"x-title\"'
+                    // InternalAsyncApi.g:7327:3: kw= '\"properties\"'
+                    {
+                    kw=(Token)match(input,52,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getPropertiesKeyword_59());
+                    		
+
+                    }
+                    break;
+                case 61 :
+                    // InternalAsyncApi.g:7333:3: kw= '\"protocol\"'
+                    {
+                    kw=(Token)match(input,28,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getProtocolKeyword_60());
+                    		
+
+                    }
+                    break;
+                case 62 :
+                    // InternalAsyncApi.g:7339:3: kw= '\"publish\"'
+                    {
+                    kw=(Token)match(input,34,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getPublishKeyword_61());
+                    		
+
+                    }
+                    break;
+                case 63 :
+                    // InternalAsyncApi.g:7345:3: kw= '\"qosMetric\"'
+                    {
+                    kw=(Token)match(input,78,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getQosMetricKeyword_62());
+                    		
+
+                    }
+                    break;
+                case 64 :
+                    // InternalAsyncApi.g:7351:3: kw= '\"qualifyingConditions\"'
+                    {
+                    kw=(Token)match(input,64,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getQualifyingConditionsKeyword_63());
+                    		
+
+                    }
+                    break;
+                case 65 :
+                    // InternalAsyncApi.g:7357:3: kw= '\"real\"'
+                    {
+                    kw=(Token)match(input,104,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getRealKeyword_64());
+                    		
+
+                    }
+                    break;
+                case 66 :
+                    // InternalAsyncApi.g:7363:3: kw= '\"required\"'
+                    {
+                    kw=(Token)match(input,54,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getRequiredKeyword_65());
+                    		
+
+                    }
+                    break;
+                case 67 :
+                    // InternalAsyncApi.g:7369:3: kw= '\"schema\"'
+                    {
+                    kw=(Token)match(input,55,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getSchemaKeyword_66());
+                    		
+
+                    }
+                    break;
+                case 68 :
+                    // InternalAsyncApi.g:7375:3: kw= '\"schemas\"'
+                    {
+                    kw=(Token)match(input,57,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getSchemasKeyword_67());
+                    		
+
+                    }
+                    break;
+                case 69 :
+                    // InternalAsyncApi.g:7381:3: kw= '\"scopes\"'
+                    {
+                    kw=(Token)match(input,63,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getScopesKeyword_68());
+                    		
+
+                    }
+                    break;
+                case 70 :
+                    // InternalAsyncApi.g:7387:3: kw= '\"seconds\"'
+                    {
+                    kw=(Token)match(input,105,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getSecondsKeyword_69());
+                    		
+
+                    }
+                    break;
+                case 71 :
+                    // InternalAsyncApi.g:7393:3: kw= '\"servers\"'
+                    {
+                    kw=(Token)match(input,13,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getServersKeyword_70());
+                    		
+
+                    }
+                    break;
+                case 72 :
+                    // InternalAsyncApi.g:7399:3: kw= '\"slos\"'
+                    {
+                    kw=(Token)match(input,65,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getSlosKeyword_71());
+                    		
+
+                    }
+                    break;
+                case 73 :
+                    // InternalAsyncApi.g:7405:3: kw= '\"stomp\"'
+                    {
+                    kw=(Token)match(input,106,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getStompKeyword_72());
+                    		
+
+                    }
+                    break;
+                case 74 :
+                    // InternalAsyncApi.g:7411:3: kw= '\"stomps\"'
+                    {
+                    kw=(Token)match(input,107,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getStompsKeyword_73());
+                    		
+
+                    }
+                    break;
+                case 75 :
+                    // InternalAsyncApi.g:7417:3: kw= '\"string\"'
+                    {
+                    kw=(Token)match(input,108,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getStringKeyword_74());
+                    		
+
+                    }
+                    break;
+                case 76 :
+                    // InternalAsyncApi.g:7423:3: kw= '\"subscribe\"'
+                    {
+                    kw=(Token)match(input,35,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getSubscribeKeyword_75());
+                    		
+
+                    }
+                    break;
+                case 77 :
+                    // InternalAsyncApi.g:7429:3: kw= '\"summary\"'
+                    {
+                    kw=(Token)match(input,39,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getSummaryKeyword_76());
+                    		
+
+                    }
+                    break;
+                case 78 :
+                    // InternalAsyncApi.g:7435:3: kw= '\"tags\"'
+                    {
+                    kw=(Token)match(input,44,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getTagsKeyword_77());
+                    		
+
+                    }
+                    break;
+                case 79 :
+                    // InternalAsyncApi.g:7441:3: kw= '\"termsOfService\"'
+                    {
+                    kw=(Token)match(input,21,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getTermsOfServiceKeyword_78());
+                    		
+
+                    }
+                    break;
+                case 80 :
+                    // InternalAsyncApi.g:7447:3: kw= '\"title\"'
+                    {
+                    kw=(Token)match(input,18,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getTitleKeyword_79());
+                    		
+
+                    }
+                    break;
+                case 81 :
+                    // InternalAsyncApi.g:7453:3: kw= '\"traits\"'
+                    {
+                    kw=(Token)match(input,41,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getTraitsKeyword_80());
+                    		
+
+                    }
+                    break;
+                case 82 :
+                    // InternalAsyncApi.g:7459:3: kw= '\"type\"'
+                    {
+                    kw=(Token)match(input,46,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getTypeKeyword_81());
+                    		
+
+                    }
+                    break;
+                case 83 :
+                    // InternalAsyncApi.g:7465:3: kw= '\"unit\"'
+                    {
+                    kw=(Token)match(input,67,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getUnitKeyword_82());
+                    		
+
+                    }
+                    break;
+                case 84 :
+                    // InternalAsyncApi.g:7471:3: kw= '\"url\"'
+                    {
+                    kw=(Token)match(input,26,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getUrlKeyword_83());
+                    		
+
+                    }
+                    break;
+                case 85 :
+                    // InternalAsyncApi.g:7477:3: kw= '\"value\"'
+                    {
+                    kw=(Token)match(input,80,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getValueKeyword_84());
+                    		
+
+                    }
+                    break;
+                case 86 :
+                    // InternalAsyncApi.g:7483:3: kw= '\"variables\"'
+                    {
+                    kw=(Token)match(input,29,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getVariablesKeyword_85());
+                    		
+
+                    }
+                    break;
+                case 87 :
+                    // InternalAsyncApi.g:7489:3: kw= '\"version\"'
+                    {
+                    kw=(Token)match(input,19,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getVersionKeyword_86());
+                    		
+
+                    }
+                    break;
+                case 88 :
+                    // InternalAsyncApi.g:7495:3: kw= '\"window\"'
+                    {
+                    kw=(Token)match(input,71,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getWindowKeyword_87());
+                    		
+
+                    }
+                    break;
+                case 89 :
+                    // InternalAsyncApi.g:7501:3: kw= '\"windowUnit\"'
+                    {
+                    kw=(Token)match(input,72,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getWindowUnitKeyword_88());
+                    		
+
+                    }
+                    break;
+                case 90 :
+                    // InternalAsyncApi.g:7507:3: kw= '\"ws\"'
+                    {
+                    kw=(Token)match(input,109,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getWsKeyword_89());
+                    		
+
+                    }
+                    break;
+                case 91 :
+                    // InternalAsyncApi.g:7513:3: kw= '\"wss\"'
+                    {
+                    kw=(Token)match(input,110,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getWssKeyword_90());
+                    		
+
+                    }
+                    break;
+                case 92 :
+                    // InternalAsyncApi.g:7519:3: kw= '\"x-basePackage\"'
+                    {
+                    kw=(Token)match(input,24,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getXBasePackageKeyword_91());
+                    		
+
+                    }
+                    break;
+                case 93 :
+                    // InternalAsyncApi.g:7525:3: kw= '\"x-qosMetrics\"'
+                    {
+                    kw=(Token)match(input,61,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getXQosMetricsKeyword_92());
+                    		
+
+                    }
+                    break;
+                case 94 :
+                    // InternalAsyncApi.g:7531:3: kw= '\"x-sla\"'
+                    {
+                    kw=(Token)match(input,17,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getXSlaKeyword_93());
+                    		
+
+                    }
+                    break;
+                case 95 :
+                    // InternalAsyncApi.g:7537:3: kw= '\"x-title\"'
                     {
                     kw=(Token)match(input,37,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getXTitleKeyword_59());
+                    			newLeafNode(kw, grammarAccess.getKeywordAccess().getXTitleKeyword_94());
                     		
 
                     }
@@ -18615,7 +19243,7 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWindowUnit"
-    // InternalAsyncApi.g:7336:1: ruleWindowUnit returns [Enumerator current=null] : ( (enumLiteral_0= '\"seconds\"' ) | (enumLiteral_1= '\"minutes\"' ) | (enumLiteral_2= '\"hours\"' ) | (enumLiteral_3= '\"days\"' ) | (enumLiteral_4= '\"messages\"' ) ) ;
+    // InternalAsyncApi.g:7546:1: ruleWindowUnit returns [Enumerator current=null] : ( (enumLiteral_0= '\"seconds\"' ) | (enumLiteral_1= '\"minutes\"' ) | (enumLiteral_2= '\"hours\"' ) | (enumLiteral_3= '\"days\"' ) | (enumLiteral_4= '\"messages\"' ) ) ;
     public final Enumerator ruleWindowUnit() throws RecognitionException {
         Enumerator current = null;
 
@@ -18629,28 +19257,28 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAsyncApi.g:7342:2: ( ( (enumLiteral_0= '\"seconds\"' ) | (enumLiteral_1= '\"minutes\"' ) | (enumLiteral_2= '\"hours\"' ) | (enumLiteral_3= '\"days\"' ) | (enumLiteral_4= '\"messages\"' ) ) )
-            // InternalAsyncApi.g:7343:2: ( (enumLiteral_0= '\"seconds\"' ) | (enumLiteral_1= '\"minutes\"' ) | (enumLiteral_2= '\"hours\"' ) | (enumLiteral_3= '\"days\"' ) | (enumLiteral_4= '\"messages\"' ) )
+            // InternalAsyncApi.g:7552:2: ( ( (enumLiteral_0= '\"seconds\"' ) | (enumLiteral_1= '\"minutes\"' ) | (enumLiteral_2= '\"hours\"' ) | (enumLiteral_3= '\"days\"' ) | (enumLiteral_4= '\"messages\"' ) ) )
+            // InternalAsyncApi.g:7553:2: ( (enumLiteral_0= '\"seconds\"' ) | (enumLiteral_1= '\"minutes\"' ) | (enumLiteral_2= '\"hours\"' ) | (enumLiteral_3= '\"days\"' ) | (enumLiteral_4= '\"messages\"' ) )
             {
-            // InternalAsyncApi.g:7343:2: ( (enumLiteral_0= '\"seconds\"' ) | (enumLiteral_1= '\"minutes\"' ) | (enumLiteral_2= '\"hours\"' ) | (enumLiteral_3= '\"days\"' ) | (enumLiteral_4= '\"messages\"' ) )
+            // InternalAsyncApi.g:7553:2: ( (enumLiteral_0= '\"seconds\"' ) | (enumLiteral_1= '\"minutes\"' ) | (enumLiteral_2= '\"hours\"' ) | (enumLiteral_3= '\"days\"' ) | (enumLiteral_4= '\"messages\"' ) )
             int alt138=5;
             switch ( input.LA(1) ) {
-            case 100:
+            case 105:
                 {
                 alt138=1;
                 }
                 break;
-            case 101:
+            case 98:
                 {
                 alt138=2;
                 }
                 break;
-            case 102:
+            case 95:
                 {
                 alt138=3;
                 }
                 break;
-            case 103:
+            case 94:
                 {
                 alt138=4;
                 }
@@ -18669,12 +19297,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
             switch (alt138) {
                 case 1 :
-                    // InternalAsyncApi.g:7344:3: (enumLiteral_0= '\"seconds\"' )
+                    // InternalAsyncApi.g:7554:3: (enumLiteral_0= '\"seconds\"' )
                     {
-                    // InternalAsyncApi.g:7344:3: (enumLiteral_0= '\"seconds\"' )
-                    // InternalAsyncApi.g:7345:4: enumLiteral_0= '\"seconds\"'
+                    // InternalAsyncApi.g:7554:3: (enumLiteral_0= '\"seconds\"' )
+                    // InternalAsyncApi.g:7555:4: enumLiteral_0= '\"seconds\"'
                     {
-                    enumLiteral_0=(Token)match(input,100,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,105,FOLLOW_2); 
 
                     				current = grammarAccess.getWindowUnitAccess().getSecondsEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getWindowUnitAccess().getSecondsEnumLiteralDeclaration_0());
@@ -18686,12 +19314,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalAsyncApi.g:7352:3: (enumLiteral_1= '\"minutes\"' )
+                    // InternalAsyncApi.g:7562:3: (enumLiteral_1= '\"minutes\"' )
                     {
-                    // InternalAsyncApi.g:7352:3: (enumLiteral_1= '\"minutes\"' )
-                    // InternalAsyncApi.g:7353:4: enumLiteral_1= '\"minutes\"'
+                    // InternalAsyncApi.g:7562:3: (enumLiteral_1= '\"minutes\"' )
+                    // InternalAsyncApi.g:7563:4: enumLiteral_1= '\"minutes\"'
                     {
-                    enumLiteral_1=(Token)match(input,101,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,98,FOLLOW_2); 
 
                     				current = grammarAccess.getWindowUnitAccess().getMinutesEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getWindowUnitAccess().getMinutesEnumLiteralDeclaration_1());
@@ -18703,12 +19331,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalAsyncApi.g:7360:3: (enumLiteral_2= '\"hours\"' )
+                    // InternalAsyncApi.g:7570:3: (enumLiteral_2= '\"hours\"' )
                     {
-                    // InternalAsyncApi.g:7360:3: (enumLiteral_2= '\"hours\"' )
-                    // InternalAsyncApi.g:7361:4: enumLiteral_2= '\"hours\"'
+                    // InternalAsyncApi.g:7570:3: (enumLiteral_2= '\"hours\"' )
+                    // InternalAsyncApi.g:7571:4: enumLiteral_2= '\"hours\"'
                     {
-                    enumLiteral_2=(Token)match(input,102,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,95,FOLLOW_2); 
 
                     				current = grammarAccess.getWindowUnitAccess().getHoursEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getWindowUnitAccess().getHoursEnumLiteralDeclaration_2());
@@ -18720,12 +19348,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalAsyncApi.g:7368:3: (enumLiteral_3= '\"days\"' )
+                    // InternalAsyncApi.g:7578:3: (enumLiteral_3= '\"days\"' )
                     {
-                    // InternalAsyncApi.g:7368:3: (enumLiteral_3= '\"days\"' )
-                    // InternalAsyncApi.g:7369:4: enumLiteral_3= '\"days\"'
+                    // InternalAsyncApi.g:7578:3: (enumLiteral_3= '\"days\"' )
+                    // InternalAsyncApi.g:7579:4: enumLiteral_3= '\"days\"'
                     {
-                    enumLiteral_3=(Token)match(input,103,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,94,FOLLOW_2); 
 
                     				current = grammarAccess.getWindowUnitAccess().getDaysEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getWindowUnitAccess().getDaysEnumLiteralDeclaration_3());
@@ -18737,10 +19365,10 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalAsyncApi.g:7376:3: (enumLiteral_4= '\"messages\"' )
+                    // InternalAsyncApi.g:7586:3: (enumLiteral_4= '\"messages\"' )
                     {
-                    // InternalAsyncApi.g:7376:3: (enumLiteral_4= '\"messages\"' )
-                    // InternalAsyncApi.g:7377:4: enumLiteral_4= '\"messages\"'
+                    // InternalAsyncApi.g:7586:3: (enumLiteral_4= '\"messages\"' )
+                    // InternalAsyncApi.g:7587:4: enumLiteral_4= '\"messages\"'
                     {
                     enumLiteral_4=(Token)match(input,58,FOLLOW_2); 
 
@@ -18776,7 +19404,7 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQoSMetricUnit"
-    // InternalAsyncApi.g:7387:1: ruleQoSMetricUnit returns [Enumerator current=null] : ( (enumLiteral_0= '\"milliseconds\"' ) | (enumLiteral_1= '\"seconds\"' ) | (enumLiteral_2= '\"minutes\"' ) | (enumLiteral_3= '\"hours\"' ) | (enumLiteral_4= '\"null\"' ) ) ;
+    // InternalAsyncApi.g:7597:1: ruleQoSMetricUnit returns [Enumerator current=null] : ( (enumLiteral_0= '\"milliseconds\"' ) | (enumLiteral_1= '\"seconds\"' ) | (enumLiteral_2= '\"minutes\"' ) | (enumLiteral_3= '\"hours\"' ) | (enumLiteral_4= '\"null\"' ) ) ;
     public final Enumerator ruleQoSMetricUnit() throws RecognitionException {
         Enumerator current = null;
 
@@ -18790,33 +19418,33 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAsyncApi.g:7393:2: ( ( (enumLiteral_0= '\"milliseconds\"' ) | (enumLiteral_1= '\"seconds\"' ) | (enumLiteral_2= '\"minutes\"' ) | (enumLiteral_3= '\"hours\"' ) | (enumLiteral_4= '\"null\"' ) ) )
-            // InternalAsyncApi.g:7394:2: ( (enumLiteral_0= '\"milliseconds\"' ) | (enumLiteral_1= '\"seconds\"' ) | (enumLiteral_2= '\"minutes\"' ) | (enumLiteral_3= '\"hours\"' ) | (enumLiteral_4= '\"null\"' ) )
+            // InternalAsyncApi.g:7603:2: ( ( (enumLiteral_0= '\"milliseconds\"' ) | (enumLiteral_1= '\"seconds\"' ) | (enumLiteral_2= '\"minutes\"' ) | (enumLiteral_3= '\"hours\"' ) | (enumLiteral_4= '\"null\"' ) ) )
+            // InternalAsyncApi.g:7604:2: ( (enumLiteral_0= '\"milliseconds\"' ) | (enumLiteral_1= '\"seconds\"' ) | (enumLiteral_2= '\"minutes\"' ) | (enumLiteral_3= '\"hours\"' ) | (enumLiteral_4= '\"null\"' ) )
             {
-            // InternalAsyncApi.g:7394:2: ( (enumLiteral_0= '\"milliseconds\"' ) | (enumLiteral_1= '\"seconds\"' ) | (enumLiteral_2= '\"minutes\"' ) | (enumLiteral_3= '\"hours\"' ) | (enumLiteral_4= '\"null\"' ) )
+            // InternalAsyncApi.g:7604:2: ( (enumLiteral_0= '\"milliseconds\"' ) | (enumLiteral_1= '\"seconds\"' ) | (enumLiteral_2= '\"minutes\"' ) | (enumLiteral_3= '\"hours\"' ) | (enumLiteral_4= '\"null\"' ) )
             int alt139=5;
             switch ( input.LA(1) ) {
-            case 104:
+            case 97:
                 {
                 alt139=1;
                 }
                 break;
-            case 100:
+            case 105:
                 {
                 alt139=2;
                 }
                 break;
-            case 101:
+            case 98:
                 {
                 alt139=3;
                 }
                 break;
-            case 102:
+            case 95:
                 {
                 alt139=4;
                 }
                 break;
-            case 92:
+            case 101:
                 {
                 alt139=5;
                 }
@@ -18830,12 +19458,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
             switch (alt139) {
                 case 1 :
-                    // InternalAsyncApi.g:7395:3: (enumLiteral_0= '\"milliseconds\"' )
+                    // InternalAsyncApi.g:7605:3: (enumLiteral_0= '\"milliseconds\"' )
                     {
-                    // InternalAsyncApi.g:7395:3: (enumLiteral_0= '\"milliseconds\"' )
-                    // InternalAsyncApi.g:7396:4: enumLiteral_0= '\"milliseconds\"'
+                    // InternalAsyncApi.g:7605:3: (enumLiteral_0= '\"milliseconds\"' )
+                    // InternalAsyncApi.g:7606:4: enumLiteral_0= '\"milliseconds\"'
                     {
-                    enumLiteral_0=(Token)match(input,104,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,97,FOLLOW_2); 
 
                     				current = grammarAccess.getQoSMetricUnitAccess().getMillisecondsEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getQoSMetricUnitAccess().getMillisecondsEnumLiteralDeclaration_0());
@@ -18847,12 +19475,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalAsyncApi.g:7403:3: (enumLiteral_1= '\"seconds\"' )
+                    // InternalAsyncApi.g:7613:3: (enumLiteral_1= '\"seconds\"' )
                     {
-                    // InternalAsyncApi.g:7403:3: (enumLiteral_1= '\"seconds\"' )
-                    // InternalAsyncApi.g:7404:4: enumLiteral_1= '\"seconds\"'
+                    // InternalAsyncApi.g:7613:3: (enumLiteral_1= '\"seconds\"' )
+                    // InternalAsyncApi.g:7614:4: enumLiteral_1= '\"seconds\"'
                     {
-                    enumLiteral_1=(Token)match(input,100,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,105,FOLLOW_2); 
 
                     				current = grammarAccess.getQoSMetricUnitAccess().getSecondsEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getQoSMetricUnitAccess().getSecondsEnumLiteralDeclaration_1());
@@ -18864,12 +19492,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalAsyncApi.g:7411:3: (enumLiteral_2= '\"minutes\"' )
+                    // InternalAsyncApi.g:7621:3: (enumLiteral_2= '\"minutes\"' )
                     {
-                    // InternalAsyncApi.g:7411:3: (enumLiteral_2= '\"minutes\"' )
-                    // InternalAsyncApi.g:7412:4: enumLiteral_2= '\"minutes\"'
+                    // InternalAsyncApi.g:7621:3: (enumLiteral_2= '\"minutes\"' )
+                    // InternalAsyncApi.g:7622:4: enumLiteral_2= '\"minutes\"'
                     {
-                    enumLiteral_2=(Token)match(input,101,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,98,FOLLOW_2); 
 
                     				current = grammarAccess.getQoSMetricUnitAccess().getMinutesEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getQoSMetricUnitAccess().getMinutesEnumLiteralDeclaration_2());
@@ -18881,12 +19509,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalAsyncApi.g:7419:3: (enumLiteral_3= '\"hours\"' )
+                    // InternalAsyncApi.g:7629:3: (enumLiteral_3= '\"hours\"' )
                     {
-                    // InternalAsyncApi.g:7419:3: (enumLiteral_3= '\"hours\"' )
-                    // InternalAsyncApi.g:7420:4: enumLiteral_3= '\"hours\"'
+                    // InternalAsyncApi.g:7629:3: (enumLiteral_3= '\"hours\"' )
+                    // InternalAsyncApi.g:7630:4: enumLiteral_3= '\"hours\"'
                     {
-                    enumLiteral_3=(Token)match(input,102,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,95,FOLLOW_2); 
 
                     				current = grammarAccess.getQoSMetricUnitAccess().getHoursEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getQoSMetricUnitAccess().getHoursEnumLiteralDeclaration_3());
@@ -18898,12 +19526,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalAsyncApi.g:7427:3: (enumLiteral_4= '\"null\"' )
+                    // InternalAsyncApi.g:7637:3: (enumLiteral_4= '\"null\"' )
                     {
-                    // InternalAsyncApi.g:7427:3: (enumLiteral_4= '\"null\"' )
-                    // InternalAsyncApi.g:7428:4: enumLiteral_4= '\"null\"'
+                    // InternalAsyncApi.g:7637:3: (enumLiteral_4= '\"null\"' )
+                    // InternalAsyncApi.g:7638:4: enumLiteral_4= '\"null\"'
                     {
-                    enumLiteral_4=(Token)match(input,92,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,101,FOLLOW_2); 
 
                     				current = grammarAccess.getQoSMetricUnitAccess().getNullEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getQoSMetricUnitAccess().getNullEnumLiteralDeclaration_4());
@@ -18937,7 +19565,7 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQoSMetricType"
-    // InternalAsyncApi.g:7438:1: ruleQoSMetricType returns [Enumerator current=null] : ( (enumLiteral_0= '\"real\"' ) | (enumLiteral_1= '\"integer\"' ) | (enumLiteral_2= '\"boolean\"' ) ) ;
+    // InternalAsyncApi.g:7648:1: ruleQoSMetricType returns [Enumerator current=null] : ( (enumLiteral_0= '\"real\"' ) | (enumLiteral_1= '\"integer\"' ) | (enumLiteral_2= '\"boolean\"' ) ) ;
     public final Enumerator ruleQoSMetricType() throws RecognitionException {
         Enumerator current = null;
 
@@ -18949,23 +19577,23 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAsyncApi.g:7444:2: ( ( (enumLiteral_0= '\"real\"' ) | (enumLiteral_1= '\"integer\"' ) | (enumLiteral_2= '\"boolean\"' ) ) )
-            // InternalAsyncApi.g:7445:2: ( (enumLiteral_0= '\"real\"' ) | (enumLiteral_1= '\"integer\"' ) | (enumLiteral_2= '\"boolean\"' ) )
+            // InternalAsyncApi.g:7654:2: ( ( (enumLiteral_0= '\"real\"' ) | (enumLiteral_1= '\"integer\"' ) | (enumLiteral_2= '\"boolean\"' ) ) )
+            // InternalAsyncApi.g:7655:2: ( (enumLiteral_0= '\"real\"' ) | (enumLiteral_1= '\"integer\"' ) | (enumLiteral_2= '\"boolean\"' ) )
             {
-            // InternalAsyncApi.g:7445:2: ( (enumLiteral_0= '\"real\"' ) | (enumLiteral_1= '\"integer\"' ) | (enumLiteral_2= '\"boolean\"' ) )
+            // InternalAsyncApi.g:7655:2: ( (enumLiteral_0= '\"real\"' ) | (enumLiteral_1= '\"integer\"' ) | (enumLiteral_2= '\"boolean\"' ) )
             int alt140=3;
             switch ( input.LA(1) ) {
-            case 105:
+            case 104:
                 {
                 alt140=1;
                 }
                 break;
-            case 89:
+            case 96:
                 {
                 alt140=2;
                 }
                 break;
-            case 88:
+            case 93:
                 {
                 alt140=3;
                 }
@@ -18979,12 +19607,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
             switch (alt140) {
                 case 1 :
-                    // InternalAsyncApi.g:7446:3: (enumLiteral_0= '\"real\"' )
+                    // InternalAsyncApi.g:7656:3: (enumLiteral_0= '\"real\"' )
                     {
-                    // InternalAsyncApi.g:7446:3: (enumLiteral_0= '\"real\"' )
-                    // InternalAsyncApi.g:7447:4: enumLiteral_0= '\"real\"'
+                    // InternalAsyncApi.g:7656:3: (enumLiteral_0= '\"real\"' )
+                    // InternalAsyncApi.g:7657:4: enumLiteral_0= '\"real\"'
                     {
-                    enumLiteral_0=(Token)match(input,105,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,104,FOLLOW_2); 
 
                     				current = grammarAccess.getQoSMetricTypeAccess().getRealEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getQoSMetricTypeAccess().getRealEnumLiteralDeclaration_0());
@@ -18996,12 +19624,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalAsyncApi.g:7454:3: (enumLiteral_1= '\"integer\"' )
+                    // InternalAsyncApi.g:7664:3: (enumLiteral_1= '\"integer\"' )
                     {
-                    // InternalAsyncApi.g:7454:3: (enumLiteral_1= '\"integer\"' )
-                    // InternalAsyncApi.g:7455:4: enumLiteral_1= '\"integer\"'
+                    // InternalAsyncApi.g:7664:3: (enumLiteral_1= '\"integer\"' )
+                    // InternalAsyncApi.g:7665:4: enumLiteral_1= '\"integer\"'
                     {
-                    enumLiteral_1=(Token)match(input,89,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,96,FOLLOW_2); 
 
                     				current = grammarAccess.getQoSMetricTypeAccess().getIntegerEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getQoSMetricTypeAccess().getIntegerEnumLiteralDeclaration_1());
@@ -19013,12 +19641,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalAsyncApi.g:7462:3: (enumLiteral_2= '\"boolean\"' )
+                    // InternalAsyncApi.g:7672:3: (enumLiteral_2= '\"boolean\"' )
                     {
-                    // InternalAsyncApi.g:7462:3: (enumLiteral_2= '\"boolean\"' )
-                    // InternalAsyncApi.g:7463:4: enumLiteral_2= '\"boolean\"'
+                    // InternalAsyncApi.g:7672:3: (enumLiteral_2= '\"boolean\"' )
+                    // InternalAsyncApi.g:7673:4: enumLiteral_2= '\"boolean\"'
                     {
-                    enumLiteral_2=(Token)match(input,88,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,93,FOLLOW_2); 
 
                     				current = grammarAccess.getQoSMetricTypeAccess().getBooleanEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getQoSMetricTypeAccess().getBooleanEnumLiteralDeclaration_2());
@@ -19052,7 +19680,7 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperator"
-    // InternalAsyncApi.g:7473:1: ruleOperator returns [Enumerator current=null] : ( (enumLiteral_0= '\">\"' ) | (enumLiteral_1= '\">=\"' ) | (enumLiteral_2= '\"=\"' ) | (enumLiteral_3= '\"<=\"' ) | (enumLiteral_4= '\"<\"' ) ) ;
+    // InternalAsyncApi.g:7683:1: ruleOperator returns [Enumerator current=null] : ( (enumLiteral_0= '\">\"' ) | (enumLiteral_1= '\">=\"' ) | (enumLiteral_2= '\"=\"' ) | (enumLiteral_3= '\"<=\"' ) | (enumLiteral_4= '\"<\"' ) ) ;
     public final Enumerator ruleOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -19066,33 +19694,33 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAsyncApi.g:7479:2: ( ( (enumLiteral_0= '\">\"' ) | (enumLiteral_1= '\">=\"' ) | (enumLiteral_2= '\"=\"' ) | (enumLiteral_3= '\"<=\"' ) | (enumLiteral_4= '\"<\"' ) ) )
-            // InternalAsyncApi.g:7480:2: ( (enumLiteral_0= '\">\"' ) | (enumLiteral_1= '\">=\"' ) | (enumLiteral_2= '\"=\"' ) | (enumLiteral_3= '\"<=\"' ) | (enumLiteral_4= '\"<\"' ) )
+            // InternalAsyncApi.g:7689:2: ( ( (enumLiteral_0= '\">\"' ) | (enumLiteral_1= '\">=\"' ) | (enumLiteral_2= '\"=\"' ) | (enumLiteral_3= '\"<=\"' ) | (enumLiteral_4= '\"<\"' ) ) )
+            // InternalAsyncApi.g:7690:2: ( (enumLiteral_0= '\">\"' ) | (enumLiteral_1= '\">=\"' ) | (enumLiteral_2= '\"=\"' ) | (enumLiteral_3= '\"<=\"' ) | (enumLiteral_4= '\"<\"' ) )
             {
-            // InternalAsyncApi.g:7480:2: ( (enumLiteral_0= '\">\"' ) | (enumLiteral_1= '\">=\"' ) | (enumLiteral_2= '\"=\"' ) | (enumLiteral_3= '\"<=\"' ) | (enumLiteral_4= '\"<\"' ) )
+            // InternalAsyncApi.g:7690:2: ( (enumLiteral_0= '\">\"' ) | (enumLiteral_1= '\">=\"' ) | (enumLiteral_2= '\"=\"' ) | (enumLiteral_3= '\"<=\"' ) | (enumLiteral_4= '\"<\"' ) )
             int alt141=5;
             switch ( input.LA(1) ) {
-            case 106:
+            case 87:
                 {
                 alt141=1;
                 }
                 break;
-            case 107:
+            case 88:
                 {
                 alt141=2;
                 }
                 break;
-            case 108:
+            case 86:
                 {
                 alt141=3;
                 }
                 break;
-            case 109:
+            case 85:
                 {
                 alt141=4;
                 }
                 break;
-            case 110:
+            case 84:
                 {
                 alt141=5;
                 }
@@ -19106,12 +19734,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
             switch (alt141) {
                 case 1 :
-                    // InternalAsyncApi.g:7481:3: (enumLiteral_0= '\">\"' )
+                    // InternalAsyncApi.g:7691:3: (enumLiteral_0= '\">\"' )
                     {
-                    // InternalAsyncApi.g:7481:3: (enumLiteral_0= '\">\"' )
-                    // InternalAsyncApi.g:7482:4: enumLiteral_0= '\">\"'
+                    // InternalAsyncApi.g:7691:3: (enumLiteral_0= '\">\"' )
+                    // InternalAsyncApi.g:7692:4: enumLiteral_0= '\">\"'
                     {
-                    enumLiteral_0=(Token)match(input,106,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,87,FOLLOW_2); 
 
                     				current = grammarAccess.getOperatorAccess().getGreaterEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getOperatorAccess().getGreaterEnumLiteralDeclaration_0());
@@ -19123,12 +19751,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalAsyncApi.g:7489:3: (enumLiteral_1= '\">=\"' )
+                    // InternalAsyncApi.g:7699:3: (enumLiteral_1= '\">=\"' )
                     {
-                    // InternalAsyncApi.g:7489:3: (enumLiteral_1= '\">=\"' )
-                    // InternalAsyncApi.g:7490:4: enumLiteral_1= '\">=\"'
+                    // InternalAsyncApi.g:7699:3: (enumLiteral_1= '\">=\"' )
+                    // InternalAsyncApi.g:7700:4: enumLiteral_1= '\">=\"'
                     {
-                    enumLiteral_1=(Token)match(input,107,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,88,FOLLOW_2); 
 
                     				current = grammarAccess.getOperatorAccess().getGreater_equalEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getOperatorAccess().getGreater_equalEnumLiteralDeclaration_1());
@@ -19140,12 +19768,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalAsyncApi.g:7497:3: (enumLiteral_2= '\"=\"' )
+                    // InternalAsyncApi.g:7707:3: (enumLiteral_2= '\"=\"' )
                     {
-                    // InternalAsyncApi.g:7497:3: (enumLiteral_2= '\"=\"' )
-                    // InternalAsyncApi.g:7498:4: enumLiteral_2= '\"=\"'
+                    // InternalAsyncApi.g:7707:3: (enumLiteral_2= '\"=\"' )
+                    // InternalAsyncApi.g:7708:4: enumLiteral_2= '\"=\"'
                     {
-                    enumLiteral_2=(Token)match(input,108,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,86,FOLLOW_2); 
 
                     				current = grammarAccess.getOperatorAccess().getEqualEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getOperatorAccess().getEqualEnumLiteralDeclaration_2());
@@ -19157,12 +19785,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalAsyncApi.g:7505:3: (enumLiteral_3= '\"<=\"' )
+                    // InternalAsyncApi.g:7715:3: (enumLiteral_3= '\"<=\"' )
                     {
-                    // InternalAsyncApi.g:7505:3: (enumLiteral_3= '\"<=\"' )
-                    // InternalAsyncApi.g:7506:4: enumLiteral_3= '\"<=\"'
+                    // InternalAsyncApi.g:7715:3: (enumLiteral_3= '\"<=\"' )
+                    // InternalAsyncApi.g:7716:4: enumLiteral_3= '\"<=\"'
                     {
-                    enumLiteral_3=(Token)match(input,109,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,85,FOLLOW_2); 
 
                     				current = grammarAccess.getOperatorAccess().getLess_equalEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getOperatorAccess().getLess_equalEnumLiteralDeclaration_3());
@@ -19174,12 +19802,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalAsyncApi.g:7513:3: (enumLiteral_4= '\"<\"' )
+                    // InternalAsyncApi.g:7723:3: (enumLiteral_4= '\"<\"' )
                     {
-                    // InternalAsyncApi.g:7513:3: (enumLiteral_4= '\"<\"' )
-                    // InternalAsyncApi.g:7514:4: enumLiteral_4= '\"<\"'
+                    // InternalAsyncApi.g:7723:3: (enumLiteral_4= '\"<\"' )
+                    // InternalAsyncApi.g:7724:4: enumLiteral_4= '\"<\"'
                     {
-                    enumLiteral_4=(Token)match(input,110,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,84,FOLLOW_2); 
 
                     				current = grammarAccess.getOperatorAccess().getLessEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getOperatorAccess().getLessEnumLiteralDeclaration_4());
@@ -19213,7 +19841,7 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJsonType"
-    // InternalAsyncApi.g:7524:1: ruleJsonType returns [Enumerator current=null] : ( (enumLiteral_0= '\"string\"' ) | (enumLiteral_1= '\"number\"' ) | (enumLiteral_2= '\"integer\"' ) | (enumLiteral_3= '\"boolean\"' ) | (enumLiteral_4= '\"object\"' ) | (enumLiteral_5= '\"array\"' ) | (enumLiteral_6= '\"any\"' ) | (enumLiteral_7= '\"null\"' ) ) ;
+    // InternalAsyncApi.g:7734:1: ruleJsonType returns [Enumerator current=null] : ( (enumLiteral_0= '\"string\"' ) | (enumLiteral_1= '\"number\"' ) | (enumLiteral_2= '\"integer\"' ) | (enumLiteral_3= '\"boolean\"' ) | (enumLiteral_4= '\"object\"' ) | (enumLiteral_5= '\"array\"' ) | (enumLiteral_6= '\"any\"' ) | (enumLiteral_7= '\"null\"' ) ) ;
     public final Enumerator ruleJsonType() throws RecognitionException {
         Enumerator current = null;
 
@@ -19230,48 +19858,48 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAsyncApi.g:7530:2: ( ( (enumLiteral_0= '\"string\"' ) | (enumLiteral_1= '\"number\"' ) | (enumLiteral_2= '\"integer\"' ) | (enumLiteral_3= '\"boolean\"' ) | (enumLiteral_4= '\"object\"' ) | (enumLiteral_5= '\"array\"' ) | (enumLiteral_6= '\"any\"' ) | (enumLiteral_7= '\"null\"' ) ) )
-            // InternalAsyncApi.g:7531:2: ( (enumLiteral_0= '\"string\"' ) | (enumLiteral_1= '\"number\"' ) | (enumLiteral_2= '\"integer\"' ) | (enumLiteral_3= '\"boolean\"' ) | (enumLiteral_4= '\"object\"' ) | (enumLiteral_5= '\"array\"' ) | (enumLiteral_6= '\"any\"' ) | (enumLiteral_7= '\"null\"' ) )
+            // InternalAsyncApi.g:7740:2: ( ( (enumLiteral_0= '\"string\"' ) | (enumLiteral_1= '\"number\"' ) | (enumLiteral_2= '\"integer\"' ) | (enumLiteral_3= '\"boolean\"' ) | (enumLiteral_4= '\"object\"' ) | (enumLiteral_5= '\"array\"' ) | (enumLiteral_6= '\"any\"' ) | (enumLiteral_7= '\"null\"' ) ) )
+            // InternalAsyncApi.g:7741:2: ( (enumLiteral_0= '\"string\"' ) | (enumLiteral_1= '\"number\"' ) | (enumLiteral_2= '\"integer\"' ) | (enumLiteral_3= '\"boolean\"' ) | (enumLiteral_4= '\"object\"' ) | (enumLiteral_5= '\"array\"' ) | (enumLiteral_6= '\"any\"' ) | (enumLiteral_7= '\"null\"' ) )
             {
-            // InternalAsyncApi.g:7531:2: ( (enumLiteral_0= '\"string\"' ) | (enumLiteral_1= '\"number\"' ) | (enumLiteral_2= '\"integer\"' ) | (enumLiteral_3= '\"boolean\"' ) | (enumLiteral_4= '\"object\"' ) | (enumLiteral_5= '\"array\"' ) | (enumLiteral_6= '\"any\"' ) | (enumLiteral_7= '\"null\"' ) )
+            // InternalAsyncApi.g:7741:2: ( (enumLiteral_0= '\"string\"' ) | (enumLiteral_1= '\"number\"' ) | (enumLiteral_2= '\"integer\"' ) | (enumLiteral_3= '\"boolean\"' ) | (enumLiteral_4= '\"object\"' ) | (enumLiteral_5= '\"array\"' ) | (enumLiteral_6= '\"any\"' ) | (enumLiteral_7= '\"null\"' ) )
             int alt142=8;
             switch ( input.LA(1) ) {
-            case 97:
+            case 108:
                 {
                 alt142=1;
                 }
                 break;
-            case 93:
+            case 102:
                 {
                 alt142=2;
                 }
                 break;
-            case 89:
+            case 96:
                 {
                 alt142=3;
                 }
                 break;
-            case 88:
+            case 93:
                 {
                 alt142=4;
                 }
                 break;
-            case 94:
+            case 103:
                 {
                 alt142=5;
                 }
                 break;
-            case 87:
+            case 92:
                 {
                 alt142=6;
                 }
                 break;
-            case 86:
+            case 91:
                 {
                 alt142=7;
                 }
                 break;
-            case 92:
+            case 101:
                 {
                 alt142=8;
                 }
@@ -19285,12 +19913,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
             switch (alt142) {
                 case 1 :
-                    // InternalAsyncApi.g:7532:3: (enumLiteral_0= '\"string\"' )
+                    // InternalAsyncApi.g:7742:3: (enumLiteral_0= '\"string\"' )
                     {
-                    // InternalAsyncApi.g:7532:3: (enumLiteral_0= '\"string\"' )
-                    // InternalAsyncApi.g:7533:4: enumLiteral_0= '\"string\"'
+                    // InternalAsyncApi.g:7742:3: (enumLiteral_0= '\"string\"' )
+                    // InternalAsyncApi.g:7743:4: enumLiteral_0= '\"string\"'
                     {
-                    enumLiteral_0=(Token)match(input,97,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,108,FOLLOW_2); 
 
                     				current = grammarAccess.getJsonTypeAccess().getStringEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getJsonTypeAccess().getStringEnumLiteralDeclaration_0());
@@ -19302,12 +19930,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalAsyncApi.g:7540:3: (enumLiteral_1= '\"number\"' )
+                    // InternalAsyncApi.g:7750:3: (enumLiteral_1= '\"number\"' )
                     {
-                    // InternalAsyncApi.g:7540:3: (enumLiteral_1= '\"number\"' )
-                    // InternalAsyncApi.g:7541:4: enumLiteral_1= '\"number\"'
+                    // InternalAsyncApi.g:7750:3: (enumLiteral_1= '\"number\"' )
+                    // InternalAsyncApi.g:7751:4: enumLiteral_1= '\"number\"'
                     {
-                    enumLiteral_1=(Token)match(input,93,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,102,FOLLOW_2); 
 
                     				current = grammarAccess.getJsonTypeAccess().getNumberEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getJsonTypeAccess().getNumberEnumLiteralDeclaration_1());
@@ -19319,12 +19947,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalAsyncApi.g:7548:3: (enumLiteral_2= '\"integer\"' )
+                    // InternalAsyncApi.g:7758:3: (enumLiteral_2= '\"integer\"' )
                     {
-                    // InternalAsyncApi.g:7548:3: (enumLiteral_2= '\"integer\"' )
-                    // InternalAsyncApi.g:7549:4: enumLiteral_2= '\"integer\"'
+                    // InternalAsyncApi.g:7758:3: (enumLiteral_2= '\"integer\"' )
+                    // InternalAsyncApi.g:7759:4: enumLiteral_2= '\"integer\"'
                     {
-                    enumLiteral_2=(Token)match(input,89,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,96,FOLLOW_2); 
 
                     				current = grammarAccess.getJsonTypeAccess().getIntegerEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getJsonTypeAccess().getIntegerEnumLiteralDeclaration_2());
@@ -19336,12 +19964,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalAsyncApi.g:7556:3: (enumLiteral_3= '\"boolean\"' )
+                    // InternalAsyncApi.g:7766:3: (enumLiteral_3= '\"boolean\"' )
                     {
-                    // InternalAsyncApi.g:7556:3: (enumLiteral_3= '\"boolean\"' )
-                    // InternalAsyncApi.g:7557:4: enumLiteral_3= '\"boolean\"'
+                    // InternalAsyncApi.g:7766:3: (enumLiteral_3= '\"boolean\"' )
+                    // InternalAsyncApi.g:7767:4: enumLiteral_3= '\"boolean\"'
                     {
-                    enumLiteral_3=(Token)match(input,88,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,93,FOLLOW_2); 
 
                     				current = grammarAccess.getJsonTypeAccess().getBooleanEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getJsonTypeAccess().getBooleanEnumLiteralDeclaration_3());
@@ -19353,12 +19981,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalAsyncApi.g:7564:3: (enumLiteral_4= '\"object\"' )
+                    // InternalAsyncApi.g:7774:3: (enumLiteral_4= '\"object\"' )
                     {
-                    // InternalAsyncApi.g:7564:3: (enumLiteral_4= '\"object\"' )
-                    // InternalAsyncApi.g:7565:4: enumLiteral_4= '\"object\"'
+                    // InternalAsyncApi.g:7774:3: (enumLiteral_4= '\"object\"' )
+                    // InternalAsyncApi.g:7775:4: enumLiteral_4= '\"object\"'
                     {
-                    enumLiteral_4=(Token)match(input,94,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,103,FOLLOW_2); 
 
                     				current = grammarAccess.getJsonTypeAccess().getObjectEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getJsonTypeAccess().getObjectEnumLiteralDeclaration_4());
@@ -19370,12 +19998,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalAsyncApi.g:7572:3: (enumLiteral_5= '\"array\"' )
+                    // InternalAsyncApi.g:7782:3: (enumLiteral_5= '\"array\"' )
                     {
-                    // InternalAsyncApi.g:7572:3: (enumLiteral_5= '\"array\"' )
-                    // InternalAsyncApi.g:7573:4: enumLiteral_5= '\"array\"'
+                    // InternalAsyncApi.g:7782:3: (enumLiteral_5= '\"array\"' )
+                    // InternalAsyncApi.g:7783:4: enumLiteral_5= '\"array\"'
                     {
-                    enumLiteral_5=(Token)match(input,87,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,92,FOLLOW_2); 
 
                     				current = grammarAccess.getJsonTypeAccess().getArrayEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getJsonTypeAccess().getArrayEnumLiteralDeclaration_5());
@@ -19387,12 +20015,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalAsyncApi.g:7580:3: (enumLiteral_6= '\"any\"' )
+                    // InternalAsyncApi.g:7790:3: (enumLiteral_6= '\"any\"' )
                     {
-                    // InternalAsyncApi.g:7580:3: (enumLiteral_6= '\"any\"' )
-                    // InternalAsyncApi.g:7581:4: enumLiteral_6= '\"any\"'
+                    // InternalAsyncApi.g:7790:3: (enumLiteral_6= '\"any\"' )
+                    // InternalAsyncApi.g:7791:4: enumLiteral_6= '\"any\"'
                     {
-                    enumLiteral_6=(Token)match(input,86,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,91,FOLLOW_2); 
 
                     				current = grammarAccess.getJsonTypeAccess().getAnyEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_6, grammarAccess.getJsonTypeAccess().getAnyEnumLiteralDeclaration_6());
@@ -19404,12 +20032,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalAsyncApi.g:7588:3: (enumLiteral_7= '\"null\"' )
+                    // InternalAsyncApi.g:7798:3: (enumLiteral_7= '\"null\"' )
                     {
-                    // InternalAsyncApi.g:7588:3: (enumLiteral_7= '\"null\"' )
-                    // InternalAsyncApi.g:7589:4: enumLiteral_7= '\"null\"'
+                    // InternalAsyncApi.g:7798:3: (enumLiteral_7= '\"null\"' )
+                    // InternalAsyncApi.g:7799:4: enumLiteral_7= '\"null\"'
                     {
-                    enumLiteral_7=(Token)match(input,92,FOLLOW_2); 
+                    enumLiteral_7=(Token)match(input,101,FOLLOW_2); 
 
                     				current = grammarAccess.getJsonTypeAccess().getNullEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_7, grammarAccess.getJsonTypeAccess().getNullEnumLiteralDeclaration_7());
@@ -19443,7 +20071,7 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBoolean"
-    // InternalAsyncApi.g:7599:1: ruleBoolean returns [Enumerator current=null] : ( (enumLiteral_0= 'false' ) | (enumLiteral_1= 'true' ) ) ;
+    // InternalAsyncApi.g:7809:1: ruleBoolean returns [Enumerator current=null] : ( (enumLiteral_0= 'false' ) | (enumLiteral_1= 'true' ) ) ;
     public final Enumerator ruleBoolean() throws RecognitionException {
         Enumerator current = null;
 
@@ -19454,10 +20082,10 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAsyncApi.g:7605:2: ( ( (enumLiteral_0= 'false' ) | (enumLiteral_1= 'true' ) ) )
-            // InternalAsyncApi.g:7606:2: ( (enumLiteral_0= 'false' ) | (enumLiteral_1= 'true' ) )
+            // InternalAsyncApi.g:7815:2: ( ( (enumLiteral_0= 'false' ) | (enumLiteral_1= 'true' ) ) )
+            // InternalAsyncApi.g:7816:2: ( (enumLiteral_0= 'false' ) | (enumLiteral_1= 'true' ) )
             {
-            // InternalAsyncApi.g:7606:2: ( (enumLiteral_0= 'false' ) | (enumLiteral_1= 'true' ) )
+            // InternalAsyncApi.g:7816:2: ( (enumLiteral_0= 'false' ) | (enumLiteral_1= 'true' ) )
             int alt143=2;
             int LA143_0 = input.LA(1);
 
@@ -19475,10 +20103,10 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
             }
             switch (alt143) {
                 case 1 :
-                    // InternalAsyncApi.g:7607:3: (enumLiteral_0= 'false' )
+                    // InternalAsyncApi.g:7817:3: (enumLiteral_0= 'false' )
                     {
-                    // InternalAsyncApi.g:7607:3: (enumLiteral_0= 'false' )
-                    // InternalAsyncApi.g:7608:4: enumLiteral_0= 'false'
+                    // InternalAsyncApi.g:7817:3: (enumLiteral_0= 'false' )
+                    // InternalAsyncApi.g:7818:4: enumLiteral_0= 'false'
                     {
                     enumLiteral_0=(Token)match(input,82,FOLLOW_2); 
 
@@ -19492,10 +20120,10 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalAsyncApi.g:7615:3: (enumLiteral_1= 'true' )
+                    // InternalAsyncApi.g:7825:3: (enumLiteral_1= 'true' )
                     {
-                    // InternalAsyncApi.g:7615:3: (enumLiteral_1= 'true' )
-                    // InternalAsyncApi.g:7616:4: enumLiteral_1= 'true'
+                    // InternalAsyncApi.g:7825:3: (enumLiteral_1= 'true' )
+                    // InternalAsyncApi.g:7826:4: enumLiteral_1= 'true'
                     {
                     enumLiteral_1=(Token)match(input,81,FOLLOW_2); 
 
@@ -19531,7 +20159,7 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVersionNumber"
-    // InternalAsyncApi.g:7626:1: ruleVersionNumber returns [Enumerator current=null] : (enumLiteral_0= '\"2.0.0\"' ) ;
+    // InternalAsyncApi.g:7836:1: ruleVersionNumber returns [Enumerator current=null] : (enumLiteral_0= '\"2.0.0\"' ) ;
     public final Enumerator ruleVersionNumber() throws RecognitionException {
         Enumerator current = null;
 
@@ -19541,11 +20169,11 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAsyncApi.g:7632:2: ( (enumLiteral_0= '\"2.0.0\"' ) )
-            // InternalAsyncApi.g:7633:2: (enumLiteral_0= '\"2.0.0\"' )
+            // InternalAsyncApi.g:7842:2: ( (enumLiteral_0= '\"2.0.0\"' ) )
+            // InternalAsyncApi.g:7843:2: (enumLiteral_0= '\"2.0.0\"' )
             {
-            // InternalAsyncApi.g:7633:2: (enumLiteral_0= '\"2.0.0\"' )
-            // InternalAsyncApi.g:7634:3: enumLiteral_0= '\"2.0.0\"'
+            // InternalAsyncApi.g:7843:2: (enumLiteral_0= '\"2.0.0\"' )
+            // InternalAsyncApi.g:7844:3: enumLiteral_0= '\"2.0.0\"'
             {
             enumLiteral_0=(Token)match(input,83,FOLLOW_2); 
 
@@ -19575,7 +20203,7 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProtocol"
-    // InternalAsyncApi.g:7643:1: ruleProtocol returns [Enumerator current=null] : ( (enumLiteral_0= '\"amqp\"' ) | (enumLiteral_1= '\"amqps\"' ) | (enumLiteral_2= '\"mqtt\"' ) | (enumLiteral_3= '\"mqtts\"' ) | (enumLiteral_4= '\"ws\"' ) | (enumLiteral_5= '\"wss\"' ) | (enumLiteral_6= '\"stomp\"' ) | (enumLiteral_7= '\"stomps\"' ) ) ;
+    // InternalAsyncApi.g:7853:1: ruleProtocol returns [Enumerator current=null] : ( (enumLiteral_0= '\"amqp\"' ) | (enumLiteral_1= '\"amqps\"' ) | (enumLiteral_2= '\"mqtt\"' ) | (enumLiteral_3= '\"mqtts\"' ) | (enumLiteral_4= '\"ws\"' ) | (enumLiteral_5= '\"wss\"' ) | (enumLiteral_6= '\"stomp\"' ) | (enumLiteral_7= '\"stomps\"' ) ) ;
     public final Enumerator ruleProtocol() throws RecognitionException {
         Enumerator current = null;
 
@@ -19592,48 +20220,48 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAsyncApi.g:7649:2: ( ( (enumLiteral_0= '\"amqp\"' ) | (enumLiteral_1= '\"amqps\"' ) | (enumLiteral_2= '\"mqtt\"' ) | (enumLiteral_3= '\"mqtts\"' ) | (enumLiteral_4= '\"ws\"' ) | (enumLiteral_5= '\"wss\"' ) | (enumLiteral_6= '\"stomp\"' ) | (enumLiteral_7= '\"stomps\"' ) ) )
-            // InternalAsyncApi.g:7650:2: ( (enumLiteral_0= '\"amqp\"' ) | (enumLiteral_1= '\"amqps\"' ) | (enumLiteral_2= '\"mqtt\"' ) | (enumLiteral_3= '\"mqtts\"' ) | (enumLiteral_4= '\"ws\"' ) | (enumLiteral_5= '\"wss\"' ) | (enumLiteral_6= '\"stomp\"' ) | (enumLiteral_7= '\"stomps\"' ) )
+            // InternalAsyncApi.g:7859:2: ( ( (enumLiteral_0= '\"amqp\"' ) | (enumLiteral_1= '\"amqps\"' ) | (enumLiteral_2= '\"mqtt\"' ) | (enumLiteral_3= '\"mqtts\"' ) | (enumLiteral_4= '\"ws\"' ) | (enumLiteral_5= '\"wss\"' ) | (enumLiteral_6= '\"stomp\"' ) | (enumLiteral_7= '\"stomps\"' ) ) )
+            // InternalAsyncApi.g:7860:2: ( (enumLiteral_0= '\"amqp\"' ) | (enumLiteral_1= '\"amqps\"' ) | (enumLiteral_2= '\"mqtt\"' ) | (enumLiteral_3= '\"mqtts\"' ) | (enumLiteral_4= '\"ws\"' ) | (enumLiteral_5= '\"wss\"' ) | (enumLiteral_6= '\"stomp\"' ) | (enumLiteral_7= '\"stomps\"' ) )
             {
-            // InternalAsyncApi.g:7650:2: ( (enumLiteral_0= '\"amqp\"' ) | (enumLiteral_1= '\"amqps\"' ) | (enumLiteral_2= '\"mqtt\"' ) | (enumLiteral_3= '\"mqtts\"' ) | (enumLiteral_4= '\"ws\"' ) | (enumLiteral_5= '\"wss\"' ) | (enumLiteral_6= '\"stomp\"' ) | (enumLiteral_7= '\"stomps\"' ) )
+            // InternalAsyncApi.g:7860:2: ( (enumLiteral_0= '\"amqp\"' ) | (enumLiteral_1= '\"amqps\"' ) | (enumLiteral_2= '\"mqtt\"' ) | (enumLiteral_3= '\"mqtts\"' ) | (enumLiteral_4= '\"ws\"' ) | (enumLiteral_5= '\"wss\"' ) | (enumLiteral_6= '\"stomp\"' ) | (enumLiteral_7= '\"stomps\"' ) )
             int alt144=8;
             switch ( input.LA(1) ) {
-            case 84:
+            case 89:
                 {
                 alt144=1;
                 }
                 break;
-            case 85:
+            case 90:
                 {
                 alt144=2;
                 }
                 break;
-            case 90:
+            case 99:
                 {
                 alt144=3;
                 }
                 break;
-            case 91:
+            case 100:
                 {
                 alt144=4;
                 }
                 break;
-            case 98:
+            case 109:
                 {
                 alt144=5;
                 }
                 break;
-            case 99:
+            case 110:
                 {
                 alt144=6;
                 }
                 break;
-            case 95:
+            case 106:
                 {
                 alt144=7;
                 }
                 break;
-            case 96:
+            case 107:
                 {
                 alt144=8;
                 }
@@ -19647,12 +20275,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
 
             switch (alt144) {
                 case 1 :
-                    // InternalAsyncApi.g:7651:3: (enumLiteral_0= '\"amqp\"' )
+                    // InternalAsyncApi.g:7861:3: (enumLiteral_0= '\"amqp\"' )
                     {
-                    // InternalAsyncApi.g:7651:3: (enumLiteral_0= '\"amqp\"' )
-                    // InternalAsyncApi.g:7652:4: enumLiteral_0= '\"amqp\"'
+                    // InternalAsyncApi.g:7861:3: (enumLiteral_0= '\"amqp\"' )
+                    // InternalAsyncApi.g:7862:4: enumLiteral_0= '\"amqp\"'
                     {
-                    enumLiteral_0=(Token)match(input,84,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,89,FOLLOW_2); 
 
                     				current = grammarAccess.getProtocolAccess().getAmqpEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getProtocolAccess().getAmqpEnumLiteralDeclaration_0());
@@ -19664,12 +20292,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalAsyncApi.g:7659:3: (enumLiteral_1= '\"amqps\"' )
+                    // InternalAsyncApi.g:7869:3: (enumLiteral_1= '\"amqps\"' )
                     {
-                    // InternalAsyncApi.g:7659:3: (enumLiteral_1= '\"amqps\"' )
-                    // InternalAsyncApi.g:7660:4: enumLiteral_1= '\"amqps\"'
+                    // InternalAsyncApi.g:7869:3: (enumLiteral_1= '\"amqps\"' )
+                    // InternalAsyncApi.g:7870:4: enumLiteral_1= '\"amqps\"'
                     {
-                    enumLiteral_1=(Token)match(input,85,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,90,FOLLOW_2); 
 
                     				current = grammarAccess.getProtocolAccess().getAmqpsEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getProtocolAccess().getAmqpsEnumLiteralDeclaration_1());
@@ -19681,12 +20309,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalAsyncApi.g:7667:3: (enumLiteral_2= '\"mqtt\"' )
+                    // InternalAsyncApi.g:7877:3: (enumLiteral_2= '\"mqtt\"' )
                     {
-                    // InternalAsyncApi.g:7667:3: (enumLiteral_2= '\"mqtt\"' )
-                    // InternalAsyncApi.g:7668:4: enumLiteral_2= '\"mqtt\"'
+                    // InternalAsyncApi.g:7877:3: (enumLiteral_2= '\"mqtt\"' )
+                    // InternalAsyncApi.g:7878:4: enumLiteral_2= '\"mqtt\"'
                     {
-                    enumLiteral_2=(Token)match(input,90,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,99,FOLLOW_2); 
 
                     				current = grammarAccess.getProtocolAccess().getMqttEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getProtocolAccess().getMqttEnumLiteralDeclaration_2());
@@ -19698,12 +20326,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalAsyncApi.g:7675:3: (enumLiteral_3= '\"mqtts\"' )
+                    // InternalAsyncApi.g:7885:3: (enumLiteral_3= '\"mqtts\"' )
                     {
-                    // InternalAsyncApi.g:7675:3: (enumLiteral_3= '\"mqtts\"' )
-                    // InternalAsyncApi.g:7676:4: enumLiteral_3= '\"mqtts\"'
+                    // InternalAsyncApi.g:7885:3: (enumLiteral_3= '\"mqtts\"' )
+                    // InternalAsyncApi.g:7886:4: enumLiteral_3= '\"mqtts\"'
                     {
-                    enumLiteral_3=(Token)match(input,91,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,100,FOLLOW_2); 
 
                     				current = grammarAccess.getProtocolAccess().getMqttsEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getProtocolAccess().getMqttsEnumLiteralDeclaration_3());
@@ -19715,12 +20343,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalAsyncApi.g:7683:3: (enumLiteral_4= '\"ws\"' )
+                    // InternalAsyncApi.g:7893:3: (enumLiteral_4= '\"ws\"' )
                     {
-                    // InternalAsyncApi.g:7683:3: (enumLiteral_4= '\"ws\"' )
-                    // InternalAsyncApi.g:7684:4: enumLiteral_4= '\"ws\"'
+                    // InternalAsyncApi.g:7893:3: (enumLiteral_4= '\"ws\"' )
+                    // InternalAsyncApi.g:7894:4: enumLiteral_4= '\"ws\"'
                     {
-                    enumLiteral_4=(Token)match(input,98,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,109,FOLLOW_2); 
 
                     				current = grammarAccess.getProtocolAccess().getWsEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getProtocolAccess().getWsEnumLiteralDeclaration_4());
@@ -19732,12 +20360,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalAsyncApi.g:7691:3: (enumLiteral_5= '\"wss\"' )
+                    // InternalAsyncApi.g:7901:3: (enumLiteral_5= '\"wss\"' )
                     {
-                    // InternalAsyncApi.g:7691:3: (enumLiteral_5= '\"wss\"' )
-                    // InternalAsyncApi.g:7692:4: enumLiteral_5= '\"wss\"'
+                    // InternalAsyncApi.g:7901:3: (enumLiteral_5= '\"wss\"' )
+                    // InternalAsyncApi.g:7902:4: enumLiteral_5= '\"wss\"'
                     {
-                    enumLiteral_5=(Token)match(input,99,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,110,FOLLOW_2); 
 
                     				current = grammarAccess.getProtocolAccess().getWssEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getProtocolAccess().getWssEnumLiteralDeclaration_5());
@@ -19749,12 +20377,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalAsyncApi.g:7699:3: (enumLiteral_6= '\"stomp\"' )
+                    // InternalAsyncApi.g:7909:3: (enumLiteral_6= '\"stomp\"' )
                     {
-                    // InternalAsyncApi.g:7699:3: (enumLiteral_6= '\"stomp\"' )
-                    // InternalAsyncApi.g:7700:4: enumLiteral_6= '\"stomp\"'
+                    // InternalAsyncApi.g:7909:3: (enumLiteral_6= '\"stomp\"' )
+                    // InternalAsyncApi.g:7910:4: enumLiteral_6= '\"stomp\"'
                     {
-                    enumLiteral_6=(Token)match(input,95,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,106,FOLLOW_2); 
 
                     				current = grammarAccess.getProtocolAccess().getStompEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_6, grammarAccess.getProtocolAccess().getStompEnumLiteralDeclaration_6());
@@ -19766,12 +20394,12 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalAsyncApi.g:7707:3: (enumLiteral_7= '\"stomps\"' )
+                    // InternalAsyncApi.g:7917:3: (enumLiteral_7= '\"stomps\"' )
                     {
-                    // InternalAsyncApi.g:7707:3: (enumLiteral_7= '\"stomps\"' )
-                    // InternalAsyncApi.g:7708:4: enumLiteral_7= '\"stomps\"'
+                    // InternalAsyncApi.g:7917:3: (enumLiteral_7= '\"stomps\"' )
+                    // InternalAsyncApi.g:7918:4: enumLiteral_7= '\"stomps\"'
                     {
-                    enumLiteral_7=(Token)match(input,96,FOLLOW_2); 
+                    enumLiteral_7=(Token)match(input,107,FOLLOW_2); 
 
                     				current = grammarAccess.getProtocolAccess().getStompsEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_7, grammarAccess.getProtocolAccess().getStompsEnumLiteralDeclaration_7());
@@ -19998,7 +20626,7 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x000000000003FA00L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000000003F200L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x1FF3FFFCFEFDB240L,0x0000000FFFF80004L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0xFFFFFFFCFFFFB240L,0x00007FFFFFF9FFFFL});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000004800L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000001FC0000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000001FC4800L});
@@ -20010,7 +20638,7 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000034100000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000034104800L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000034104000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000000L,0x0000000D8C300000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000000L,0x00006C1806000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x00000000C0104000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x00000000C0104800L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000100000000L});
@@ -20026,9 +20654,9 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000002104800L});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x007FC000C0144000L});
     public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x007FC000C0144800L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0000000273C00000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x000010E138000000L});
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x1FF3FFFCFEFDB250L,0x0000000FFFFE0004L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0xFFFFFFFCFFFFB250L,0x00007FFFFFFFFFFFL});
     public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0180000000104000L});
     public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0180000000104800L});
     public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x000000C000104000L});
@@ -20044,23 +20672,23 @@ public class InternalAsyncApiParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
     public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x1FF3FFFCFEFDB260L,0x0000000FFFF80004L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0xFFFFFFFCFFFFB260L,0x00007FFFFFF9FFFFL});
     public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000000L,0x00000000000007A0L});
     public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000018L});
     public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000104800L,0x0000000000000018L});
     public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000104000L,0x0000000000000018L});
-    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000000000000L,0x0000017010000000L});
-    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000000000L,0x0000020003000000L});
+    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000000000000L,0x0000022680000000L});
+    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000000000L,0x0000010120000000L});
     public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
     public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000002L,0x00000000000007A0L});
     public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000000000000802L,0x00000000000007A0L});
-    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0400000000000000L,0x000000F000000000L});
+    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0400000000000000L,0x00000204C0000000L});
     public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
     public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
     public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
     public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
     public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000000L,0x00007C0000000000L});
+    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000000L,0x0000000001F00000L});
     public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
 
 }
