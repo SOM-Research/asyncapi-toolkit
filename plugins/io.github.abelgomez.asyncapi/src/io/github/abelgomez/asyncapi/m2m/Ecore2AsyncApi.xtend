@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.EClassifier
 import org.eclipse.emf.ecore.EDataType
 import org.eclipse.emf.ecore.EEnum
 import org.eclipse.emf.ecore.EPackage
-import org.eclipse.emf.ecore.EReference
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.util.Diagnostician
@@ -133,8 +132,10 @@ class Ecore2AsyncApi {
 			val eClass = it
 			AsyncApiFactory.eINSTANCE.createNamedMessage => [
 				name = eClass.messageName
-				message = AsyncApiFactory.eINSTANCE.createReference => [
-					uri = "#/components/schemas/" + eClass.schemaName
+				message = AsyncApiFactory.eINSTANCE.createMessage => [
+					payload = AsyncApiFactory.eINSTANCE.createReference => [
+						uri = "#/components/schemas/" + eClass.schemaName
+					]
 				]
 			]
 		]
@@ -217,7 +218,7 @@ class Ecore2AsyncApi {
 				case "EShort": JsonType.INTEGER
 				case "EShortObject": JsonType.INTEGER
 				case "EString": JsonType.STRING
-				default: JsonType.OBJECT
+				default: JsonType.STRING
 			}
 			if (eDataType instanceof EEnum) {
 				type = JsonType.STRING
@@ -232,10 +233,6 @@ class Ecore2AsyncApi {
 		]
 	}
 	
-	static def NamedSchema schema(EReference eReference) {
-
-	}
-
 	static def String channelName(EClass eClass) {
 		return EcoreUtil.getAnnotation(eClass, EANNOTATION_CHANNEL, EANNOTATION_CHANNEL_NAME)
 	}

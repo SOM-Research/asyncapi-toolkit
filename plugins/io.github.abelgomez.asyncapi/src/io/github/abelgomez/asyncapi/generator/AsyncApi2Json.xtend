@@ -15,6 +15,7 @@ import io.github.abelgomez.asyncapi.asyncApi.Parameter
 import io.github.abelgomez.asyncapi.asyncApi.Reference
 import io.github.abelgomez.asyncapi.asyncApi.Schema
 import io.github.abelgomez.asyncapi.asyncApi.Server
+import io.github.abelgomez.asyncapi.asyncApi.Message
 
 class AsyncApi2Json {
 	/**
@@ -37,7 +38,9 @@ class AsyncApi2Json {
 				«asyncAPI.channels.map[generate].join(",\n")»
 			},
 			«ENDIF»
+			«IF asyncAPI.components !== null»
 			"components": «asyncAPI.components.generate»
+			«ENDIF»
 		}
 	'''
 
@@ -55,8 +58,9 @@ class AsyncApi2Json {
 
 	private static def CharSequence generate(Channel c) '''
 	"«c.name»" : {
-		"description" : "«c.description»"«
-		IF !c.parameters.empty»,
+		«IF c.description !== null»
+		"description" : "«c.description»,"«ENDIF»
+		«IF !c.parameters.empty»
 		"parameters" : {
 			«c.parameters.map[generate].join(",\n")»
 		}«ENDIF»«
@@ -111,7 +115,7 @@ class AsyncApi2Json {
 	"«nm.name»" : {
 		"name" : "«nm.name»",
 		"payload" : {
-			"$ref" : "«(nm.message as Reference).uri»"
+			"$ref" : "«((nm.message as Message).payload as Reference).uri»"
 		}
 	}'''
 
