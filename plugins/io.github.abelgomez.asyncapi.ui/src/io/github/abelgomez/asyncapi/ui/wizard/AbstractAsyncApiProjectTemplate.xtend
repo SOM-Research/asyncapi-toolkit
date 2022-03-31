@@ -130,8 +130,8 @@ abstract class AbstractAsyncApiProjectTemplate extends AbstractProjectTemplate {
 	protected def pomHeader() '''
 		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 			<modelVersion>4.0.0</modelVersion>
-			<groupId>«projectInfo.projectName»</groupId>
-			<artifactId>«projectInfo.projectName»</artifactId>
+			<groupId>«projectInfo.projectName.toLowerCase.replaceAll("[^\\w\\.]", "_")»</groupId>
+			<artifactId>«projectInfo.projectName.toLowerCase.replaceAll("[^\\w\\.]", "_")»</artifactId>
 			<version>0.1.0-SNAPSHOT</version>
 	'''
 
