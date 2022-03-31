@@ -3,7 +3,7 @@ Automatic-Module-Name: io.github.abelgomez.asyncapi.ui
 Bundle-ManifestVersion: 2
 Bundle-Name: AsyncAPI Toolkit UI Plug-in
 Bundle-Vendor: SOM Research Lab
-Bundle-Version: 0.4.6.qualifier
+Bundle-Version: 0.5.0.qualifier
 Bundle-SymbolicName: io.github.abelgomez.asyncapi.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: io.github.abelgomez.asyncapi,
