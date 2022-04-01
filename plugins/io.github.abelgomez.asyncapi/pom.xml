@@ -21,7 +21,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.4.0</version>
+				<version>${exec.maven.plugin.version}</version>
 				<executions>
 					<execution>
 						<id>mwe2Launcher</id>
@@ -42,43 +42,6 @@
 					<includePluginDependencies>true</includePluginDependencies>
 					<cleanupDaemonThreads>false</cleanupDaemonThreads><!-- see https://bugs.eclipse.org/bugs/show_bug.cgi?id=475098#c3 -->
 				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.eclipse.emf</groupId>
-						<artifactId>org.eclipse.emf.mwe2.launch</artifactId>
-						<version>${mwe2.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>org.eclipse.xtext</groupId>
-						<artifactId>org.eclipse.xtext.common.types</artifactId>
-						<version>${xtext.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>org.eclipse.xtext</groupId>
-						<artifactId>org.eclipse.xtext.xtext.generator</artifactId>
-						<version>${xtext.version}</version>
-						<exclusions>
-							<exclusion>
-								<groupId>org.eclipse.platform</groupId>
-								<artifactId>org.eclipse.equinox.common</artifactId>
-							</exclusion>
-							<exclusion>
-								<groupId>org.eclipse.platform</groupId>
-								<artifactId>org.eclipse.core.runtime</artifactId>
-							</exclusion>
-						</exclusions>
-					</dependency>
-					<dependency>
-						<groupId>org.eclipse.xtext</groupId>
-						<artifactId>org.eclipse.xtext.xbase</artifactId>
-						<version>${xtext.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>org.eclipse.xtext</groupId>
-						<artifactId>xtext-antlr-generator</artifactId>
-						<version>${antlr.generator.version}</version>
-					</dependency>
-				</dependencies>
 			</plugin>
 			<plugin>
 				<groupId>org.eclipse.xtend</groupId>
@@ -98,6 +61,9 @@
 								</fileset>
 								<fileset>
 									<directory>${basedir}/src-gen</directory>
+								</fileset>
+								<fileset>
+									<directory>${basedir}/xtend-gen</directory>
 								</fileset>
 								<fileset>
 									<directory>${basedir}/../${project.artifactId}.ide/src-gen</directory>
