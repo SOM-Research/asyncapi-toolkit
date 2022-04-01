@@ -167,69 +167,94 @@ public final class I40AsyncApiProject extends AbstractAsyncApiProjectTemplate {
       final IPath notationFilePath = modelFilePath.removeFileExtension().addFileExtension("notation");
       final Model model = Uml2AsyncApi.loadModel(modelFilePath);
       PluginProjectFactory _createProjectFactory = super.createProjectFactory();
-      final Procedure1<PluginProjectFactory> _function = new Procedure1<PluginProjectFactory>() {
-        @Override
-        public void apply(final PluginProjectFactory it) {
-          try {
-            StringConcatenation _builder = new StringConcatenation();
-            _builder.append("�SRC_JAVA�/�path�/�modelFilePath.lastSegment�");
-            InputStream _contents = ResourcesPlugin.getWorkspace().getRoot().getFile(modelFilePath).getContents();
-            InputStreamReader _inputStreamReader = new InputStreamReader(_contents);
-            I40AsyncApiProject.this.addFile(it, _builder, 
-              new BufferedReader(_inputStreamReader).lines().collect(Collectors.joining(System.lineSeparator())));
-            boolean _exists = ResourcesPlugin.getWorkspace().getRoot().getFile(diFilePath).exists();
-            if (_exists) {
-              StringConcatenation _builder_1 = new StringConcatenation();
-              _builder_1.append("�SRC_JAVA�/�path�/�diFilePath.lastSegment�");
-              InputStream _contents_1 = ResourcesPlugin.getWorkspace().getRoot().getFile(diFilePath).getContents();
-              InputStreamReader _inputStreamReader_1 = new InputStreamReader(_contents_1);
-              I40AsyncApiProject.this.addFile(it, _builder_1, 
-                new BufferedReader(_inputStreamReader_1).lines().collect(Collectors.joining(System.lineSeparator())));
-            }
-            boolean _exists_1 = ResourcesPlugin.getWorkspace().getRoot().getFile(notationFilePath).exists();
-            if (_exists_1) {
-              StringConcatenation _builder_2 = new StringConcatenation();
-              _builder_2.append("�SRC_JAVA�/�path�/�notationFilePath.lastSegment�");
-              InputStream _contents_2 = ResourcesPlugin.getWorkspace().getRoot().getFile(notationFilePath).getContents();
-              InputStreamReader _inputStreamReader_2 = new InputStreamReader(_contents_2);
-              I40AsyncApiProject.this.addFile(it, _builder_2, 
-                new BufferedReader(_inputStreamReader_2).lines().collect(Collectors.joining(System.lineSeparator())));
-            }
-            StringConcatenation _builder_3 = new StringConcatenation();
-            _builder_3.append("�SRC_JAVA�/�path�/�new Path(file.value).lastSegment�");
-            IWorkspaceRoot _root = ResourcesPlugin.getWorkspace().getRoot();
-            String _value = I40AsyncApiProject.this.file.getValue();
-            Path _path = new Path(_value);
-            InputStream _contents_3 = _root.getFile(_path).getContents();
-            InputStreamReader _inputStreamReader_3 = new InputStreamReader(_contents_3);
-            I40AsyncApiProject.this.addFile(it, _builder_3, 
-              new BufferedReader(_inputStreamReader_3).lines().collect(Collectors.joining(System.lineSeparator())));
-            StringConcatenation _builder_4 = new StringConcatenation();
-            _builder_4.append("�SRC_JAVA�/�path�/�model.name�.asyncapi");
-            I40AsyncApiProject.this.addFile(it, _builder_4, AsyncApi2Json.generate(Uml2AsyncApi.asyncApi(model)));
-            StringConcatenation _builder_5 = new StringConcatenation();
-            _builder_5.append("�SRC_JAVA�/main/Main.java");
-            StringConcatenation _builder_6 = new StringConcatenation();
-            _builder_6.append("package main;");
-            _builder_6.newLine();
-            _builder_6.newLine();
-            _builder_6.append("public class Main {");
-            _builder_6.newLine();
-            _builder_6.append("\t");
-            _builder_6.append("public static void main(String[] args) throws Exception {");
-            _builder_6.newLine();
-            _builder_6.append("\t\t");
-            _builder_6.append("// TODO: Put your code here");
-            _builder_6.newLine();
-            _builder_6.append("\t");
-            _builder_6.append("}");
-            _builder_6.newLine();
-            _builder_6.append("}");
-            _builder_6.newLine();
-            I40AsyncApiProject.this.addFile(it, _builder_5, _builder_6);
-          } catch (Throwable _e) {
-            throw Exceptions.sneakyThrow(_e);
+      final Procedure1<PluginProjectFactory> _function = (PluginProjectFactory it) -> {
+        try {
+          StringConcatenation _builder = new StringConcatenation();
+          _builder.append(AbstractAsyncApiProjectTemplate.SRC_JAVA);
+          _builder.append("/");
+          _builder.append(this.path);
+          _builder.append("/");
+          String _lastSegment = modelFilePath.lastSegment();
+          _builder.append(_lastSegment);
+          InputStream _contents = ResourcesPlugin.getWorkspace().getRoot().getFile(modelFilePath).getContents();
+          InputStreamReader _inputStreamReader = new InputStreamReader(_contents);
+          this.addFile(it, _builder, 
+            new BufferedReader(_inputStreamReader).lines().collect(Collectors.joining(System.lineSeparator())));
+          boolean _exists = ResourcesPlugin.getWorkspace().getRoot().getFile(diFilePath).exists();
+          if (_exists) {
+            StringConcatenation _builder_1 = new StringConcatenation();
+            _builder_1.append(AbstractAsyncApiProjectTemplate.SRC_JAVA);
+            _builder_1.append("/");
+            _builder_1.append(this.path);
+            _builder_1.append("/");
+            String _lastSegment_1 = diFilePath.lastSegment();
+            _builder_1.append(_lastSegment_1);
+            InputStream _contents_1 = ResourcesPlugin.getWorkspace().getRoot().getFile(diFilePath).getContents();
+            InputStreamReader _inputStreamReader_1 = new InputStreamReader(_contents_1);
+            this.addFile(it, _builder_1, 
+              new BufferedReader(_inputStreamReader_1).lines().collect(Collectors.joining(System.lineSeparator())));
           }
+          boolean _exists_1 = ResourcesPlugin.getWorkspace().getRoot().getFile(notationFilePath).exists();
+          if (_exists_1) {
+            StringConcatenation _builder_2 = new StringConcatenation();
+            _builder_2.append(AbstractAsyncApiProjectTemplate.SRC_JAVA);
+            _builder_2.append("/");
+            _builder_2.append(this.path);
+            _builder_2.append("/");
+            String _lastSegment_2 = notationFilePath.lastSegment();
+            _builder_2.append(_lastSegment_2);
+            InputStream _contents_2 = ResourcesPlugin.getWorkspace().getRoot().getFile(notationFilePath).getContents();
+            InputStreamReader _inputStreamReader_2 = new InputStreamReader(_contents_2);
+            this.addFile(it, _builder_2, 
+              new BufferedReader(_inputStreamReader_2).lines().collect(Collectors.joining(System.lineSeparator())));
+          }
+          StringConcatenation _builder_3 = new StringConcatenation();
+          _builder_3.append(AbstractAsyncApiProjectTemplate.SRC_JAVA);
+          _builder_3.append("/");
+          _builder_3.append(this.path);
+          _builder_3.append("/");
+          String _value_1 = this.file.getValue();
+          String _lastSegment_3 = new Path(_value_1).lastSegment();
+          _builder_3.append(_lastSegment_3);
+          IWorkspaceRoot _root = ResourcesPlugin.getWorkspace().getRoot();
+          String _value_2 = this.file.getValue();
+          Path _path = new Path(_value_2);
+          InputStream _contents_3 = _root.getFile(_path).getContents();
+          InputStreamReader _inputStreamReader_3 = new InputStreamReader(_contents_3);
+          this.addFile(it, _builder_3, 
+            new BufferedReader(_inputStreamReader_3).lines().collect(Collectors.joining(System.lineSeparator())));
+          StringConcatenation _builder_4 = new StringConcatenation();
+          _builder_4.append(AbstractAsyncApiProjectTemplate.SRC_JAVA);
+          _builder_4.append("/");
+          _builder_4.append(this.path);
+          _builder_4.append("/");
+          String _name = model.getName();
+          _builder_4.append(_name);
+          _builder_4.append(".asyncapi");
+          this.addFile(it, _builder_4, AsyncApi2Json.generate(Uml2AsyncApi.asyncApi(model)));
+          StringConcatenation _builder_5 = new StringConcatenation();
+          _builder_5.append(AbstractAsyncApiProjectTemplate.SRC_JAVA);
+          _builder_5.append("/main/Main.java");
+          StringConcatenation _builder_6 = new StringConcatenation();
+          _builder_6.append("package main;");
+          _builder_6.newLine();
+          _builder_6.newLine();
+          _builder_6.append("public class Main {");
+          _builder_6.newLine();
+          _builder_6.append("\t");
+          _builder_6.append("public static void main(String[] args) throws Exception {");
+          _builder_6.newLine();
+          _builder_6.append("\t\t");
+          _builder_6.append("// TODO: Put your code here");
+          _builder_6.newLine();
+          _builder_6.append("\t");
+          _builder_6.append("}");
+          _builder_6.newLine();
+          _builder_6.append("}");
+          _builder_6.newLine();
+          this.addFile(it, _builder_5, _builder_6);
+        } catch (Throwable _e) {
+          throw Exceptions.sneakyThrow(_e);
         }
       };
       _xblockexpression = ObjectExtensions.<PluginProjectFactory>operator_doubleArrow(_createProjectFactory, _function);

@@ -24,29 +24,40 @@ public final class ExampleI40AsyncApiProject extends AbstractAsyncApiProjectTemp
   @Override
   public PluginProjectFactory createProjectFactory() {
     PluginProjectFactory _createProjectFactory = super.createProjectFactory();
-    final Procedure1<PluginProjectFactory> _function = new Procedure1<PluginProjectFactory>() {
-      @Override
-      public void apply(final PluginProjectFactory it) {
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("�SRC_JAVA�/�path�/I40.uml");
-        ExampleI40AsyncApiProject.this.addFile(it, _builder, ExampleI40AsyncApiProject.this.umlFileContents());
-        StringConcatenation _builder_1 = new StringConcatenation();
-        _builder_1.append("�SRC_JAVA�/�path�/I40.di");
-        ExampleI40AsyncApiProject.this.addFile(it, _builder_1, ExampleI40AsyncApiProject.this.diFileContents());
-        StringConcatenation _builder_2 = new StringConcatenation();
-        _builder_2.append("�SRC_JAVA�/�path�/I40.notation");
-        ExampleI40AsyncApiProject.this.addFile(it, _builder_2, ExampleI40AsyncApiProject.this.notationFileContents());
-        StringConcatenation _builder_3 = new StringConcatenation();
-        _builder_3.append("�SRC_JAVA�/�path�/I40.asyncapi");
-        byte[] _bytes = ExampleI40AsyncApiProject.this.umlFileContents().toString().getBytes();
-        ExampleI40AsyncApiProject.this.addFile(it, _builder_3, AsyncApi2Json.generate(Uml2AsyncApi.asyncApi(Uml2AsyncApi.loadModel(new ByteArrayInputStream(_bytes)))));
-        StringConcatenation _builder_4 = new StringConcatenation();
-        _builder_4.append("�SRC_JAVA�/main/SubscribeExample.java");
-        ExampleI40AsyncApiProject.this.addFile(it, _builder_4, ExampleI40AsyncApiProject.this.subscribeExampleContents());
-        StringConcatenation _builder_5 = new StringConcatenation();
-        _builder_5.append("�SRC_JAVA�/main/PublishExample.java");
-        ExampleI40AsyncApiProject.this.addFile(it, _builder_5, ExampleI40AsyncApiProject.this.publishExampleContents());
-      }
+    final Procedure1<PluginProjectFactory> _function = (PluginProjectFactory it) -> {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append(AbstractAsyncApiProjectTemplate.SRC_JAVA);
+      _builder.append("/");
+      _builder.append(this.path);
+      _builder.append("/I40.uml");
+      this.addFile(it, _builder, this.umlFileContents());
+      StringConcatenation _builder_1 = new StringConcatenation();
+      _builder_1.append(AbstractAsyncApiProjectTemplate.SRC_JAVA);
+      _builder_1.append("/");
+      _builder_1.append(this.path);
+      _builder_1.append("/I40.di");
+      this.addFile(it, _builder_1, this.diFileContents());
+      StringConcatenation _builder_2 = new StringConcatenation();
+      _builder_2.append(AbstractAsyncApiProjectTemplate.SRC_JAVA);
+      _builder_2.append("/");
+      _builder_2.append(this.path);
+      _builder_2.append("/I40.notation");
+      this.addFile(it, _builder_2, this.notationFileContents());
+      StringConcatenation _builder_3 = new StringConcatenation();
+      _builder_3.append(AbstractAsyncApiProjectTemplate.SRC_JAVA);
+      _builder_3.append("/");
+      _builder_3.append(this.path);
+      _builder_3.append("/I40.asyncapi");
+      byte[] _bytes = this.umlFileContents().toString().getBytes();
+      this.addFile(it, _builder_3, AsyncApi2Json.generate(Uml2AsyncApi.asyncApi(Uml2AsyncApi.loadModel(new ByteArrayInputStream(_bytes)))));
+      StringConcatenation _builder_4 = new StringConcatenation();
+      _builder_4.append(AbstractAsyncApiProjectTemplate.SRC_JAVA);
+      _builder_4.append("/main/SubscribeExample.java");
+      this.addFile(it, _builder_4, this.subscribeExampleContents());
+      StringConcatenation _builder_5 = new StringConcatenation();
+      _builder_5.append(AbstractAsyncApiProjectTemplate.SRC_JAVA);
+      _builder_5.append("/main/PublishExample.java");
+      this.addFile(it, _builder_5, this.publishExampleContents());
     };
     return ObjectExtensions.<PluginProjectFactory>operator_doubleArrow(_createProjectFactory, _function);
   }
