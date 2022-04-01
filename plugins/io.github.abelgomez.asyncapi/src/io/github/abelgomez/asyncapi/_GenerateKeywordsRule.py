@@ -11,5 +11,3 @@ with open(ASYNCAPI_GRAMMAR_FILE, 'r') as file:
     keywords.sort()
     print('Keyword:\n\t', end='')
     print(*keywords, sep='\n\t| ', end=';')
-
-        
