@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<properties>
+		<eclipse.version>2022-03</eclipse.version>
 		<tycho.version>2.5.0</tycho.version>
 		<xtext.version>2.26.0</xtext.version>
-		<mwe2.version>2.12.1</mwe2.version>
-		<antlr.generator.version>[2.1.1, 3)</antlr.generator.version>
+		<github.site-maven-plugin.version>0.12</github.site-maven-plugin.version>
 		<maven.clean.version>3.1.0</maven.clean.version>
+		<exec.maven.plugin.version>3.0.0</exec.maven.plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<internal.repo.dir>${maven.multiModuleProjectDirectory}/target</internal.repo.dir>
+		<repository.owner>SOM-Research</repository.owner>
+		<repository.name>asyncapi-toolkit</repository.name>
+		<!--
+		This property below can be removed (i.e., set to false) to also upload the JAR 
+		files of the AsyncAPI Toolkit plug-ins to GitHub. It is set to true to skip
+		that deployment, since it is extremely slow.
+		-->
+		<maven.deploy.skip>true</maven.deploy.skip>
 	</properties>
 	<groupId>io.github.abelgomez.asyncapi</groupId>
 	<artifactId>root</artifactId>
@@ -45,7 +53,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-clean-plugin</artifactId>
-					<version>2.5</version>
+					<version>${maven.clean.version}</version>
 					<executions>
 						<execution>
 							<id>gen-clean</id>
@@ -115,4 +123,18 @@
 			</plugin>
 		</plugins>
 	</build>
+	<distributionManagement>
+		<repository>
+			<!--
+			We store all generated JARs in the root directory in case
+			we want to enable the publication of the single plug-ins as
+			a maven repository. We put all the JARs in the same place 
+			to perform a single commit in the SCM (rather than one 
+			commit per submodule
+			--> 
+			<id>internal.repo</id>
+			<name>Temporary Staging Repository</name>
+			<url>file:${internal.repo.dir}/maven</url>
+		</repository>
+	</distributionManagement>
 </project>

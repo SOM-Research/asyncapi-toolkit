@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<properties>
+		<maven.deploy.skip>false</maven.deploy.skip>
+	</properties>
+	<parent>
+		<groupId>io.github.abelgomez.asyncapi</groupId>
+		<artifactId>releng</artifactId>
+		<version>0.5.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>update.eclipse-repository</artifactId>
+	<version>0.5.0-SNAPSHOT</version>
+	<packaging>eclipse-repository</packaging>
+	<name>[updatesite] AsyncAPI Toolkit Update Site</name>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-repository-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<repositoryLocation>${internal.repo.dir}/updates/${unqualifiedVersion}/${qualifiedVersion}</repositoryLocation>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho.extras</groupId>
+				<artifactId>tycho-eclipserun-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<appArgLine>
+						<!-- WARNING: New lines in this setting ARE IMPORTANT -->
+						-application org.eclipse.ant.core.antRunner 
+						-buildfile create-composite.xml 
+						-Dtarget.location=${internal.repo.dir}/updates/ -DqualifiedVersion=${qualifiedVersion} -DunqualifiedVersion=${unqualifiedVersion}
+					</appArgLine>
+					<repositories>
+						<repository>
+							<id>eclipse-release</id>
+							<layout>p2</layout>
+							<url>https://download.eclipse.org/releases/${eclipse.version}</url>
+						</repository>
+					</repositories>
+					<dependencies>
+						<dependency>
+							<artifactId>org.eclipse.ant.core</artifactId>
+							<type>eclipse-plugin</type>
+						</dependency>
+						<dependency>
+							<artifactId>org.apache.ant</artifactId>
+							<type>eclipse-plugin</type>
+						</dependency>
+						<dependency>
+							<artifactId>org.eclipse.equinox.p2.repository.tools</artifactId>
+							<type>eclipse-plugin</type>
+						</dependency>
+						<dependency>
+			                <artifactId>org.eclipse.equinox.p2.core.feature</artifactId>
+			                <type>eclipse-feature</type>
+			            </dependency>
+			            <dependency>
+			                <artifactId>org.eclipse.equinox.p2.extras.feature</artifactId>
+			                <type>eclipse-feature</type>
+			            </dependency>
+			            <dependency>
+			                <artifactId>org.eclipse.equinox.ds</artifactId>
+			                <type>eclipse-plugin</type>
+			            </dependency>
+					</dependencies>
+				</configuration>
+				<executions>
+					<execution>
+						<id>add-p2-composite-repository</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>eclipse-run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+			    <artifactId>maven-deploy-plugin</artifactId>
+			    <version>2.8.2</version>
+			    <configuration>
+			    	<!--
+			    	We change the default deployment location to avoid publishing the JAR/ZIP
+			    	files of the generated Update Site since they are not necessary
+			    	-->
+			        <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/maven</altDeploymentRepository>
+			    </configuration>
+			</plugin> 
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>${github.site-maven-plugin.version}</version>
+				<configuration>
+					<message>Publish AsyncAPI Toolkit v${qualifiedVersion} Update Site</message>
+					<outputDirectory>${internal.repo.dir}</outputDirectory>
+					<branch>refs/heads/gh-pages</branch>
+					<includes>
+						<include>**/*</include>
+					</includes>
+					<merge>true</merge>
+					<repositoryOwner>${repository.owner}</repositoryOwner>
+					<repositoryName>${repository.name}</repositoryName>
+					<server>github</server>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>deploy</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
