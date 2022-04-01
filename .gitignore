@@ -1,3 +1,4 @@
+xtend-gen/
 target/
 /bin/
 .polyglot.*
