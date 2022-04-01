@@ -736,8 +736,8 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *             default=PrimitiveValue | 
 	 *             items=AbstractSchema
 	 *         )? 
-	 *         (properties+=NamedSchema properties+=NamedSchema*)? 
 	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)? 
+	 *         (properties+=NamedSchema properties+=NamedSchema*)? 
 	 *         (required+=AnyString required+=AnyString*)?
 	 *     )+
 	 * </pre>

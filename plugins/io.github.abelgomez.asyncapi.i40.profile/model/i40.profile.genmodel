@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
+    modelDirectory="/io.github.abelgomez.asyncapi.i40.profile/src"
+    modelPluginID="io.github.abelgomez.asyncapi.i40.profile" modelName="I40" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="5.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../org.eclipse.uml2.uml/model/UML.genmodel#//uml"
+    operationReflection="true" importOrganizing="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
+    <details key="DUPLICATE_FEATURES" value="DISCARD"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="PROPERTY_DEFAULT_EXPRESSIONS" value="IGNORE"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="DISCARD"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="DERIVED_FEATURES" value="PROCESS"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="DISCARD"/>
+    <details key="REDEFINING_OPERATIONS" value="REPORT"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="REPORT"/>
+    <details key="DUPLICATE_OPERATIONS" value="DISCARD"/>
+    <details key="NON_API_INVARIANTS" value="IGNORE"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUBSETTING_PROPERTIES" value="REPORT"/>
+    <details key="OPERATION_BODIES" value="PROCESS"/>
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="UNTYPED_PROPERTIES" value="REPORT"/>
+    <details key="REDEFINING_PROPERTIES" value="REPORT"/>
+    <details key="INVOCATION_DELEGATES" value="IGNORE"/>
+    <details key="VALIDATION_DELEGATES" value="IGNORE"/>
+  </genAnnotations>
+  <foreignModel>i40.profile.uml</foreignModel>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="I40" basePackage="io.github.abelgomez.asyncapi"
+      disposableProviderFactory="true" ecorePackage="i40.ecore#/">
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="i40.ecore#//Protocol">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/amqp"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/amqps"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/mqtt"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/mqtts"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/ws"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/wss"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/stomp"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/stomps"/>
+    </genEnums>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="i40.ecore#//I40Architecture">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//I40Architecture/name"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//I40Architecture/description"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//I40Architecture/version"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference i40.ecore#//I40Architecture/base_Model"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="i40.ecore#//I40Component">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference i40.ecore#//I40Component/base_Component"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference i40.ecore#//I40Component/broker"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="i40.ecore#//Broker">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//Broker/name"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//Broker/url"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//Broker/protocol"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//Broker/description"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference i40.ecore#//Broker/base_Class"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="i40.ecore#//Broker/publish"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="i40.ecore#//Broker/subscribe"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="i40.ecore#//Topic">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//Topic/name"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference i40.ecore#//Topic/parameters"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference i40.ecore#//Topic/base_Signal"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//Topic/publishOpId"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//Topic/subscribeOpId"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference i40.ecore#//Topic/publishes"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference i40.ecore#//Topic/subscribes"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//Topic/description"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="i40.ecore#//Parameter">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//Parameter/name"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//Parameter/type"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//Parameter/description"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="i40.ecore#//Parameter/toString"
+          body="if (eIsProxy()) return super.toString();&#xD;&#xA;&#xD;&#xA;StringBuilder result = new StringBuilder();&#xD;&#xA;result.append(name);&#xD;&#xA;result.append(&quot;: &quot;);&#xD;&#xA;result.append(type);&#xD;&#xA;return result.toString();"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="i40.ecore#//Message">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference i40.ecore#//Message/base_StructuredClassifier"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//Message/name"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//Message/description"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="i40.ecore#//Publisher">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference i40.ecore#//Publisher/base_Operation"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference i40.ecore#//Publisher/topic"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="i40.ecore#//Subscriber">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference i40.ecore#//Subscriber/base_Operation"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference i40.ecore#//Subscriber/topic"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="i40.ecore#//RedefinableProperty">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference i40.ecore#//RedefinableProperty/base_Property"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//RedefinableProperty/title"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

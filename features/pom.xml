@@ -2,6 +2,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<properties>
+		<maven.deploy.skip>true</maven.deploy.skip>
+	</properties>
 	<parent>
 		<groupId>io.github.abelgomez.asyncapi</groupId>
 		<artifactId>root</artifactId>
@@ -14,5 +17,8 @@
 	<modules>
 		<module>io.github.abelgomez.asyncapi.feature</module>
 		<module>io.github.abelgomez.asyncapi.ui.feature</module>
+		<module>io.github.abelgomez.asyncapi.i40.feature</module>
+		<module>io.github.abelgomez.asyncapi.i40.ui.feature</module>
+		<module>io.github.abelgomez.asyncapi.i40.profile.feature</module>
 	</modules>
 </project>

@@ -25,7 +25,7 @@ Require-Bundle: io.github.abelgomez.asyncapi,
  org.eclipse.m2e.core,
  org.eclipse.pde.core
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: io.github.abelgomez.asyncapi.ui.quickfix,
  io.github.abelgomez.asyncapi.ui.internal,
  io.github.abelgomez.asyncapi.ui.contentassist,

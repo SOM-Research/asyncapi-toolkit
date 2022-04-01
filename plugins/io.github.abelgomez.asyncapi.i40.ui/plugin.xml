@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            description="Industry 4.0 Profile, that can be used to generate AsyncAPI specifications"
+            iconpath="icons/i40.icon16.png"
+            name="Industry 4.0"
+            path="pathmap://I40_PROFILES/i40.profile.uml">
+      </profile>
+   </extension>
+
+   <extension
+         point="io.github.abelgomez.asyncapi.ui.projectTemplate">
+      <projectTemplate
+            class="io.github.abelgomez.asyncapi.i40.ui.wizard.I40AsyncApiProject">
+      </projectTemplate>
+      <projectTemplate
+            class="io.github.abelgomez.asyncapi.i40.ui.wizard.ExampleI40AsyncApiProject">
+      </projectTemplate>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="io.github.abelgomez.asyncapi.i40.ui.handlers.Uml2AsyncApiHandler"
+            commandId="io.github.abelgomez.asyncapi.i40.ui.commands.uml2AsyncApiCommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="io.github.abelgomez.asyncapi.ui.commands.category"
+            id="io.github.abelgomez.asyncapi.i40.ui.commands.uml2AsyncApiCommand"
+            name="Generate AsyncAPI from UML">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <menu
+               label="AsyncAPI Toolkit">
+            <command
+                  commandId="io.github.abelgomez.asyncapi.i40.ui.commands.uml2AsyncApiCommand"
+                  icon="platform:/plugin/io.github.abelgomez.asyncapi.ui/icons/file.png"
+                  id="io.github.abelgomez.asyncapi.i40.ui.menus.uml2AsyncApiCommand"
+                  label="Generate AsyncAPI">
+            </command>
+            <visibleWhen
+                  checkEnabled="false">
+               <iterate>
+                  <adapt
+                        type="org.eclipse.core.resources.IFile">
+                     <test
+                           forcePluginActivation="true"
+                           property="org.eclipse.core.resources.extension"
+                           value="uml">
+                     </test>
+                  </adapt>
+               </iterate>
+            </visibleWhen>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>

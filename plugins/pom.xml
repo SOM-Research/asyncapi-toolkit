@@ -15,5 +15,8 @@
 		<module>io.github.abelgomez.asyncapi</module>
 		<module>io.github.abelgomez.asyncapi.ide</module>
 		<module>io.github.abelgomez.asyncapi.ui</module>
+		<module>io.github.abelgomez.asyncapi.i40</module>
+		<module>io.github.abelgomez.asyncapi.i40.ui</module>
+		<module>io.github.abelgomez.asyncapi.i40.profile</module>
 	</modules>
 </project>

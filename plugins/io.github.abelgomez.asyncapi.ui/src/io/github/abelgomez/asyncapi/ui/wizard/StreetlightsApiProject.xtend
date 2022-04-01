@@ -1,7 +1,5 @@
 package io.github.abelgomez.asyncapi.ui.wizard
 
-import org.eclipse.xtext.ui.util.PluginProjectFactory
-
 final class StreetlightsApiProject extends AbstractAsyncApiProjectTemplate {
 	def StreetlightsApiProject() {
 		path.value = "streetlights"

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="i40" nsURI="https://io.github.abelgomez/profiles/I4.0/1.0" nsPrefix="i40">
+  <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <details key="originalName" value="I40Profile"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="I40Architecture">
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="I4.0 Architecture"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Model" ordered="false"
+        eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Model"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I40Component">
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="I4.0 Component"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
+        eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="broker" ordered="false"
+        lowerBound="1" eType="#//Broker"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Broker">
+    <eOperations name="publish" ordered="false" lowerBound="1"/>
+    <eOperations name="subscribe" ordered="false" lowerBound="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" ordered="false" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="protocol" ordered="false"
+        lowerBound="1" eType="#//Protocol"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
+        eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Protocol">
+    <eLiterals name="amqp"/>
+    <eLiterals name="amqps" value="1"/>
+    <eLiterals name="mqtt" value="2"/>
+    <eLiterals name="mqtts" value="3"/>
+    <eLiterals name="ws" value="4"/>
+    <eLiterals name="wss" value="5"/>
+    <eLiterals name="stomp" value="6"/>
+    <eLiterals name="stomps" value="7"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Topic">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" ordered="false"
+        upperBound="-1" eType="#//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Signal" ordered="false"
+        eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Signal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publishOpId" ordered="false"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subscribeOpId" ordered="false"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publishes" ordered="false"
+        eType="#//Message"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subscribes" ordered="false"
+        eType="#//Message"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+    <eOperations name="toString" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="if (eIsProxy()) return super.toString();&#xD;&#xA;&#xD;&#xA;StringBuilder result = new StringBuilder();&#xD;&#xA;result.append(name);&#xD;&#xA;result.append(&quot;: &quot;);&#xD;&#xA;result.append(type);&#xD;&#xA;return result.toString();"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_StructuredClassifier"
+        ordered="false" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//StructuredClassifier"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Publisher">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Operation" ordered="false"
+        eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="topic" ordered="false"
+        lowerBound="1" eType="#//Topic"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Subscriber">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Operation" ordered="false"
+        eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="topic" ordered="false"
+        lowerBound="1" eType="#//Topic"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RedefinableProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Property" ordered="false"
+        eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" ordered="false"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+  </eClassifiers>
+</ecore:EPackage>

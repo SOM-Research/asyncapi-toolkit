@@ -15,7 +15,7 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.emf.common,
  org.eclipse.xtend.lib;bundle-version="2.14.0",
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: io.github.abelgomez.asyncapi,
  io.github.abelgomez.asyncapi.asyncApi,
  io.github.abelgomez.asyncapi.asyncApi.impl,

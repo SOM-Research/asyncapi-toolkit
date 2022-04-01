@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated i40.profile -->
+      <package
+            uri="https://io.github.abelgomez/profiles/I4.0/1.0"
+            class="io.github.abelgomez.asyncapi.i40.I40Package"
+            genModel="model/i40.profile.genmodel"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://I40_PROFILES/"
+            target="platform:/plugin/io.github.abelgomez.asyncapi.i40.profile/model/">
+      </mapping>
+   </extension>
+   <extension
+         point="org.eclipse.uml2.uml.generated_package">
+      <profile
+            location="pathmap://I40_PROFILES/i40.profile.uml#_feSzsGGeEeyTgIN4Smg6_Q"
+            uri="https://io.github.abelgomez/profiles/I4.0/1.0">
+      </profile>
+   </extension>
+
+</plugin>

@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AsyncAPI Industry 4.0 Plug-in
+Bundle-SymbolicName: io.github.abelgomez.asyncapi.i40
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: io.github.abelgomez.asyncapi.i40.I40Plugin
+Bundle-Vendor: SOM Research Lab
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.uml2.uml,
+ org.eclipse.xtext;bundle-version="2.26.0",
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro,
+ com.google.guava,
+ io.github.abelgomez.asyncapi;visibility:=reexport,
+ io.github.abelgomez.asyncapi.i40.profile;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: io.github.abelgomez.asyncapi.i40
+Bundle-ActivationPolicy: lazy
+Export-Package: io.github.abelgomez.asyncapi.i40,
+ io.github.abelgomez.asyncapi.i40.m2m
