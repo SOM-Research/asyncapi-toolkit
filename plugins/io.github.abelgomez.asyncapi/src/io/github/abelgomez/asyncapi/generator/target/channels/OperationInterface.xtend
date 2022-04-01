@@ -3,11 +3,8 @@ package io.github.abelgomez.asyncapi.generator.target.channels
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
 import io.github.abelgomez.asyncapi.generator.infra.IType
 import io.github.abelgomez.asyncapi.generator.target.AbstractType
-import java.util.Collections
-import java.util.TreeSet
 
 import static extension io.github.abelgomez.asyncapi.generator.TransformationContext.*
-import static extension java.text.MessageFormat.*
 
 class OperationInterface extends AbstractType implements IType {
 

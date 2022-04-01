@@ -222,7 +222,7 @@ class Ecore2AsyncApi {
 			}
 			if (eDataType instanceof EEnum) {
 				type = JsonType.STRING
-				enum += (eDataType as EEnum).ELiterals.map[name]  
+				enum += eDataType.ELiterals.map[name]  
 			}
 		]
 	}
