@@ -366,8 +366,8 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 * Constraint:
 	 *     (
 	 *         (window=AnyString | windowUnit=WindowUnit | aggregationFunction=AnyString | atomicMetric=AbstractQoSMetric)* 
-	 *         unit=QoSMetricUnit? 
-	 *         ((description=AnyString | dataType=QoSMetricType)? unit=QoSMetricUnit?)*
+	 *         dataType=QoSMetricType? 
+	 *         ((description=AnyString | unit=QoSMetricUnit)? dataType=QoSMetricType?)*
 	 *     )
 	 * </pre>
 	 */
@@ -458,8 +458,8 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *             headers=AbstractSchema | 
 	 *             payload=AbstractSchema
 	 *         )? 
-	 *         (tags+=Tag tags+=Tag*)? 
-	 *         (traits+=AbstractMessageTrait traits+=AbstractMessageTrait*)?
+	 *         (traits+=AbstractMessageTrait traits+=AbstractMessageTrait*)? 
+	 *         (tags+=Tag tags+=Tag*)?
 	 *     )+
 	 * </pre>
 	 */
@@ -736,9 +736,9 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *             default=PrimitiveValue | 
 	 *             items=AbstractSchema
 	 *         )? 
+	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)? 
 	 *         (required+=AnyString required+=AnyString*)? 
-	 *         (properties+=NamedSchema properties+=NamedSchema*)? 
-	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)?
+	 *         (properties+=NamedSchema properties+=NamedSchema*)?
 	 *     )+
 	 * </pre>
 	 */
