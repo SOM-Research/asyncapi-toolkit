@@ -16,7 +16,7 @@
 			<unit id="org.eclipse.papyrus.sdk.feature.feature.group" version="6.1.0.202203090938"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-			<repository location="http://download.eclipse.org/eclipse/updates/4.23"/>
+			<repository location="https://download.eclipse.org/eclipse/updates/4.23"/>
 			<unit id="org.eclipse.sdk.ide" version="4.23.0.I20220308-0310"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
