@@ -12,7 +12,7 @@ final class ExampleEcoreAsyncApiProject extends AbstractAsyncApiProjectTemplate 
 	}
 
 	override getDescription() {
-		"<p><b>Example Ecore project</b></p><p>Creates a new AsyncAPI v2.0.0 project from using an example Ecore file. You can set the package the file is created in.</p>"
+		"<p><b>Example Ecore project</b></p><p>Creates a new AsyncAPI v2.0.0 project using an example Ecore file. You can set the package the file is created in.</p>"
 	}
 
 	override createProjectFactory() {
