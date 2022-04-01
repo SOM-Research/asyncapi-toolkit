@@ -49,6 +49,7 @@
 					</executions>
 					<configuration>
 						<outputDirectory>xtend-gen</outputDirectory>
+						<showEmptyDirWarning>false</showEmptyDirWarning>
 					</configuration>
 				</plugin>
 				<plugin>
