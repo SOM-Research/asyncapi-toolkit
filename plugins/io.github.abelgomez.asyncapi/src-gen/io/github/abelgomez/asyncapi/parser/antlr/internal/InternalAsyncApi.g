@@ -6970,574 +6970,568 @@ ruleKeyword returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 	leaveRule();
 }:
 	(
-		kw='"$ref"'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getRefKeyword_0());
-		}
-		    |
 		kw='"2.0.0"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkDigitTwoFullStopDigitZeroFullStopDigitZeroQuotationMarkKeyword_1());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkDigitTwoFullStopDigitZeroFullStopDigitZeroQuotationMarkKeyword_0());
 		}
 		    |
 		kw='"<"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkLessThanSignQuotationMarkKeyword_2());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkLessThanSignQuotationMarkKeyword_1());
 		}
 		    |
 		kw='"<="'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkLessThanSignEqualsSignQuotationMarkKeyword_3());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkLessThanSignEqualsSignQuotationMarkKeyword_2());
 		}
 		    |
 		kw='"="'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkEqualsSignQuotationMarkKeyword_4());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkEqualsSignQuotationMarkKeyword_3());
 		}
 		    |
 		kw='">"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkGreaterThanSignQuotationMarkKeyword_5());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkGreaterThanSignQuotationMarkKeyword_4());
 		}
 		    |
 		kw='">="'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkGreaterThanSignEqualsSignQuotationMarkKeyword_6());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getQuotationMarkGreaterThanSignEqualsSignQuotationMarkKeyword_5());
 		}
 		    |
 		kw='"AND"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getANDKeyword_7());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getANDKeyword_6());
 		}
 		    |
 		kw='"OR"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getORKeyword_8());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getORKeyword_7());
 		}
 		    |
 		kw='"aggregationFunction"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getAggregationFunctionKeyword_9());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getAggregationFunctionKeyword_8());
 		}
 		    |
 		kw='"amqp"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getAmqpKeyword_10());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getAmqpKeyword_9());
 		}
 		    |
 		kw='"amqps"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getAmqpsKeyword_11());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getAmqpsKeyword_10());
 		}
 		    |
 		kw='"any"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getAnyKeyword_12());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getAnyKeyword_11());
 		}
 		    |
 		kw='"array"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getArrayKeyword_13());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getArrayKeyword_12());
 		}
 		    |
 		kw='"asyncapi"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getAsyncapiKeyword_14());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getAsyncapiKeyword_13());
 		}
 		    |
 		kw='"atomic"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getAtomicKeyword_15());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getAtomicKeyword_14());
 		}
 		    |
 		kw='"atomicMetric"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getAtomicMetricKeyword_16());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getAtomicMetricKeyword_15());
 		}
 		    |
 		kw='"boolean"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getBooleanKeyword_17());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getBooleanKeyword_16());
 		}
 		    |
 		kw='"channels"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getChannelsKeyword_18());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getChannelsKeyword_17());
 		}
 		    |
 		kw='"components"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getComponentsKeyword_19());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getComponentsKeyword_18());
 		}
 		    |
 		kw='"contact"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getContactKeyword_20());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getContactKeyword_19());
 		}
 		    |
 		kw='"dataType"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getDataTypeKeyword_21());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getDataTypeKeyword_20());
 		}
 		    |
 		kw='"days"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getDaysKeyword_22());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getDaysKeyword_21());
 		}
 		    |
 		kw='"default"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getDefaultKeyword_23());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getDefaultKeyword_22());
 		}
 		    |
 		kw='"deprecated"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getDeprecatedKeyword_24());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getDeprecatedKeyword_23());
 		}
 		    |
 		kw='"derived"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getDerivedKeyword_25());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getDerivedKeyword_24());
 		}
 		    |
 		kw='"description"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getDescriptionKeyword_26());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getDescriptionKeyword_25());
 		}
 		    |
 		kw='"email"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getEmailKeyword_27());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getEmailKeyword_26());
 		}
 		    |
 		kw='"enum"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getEnumKeyword_28());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getEnumKeyword_27());
 		}
 		    |
 		kw='"format"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getFormatKeyword_29());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getFormatKeyword_28());
 		}
 		    |
 		kw='"guaranteeTerm"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getGuaranteeTermKeyword_30());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getGuaranteeTermKeyword_29());
 		}
 		    |
 		kw='"headers"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getHeadersKeyword_31());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getHeadersKeyword_30());
 		}
 		    |
 		kw='"hours"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getHoursKeyword_32());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getHoursKeyword_31());
 		}
 		    |
 		kw='"info"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getInfoKeyword_33());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getInfoKeyword_32());
 		}
 		    |
 		kw='"integer"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getIntegerKeyword_34());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getIntegerKeyword_33());
 		}
 		    |
 		kw='"items"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getItemsKeyword_35());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getItemsKeyword_34());
 		}
 		    |
 		kw='"license"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getLicenseKeyword_36());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getLicenseKeyword_35());
 		}
 		    |
 		kw='"location"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getLocationKeyword_37());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getLocationKeyword_36());
 		}
 		    |
 		kw='"maxItems"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMaxItemsKeyword_38());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMaxItemsKeyword_37());
 		}
 		    |
 		kw='"maximum"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMaximumKeyword_39());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMaximumKeyword_38());
 		}
 		    |
 		kw='"message"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessageKeyword_40());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessageKeyword_39());
 		}
 		    |
 		kw='"messageTraits"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessageTraitsKeyword_41());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessageTraitsKeyword_40());
 		}
 		    |
 		kw='"messages"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessagesKeyword_42());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessagesKeyword_41());
 		}
 		    |
 		kw='"metricType"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMetricTypeKeyword_43());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMetricTypeKeyword_42());
 		}
 		    |
 		kw='"milliseconds"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMillisecondsKeyword_44());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMillisecondsKeyword_43());
 		}
 		    |
 		kw='"minItems"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMinItemsKeyword_45());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMinItemsKeyword_44());
 		}
 		    |
 		kw='"minimum"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMinimumKeyword_46());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMinimumKeyword_45());
 		}
 		    |
 		kw='"minutes"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMinutesKeyword_47());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMinutesKeyword_46());
 		}
 		    |
 		kw='"mqtt"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMqttKeyword_48());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMqttKeyword_47());
 		}
 		    |
 		kw='"mqtts"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMqttsKeyword_49());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMqttsKeyword_48());
 		}
 		    |
 		kw='"name"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getNameKeyword_50());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getNameKeyword_49());
 		}
 		    |
 		kw='"null"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getNullKeyword_51());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getNullKeyword_50());
 		}
 		    |
 		kw='"number"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getNumberKeyword_52());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getNumberKeyword_51());
 		}
 		    |
 		kw='"object"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getObjectKeyword_53());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getObjectKeyword_52());
 		}
 		    |
 		kw='"operationId"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperationIdKeyword_54());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperationIdKeyword_53());
 		}
 		    |
 		kw='"operationTraits"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperationTraitsKeyword_55());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperationTraitsKeyword_54());
 		}
 		    |
 		kw='"operator"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperatorKeyword_56());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperatorKeyword_55());
 		}
 		    |
 		kw='"parameters"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getParametersKeyword_57());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getParametersKeyword_56());
 		}
 		    |
 		kw='"payload"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getPayloadKeyword_58());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getPayloadKeyword_57());
 		}
 		    |
 		kw='"properties"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getPropertiesKeyword_59());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getPropertiesKeyword_58());
 		}
 		    |
 		kw='"protocol"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getProtocolKeyword_60());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getProtocolKeyword_59());
 		}
 		    |
 		kw='"publish"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getPublishKeyword_61());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getPublishKeyword_60());
 		}
 		    |
 		kw='"qosMetric"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getQosMetricKeyword_62());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getQosMetricKeyword_61());
 		}
 		    |
 		kw='"qualifyingConditions"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getQualifyingConditionsKeyword_63());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getQualifyingConditionsKeyword_62());
 		}
 		    |
 		kw='"real"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getRealKeyword_64());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getRealKeyword_63());
 		}
 		    |
 		kw='"required"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getRequiredKeyword_65());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getRequiredKeyword_64());
 		}
 		    |
 		kw='"schema"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getSchemaKeyword_66());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getSchemaKeyword_65());
 		}
 		    |
 		kw='"schemas"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getSchemasKeyword_67());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getSchemasKeyword_66());
 		}
 		    |
 		kw='"scopes"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getScopesKeyword_68());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getScopesKeyword_67());
 		}
 		    |
 		kw='"seconds"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getSecondsKeyword_69());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getSecondsKeyword_68());
 		}
 		    |
 		kw='"servers"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getServersKeyword_70());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getServersKeyword_69());
 		}
 		    |
 		kw='"slos"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getSlosKeyword_71());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getSlosKeyword_70());
 		}
 		    |
 		kw='"stomp"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getStompKeyword_72());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getStompKeyword_71());
 		}
 		    |
 		kw='"stomps"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getStompsKeyword_73());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getStompsKeyword_72());
 		}
 		    |
 		kw='"string"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getStringKeyword_74());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getStringKeyword_73());
 		}
 		    |
 		kw='"subscribe"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getSubscribeKeyword_75());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getSubscribeKeyword_74());
 		}
 		    |
 		kw='"summary"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getSummaryKeyword_76());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getSummaryKeyword_75());
 		}
 		    |
 		kw='"tags"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getTagsKeyword_77());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getTagsKeyword_76());
 		}
 		    |
 		kw='"termsOfService"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getTermsOfServiceKeyword_78());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getTermsOfServiceKeyword_77());
 		}
 		    |
 		kw='"title"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getTitleKeyword_79());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getTitleKeyword_78());
 		}
 		    |
 		kw='"traits"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getTraitsKeyword_80());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getTraitsKeyword_79());
 		}
 		    |
 		kw='"type"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getTypeKeyword_81());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getTypeKeyword_80());
 		}
 		    |
 		kw='"unit"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getUnitKeyword_82());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getUnitKeyword_81());
 		}
 		    |
 		kw='"url"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getUrlKeyword_83());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getUrlKeyword_82());
 		}
 		    |
 		kw='"value"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getValueKeyword_84());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getValueKeyword_83());
 		}
 		    |
 		kw='"variables"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getVariablesKeyword_85());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getVariablesKeyword_84());
 		}
 		    |
 		kw='"version"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getVersionKeyword_86());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getVersionKeyword_85());
 		}
 		    |
 		kw='"window"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getWindowKeyword_87());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getWindowKeyword_86());
 		}
 		    |
 		kw='"windowUnit"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getWindowUnitKeyword_88());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getWindowUnitKeyword_87());
 		}
 		    |
 		kw='"ws"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getWsKeyword_89());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getWsKeyword_88());
 		}
 		    |
 		kw='"wss"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getWssKeyword_90());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getWssKeyword_89());
 		}
 		    |
 		kw='"x-basePackage"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getXBasePackageKeyword_91());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getXBasePackageKeyword_90());
 		}
 		    |
 		kw='"x-qosMetrics"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getXQosMetricsKeyword_92());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getXQosMetricsKeyword_91());
 		}
 		    |
 		kw='"x-sla"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getXSlaKeyword_93());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getXSlaKeyword_92());
 		}
 		    |
 		kw='"x-title"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getXTitleKeyword_94());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getXTitleKeyword_93());
 		}
 	)
 ;
