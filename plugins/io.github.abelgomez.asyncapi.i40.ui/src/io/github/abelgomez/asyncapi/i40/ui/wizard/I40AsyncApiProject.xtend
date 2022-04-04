@@ -32,6 +32,8 @@ import static org.eclipse.core.runtime.IStatus.*
 
 import static extension io.github.abelgomez.asyncapi.generator.AsyncApi2Json.*
 import static extension io.github.abelgomez.asyncapi.i40.m2m.Uml2AsyncApi.*
+import io.github.abelgomez.asyncapi.i40.ui.I40UiPlugin
+import java.net.URL
 
 final class I40AsyncApiProject extends AbstractAsyncApiProjectTemplate  {
 	val inputGroup = group3("Input file")
@@ -69,34 +71,17 @@ final class I40AsyncApiProject extends AbstractAsyncApiProjectTemplate  {
 		val notationFilePath = modelFilePath.removeFileExtension.addFileExtension("notation")
 		val model = loadModel(modelFilePath)
 		super.createProjectFactory => [
-			addFile('''«SRC_JAVA»/«path»/«modelFilePath.lastSegment»''',
-				new BufferedReader(new InputStreamReader(ResourcesPlugin.workspace.root.getFile(modelFilePath).contents))
-					.lines.collect(Collectors.joining(System.lineSeparator)))
+			addFile('''«SRC_JAVA»/«path»/«modelFilePath.lastSegment»''', ResourcesPlugin.workspace.root.getFile(modelFilePath).readContents)
 			if (ResourcesPlugin.workspace.root.getFile(diFilePath).exists) {
-				addFile('''«SRC_JAVA»/«path»/«diFilePath.lastSegment»''',
-					new BufferedReader(new InputStreamReader(ResourcesPlugin.workspace.root.getFile(diFilePath).contents))
-						.lines.collect(Collectors.joining(System.lineSeparator)))
+				addFile('''«SRC_JAVA»/«path»/«diFilePath.lastSegment»''', ResourcesPlugin.workspace.root.getFile(diFilePath).readContents)
 				
 			}
 			if (ResourcesPlugin.workspace.root.getFile(notationFilePath).exists) {
-				addFile('''«SRC_JAVA»/«path»/«notationFilePath.lastSegment»''',
-					new BufferedReader(new InputStreamReader(ResourcesPlugin.workspace.root.getFile(notationFilePath).contents))
-						.lines.collect(Collectors.joining(System.lineSeparator)))
+				addFile('''«SRC_JAVA»/«path»/«notationFilePath.lastSegment»''', ResourcesPlugin.workspace.root.getFile(notationFilePath).readContents)
 				
 			}
-			addFile('''«SRC_JAVA»/«path»/«new Path(file.value).lastSegment»''',
-				new BufferedReader(new InputStreamReader(ResourcesPlugin.workspace.root.getFile(new Path(file.value)).contents))
-					.lines.collect(Collectors.joining(System.lineSeparator)))
 			addFile('''«SRC_JAVA»/«path»/«model.name».asyncapi''', model.asyncApi.generate)
-			addFile('''«SRC_JAVA»/main/Main.java''', '''
-				package main;
-				
-				public class Main {
-					public static void main(String[] args) throws Exception {
-						// TODO: Put your code here
-					}
-				}
-			''')
+			addFile('''«SRC_JAVA»/main/Main.java''', I40UiPlugin.^default.bundle.getResource("resources/i40.project/Main.java").readContents)
 		]
 	}
 

@@ -1,6 +1,11 @@
 package io.github.abelgomez.asyncapi.ui.wizard
 
 import io.github.abelgomez.asyncapi.AsyncApiOutputConfigurationProvider
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.net.URL
+import java.util.stream.Collectors
+import org.eclipse.core.resources.IFile
 import org.eclipse.core.resources.IResourceDelta
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.resources.WorkspaceJob
@@ -220,4 +225,13 @@ abstract class AbstractAsyncApiProjectTemplate extends AbstractProjectTemplate {
 			</executions>
 		</plugin>
 		'''
+		
+		
+	protected static def readContents(URL url) {
+		new BufferedReader(new InputStreamReader(url.openStream)).lines.collect(Collectors.joining(System.lineSeparator))
+	}
+
+	protected static def readContents(IFile file) {
+		new BufferedReader(new InputStreamReader(file.contents)).lines.collect(Collectors.joining(System.lineSeparator))
+	}
 }

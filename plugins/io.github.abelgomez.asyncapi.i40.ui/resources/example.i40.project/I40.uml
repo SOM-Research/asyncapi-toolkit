@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:i40="https://io.github.abelgomez/profiles/I4.0/1.0" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_v02EIKvIEeybpKCV4eI_mA" name="I4.0 Architecture">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_v8GisKvIEeybpKCV4eI_mA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_yLcIEKvIEeybpKCV4eI_mA" name="Broker"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_XJKWoK6_EeybpKCV4eI_mA" name="Cloud">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_c9P1IK6_EeybpKCV4eI_mA" name="handleMonitorMessage"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_jWUQAK6_EeybpKCV4eI_mA" name="Topics">
+      <packagedElement xmi:type="uml:Signal" xmi:id="_lafHMK6_EeybpKCV4eI_mA" name="Monitor"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="_QgUvgK7BEeybpKCV4eI_mA" name="Configure"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_xtzS8K6_EeybpKCV4eI_mA" name="Messages">
+      <packagedElement xmi:type="uml:Class" xmi:id="_zwbSAK6_EeybpKCV4eI_mA" name="PathInfo">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_4OFJEK6_EeybpKCV4eI_mA" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_I4WG867AEeybpKCV4eI_mA" name="beltInfos" type="_FrUKQK7AEeybpKCV4eI_mA" aggregation="composite" association="_I4WG8K7AEeybpKCV4eI_mA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_I4WG9K7AEeybpKCV4eI_mA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_I4WG9a7AEeybpKCV4eI_mA" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_FrUKQK7AEeybpKCV4eI_mA" name="BeltInfo">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_K6Wa8K7AEeybpKCV4eI_mA" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_O0GTsK7AEeybpKCV4eI_mA" name="ts">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Rc464K7AEeybpKCV4eI_mA" name="speed">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_r9BxsK7AEeybpKCV4eI_mA" name="Configuration">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_33RWI67AEeybpKCV4eI_mA" name="monitoringfrequency" type="_wY45AK7AEeybpKCV4eI_mA" aggregation="composite" association="_33RWIK7AEeybpKCV4eI_mA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_33RWJK7AEeybpKCV4eI_mA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_33RWJa7AEeybpKCV4eI_mA" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_wY45AK7AEeybpKCV4eI_mA" name="MonitoringFrequency">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_0whAkK7AEeybpKCV4eI_mA" name="value">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_lbTFsLETEeyBt5AVblrBtA" name="unit" type="_H2TF0LEKEeyyJ9apTmcH_g"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_H2TF0LEKEeyyJ9apTmcH_g" name="Unit">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_O48CILEKEeyyJ9apTmcH_g" name="seconds"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Pu4ysLEKEeyyJ9apTmcH_g" name="minutes"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_I4WG8K7AEeybpKCV4eI_mA" memberEnd="_I4WG867AEeybpKCV4eI_mA _I4WG9q7AEeybpKCV4eI_mA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_I4WG8a7AEeybpKCV4eI_mA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_I4WG8q7AEeybpKCV4eI_mA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_I4WG9q7AEeybpKCV4eI_mA" name="pathinfo" type="_zwbSAK6_EeybpKCV4eI_mA" association="_I4WG8K7AEeybpKCV4eI_mA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_33RWIK7AEeybpKCV4eI_mA" memberEnd="_33RWI67AEeybpKCV4eI_mA _33RWJq7AEeybpKCV4eI_mA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_33RWIa7AEeybpKCV4eI_mA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_33RWIq7AEeybpKCV4eI_mA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_33RWJq7AEeybpKCV4eI_mA" name="configuration" type="_r9BxsK7AEeybpKCV4eI_mA" association="_33RWIK7AEeybpKCV4eI_mA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_uUwBkK7BEeybpKCV4eI_mA" name="IoTBox">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_NAz2gK7TEey-46jH0ooPYA" name="monitoringFrequency">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PTabAK7CEeybpKCV4eI_mA" name="controlLoop"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QMILsK7CEeybpKCV4eI_mA" name="configure">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_TRntQK7TEey-46jH0ooPYA" name="frequency">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_vmf9UK7BEeybpKCV4eI_mA" name="Path">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="__0Ci8K7BEeybpKCV4eI_mA" name="id">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_HpeOI67CEeybpKCV4eI_mA" name="belts" type="_wtTNUK7BEeybpKCV4eI_mA" aggregation="shared" association="_HpeOIK7CEeybpKCV4eI_mA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HpeOJK7CEeybpKCV4eI_mA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HpeOJa7CEeybpKCV4eI_mA" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_wtTNUK7BEeybpKCV4eI_mA" name="Belt">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_B6LwEK7CEeybpKCV4eI_mA" name="id">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_DjXUYK7CEeybpKCV4eI_mA" name="currentSpeed">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_xuTXUK7BEeybpKCV4eI_mA" name="Frontend">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_RA4CYK7CEeybpKCV4eI_mA" name="configure">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_h0JLQK7CEeybpKCV4eI_mA" name="pathId">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_lxnGYK7CEeybpKCV4eI_mA" name="frequency">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_HpeOIK7CEeybpKCV4eI_mA" memberEnd="_HpeOI67CEeybpKCV4eI_mA _HpeOJq7CEeybpKCV4eI_mA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HpeOIa7CEeybpKCV4eI_mA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HpeOIq7CEeybpKCV4eI_mA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_HpeOJq7CEeybpKCV4eI_mA" name="path" type="_vmf9UK7BEeybpKCV4eI_mA" association="_HpeOIK7CEeybpKCV4eI_mA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KfcVsK7CEeybpKCV4eI_mA"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_M0EDsK7CEeybpKCV4eI_mA" memberEnd="_M0EDs67CEeybpKCV4eI_mA _M0EDtK7CEeybpKCV4eI_mA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M0EDsa7CEeybpKCV4eI_mA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M0EDsq7CEeybpKCV4eI_mA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_M0EDs67CEeybpKCV4eI_mA" name="path" type="_vmf9UK7BEeybpKCV4eI_mA" association="_M0EDsK7CEeybpKCV4eI_mA"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_M0EDtK7CEeybpKCV4eI_mA" name="iotbox" type="_uUwBkK7BEeybpKCV4eI_mA" association="_M0EDsK7CEeybpKCV4eI_mA"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_v6xtAKvIEeybpKCV4eI_mA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_v6ziMKvIEeybpKCV4eI_mA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="https://io.github.abelgomez/profiles/I4.0/1.0#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://I40_PROFILES/i40.profile.uml#_feSzsGGeEeyTgIN4Smg6_Q"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5bAPMa6_EeybpKCV4eI_mA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5bAPMq6_EeybpKCV4eI_mA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+    </profileApplication>
+  </uml:Model>
+  <i40:Broker xmi:id="_13eU8KvIEeybpKCV4eI_mA" name="production" url="example.com:1883" protocol="mqtt" description="Example production broker" base_Class="_yLcIEKvIEeybpKCV4eI_mA"/>
+  <i40:I40Component xmi:id="_aECzYK6_EeybpKCV4eI_mA" base_Component="_XJKWoK6_EeybpKCV4eI_mA" broker="_13eU8KvIEeybpKCV4eI_mA"/>
+  <i40:Subscriber xmi:id="_ffyqYK6_EeybpKCV4eI_mA" base_Operation="_c9P1IK6_EeybpKCV4eI_mA" topic="_nyGe0K6_EeybpKCV4eI_mA"/>
+  <i40:Topic xmi:id="_nyGe0K6_EeybpKCV4eI_mA" name="iotbox/{id}/monitor" base_Signal="_lafHMK6_EeybpKCV4eI_mA" publishOpId="sendStatus" subscribeOpId="receiveStatus" publishes="_1BobMK6_EeybpKCV4eI_mA" subscribes="_1BobMK6_EeybpKCV4eI_mA">
+    <parameters xmi:type="i40:Parameter" xmi:id="_o54mQK6_EeybpKCV4eI_mA" name="id" type="String"/>
+  </i40:Topic>
+  <i40:Message xmi:id="_1BobMK6_EeybpKCV4eI_mA" base_StructuredClassifier="_zwbSAK6_EeybpKCV4eI_mA" name="MonitorMessage"/>
+  <i40:Message xmi:id="_8LchEK7AEeybpKCV4eI_mA" base_StructuredClassifier="_r9BxsK7AEeybpKCV4eI_mA" name="ConfigurationMessage"/>
+  <i40:Topic xmi:id="_S-KD4K7BEeybpKCV4eI_mA" name="iotbox/{id}/configure" base_Signal="_QgUvgK7BEeybpKCV4eI_mA" publishOpId="sendServiceConfiguration" subscribeOpId="receiveServiceConfiguration" publishes="_8LchEK7AEeybpKCV4eI_mA" subscribes="_8LchEK7AEeybpKCV4eI_mA">
+    <parameters xmi:type="i40:Parameter" xmi:id="_VNaJsK7BEeybpKCV4eI_mA" name="id" type="String"/>
+  </i40:Topic>
+  <i40:I40Component xmi:id="_2xSwEK7BEeybpKCV4eI_mA" base_Component="_uUwBkK7BEeybpKCV4eI_mA" broker="_13eU8KvIEeybpKCV4eI_mA"/>
+  <i40:I40Component xmi:id="_6hwxAK7BEeybpKCV4eI_mA" base_Component="_xuTXUK7BEeybpKCV4eI_mA" broker="_13eU8KvIEeybpKCV4eI_mA"/>
+  <i40:Subscriber xmi:id="_Wg7KkK7CEeybpKCV4eI_mA" base_Operation="_QMILsK7CEeybpKCV4eI_mA" topic="_S-KD4K7BEeybpKCV4eI_mA"/>
+  <i40:Publisher xmi:id="_XLLBcK7CEeybpKCV4eI_mA" base_Operation="_PTabAK7CEeybpKCV4eI_mA" topic="_nyGe0K6_EeybpKCV4eI_mA"/>
+  <i40:Publisher xmi:id="_YDqIoK7CEeybpKCV4eI_mA" base_Operation="_RA4CYK7CEeybpKCV4eI_mA" topic="_S-KD4K7BEeybpKCV4eI_mA"/>
+  <i40:I40Architecture xmi:id="_kqahgLD2EeybW7YPbkN5xw" name="Example Architecture" version="0.1.0" base_Model="_v02EIKvIEeybpKCV4eI_mA"/>
+  <i40:RedefinableProperty xmi:id="_KdHU0LG_Eey86v2jwzb-qA" base_Property="_O0GTsK7AEeybpKCV4eI_mA" title="timestamp"/>
+</xmi:XMI>

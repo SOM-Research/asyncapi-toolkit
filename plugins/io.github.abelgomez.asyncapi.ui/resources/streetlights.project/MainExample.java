@@ -1,0 +1,76 @@
+package main;
+
+import java.text.MessageFormat;
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+import streetlights.api.components.schemas.LightMeasuredPayload;
+import streetlights.api.infra.IChannel.IChannelPublishConfiguration;
+import streetlights.api.infra.IServer;
+import streetlights.api.servers.ProductionServer;
+import streetlights.api.smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.MeasuredChannel;
+import streetlights.api.smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.MeasuredChannel.MeasuredChannelParameters;
+import streetlights.api.smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.ReceiveLightMeasurementOperation;
+import streetlights.api.smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.SendLightMeasurementOperation;
+
+/**
+ * Example program demonstrating how the generated code can be used. To execute
+ * this example program using an embedded Moquette MQTT server, see the
+ * <code>src/test/java</code> directory and execute the {@link TestMainExample}
+ * Junit class.
+ * 
+ * @author agomez
+ *
+ */
+public class MainExample {
+	public static void main(String[] args) throws Exception {
+		// Create a connection to the Production server
+		IServer production = ProductionServer.create();
+		try {
+			// Register a new subscription to the LightMeasured operation
+			ReceiveLightMeasurementOperation.subscribe(production, 
+					(message, params) -> {
+				// Inform about the message received
+				System.err.println(MessageFormat.format(
+						"Subscription to ''{0}'' with ID ''{1}'':\n{2} lumens at {3}",
+						MeasuredChannel.TOPIC_ID,
+						// Notice that both the params and the payload fields can be
+						// queried via getters that know about the domain being modeled 
+						params.getStreetlightId(),
+						message.getPayload().getLumens(), 
+						message.getPayload().getSentAt()));
+			});
+	
+			// Prepare to publish several messages
+			for (int i = 0; i < 5; i++) {
+				// Create the payload via the payloadBuiler offered by the publish  operation
+				LightMeasuredPayload payload = LightMeasuredPayload.newBuilder()
+						// Notice that the properties of the payload can be set via
+						// setter that know about the domain (e.g., name and type of
+						// the property
+						.withLumens(10)
+						.withSentAt(LocalDateTime.now().toString())
+						.build();
+				
+				// Set the value of the parameters. Notice that a setter is also provided
+				MeasuredChannelParameters params = SendLightMeasurementOperation.newParametersBuilder()
+						.withStreetlightId(UUID.randomUUID().toString()).build();
+
+				// Create an IChannelPublishConfiguration so that we can query the actual topic name in the IServer
+				IChannelPublishConfiguration config = SendLightMeasurementOperation.newConfiguration(params);
+
+				// Inform about the message to be sent
+				System.out.println(MessageFormat.format(
+						"Publishing at ''{0}'':\n{1}",
+						config.getActualChannelName(),
+						payload.toJson(true)));
+				
+				SendLightMeasurementOperation.publish(production, config, payload);
+			}
+		} finally {
+			// Unsubscribe from the topic and disconnect
+			ReceiveLightMeasurementOperation.unsubscribe(production);
+			production.disconnect();
+		}
+	}
+}
