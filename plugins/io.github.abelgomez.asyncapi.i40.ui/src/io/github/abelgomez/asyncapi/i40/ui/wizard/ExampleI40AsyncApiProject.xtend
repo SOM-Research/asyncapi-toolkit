@@ -18,12 +18,12 @@ final class ExampleI40AsyncApiProject extends AbstractAsyncApiProjectTemplate {
 
 	override createProjectFactory() {
 		super.createProjectFactory => [
-			addFile('''«SRC_JAVA»/«path»/I40.uml''', I40UiPlugin.^default.bundle.getResource("resources/example.i40.project/I40.uml").readContents)
-			addFile('''«SRC_JAVA»/«path»/I40.di''', I40UiPlugin.^default.bundle.getResource("resources/example.i40.project/I40.di").readContents)
-			addFile('''«SRC_JAVA»/«path»/I40.notation''', I40UiPlugin.^default.bundle.getResource("resources/example.i40.project/I40.notation").readContents)
-			addFile('''«SRC_JAVA»/«path»/I40.asyncapi''', I40UiPlugin.^default.bundle.getResource("resources/example.i40.project/I40.uml").openStream.loadModel.asyncApi.generate)
-			addFile('''«SRC_JAVA»/main/SubscribeExample.java''', I40UiPlugin.^default.bundle.getResource("resources/example.i40.project/SubscribeExample.java").readContents)
-			addFile('''«SRC_JAVA»/main/PublishExample.java''', I40UiPlugin.^default.bundle.getResource("resources/example.i40.project/PublishExample.java").readContents)
+			addFile('''Â«SRC_JAVAÂ»/Â«pathÂ»/I40.uml''', I40UiPlugin.^default.bundle.getResource("resources/example.i40.project/I40.uml").readContents)
+			addFile('''Â«SRC_JAVAÂ»/Â«pathÂ»/I40.di''', I40UiPlugin.^default.bundle.getResource("resources/example.i40.project/I40.di").readContents)
+			addFile('''Â«SRC_JAVAÂ»/Â«pathÂ»/I40.notation''', I40UiPlugin.^default.bundle.getResource("resources/example.i40.project/I40.notation").readContents)
+			addFile('''Â«SRC_JAVAÂ»/Â«pathÂ»/I40.asyncapi''', I40UiPlugin.^default.bundle.getResource("resources/example.i40.project/I40.uml").openStream.loadModel.asyncApi.generate)
+			addFile('''Â«SRC_JAVAÂ»/main/SubscribeExample.java''', I40UiPlugin.^default.bundle.getResource("resources/example.i40.project/SubscribeExample.java").readContents)
+			addFile('''Â«SRC_JAVAÂ»/main/PublishExample.java''', I40UiPlugin.^default.bundle.getResource("resources/example.i40.project/PublishExample.java").readContents)
 		]
 	}
 }

@@ -67,17 +67,17 @@ final class I40AsyncApiProject extends AbstractAsyncApiProjectTemplate  {
 		val notationFilePath = modelFilePath.removeFileExtension.addFileExtension("notation")
 		val model = loadModel(modelFilePath)
 		super.createProjectFactory => [
-			addFile('''«SRC_JAVA»/«path»/«modelFilePath.lastSegment»''', ResourcesPlugin.workspace.root.getFile(modelFilePath).readContents)
+			addFile('''Â«SRC_JAVAÂ»/Â«pathÂ»/Â«modelFilePath.lastSegmentÂ»''', ResourcesPlugin.workspace.root.getFile(modelFilePath).readContents)
 			if (ResourcesPlugin.workspace.root.getFile(diFilePath).exists) {
-				addFile('''«SRC_JAVA»/«path»/«diFilePath.lastSegment»''', ResourcesPlugin.workspace.root.getFile(diFilePath).readContents)
+				addFile('''Â«SRC_JAVAÂ»/Â«pathÂ»/Â«diFilePath.lastSegmentÂ»''', ResourcesPlugin.workspace.root.getFile(diFilePath).readContents)
 				
 			}
 			if (ResourcesPlugin.workspace.root.getFile(notationFilePath).exists) {
-				addFile('''«SRC_JAVA»/«path»/«notationFilePath.lastSegment»''', ResourcesPlugin.workspace.root.getFile(notationFilePath).readContents)
+				addFile('''Â«SRC_JAVAÂ»/Â«pathÂ»/Â«notationFilePath.lastSegmentÂ»''', ResourcesPlugin.workspace.root.getFile(notationFilePath).readContents)
 				
 			}
-			addFile('''«SRC_JAVA»/«path»/«model.name».asyncapi''', model.asyncApi.generate)
-			addFile('''«SRC_JAVA»/main/Main.java''', I40UiPlugin.^default.bundle.getResource("resources/i40.project/Main.java").readContents)
+			addFile('''Â«SRC_JAVAÂ»/Â«pathÂ»/Â«model.nameÂ».asyncapi''', model.asyncApi.generate)
+			addFile('''Â«SRC_JAVAÂ»/main/Main.java''', I40UiPlugin.^default.bundle.getResource("resources/i40.project/Main.java").readContents)
 		]
 	}
 
