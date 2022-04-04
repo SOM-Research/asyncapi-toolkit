@@ -1,6 +1,7 @@
 package io.github.abelgomez.asyncapi.ui.wizard;
 
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.xtext.ui.wizard.template.TemplateNewProjectWizard;
 
 public class AsyncApiTemplateNewProjectWizard extends TemplateNewProjectWizard {
@@ -17,5 +18,11 @@ public class AsyncApiTemplateNewProjectWizard extends TemplateNewProjectWizard {
 		}
 		templatePage.setErrorMessage(null);
 		return super.canFinish() && (templateParameterPage == null ? true : templateParameterPage.isPageComplete());
+	}
+	
+	@Override
+	public void createPageControls(Composite pageContainer) {
+		super.createPageControls(pageContainer);
+		getShell().setMinimumSize(610, 320);
 	}
 }
