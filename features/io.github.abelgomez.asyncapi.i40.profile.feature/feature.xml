@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="io.github.abelgomez.asyncapi.i40.profile.feature"
-      label="Industry 4.0 Profile Feature"
+      label="Industry 4.0 Profile"
       version="0.5.0.qualifier"
       provider-name="SOM Research Lab">
 
