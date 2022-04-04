@@ -200,6 +200,7 @@
   <menuContribution
         locationURI="popup:org.eclipse.ui.popup.any?after=additions">
      <menu
+           id="io.github.abelgomez.asyncapi.ui.menu.context"
            label="AsyncAPI Toolkit">
         <command
               commandId="io.github.abelgomez.asyncapi.ui.commands.ecore2AsyncApiCommand"
@@ -209,7 +210,8 @@
         </command>
         <visibleWhen
               checkEnabled="false">
-           <iterate>
+           <iterate
+                 ifEmpty="false">
               <adapt
                     type="org.eclipse.core.resources.IFile">
                  <test
