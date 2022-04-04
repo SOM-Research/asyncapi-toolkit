@@ -18,10 +18,15 @@
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 			<repository location="https://download.eclipse.org/eclipse/updates/4.23"/>
 			<unit id="org.eclipse.sdk.ide" version="4.23.0.I20220308-0310"/>
+			<unit id="org.eclipse.equinox.executable.feature.group" version="3.8.1500.v20220210-1108"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 			<repository location="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-03"/>
 			<unit id="org.eclipse.papyrus.sdk.feature.source.feature.group" version="6.1.0.202203090938"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="https://download.eclipse.org/justj/jres/11/updates/release"/>
+			<unit id="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group" version="11.0.14.v20220201-1322"/>
 		</location>
 	</locations>
 </target>
