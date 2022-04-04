@@ -1,9 +1,7 @@
 package io.github.abelgomez.asyncapi.i40.ui.wizard
 
+import io.github.abelgomez.asyncapi.i40.ui.I40UiPlugin
 import io.github.abelgomez.asyncapi.ui.wizard.AbstractAsyncApiProjectTemplate
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.util.stream.Collectors
 import org.eclipse.core.resources.IContainer
 import org.eclipse.core.resources.IFile
 import org.eclipse.core.resources.IResource
@@ -32,8 +30,6 @@ import static org.eclipse.core.runtime.IStatus.*
 
 import static extension io.github.abelgomez.asyncapi.generator.AsyncApi2Json.*
 import static extension io.github.abelgomez.asyncapi.i40.m2m.Uml2AsyncApi.*
-import io.github.abelgomez.asyncapi.i40.ui.I40UiPlugin
-import java.net.URL
 
 final class I40AsyncApiProject extends AbstractAsyncApiProjectTemplate  {
 	val inputGroup = group3("Input file")
