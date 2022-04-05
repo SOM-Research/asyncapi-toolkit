@@ -8,7 +8,8 @@
             description="Industry 4.0 Profile, that can be used to generate AsyncAPI specifications"
             iconpath="icons/i40.icon16.png"
             name="Industry 4.0"
-            path="pathmap://I40_PROFILES/i40.profile.uml">
+            path="pathmap://I40_PROFILES/i40.profile.uml"
+            provider="SOM Research Lab">
       </profile>
    </extension>
 
