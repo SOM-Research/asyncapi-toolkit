@@ -42,19 +42,19 @@ public class AsyncApiTemplateNewProjectWizard extends TemplateNewProjectWizard {
 	@Override
 	protected void doFinish(IProjectInfo projectInfo, IProgressMonitor monitor) {
 		super.doFinish(projectInfo, monitor);
-		new UIJob("Switching perspectives") {
+		new UIJob("Switching to Java perspective") {
 			@Override
 			public IStatus runInUIThread(IProgressMonitor monitor) {
 				IWorkbench workbench = PlatformUI.getWorkbench();
 				IWorkbenchWindow window = workbench.getActiveWorkbenchWindow();
-				
 				try {
-					if (MessageDialog.openQuestion(window.getShell(), "Change to Java Perspective!", "This project type is associated to the Java perspective. Do you want to activate it?")) {
+					if (!JavaUI.ID_PERSPECTIVE.equals(window.getActivePage().getPerspective().getId()) &&
+							MessageDialog.openQuestion(window.getShell(), "Switch to Java Perspective?", "This project type is associated to the Java perspective. Do you want to switch to it?")) {
 						workbench.showPerspective(JavaUI.ID_PERSPECTIVE, window);
 					}
 				} catch (WorkbenchException e) {
 					Status status = new Status(IStatus.ERROR, AsyncapiActivator.PLUGIN_ID, e.getMessage(), e);
-					ErrorDialog.openError(window.getShell(), "Error", "Error while activating the Java perspective", status);
+					ErrorDialog.openError(window.getShell(), "Error", "Error while switching to the Java perspective", status);
 					return status;
 				}
 				return Status.OK_STATUS;
