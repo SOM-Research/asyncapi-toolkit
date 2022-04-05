@@ -18,6 +18,7 @@ Major release with important changes:
 * Improve Javadoc of generated source code.
 * Add UML profile for Industry 4.0 modeling.
 * Create extension point to allow contributing 3rd-party/external project templates.
+* Ask for the activation of the Java perspective when creating new projects.
 * Implement I4.0 UML model to AsyncAPI M2M transformation.
 * Add wizard for _Example AsyncAPI Project from I4.0 UML model_ and _AsyncAPI Project from I4.0 UML model_.
 * Add Papyrus as a dependency if the I4.0 plug-ins are installed.
