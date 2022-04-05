@@ -163,7 +163,7 @@ class Uml2AsyncApi {
 	
 	static def NamedSchema schema(Property property) {
 		return AsyncApiFactory.eINSTANCE.createNamedSchema => [
-			name = if (property.getStereotypeApplication(RedefinableProperty) !== null) property.getStereotypeApplication(RedefinableProperty).title else property.name
+			name = property.name
 			if (!property.multivalued) {
 				schema = property.type.schema
 			} else {
@@ -173,6 +173,9 @@ class Uml2AsyncApi {
 					minItems = property.lowerBound
 					maxItems = property.upperBound
 				]
+			}
+			if (schema instanceof Schema) {
+				(schema as Schema).title = property.getStereotypeApplication(RedefinableProperty)?.title
 			}
 		]
 	}
