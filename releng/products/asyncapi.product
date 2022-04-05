@@ -209,6 +209,7 @@
 
    <repositories>
       <repository location="https://som-research.github.io/asyncapi-toolkit/updates/latest" enabled="true" />
+      <repository location="http://download.eclipse.org/releases/2022-03/" enabled="true" />
    </repositories>
 
    <preferencesInfo>
