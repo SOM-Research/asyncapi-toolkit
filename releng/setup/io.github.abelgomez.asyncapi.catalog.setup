@@ -43,7 +43,7 @@
       </annotation>
       <setupTask
           xsi:type="setup.p2:P2Task"
-          label="Eclipse - 2021-09">
+          label="Eclipse - 2022-03">
         <repository
             url="http://download.eclipse.org/releases/2022-03/"/>
       </setupTask>
@@ -89,17 +89,17 @@
       </annotation>
       <setupTask
           xsi:type="setup.p2:P2Task"
-          label="Eclipse - 2021-09">
+          label="Eclipse - 2022-03">
         <repository
-            url="http://download.eclipse.org/releases/2021-09/"/>
+            url="http://download.eclipse.org/releases/2022-03/"/>
       </setupTask>
       <setupTask
           xsi:type="setup.p2:P2Task"
-          label="Eclipse Project Updates - 4.21">
+          label="Eclipse Project Updates - 4.23">
         <requirement
             name="org.eclipse.platform.ide"/>
         <repository
-            url="http://download.eclipse.org/eclipse/updates/4.21/"/>
+            url="http://download.eclipse.org/eclipse/updates/4.23/"/>
       </setupTask>
       <setupTask
           xsi:type="setup.p2:P2Task"
