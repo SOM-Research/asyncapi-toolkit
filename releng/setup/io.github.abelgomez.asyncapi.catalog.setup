@@ -23,7 +23,7 @@
         source="http://www.eclipse.org/oomph/setup/BrandingInfo">
       <detail
           key="imageURI">
-        <value>https://raw.githubusercontent.com/SOM-Research/asyncapi-toolkit/master/releng/setup/icons/asyncapi-64.png</value>
+        <value>https://raw.githubusercontent.com/SOM-Research/asyncapi-toolkit/master/releng/setup/icons/asyncapi-64-square.png</value>
       </detail>
     </annotation>
     <version
@@ -45,25 +45,31 @@
           xsi:type="setup.p2:P2Task"
           label="Eclipse - 2021-09">
         <repository
-            url="http://download.eclipse.org/releases/2021-09/"/>
+            url="http://download.eclipse.org/releases/2022-03/"/>
       </setupTask>
       <setupTask
           xsi:type="setup.p2:P2Task"
-          label="Eclipse Project Updates - 4.21">
+          label="Eclipse Project Updates - 4.23">
         <requirement
             name="org.eclipse.platform.ide"/>
         <repository
-            url="http://download.eclipse.org/eclipse/updates/4.21/"/>
+            url="http://download.eclipse.org/eclipse/updates/4.23/"/>
       </setupTask>
       <setupTask
           xsi:type="setup.p2:P2Task"
           label="AsyncAPI Toolkit - 0.5.0">
         <requirement
+            name="io.github.abelgomez.asyncapi.i40.feature.feature.group"/>
+        <requirement
+            name="io.github.abelgomez.asyncapi.i40.ui.feature.feature.group"/>
+        <requirement
             name="io.github.abelgomez.asyncapi.feature.feature.group"/>
         <requirement
             name="io.github.abelgomez.asyncapi.ui.feature.feature.group"/>
+        <requirement
+            name="io.github.abelgomez.asyncapi.i40.profile.feature.feature.group"/>
         <repository
-            url="https://som-research.github.io/asyncapi-toolkit/updates/"/>
+            url="https://som-research.github.io/asyncapi-toolkit/updates/latest/"/>
       </setupTask>
     </version>
     <version
@@ -99,9 +105,15 @@
           xsi:type="setup.p2:P2Task"
           label="AsyncAPI Toolkit - 0.5.0">
         <requirement
+            name="io.github.abelgomez.asyncapi.i40.feature.feature.group"/>
+        <requirement
+            name="io.github.abelgomez.asyncapi.i40.ui.feature.feature.group"/>
+        <requirement
             name="io.github.abelgomez.asyncapi.feature.feature.group"/>
         <requirement
             name="io.github.abelgomez.asyncapi.ui.feature.feature.group"/>
+        <requirement
+            name="io.github.abelgomez.asyncapi.i40.profile.feature.feature.group"/>
         <repository
             url="https://som-research.github.io/asyncapi-toolkit/updates/0.5.0"/>
       </setupTask>
