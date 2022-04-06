@@ -5,7 +5,7 @@ Repository to host the grammar, metamodel, and code generation tools for [AsyncA
 
 The tools hosted in this repository aim to provide the toolset necessary to develop Message-Driven APIs following a Model-based approach starting from AsyncAPI specifications.
 
-## Browse the AsyncAPI Toolkit documentation
+# Browse the AsyncAPI Toolkit documentation
 
 * [Installation instructions](doc/Installation.md)
 * [_Quick Start_ guide](doc/QuickStart.md)
@@ -15,6 +15,22 @@ The tools hosted in this repository aim to provide the toolset necessary to deve
 * [Project contents](doc/Contents.md)
 * [Building instructions](doc/Building.md)
 * [Changelog](doc/Changelog.md)
+
+# Want to learn more?
+
+Check our publications and other resources about the AsyncAPI Toolkit!
+
+* Abel Gómez, Markel Iglesias-Urkia, Lorea Belategi, Xabier Mendialdua, Jordi Cabot. _Model-driven development of asynchronous message-driven architectures with AsyncAPI_. Software and Systems Modeling (2021). https://doi.org/10.1007/s10270-021-00945-3. <br/>
+[ [Open access publication](https://doi.org/10.1007/s10270-021-00945-3) ]
+
+* Abel Gómez, Markel Iglesias-Urkia, Aitor Urbieta, Jordi Cabot. _A model-based approach for developing event-driven architectures with AsyncAPI_. Proceedings of the 23rd ACM/IEEE International Conference on Model Driven Engineering Languages and Systems, Association for Computing Machinery, Virtual Event, Canada, 2020, ISBN: 9781450370196. https://doi.org/10.1145/3365438.3410948. <br/>
+[ [Archived preprint](https://abel.gomez.llana.me/wp-content/uploads/2020/10/gomez-models-2020.pdf) | [Archived HD presentation](https://www.youtube.com/watch?v=QA90H4uqfa8) ]
+
+* Abel Gómez. _A model-based AsyncAPI code generator for IoT environments_. AsyncAPI Conference 2020. https://conference.2020.asyncapi.com/#abel-gomez. <br/>
+[ [Conference video](https://youtu.be/oMSzGc5bDr4?t=3221) | [Archived HD presentation](https://www.youtube.com/watch?v=ModM3EPpFEs) ]
+
+* Abel Gómez, Iker Fernandez de Larrea, Markel Iglesias-Urkia, Beatriz Lopez-Davalillo, Aitor Urbieta, Jordi Cabot. _Una Aproximación Basada en Modelos para la Definición de Arquitecturas Asíncronas_. Actas de las XXIV Jornadas de Ingeniería del Software y Bases de Datos (JISBD 2019), Sistedes, 2019. http://hdl.handle.net/11705/JISBD/2019/035 **(only in Spanish)**.<br/>
+[ [Open access publication](http://hdl.handle.net/11705/JISBD/2019/035) ]
 
 # License
 
