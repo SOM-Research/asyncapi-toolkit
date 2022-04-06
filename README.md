@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6417533.svg)](https://doi.org/10.5281/zenodo.6417533)
+
 # AsyncAPI Toolkit
 Repository to host the grammar, metamodel, and code generation tools for [AsyncAPI](https://www.asyncapi.com). 
 
