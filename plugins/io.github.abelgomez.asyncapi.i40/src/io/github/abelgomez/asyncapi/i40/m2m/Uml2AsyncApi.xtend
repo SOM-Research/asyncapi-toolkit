@@ -45,6 +45,7 @@ import org.eclipse.uml2.uml.UMLPackage
 import org.eclipse.xtext.EcoreUtil2
 
 import static extension org.eclipse.uml2.uml.util.UMLUtil.*
+import org.eclipse.uml2.uml.Component
 
 class Uml2AsyncApi {
 	
@@ -71,8 +72,8 @@ class Uml2AsyncApi {
 	}
 	
 	static def Iterable<Server> servers(Model model) {
-		return EcoreUtil2.getAllContentsOfType(model, Class)
-			.map[ clazz | clazz.getStereotypeApplication(Broker)]
+		return EcoreUtil2.getAllContentsOfType(model, Component)
+			.map[ comp | comp.getStereotypeApplication(Broker)]
 			.filterNull
 			.map[ broker |
 				AsyncApiFactory.eINSTANCE.createServer => [

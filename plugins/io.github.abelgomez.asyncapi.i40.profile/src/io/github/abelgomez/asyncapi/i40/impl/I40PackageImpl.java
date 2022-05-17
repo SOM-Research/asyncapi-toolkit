@@ -267,7 +267,7 @@ public class I40PackageImpl extends EPackageImpl implements I40Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBroker_Base_Class() {
+	public EReference getBroker_Base_Component() {
 		return (EReference)brokerEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -611,7 +611,7 @@ public class I40PackageImpl extends EPackageImpl implements I40Package {
 		createEAttribute(brokerEClass, BROKER__URL);
 		createEAttribute(brokerEClass, BROKER__PROTOCOL);
 		createEAttribute(brokerEClass, BROKER__DESCRIPTION);
-		createEReference(brokerEClass, BROKER__BASE_CLASS);
+		createEReference(brokerEClass, BROKER__BASE_COMPONENT);
 		createEOperation(brokerEClass, BROKER___PUBLISH);
 		createEOperation(brokerEClass, BROKER___SUBSCRIBE);
 
@@ -701,7 +701,7 @@ public class I40PackageImpl extends EPackageImpl implements I40Package {
 		initEAttribute(getBroker_Url(), theTypesPackage.getString(), "url", null, 1, 1, Broker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBroker_Protocol(), this.getProtocol(), "protocol", null, 1, 1, Broker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBroker_Description(), theTypesPackage.getString(), "description", null, 0, 1, Broker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBroker_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 0, 1, Broker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBroker_Base_Component(), theUMLPackage.getComponent(), null, "base_Component", null, 0, 1, Broker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getBroker__Publish(), null, "publish", 1, 1, IS_UNIQUE, !IS_ORDERED);
 

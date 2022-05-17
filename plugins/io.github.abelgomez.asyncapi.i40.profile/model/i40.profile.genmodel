@@ -62,7 +62,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//Broker/protocol"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//Broker/description"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference i40.ecore#//Broker/base_Class"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference i40.ecore#//Broker/base_Component"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="i40.ecore#//Broker/publish"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="i40.ecore#//Broker/subscribe"/>
     </genClasses>

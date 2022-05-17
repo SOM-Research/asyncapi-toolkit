@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.uml2.uml.Component;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +31,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link io.github.abelgomez.asyncapi.i40.impl.BrokerImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.i40.impl.BrokerImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.i40.impl.BrokerImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.i40.impl.BrokerImpl#getBase_Class <em>Base Class</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.i40.impl.BrokerImpl#getBase_Component <em>Base Component</em>}</li>
  * </ul>
  *
  * @generated
@@ -117,14 +118,14 @@ public class BrokerImpl extends MinimalEObjectImpl.Container implements Broker {
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
+	 * The cached value of the '{@link #getBase_Component() <em>Base Component</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBase_Class()
+	 * @see #getBase_Component()
 	 * @generated
 	 * @ordered
 	 */
-	protected org.eclipse.uml2.uml.Class base_Class;
+	protected Component base_Component;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -234,16 +235,16 @@ public class BrokerImpl extends MinimalEObjectImpl.Container implements Broker {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.uml2.uml.Class getBase_Class() {
-		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
-			if (base_Class != oldBase_Class) {
+	public Component getBase_Component() {
+		if (base_Component != null && base_Component.eIsProxy()) {
+			InternalEObject oldBase_Component = (InternalEObject)base_Component;
+			base_Component = (Component)eResolveProxy(oldBase_Component);
+			if (base_Component != oldBase_Component) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, I40Package.BROKER__BASE_CLASS, oldBase_Class, base_Class));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, I40Package.BROKER__BASE_COMPONENT, oldBase_Component, base_Component));
 			}
 		}
-		return base_Class;
+		return base_Component;
 	}
 
 	/**
@@ -251,8 +252,8 @@ public class BrokerImpl extends MinimalEObjectImpl.Container implements Broker {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
-		return base_Class;
+	public Component basicGetBase_Component() {
+		return base_Component;
 	}
 
 	/**
@@ -260,11 +261,11 @@ public class BrokerImpl extends MinimalEObjectImpl.Container implements Broker {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
-		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
-		base_Class = newBase_Class;
+	public void setBase_Component(Component newBase_Component) {
+		Component oldBase_Component = base_Component;
+		base_Component = newBase_Component;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, I40Package.BROKER__BASE_CLASS, oldBase_Class, base_Class));
+			eNotify(new ENotificationImpl(this, Notification.SET, I40Package.BROKER__BASE_COMPONENT, oldBase_Component, base_Component));
 	}
 
 	/**
@@ -305,9 +306,9 @@ public class BrokerImpl extends MinimalEObjectImpl.Container implements Broker {
 				return getProtocol();
 			case I40Package.BROKER__DESCRIPTION:
 				return getDescription();
-			case I40Package.BROKER__BASE_CLASS:
-				if (resolve) return getBase_Class();
-				return basicGetBase_Class();
+			case I40Package.BROKER__BASE_COMPONENT:
+				if (resolve) return getBase_Component();
+				return basicGetBase_Component();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -332,8 +333,8 @@ public class BrokerImpl extends MinimalEObjectImpl.Container implements Broker {
 			case I40Package.BROKER__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case I40Package.BROKER__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
+			case I40Package.BROKER__BASE_COMPONENT:
+				setBase_Component((Component)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -359,8 +360,8 @@ public class BrokerImpl extends MinimalEObjectImpl.Container implements Broker {
 			case I40Package.BROKER__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case I40Package.BROKER__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)null);
+			case I40Package.BROKER__BASE_COMPONENT:
+				setBase_Component((Component)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -382,8 +383,8 @@ public class BrokerImpl extends MinimalEObjectImpl.Container implements Broker {
 				return protocol != PROTOCOL_EDEFAULT;
 			case I40Package.BROKER__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case I40Package.BROKER__BASE_CLASS:
-				return base_Class != null;
+			case I40Package.BROKER__BASE_COMPONENT:
+				return base_Component != null;
 		}
 		return super.eIsSet(featureID);
 	}

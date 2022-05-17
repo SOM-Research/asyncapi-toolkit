@@ -266,13 +266,13 @@ public interface I40Package extends EPackage {
 	int BROKER__DESCRIPTION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Base Class</b></em>' reference.
+	 * The feature id for the '<em><b>Base Component</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BROKER__BASE_CLASS = 4;
+	int BROKER__BASE_COMPONENT = 4;
 
 	/**
 	 * The number of structural features of the '<em>Broker</em>' class.
@@ -737,15 +737,15 @@ public interface I40Package extends EPackage {
 	EAttribute getBroker_Description();
 
 	/**
-	 * Returns the meta object for the reference '{@link io.github.abelgomez.asyncapi.i40.Broker#getBase_Class <em>Base Class</em>}'.
+	 * Returns the meta object for the reference '{@link io.github.abelgomez.asyncapi.i40.Broker#getBase_Component <em>Base Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Class</em>'.
-	 * @see io.github.abelgomez.asyncapi.i40.Broker#getBase_Class()
+	 * @return the meta object for the reference '<em>Base Component</em>'.
+	 * @see io.github.abelgomez.asyncapi.i40.Broker#getBase_Component()
 	 * @see #getBroker()
 	 * @generated
 	 */
-	EReference getBroker_Base_Class();
+	EReference getBroker_Base_Component();
 
 	/**
 	 * Returns the meta object for the '{@link io.github.abelgomez.asyncapi.i40.Broker#publish() <em>Publish</em>}' operation.
@@ -1207,12 +1207,12 @@ public interface I40Package extends EPackage {
 		EAttribute BROKER__DESCRIPTION = eINSTANCE.getBroker_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Base Component</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BROKER__BASE_CLASS = eINSTANCE.getBroker_Base_Class();
+		EReference BROKER__BASE_COMPONENT = eINSTANCE.getBroker_Base_Component();
 
 		/**
 		 * The meta object literal for the '<em><b>Publish</b></em>' operation.

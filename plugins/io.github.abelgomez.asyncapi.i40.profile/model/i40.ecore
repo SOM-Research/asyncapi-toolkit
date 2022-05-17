@@ -37,8 +37,8 @@
         lowerBound="1" eType="#//Protocol"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
         eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
-        eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
+        eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Protocol">
     <eLiterals name="amqp"/>

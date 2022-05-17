@@ -3,6 +3,7 @@
 package io.github.abelgomez.asyncapi.i40;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.uml2.uml.Component;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link io.github.abelgomez.asyncapi.i40.Broker#getUrl <em>Url</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.i40.Broker#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.i40.Broker#getDescription <em>Description</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.i40.Broker#getBase_Class <em>Base Class</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.i40.Broker#getBase_Component <em>Base Component</em>}</li>
  * </ul>
  *
  * @see io.github.abelgomez.asyncapi.i40.I40Package#getBroker()
@@ -133,30 +134,30 @@ public interface Broker extends EObject {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Base Class</b></em>' reference.
+	 * Returns the value of the '<em><b>Base Component</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Class</em>' reference isn't clear,
+	 * If the meaning of the '<em>Base Component</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Base Class</em>' reference.
-	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
-	 * @see io.github.abelgomez.asyncapi.i40.I40Package#getBroker_Base_Class()
+	 * @return the value of the '<em>Base Component</em>' reference.
+	 * @see #setBase_Component(Component)
+	 * @see io.github.abelgomez.asyncapi.i40.I40Package#getBroker_Base_Component()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	org.eclipse.uml2.uml.Class getBase_Class();
+	Component getBase_Component();
 
 	/**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.i40.Broker#getBase_Class <em>Base Class</em>}' reference.
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.i40.Broker#getBase_Component <em>Base Component</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Class</em>' reference.
-	 * @see #getBase_Class()
+	 * @param value the new value of the '<em>Base Component</em>' reference.
+	 * @see #getBase_Component()
 	 * @generated
 	 */
-	void setBase_Class(org.eclipse.uml2.uml.Class value);
+	void setBase_Component(Component value);
 
 	/**
 	 * <!-- begin-user-doc -->

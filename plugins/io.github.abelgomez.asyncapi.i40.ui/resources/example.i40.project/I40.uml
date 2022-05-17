@@ -4,7 +4,7 @@
     <packageImport xmi:type="uml:PackageImport" xmi:id="_v8GisKvIEeybpKCV4eI_mA">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Class" xmi:id="_yLcIEKvIEeybpKCV4eI_mA" name="Broker"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_yLcIEKvIEeybpKCV4eI_mA" name="Broker"/>
     <packagedElement xmi:type="uml:Component" xmi:id="_XJKWoK6_EeybpKCV4eI_mA" name="Cloud">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_c9P1IK6_EeybpKCV4eI_mA" name="handleMonitorMessage"/>
     </packagedElement>
@@ -128,7 +128,7 @@
       <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
     </profileApplication>
   </uml:Model>
-  <i40:Broker xmi:id="_13eU8KvIEeybpKCV4eI_mA" name="production" url="example.com:1883" protocol="mqtt" description="Example production broker" base_Class="_yLcIEKvIEeybpKCV4eI_mA"/>
+  <i40:Broker xmi:id="_13eU8KvIEeybpKCV4eI_mA" name="production" url="example.com:1883" protocol="mqtt" description="Example production broker" base_Component="_yLcIEKvIEeybpKCV4eI_mA"/>
   <i40:I40Component xmi:id="_aECzYK6_EeybpKCV4eI_mA" base_Component="_XJKWoK6_EeybpKCV4eI_mA" broker="_13eU8KvIEeybpKCV4eI_mA"/>
   <i40:Subscriber xmi:id="_ffyqYK6_EeybpKCV4eI_mA" base_Operation="_c9P1IK6_EeybpKCV4eI_mA" topic="_nyGe0K6_EeybpKCV4eI_mA"/>
   <i40:Topic xmi:id="_nyGe0K6_EeybpKCV4eI_mA" name="iotbox/{id}/monitor" base_Signal="_lafHMK6_EeybpKCV4eI_mA" publishOpId="sendStatus" subscribeOpId="receiveStatus" publishes="_1BobMK6_EeybpKCV4eI_mA" subscribes="_1BobMK6_EeybpKCV4eI_mA">

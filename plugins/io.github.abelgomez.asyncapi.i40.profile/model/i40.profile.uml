@@ -79,15 +79,15 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lu7ekGHJEeyTgIN4Smg6_Q"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LvyaMGHJEeyTgIN4Smg6_Q" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_RYTzoGGiEeyTgIN4Smg6_Q" name="base_Class" association="_RYPiMGGiEeyTgIN4Smg6_Q">
-        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RYTzoWGiEeyTgIN4Smg6_Q"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Wtk2oMZUEeyOmpFmaPTDtg" name="base_Component" association="_WtaekMZUEeyOmpFmaPTDtg">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Component"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Wtk2ocZUEeyOmpFmaPTDtg"/>
       </ownedAttribute>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_rb3fUGGmEeyTgIN4Smg6_Q" name="publish"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_uVVm0GGmEeyTgIN4Smg6_Q" name="subscribe"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Extension" xmi:id="_RYPiMGGiEeyTgIN4Smg6_Q" name="E_Broker_Class8" memberEnd="_RYTMkGGiEeyTgIN4Smg6_Q _RYTzoGGiEeyTgIN4Smg6_Q">
-      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_RYTMkGGiEeyTgIN4Smg6_Q" name="extension_Broker" type="_WAMaMGGhEeyTgIN4Smg6_Q" aggregation="composite" association="_RYPiMGGiEeyTgIN4Smg6_Q"/>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_WtaekMZUEeyOmpFmaPTDtg" name="E_Broker_Component35" memberEnd="_WtkPkMZUEeyOmpFmaPTDtg _Wtk2oMZUEeyOmpFmaPTDtg">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_WtkPkMZUEeyOmpFmaPTDtg" name="extension_Broker" type="_WAMaMGGhEeyTgIN4Smg6_Q" aggregation="composite" association="_WtaekMZUEeyOmpFmaPTDtg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_c5kQUGGiEeyTgIN4Smg6_Q" name="Topic">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_d5OWgGGiEeyTgIN4Smg6_Q" name="name">
