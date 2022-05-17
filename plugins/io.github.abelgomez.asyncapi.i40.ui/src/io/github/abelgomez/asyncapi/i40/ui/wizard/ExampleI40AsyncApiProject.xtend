@@ -9,7 +9,7 @@ import static extension io.github.abelgomez.asyncapi.i40.m2m.Uml2AsyncApi.*
 final class ExampleI40AsyncApiProject extends AbstractAsyncApiProjectTemplate {
 	
 	override getLabel() {
-		"Example AsyncAPI Project from I4.0 UML model"
+		"Example AsyncAPI Project from I4.0 UML Model"
 	}
 
 	override getDescription() {
