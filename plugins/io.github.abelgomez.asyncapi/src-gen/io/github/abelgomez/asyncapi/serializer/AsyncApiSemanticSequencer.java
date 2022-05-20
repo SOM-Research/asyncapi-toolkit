@@ -366,8 +366,8 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 * Constraint:
 	 *     (
 	 *         (window=AnyString | windowUnit=WindowUnit | aggregationFunction=AnyString | atomicMetric=AbstractQoSMetric)* 
-	 *         dataType=QoSMetricType? 
-	 *         ((description=AnyString | unit=QoSMetricUnit)? dataType=QoSMetricType?)*
+	 *         unit=QoSMetricUnit? 
+	 *         ((description=AnyString | dataType=QoSMetricType)? unit=QoSMetricUnit?)*
 	 *     )
 	 * </pre>
 	 */

@@ -7,10 +7,10 @@
 	<parent>
 		<groupId>io.github.abelgomez.asyncapi</groupId>
 		<artifactId>plugins</artifactId>
-		<version>0.5.0-SNAPSHOT</version>
+		<version>0.6.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>io.github.abelgomez.asyncapi.ui</artifactId>
-	<version>0.5.0-SNAPSHOT</version>
+	<version>0.6.0-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
 	<name>[bundle] AsyncAPI Toolkit UI Plug-in</name>
 	<organization>
