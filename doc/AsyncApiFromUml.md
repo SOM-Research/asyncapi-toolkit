@@ -11,6 +11,8 @@ For this, we provide an _Industry 4.0_ (I4.0) UML profile. In this page you'll f
 * [Can I regenerate my AsyncAPI specification (and the generated code) after modifying the initial UML model?](#can-i-regenerate-my-asyncapi-specification-and-the-generated-code-after-modifying-the-initial-uml-model)
 * [Where can I find the model transformations in the source code?](#where-can-i-find-the-model-transformations-in-the-source-code)
 
+If you want to learn more about our _AsyncAPI Toolkit_, check out our [main README file](/README.md).
+
 ### How did we create this model?
 
 UML is a powerful language that allows us to represent everything from the architecture to the behavioral aspects of software systems. However, when its expressiveness is too broad for a given context, it can be tailored for [specific purposes by profiling](https://doi.org/10.1109/ISORC.2007.10). A UML profile provides a set of stereotypes and tagged values that are added to UML models to extend their semantics. To build a UML profile, the application domain must be analyzed to identify its particularities. Following best practices, this analysis can be captured in a domain model. In our case, we have defined a _publish-subscribe_ model in Industry 4.0 for, subsequently and following the good practices of [Lagarde et al.](https://doi.org/10.1145/1321631.1321705) and [Selic](https://doi.org/10.1109/ISORC.2007.10), get a UML profile.
