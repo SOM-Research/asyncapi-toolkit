@@ -39,5 +39,5 @@ In order to authenticate in GitHub, a proper `~/.m2/settings.xml` file should be
 In order to prepare a new release, it is necessary to change the version of all plugins, features, and pom.xml files at a time. To do this, simply execute (where x.x.x must be replaced by the desired version number):
 
 ```
-mvn clean tycho-versions:set-version -DnewVersion=x.x.x-SNAPSHOT
+mvn clean tycho-versions:set-version -D newVersion=x.x.x-SNAPSHOT -P build-products
 ```
