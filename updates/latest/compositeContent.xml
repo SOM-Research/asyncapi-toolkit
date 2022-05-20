@@ -2,10 +2,10 @@
 <?compositeMetadataRepository version='1.0.0'?>
 <repository name='AsyncAPI Toolkit Latest Update Site' type='org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository' version='1'>
   <properties size='2'>
-    <property name='p2.timestamp' value='1649190645090'/>
+    <property name='p2.timestamp' value='1653057054285'/>
     <property name='p2.atomic.composite.loading' value='true'/>
   </properties>
   <children size='1'>
-    <child location='https://som-research.github.io/asyncapi-toolkit/updates/0.5.0'/>
+    <child location='https://som-research.github.io/asyncapi-toolkit/updates/0.6.0'/>
   </children>
 </repository>
