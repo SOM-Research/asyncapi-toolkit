@@ -51,7 +51,6 @@ From the above profiles model, it is possible to obtain the following AsyncAPI s
 
 ```js
 {
-{
 	"asyncapi": "2.0.0",
 	"info": {
 		"title" : "Example Architecture",
