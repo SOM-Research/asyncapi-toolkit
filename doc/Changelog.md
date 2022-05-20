@@ -1,3 +1,11 @@
+## AsyncAPI Toolkit v0.6.0
+
+Major release, with few but breaking changes:
+
+* Change the metaclass the Broker stereotype extends (Class vs Component) (breaking change!)
+* Minor fixes in the New Project wizard window.
+* Improve documentation for the UML to AsyncAPI feature (i.e., _Industry 4.0_ support).
+
 ## AsyncAPI Toolkit v0.5.0
 
 Major release with important changes:

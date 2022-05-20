@@ -41,3 +41,9 @@ In order to prepare a new release, it is necessary to change the version of all 
 ```
 mvn clean tycho-versions:set-version -D newVersion=x.x.x-SNAPSHOT -P build-products
 ```
+
+## Release check list
+
+- [ ] Update [Changelog.md](Changelog.md)
+- [ ] Update [Installation.md](Installation.md.md)
+- [ ] Update [setup files](/releng/setup/).

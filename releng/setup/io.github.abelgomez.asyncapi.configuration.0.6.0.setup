@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Configuration
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    label="AsyncAPI Toolkit Installation Configuration">
+  <installation
+      name="io.github.abelgomez.asyncapi.installation"
+      label="AsyncAPI Toolkit Installation">
+    <productVersion
+        href="io.github.abelgomez.asyncapi.catalog.setup#//@products[name='asyncapi-toolkit']/@versions[name='0.6.0']"/>
+    <description>AsyncAPI Toolkit Installation.</description>
+  </installation>
+  <description>The AsyncAPI Toolkit Configuration allows installing the AsyncAPI Toolkit.</description>
+</setup:Configuration>
