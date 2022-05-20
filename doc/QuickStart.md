@@ -10,11 +10,11 @@ Select _AsyncAPI Project_, set a project name, and continue.
 
 After that, select a project template. We recommend you to start with the  _Streetlights API Example Project_. The _Streetlights API Example Project_ template contains a fully working example demonstrating the capabilities of the framework.
 
-![New Project Wizard - Step 3](img/wizard3.png)
+![New Project Wizard - Step 3](img/wizard3_streetlights.png)
 
 Finally, the wizard can be completed.
 
-![New Project Wizard - Step 4](img/wizard4.png)
+![New Project Wizard - Step 4](img/wizard4_streetlights.png)
 
 After that, a new Maven project with the following contents will appear in the workspace.
 
