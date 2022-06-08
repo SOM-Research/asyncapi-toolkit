@@ -168,11 +168,21 @@ class MqttServerClass extends ServerClass implements IClass {
 			
 			
 			public static «name» create() throws «serverExceptionClass.name» {
-				return new «name»();
+				return create(null, null);
 			}
 			
-			private «name»() throws «serverExceptionClass.name» {
+			public static «name» create(String username, String password) throws «serverExceptionClass.name» {
+				return new «name»(username, password);
+			}
+			
+			private «name»(String username, String password) throws «serverExceptionClass.name» {
 				options.setCleanSession(true);
+				if (username != null) {
+					options.setUserName(username);
+				}
+				if (password != null) {
+					options.setPassword(password.toCharArray());
+				}
 			}
 			
 			@Override
