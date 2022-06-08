@@ -83,6 +83,6 @@ class StringUtils {
 	
 	static def String asPackageName(String s) {
 		var segments = s.split("[/ ]");
-		return segments.filter[segment | s.length > 0].map[segment | segment.asJavaIdentifier].join(".");
+		return segments.filter[segment | segment.length > 0].map[segment | segment.asJavaIdentifier].join(".");
 	}
 }
