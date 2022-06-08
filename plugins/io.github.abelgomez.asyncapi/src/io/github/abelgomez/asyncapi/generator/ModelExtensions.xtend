@@ -153,7 +153,7 @@ class ModelExtensions {
 	static def String wildcardify(Channel channel) {
 		var result = channel.name;
 		for (NamedParameter p : channel.parameters) {
-			result = result.replaceAll("/[^/]*\\{" + p.name + "\\}[^/]*", "/+");
+			result = result.replaceAll("[^/]*\\{" + p.name + "\\}[^/]*", "+");
 		}
 		return result;
 	}
