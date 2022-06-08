@@ -17,13 +17,6 @@
 	<modules>
 		<module>platform</module>
 		<module>update</module>
+		<module>products</module>
 	</modules>
-	<profiles>
-		<profile>
-			<id>build-products</id>
-			<modules>
-				<module>products</module>
-			</modules>
-		</profile>
-	</profiles>
 </project>

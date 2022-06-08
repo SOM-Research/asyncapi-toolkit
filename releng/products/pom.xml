@@ -10,37 +10,41 @@
 		<version>0.6.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>products</artifactId>
-	<version>0.6.1-SNAPSHOT</version>
 	<packaging>eclipse-repository</packaging>
 	<name>[product] AsyncAPI Toolkit Product</name>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-p2-director-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>materialize-products</id>
-						<goals>
-							<goal>materialize-products</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>archive-products</id>
-						<goals>
-							<goal>archive-products</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<products>
-						<product>
-							<id>io.github.abelgomez.asyncapi.product</id>
-							<archiveFileName>AsyncAPI-Toolkit-${qualifiedVersion}</archiveFileName>
-						</product>
-					</products>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+	<profiles>
+		<profile>
+			<id>build-products</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>tycho-p2-director-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>materialize-products</id>
+								<goals>
+									<goal>materialize-products</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>archive-products</id>
+								<goals>
+									<goal>archive-products</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<products>
+								<product>
+									<id>io.github.abelgomez.asyncapi.product</id>
+									<archiveFileName>AsyncAPI-Toolkit-${qualifiedVersion}</archiveFileName>
+								</product>
+							</products>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

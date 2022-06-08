@@ -20,6 +20,12 @@ To deploy the created update sites in the `gh-pages` branch of GitHub, run:
 mvn clean deploy
 ```
 
+To deploy the created update sites in the `gh-pages` branch of GitHub, and build pre-packaged products to be published in the [releases section of GitHub](https://github.com/SOM-Research/asyncapi-toolkit/releases), run:
+
+```
+mvn clean deploy -P build-products
+```
+
 In order to authenticate in GitHub, a proper `~/.m2/settings.xml` file should be created with a personal access token:
 
 ```
@@ -39,7 +45,7 @@ In order to authenticate in GitHub, a proper `~/.m2/settings.xml` file should be
 In order to prepare a new release, it is necessary to change the version of all plugins, features, and pom.xml files at a time. To do this, simply execute (where x.x.x must be replaced by the desired version number):
 
 ```
-mvn clean tycho-versions:set-version -D newVersion=x.x.x-SNAPSHOT -P build-products
+mvn clean tycho-versions:set-version -D newVersion=x.x.x-SNAPSHOT
 ```
 
 ## Release check list
