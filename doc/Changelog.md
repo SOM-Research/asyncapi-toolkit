@@ -1,8 +1,18 @@
+## AsyncAPI Toolkit v0.6.1
+
+Minor release with minor fixes:
+
+* Add support for user/password authentication in MQTT servers.
+* Improve error notification on M2M transformation.
+* Fix wildcard computation expression, allowing parameters to appear at the beginning of a channel name.
+* Minor fix in package name calculation (skip empty segments).
+* Catch a few NPE when generating AsyncAPI specifications/code of incomplete models.
+
 ## AsyncAPI Toolkit v0.6.0
 
 Major release, with few but breaking changes:
 
-* Change the metaclass the Broker stereotype extends (Class vs Component) (breaking change!)
+* Change the metaclass the Broker stereotype extends (Class vs Component) (breaking change!).
 * Minor fixes in the New Project wizard window.
 * Improve documentation for the UML to AsyncAPI feature (i.e., _Industry 4.0_ support).
 
@@ -34,7 +44,6 @@ Major release with important changes:
 * Add product definitions for pre-built AsyncAPI Toolkit distributions.
 * Improve and refactor project documentation.
 * Many other code clean-ups and fixes.
-
 
 ## AsyncAPI Toolkit v0.4.6
 

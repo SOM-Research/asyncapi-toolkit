@@ -45,5 +45,5 @@ mvn clean tycho-versions:set-version -D newVersion=x.x.x-SNAPSHOT -P build-produ
 ## Release check list
 
 - [ ] Update [Changelog.md](Changelog.md)
-- [ ] Update [Installation.md](Installation.md.md)
+- [ ] Update [Installation.md](Installation.md)
 - [ ] Update [setup files](/releng/setup/).
