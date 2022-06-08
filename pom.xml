@@ -23,7 +23,7 @@
 	<groupId>io.github.abelgomez.asyncapi</groupId>
 	<artifactId>root</artifactId>
 	<name>[container] AsyncAPI Toolkit</name>
-	<version>0.6.0-SNAPSHOT</version>
+	<version>0.6.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>plugins</module>
@@ -101,7 +101,7 @@
 						<artifact>
 							<groupId>io.github.abelgomez.asyncapi</groupId>
 							<artifactId>platform</artifactId>
-							<version>0.6.0-SNAPSHOT</version>
+							<version>0.6.1-SNAPSHOT</version>
 						</artifact>
 					</target>
 					<environments>

@@ -2,7 +2,7 @@
 <feature
       id="io.github.abelgomez.asyncapi.i40.profile.feature"
       label="Industry 4.0 Profile"
-      version="0.6.0.qualifier"
+      version="0.6.1.qualifier"
       provider-name="SOM Research Lab">
 
    <description url="https://github.com/SOM-Research/asyncapi-toolkit">
