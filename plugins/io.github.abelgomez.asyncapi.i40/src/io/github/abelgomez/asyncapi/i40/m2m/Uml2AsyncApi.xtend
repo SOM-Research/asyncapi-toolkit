@@ -95,13 +95,13 @@ class Uml2AsyncApi {
 					parameters += topic.parameters.map[parameter]
 					publish = if (topic.publishOpId !== null) AsyncApiFactory.eINSTANCE.createOperation => [
 						operationId = topic.publishOpId
-						message = AsyncApiFactory.eINSTANCE.createReference => [
+						message = if (topic.publishes !== null) AsyncApiFactory.eINSTANCE.createReference => [
 							uri = MESSAGES_URI + topic.publishes.name
 						]
 					]
 					subscribe = if (topic.subscribeOpId !== null) AsyncApiFactory.eINSTANCE.createOperation => [
 						operationId = topic.subscribeOpId
-						message = AsyncApiFactory.eINSTANCE.createReference => [
+						message = if (topic.subscribes !== null) AsyncApiFactory.eINSTANCE.createReference => [
 							uri = MESSAGES_URI + topic.subscribes.name
 						]
 					]
