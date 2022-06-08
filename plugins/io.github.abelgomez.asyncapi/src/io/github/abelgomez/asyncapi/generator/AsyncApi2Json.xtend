@@ -92,9 +92,11 @@ class AsyncApi2Json {
 	private static def CharSequence generate(Operation o) '''
 	{
 		"operationId" : "«o.operationId»",
+		«IF o.message instanceof Reference»
 		"message": {
 			"$ref" : "«(o.message as Reference).uri»"
 		}
+		«ENDIF»
 	}'''
 
 	private static def CharSequence generate(Components c) '''
