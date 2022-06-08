@@ -20,6 +20,8 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
+import com.google.common.util.concurrent.ExecutionError;
+
 import io.github.abelgomez.asyncapi.generator.AsyncApi2Json;
 import io.github.abelgomez.asyncapi.m2m.Ecore2AsyncApi;
 import io.github.abelgomez.asyncapi.ui.internal.AsyncapiActivator;
@@ -49,9 +51,10 @@ public class Ecore2AsyncApiHandler extends AbstractHandler {
 						} else if (resultFile.exists() && MessageDialog.openQuestion(window.getShell(), "Target file already exists!", "Target file already exists. Overwrite?")) {
 							resultFile.setContents(new ByteArrayInputStream(contents), IResource.FORCE | IResource.KEEP_HISTORY, new NullProgressMonitor());
 						}
-					} catch (CoreException e) {
+					} catch (Exception e) {
 						ErrorDialog.openError(window.getShell(), "Error", "Error while storing the AsyncAPI specification",
 								new Status(IStatus.ERROR, AsyncapiActivator.PLUGIN_ID, e.getMessage(), e));
+						throw new ExecutionError(new Error(e));
 					}
 				}
 			} else {
