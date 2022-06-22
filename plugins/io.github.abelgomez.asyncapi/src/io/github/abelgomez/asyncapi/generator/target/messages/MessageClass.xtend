@@ -149,10 +149,16 @@ class MessageClass extends AbstractType implements IClass, IBuildableType {
 		result += "com.google.gson.Gson"
 		result += "com.google.gson.annotations.SerializedName"
 		result += message.api.transform.messageInterface.fqn
-		if (message.headers.isRef)
+		if (message.headers.isRef) {
 			result += message.headers.resolve.transform.fqn
-		if (message.payload.isRef)
+		} else {
+			result += message.headers.resolve.transform.imports
+		}
+		if (message.payload.isRef) {
 			result += message.payload.resolve.transform.fqn
+		} else {
+			result += message.payload.resolve.transform.imports
+		}
 		return Collections.unmodifiableNavigableSet(result)
 	}
 
