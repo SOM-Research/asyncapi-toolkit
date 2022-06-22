@@ -44,11 +44,24 @@
     <eLiterals name="amqp"/>
     <eLiterals name="amqps" value="1"/>
     <eLiterals name="mqtt" value="2"/>
-    <eLiterals name="mqtts" value="3"/>
+    <eLiterals name="secure_mqtt" value="3">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="securemqtt"/>
+      </eAnnotations>
+    </eLiterals>
     <eLiterals name="ws" value="4"/>
     <eLiterals name="wss" value="5"/>
     <eLiterals name="stomp" value="6"/>
     <eLiterals name="stomps" value="7"/>
+    <eLiterals name="kafka" value="8"/>
+    <eLiterals name="kafka_secure" value="9">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="kafkasecure"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="http" value="10"/>
+    <eLiterals name="https" value="11"/>
+    <eLiterals name="jms" value="12"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Topic">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"

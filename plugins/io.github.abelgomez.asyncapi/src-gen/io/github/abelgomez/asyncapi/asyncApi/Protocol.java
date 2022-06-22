@@ -41,6 +41,56 @@ public enum Protocol implements Enumerator
   AMQPS(1, "amqps", "\"amqps\""),
 
   /**
+   * The '<em><b>Http</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #HTTP_VALUE
+   * @generated
+   * @ordered
+   */
+  HTTP(2, "http", "\"http\""),
+
+  /**
+   * The '<em><b>Https</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #HTTPS_VALUE
+   * @generated
+   * @ordered
+   */
+  HTTPS(3, "https", "\"https\""),
+
+  /**
+   * The '<em><b>Jms</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #JMS_VALUE
+   * @generated
+   * @ordered
+   */
+  JMS(4, "jms", "\"jms\""),
+
+  /**
+   * The '<em><b>Kafka</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #KAFKA_VALUE
+   * @generated
+   * @ordered
+   */
+  KAFKA(5, "kafka", "\"kafka\""),
+
+  /**
+   * The '<em><b>Kafka secure</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #KAFKA_SECURE_VALUE
+   * @generated
+   * @ordered
+   */
+  KAFKA_SECURE(6, "kafka_secure", "\"kafka-secure\""),
+
+  /**
    * The '<em><b>Mqtt</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -48,17 +98,17 @@ public enum Protocol implements Enumerator
    * @generated
    * @ordered
    */
-  MQTT(2, "mqtt", "\"mqtt\""),
+  MQTT(7, "mqtt", "\"mqtt\""),
 
   /**
-   * The '<em><b>Mqtts</b></em>' literal object.
+   * The '<em><b>Secure mqtt</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #MQTTS_VALUE
+   * @see #SECURE_MQTT_VALUE
    * @generated
    * @ordered
    */
-  MQTTS(3, "mqtts", "\"mqtts\""),
+  SECURE_MQTT(8, "secure_mqtt", "\"secure-mqtt\""),
 
   /**
    * The '<em><b>Ws</b></em>' literal object.
@@ -68,7 +118,7 @@ public enum Protocol implements Enumerator
    * @generated
    * @ordered
    */
-  WS(4, "ws", "\"ws\""),
+  WS(9, "ws", "\"ws\""),
 
   /**
    * The '<em><b>Wss</b></em>' literal object.
@@ -78,7 +128,7 @@ public enum Protocol implements Enumerator
    * @generated
    * @ordered
    */
-  WSS(5, "wss", "\"wss\""),
+  WSS(10, "wss", "\"wss\""),
 
   /**
    * The '<em><b>Stomp</b></em>' literal object.
@@ -88,7 +138,7 @@ public enum Protocol implements Enumerator
    * @generated
    * @ordered
    */
-  STOMP(6, "stomp", "\"stomp\""),
+  STOMP(11, "stomp", "\"stomp\""),
 
   /**
    * The '<em><b>Stomps</b></em>' literal object.
@@ -98,7 +148,7 @@ public enum Protocol implements Enumerator
    * @generated
    * @ordered
    */
-  STOMPS(7, "stomps", "\"stomps\"");
+  STOMPS(12, "stomps", "\"stomps\"");
 
   /**
    * The '<em><b>Amqp</b></em>' literal value.
@@ -123,6 +173,61 @@ public enum Protocol implements Enumerator
   public static final int AMQPS_VALUE = 1;
 
   /**
+   * The '<em><b>Http</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #HTTP
+   * @model name="http" literal="\"http\""
+   * @generated
+   * @ordered
+   */
+  public static final int HTTP_VALUE = 2;
+
+  /**
+   * The '<em><b>Https</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #HTTPS
+   * @model name="https" literal="\"https\""
+   * @generated
+   * @ordered
+   */
+  public static final int HTTPS_VALUE = 3;
+
+  /**
+   * The '<em><b>Jms</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #JMS
+   * @model name="jms" literal="\"jms\""
+   * @generated
+   * @ordered
+   */
+  public static final int JMS_VALUE = 4;
+
+  /**
+   * The '<em><b>Kafka</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #KAFKA
+   * @model name="kafka" literal="\"kafka\""
+   * @generated
+   * @ordered
+   */
+  public static final int KAFKA_VALUE = 5;
+
+  /**
+   * The '<em><b>Kafka secure</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #KAFKA_SECURE
+   * @model name="kafka_secure" literal="\"kafka-secure\""
+   * @generated
+   * @ordered
+   */
+  public static final int KAFKA_SECURE_VALUE = 6;
+
+  /**
    * The '<em><b>Mqtt</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -131,18 +236,18 @@ public enum Protocol implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int MQTT_VALUE = 2;
+  public static final int MQTT_VALUE = 7;
 
   /**
-   * The '<em><b>Mqtts</b></em>' literal value.
+   * The '<em><b>Secure mqtt</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #MQTTS
-   * @model name="mqtts" literal="\"mqtts\""
+   * @see #SECURE_MQTT
+   * @model name="secure_mqtt" literal="\"secure-mqtt\""
    * @generated
    * @ordered
    */
-  public static final int MQTTS_VALUE = 3;
+  public static final int SECURE_MQTT_VALUE = 8;
 
   /**
    * The '<em><b>Ws</b></em>' literal value.
@@ -153,7 +258,7 @@ public enum Protocol implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int WS_VALUE = 4;
+  public static final int WS_VALUE = 9;
 
   /**
    * The '<em><b>Wss</b></em>' literal value.
@@ -164,7 +269,7 @@ public enum Protocol implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int WSS_VALUE = 5;
+  public static final int WSS_VALUE = 10;
 
   /**
    * The '<em><b>Stomp</b></em>' literal value.
@@ -175,7 +280,7 @@ public enum Protocol implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int STOMP_VALUE = 6;
+  public static final int STOMP_VALUE = 11;
 
   /**
    * The '<em><b>Stomps</b></em>' literal value.
@@ -186,7 +291,7 @@ public enum Protocol implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int STOMPS_VALUE = 7;
+  public static final int STOMPS_VALUE = 12;
 
   /**
    * An array of all the '<em><b>Protocol</b></em>' enumerators.
@@ -199,8 +304,13 @@ public enum Protocol implements Enumerator
     {
       AMQP,
       AMQPS,
+      HTTP,
+      HTTPS,
+      JMS,
+      KAFKA,
+      KAFKA_SECURE,
       MQTT,
-      MQTTS,
+      SECURE_MQTT,
       WS,
       WSS,
       STOMP,
@@ -271,8 +381,13 @@ public enum Protocol implements Enumerator
     {
       case AMQP_VALUE: return AMQP;
       case AMQPS_VALUE: return AMQPS;
+      case HTTP_VALUE: return HTTP;
+      case HTTPS_VALUE: return HTTPS;
+      case JMS_VALUE: return JMS;
+      case KAFKA_VALUE: return KAFKA;
+      case KAFKA_SECURE_VALUE: return KAFKA_SECURE;
       case MQTT_VALUE: return MQTT;
-      case MQTTS_VALUE: return MQTTS;
+      case SECURE_MQTT_VALUE: return SECURE_MQTT;
       case WS_VALUE: return WS;
       case WSS_VALUE: return WSS;
       case STOMP_VALUE: return STOMP;

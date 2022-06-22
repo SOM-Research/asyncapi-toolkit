@@ -4471,164 +4471,174 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Keyword cGuaranteeTermKeyword_29 = (Keyword)cAlternatives.eContents().get(29);
 		private final Keyword cHeadersKeyword_30 = (Keyword)cAlternatives.eContents().get(30);
 		private final Keyword cHoursKeyword_31 = (Keyword)cAlternatives.eContents().get(31);
-		private final Keyword cInfoKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
-		private final Keyword cIntegerKeyword_33 = (Keyword)cAlternatives.eContents().get(33);
-		private final Keyword cItemsKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
-		private final Keyword cLicenseKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
-		private final Keyword cLocationKeyword_36 = (Keyword)cAlternatives.eContents().get(36);
-		private final Keyword cMaxItemsKeyword_37 = (Keyword)cAlternatives.eContents().get(37);
-		private final Keyword cMaximumKeyword_38 = (Keyword)cAlternatives.eContents().get(38);
-		private final Keyword cMessageKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
-		private final Keyword cMessageTraitsKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
-		private final Keyword cMessagesKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
-		private final Keyword cMetricTypeKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
-		private final Keyword cMillisecondsKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
-		private final Keyword cMinItemsKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
-		private final Keyword cMinimumKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
-		private final Keyword cMinutesKeyword_46 = (Keyword)cAlternatives.eContents().get(46);
-		private final Keyword cMqttKeyword_47 = (Keyword)cAlternatives.eContents().get(47);
-		private final Keyword cMqttsKeyword_48 = (Keyword)cAlternatives.eContents().get(48);
-		private final Keyword cNameKeyword_49 = (Keyword)cAlternatives.eContents().get(49);
-		private final Keyword cNullKeyword_50 = (Keyword)cAlternatives.eContents().get(50);
-		private final Keyword cNumberKeyword_51 = (Keyword)cAlternatives.eContents().get(51);
-		private final Keyword cObjectKeyword_52 = (Keyword)cAlternatives.eContents().get(52);
-		private final Keyword cOperationIdKeyword_53 = (Keyword)cAlternatives.eContents().get(53);
-		private final Keyword cOperationTraitsKeyword_54 = (Keyword)cAlternatives.eContents().get(54);
-		private final Keyword cOperatorKeyword_55 = (Keyword)cAlternatives.eContents().get(55);
-		private final Keyword cParametersKeyword_56 = (Keyword)cAlternatives.eContents().get(56);
-		private final Keyword cPayloadKeyword_57 = (Keyword)cAlternatives.eContents().get(57);
-		private final Keyword cPropertiesKeyword_58 = (Keyword)cAlternatives.eContents().get(58);
-		private final Keyword cProtocolKeyword_59 = (Keyword)cAlternatives.eContents().get(59);
-		private final Keyword cPublishKeyword_60 = (Keyword)cAlternatives.eContents().get(60);
-		private final Keyword cQosMetricKeyword_61 = (Keyword)cAlternatives.eContents().get(61);
-		private final Keyword cQualifyingConditionsKeyword_62 = (Keyword)cAlternatives.eContents().get(62);
-		private final Keyword cRealKeyword_63 = (Keyword)cAlternatives.eContents().get(63);
-		private final Keyword cRequiredKeyword_64 = (Keyword)cAlternatives.eContents().get(64);
-		private final Keyword cSchemaKeyword_65 = (Keyword)cAlternatives.eContents().get(65);
-		private final Keyword cSchemasKeyword_66 = (Keyword)cAlternatives.eContents().get(66);
-		private final Keyword cScopesKeyword_67 = (Keyword)cAlternatives.eContents().get(67);
-		private final Keyword cSecondsKeyword_68 = (Keyword)cAlternatives.eContents().get(68);
-		private final Keyword cServersKeyword_69 = (Keyword)cAlternatives.eContents().get(69);
-		private final Keyword cSlosKeyword_70 = (Keyword)cAlternatives.eContents().get(70);
-		private final Keyword cStompKeyword_71 = (Keyword)cAlternatives.eContents().get(71);
-		private final Keyword cStompsKeyword_72 = (Keyword)cAlternatives.eContents().get(72);
-		private final Keyword cStringKeyword_73 = (Keyword)cAlternatives.eContents().get(73);
-		private final Keyword cSubscribeKeyword_74 = (Keyword)cAlternatives.eContents().get(74);
-		private final Keyword cSummaryKeyword_75 = (Keyword)cAlternatives.eContents().get(75);
-		private final Keyword cTagsKeyword_76 = (Keyword)cAlternatives.eContents().get(76);
-		private final Keyword cTermsOfServiceKeyword_77 = (Keyword)cAlternatives.eContents().get(77);
-		private final Keyword cTitleKeyword_78 = (Keyword)cAlternatives.eContents().get(78);
-		private final Keyword cTraitsKeyword_79 = (Keyword)cAlternatives.eContents().get(79);
-		private final Keyword cTypeKeyword_80 = (Keyword)cAlternatives.eContents().get(80);
-		private final Keyword cUnitKeyword_81 = (Keyword)cAlternatives.eContents().get(81);
-		private final Keyword cUrlKeyword_82 = (Keyword)cAlternatives.eContents().get(82);
-		private final Keyword cValueKeyword_83 = (Keyword)cAlternatives.eContents().get(83);
-		private final Keyword cVariablesKeyword_84 = (Keyword)cAlternatives.eContents().get(84);
-		private final Keyword cVersionKeyword_85 = (Keyword)cAlternatives.eContents().get(85);
-		private final Keyword cWindowKeyword_86 = (Keyword)cAlternatives.eContents().get(86);
-		private final Keyword cWindowUnitKeyword_87 = (Keyword)cAlternatives.eContents().get(87);
-		private final Keyword cWsKeyword_88 = (Keyword)cAlternatives.eContents().get(88);
-		private final Keyword cWssKeyword_89 = (Keyword)cAlternatives.eContents().get(89);
-		private final Keyword cXBasePackageKeyword_90 = (Keyword)cAlternatives.eContents().get(90);
-		private final Keyword cXQosMetricsKeyword_91 = (Keyword)cAlternatives.eContents().get(91);
-		private final Keyword cXSlaKeyword_92 = (Keyword)cAlternatives.eContents().get(92);
-		private final Keyword cXTitleKeyword_93 = (Keyword)cAlternatives.eContents().get(93);
+		private final Keyword cHttpKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
+		private final Keyword cHttpsKeyword_33 = (Keyword)cAlternatives.eContents().get(33);
+		private final Keyword cInfoKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
+		private final Keyword cIntegerKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
+		private final Keyword cItemsKeyword_36 = (Keyword)cAlternatives.eContents().get(36);
+		private final Keyword cJmsKeyword_37 = (Keyword)cAlternatives.eContents().get(37);
+		private final Keyword cKafkaKeyword_38 = (Keyword)cAlternatives.eContents().get(38);
+		private final Keyword cKafkaSecureKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
+		private final Keyword cLicenseKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
+		private final Keyword cLocationKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
+		private final Keyword cMaxItemsKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
+		private final Keyword cMaximumKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
+		private final Keyword cMessageKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
+		private final Keyword cMessageTraitsKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
+		private final Keyword cMessagesKeyword_46 = (Keyword)cAlternatives.eContents().get(46);
+		private final Keyword cMetricTypeKeyword_47 = (Keyword)cAlternatives.eContents().get(47);
+		private final Keyword cMillisecondsKeyword_48 = (Keyword)cAlternatives.eContents().get(48);
+		private final Keyword cMinItemsKeyword_49 = (Keyword)cAlternatives.eContents().get(49);
+		private final Keyword cMinimumKeyword_50 = (Keyword)cAlternatives.eContents().get(50);
+		private final Keyword cMinutesKeyword_51 = (Keyword)cAlternatives.eContents().get(51);
+		private final Keyword cMqttKeyword_52 = (Keyword)cAlternatives.eContents().get(52);
+		private final Keyword cNameKeyword_53 = (Keyword)cAlternatives.eContents().get(53);
+		private final Keyword cNullKeyword_54 = (Keyword)cAlternatives.eContents().get(54);
+		private final Keyword cNumberKeyword_55 = (Keyword)cAlternatives.eContents().get(55);
+		private final Keyword cObjectKeyword_56 = (Keyword)cAlternatives.eContents().get(56);
+		private final Keyword cOperationIdKeyword_57 = (Keyword)cAlternatives.eContents().get(57);
+		private final Keyword cOperationTraitsKeyword_58 = (Keyword)cAlternatives.eContents().get(58);
+		private final Keyword cOperatorKeyword_59 = (Keyword)cAlternatives.eContents().get(59);
+		private final Keyword cParametersKeyword_60 = (Keyword)cAlternatives.eContents().get(60);
+		private final Keyword cPayloadKeyword_61 = (Keyword)cAlternatives.eContents().get(61);
+		private final Keyword cPropertiesKeyword_62 = (Keyword)cAlternatives.eContents().get(62);
+		private final Keyword cProtocolKeyword_63 = (Keyword)cAlternatives.eContents().get(63);
+		private final Keyword cPublishKeyword_64 = (Keyword)cAlternatives.eContents().get(64);
+		private final Keyword cQosMetricKeyword_65 = (Keyword)cAlternatives.eContents().get(65);
+		private final Keyword cQualifyingConditionsKeyword_66 = (Keyword)cAlternatives.eContents().get(66);
+		private final Keyword cRealKeyword_67 = (Keyword)cAlternatives.eContents().get(67);
+		private final Keyword cRequiredKeyword_68 = (Keyword)cAlternatives.eContents().get(68);
+		private final Keyword cSchemaKeyword_69 = (Keyword)cAlternatives.eContents().get(69);
+		private final Keyword cSchemasKeyword_70 = (Keyword)cAlternatives.eContents().get(70);
+		private final Keyword cScopesKeyword_71 = (Keyword)cAlternatives.eContents().get(71);
+		private final Keyword cSecondsKeyword_72 = (Keyword)cAlternatives.eContents().get(72);
+		private final Keyword cSecureMqttKeyword_73 = (Keyword)cAlternatives.eContents().get(73);
+		private final Keyword cServersKeyword_74 = (Keyword)cAlternatives.eContents().get(74);
+		private final Keyword cSlosKeyword_75 = (Keyword)cAlternatives.eContents().get(75);
+		private final Keyword cStompKeyword_76 = (Keyword)cAlternatives.eContents().get(76);
+		private final Keyword cStompsKeyword_77 = (Keyword)cAlternatives.eContents().get(77);
+		private final Keyword cStringKeyword_78 = (Keyword)cAlternatives.eContents().get(78);
+		private final Keyword cSubscribeKeyword_79 = (Keyword)cAlternatives.eContents().get(79);
+		private final Keyword cSummaryKeyword_80 = (Keyword)cAlternatives.eContents().get(80);
+		private final Keyword cTagsKeyword_81 = (Keyword)cAlternatives.eContents().get(81);
+		private final Keyword cTermsOfServiceKeyword_82 = (Keyword)cAlternatives.eContents().get(82);
+		private final Keyword cTitleKeyword_83 = (Keyword)cAlternatives.eContents().get(83);
+		private final Keyword cTraitsKeyword_84 = (Keyword)cAlternatives.eContents().get(84);
+		private final Keyword cTypeKeyword_85 = (Keyword)cAlternatives.eContents().get(85);
+		private final Keyword cUnitKeyword_86 = (Keyword)cAlternatives.eContents().get(86);
+		private final Keyword cUrlKeyword_87 = (Keyword)cAlternatives.eContents().get(87);
+		private final Keyword cValueKeyword_88 = (Keyword)cAlternatives.eContents().get(88);
+		private final Keyword cVariablesKeyword_89 = (Keyword)cAlternatives.eContents().get(89);
+		private final Keyword cVersionKeyword_90 = (Keyword)cAlternatives.eContents().get(90);
+		private final Keyword cWindowKeyword_91 = (Keyword)cAlternatives.eContents().get(91);
+		private final Keyword cWindowUnitKeyword_92 = (Keyword)cAlternatives.eContents().get(92);
+		private final Keyword cWsKeyword_93 = (Keyword)cAlternatives.eContents().get(93);
+		private final Keyword cWssKeyword_94 = (Keyword)cAlternatives.eContents().get(94);
+		private final Keyword cXBasePackageKeyword_95 = (Keyword)cAlternatives.eContents().get(95);
+		private final Keyword cXQosMetricsKeyword_96 = (Keyword)cAlternatives.eContents().get(96);
+		private final Keyword cXSlaKeyword_97 = (Keyword)cAlternatives.eContents().get(97);
+		private final Keyword cXTitleKeyword_98 = (Keyword)cAlternatives.eContents().get(98);
 		
 		//Keyword:
-		//    '"2.0.0"'
-		//    | '"<"'
-		//    | '"<="'
-		//    | '"="'
-		//    | '">"'
-		//    | '">="'
-		//    | '"AND"'
-		//    | '"OR"'
-		//    | '"aggregationFunction"'
-		//    | '"amqp"'
-		//    | '"amqps"'
-		//    | '"any"'
-		//    | '"array"'
-		//    | '"asyncapi"'
-		//    | '"atomic"'
-		//    | '"atomicMetric"'
-		//    | '"boolean"'
-		//    | '"channels"'
-		//    | '"components"'
-		//    | '"contact"'
-		//    | '"dataType"'
-		//    | '"days"'
-		//    | '"default"'
-		//    | '"deprecated"'
-		//    | '"derived"'
-		//    | '"description"'
-		//    | '"email"'
-		//    | '"enum"'
-		//    | '"format"'
-		//    | '"guaranteeTerm"'
-		//    | '"headers"'
-		//    | '"hours"'
-		//    | '"info"'
-		//    | '"integer"'
-		//    | '"items"'
-		//    | '"license"'
-		//    | '"location"'
-		//    | '"maxItems"'
-		//    | '"maximum"'
-		//    | '"message"'
-		//    | '"messageTraits"'
-		//    | '"messages"'
-		//    | '"metricType"'
-		//    | '"milliseconds"'
-		//    | '"minItems"'
-		//    | '"minimum"'
-		//    | '"minutes"'
-		//    | '"mqtt"'
-		//    | '"mqtts"'
-		//    | '"name"'
-		//    | '"null"'
-		//    | '"number"'
-		//    | '"object"'
-		//    | '"operationId"'
-		//    | '"operationTraits"'
-		//    | '"operator"'
-		//    | '"parameters"'
-		//    | '"payload"'
-		//    | '"properties"'
-		//    | '"protocol"'
-		//    | '"publish"'
-		//    | '"qosMetric"'
-		//    | '"qualifyingConditions"'
-		//    | '"real"'
-		//    | '"required"'
-		//    | '"schema"'
-		//    | '"schemas"'
-		//    | '"scopes"'
-		//    | '"seconds"'
-		//    | '"servers"'
-		//    | '"slos"'
-		//    | '"stomp"'
-		//    | '"stomps"'
-		//    | '"string"'
-		//    | '"subscribe"'
-		//    | '"summary"'
-		//    | '"tags"'
-		//    | '"termsOfService"'
-		//    | '"title"'
-		//    | '"traits"'
-		//    | '"type"'
-		//    | '"unit"'
-		//    | '"url"'
-		//    | '"value"'
-		//    | '"variables"'
-		//    | '"version"'
-		//    | '"window"'
-		//    | '"windowUnit"'
-		//    | '"ws"'
-		//    | '"wss"'
-		//    | '"x-basePackage"'
-		//    | '"x-qosMetrics"'
-		//    | '"x-sla"'
-		//    | '"x-title"';
+		//        '"2.0.0"'
+		//        | '"<"'
+		//        | '"<="'
+		//        | '"="'
+		//        | '">"'
+		//        | '">="'
+		//        | '"AND"'
+		//        | '"OR"'
+		//        | '"aggregationFunction"'
+		//        | '"amqp"'
+		//        | '"amqps"'
+		//        | '"any"'
+		//        | '"array"'
+		//        | '"asyncapi"'
+		//        | '"atomic"'
+		//        | '"atomicMetric"'
+		//        | '"boolean"'
+		//        | '"channels"'
+		//        | '"components"'
+		//        | '"contact"'
+		//        | '"dataType"'
+		//        | '"days"'
+		//        | '"default"'
+		//        | '"deprecated"'
+		//        | '"derived"'
+		//        | '"description"'
+		//        | '"email"'
+		//        | '"enum"'
+		//        | '"format"'
+		//        | '"guaranteeTerm"'
+		//        | '"headers"'
+		//        | '"hours"'
+		//        | '"http"'
+		//        | '"https"'
+		//        | '"info"'
+		//        | '"integer"'
+		//        | '"items"'
+		//        | '"jms"'
+		//        | '"kafka"'
+		//        | '"kafka-secure"'
+		//        | '"license"'
+		//        | '"location"'
+		//        | '"maxItems"'
+		//        | '"maximum"'
+		//        | '"message"'
+		//        | '"messageTraits"'
+		//        | '"messages"'
+		//        | '"metricType"'
+		//        | '"milliseconds"'
+		//        | '"minItems"'
+		//        | '"minimum"'
+		//        | '"minutes"'
+		//        | '"mqtt"'
+		//        | '"name"'
+		//        | '"null"'
+		//        | '"number"'
+		//        | '"object"'
+		//        | '"operationId"'
+		//        | '"operationTraits"'
+		//        | '"operator"'
+		//        | '"parameters"'
+		//        | '"payload"'
+		//        | '"properties"'
+		//        | '"protocol"'
+		//        | '"publish"'
+		//        | '"qosMetric"'
+		//        | '"qualifyingConditions"'
+		//        | '"real"'
+		//        | '"required"'
+		//        | '"schema"'
+		//        | '"schemas"'
+		//        | '"scopes"'
+		//        | '"seconds"'
+		//        | '"secure-mqtt"'
+		//        | '"servers"'
+		//        | '"slos"'
+		//        | '"stomp"'
+		//        | '"stomps"'
+		//        | '"string"'
+		//        | '"subscribe"'
+		//        | '"summary"'
+		//        | '"tags"'
+		//        | '"termsOfService"'
+		//        | '"title"'
+		//        | '"traits"'
+		//        | '"type"'
+		//        | '"unit"'
+		//        | '"url"'
+		//        | '"value"'
+		//        | '"variables"'
+		//        | '"version"'
+		//        | '"window"'
+		//        | '"windowUnit"'
+		//        | '"ws"'
+		//        | '"wss"'
+		//        | '"x-basePackage"'
+		//        | '"x-qosMetrics"'
+		//        | '"x-sla"'
+		//        | '"x-title"';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'"2.0.0"'
@@ -4663,9 +4673,14 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//| '"guaranteeTerm"'
 		//| '"headers"'
 		//| '"hours"'
+		//| '"http"'
+		//| '"https"'
 		//| '"info"'
 		//| '"integer"'
 		//| '"items"'
+		//| '"jms"'
+		//| '"kafka"'
+		//| '"kafka-secure"'
 		//| '"license"'
 		//| '"location"'
 		//| '"maxItems"'
@@ -4679,7 +4694,6 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//| '"minimum"'
 		//| '"minutes"'
 		//| '"mqtt"'
-		//| '"mqtts"'
 		//| '"name"'
 		//| '"null"'
 		//| '"number"'
@@ -4700,6 +4714,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//| '"schemas"'
 		//| '"scopes"'
 		//| '"seconds"'
+		//| '"secure-mqtt"'
 		//| '"servers"'
 		//| '"slos"'
 		//| '"stomp"'
@@ -4823,191 +4838,206 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//'"hours"'
 		public Keyword getHoursKeyword_31() { return cHoursKeyword_31; }
 		
+		//'"http"'
+		public Keyword getHttpKeyword_32() { return cHttpKeyword_32; }
+		
+		//'"https"'
+		public Keyword getHttpsKeyword_33() { return cHttpsKeyword_33; }
+		
 		//'"info"'
-		public Keyword getInfoKeyword_32() { return cInfoKeyword_32; }
+		public Keyword getInfoKeyword_34() { return cInfoKeyword_34; }
 		
 		//'"integer"'
-		public Keyword getIntegerKeyword_33() { return cIntegerKeyword_33; }
+		public Keyword getIntegerKeyword_35() { return cIntegerKeyword_35; }
 		
 		//'"items"'
-		public Keyword getItemsKeyword_34() { return cItemsKeyword_34; }
+		public Keyword getItemsKeyword_36() { return cItemsKeyword_36; }
+		
+		//'"jms"'
+		public Keyword getJmsKeyword_37() { return cJmsKeyword_37; }
+		
+		//'"kafka"'
+		public Keyword getKafkaKeyword_38() { return cKafkaKeyword_38; }
+		
+		//'"kafka-secure"'
+		public Keyword getKafkaSecureKeyword_39() { return cKafkaSecureKeyword_39; }
 		
 		//'"license"'
-		public Keyword getLicenseKeyword_35() { return cLicenseKeyword_35; }
+		public Keyword getLicenseKeyword_40() { return cLicenseKeyword_40; }
 		
 		//'"location"'
-		public Keyword getLocationKeyword_36() { return cLocationKeyword_36; }
+		public Keyword getLocationKeyword_41() { return cLocationKeyword_41; }
 		
 		//'"maxItems"'
-		public Keyword getMaxItemsKeyword_37() { return cMaxItemsKeyword_37; }
+		public Keyword getMaxItemsKeyword_42() { return cMaxItemsKeyword_42; }
 		
 		//'"maximum"'
-		public Keyword getMaximumKeyword_38() { return cMaximumKeyword_38; }
+		public Keyword getMaximumKeyword_43() { return cMaximumKeyword_43; }
 		
 		//'"message"'
-		public Keyword getMessageKeyword_39() { return cMessageKeyword_39; }
+		public Keyword getMessageKeyword_44() { return cMessageKeyword_44; }
 		
 		//'"messageTraits"'
-		public Keyword getMessageTraitsKeyword_40() { return cMessageTraitsKeyword_40; }
+		public Keyword getMessageTraitsKeyword_45() { return cMessageTraitsKeyword_45; }
 		
 		//'"messages"'
-		public Keyword getMessagesKeyword_41() { return cMessagesKeyword_41; }
+		public Keyword getMessagesKeyword_46() { return cMessagesKeyword_46; }
 		
 		//'"metricType"'
-		public Keyword getMetricTypeKeyword_42() { return cMetricTypeKeyword_42; }
+		public Keyword getMetricTypeKeyword_47() { return cMetricTypeKeyword_47; }
 		
 		//'"milliseconds"'
-		public Keyword getMillisecondsKeyword_43() { return cMillisecondsKeyword_43; }
+		public Keyword getMillisecondsKeyword_48() { return cMillisecondsKeyword_48; }
 		
 		//'"minItems"'
-		public Keyword getMinItemsKeyword_44() { return cMinItemsKeyword_44; }
+		public Keyword getMinItemsKeyword_49() { return cMinItemsKeyword_49; }
 		
 		//'"minimum"'
-		public Keyword getMinimumKeyword_45() { return cMinimumKeyword_45; }
+		public Keyword getMinimumKeyword_50() { return cMinimumKeyword_50; }
 		
 		//'"minutes"'
-		public Keyword getMinutesKeyword_46() { return cMinutesKeyword_46; }
+		public Keyword getMinutesKeyword_51() { return cMinutesKeyword_51; }
 		
 		//'"mqtt"'
-		public Keyword getMqttKeyword_47() { return cMqttKeyword_47; }
-		
-		//'"mqtts"'
-		public Keyword getMqttsKeyword_48() { return cMqttsKeyword_48; }
+		public Keyword getMqttKeyword_52() { return cMqttKeyword_52; }
 		
 		//'"name"'
-		public Keyword getNameKeyword_49() { return cNameKeyword_49; }
+		public Keyword getNameKeyword_53() { return cNameKeyword_53; }
 		
 		//'"null"'
-		public Keyword getNullKeyword_50() { return cNullKeyword_50; }
+		public Keyword getNullKeyword_54() { return cNullKeyword_54; }
 		
 		//'"number"'
-		public Keyword getNumberKeyword_51() { return cNumberKeyword_51; }
+		public Keyword getNumberKeyword_55() { return cNumberKeyword_55; }
 		
 		//'"object"'
-		public Keyword getObjectKeyword_52() { return cObjectKeyword_52; }
+		public Keyword getObjectKeyword_56() { return cObjectKeyword_56; }
 		
 		//'"operationId"'
-		public Keyword getOperationIdKeyword_53() { return cOperationIdKeyword_53; }
+		public Keyword getOperationIdKeyword_57() { return cOperationIdKeyword_57; }
 		
 		//'"operationTraits"'
-		public Keyword getOperationTraitsKeyword_54() { return cOperationTraitsKeyword_54; }
+		public Keyword getOperationTraitsKeyword_58() { return cOperationTraitsKeyword_58; }
 		
 		//'"operator"'
-		public Keyword getOperatorKeyword_55() { return cOperatorKeyword_55; }
+		public Keyword getOperatorKeyword_59() { return cOperatorKeyword_59; }
 		
 		//'"parameters"'
-		public Keyword getParametersKeyword_56() { return cParametersKeyword_56; }
+		public Keyword getParametersKeyword_60() { return cParametersKeyword_60; }
 		
 		//'"payload"'
-		public Keyword getPayloadKeyword_57() { return cPayloadKeyword_57; }
+		public Keyword getPayloadKeyword_61() { return cPayloadKeyword_61; }
 		
 		//'"properties"'
-		public Keyword getPropertiesKeyword_58() { return cPropertiesKeyword_58; }
+		public Keyword getPropertiesKeyword_62() { return cPropertiesKeyword_62; }
 		
 		//'"protocol"'
-		public Keyword getProtocolKeyword_59() { return cProtocolKeyword_59; }
+		public Keyword getProtocolKeyword_63() { return cProtocolKeyword_63; }
 		
 		//'"publish"'
-		public Keyword getPublishKeyword_60() { return cPublishKeyword_60; }
+		public Keyword getPublishKeyword_64() { return cPublishKeyword_64; }
 		
 		//'"qosMetric"'
-		public Keyword getQosMetricKeyword_61() { return cQosMetricKeyword_61; }
+		public Keyword getQosMetricKeyword_65() { return cQosMetricKeyword_65; }
 		
 		//'"qualifyingConditions"'
-		public Keyword getQualifyingConditionsKeyword_62() { return cQualifyingConditionsKeyword_62; }
+		public Keyword getQualifyingConditionsKeyword_66() { return cQualifyingConditionsKeyword_66; }
 		
 		//'"real"'
-		public Keyword getRealKeyword_63() { return cRealKeyword_63; }
+		public Keyword getRealKeyword_67() { return cRealKeyword_67; }
 		
 		//'"required"'
-		public Keyword getRequiredKeyword_64() { return cRequiredKeyword_64; }
+		public Keyword getRequiredKeyword_68() { return cRequiredKeyword_68; }
 		
 		//'"schema"'
-		public Keyword getSchemaKeyword_65() { return cSchemaKeyword_65; }
+		public Keyword getSchemaKeyword_69() { return cSchemaKeyword_69; }
 		
 		//'"schemas"'
-		public Keyword getSchemasKeyword_66() { return cSchemasKeyword_66; }
+		public Keyword getSchemasKeyword_70() { return cSchemasKeyword_70; }
 		
 		//'"scopes"'
-		public Keyword getScopesKeyword_67() { return cScopesKeyword_67; }
+		public Keyword getScopesKeyword_71() { return cScopesKeyword_71; }
 		
 		//'"seconds"'
-		public Keyword getSecondsKeyword_68() { return cSecondsKeyword_68; }
+		public Keyword getSecondsKeyword_72() { return cSecondsKeyword_72; }
+		
+		//'"secure-mqtt"'
+		public Keyword getSecureMqttKeyword_73() { return cSecureMqttKeyword_73; }
 		
 		//'"servers"'
-		public Keyword getServersKeyword_69() { return cServersKeyword_69; }
+		public Keyword getServersKeyword_74() { return cServersKeyword_74; }
 		
 		//'"slos"'
-		public Keyword getSlosKeyword_70() { return cSlosKeyword_70; }
+		public Keyword getSlosKeyword_75() { return cSlosKeyword_75; }
 		
 		//'"stomp"'
-		public Keyword getStompKeyword_71() { return cStompKeyword_71; }
+		public Keyword getStompKeyword_76() { return cStompKeyword_76; }
 		
 		//'"stomps"'
-		public Keyword getStompsKeyword_72() { return cStompsKeyword_72; }
+		public Keyword getStompsKeyword_77() { return cStompsKeyword_77; }
 		
 		//'"string"'
-		public Keyword getStringKeyword_73() { return cStringKeyword_73; }
+		public Keyword getStringKeyword_78() { return cStringKeyword_78; }
 		
 		//'"subscribe"'
-		public Keyword getSubscribeKeyword_74() { return cSubscribeKeyword_74; }
+		public Keyword getSubscribeKeyword_79() { return cSubscribeKeyword_79; }
 		
 		//'"summary"'
-		public Keyword getSummaryKeyword_75() { return cSummaryKeyword_75; }
+		public Keyword getSummaryKeyword_80() { return cSummaryKeyword_80; }
 		
 		//'"tags"'
-		public Keyword getTagsKeyword_76() { return cTagsKeyword_76; }
+		public Keyword getTagsKeyword_81() { return cTagsKeyword_81; }
 		
 		//'"termsOfService"'
-		public Keyword getTermsOfServiceKeyword_77() { return cTermsOfServiceKeyword_77; }
+		public Keyword getTermsOfServiceKeyword_82() { return cTermsOfServiceKeyword_82; }
 		
 		//'"title"'
-		public Keyword getTitleKeyword_78() { return cTitleKeyword_78; }
+		public Keyword getTitleKeyword_83() { return cTitleKeyword_83; }
 		
 		//'"traits"'
-		public Keyword getTraitsKeyword_79() { return cTraitsKeyword_79; }
+		public Keyword getTraitsKeyword_84() { return cTraitsKeyword_84; }
 		
 		//'"type"'
-		public Keyword getTypeKeyword_80() { return cTypeKeyword_80; }
+		public Keyword getTypeKeyword_85() { return cTypeKeyword_85; }
 		
 		//'"unit"'
-		public Keyword getUnitKeyword_81() { return cUnitKeyword_81; }
+		public Keyword getUnitKeyword_86() { return cUnitKeyword_86; }
 		
 		//'"url"'
-		public Keyword getUrlKeyword_82() { return cUrlKeyword_82; }
+		public Keyword getUrlKeyword_87() { return cUrlKeyword_87; }
 		
 		//'"value"'
-		public Keyword getValueKeyword_83() { return cValueKeyword_83; }
+		public Keyword getValueKeyword_88() { return cValueKeyword_88; }
 		
 		//'"variables"'
-		public Keyword getVariablesKeyword_84() { return cVariablesKeyword_84; }
+		public Keyword getVariablesKeyword_89() { return cVariablesKeyword_89; }
 		
 		//'"version"'
-		public Keyword getVersionKeyword_85() { return cVersionKeyword_85; }
+		public Keyword getVersionKeyword_90() { return cVersionKeyword_90; }
 		
 		//'"window"'
-		public Keyword getWindowKeyword_86() { return cWindowKeyword_86; }
+		public Keyword getWindowKeyword_91() { return cWindowKeyword_91; }
 		
 		//'"windowUnit"'
-		public Keyword getWindowUnitKeyword_87() { return cWindowUnitKeyword_87; }
+		public Keyword getWindowUnitKeyword_92() { return cWindowUnitKeyword_92; }
 		
 		//'"ws"'
-		public Keyword getWsKeyword_88() { return cWsKeyword_88; }
+		public Keyword getWsKeyword_93() { return cWsKeyword_93; }
 		
 		//'"wss"'
-		public Keyword getWssKeyword_89() { return cWssKeyword_89; }
+		public Keyword getWssKeyword_94() { return cWssKeyword_94; }
 		
 		//'"x-basePackage"'
-		public Keyword getXBasePackageKeyword_90() { return cXBasePackageKeyword_90; }
+		public Keyword getXBasePackageKeyword_95() { return cXBasePackageKeyword_95; }
 		
 		//'"x-qosMetrics"'
-		public Keyword getXQosMetricsKeyword_91() { return cXQosMetricsKeyword_91; }
+		public Keyword getXQosMetricsKeyword_96() { return cXQosMetricsKeyword_96; }
 		
 		//'"x-sla"'
-		public Keyword getXSlaKeyword_92() { return cXSlaKeyword_92; }
+		public Keyword getXSlaKeyword_97() { return cXSlaKeyword_97; }
 		
 		//'"x-title"'
-		public Keyword getXTitleKeyword_93() { return cXTitleKeyword_93; }
+		public Keyword getXTitleKeyword_98() { return cXTitleKeyword_98; }
 	}
 	
 	public class WindowUnitElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
@@ -5384,24 +5414,39 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Keyword cAmqpAmqpKeyword_0_0 = (Keyword)cAmqpEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cAmqpsEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
 		private final Keyword cAmqpsAmqpsKeyword_1_0 = (Keyword)cAmqpsEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cMqttEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cMqttMqttKeyword_2_0 = (Keyword)cMqttEnumLiteralDeclaration_2.eContents().get(0);
-		private final EnumLiteralDeclaration cMqttsEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cMqttsMqttsKeyword_3_0 = (Keyword)cMqttsEnumLiteralDeclaration_3.eContents().get(0);
-		private final EnumLiteralDeclaration cWsEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cWsWsKeyword_4_0 = (Keyword)cWsEnumLiteralDeclaration_4.eContents().get(0);
-		private final EnumLiteralDeclaration cWssEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
-		private final Keyword cWssWssKeyword_5_0 = (Keyword)cWssEnumLiteralDeclaration_5.eContents().get(0);
-		private final EnumLiteralDeclaration cStompEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
-		private final Keyword cStompStompKeyword_6_0 = (Keyword)cStompEnumLiteralDeclaration_6.eContents().get(0);
-		private final EnumLiteralDeclaration cStompsEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
-		private final Keyword cStompsStompsKeyword_7_0 = (Keyword)cStompsEnumLiteralDeclaration_7.eContents().get(0);
+		private final EnumLiteralDeclaration cHttpEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cHttpHttpKeyword_2_0 = (Keyword)cHttpEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cHttpsEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cHttpsHttpsKeyword_3_0 = (Keyword)cHttpsEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cJmsEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cJmsJmsKeyword_4_0 = (Keyword)cJmsEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cKafkaEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cKafkaKafkaKeyword_5_0 = (Keyword)cKafkaEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cKafka_secureEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cKafka_secureKafkaSecureKeyword_6_0 = (Keyword)cKafka_secureEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cMqttEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
+		private final Keyword cMqttMqttKeyword_7_0 = (Keyword)cMqttEnumLiteralDeclaration_7.eContents().get(0);
+		private final EnumLiteralDeclaration cSecure_mqttEnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
+		private final Keyword cSecure_mqttSecureMqttKeyword_8_0 = (Keyword)cSecure_mqttEnumLiteralDeclaration_8.eContents().get(0);
+		private final EnumLiteralDeclaration cWsEnumLiteralDeclaration_9 = (EnumLiteralDeclaration)cAlternatives.eContents().get(9);
+		private final Keyword cWsWsKeyword_9_0 = (Keyword)cWsEnumLiteralDeclaration_9.eContents().get(0);
+		private final EnumLiteralDeclaration cWssEnumLiteralDeclaration_10 = (EnumLiteralDeclaration)cAlternatives.eContents().get(10);
+		private final Keyword cWssWssKeyword_10_0 = (Keyword)cWssEnumLiteralDeclaration_10.eContents().get(0);
+		private final EnumLiteralDeclaration cStompEnumLiteralDeclaration_11 = (EnumLiteralDeclaration)cAlternatives.eContents().get(11);
+		private final Keyword cStompStompKeyword_11_0 = (Keyword)cStompEnumLiteralDeclaration_11.eContents().get(0);
+		private final EnumLiteralDeclaration cStompsEnumLiteralDeclaration_12 = (EnumLiteralDeclaration)cAlternatives.eContents().get(12);
+		private final Keyword cStompsStompsKeyword_12_0 = (Keyword)cStompsEnumLiteralDeclaration_12.eContents().get(0);
 		
 		//enum Protocol:
 		//    amqp = '"amqp"'
 		//    | amqps = '"amqps"'
+		//    | http = '"http"'
+		//    | https = '"https"'
+		//    | jms = '"jms"'
+		//    | kafka = '"kafka"'
+		//    | kafka_secure = '"kafka-secure"'
 		//    | mqtt = '"mqtt"'
-		//    | mqtts = '"mqtts"'
+		//    | secure_mqtt = '"secure-mqtt"'
 		//    | ws = '"ws"'
 		//    | wss = '"wss"'
 		//    | stomp = '"stomp"'
@@ -5410,8 +5455,13 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		
 		//amqp = '"amqp"'
 		//| amqps = '"amqps"'
+		//| http = '"http"'
+		//| https = '"https"'
+		//| jms = '"jms"'
+		//| kafka = '"kafka"'
+		//| kafka_secure = '"kafka-secure"'
 		//| mqtt = '"mqtt"'
-		//| mqtts = '"mqtts"'
+		//| secure_mqtt = '"secure-mqtt"'
 		//| ws = '"ws"'
 		//| wss = '"wss"'
 		//| stomp = '"stomp"'
@@ -5430,41 +5480,71 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//'"amqps"'
 		public Keyword getAmqpsAmqpsKeyword_1_0() { return cAmqpsAmqpsKeyword_1_0; }
 		
+		//http = '"http"'
+		public EnumLiteralDeclaration getHttpEnumLiteralDeclaration_2() { return cHttpEnumLiteralDeclaration_2; }
+		
+		//'"http"'
+		public Keyword getHttpHttpKeyword_2_0() { return cHttpHttpKeyword_2_0; }
+		
+		//https = '"https"'
+		public EnumLiteralDeclaration getHttpsEnumLiteralDeclaration_3() { return cHttpsEnumLiteralDeclaration_3; }
+		
+		//'"https"'
+		public Keyword getHttpsHttpsKeyword_3_0() { return cHttpsHttpsKeyword_3_0; }
+		
+		//jms = '"jms"'
+		public EnumLiteralDeclaration getJmsEnumLiteralDeclaration_4() { return cJmsEnumLiteralDeclaration_4; }
+		
+		//'"jms"'
+		public Keyword getJmsJmsKeyword_4_0() { return cJmsJmsKeyword_4_0; }
+		
+		//kafka = '"kafka"'
+		public EnumLiteralDeclaration getKafkaEnumLiteralDeclaration_5() { return cKafkaEnumLiteralDeclaration_5; }
+		
+		//'"kafka"'
+		public Keyword getKafkaKafkaKeyword_5_0() { return cKafkaKafkaKeyword_5_0; }
+		
+		//kafka_secure = '"kafka-secure"'
+		public EnumLiteralDeclaration getKafka_secureEnumLiteralDeclaration_6() { return cKafka_secureEnumLiteralDeclaration_6; }
+		
+		//'"kafka-secure"'
+		public Keyword getKafka_secureKafkaSecureKeyword_6_0() { return cKafka_secureKafkaSecureKeyword_6_0; }
+		
 		//mqtt = '"mqtt"'
-		public EnumLiteralDeclaration getMqttEnumLiteralDeclaration_2() { return cMqttEnumLiteralDeclaration_2; }
+		public EnumLiteralDeclaration getMqttEnumLiteralDeclaration_7() { return cMqttEnumLiteralDeclaration_7; }
 		
 		//'"mqtt"'
-		public Keyword getMqttMqttKeyword_2_0() { return cMqttMqttKeyword_2_0; }
+		public Keyword getMqttMqttKeyword_7_0() { return cMqttMqttKeyword_7_0; }
 		
-		//mqtts = '"mqtts"'
-		public EnumLiteralDeclaration getMqttsEnumLiteralDeclaration_3() { return cMqttsEnumLiteralDeclaration_3; }
+		//secure_mqtt = '"secure-mqtt"'
+		public EnumLiteralDeclaration getSecure_mqttEnumLiteralDeclaration_8() { return cSecure_mqttEnumLiteralDeclaration_8; }
 		
-		//'"mqtts"'
-		public Keyword getMqttsMqttsKeyword_3_0() { return cMqttsMqttsKeyword_3_0; }
+		//'"secure-mqtt"'
+		public Keyword getSecure_mqttSecureMqttKeyword_8_0() { return cSecure_mqttSecureMqttKeyword_8_0; }
 		
 		//ws = '"ws"'
-		public EnumLiteralDeclaration getWsEnumLiteralDeclaration_4() { return cWsEnumLiteralDeclaration_4; }
+		public EnumLiteralDeclaration getWsEnumLiteralDeclaration_9() { return cWsEnumLiteralDeclaration_9; }
 		
 		//'"ws"'
-		public Keyword getWsWsKeyword_4_0() { return cWsWsKeyword_4_0; }
+		public Keyword getWsWsKeyword_9_0() { return cWsWsKeyword_9_0; }
 		
 		//wss = '"wss"'
-		public EnumLiteralDeclaration getWssEnumLiteralDeclaration_5() { return cWssEnumLiteralDeclaration_5; }
+		public EnumLiteralDeclaration getWssEnumLiteralDeclaration_10() { return cWssEnumLiteralDeclaration_10; }
 		
 		//'"wss"'
-		public Keyword getWssWssKeyword_5_0() { return cWssWssKeyword_5_0; }
+		public Keyword getWssWssKeyword_10_0() { return cWssWssKeyword_10_0; }
 		
 		//stomp = '"stomp"'
-		public EnumLiteralDeclaration getStompEnumLiteralDeclaration_6() { return cStompEnumLiteralDeclaration_6; }
+		public EnumLiteralDeclaration getStompEnumLiteralDeclaration_11() { return cStompEnumLiteralDeclaration_11; }
 		
 		//'"stomp"'
-		public Keyword getStompStompKeyword_6_0() { return cStompStompKeyword_6_0; }
+		public Keyword getStompStompKeyword_11_0() { return cStompStompKeyword_11_0; }
 		
 		//stomps = '"stomps"'
-		public EnumLiteralDeclaration getStompsEnumLiteralDeclaration_7() { return cStompsEnumLiteralDeclaration_7; }
+		public EnumLiteralDeclaration getStompsEnumLiteralDeclaration_12() { return cStompsEnumLiteralDeclaration_12; }
 		
 		//'"stomps"'
-		public Keyword getStompsStompsKeyword_7_0() { return cStompsStompsKeyword_7_0; }
+		public Keyword getStompsStompsKeyword_12_0() { return cStompsStompsKeyword_12_0; }
 	}
 	
 	private final AsyncAPIElements pAsyncAPI;
@@ -6260,8 +6340,13 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//enum Protocol:
 	//    amqp = '"amqp"'
 	//    | amqps = '"amqps"'
+	//    | http = '"http"'
+	//    | https = '"https"'
+	//    | jms = '"jms"'
+	//    | kafka = '"kafka"'
+	//    | kafka_secure = '"kafka-secure"'
 	//    | mqtt = '"mqtt"'
-	//    | mqtts = '"mqtts"'
+	//    | secure_mqtt = '"secure-mqtt"'
 	//    | ws = '"ws"'
 	//    | wss = '"wss"'
 	//    | stomp = '"stomp"'
@@ -6336,100 +6421,105 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//Keyword:
-	//    '"2.0.0"'
-	//    | '"<"'
-	//    | '"<="'
-	//    | '"="'
-	//    | '">"'
-	//    | '">="'
-	//    | '"AND"'
-	//    | '"OR"'
-	//    | '"aggregationFunction"'
-	//    | '"amqp"'
-	//    | '"amqps"'
-	//    | '"any"'
-	//    | '"array"'
-	//    | '"asyncapi"'
-	//    | '"atomic"'
-	//    | '"atomicMetric"'
-	//    | '"boolean"'
-	//    | '"channels"'
-	//    | '"components"'
-	//    | '"contact"'
-	//    | '"dataType"'
-	//    | '"days"'
-	//    | '"default"'
-	//    | '"deprecated"'
-	//    | '"derived"'
-	//    | '"description"'
-	//    | '"email"'
-	//    | '"enum"'
-	//    | '"format"'
-	//    | '"guaranteeTerm"'
-	//    | '"headers"'
-	//    | '"hours"'
-	//    | '"info"'
-	//    | '"integer"'
-	//    | '"items"'
-	//    | '"license"'
-	//    | '"location"'
-	//    | '"maxItems"'
-	//    | '"maximum"'
-	//    | '"message"'
-	//    | '"messageTraits"'
-	//    | '"messages"'
-	//    | '"metricType"'
-	//    | '"milliseconds"'
-	//    | '"minItems"'
-	//    | '"minimum"'
-	//    | '"minutes"'
-	//    | '"mqtt"'
-	//    | '"mqtts"'
-	//    | '"name"'
-	//    | '"null"'
-	//    | '"number"'
-	//    | '"object"'
-	//    | '"operationId"'
-	//    | '"operationTraits"'
-	//    | '"operator"'
-	//    | '"parameters"'
-	//    | '"payload"'
-	//    | '"properties"'
-	//    | '"protocol"'
-	//    | '"publish"'
-	//    | '"qosMetric"'
-	//    | '"qualifyingConditions"'
-	//    | '"real"'
-	//    | '"required"'
-	//    | '"schema"'
-	//    | '"schemas"'
-	//    | '"scopes"'
-	//    | '"seconds"'
-	//    | '"servers"'
-	//    | '"slos"'
-	//    | '"stomp"'
-	//    | '"stomps"'
-	//    | '"string"'
-	//    | '"subscribe"'
-	//    | '"summary"'
-	//    | '"tags"'
-	//    | '"termsOfService"'
-	//    | '"title"'
-	//    | '"traits"'
-	//    | '"type"'
-	//    | '"unit"'
-	//    | '"url"'
-	//    | '"value"'
-	//    | '"variables"'
-	//    | '"version"'
-	//    | '"window"'
-	//    | '"windowUnit"'
-	//    | '"ws"'
-	//    | '"wss"'
-	//    | '"x-basePackage"'
-	//    | '"x-qosMetrics"'
-	//    | '"x-sla"'
-	//    | '"x-title"';
+	//        '"2.0.0"'
+	//        | '"<"'
+	//        | '"<="'
+	//        | '"="'
+	//        | '">"'
+	//        | '">="'
+	//        | '"AND"'
+	//        | '"OR"'
+	//        | '"aggregationFunction"'
+	//        | '"amqp"'
+	//        | '"amqps"'
+	//        | '"any"'
+	//        | '"array"'
+	//        | '"asyncapi"'
+	//        | '"atomic"'
+	//        | '"atomicMetric"'
+	//        | '"boolean"'
+	//        | '"channels"'
+	//        | '"components"'
+	//        | '"contact"'
+	//        | '"dataType"'
+	//        | '"days"'
+	//        | '"default"'
+	//        | '"deprecated"'
+	//        | '"derived"'
+	//        | '"description"'
+	//        | '"email"'
+	//        | '"enum"'
+	//        | '"format"'
+	//        | '"guaranteeTerm"'
+	//        | '"headers"'
+	//        | '"hours"'
+	//        | '"http"'
+	//        | '"https"'
+	//        | '"info"'
+	//        | '"integer"'
+	//        | '"items"'
+	//        | '"jms"'
+	//        | '"kafka"'
+	//        | '"kafka-secure"'
+	//        | '"license"'
+	//        | '"location"'
+	//        | '"maxItems"'
+	//        | '"maximum"'
+	//        | '"message"'
+	//        | '"messageTraits"'
+	//        | '"messages"'
+	//        | '"metricType"'
+	//        | '"milliseconds"'
+	//        | '"minItems"'
+	//        | '"minimum"'
+	//        | '"minutes"'
+	//        | '"mqtt"'
+	//        | '"name"'
+	//        | '"null"'
+	//        | '"number"'
+	//        | '"object"'
+	//        | '"operationId"'
+	//        | '"operationTraits"'
+	//        | '"operator"'
+	//        | '"parameters"'
+	//        | '"payload"'
+	//        | '"properties"'
+	//        | '"protocol"'
+	//        | '"publish"'
+	//        | '"qosMetric"'
+	//        | '"qualifyingConditions"'
+	//        | '"real"'
+	//        | '"required"'
+	//        | '"schema"'
+	//        | '"schemas"'
+	//        | '"scopes"'
+	//        | '"seconds"'
+	//        | '"secure-mqtt"'
+	//        | '"servers"'
+	//        | '"slos"'
+	//        | '"stomp"'
+	//        | '"stomps"'
+	//        | '"string"'
+	//        | '"subscribe"'
+	//        | '"summary"'
+	//        | '"tags"'
+	//        | '"termsOfService"'
+	//        | '"title"'
+	//        | '"traits"'
+	//        | '"type"'
+	//        | '"unit"'
+	//        | '"url"'
+	//        | '"value"'
+	//        | '"variables"'
+	//        | '"version"'
+	//        | '"window"'
+	//        | '"windowUnit"'
+	//        | '"ws"'
+	//        | '"wss"'
+	//        | '"x-basePackage"'
+	//        | '"x-qosMetrics"'
+	//        | '"x-sla"'
+	//        | '"x-title"';
 	public KeywordElements getKeywordAccess() {
 		return pKeyword;
 	}

@@ -196,11 +196,16 @@ return result.toString();</body>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_IJvLQGGiEeyTgIN4Smg6_Q" name="amqp"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_JMC80GGiEeyTgIN4Smg6_Q" name="amqps"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_JpnCkGGiEeyTgIN4Smg6_Q" name="mqtt"/>
-      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KXVEMGGiEeyTgIN4Smg6_Q" name="mqtts"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KXVEMGGiEeyTgIN4Smg6_Q" name="secure-mqtt"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_K0GfwGGiEeyTgIN4Smg6_Q" name="ws"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_LWwg4GGiEeyTgIN4Smg6_Q" name="wss"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_LsXkgGGiEeyTgIN4Smg6_Q" name="stomp"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_MTLF0GGiEeyTgIN4Smg6_Q" name="stomps"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EjxswPJTEeyULaaaCWnanQ" name="kafka"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_FClvsPJTEeyULaaaCWnanQ" name="kafka-secure"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_GewywPJTEeyULaaaCWnanQ" name="http"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_G3s3MPJTEeyULaaaCWnanQ" name="https"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_HUdrsPJTEeyULaaaCWnanQ" name="jms"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_Nel6oGGjEeyTgIN4Smg6_Q" memberEnd="_NenIwWGjEeyTgIN4Smg6_Q _NesBQGGjEeyTgIN4Smg6_Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NemhsGGjEeyTgIN4Smg6_Q" source="org.eclipse.papyrus">
@@ -274,4 +279,6 @@ return result.toString();</body>
     </profileApplication>
   </uml:Profile>
   <Ecore:EPackage xmi:id="_83O5AKufEeym8cE8IUKnZg" base_Package="_feSzsGGeEeyTgIN4Smg6_Q" packageName="i40" nsPrefix="i40" nsURI="https://io.github.abelgomez/profiles/I4.0/1.0" basePackage="io.github.abelgomez.asyncapi"/>
+  <Ecore:EEnumLiteral xmi:id="_PSeOoPJUEeyULaaaCWnanQ" base_EnumerationLiteral="_FClvsPJTEeyULaaaCWnanQ" enumLiteralName="kafka_secure"/>
+  <Ecore:EEnumLiteral xmi:id="_XUztYPJUEeyULaaaCWnanQ" base_EnumerationLiteral="_KXVEMGGiEeyTgIN4Smg6_Q" enumLiteralName="secure_mqtt"/>
 </xmi:XMI>

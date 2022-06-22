@@ -317,6 +317,26 @@
           <element xmi:type="uml:EnumerationLiteral" href="domain-model.uml#_8SZ7qGHHEeyTgIN4Smg6_Q"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_-F-yEWHHEeyTgIN4Smg6_Q"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_MwmkQPJTEeyULaaaCWnanQ" type="EnumerationLiteral_LiteralLabel">
+          <element xmi:type="uml:EnumerationLiteral" href="domain-model.uml#_MwTpUPJTEeyULaaaCWnanQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_MwmkQfJTEeyULaaaCWnanQ"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_NMcLsPJTEeyULaaaCWnanQ" type="EnumerationLiteral_LiteralLabel">
+          <element xmi:type="uml:EnumerationLiteral" href="domain-model.uml#_NMKe4PJTEeyULaaaCWnanQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_NMcLsfJTEeyULaaaCWnanQ"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_PDRKcPJTEeyULaaaCWnanQ" type="EnumerationLiteral_LiteralLabel">
+          <element xmi:type="uml:EnumerationLiteral" href="domain-model.uml#_PDBS0PJTEeyULaaaCWnanQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_PDRKcfJTEeyULaaaCWnanQ"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_PY7RYPJTEeyULaaaCWnanQ" type="EnumerationLiteral_LiteralLabel">
+          <element xmi:type="uml:EnumerationLiteral" href="domain-model.uml#_PYqysPJTEeyULaaaCWnanQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_PY7RYfJTEeyULaaaCWnanQ"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_PsS5UPJTEeyULaaaCWnanQ" type="EnumerationLiteral_LiteralLabel">
+          <element xmi:type="uml:EnumerationLiteral" href="domain-model.uml#_PsEP0PJTEeyULaaaCWnanQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_PsS5UfJTEeyULaaaCWnanQ"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_9Iq1RGHHEeyTgIN4Smg6_Q"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_9Iq1RWHHEeyTgIN4Smg6_Q"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_9Iq1RmHHEeyTgIN4Smg6_Q"/>

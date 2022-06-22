@@ -52,8 +52,13 @@
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="AsyncApi.ecore#//Protocol">
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Protocol/amqp"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Protocol/amqps"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Protocol/http"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Protocol/https"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Protocol/jms"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Protocol/kafka"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Protocol/kafka_secure"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Protocol/mqtt"/>
-      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Protocol/mqtts"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Protocol/secure_mqtt"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Protocol/ws"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Protocol/wss"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Protocol/stomp"/>

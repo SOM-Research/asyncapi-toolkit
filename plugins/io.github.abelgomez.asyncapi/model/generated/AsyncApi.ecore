@@ -282,11 +282,16 @@
   <eClassifiers xsi:type="ecore:EEnum" name="Protocol">
     <eLiterals name="amqp" literal="&quot;amqp&quot;"/>
     <eLiterals name="amqps" value="1" literal="&quot;amqps&quot;"/>
-    <eLiterals name="mqtt" value="2" literal="&quot;mqtt&quot;"/>
-    <eLiterals name="mqtts" value="3" literal="&quot;mqtts&quot;"/>
-    <eLiterals name="ws" value="4" literal="&quot;ws&quot;"/>
-    <eLiterals name="wss" value="5" literal="&quot;wss&quot;"/>
-    <eLiterals name="stomp" value="6" literal="&quot;stomp&quot;"/>
-    <eLiterals name="stomps" value="7" literal="&quot;stomps&quot;"/>
+    <eLiterals name="http" value="2" literal="&quot;http&quot;"/>
+    <eLiterals name="https" value="3" literal="&quot;https&quot;"/>
+    <eLiterals name="jms" value="4" literal="&quot;jms&quot;"/>
+    <eLiterals name="kafka" value="5" literal="&quot;kafka&quot;"/>
+    <eLiterals name="kafka_secure" value="6" literal="&quot;kafka-secure&quot;"/>
+    <eLiterals name="mqtt" value="7" literal="&quot;mqtt&quot;"/>
+    <eLiterals name="secure_mqtt" value="8" literal="&quot;secure-mqtt&quot;"/>
+    <eLiterals name="ws" value="9" literal="&quot;ws&quot;"/>
+    <eLiterals name="wss" value="10" literal="&quot;wss&quot;"/>
+    <eLiterals name="stomp" value="11" literal="&quot;stomp&quot;"/>
+    <eLiterals name="stomps" value="12" literal="&quot;stomps&quot;"/>
   </eClassifiers>
 </ecore:EPackage>

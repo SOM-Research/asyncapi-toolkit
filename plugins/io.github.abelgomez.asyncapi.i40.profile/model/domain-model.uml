@@ -164,11 +164,16 @@
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_8SZ7oWHHEeyTgIN4Smg6_Q" name="amqp"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_8SZ7omHHEeyTgIN4Smg6_Q" name="amqps"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_8SZ7o2HHEeyTgIN4Smg6_Q" name="mqtt"/>
-      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_8SZ7pGHHEeyTgIN4Smg6_Q" name="mqtts"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_8SZ7pGHHEeyTgIN4Smg6_Q" name="secure-mqtt"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_8SZ7pWHHEeyTgIN4Smg6_Q" name="ws"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_8SZ7pmHHEeyTgIN4Smg6_Q" name="wss"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_8SZ7p2HHEeyTgIN4Smg6_Q" name="stomp"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_8SZ7qGHHEeyTgIN4Smg6_Q" name="stomps"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_MwTpUPJTEeyULaaaCWnanQ" name="kafka"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_NMKe4PJTEeyULaaaCWnanQ" name="kafka-secure"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_PDBS0PJTEeyULaaaCWnanQ" name="http"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_PYqysPJTEeyULaaaCWnanQ" name="https"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_PsEP0PJTEeyULaaaCWnanQ" name="jms"/>
     </packagedElement>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_RIqM4FLiEeyYuu9LD9Eagg">

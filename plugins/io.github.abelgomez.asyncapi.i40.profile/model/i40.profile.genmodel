@@ -37,11 +37,16 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/amqp"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/amqps"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/mqtt"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/mqtts"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/secure_mqtt"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/ws"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/wss"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/stomp"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/stomps"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/kafka"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/kafka_secure"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/http"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/https"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="i40.ecore#//Protocol/jms"/>
     </genEnums>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="i40.ecore#//I40Architecture">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute i40.ecore#//I40Architecture/name"/>

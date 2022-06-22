@@ -2802,8 +2802,13 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
     initEEnum(protocolEEnum, Protocol.class, "Protocol");
     addEEnumLiteral(protocolEEnum, Protocol.AMQP);
     addEEnumLiteral(protocolEEnum, Protocol.AMQPS);
+    addEEnumLiteral(protocolEEnum, Protocol.HTTP);
+    addEEnumLiteral(protocolEEnum, Protocol.HTTPS);
+    addEEnumLiteral(protocolEEnum, Protocol.JMS);
+    addEEnumLiteral(protocolEEnum, Protocol.KAFKA);
+    addEEnumLiteral(protocolEEnum, Protocol.KAFKA_SECURE);
     addEEnumLiteral(protocolEEnum, Protocol.MQTT);
-    addEEnumLiteral(protocolEEnum, Protocol.MQTTS);
+    addEEnumLiteral(protocolEEnum, Protocol.SECURE_MQTT);
     addEEnumLiteral(protocolEEnum, Protocol.WS);
     addEEnumLiteral(protocolEEnum, Protocol.WSS);
     addEEnumLiteral(protocolEEnum, Protocol.STOMP);
