@@ -53,20 +53,22 @@ class AsyncApi2Json {
 	private static def CharSequence generate(Server s) '''
 	"«s.name»" : {
 		"url" : "«s.url»",
-		"protocol" : "«s.protocol.getName»"
+		"protocol" : "«s.protocol.getName.replaceAll("_", "-")»"
 	}'''
 
 	private static def CharSequence generate(Channel c) '''
 	"«c.name»" : {
 		«IF c.description !== null»
-		"description" : "«c.description»,"«ENDIF»
+		"description" : "«c.description»",«ENDIF»
 		«IF !c.parameters.empty»
 		"parameters" : {
 			«c.parameters.map[generate].join(",\n")»
-		}«ENDIF»«
-		IF c.publish !== null»,
-		"publish" : «c.publish.generate»«ENDIF»«
-		IF c.subscribe !== null»,
+		},«ENDIF»«
+		IF c.publish !== null»
+		"publish" : «c.publish.generate»«
+			IF c.subscribe !== null»,«ENDIF»«
+		ENDIF»«
+		IF c.subscribe !== null»
 		"subscribe" : «c.subscribe.generate»«ENDIF»
 	}'''
 
