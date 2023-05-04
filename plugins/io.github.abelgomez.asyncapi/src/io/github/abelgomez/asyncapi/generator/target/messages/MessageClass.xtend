@@ -166,6 +166,9 @@ class MessageClass extends AbstractType implements IClass, IBuildableType {
 		return Collections.unmodifiableNavigableSet(result)
 	}
 
+	public def isRawMessage() {
+		return message.headers === null
+	}
 	
 	private def classModifiers() {
 		return if (message.isReusable) 
@@ -193,7 +196,7 @@ class MessageClass extends AbstractType implements IClass, IBuildableType {
 		
 		«ENDIF»
 		«javadoc»
-		«classModifiers» class «name» implements «message.api.transform.messageInterface.name» {
+		«classModifiers» class «name» implements «message.api.transform.messageInterface.name»«IF message.payload !== null»<«message.payload.resolve.transform.name»>«ENDIF» {
 			«IF nestedHeaders !== null»
 				
 			«nestedHeaders.serialize»
@@ -220,13 +223,14 @@ class MessageClass extends AbstractType implements IClass, IBuildableType {
 			«ENDIF»
 			
 			«IF message.headers !== null»
-			public «message.headers.resolve.transform.asProperty.type» getHeaders() {
+			public «message.headers.resolve.transform.name» getHeaders() {
 				return headers;
 			}
 			
 			«ENDIF»
 			«IF message.payload !== null»
-			public «message.payload.resolve.transform.asProperty.type» getPayload() {
+			@Override
+			public «message.payload.resolve.transform.name» getPayload() {
 				return payload;
 			}
 			
@@ -236,6 +240,11 @@ class MessageClass extends AbstractType implements IClass, IBuildableType {
 			 */
 			public static «messageBuilder.name» newBuilder() {
 				return «messageBuilder.name».newBuilder();
+			}
+			
+			@Override
+			public boolean isRawMessage() {
+				return «isRawMessage»;
 			}
 		
 			/**
@@ -248,7 +257,13 @@ class MessageClass extends AbstractType implements IClass, IBuildableType {
 			 */
 			public static «name» fromJson(String json) {
 				Gson gson = new Gson();
+				«IF isRawMessage»
+				«name» result = new «name»();
+				result.payload = gson.fromJson(json, «message.payload.resolve.transform.name».class);
+				return result;
+				«ELSE»
 				return gson.fromJson(json, «name».class);
+				«ENDIF»
 			}
 			
 			«messageBuilder.serialize»

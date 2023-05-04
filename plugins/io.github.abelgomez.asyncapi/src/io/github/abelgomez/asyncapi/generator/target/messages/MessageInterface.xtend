@@ -122,9 +122,21 @@ class MessageInterface extends AbstractType implements IType {
 		/**
 		 * Base interface for messages
 		 */
-		public interface «name» extends «api.transform.jsonSerializableInterface.name» {
+		public interface «name»<T extends «api.transform.jsonSerializableInterface.name»> extends «api.transform.jsonSerializableInterface.name» {
 			«headersInterface.serialize»
 			«payloadInterface.serialize»
+
+			/**
+			 * Returns whether the {@link «name»} contains a raw message, i.e., the data that is
+			 * sent and received corresponds only and uniquely to the payload description
+			 * and other information (such as headers) are sent apart of the message body 
+			 */
+			boolean isRawMessage();
+			
+			/**
+			 * Returns the payload of the {@link «name»}
+			 */
+			T getPayload();
 		}
 	'''
 }
