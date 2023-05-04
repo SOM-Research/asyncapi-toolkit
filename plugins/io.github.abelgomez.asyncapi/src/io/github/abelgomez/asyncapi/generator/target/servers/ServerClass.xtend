@@ -12,11 +12,14 @@ abstract class ServerClass extends AbstractType implements IClass {
 
 	protected Server server
 
-	static def createFrom(Server server) {
+	static def ServerClass createFrom(Server server) {
 		switch (server.protocol) {
 			case Protocol.MQTT,
 			case Protocol.SECURE_MQTT:
 				return new MqttServerClass(server)
+			case Protocol.KAFKA,
+			case Protocol.KAFKA_SECURE:
+				return new KafkaServerClass(server)
 			default:
 				Assertions.fail("Unsupported protocol ''{0}'' for server ''{1}''".format(server.protocol, server))		
 		}

@@ -6,13 +6,14 @@ import io.github.abelgomez.asyncapi.generator.infra.ISerializable
 import org.eclipse.xtext.generator.IFileSystemAccess2
 
 import static extension io.github.abelgomez.asyncapi.generator.TransformationContext.*
+import io.github.abelgomez.asyncapi.asyncApi.Protocol
 
 class PomFile implements IGenerable, ISerializable {
 
 	public static final String POM_FILE = "pom.xml"
 
-	AsyncAPI api;
-	RootPomFile rootPomFile;
+	AsyncAPI api
+	RootPomFile rootPomFile
 	
 	static def createFrom(AsyncAPI api) {
 		return new PomFile(api)
@@ -20,7 +21,7 @@ class PomFile implements IGenerable, ISerializable {
 	
 	private new(AsyncAPI api) {
 		this.api = api
-		this.rootPomFile = RootPomFile.create()
+		this.rootPomFile = RootPomFile.create(api)
 	}
 
 	override filename() {
@@ -53,8 +54,14 @@ class RootPomFile implements IGenerable, ISerializable {
 	
 	public static final String ROOT_POM_FILE = "root.pom.xml"
 
-	static def create() {
-		return new RootPomFile()
+	AsyncAPI api
+
+	static def create(AsyncAPI api) {
+		return new RootPomFile(api)
+	}
+	
+	private new(AsyncAPI api) {
+		this.api = api
 	}
 	
 	override filename() {
@@ -70,8 +77,9 @@ class RootPomFile implements IGenerable, ISerializable {
 			<modelVersion>4.0.0</modelVersion>
 			<properties>
 		        <com.google.code.gson.version>2.8.9</com.google.code.gson.version>
-		        <org.eclipse.paho.version>1.2.5</org.eclipse.paho.version>
 		        <com.google.guava.version>31.1-jre</com.google.guava.version>
+		        <org.eclipse.paho.version>1.2.5</org.eclipse.paho.version>
+		        <org.apache.kafka.version>3.2.0</org.apache.kafka.version>
 			</properties>
 			<groupId>io.github.abelgomez.asyncapi.generated</groupId>
 			<artifactId>root</artifactId>
@@ -83,11 +91,20 @@ class RootPomFile implements IGenerable, ISerializable {
 					<artifactId>gson</artifactId>
 					<version>${com.google.code.gson.version}</version>
 				</dependency>
+				«IF api.servers.exists[s | s.protocol == Protocol.MQTT || s.protocol == Protocol.SECURE_MQTT]»
 				<dependency>
 					<groupId>org.eclipse.paho</groupId>
 					<artifactId>org.eclipse.paho.client.mqttv3</artifactId>
 					<version>${org.eclipse.paho.version}</version>
 				</dependency>
+				«ENDIF»
+				«IF api.servers.exists[s | s.protocol == Protocol.KAFKA || s.protocol == Protocol.KAFKA_SECURE]»
+				<dependency>
+				    <groupId>org.apache.kafka</groupId>
+				    <artifactId>kafka-clients</artifactId>
+				    <version>${org.apache.kafka.version}</version>
+				</dependency>
+				«ENDIF»
 			</dependencies>
 			<build>
 				<plugins>
