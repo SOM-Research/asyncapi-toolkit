@@ -45,6 +45,12 @@ abstract class SchemaAbstractType extends AbstractType implements IInstantiableT
 			private «type» «name»;
 		'''
 
+		override declareAs(String asName) '''
+			«declareJavadoc»
+			@SerializedName("«asName»")
+			private «type» «name»;
+		'''
+
 		def getterJavadoc() '''
 			/**
 			 * Returns the <code>«name»</code> property
@@ -137,6 +143,7 @@ abstract class SchemaAbstractType extends AbstractType implements IInstantiableT
 	protected Schema schema
 	protected List<SchemaAbstractType> nestedClasses = new ArrayList
 	protected List<SchemaAbstractType> referencedClasses = new ArrayList
+	protected List<SchemaAbstractType> referencedCompontentsClasses = new ArrayList
 	
 	static def SchemaAbstractType createFrom(Schema schema) {
 		if (schema.isObjectType) {
@@ -161,6 +168,7 @@ abstract class SchemaAbstractType extends AbstractType implements IInstantiableT
 		if (schema.nestedItem !== null) nestedClasses.add(schema.nestedItem?.transform)
 		nestedClasses.addAll(schema.nestedSchemas.filter[s | s.isObjectType || s.isEnumType || s.isArray].map[s|s.transform])
 		referencedClasses.addAll(schema.properties.map[ns|ns.resolve.transform])
+		referencedCompontentsClasses.addAll(schema.properties.filter[ns | ns.schema.isRef].map[ns|ns.resolve.transform])
 	}
 	
 	override name() {

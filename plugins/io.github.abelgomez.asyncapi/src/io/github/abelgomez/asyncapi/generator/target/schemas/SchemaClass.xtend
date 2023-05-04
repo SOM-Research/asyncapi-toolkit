@@ -39,7 +39,8 @@ class SchemaClass extends SchemaAbstractType {
 		«javadoc»
 		«classModifiers» class «name» implements «schema.api.transform.jsonSerializableInterface.name» {
 			«nestedClasses.join(System.lineSeparator, System.lineSeparator, "", [c | c.serialize])»
-			«referencedClasses.join(System.lineSeparator, System.lineSeparator, System.lineSeparator, [rc | rc.asProperty.declare])»
+			«referencedClasses.filter[rc | !referencedCompontentsClasses.contains(rc)].join(System.lineSeparator, System.lineSeparator, System.lineSeparator, [rc | rc.asProperty.declare])»
+			«schema.properties.filter[ns | ns.schema.isRef].join(System.lineSeparator, System.lineSeparator, System.lineSeparator, [ns | ns.resolve.transform.asProperty.declareAs(ns.name)])»
 			/**
 			 * Private constructor. Instances of «name» should be created using 
 			 * {@link «asBuilder.name»} instead.
