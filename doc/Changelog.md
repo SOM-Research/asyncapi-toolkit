@@ -1,3 +1,15 @@
+## AsyncAPI Toolkit v0.6.2
+
+Minor release with a few modifications:
+
+* Add support for raw messages (i.e., do not always send messages in a wrapper with "headers" and "payload"
+* Fix declaration of properties whose Schemas are declared as Components
+* Add a null check when generating imports from headers and payloads
+* Minor fixes in the AsyncAPI to JSON transformation (e.g., commas)
+* Add support for inheritance in the UML2AsyncAPI transformation
+* Fix imports when imported by embedded headers and messages
+* Start preparing the templates to support Kafka (but still throwing UnsupportedOperationExceptions)
+
 ## AsyncAPI Toolkit v0.6.1
 
 Minor release with minor fixes:

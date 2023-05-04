@@ -3,8 +3,6 @@
   <viewpoint:DAnalysis uid="_tgdeMFbgEemDn96f0DJa7Q" selectedViews="_t6KXoFbgEemDn96f0DJa7Q _t6OCAFbgEemDn96f0DJa7Q _t6XzAFbgEemDn96f0DJa7Q _t6XzAVbgEemDn96f0DJa7Q" version="15.0.0.202201261500">
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <semanticResources>AsyncApi.genmodel</semanticResources>
-    <semanticResources>generated/AsyncApi.genmodel</semanticResources>
-    <semanticResources>generated/AsyncApi.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_t6KXoFbgEemDn96f0DJa7Q">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_NX2SMFyiEem4NbPa7826aw" name="AsyncApi" repPath="#_NXiwMFyiEem4NbPa7826aw" changeId="ba84417f-437b-4aaa-8817-2a8ecfab6836">
