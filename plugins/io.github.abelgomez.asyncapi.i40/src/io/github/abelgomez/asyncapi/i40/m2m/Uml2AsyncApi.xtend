@@ -148,6 +148,7 @@ class Uml2AsyncApi {
 		while (!candidates.isEmpty) {
 			val classifier = candidates.pop
 			classifiers += classifier
+			candidates += classifier.parents.filter(StructuredClassifier)
 			candidates += classifier.attributes.map[ attribute | attribute.type ].filter(StructuredClassifier)
 		}
 			
@@ -157,6 +158,7 @@ class Uml2AsyncApi {
 					schema = AsyncApiFactory.eINSTANCE.createSchema => [
 						type = JsonType.OBJECT
 						properties += structuredClassifier.attributes.map[schema]
+						properties += structuredClassifier.allParents.map[c | c.attributes].flatten.map[schema]
 					]
 				]
 			]
