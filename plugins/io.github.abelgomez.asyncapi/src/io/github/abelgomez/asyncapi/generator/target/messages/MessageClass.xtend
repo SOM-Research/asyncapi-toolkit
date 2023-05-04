@@ -151,13 +151,17 @@ class MessageClass extends AbstractType implements IClass, IBuildableType {
 		result += message.api.transform.messageInterface.fqn
 		if (message.headers.isRef) {
 			result += message.headers.resolve.transform.fqn
-		} else {
+		} else if (message.headers.isSchema) {
 			result += message.headers.resolve.transform.imports
+		} else {
+			Assertions.assertTrue(message.headers === null, "Only null headers are expected at this point");
 		}
 		if (message.payload.isRef) {
 			result += message.payload.resolve.transform.fqn
-		} else {
+		} else if (message.payload.isSchema) {
 			result += message.payload.resolve.transform.imports
+		} else {
+			Assertions.assertTrue(message.payload === null, "Only null payloads are expected at this point");
 		}
 		return Collections.unmodifiableNavigableSet(result)
 	}
