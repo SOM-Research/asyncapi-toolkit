@@ -22,9 +22,9 @@ public class SubscribeExample {
 				));
 				System.out.println(MessageFormat.format(
 					"Info about production line ''{0}'':", 
-					message.getPayload().getId()
+					message.getPayload().orElseThrow().getId()
 				));
-				message.getPayload().getBeltInfos().stream().forEach(
+				message.getPayload().orElseThrow().getBeltInfos().stream().forEach(
 					belt -> System.out.println(
 						MessageFormat.format(
 							"Belt {0} was running at {1} m/s at {2}",

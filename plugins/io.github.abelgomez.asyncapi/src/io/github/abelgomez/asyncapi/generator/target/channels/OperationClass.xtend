@@ -200,24 +200,16 @@ class PublishOperationClass extends OperationClass {
 		«ENDIF»
 	'''
 	
-	private def getIMsgGenericsDecl() {
-		if (message.payload.resolve !== null) '''<«message.payload.resolve.transform.name»>'''
-	}
-	
 	override protected serverMethods() '''
-		public static void publish(IServer server, «channelPublishConfigurationInterface.name» config, «messageInterface.name»«getIMsgGenericsDecl» message) throws «serverExceptionClass.name» {
-			«IF message.transform.isRawMessage»
-			server.publish(config, message.getPayload().toJson().getBytes());
-			«ELSE»
-			server.publish(config, message.toJson().getBytes());
-			«ENDIF»
+		public static void publish(IServer server, «channelPublishConfigurationInterface.name» config, «messageInterface.name» message) throws «serverExceptionClass.name» {
+			server.publish(config, message);
 		}
 		
 		«IF channel.parameters.isEmpty»
-		public static void publish(IServer server, «messageInterface.name»«getIMsgGenericsDecl» message) throws «serverExceptionClass.name» {
+		public static void publish(IServer server, «messageInterface.name» message) throws «serverExceptionClass.name» {
 			«channelPublishConfigurationInterface.name» config = newConfiguration();
 		«ELSE»
-		public static void publish(IServer server, «parametersClass.name» params, «messageInterface.name»«getIMsgGenericsDecl» message) throws «serverExceptionClass.name» {
+		public static void publish(IServer server, «parametersClass.name» params, «messageInterface.name» message) throws «serverExceptionClass.name» {
 			«channelPublishConfigurationInterface.name» config = newConfiguration(params);
 		«ENDIF»
 		    publish(server, config, message);
@@ -333,7 +325,10 @@ class SubscribeOperationClass extends OperationClass {
 		 */
 		public static void subscribe(IServer server, «channelSubscribeConfigurationInterface.name» config, «callbackInterface.name» callback) throws «serverExceptionClass.name» {
 		    server.subscribe(config, (received) -> {
-		    	«messageClass.name» message = «messageClass.name».fromJson(new String(received.getData())); 
+		    	«messageClass.name» message = «messageClass.name».fromJson(
+		    			"{ \"headers\" :" +  (received.getHeaders() != null ? new String(received.getHeaders()) : "\"\"") + "," +
+		    			"  \"payload\" :" +  (received.getData() != null ? new String(received.getData()) : "\"\"") + " }"
+		    		); 
 		    	«IF parametersClass === null»
 		    	callback.messageArrived(message);
 		    	«ELSE»

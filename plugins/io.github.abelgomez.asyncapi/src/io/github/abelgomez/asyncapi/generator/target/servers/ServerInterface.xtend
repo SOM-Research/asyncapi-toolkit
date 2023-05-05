@@ -47,6 +47,8 @@ class ServerInterface extends AbstractType implements IClass {
 			 */
 			public final class «name» {
 				
+				private final byte[] headers;
+
 				private final byte[] data;
 
 				private final Map<String, String> parameters = new HashMap<>();;
@@ -54,18 +56,28 @@ class ServerInterface extends AbstractType implements IClass {
 				/**
 				 * Creates a new instance of {@link «name»}
 				 */
-				public static «name» from(byte[] data, Map<String, String> parameters) {
-					return new «name»(data, parameters);
+				public static «name» from(byte[] headers, byte[] data, Map<String, String> parameters) {
+					return new «name»(headers, data, parameters);
 				}
 				
 				/**
 				 * Private constructor. Use the {@link #from} method instead
 				 */
-				private «name»(byte[] data, Map<String, String> parameters) {
+				private «name»(byte[] headers, byte[] data, Map<String, String> parameters) {
+					this.headers = headers;
 					this.data = data;
 					if (parameters != null) {
 						this.parameters.putAll(parameters);
 					}
+				}
+				
+				/**
+				 * Returns the raw headersreceived
+				 *
+				 * @return The headers
+				 */
+				public byte[] getHeaders() {
+					return headers;
 				}
 				
 				/**
@@ -190,6 +202,10 @@ class ServerInterface extends AbstractType implements IClass {
 	private def channelSubscribeConfigurationInterface() {
 		return api.transform.channelInterface.channelSubscribeConfigurationInterface
 	} 
+
+	private def messageInterface() {
+		return api.transform.messageInterface
+	} 
 	
 	override serialize() '''
 		package «pkg»;
@@ -257,7 +273,7 @@ class ServerInterface extends AbstractType implements IClass {
 			void disconnectSilently();
 			
 			/**
-			 * Publish the given <code>data</code> in the {@link «name»} according to the
+			 * Publish the given <code>message</code> in the {@link «name»} according to the
 			 * given {@link «channelPublishConfigurationInterface.name»}. If {@link «name»}
 			 * is not connected to {@link «channelPublishConfigurationInterface.name»}, a connection 
 			 * is done prior to the publication. 
@@ -266,7 +282,7 @@ class ServerInterface extends AbstractType implements IClass {
 			 *         if any error prevents from publishing. The underlying cause may be 
 			 *         wrapped in this {@link Exception}
 			 */
-			void publish(«channelPublishConfigurationInterface.name» config, byte[] data) throws «serverExceptionClass.name»;
+			void publish(«channelPublishConfigurationInterface.name» config, «messageInterface.name» message) throws «serverExceptionClass.name»;
 			
 			/**
 			 * Subscribes to the events specified in the given {@link «channelSubscribeConfigurationInterface.name»}

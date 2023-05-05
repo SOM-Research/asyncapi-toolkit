@@ -48,6 +48,7 @@ class MqttServerClass extends ServerClass implements IClass {
 		result += "org.eclipse.paho.client.mqttv3.IMqttDeliveryToken"
 		result += "org.eclipse.paho.client.mqttv3.persist.MemoryPersistence"
 		result += server.api.transform.parametersInterface.parameterLiteralInterface.fqn
+		result += messageInterface.fqn
 		result += operationInterface.fqn
 		result += channelInterface.fqn
 		result += serverInterface.fqn
@@ -74,6 +75,10 @@ class MqttServerClass extends ServerClass implements IClass {
 	
 	private def channelInterface() {
 		return server.api.transform.channelInterface
+	}
+	
+	private def messageInterface() {
+		return server.api.transform.messageInterface
 	}
 	
 	private def operationInterface() {
@@ -229,7 +234,14 @@ class MqttServerClass extends ServerClass implements IClass {
 			}
 			
 			@Override
-			public void publish(«channelPublishConfigurationInterface.name» config, byte[] data) throws «serverExceptionClass.name» {
+			public void publish(«channelPublishConfigurationInterface.name» config, «messageInterface.name» message) throws «serverExceptionClass.name» {
+				if (message.getHeaders().isPresent()) {
+					throw new UnsupportedOperationException("The MQTT protocol does not support headers in the messages");
+				}
+				byte[] data = new byte[]{};
+				if (message.getPayload().isPresent()) {
+					data = message.getPayload().get().toJson().getBytes();
+				}
 			    MqttMessage mqttMessage = new MqttMessage(data);
 			    mqttMessage.setQos(DEFAULT_QOS);
 				MqttClient client = getClientFor(config.getOperation());
@@ -254,7 +266,7 @@ class MqttServerClass extends ServerClass implements IClass {
 				client.setCallback(new MqttCallback() {
 					@Override
 					public void messageArrived(String topic, MqttMessage message) throws Exception {
-						callback.accept(Received.from(message.getPayload(),
+						callback.accept(Received.from(null, message.getPayload(),
 						parseParams(topic, config.getChannel().getName(), config.getChannel().getParameterLiterals())));
 					}
 					@Override

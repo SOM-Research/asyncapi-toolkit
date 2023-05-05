@@ -42,6 +42,7 @@ class KafkaServerClass extends ServerClass implements IClass {
 		result += "java.util.regex.Matcher"
 		result += "java.util.Properties"
 		result += server.api.transform.parametersInterface.parameterLiteralInterface.fqn
+		result += messageInterface.fqn
 		result += operationInterface.fqn
 		result += channelInterface.fqn
 		result += serverInterface.fqn
@@ -72,6 +73,10 @@ class KafkaServerClass extends ServerClass implements IClass {
 	
 	private def operationInterface() {
 		return server.api.transform.operationInterface
+	}
+	
+	private def messageInterface() {
+		return server.api.transform.messageInterface
 	}
 	
 	private def channelPublishConfigurationInterface() {
@@ -180,7 +185,7 @@ class KafkaServerClass extends ServerClass implements IClass {
 			}
 			
 			@Override
-			public void publish(«channelPublishConfigurationInterface.name» config, byte[] data) throws «serverExceptionClass.name» {
+			public void publish(«channelPublishConfigurationInterface.name» config, «messageInterface.name» message) throws «serverExceptionClass.name» {
 				throw new UnsupportedOperationException("Not implemented yet");
 			}
 			

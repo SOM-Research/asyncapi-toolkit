@@ -146,9 +146,11 @@ class MessageClass extends AbstractType implements IClass, IBuildableType {
 
 	override imports() {
 		val result = new TreeSet		
+		result += "java.util.Optional"
 		result += "com.google.gson.Gson"
 		result += "com.google.gson.annotations.SerializedName"
-		result += message.api.transform.messageInterface.fqn
+		result += messageInterface.fqn
+		result += jsonSerializableInterface.fqn
 		if (message.headers.isRef) {
 			result += message.headers.resolve.transform.fqn
 		} else if (message.headers.isSchema) {
@@ -165,9 +167,13 @@ class MessageClass extends AbstractType implements IClass, IBuildableType {
 		}
 		return Collections.unmodifiableNavigableSet(result)
 	}
-
-	public def isRawMessage() {
-		return message.headers === null
+	
+	protected def messageInterface() {
+		return message.api.transform.messageInterface
+	}
+	
+	protected def jsonSerializableInterface() {
+		return message.api.transform.jsonSerializableInterface
 	}
 	
 	private def classModifiers() {
@@ -196,7 +202,7 @@ class MessageClass extends AbstractType implements IClass, IBuildableType {
 		
 		«ENDIF»
 		«javadoc»
-		«classModifiers» class «name» implements «message.api.transform.messageInterface.name»«IF message.payload !== null»<«message.payload.resolve.transform.name»>«ENDIF» {
+		«classModifiers» class «name» implements «messageInterface.name» {
 			«IF nestedHeaders !== null»
 				
 			«nestedHeaders.serialize»
@@ -222,29 +228,33 @@ class MessageClass extends AbstractType implements IClass, IBuildableType {
 			private «message.payload.resolve.transform.name» payload;
 			«ENDIF»
 			
-			«IF message.headers !== null»
-			public «message.headers.resolve.transform.name» getHeaders() {
-				return headers;
-			}
-			
-			«ENDIF»
-			«IF message.payload !== null»
 			@Override
-			public «message.payload.resolve.transform.name» getPayload() {
-				return payload;
+			«IF message.headers !== null»
+			public Optional<«message.headers.resolve.transform.name»> getHeaders() {
+				return Optional.of(headers);
 			}
+			«ELSE»
+			public Optional<«jsonSerializableInterface.name»> getHeaders() {
+				return Optional.empty();
+			}
+			«ENDIF»
 			
+			@Override
+			«IF message.payload !== null»
+			public Optional<«message.payload.resolve.transform.name»> getPayload() {
+				return Optional.of(payload);
+			}
+			«ELSE»
+			public Optional<«jsonSerializableInterface.name»> getPayload() {
+				return Optional.empty();
+			}
 			«ENDIF»			
+			
 			/**
 			 * Create a new «messageBuilder.name»
 			 */
 			public static «messageBuilder.name» newBuilder() {
 				return «messageBuilder.name».newBuilder();
-			}
-			
-			@Override
-			public boolean isRawMessage() {
-				return «isRawMessage»;
 			}
 		
 			/**
@@ -257,13 +267,13 @@ class MessageClass extends AbstractType implements IClass, IBuildableType {
 			 */
 			public static «name» fromJson(String json) {
 				Gson gson = new Gson();
-				«IF isRawMessage»
-				«name» result = new «name»();
-				result.payload = gson.fromJson(json, «message.payload.resolve.transform.name».class);
-				return result;
-				«ELSE»
+«««				«IF isRawMessage»
+«««				«name» result = new «name»();
+«««				result.payload = gson.fromJson(json, «message.payload.resolve.transform.name».class);
+«««				return result;
+«««				«ELSE»
 				return gson.fromJson(json, «name».class);
-				«ENDIF»
+«««				«ENDIF»
 			}
 			
 			«messageBuilder.serialize»

@@ -22,7 +22,7 @@ public class MainExample {
 			SubscribeOperation.subscribe(production, (message, params) -> {
 				// Inform about the message received
 				System.err.println(MessageFormat.format("Received message from sensor ''{0}'' in group ''{1}'':\n{2}",
-						message.getPayload().getName(), params.getGroup(), message.getPayload().getEvents().stream()
+						message.getPayload().orElseThrow().getName(), params.getGroup(), message.getPayload().orElseThrow().getEvents().stream()
 								.map(e -> e.toJson(true)).collect(Collectors.toList())));
 			});
 

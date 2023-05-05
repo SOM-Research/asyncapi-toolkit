@@ -37,8 +37,8 @@ public class MainExample {
 						// Notice that both the params and the payload fields can be
 						// queried via getters that know about the domain being modeled 
 						params.getStreetlightId(),
-						message.getPayload().getLumens(), 
-						message.getPayload().getSentAt()));
+						message.getPayload().orElseThrow().getLumens(), 
+						message.getPayload().orElseThrow().getSentAt()));
 			});
 	
 			// Prepare to publish several messages
