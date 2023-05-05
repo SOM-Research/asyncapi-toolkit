@@ -1,3 +1,11 @@
+## AsyncAPI Toolkit v0.7.0
+
+Major release with small but incompatible changes:
+
+* Change the way payloads and headers are managed in protocols that support it.
+  Now, headers are managed as a separate entity from the payload, and are not embedded as part of the payload if the protocol does not support headers (e.g., MQTT).
+* Change the IMessage interface, which now always has getHeaders and getPayload methods, returning an Optional.
+
 ## AsyncAPI Toolkit v0.6.2
 
 Minor release with a few modifications:

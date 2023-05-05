@@ -3,7 +3,7 @@ Automatic-Module-Name: io.github.abelgomez.asyncapi.ide
 Bundle-ManifestVersion: 2
 Bundle-Name: AsyncAPI Toolkit IDE Support Plug-in
 Bundle-Vendor: SOM Research Lab
-Bundle-Version: 0.6.2.qualifier
+Bundle-Version: 0.7.0.qualifier
 Bundle-SymbolicName: io.github.abelgomez.asyncapi.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: io.github.abelgomez.asyncapi,
