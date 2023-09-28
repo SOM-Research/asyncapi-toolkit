@@ -376,8 +376,8 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *             headers=AbstractSchema | 
 	 *             payload=AbstractSchema
 	 *         )? 
-	 *         (tags+=Tag tags+=Tag*)? 
-	 *         (traits+=AbstractMessageTrait traits+=AbstractMessageTrait*)?
+	 *         (traits+=AbstractMessageTrait traits+=AbstractMessageTrait*)? 
+	 *         (tags+=Tag tags+=Tag*)?
 	 *     )+
 	 * </pre>
 	 */
@@ -668,8 +668,8 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *             items=AbstractSchema
 	 *         )? 
 	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)? 
-	 *         (properties+=NamedSchema properties+=NamedSchema*)? 
-	 *         (required+=AnyString required+=AnyString*)?
+	 *         (required+=AnyString required+=AnyString*)? 
+	 *         (properties+=NamedSchema properties+=NamedSchema*)?
 	 *     )+
 	 * </pre>
 	 */
