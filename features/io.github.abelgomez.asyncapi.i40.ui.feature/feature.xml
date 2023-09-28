@@ -2,7 +2,7 @@
 <feature
       id="io.github.abelgomez.asyncapi.i40.ui.feature"
       label="AsyncAPI Industry 4.0 UI"
-      version="0.7.0.qualifier"
+      version="0.8.0.qualifier"
       provider-name="SOM Research Lab">
 
    <description url="https://github.com/SOM-Research/asyncapi-toolkit">

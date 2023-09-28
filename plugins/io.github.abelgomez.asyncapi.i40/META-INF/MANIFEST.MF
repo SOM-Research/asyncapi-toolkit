@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: AsyncAPI Industry 4.0 Plug-in
 Bundle-SymbolicName: io.github.abelgomez.asyncapi.i40
-Bundle-Version: 0.7.0.qualifier
+Bundle-Version: 0.8.0.qualifier
 Bundle-Activator: io.github.abelgomez.asyncapi.i40.I40Plugin
 Bundle-Vendor: SOM Research Lab
 Require-Bundle: org.eclipse.core.runtime,

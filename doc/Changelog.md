@@ -1,3 +1,11 @@
+## AsyncAPI Toolkit v0.8.0
+
+Major release with small but incompatible changes:
+
+* Update the Service Level Agreement extensions to the latest version.
+
+**NOTE**: the changes only affect the SLA extensions, so "normative" AsyncAPI projects and definitions should work as before. Nevertheless, since the grammar for SLAs has changed, we mark this version as backwards incompatible.
+
 ## AsyncAPI Toolkit v0.7.0
 
 Major release with small but incompatible changes:
