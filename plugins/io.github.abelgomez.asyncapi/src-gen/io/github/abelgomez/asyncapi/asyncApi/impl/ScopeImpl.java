@@ -4,12 +4,12 @@
 package io.github.abelgomez.asyncapi.asyncApi.impl;
 
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
+import io.github.abelgomez.asyncapi.asyncApi.Channel;
 import io.github.abelgomez.asyncapi.asyncApi.Scope;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -59,7 +59,7 @@ public class ScopeImpl extends MinimalEObjectImpl.Container implements Scope
    * @generated
    * @ordered
    */
-  protected EObject reference;
+  protected Channel reference;
 
   /**
    * <!-- begin-user-doc -->
@@ -113,12 +113,12 @@ public class ScopeImpl extends MinimalEObjectImpl.Container implements Scope
    * @generated
    */
   @Override
-  public EObject getReference()
+  public Channel getReference()
   {
     if (reference != null && reference.eIsProxy())
     {
       InternalEObject oldReference = (InternalEObject)reference;
-      reference = eResolveProxy(oldReference);
+      reference = (Channel)eResolveProxy(oldReference);
       if (reference != oldReference)
       {
         if (eNotificationRequired())
@@ -133,7 +133,7 @@ public class ScopeImpl extends MinimalEObjectImpl.Container implements Scope
    * <!-- end-user-doc -->
    * @generated
    */
-  public EObject basicGetReference()
+  public Channel basicGetReference()
   {
     return reference;
   }
@@ -144,9 +144,9 @@ public class ScopeImpl extends MinimalEObjectImpl.Container implements Scope
    * @generated
    */
   @Override
-  public void setReference(EObject newReference)
+  public void setReference(Channel newReference)
   {
-    EObject oldReference = reference;
+    Channel oldReference = reference;
     reference = newReference;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SCOPE__REFERENCE, oldReference, reference));
@@ -185,7 +185,7 @@ public class ScopeImpl extends MinimalEObjectImpl.Container implements Scope
         setName((String)newValue);
         return;
       case AsyncApiPackage.SCOPE__REFERENCE:
-        setReference((EObject)newValue);
+        setReference((Channel)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -205,7 +205,7 @@ public class ScopeImpl extends MinimalEObjectImpl.Container implements Scope
         setName(NAME_EDEFAULT);
         return;
       case AsyncApiPackage.SCOPE__REFERENCE:
-        setReference((EObject)null);
+        setReference((Channel)null);
         return;
     }
     super.eUnset(featureID);

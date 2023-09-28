@@ -13,9 +13,11 @@ package io.github.abelgomez.asyncapi.asyncApi;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getName <em>Name</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getMetricType <em>Metric Type</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getDescription <em>Description</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getUnit <em>Unit</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getDataType <em>Data Type</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getGroupedByEvent <em>Grouped By Event</em>}</li>
  * </ul>
  *
  * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getQoSMetric()
@@ -24,6 +26,53 @@ package io.github.abelgomez.asyncapi.asyncApi;
  */
 public interface QoSMetric extends AbstractQoSMetric
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getQoSMetric_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Metric Type</b></em>' attribute.
+   * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricType}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Metric Type</em>' attribute.
+   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricType
+   * @see #setMetricType(QoSMetricType)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getQoSMetric_MetricType()
+   * @model
+   * @generated
+   */
+  QoSMetricType getMetricType();
+
+  /**
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getMetricType <em>Metric Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Metric Type</em>' attribute.
+   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricType
+   * @see #getMetricType()
+   * @generated
+   */
+  void setMetricType(QoSMetricType value);
+
   /**
    * Returns the value of the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -72,28 +121,28 @@ public interface QoSMetric extends AbstractQoSMetric
   void setUnit(QoSMetricUnit value);
 
   /**
-   * Returns the value of the '<em><b>Data Type</b></em>' attribute.
-   * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricType}.
+   * Returns the value of the '<em><b>Grouped By Event</b></em>' attribute.
+   * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.Boolean}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Data Type</em>' attribute.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricType
-   * @see #setDataType(QoSMetricType)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getQoSMetric_DataType()
+   * @return the value of the '<em>Grouped By Event</em>' attribute.
+   * @see io.github.abelgomez.asyncapi.asyncApi.Boolean
+   * @see #setGroupedByEvent(io.github.abelgomez.asyncapi.asyncApi.Boolean)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getQoSMetric_GroupedByEvent()
    * @model
    * @generated
    */
-  QoSMetricType getDataType();
+  io.github.abelgomez.asyncapi.asyncApi.Boolean getGroupedByEvent();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getDataType <em>Data Type</em>}' attribute.
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getGroupedByEvent <em>Grouped By Event</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Data Type</em>' attribute.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricType
-   * @see #getDataType()
+   * @param value the new value of the '<em>Grouped By Event</em>' attribute.
+   * @see io.github.abelgomez.asyncapi.asyncApi.Boolean
+   * @see #getGroupedByEvent()
    * @generated
    */
-  void setDataType(QoSMetricType value);
+  void setGroupedByEvent(io.github.abelgomez.asyncapi.asyncApi.Boolean value);
 
 } // QoSMetric

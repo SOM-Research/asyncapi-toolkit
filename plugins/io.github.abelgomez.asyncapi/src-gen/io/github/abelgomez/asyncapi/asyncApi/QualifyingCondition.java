@@ -51,12 +51,12 @@ public interface QualifyingCondition extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Condition</em>' containment reference.
-   * @see #setCondition(BooleanCondition)
+   * @see #setCondition(BooleanExpression)
    * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getQualifyingCondition_Condition()
    * @model containment="true"
    * @generated
    */
-  BooleanCondition getCondition();
+  BooleanExpression getCondition();
 
   /**
    * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition#getCondition <em>Condition</em>}' containment reference.
@@ -66,6 +66,6 @@ public interface QualifyingCondition extends EObject
    * @see #getCondition()
    * @generated
    */
-  void setCondition(BooleanCondition value);
+  void setCondition(BooleanExpression value);
 
 } // QualifyingCondition

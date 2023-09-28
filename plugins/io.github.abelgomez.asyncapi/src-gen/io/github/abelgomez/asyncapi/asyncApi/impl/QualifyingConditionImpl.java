@@ -4,7 +4,7 @@
 package io.github.abelgomez.asyncapi.asyncApi.impl;
 
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
-import io.github.abelgomez.asyncapi.asyncApi.BooleanCondition;
+import io.github.abelgomez.asyncapi.asyncApi.BooleanExpression;
 import io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -60,7 +60,7 @@ public class QualifyingConditionImpl extends MinimalEObjectImpl.Container implem
    * @generated
    * @ordered
    */
-  protected BooleanCondition condition;
+  protected BooleanExpression condition;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,7 +114,7 @@ public class QualifyingConditionImpl extends MinimalEObjectImpl.Container implem
    * @generated
    */
   @Override
-  public BooleanCondition getCondition()
+  public BooleanExpression getCondition()
   {
     return condition;
   }
@@ -124,9 +124,9 @@ public class QualifyingConditionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCondition(BooleanCondition newCondition, NotificationChain msgs)
+  public NotificationChain basicSetCondition(BooleanExpression newCondition, NotificationChain msgs)
   {
-    BooleanCondition oldCondition = condition;
+    BooleanExpression oldCondition = condition;
     condition = newCondition;
     if (eNotificationRequired())
     {
@@ -142,7 +142,7 @@ public class QualifyingConditionImpl extends MinimalEObjectImpl.Container implem
    * @generated
    */
   @Override
-  public void setCondition(BooleanCondition newCondition)
+  public void setCondition(BooleanExpression newCondition)
   {
     if (newCondition != condition)
     {
@@ -206,7 +206,7 @@ public class QualifyingConditionImpl extends MinimalEObjectImpl.Container implem
         setName((String)newValue);
         return;
       case AsyncApiPackage.QUALIFYING_CONDITION__CONDITION:
-        setCondition((BooleanCondition)newValue);
+        setCondition((BooleanExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -226,7 +226,7 @@ public class QualifyingConditionImpl extends MinimalEObjectImpl.Container implem
         setName(NAME_EDEFAULT);
         return;
       case AsyncApiPackage.QUALIFYING_CONDITION__CONDITION:
-        setCondition((BooleanCondition)null);
+        setCondition((BooleanExpression)null);
         return;
     }
     super.eUnset(featureID);

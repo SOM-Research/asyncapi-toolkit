@@ -20,7 +20,7 @@ package io.github.abelgomez.asyncapi.asyncApi;
  * @model
  * @generated
  */
-public interface Reference extends AbstractMessage, AbstractSchema, AbstractParameter, AbstractOperationTrait, AbstractMessageTrait, AbstractQoSMetric
+public interface Reference extends AbstractMessage, AbstractSchema, AbstractParameter, AbstractOperationTrait, AbstractMessageTrait
 {
   /**
    * Returns the value of the '<em><b>Uri</b></em>' attribute.

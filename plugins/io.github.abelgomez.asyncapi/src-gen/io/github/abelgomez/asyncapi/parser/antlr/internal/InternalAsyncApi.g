@@ -5229,16 +5229,16 @@ ruleComponents returns [EObject current=null]
 								{
 									newLeafNode(otherlv_44, grammarAccess.getComponentsAccess().getColonKeyword_2_5_1());
 								}
-								otherlv_45='{'
+								otherlv_45='['
 								{
-									newLeafNode(otherlv_45, grammarAccess.getComponentsAccess().getLeftCurlyBracketKeyword_2_5_2());
+									newLeafNode(otherlv_45, grammarAccess.getComponentsAccess().getLeftSquareBracketKeyword_2_5_2());
 								}
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getComponentsAccess().getQosMetricsNamedQoSMetricParserRuleCall_2_5_3_0());
+											newCompositeNode(grammarAccess.getComponentsAccess().getQosMetricsQoSMetricParserRuleCall_2_5_3_0());
 										}
-										lv_qosMetrics_46_0=ruleNamedQoSMetric
+										lv_qosMetrics_46_0=ruleQoSMetric
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getComponentsRule());
@@ -5247,7 +5247,7 @@ ruleComponents returns [EObject current=null]
 												$current,
 												"qosMetrics",
 												lv_qosMetrics_46_0,
-												"io.github.abelgomez.asyncapi.AsyncApi.NamedQoSMetric");
+												"io.github.abelgomez.asyncapi.AsyncApi.QoSMetric");
 											afterParserOrEnumRuleCall();
 										}
 									)
@@ -5260,9 +5260,9 @@ ruleComponents returns [EObject current=null]
 									(
 										(
 											{
-												newCompositeNode(grammarAccess.getComponentsAccess().getQosMetricsNamedQoSMetricParserRuleCall_2_5_4_1_0());
+												newCompositeNode(grammarAccess.getComponentsAccess().getQosMetricsQoSMetricParserRuleCall_2_5_4_1_0());
 											}
-											lv_qosMetrics_48_0=ruleNamedQoSMetric
+											lv_qosMetrics_48_0=ruleQoSMetric
 											{
 												if ($current==null) {
 													$current = createModelElementForParent(grammarAccess.getComponentsRule());
@@ -5271,15 +5271,15 @@ ruleComponents returns [EObject current=null]
 													$current,
 													"qosMetrics",
 													lv_qosMetrics_48_0,
-													"io.github.abelgomez.asyncapi.AsyncApi.NamedQoSMetric");
+													"io.github.abelgomez.asyncapi.AsyncApi.QoSMetric");
 												afterParserOrEnumRuleCall();
 											}
 										)
 									)
 								)*
-								otherlv_49='}'
+								otherlv_49=']'
 								{
-									newLeafNode(otherlv_49, grammarAccess.getComponentsAccess().getRightCurlyBracketKeyword_2_5_5());
+									newLeafNode(otherlv_49, grammarAccess.getComponentsAccess().getRightSquareBracketKeyword_2_5_5());
 								}
 								(
 									otherlv_50=','
@@ -5463,17 +5463,17 @@ ruleGuaranteeTerm returns [EObject current=null]
 					(
 						(
 							{
-								newCompositeNode(grammarAccess.getGuaranteeTermAccess().getScopeScopeParserRuleCall_2_0_4_1_0());
+								newCompositeNode(grammarAccess.getGuaranteeTermAccess().getScopesScopeParserRuleCall_2_0_4_1_0());
 							}
-							lv_scope_7_0=ruleScope
+							lv_scopes_7_0=ruleScope
 							{
 								if ($current==null) {
 									$current = createModelElementForParent(grammarAccess.getGuaranteeTermRule());
 								}
 								add(
 									$current,
-									"scope",
-									lv_scope_7_0,
+									"scopes",
+									lv_scopes_7_0,
 									"io.github.abelgomez.asyncapi.AsyncApi.Scope");
 								afterParserOrEnumRuleCall();
 							}
@@ -5529,17 +5529,17 @@ ruleGuaranteeTerm returns [EObject current=null]
 					(
 						(
 							{
-								newCompositeNode(grammarAccess.getGuaranteeTermAccess().getQualifyingConditionQualifyingConditionParserRuleCall_2_1_4_1_0());
+								newCompositeNode(grammarAccess.getGuaranteeTermAccess().getQualifyingConditionsQualifyingConditionParserRuleCall_2_1_4_1_0());
 							}
-							lv_qualifyingCondition_15_0=ruleQualifyingCondition
+							lv_qualifyingConditions_15_0=ruleQualifyingCondition
 							{
 								if ($current==null) {
 									$current = createModelElementForParent(grammarAccess.getGuaranteeTermRule());
 								}
 								add(
 									$current,
-									"qualifyingCondition",
-									lv_qualifyingCondition_15_0,
+									"qualifyingConditions",
+									lv_qualifyingConditions_15_0,
 									"io.github.abelgomez.asyncapi.AsyncApi.QualifyingCondition");
 								afterParserOrEnumRuleCall();
 							}
@@ -5595,17 +5595,17 @@ ruleGuaranteeTerm returns [EObject current=null]
 					(
 						(
 							{
-								newCompositeNode(grammarAccess.getGuaranteeTermAccess().getSloSloParserRuleCall_2_2_4_1_0());
+								newCompositeNode(grammarAccess.getGuaranteeTermAccess().getSlosSloParserRuleCall_2_2_4_1_0());
 							}
-							lv_slo_23_0=ruleSlo
+							lv_slos_23_0=ruleSlo
 							{
 								if ($current==null) {
 									$current = createModelElementForParent(grammarAccess.getGuaranteeTermRule());
 								}
 								add(
 									$current,
-									"slo",
-									lv_slo_23_0,
+									"slos",
+									lv_slos_23_0,
 									"io.github.abelgomez.asyncapi.AsyncApi.Slo");
 								afterParserOrEnumRuleCall();
 							}
@@ -5672,54 +5672,22 @@ ruleScope returns [EObject current=null]
 			{
 				newLeafNode(otherlv_2, grammarAccess.getScopeAccess().getColonKeyword_1_1());
 			}
-			otherlv_3='{'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getScopeAccess().getLeftCurlyBracketKeyword_1_2());
-			}
-			otherlv_4='"$ref"'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getScopeAccess().getRefKeyword_1_3());
-			}
-			otherlv_5=':'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getScopeAccess().getColonKeyword_1_4());
-			}
 			(
 				(
-					(
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getScopeRule());
-							}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getScopeRule());
 						}
-						{
-							newCompositeNode(grammarAccess.getScopeAccess().getReferenceChannelCrossReference_1_5_0_0());
-						}
-						ruleAnyString
-						{
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				    |
-				(
-					(
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getScopeRule());
-							}
-						}
-						otherlv_7=RULE_ID
-						{
-							newLeafNode(otherlv_7, grammarAccess.getScopeAccess().getReferenceOperationCrossReference_1_5_1_0());
-						}
-					)
+					}
+					{
+						newCompositeNode(grammarAccess.getScopeAccess().getReferenceChannelCrossReference_1_2_0());
+					}
+					ruleAnyString
+					{
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
-			otherlv_8='}'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getScopeAccess().getRightCurlyBracketKeyword_1_6());
-			}
 		)
 	)
 ;
@@ -5773,9 +5741,9 @@ ruleQualifyingCondition returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getQualifyingConditionAccess().getConditionBooleanConditionParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getQualifyingConditionAccess().getConditionBooleanExpressionParserRuleCall_3_0());
 				}
-				lv_condition_3_0=ruleBooleanCondition
+				lv_condition_3_0=ruleBooleanExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getQualifyingConditionRule());
@@ -5784,7 +5752,7 @@ ruleQualifyingCondition returns [EObject current=null]
 						$current,
 						"condition",
 						lv_condition_3_0,
-						"io.github.abelgomez.asyncapi.AsyncApi.BooleanCondition");
+						"io.github.abelgomez.asyncapi.AsyncApi.BooleanExpression");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -5841,9 +5809,9 @@ ruleSlo returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSloAccess().getConditionBooleanConditionParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getSloAccess().getConditionBooleanExpressionParserRuleCall_3_0());
 				}
-				lv_condition_3_0=ruleBooleanCondition
+				lv_condition_3_0=ruleBooleanExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSloRule());
@@ -5852,7 +5820,7 @@ ruleSlo returns [EObject current=null]
 						$current,
 						"condition",
 						lv_condition_3_0,
-						"io.github.abelgomez.asyncapi.AsyncApi.BooleanCondition");
+						"io.github.abelgomez.asyncapi.AsyncApi.BooleanExpression");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -5877,11 +5845,11 @@ ruleAbstractQoSMetric returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getAbstractQoSMetricAccess().getReferenceParserRuleCall_0());
+			newCompositeNode(grammarAccess.getAbstractQoSMetricAccess().getQoSMetricReferenceParserRuleCall_0());
 		}
-		this_Reference_0=ruleReference
+		this_QoSMetricReference_0=ruleQoSMetricReference
 		{
-			$current = $this_Reference_0.current;
+			$current = $this_QoSMetricReference_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -5893,6 +5861,39 @@ ruleAbstractQoSMetric returns [EObject current=null]
 			$current = $this_QoSMetric_1.current;
 			afterParserOrEnumRuleCall();
 		}
+	)
+;
+
+// Entry rule entryRuleQoSMetricReference
+entryRuleQoSMetricReference returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getQoSMetricReferenceRule()); }
+	iv_ruleQoSMetricReference=ruleQoSMetricReference
+	{ $current=$iv_ruleQoSMetricReference.current; }
+	EOF;
+
+// Rule QoSMetricReference
+ruleQoSMetricReference returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getQoSMetricReferenceRule());
+				}
+			}
+			{
+				newCompositeNode(grammarAccess.getQoSMetricReferenceAccess().getMetricQoSMetricCrossReference_0());
+			}
+			ruleAnyString
+			{
+				afterParserOrEnumRuleCall();
+			}
+		)
 	)
 ;
 
@@ -5917,54 +5918,119 @@ ruleQoSMetric returns [EObject current=null]
 			newLeafNode(otherlv_0, grammarAccess.getQoSMetricAccess().getLeftCurlyBracketKeyword_0());
 		}
 		(
-			{
-				newCompositeNode(grammarAccess.getQoSMetricAccess().getAtomicQoSMetricParserRuleCall_1_0());
-			}
-			this_AtomicQoSMetric_1=ruleAtomicQoSMetric
-			{
-				$current = $this_AtomicQoSMetric_1.current;
-				afterParserOrEnumRuleCall();
-			}
-			    |
-			{
-				newCompositeNode(grammarAccess.getQoSMetricAccess().getDerivedQoSMetricParserRuleCall_1_1());
-			}
-			this_DerivedQoSMetric_2=ruleDerivedQoSMetric
-			{
-				$current = $this_DerivedQoSMetric_2.current;
-				afterParserOrEnumRuleCall();
-			}
-		)
-		otherlv_3=','
-		{
-			newLeafNode(otherlv_3, grammarAccess.getQoSMetricAccess().getCommaKeyword_2());
-		}
-		(
 			(
 				{ 
-				  getUnorderedGroupHelper().enter(grammarAccess.getQoSMetricAccess().getUnorderedGroup_3());
+				  getUnorderedGroupHelper().enter(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1());
 				}
 				(
 					(
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getQoSMetricAccess().getUnorderedGroup_3(), 0)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1(), 0)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getQoSMetricAccess().getUnorderedGroup_3(), 0);
+						getUnorderedGroupHelper().select(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1(), 0);
 					}
-								({true}?=>(otherlv_5='"description"'
+								({true}?=>(otherlv_2='"name"'
 								{
-									newLeafNode(otherlv_5, grammarAccess.getQoSMetricAccess().getDescriptionKeyword_3_0_0());
+									newLeafNode(otherlv_2, grammarAccess.getQoSMetricAccess().getNameKeyword_1_0_0());
 								}
-								otherlv_6=':'
+								otherlv_3=':'
 								{
-									newLeafNode(otherlv_6, grammarAccess.getQoSMetricAccess().getColonKeyword_3_0_1());
+									newLeafNode(otherlv_3, grammarAccess.getQoSMetricAccess().getColonKeyword_1_0_1());
 								}
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getQoSMetricAccess().getDescriptionAnyStringParserRuleCall_3_0_2_0());
+											newCompositeNode(grammarAccess.getQoSMetricAccess().getNameAnyStringParserRuleCall_1_0_2_0());
 										}
-										lv_description_7_0=ruleAnyString
+										lv_name_4_0=ruleAnyString
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getQoSMetricRule());
+											}
+											set(
+												$current,
+												"name",
+												lv_name_4_0,
+												"io.github.abelgomez.asyncapi.AsyncApi.AnyString");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								(
+									otherlv_5=','
+									{
+										newLeafNode(otherlv_5, grammarAccess.getQoSMetricAccess().getCommaKeyword_1_0_3());
+									}
+								)?
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1(), 1);
+					}
+								({true}?=>(otherlv_6='"metricType"'
+								{
+									newLeafNode(otherlv_6, grammarAccess.getQoSMetricAccess().getMetricTypeKeyword_1_1_0());
+								}
+								otherlv_7=':'
+								{
+									newLeafNode(otherlv_7, grammarAccess.getQoSMetricAccess().getColonKeyword_1_1_1());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getQoSMetricAccess().getMetricTypeQoSMetricTypeEnumRuleCall_1_1_2_0());
+										}
+										lv_metricType_8_0=ruleQoSMetricType
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getQoSMetricRule());
+											}
+											set(
+												$current,
+												"metricType",
+												lv_metricType_8_0,
+												"io.github.abelgomez.asyncapi.AsyncApi.QoSMetricType");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								(
+									otherlv_9=','
+									{
+										newLeafNode(otherlv_9, grammarAccess.getQoSMetricAccess().getCommaKeyword_1_1_3());
+									}
+								)?
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1(), 2);
+					}
+								({true}?=>(otherlv_10='"description"'
+								{
+									newLeafNode(otherlv_10, grammarAccess.getQoSMetricAccess().getDescriptionKeyword_1_2_0());
+								}
+								otherlv_11=':'
+								{
+									newLeafNode(otherlv_11, grammarAccess.getQoSMetricAccess().getColonKeyword_1_2_1());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getQoSMetricAccess().getDescriptionAnyStringParserRuleCall_1_2_2_0());
+										}
+										lv_description_12_0=ruleAnyString
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getQoSMetricRule());
@@ -5972,43 +6038,43 @@ ruleQoSMetric returns [EObject current=null]
 											set(
 												$current,
 												"description",
-												lv_description_7_0,
+												lv_description_12_0,
 												"io.github.abelgomez.asyncapi.AsyncApi.AnyString");
 											afterParserOrEnumRuleCall();
 										}
 									)
 								)
 								(
-									otherlv_8=','
+									otherlv_13=','
 									{
-										newLeafNode(otherlv_8, grammarAccess.getQoSMetricAccess().getCommaKeyword_3_0_3());
+										newLeafNode(otherlv_13, grammarAccess.getQoSMetricAccess().getCommaKeyword_1_2_3());
 									}
 								)?
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQoSMetricAccess().getUnorderedGroup_3());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1());
 					}
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getQoSMetricAccess().getUnorderedGroup_3(), 1)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1(), 3)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getQoSMetricAccess().getUnorderedGroup_3(), 1);
+						getUnorderedGroupHelper().select(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1(), 3);
 					}
-								({true}?=>(otherlv_9='"unit"'
+								({true}?=>(otherlv_14='"unit"'
 								{
-									newLeafNode(otherlv_9, grammarAccess.getQoSMetricAccess().getUnitKeyword_3_1_0());
+									newLeafNode(otherlv_14, grammarAccess.getQoSMetricAccess().getUnitKeyword_1_3_0());
 								}
-								otherlv_10=':'
+								otherlv_15=':'
 								{
-									newLeafNode(otherlv_10, grammarAccess.getQoSMetricAccess().getColonKeyword_3_1_1());
+									newLeafNode(otherlv_15, grammarAccess.getQoSMetricAccess().getColonKeyword_1_3_1());
 								}
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getQoSMetricAccess().getUnitQoSMetricUnitEnumRuleCall_3_1_2_0());
+											newCompositeNode(grammarAccess.getQoSMetricAccess().getUnitQoSMetricUnitEnumRuleCall_1_3_2_0());
 										}
-										lv_unit_11_0=ruleQoSMetricUnit
+										lv_unit_16_0=ruleQoSMetricUnit
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getQoSMetricRule());
@@ -6016,79 +6082,89 @@ ruleQoSMetric returns [EObject current=null]
 											set(
 												$current,
 												"unit",
-												lv_unit_11_0,
+												lv_unit_16_0,
 												"io.github.abelgomez.asyncapi.AsyncApi.QoSMetricUnit");
 											afterParserOrEnumRuleCall();
 										}
 									)
 								)
 								(
-									otherlv_12=','
+									otherlv_17=','
 									{
-										newLeafNode(otherlv_12, grammarAccess.getQoSMetricAccess().getCommaKeyword_3_1_3());
+										newLeafNode(otherlv_17, grammarAccess.getQoSMetricAccess().getCommaKeyword_1_3_3());
 									}
 								)?
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQoSMetricAccess().getUnorderedGroup_3());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1());
 					}
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getQoSMetricAccess().getUnorderedGroup_3(), 2)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1(), 4)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getQoSMetricAccess().getUnorderedGroup_3(), 2);
+						getUnorderedGroupHelper().select(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1(), 4);
 					}
-								({true}?=>(otherlv_13='"dataType"'
+								({true}?=>(otherlv_18='"groupedByEvent"'
 								{
-									newLeafNode(otherlv_13, grammarAccess.getQoSMetricAccess().getDataTypeKeyword_3_2_0());
+									newLeafNode(otherlv_18, grammarAccess.getQoSMetricAccess().getGroupedByEventKeyword_1_4_0());
 								}
-								otherlv_14=':'
+								otherlv_19=':'
 								{
-									newLeafNode(otherlv_14, grammarAccess.getQoSMetricAccess().getColonKeyword_3_2_1());
+									newLeafNode(otherlv_19, grammarAccess.getQoSMetricAccess().getColonKeyword_1_4_1());
 								}
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getQoSMetricAccess().getDataTypeQoSMetricTypeEnumRuleCall_3_2_2_0());
+											newCompositeNode(grammarAccess.getQoSMetricAccess().getGroupedByEventBooleanEnumRuleCall_1_4_2_0());
 										}
-										lv_dataType_15_0=ruleQoSMetricType
+										lv_groupedByEvent_20_0=ruleBoolean
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getQoSMetricRule());
 											}
 											set(
 												$current,
-												"dataType",
-												lv_dataType_15_0,
-												"io.github.abelgomez.asyncapi.AsyncApi.QoSMetricType");
+												"groupedByEvent",
+												lv_groupedByEvent_20_0,
+												"io.github.abelgomez.asyncapi.AsyncApi.Boolean");
 											afterParserOrEnumRuleCall();
 										}
 									)
 								)
 								(
-									otherlv_16=','
+									otherlv_21=','
 									{
-										newLeafNode(otherlv_16, grammarAccess.getQoSMetricAccess().getCommaKeyword_3_2_3());
+										newLeafNode(otherlv_21, grammarAccess.getQoSMetricAccess().getCommaKeyword_1_4_3());
 									}
 								)?
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQoSMetricAccess().getUnorderedGroup_3());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1());
 					}
 				)
 			)
 					)+
-					{getUnorderedGroupHelper().canLeave(grammarAccess.getQoSMetricAccess().getUnorderedGroup_3())}?
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1())}?
 				)
 			)
 				{ 
-				  getUnorderedGroupHelper().leave(grammarAccess.getQoSMetricAccess().getUnorderedGroup_3());
+				  getUnorderedGroupHelper().leave(grammarAccess.getQoSMetricAccess().getUnorderedGroup_1());
 				}
 		)
-		otherlv_17='}'
+		(
+			{
+				newCompositeNode(grammarAccess.getQoSMetricAccess().getDerivedQoSMetricParserRuleCall_2());
+			}
+			this_DerivedQoSMetric_22=ruleDerivedQoSMetric
+			{
+				$current = $this_DerivedQoSMetric_22.current;
+				afterParserOrEnumRuleCall();
+			}
+		)?
+		otherlv_23='}'
 		{
-			newLeafNode(otherlv_17, grammarAccess.getQoSMetricAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_23, grammarAccess.getQoSMetricAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;
@@ -6117,275 +6193,227 @@ ruleDerivedQoSMetric returns [EObject current=null]
 			}
 		)
 		(
-			(
-				{ 
-				  getUnorderedGroupHelper().enter(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1());
-				}
-				(
-					(
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1(), 0)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1(), 0);
-					}
-								({true}?=>(otherlv_2='"metricType"'
-								{
-									newLeafNode(otherlv_2, grammarAccess.getDerivedQoSMetricAccess().getMetricTypeKeyword_1_0_0());
-								}
-								otherlv_3=':'
-								{
-									newLeafNode(otherlv_3, grammarAccess.getDerivedQoSMetricAccess().getColonKeyword_1_0_1());
-								}
-								otherlv_4='"derived"'
-								{
-									newLeafNode(otherlv_4, grammarAccess.getDerivedQoSMetricAccess().getDerivedKeyword_1_0_2());
-								}
-								otherlv_5=','
-								{
-									newLeafNode(otherlv_5, grammarAccess.getDerivedQoSMetricAccess().getCommaKeyword_1_0_3());
-								}
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1(), 1)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1(), 1);
-					}
-								({true}?=>(otherlv_6='"window"'
-								{
-									newLeafNode(otherlv_6, grammarAccess.getDerivedQoSMetricAccess().getWindowKeyword_1_1_0());
-								}
-								otherlv_7=':'
-								{
-									newLeafNode(otherlv_7, grammarAccess.getDerivedQoSMetricAccess().getColonKeyword_1_1_1());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getDerivedQoSMetricAccess().getWindowAnyStringParserRuleCall_1_1_2_0());
-										}
-										lv_window_8_0=ruleAnyString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getDerivedQoSMetricRule());
-											}
-											set(
-												$current,
-												"window",
-												lv_window_8_0,
-												"io.github.abelgomez.asyncapi.AsyncApi.AnyString");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								(
-									otherlv_9=','
-									{
-										newLeafNode(otherlv_9, grammarAccess.getDerivedQoSMetricAccess().getCommaKeyword_1_1_3());
-									}
-								)?
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1(), 2)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1(), 2);
-					}
-								({true}?=>(otherlv_10='"windowUnit"'
-								{
-									newLeafNode(otherlv_10, grammarAccess.getDerivedQoSMetricAccess().getWindowUnitKeyword_1_2_0());
-								}
-								otherlv_11=':'
-								{
-									newLeafNode(otherlv_11, grammarAccess.getDerivedQoSMetricAccess().getColonKeyword_1_2_1());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getDerivedQoSMetricAccess().getWindowUnitWindowUnitEnumRuleCall_1_2_2_0());
-										}
-										lv_windowUnit_12_0=ruleWindowUnit
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getDerivedQoSMetricRule());
-											}
-											set(
-												$current,
-												"windowUnit",
-												lv_windowUnit_12_0,
-												"io.github.abelgomez.asyncapi.AsyncApi.WindowUnit");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								(
-									otherlv_13=','
-									{
-										newLeafNode(otherlv_13, grammarAccess.getDerivedQoSMetricAccess().getCommaKeyword_1_2_3());
-									}
-								)?
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1(), 3)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1(), 3);
-					}
-								({true}?=>(otherlv_14='"aggregationFunction"'
-								{
-									newLeafNode(otherlv_14, grammarAccess.getDerivedQoSMetricAccess().getAggregationFunctionKeyword_1_3_0());
-								}
-								otherlv_15=':'
-								{
-									newLeafNode(otherlv_15, grammarAccess.getDerivedQoSMetricAccess().getColonKeyword_1_3_1());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getDerivedQoSMetricAccess().getAggregationFunctionAnyStringParserRuleCall_1_3_2_0());
-										}
-										lv_aggregationFunction_16_0=ruleAnyString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getDerivedQoSMetricRule());
-											}
-											set(
-												$current,
-												"aggregationFunction",
-												lv_aggregationFunction_16_0,
-												"io.github.abelgomez.asyncapi.AsyncApi.AnyString");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								(
-									otherlv_17=','
-									{
-										newLeafNode(otherlv_17, grammarAccess.getDerivedQoSMetricAccess().getCommaKeyword_1_3_3());
-									}
-								)?
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1(), 4)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1(), 4);
-					}
-								({true}?=>(otherlv_18='"atomicMetric"'
-								{
-									newLeafNode(otherlv_18, grammarAccess.getDerivedQoSMetricAccess().getAtomicMetricKeyword_1_4_0());
-								}
-								otherlv_19=':'
-								{
-									newLeafNode(otherlv_19, grammarAccess.getDerivedQoSMetricAccess().getColonKeyword_1_4_1());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getDerivedQoSMetricAccess().getAtomicMetricAbstractQoSMetricParserRuleCall_1_4_2_0());
-										}
-										lv_atomicMetric_20_0=ruleAbstractQoSMetric
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getDerivedQoSMetricRule());
-											}
-											set(
-												$current,
-												"atomicMetric",
-												lv_atomicMetric_20_0,
-												"io.github.abelgomez.asyncapi.AsyncApi.AbstractQoSMetric");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								(
-									otherlv_21=','
-									{
-										newLeafNode(otherlv_21, grammarAccess.getDerivedQoSMetricAccess().getCommaKeyword_1_4_3());
-									}
-								)?
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1());
-					}
-				)
-			)
-					)+
-					{getUnorderedGroupHelper().canLeave(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1())}?
-				)
-			)
-				{ 
-				  getUnorderedGroupHelper().leave(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1());
-				}
-		)
-	)
-;
-
-// Entry rule entryRuleAtomicQoSMetric
-entryRuleAtomicQoSMetric returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAtomicQoSMetricRule()); }
-	iv_ruleAtomicQoSMetric=ruleAtomicQoSMetric
-	{ $current=$iv_ruleAtomicQoSMetric.current; }
-	EOF;
-
-// Rule AtomicQoSMetric
-ruleAtomicQoSMetric returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
+			otherlv_1='"derivedQoSMetricDefinition"'
 			{
-				$current = forceCreateModelElement(
-					grammarAccess.getAtomicQoSMetricAccess().getAtomicQoSMetricAction_0(),
-					$current);
-			}
-		)
-		(
-			otherlv_1='"metricType"'
-			{
-				newLeafNode(otherlv_1, grammarAccess.getAtomicQoSMetricAccess().getMetricTypeKeyword_1_0());
+				newLeafNode(otherlv_1, grammarAccess.getDerivedQoSMetricAccess().getDerivedQoSMetricDefinitionKeyword_1_0());
 			}
 			otherlv_2=':'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getAtomicQoSMetricAccess().getColonKeyword_1_1());
+				newLeafNode(otherlv_2, grammarAccess.getDerivedQoSMetricAccess().getColonKeyword_1_1());
 			}
-			otherlv_3='"atomic"'
+			otherlv_3='{'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getAtomicQoSMetricAccess().getAtomicKeyword_1_2());
+				newLeafNode(otherlv_3, grammarAccess.getDerivedQoSMetricAccess().getLeftCurlyBracketKeyword_1_2());
+			}
+			(
+				(
+					{ 
+					  getUnorderedGroupHelper().enter(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1_3());
+					}
+					(
+						(
+				(
+					{getUnorderedGroupHelper().canSelect(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1_3(), 0)}?=>(
+						{
+							getUnorderedGroupHelper().select(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1_3(), 0);
+						}
+									({true}?=>(otherlv_5='"window"'
+									{
+										newLeafNode(otherlv_5, grammarAccess.getDerivedQoSMetricAccess().getWindowKeyword_1_3_0_0());
+									}
+									otherlv_6=':'
+									{
+										newLeafNode(otherlv_6, grammarAccess.getDerivedQoSMetricAccess().getColonKeyword_1_3_0_1());
+									}
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getDerivedQoSMetricAccess().getWindowAnyStringParserRuleCall_1_3_0_2_0());
+											}
+											lv_window_7_0=ruleAnyString
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getDerivedQoSMetricRule());
+												}
+												set(
+													$current,
+													"window",
+													lv_window_7_0,
+													"io.github.abelgomez.asyncapi.AsyncApi.AnyString");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)
+									(
+										otherlv_8=','
+										{
+											newLeafNode(otherlv_8, grammarAccess.getDerivedQoSMetricAccess().getCommaKeyword_1_3_0_3());
+										}
+									)?
+									))
+						{ 
+							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1_3());
+						}
+					)
+				)|
+				(
+					{getUnorderedGroupHelper().canSelect(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1_3(), 1)}?=>(
+						{
+							getUnorderedGroupHelper().select(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1_3(), 1);
+						}
+									({true}?=>(otherlv_9='"windowUnit"'
+									{
+										newLeafNode(otherlv_9, grammarAccess.getDerivedQoSMetricAccess().getWindowUnitKeyword_1_3_1_0());
+									}
+									otherlv_10=':'
+									{
+										newLeafNode(otherlv_10, grammarAccess.getDerivedQoSMetricAccess().getColonKeyword_1_3_1_1());
+									}
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getDerivedQoSMetricAccess().getWindowUnitWindowUnitEnumRuleCall_1_3_1_2_0());
+											}
+											lv_windowUnit_11_0=ruleWindowUnit
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getDerivedQoSMetricRule());
+												}
+												set(
+													$current,
+													"windowUnit",
+													lv_windowUnit_11_0,
+													"io.github.abelgomez.asyncapi.AsyncApi.WindowUnit");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)
+									(
+										otherlv_12=','
+										{
+											newLeafNode(otherlv_12, grammarAccess.getDerivedQoSMetricAccess().getCommaKeyword_1_3_1_3());
+										}
+									)?
+									))
+						{ 
+							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1_3());
+						}
+					)
+				)|
+				(
+					{getUnorderedGroupHelper().canSelect(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1_3(), 2)}?=>(
+						{
+							getUnorderedGroupHelper().select(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1_3(), 2);
+						}
+									({true}?=>(otherlv_13='"aggregationFunction"'
+									{
+										newLeafNode(otherlv_13, grammarAccess.getDerivedQoSMetricAccess().getAggregationFunctionKeyword_1_3_2_0());
+									}
+									otherlv_14=':'
+									{
+										newLeafNode(otherlv_14, grammarAccess.getDerivedQoSMetricAccess().getColonKeyword_1_3_2_1());
+									}
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getDerivedQoSMetricAccess().getAggregationFunctionAggregationFunctionEnumRuleCall_1_3_2_2_0());
+											}
+											lv_aggregationFunction_15_0=ruleAggregationFunction
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getDerivedQoSMetricRule());
+												}
+												set(
+													$current,
+													"aggregationFunction",
+													lv_aggregationFunction_15_0,
+													"io.github.abelgomez.asyncapi.AsyncApi.AggregationFunction");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)
+									(
+										otherlv_16=','
+										{
+											newLeafNode(otherlv_16, grammarAccess.getDerivedQoSMetricAccess().getCommaKeyword_1_3_2_3());
+										}
+									)?
+									))
+						{ 
+							getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1_3());
+						}
+					)
+				)
+						)+
+						{getUnorderedGroupHelper().canLeave(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1_3())}?
+					)
+				)
+					{ 
+					  getUnorderedGroupHelper().leave(grammarAccess.getDerivedQoSMetricAccess().getUnorderedGroup_1_3());
+					}
+			)
+			otherlv_17='}'
+			{
+				newLeafNode(otherlv_17, grammarAccess.getDerivedQoSMetricAccess().getRightCurlyBracketKeyword_1_4());
 			}
 		)
 	)
 ;
 
-// Entry rule entryRuleNamedQoSMetric
-entryRuleNamedQoSMetric returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getNamedQoSMetricRule()); }
-	iv_ruleNamedQoSMetric=ruleNamedQoSMetric
-	{ $current=$iv_ruleNamedQoSMetric.current; }
+// Entry rule entryRuleBooleanExpression
+entryRuleBooleanExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBooleanExpressionRule()); }
+	iv_ruleBooleanExpression=ruleBooleanExpression
+	{ $current=$iv_ruleBooleanExpression.current; }
 	EOF;
 
-// Rule NamedQoSMetric
-ruleNamedQoSMetric returns [EObject current=null]
+// Rule BooleanExpression
+ruleBooleanExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getAndExpressionParserRuleCall_0());
+		}
+		this_AndExpression_0=ruleAndExpression
+		{
+			$current = $this_AndExpression_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getOrExpressionParserRuleCall_1());
+		}
+		this_OrExpression_1=ruleOrExpression
+		{
+			$current = $this_OrExpression_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getComparisonExpressionParserRuleCall_2());
+		}
+		this_ComparisonExpression_2=ruleComparisonExpression
+		{
+			$current = $this_ComparisonExpression_2.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleAndExpression
+entryRuleAndExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAndExpressionRule()); }
+	iv_ruleAndExpression=ruleAndExpression
+	{ $current=$iv_ruleAndExpression.current; }
+	EOF;
+
+// Rule AndExpression
+ruleAndExpression returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -6396,154 +6424,41 @@ ruleNamedQoSMetric returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getNamedQoSMetricAccess().getNamedQoSMetricAction_0(),
-					$current);
-			}
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getNamedQoSMetricAccess().getNameAnyStringParserRuleCall_1_0());
-				}
-				lv_name_1_0=ruleAnyString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getNamedQoSMetricRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"io.github.abelgomez.asyncapi.AsyncApi.AnyString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_2=':'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getNamedQoSMetricAccess().getColonKeyword_2());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getNamedQoSMetricAccess().getQosMetricAbstractQoSMetricParserRuleCall_3_0());
-				}
-				lv_qosMetric_3_0=ruleAbstractQoSMetric
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getNamedQoSMetricRule());
-					}
-					set(
-						$current,
-						"qosMetric",
-						lv_qosMetric_3_0,
-						"io.github.abelgomez.asyncapi.AsyncApi.AbstractQoSMetric");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleBooleanCondition
-entryRuleBooleanCondition returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getBooleanConditionRule()); }
-	iv_ruleBooleanCondition=ruleBooleanCondition
-	{ $current=$iv_ruleBooleanCondition.current; }
-	EOF;
-
-// Rule BooleanCondition
-ruleBooleanCondition returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getBooleanConditionAccess().getANDConditionParserRuleCall_0());
-		}
-		this_ANDCondition_0=ruleANDCondition
-		{
-			$current = $this_ANDCondition_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getBooleanConditionAccess().getORConditionParserRuleCall_1());
-		}
-		this_ORCondition_1=ruleORCondition
-		{
-			$current = $this_ORCondition_1.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getBooleanConditionAccess().getAtomicBooleanConditionParserRuleCall_2());
-		}
-		this_AtomicBooleanCondition_2=ruleAtomicBooleanCondition
-		{
-			$current = $this_AtomicBooleanCondition_2.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
-// Entry rule entryRuleANDCondition
-entryRuleANDCondition returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getANDConditionRule()); }
-	iv_ruleANDCondition=ruleANDCondition
-	{ $current=$iv_ruleANDCondition.current; }
-	EOF;
-
-// Rule ANDCondition
-ruleANDCondition returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getANDConditionAccess().getANDConditionAction_0(),
+					grammarAccess.getAndExpressionAccess().getAndExpressionAction_0(),
 					$current);
 			}
 		)
 		otherlv_1='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getANDConditionAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getAndExpressionAccess().getLeftCurlyBracketKeyword_1());
 		}
 		otherlv_2='"AND"'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getANDConditionAccess().getANDKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getAndExpressionAccess().getANDKeyword_2());
 		}
 		otherlv_3=':'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getANDConditionAccess().getColonKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getAndExpressionAccess().getColonKeyword_3());
 		}
 		otherlv_4='['
 		{
-			newLeafNode(otherlv_4, grammarAccess.getANDConditionAccess().getLeftSquareBracketKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getAndExpressionAccess().getLeftSquareBracketKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getANDConditionAccess().getConditionsBooleanConditionParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getAndExpressionAccess().getConditionsBooleanExpressionParserRuleCall_5_0());
 				}
-				lv_conditions_5_0=ruleBooleanCondition
+				lv_conditions_5_0=ruleBooleanExpression
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getANDConditionRule());
+						$current = createModelElementForParent(grammarAccess.getAndExpressionRule());
 					}
 					add(
 						$current,
 						"conditions",
 						lv_conditions_5_0,
-						"io.github.abelgomez.asyncapi.AsyncApi.BooleanCondition");
+						"io.github.abelgomez.asyncapi.AsyncApi.BooleanExpression");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -6551,23 +6466,23 @@ ruleANDCondition returns [EObject current=null]
 		(
 			otherlv_6=','
 			{
-				newLeafNode(otherlv_6, grammarAccess.getANDConditionAccess().getCommaKeyword_6_0());
+				newLeafNode(otherlv_6, grammarAccess.getAndExpressionAccess().getCommaKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getANDConditionAccess().getConditionsBooleanConditionParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getAndExpressionAccess().getConditionsBooleanExpressionParserRuleCall_6_1_0());
 					}
-					lv_conditions_7_0=ruleBooleanCondition
+					lv_conditions_7_0=ruleBooleanExpression
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getANDConditionRule());
+							$current = createModelElementForParent(grammarAccess.getAndExpressionRule());
 						}
 						add(
 							$current,
 							"conditions",
 							lv_conditions_7_0,
-							"io.github.abelgomez.asyncapi.AsyncApi.BooleanCondition");
+							"io.github.abelgomez.asyncapi.AsyncApi.BooleanExpression");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -6575,24 +6490,24 @@ ruleANDCondition returns [EObject current=null]
 		)*
 		otherlv_8=']'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getANDConditionAccess().getRightSquareBracketKeyword_7());
+			newLeafNode(otherlv_8, grammarAccess.getAndExpressionAccess().getRightSquareBracketKeyword_7());
 		}
 		otherlv_9='}'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getANDConditionAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(otherlv_9, grammarAccess.getAndExpressionAccess().getRightCurlyBracketKeyword_8());
 		}
 	)
 ;
 
-// Entry rule entryRuleORCondition
-entryRuleORCondition returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getORConditionRule()); }
-	iv_ruleORCondition=ruleORCondition
-	{ $current=$iv_ruleORCondition.current; }
+// Entry rule entryRuleOrExpression
+entryRuleOrExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getOrExpressionRule()); }
+	iv_ruleOrExpression=ruleOrExpression
+	{ $current=$iv_ruleOrExpression.current; }
 	EOF;
 
-// Rule ORCondition
-ruleORCondition returns [EObject current=null]
+// Rule OrExpression
+ruleOrExpression returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -6603,41 +6518,41 @@ ruleORCondition returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getORConditionAccess().getANDConditionAction_0(),
+					grammarAccess.getOrExpressionAccess().getOrExpressionAction_0(),
 					$current);
 			}
 		)
 		otherlv_1='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getORConditionAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getOrExpressionAccess().getLeftCurlyBracketKeyword_1());
 		}
 		otherlv_2='"OR"'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getORConditionAccess().getORKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getOrExpressionAccess().getORKeyword_2());
 		}
 		otherlv_3=':'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getORConditionAccess().getColonKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getOrExpressionAccess().getColonKeyword_3());
 		}
 		otherlv_4='['
 		{
-			newLeafNode(otherlv_4, grammarAccess.getORConditionAccess().getLeftSquareBracketKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getOrExpressionAccess().getLeftSquareBracketKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getORConditionAccess().getConditionsBooleanConditionParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getOrExpressionAccess().getConditionsBooleanExpressionParserRuleCall_5_0());
 				}
-				lv_conditions_5_0=ruleBooleanCondition
+				lv_conditions_5_0=ruleBooleanExpression
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getORConditionRule());
+						$current = createModelElementForParent(grammarAccess.getOrExpressionRule());
 					}
 					add(
 						$current,
 						"conditions",
 						lv_conditions_5_0,
-						"io.github.abelgomez.asyncapi.AsyncApi.BooleanCondition");
+						"io.github.abelgomez.asyncapi.AsyncApi.BooleanExpression");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -6645,23 +6560,23 @@ ruleORCondition returns [EObject current=null]
 		(
 			otherlv_6=','
 			{
-				newLeafNode(otherlv_6, grammarAccess.getORConditionAccess().getCommaKeyword_6_0());
+				newLeafNode(otherlv_6, grammarAccess.getOrExpressionAccess().getCommaKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getORConditionAccess().getConditionsBooleanConditionParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getOrExpressionAccess().getConditionsBooleanExpressionParserRuleCall_6_1_0());
 					}
-					lv_conditions_7_0=ruleBooleanCondition
+					lv_conditions_7_0=ruleBooleanExpression
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getORConditionRule());
+							$current = createModelElementForParent(grammarAccess.getOrExpressionRule());
 						}
 						add(
 							$current,
 							"conditions",
 							lv_conditions_7_0,
-							"io.github.abelgomez.asyncapi.AsyncApi.BooleanCondition");
+							"io.github.abelgomez.asyncapi.AsyncApi.BooleanExpression");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -6669,24 +6584,24 @@ ruleORCondition returns [EObject current=null]
 		)*
 		otherlv_8=']'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getORConditionAccess().getRightSquareBracketKeyword_7());
+			newLeafNode(otherlv_8, grammarAccess.getOrExpressionAccess().getRightSquareBracketKeyword_7());
 		}
 		otherlv_9='}'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getORConditionAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(otherlv_9, grammarAccess.getOrExpressionAccess().getRightCurlyBracketKeyword_8());
 		}
 	)
 ;
 
-// Entry rule entryRuleAtomicBooleanCondition
-entryRuleAtomicBooleanCondition returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAtomicBooleanConditionRule()); }
-	iv_ruleAtomicBooleanCondition=ruleAtomicBooleanCondition
-	{ $current=$iv_ruleAtomicBooleanCondition.current; }
+// Entry rule entryRuleComparisonExpression
+entryRuleComparisonExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getComparisonExpressionRule()); }
+	iv_ruleComparisonExpression=ruleComparisonExpression
+	{ $current=$iv_ruleComparisonExpression.current; }
 	EOF;
 
-// Rule AtomicBooleanCondition
-ruleAtomicBooleanCondition returns [EObject current=null]
+// Rule ComparisonExpression
+ruleComparisonExpression returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -6697,31 +6612,31 @@ ruleAtomicBooleanCondition returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getAtomicBooleanConditionAccess().getAtomicBooleanConditionAction_0(),
+					grammarAccess.getComparisonExpressionAccess().getComparisonExpressionAction_0(),
 					$current);
 			}
 		)
 		otherlv_1='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getAtomicBooleanConditionAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getComparisonExpressionAccess().getLeftCurlyBracketKeyword_1());
 		}
 		otherlv_2='"qosMetric"'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getAtomicBooleanConditionAccess().getQosMetricKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getComparisonExpressionAccess().getQosMetricKeyword_2());
 		}
 		otherlv_3=':'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getAtomicBooleanConditionAccess().getColonKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getComparisonExpressionAccess().getColonKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAtomicBooleanConditionAccess().getQosMetricAbstractQoSMetricParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getComparisonExpressionAccess().getQosMetricAbstractQoSMetricParserRuleCall_4_0());
 				}
 				lv_qosMetric_4_0=ruleAbstractQoSMetric
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAtomicBooleanConditionRule());
+						$current = createModelElementForParent(grammarAccess.getComparisonExpressionRule());
 					}
 					set(
 						$current,
@@ -6734,25 +6649,25 @@ ruleAtomicBooleanCondition returns [EObject current=null]
 		)
 		otherlv_5=','
 		{
-			newLeafNode(otherlv_5, grammarAccess.getAtomicBooleanConditionAccess().getCommaKeyword_5());
+			newLeafNode(otherlv_5, grammarAccess.getComparisonExpressionAccess().getCommaKeyword_5());
 		}
 		otherlv_6='"operator"'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getAtomicBooleanConditionAccess().getOperatorKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getComparisonExpressionAccess().getOperatorKeyword_6());
 		}
 		otherlv_7=':'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getAtomicBooleanConditionAccess().getColonKeyword_7());
+			newLeafNode(otherlv_7, grammarAccess.getComparisonExpressionAccess().getColonKeyword_7());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAtomicBooleanConditionAccess().getOperatorOperatorEnumRuleCall_8_0());
+					newCompositeNode(grammarAccess.getComparisonExpressionAccess().getOperatorOperatorEnumRuleCall_8_0());
 				}
 				lv_operator_8_0=ruleOperator
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAtomicBooleanConditionRule());
+						$current = createModelElementForParent(grammarAccess.getComparisonExpressionRule());
 					}
 					set(
 						$current,
@@ -6765,25 +6680,25 @@ ruleAtomicBooleanCondition returns [EObject current=null]
 		)
 		otherlv_9=','
 		{
-			newLeafNode(otherlv_9, grammarAccess.getAtomicBooleanConditionAccess().getCommaKeyword_9());
+			newLeafNode(otherlv_9, grammarAccess.getComparisonExpressionAccess().getCommaKeyword_9());
 		}
 		otherlv_10='"value"'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getAtomicBooleanConditionAccess().getValueKeyword_10());
+			newLeafNode(otherlv_10, grammarAccess.getComparisonExpressionAccess().getValueKeyword_10());
 		}
 		otherlv_11=':'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getAtomicBooleanConditionAccess().getColonKeyword_11());
+			newLeafNode(otherlv_11, grammarAccess.getComparisonExpressionAccess().getColonKeyword_11());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAtomicBooleanConditionAccess().getValueAnyStringParserRuleCall_12_0());
+					newCompositeNode(grammarAccess.getComparisonExpressionAccess().getValueAnyStringParserRuleCall_12_0());
 				}
 				lv_value_12_0=ruleAnyString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAtomicBooleanConditionRule());
+						$current = createModelElementForParent(grammarAccess.getComparisonExpressionRule());
 					}
 					set(
 						$current,
@@ -6796,7 +6711,7 @@ ruleAtomicBooleanCondition returns [EObject current=null]
 		)
 		otherlv_13='}'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getAtomicBooleanConditionAccess().getRightCurlyBracketKeyword_13());
+			newLeafNode(otherlv_13, grammarAccess.getComparisonExpressionAccess().getRightCurlyBracketKeyword_13());
 		}
 	)
 ;
@@ -7012,556 +6927,730 @@ ruleKeyword returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 			newLeafNode(kw, grammarAccess.getKeywordAccess().getANDKeyword_6());
 		}
 		    |
+		kw='"AVG"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getAVGKeyword_7());
+		}
+		    |
+		kw='"MAX"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMAXKeyword_8());
+		}
+		    |
+		kw='"MEDIAN"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMEDIANKeyword_9());
+		}
+		    |
+		kw='"MIN"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMINKeyword_10());
+		}
+		    |
 		kw='"OR"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getORKeyword_7());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getORKeyword_11());
 		}
 		    |
 		kw='"aggregationFunction"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getAggregationFunctionKeyword_8());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getAggregationFunctionKeyword_12());
 		}
 		    |
 		kw='"amqp"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getAmqpKeyword_9());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getAmqpKeyword_13());
 		}
 		    |
 		kw='"amqps"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getAmqpsKeyword_10());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getAmqpsKeyword_14());
 		}
 		    |
 		kw='"any"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getAnyKeyword_11());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getAnyKeyword_15());
 		}
 		    |
 		kw='"array"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getArrayKeyword_12());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getArrayKeyword_16());
 		}
 		    |
 		kw='"asyncapi"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getAsyncapiKeyword_13());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getAsyncapiKeyword_17());
 		}
 		    |
-		kw='"atomic"'
+		kw='"availability"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getAtomicKeyword_14());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getAvailabilityKeyword_18());
 		}
 		    |
-		kw='"atomicMetric"'
+		kw='"bandwith"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getAtomicMetricKeyword_15());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getBandwithKeyword_19());
 		}
 		    |
 		kw='"boolean"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getBooleanKeyword_16());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getBooleanKeyword_20());
+		}
+		    |
+		kw='"capacity"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getCapacityKeyword_21());
 		}
 		    |
 		kw='"channels"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getChannelsKeyword_17());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getChannelsKeyword_22());
 		}
 		    |
 		kw='"components"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getComponentsKeyword_18());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getComponentsKeyword_23());
 		}
 		    |
 		kw='"contact"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getContactKeyword_19());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getContactKeyword_24());
+		}
+		    |
+		kw='"cpu"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getCpuKeyword_25());
 		}
 		    |
 		kw='"dataType"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getDataTypeKeyword_20());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getDataTypeKeyword_26());
 		}
 		    |
 		kw='"days"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getDaysKeyword_21());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getDaysKeyword_27());
 		}
 		    |
 		kw='"default"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getDefaultKeyword_22());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getDefaultKeyword_28());
 		}
 		    |
 		kw='"deprecated"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getDeprecatedKeyword_23());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getDeprecatedKeyword_29());
 		}
 		    |
-		kw='"derived"'
+		kw='"derivedQoSMetricDefinition"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getDerivedKeyword_24());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getDerivedQoSMetricDefinitionKeyword_30());
 		}
 		    |
 		kw='"description"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getDescriptionKeyword_25());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getDescriptionKeyword_31());
+		}
+		    |
+		kw='"disaster"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getDisasterKeyword_32());
+		}
+		    |
+		kw='"discoverability"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getDiscoverabilityKeyword_33());
+		}
+		    |
+		kw='"documentation"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getDocumentationKeyword_34());
 		}
 		    |
 		kw='"email"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getEmailKeyword_26());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getEmailKeyword_35());
 		}
 		    |
 		kw='"enum"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getEnumKeyword_27());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getEnumKeyword_36());
+		}
+		    |
+		kw='"exception_handling"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getException_handlingKeyword_37());
+		}
+		    |
+		kw='"expected_failures"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getExpected_failuresKeyword_38());
+		}
+		    |
+		kw='"failover"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getFailoverKeyword_39());
 		}
 		    |
 		kw='"format"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getFormatKeyword_28());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getFormatKeyword_40());
+		}
+		    |
+		kw='"groupedByEvent"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getGroupedByEventKeyword_41());
 		}
 		    |
 		kw='"guaranteeTerm"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getGuaranteeTermKeyword_29());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getGuaranteeTermKeyword_42());
 		}
 		    |
 		kw='"headers"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getHeadersKeyword_30());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getHeadersKeyword_43());
 		}
 		    |
 		kw='"hours"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getHoursKeyword_31());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getHoursKeyword_44());
 		}
 		    |
 		kw='"http"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getHttpKeyword_32());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getHttpKeyword_45());
 		}
 		    |
 		kw='"https"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getHttpsKeyword_33());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getHttpsKeyword_46());
 		}
 		    |
 		kw='"info"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getInfoKeyword_34());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getInfoKeyword_47());
 		}
 		    |
 		kw='"integer"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getIntegerKeyword_35());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getIntegerKeyword_48());
 		}
 		    |
 		kw='"items"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getItemsKeyword_36());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getItemsKeyword_49());
+		}
+		    |
+		kw='"jitter"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getJitterKeyword_50());
 		}
 		    |
 		kw='"jms"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getJmsKeyword_37());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getJmsKeyword_51());
 		}
 		    |
 		kw='"kafka"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getKafkaKeyword_38());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getKafkaKeyword_52());
 		}
 		    |
 		kw='"kafka-secure"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getKafkaSecureKeyword_39());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getKafkaSecureKeyword_53());
+		}
+		    |
+		kw='"latency"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getLatencyKeyword_54());
 		}
 		    |
 		kw='"license"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getLicenseKeyword_40());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getLicenseKeyword_55());
+		}
+		    |
+		kw='"load_balancing"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getLoad_balancingKeyword_56());
 		}
 		    |
 		kw='"location"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getLocationKeyword_41());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getLocationKeyword_57());
 		}
 		    |
 		kw='"maxItems"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMaxItemsKeyword_42());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMaxItemsKeyword_58());
 		}
 		    |
 		kw='"maximum"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMaximumKeyword_43());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMaximumKeyword_59());
+		}
+		    |
+		kw='"maximum_throughput"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMaximum_throughputKeyword_60());
+		}
+		    |
+		kw='"memory_aapacity"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMemory_aapacityKeyword_61());
 		}
 		    |
 		kw='"message"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessageKeyword_44());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessageKeyword_62());
 		}
 		    |
 		kw='"messageTraits"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessageTraitsKeyword_45());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessageTraitsKeyword_63());
 		}
 		    |
 		kw='"messages"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessagesKeyword_46());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMessagesKeyword_64());
 		}
 		    |
 		kw='"metricType"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMetricTypeKeyword_47());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMetricTypeKeyword_65());
 		}
 		    |
 		kw='"milliseconds"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMillisecondsKeyword_48());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMillisecondsKeyword_66());
 		}
 		    |
 		kw='"minItems"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMinItemsKeyword_49());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMinItemsKeyword_67());
 		}
 		    |
 		kw='"minimum"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMinimumKeyword_50());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMinimumKeyword_68());
 		}
 		    |
 		kw='"minutes"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMinutesKeyword_51());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMinutesKeyword_69());
 		}
 		    |
 		kw='"mqtt"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getMqttKeyword_52());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMqttKeyword_70());
+		}
+		    |
+		kw='"mqtts"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getMqttsKeyword_71());
 		}
 		    |
 		kw='"name"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getNameKeyword_53());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getNameKeyword_72());
 		}
 		    |
 		kw='"null"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getNullKeyword_54());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getNullKeyword_73());
 		}
 		    |
 		kw='"number"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getNumberKeyword_55());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getNumberKeyword_74());
 		}
 		    |
 		kw='"object"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getObjectKeyword_56());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getObjectKeyword_75());
 		}
 		    |
 		kw='"operationId"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperationIdKeyword_57());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperationIdKeyword_76());
 		}
 		    |
 		kw='"operationTraits"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperationTraitsKeyword_58());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperationTraitsKeyword_77());
 		}
 		    |
 		kw='"operator"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperatorKeyword_59());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getOperatorKeyword_78());
+		}
+		    |
+		kw='"packet_loss"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getPacket_lossKeyword_79());
 		}
 		    |
 		kw='"parameters"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getParametersKeyword_60());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getParametersKeyword_80());
 		}
 		    |
 		kw='"payload"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getPayloadKeyword_61());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getPayloadKeyword_81());
+		}
+		    |
+		kw='"precision"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getPrecisionKeyword_82());
+		}
+		    |
+		kw='"probability_of_correctness"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getProbability_of_correctnessKeyword_83());
 		}
 		    |
 		kw='"properties"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getPropertiesKeyword_62());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getPropertiesKeyword_84());
 		}
 		    |
 		kw='"protocol"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getProtocolKeyword_63());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getProtocolKeyword_85());
 		}
 		    |
 		kw='"publish"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getPublishKeyword_64());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getPublishKeyword_86());
 		}
 		    |
 		kw='"qosMetric"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getQosMetricKeyword_65());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getQosMetricKeyword_87());
 		}
 		    |
 		kw='"qualifyingConditions"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getQualifyingConditionsKeyword_66());
-		}
-		    |
-		kw='"real"'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getRealKeyword_67());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getQualifyingConditionsKeyword_88());
 		}
 		    |
 		kw='"required"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getRequiredKeyword_68());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getRequiredKeyword_89());
+		}
+		    |
+		kw='"resiliance"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getResilianceKeyword_90());
+		}
+		    |
+		kw='"round_trip_time"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getRound_trip_timeKeyword_91());
 		}
 		    |
 		kw='"schema"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getSchemaKeyword_69());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getSchemaKeyword_92());
 		}
 		    |
 		kw='"schemas"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getSchemasKeyword_70());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getSchemasKeyword_93());
 		}
 		    |
 		kw='"scopes"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getScopesKeyword_71());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getScopesKeyword_94());
 		}
 		    |
 		kw='"seconds"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getSecondsKeyword_72());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getSecondsKeyword_95());
 		}
 		    |
 		kw='"secure-mqtt"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getSecureMqttKeyword_73());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getSecureMqttKeyword_96());
 		}
 		    |
 		kw='"servers"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getServersKeyword_74());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getServersKeyword_97());
 		}
 		    |
 		kw='"slos"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getSlosKeyword_75());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getSlosKeyword_98());
 		}
 		    |
 		kw='"stomp"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getStompKeyword_76());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getStompKeyword_99());
 		}
 		    |
 		kw='"stomps"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getStompsKeyword_77());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getStompsKeyword_100());
 		}
 		    |
 		kw='"string"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getStringKeyword_78());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getStringKeyword_101());
 		}
 		    |
 		kw='"subscribe"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getSubscribeKeyword_79());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getSubscribeKeyword_102());
 		}
 		    |
 		kw='"summary"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getSummaryKeyword_80());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getSummaryKeyword_103());
 		}
 		    |
 		kw='"tags"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getTagsKeyword_81());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getTagsKeyword_104());
 		}
 		    |
 		kw='"termsOfService"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getTermsOfServiceKeyword_82());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getTermsOfServiceKeyword_105());
+		}
+		    |
+		kw='"throughput"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getThroughputKeyword_106());
+		}
+		    |
+		kw='"time_to_tail"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getTime_to_tailKeyword_107());
+		}
+		    |
+		kw='"time_to_tepair"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getTime_to_tepairKeyword_108());
 		}
 		    |
 		kw='"title"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getTitleKeyword_83());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getTitleKeyword_109());
 		}
 		    |
 		kw='"traits"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getTraitsKeyword_84());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getTraitsKeyword_110());
 		}
 		    |
 		kw='"type"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getTypeKeyword_85());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getTypeKeyword_111());
+		}
+		    |
+		kw='"type_consistency"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getType_consistencyKeyword_112());
 		}
 		    |
 		kw='"unit"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getUnitKeyword_86());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getUnitKeyword_113());
+		}
+		    |
+		kw='"up-to-dateness"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getUpToDatenessKeyword_114());
+		}
+		    |
+		kw='"uptime"'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getUptimeKeyword_115());
 		}
 		    |
 		kw='"url"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getUrlKeyword_87());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getUrlKeyword_116());
 		}
 		    |
 		kw='"value"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getValueKeyword_88());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getValueKeyword_117());
 		}
 		    |
 		kw='"variables"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getVariablesKeyword_89());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getVariablesKeyword_118());
 		}
 		    |
 		kw='"version"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getVersionKeyword_90());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getVersionKeyword_119());
 		}
 		    |
 		kw='"window"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getWindowKeyword_91());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getWindowKeyword_120());
 		}
 		    |
 		kw='"windowUnit"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getWindowUnitKeyword_92());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getWindowUnitKeyword_121());
 		}
 		    |
 		kw='"ws"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getWsKeyword_93());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getWsKeyword_122());
 		}
 		    |
 		kw='"wss"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getWssKeyword_94());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getWssKeyword_123());
 		}
 		    |
 		kw='"x-basePackage"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getXBasePackageKeyword_95());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getXBasePackageKeyword_124());
 		}
 		    |
 		kw='"x-qosMetrics"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getXQosMetricsKeyword_96());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getXQosMetricsKeyword_125());
 		}
 		    |
 		kw='"x-sla"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getXSlaKeyword_97());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getXSlaKeyword_126());
 		}
 		    |
 		kw='"x-title"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeywordAccess().getXTitleKeyword_98());
+			newLeafNode(kw, grammarAccess.getKeywordAccess().getXTitleKeyword_127());
 		}
 	)
 ;
@@ -7617,6 +7706,268 @@ ruleWindowUnit returns [Enumerator current=null]
 	)
 ;
 
+// Rule AggregationFunction
+ruleAggregationFunction returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='"AVG"'
+			{
+				$current = grammarAccess.getAggregationFunctionAccess().getAVGEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getAggregationFunctionAccess().getAVGEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='"MEDIAN"'
+			{
+				$current = grammarAccess.getAggregationFunctionAccess().getMEDIANEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getAggregationFunctionAccess().getMEDIANEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='"MAX"'
+			{
+				$current = grammarAccess.getAggregationFunctionAccess().getMAXEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getAggregationFunctionAccess().getMAXEnumLiteralDeclaration_2());
+			}
+		)
+		    |
+		(
+			enumLiteral_3='"MIN"'
+			{
+				$current = grammarAccess.getAggregationFunctionAccess().getMINEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getAggregationFunctionAccess().getMINEnumLiteralDeclaration_3());
+			}
+		)
+	)
+;
+
+// Rule QoSMetricType
+ruleQoSMetricType returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='"availability"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getAvailabilityEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getQoSMetricTypeAccess().getAvailabilityEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='"bandwith"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getBandwithEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getQoSMetricTypeAccess().getBandwithEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='"cpu"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getCpuEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getQoSMetricTypeAccess().getCpuEnumLiteralDeclaration_2());
+			}
+		)
+		    |
+		(
+			enumLiteral_3='"capacity"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getCapacityEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getQoSMetricTypeAccess().getCapacityEnumLiteralDeclaration_3());
+			}
+		)
+		    |
+		(
+			enumLiteral_4='"disaster"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getDisasterEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_4, grammarAccess.getQoSMetricTypeAccess().getDisasterEnumLiteralDeclaration_4());
+			}
+		)
+		    |
+		(
+			enumLiteral_5='"resiliance"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getResilianceEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_5, grammarAccess.getQoSMetricTypeAccess().getResilianceEnumLiteralDeclaration_5());
+			}
+		)
+		    |
+		(
+			enumLiteral_6='"discoverability"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getDiscoverabilityEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_6, grammarAccess.getQoSMetricTypeAccess().getDiscoverabilityEnumLiteralDeclaration_6());
+			}
+		)
+		    |
+		(
+			enumLiteral_7='"documentation"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getDocumentationEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_7, grammarAccess.getQoSMetricTypeAccess().getDocumentationEnumLiteralDeclaration_7());
+			}
+		)
+		    |
+		(
+			enumLiteral_8='"exception_handling"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getException_handlingEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_8, grammarAccess.getQoSMetricTypeAccess().getException_handlingEnumLiteralDeclaration_8());
+			}
+		)
+		    |
+		(
+			enumLiteral_9='"expected_failures"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getExpected_failuresEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_9, grammarAccess.getQoSMetricTypeAccess().getExpected_failuresEnumLiteralDeclaration_9());
+			}
+		)
+		    |
+		(
+			enumLiteral_10='"failover"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getFailoverEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_10, grammarAccess.getQoSMetricTypeAccess().getFailoverEnumLiteralDeclaration_10());
+			}
+		)
+		    |
+		(
+			enumLiteral_11='"jitter"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getJitterEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_11, grammarAccess.getQoSMetricTypeAccess().getJitterEnumLiteralDeclaration_11());
+			}
+		)
+		    |
+		(
+			enumLiteral_12='"latency"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getLatencyEnumLiteralDeclaration_12().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_12, grammarAccess.getQoSMetricTypeAccess().getLatencyEnumLiteralDeclaration_12());
+			}
+		)
+		    |
+		(
+			enumLiteral_13='"load_balancing"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getLoad_balancingEnumLiteralDeclaration_13().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_13, grammarAccess.getQoSMetricTypeAccess().getLoad_balancingEnumLiteralDeclaration_13());
+			}
+		)
+		    |
+		(
+			enumLiteral_14='"maximum_throughput"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getMaximum_throughputEnumLiteralDeclaration_14().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_14, grammarAccess.getQoSMetricTypeAccess().getMaximum_throughputEnumLiteralDeclaration_14());
+			}
+		)
+		    |
+		(
+			enumLiteral_15='"memory_aapacity"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getMemory_aapacityEnumLiteralDeclaration_15().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_15, grammarAccess.getQoSMetricTypeAccess().getMemory_aapacityEnumLiteralDeclaration_15());
+			}
+		)
+		    |
+		(
+			enumLiteral_16='"packet_loss"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getPacket_lossEnumLiteralDeclaration_16().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_16, grammarAccess.getQoSMetricTypeAccess().getPacket_lossEnumLiteralDeclaration_16());
+			}
+		)
+		    |
+		(
+			enumLiteral_17='"precision"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getPrecisionEnumLiteralDeclaration_17().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_17, grammarAccess.getQoSMetricTypeAccess().getPrecisionEnumLiteralDeclaration_17());
+			}
+		)
+		    |
+		(
+			enumLiteral_18='"probability_of_correctness"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getProbability_of_correctnessEnumLiteralDeclaration_18().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_18, grammarAccess.getQoSMetricTypeAccess().getProbability_of_correctnessEnumLiteralDeclaration_18());
+			}
+		)
+		    |
+		(
+			enumLiteral_19='"round_trip_time"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getRound_trip_timeEnumLiteralDeclaration_19().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_19, grammarAccess.getQoSMetricTypeAccess().getRound_trip_timeEnumLiteralDeclaration_19());
+			}
+		)
+		    |
+		(
+			enumLiteral_20='"throughput"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getThroughputEnumLiteralDeclaration_20().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_20, grammarAccess.getQoSMetricTypeAccess().getThroughputEnumLiteralDeclaration_20());
+			}
+		)
+		    |
+		(
+			enumLiteral_21='"time_to_tail"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getTime_to_tailEnumLiteralDeclaration_21().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_21, grammarAccess.getQoSMetricTypeAccess().getTime_to_tailEnumLiteralDeclaration_21());
+			}
+		)
+		    |
+		(
+			enumLiteral_22='"time_to_tepair"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getTime_to_tepairEnumLiteralDeclaration_22().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_22, grammarAccess.getQoSMetricTypeAccess().getTime_to_tepairEnumLiteralDeclaration_22());
+			}
+		)
+		    |
+		(
+			enumLiteral_23='"type_consistency"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getType_consistencyEnumLiteralDeclaration_23().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_23, grammarAccess.getQoSMetricTypeAccess().getType_consistencyEnumLiteralDeclaration_23());
+			}
+		)
+		    |
+		(
+			enumLiteral_24='"uptime"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getUptimeEnumLiteralDeclaration_24().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_24, grammarAccess.getQoSMetricTypeAccess().getUptimeEnumLiteralDeclaration_24());
+			}
+		)
+		    |
+		(
+			enumLiteral_25='"up-to-dateness"'
+			{
+				$current = grammarAccess.getQoSMetricTypeAccess().getUp_to_datenessEnumLiteralDeclaration_25().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_25, grammarAccess.getQoSMetricTypeAccess().getUp_to_datenessEnumLiteralDeclaration_25());
+			}
+		)
+	)
+;
+
 // Rule QoSMetricUnit
 ruleQoSMetricUnit returns [Enumerator current=null]
 @init {
@@ -7663,41 +8014,6 @@ ruleQoSMetricUnit returns [Enumerator current=null]
 			{
 				$current = grammarAccess.getQoSMetricUnitAccess().getNullEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_4, grammarAccess.getQoSMetricUnitAccess().getNullEnumLiteralDeclaration_4());
-			}
-		)
-	)
-;
-
-// Rule QoSMetricType
-ruleQoSMetricType returns [Enumerator current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			enumLiteral_0='"real"'
-			{
-				$current = grammarAccess.getQoSMetricTypeAccess().getRealEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getQoSMetricTypeAccess().getRealEnumLiteralDeclaration_0());
-			}
-		)
-		    |
-		(
-			enumLiteral_1='"integer"'
-			{
-				$current = grammarAccess.getQoSMetricTypeAccess().getIntegerEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getQoSMetricTypeAccess().getIntegerEnumLiteralDeclaration_1());
-			}
-		)
-		    |
-		(
-			enumLiteral_2='"boolean"'
-			{
-				$current = grammarAccess.getQoSMetricTypeAccess().getBooleanEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getQoSMetricTypeAccess().getBooleanEnumLiteralDeclaration_2());
 			}
 		)
 	)

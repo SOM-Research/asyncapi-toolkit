@@ -3,19 +3,18 @@
  */
 package io.github.abelgomez.asyncapi.asyncApi.util;
 
-import io.github.abelgomez.asyncapi.asyncApi.ANDCondition;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractMessage;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractMessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractOperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractParameter;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractQoSMetric;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema;
+import io.github.abelgomez.asyncapi.asyncApi.AndExpression;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
-import io.github.abelgomez.asyncapi.asyncApi.AtomicBooleanCondition;
-import io.github.abelgomez.asyncapi.asyncApi.AtomicQoSMetric;
-import io.github.abelgomez.asyncapi.asyncApi.BooleanCondition;
+import io.github.abelgomez.asyncapi.asyncApi.BooleanExpression;
 import io.github.abelgomez.asyncapi.asyncApi.Channel;
+import io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression;
 import io.github.abelgomez.asyncapi.asyncApi.Components;
 import io.github.abelgomez.asyncapi.asyncApi.Contact;
 import io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric;
@@ -28,13 +27,13 @@ import io.github.abelgomez.asyncapi.asyncApi.NamedMessage;
 import io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedParameter;
-import io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric;
 import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
-import io.github.abelgomez.asyncapi.asyncApi.ORCondition;
 import io.github.abelgomez.asyncapi.asyncApi.Operation;
 import io.github.abelgomez.asyncapi.asyncApi.OperationTrait;
+import io.github.abelgomez.asyncapi.asyncApi.OrExpression;
 import io.github.abelgomez.asyncapi.asyncApi.Parameter;
 import io.github.abelgomez.asyncapi.asyncApi.QoSMetric;
+import io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference;
 import io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition;
 import io.github.abelgomez.asyncapi.asyncApi.Reference;
 import io.github.abelgomez.asyncapi.asyncApi.Schema;
@@ -335,6 +334,14 @@ public class AsyncApiSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AsyncApiPackage.QO_SMETRIC_REFERENCE:
+      {
+        QoSMetricReference qoSMetricReference = (QoSMetricReference)theEObject;
+        T result = caseQoSMetricReference(qoSMetricReference);
+        if (result == null) result = caseAbstractQoSMetric(qoSMetricReference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AsyncApiPackage.QO_SMETRIC:
       {
         QoSMetric qoSMetric = (QoSMetric)theEObject;
@@ -352,51 +359,34 @@ public class AsyncApiSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AsyncApiPackage.ATOMIC_QO_SMETRIC:
+      case AsyncApiPackage.BOOLEAN_EXPRESSION:
       {
-        AtomicQoSMetric atomicQoSMetric = (AtomicQoSMetric)theEObject;
-        T result = caseAtomicQoSMetric(atomicQoSMetric);
-        if (result == null) result = caseQoSMetric(atomicQoSMetric);
-        if (result == null) result = caseAbstractQoSMetric(atomicQoSMetric);
+        BooleanExpression booleanExpression = (BooleanExpression)theEObject;
+        T result = caseBooleanExpression(booleanExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AsyncApiPackage.NAMED_QO_SMETRIC:
+      case AsyncApiPackage.AND_EXPRESSION:
       {
-        NamedQoSMetric namedQoSMetric = (NamedQoSMetric)theEObject;
-        T result = caseNamedQoSMetric(namedQoSMetric);
+        AndExpression andExpression = (AndExpression)theEObject;
+        T result = caseAndExpression(andExpression);
+        if (result == null) result = caseBooleanExpression(andExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AsyncApiPackage.BOOLEAN_CONDITION:
+      case AsyncApiPackage.OR_EXPRESSION:
       {
-        BooleanCondition booleanCondition = (BooleanCondition)theEObject;
-        T result = caseBooleanCondition(booleanCondition);
+        OrExpression orExpression = (OrExpression)theEObject;
+        T result = caseOrExpression(orExpression);
+        if (result == null) result = caseBooleanExpression(orExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AsyncApiPackage.AND_CONDITION:
+      case AsyncApiPackage.COMPARISON_EXPRESSION:
       {
-        ANDCondition andCondition = (ANDCondition)theEObject;
-        T result = caseANDCondition(andCondition);
-        if (result == null) result = caseORCondition(andCondition);
-        if (result == null) result = caseBooleanCondition(andCondition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AsyncApiPackage.OR_CONDITION:
-      {
-        ORCondition orCondition = (ORCondition)theEObject;
-        T result = caseORCondition(orCondition);
-        if (result == null) result = caseBooleanCondition(orCondition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AsyncApiPackage.ATOMIC_BOOLEAN_CONDITION:
-      {
-        AtomicBooleanCondition atomicBooleanCondition = (AtomicBooleanCondition)theEObject;
-        T result = caseAtomicBooleanCondition(atomicBooleanCondition);
-        if (result == null) result = caseBooleanCondition(atomicBooleanCondition);
+        ComparisonExpression comparisonExpression = (ComparisonExpression)theEObject;
+        T result = caseComparisonExpression(comparisonExpression);
+        if (result == null) result = caseBooleanExpression(comparisonExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -409,7 +399,6 @@ public class AsyncApiSwitch<T> extends Switch<T>
         if (result == null) result = caseAbstractParameter(reference);
         if (result == null) result = caseAbstractOperationTrait(reference);
         if (result == null) result = caseAbstractMessageTrait(reference);
-        if (result == null) result = caseAbstractQoSMetric(reference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -914,6 +903,22 @@ public class AsyncApiSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Qo SMetric Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Qo SMetric Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQoSMetricReference(QoSMetricReference object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Qo SMetric</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -946,97 +951,65 @@ public class AsyncApiSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Atomic Qo SMetric</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Atomic Qo SMetric</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAtomicQoSMetric(AtomicQoSMetric object)
+  public T caseBooleanExpression(BooleanExpression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Named Qo SMetric</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>And Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Named Qo SMetric</em>'.
+   * @return the result of interpreting the object as an instance of '<em>And Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNamedQoSMetric(NamedQoSMetric object)
+  public T caseAndExpression(AndExpression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Boolean Condition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Or Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Boolean Condition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Or Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBooleanCondition(BooleanCondition object)
+  public T caseOrExpression(OrExpression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>AND Condition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Comparison Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>AND Condition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Comparison Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseANDCondition(ANDCondition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>OR Condition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>OR Condition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseORCondition(ORCondition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Atomic Boolean Condition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Atomic Boolean Condition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAtomicBooleanCondition(AtomicBooleanCondition object)
+  public T caseComparisonExpression(ComparisonExpression object)
   {
     return null;
   }

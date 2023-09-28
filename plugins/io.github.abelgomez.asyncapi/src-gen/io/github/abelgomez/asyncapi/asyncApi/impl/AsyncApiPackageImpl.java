@@ -3,20 +3,20 @@
  */
 package io.github.abelgomez.asyncapi.asyncApi.impl;
 
-import io.github.abelgomez.asyncapi.asyncApi.ANDCondition;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractMessage;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractMessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractOperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractParameter;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractQoSMetric;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema;
+import io.github.abelgomez.asyncapi.asyncApi.AggregationFunction;
+import io.github.abelgomez.asyncapi.asyncApi.AndExpression;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiFactory;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
-import io.github.abelgomez.asyncapi.asyncApi.AtomicBooleanCondition;
-import io.github.abelgomez.asyncapi.asyncApi.AtomicQoSMetric;
-import io.github.abelgomez.asyncapi.asyncApi.BooleanCondition;
+import io.github.abelgomez.asyncapi.asyncApi.BooleanExpression;
 import io.github.abelgomez.asyncapi.asyncApi.Channel;
+import io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression;
 import io.github.abelgomez.asyncapi.asyncApi.Components;
 import io.github.abelgomez.asyncapi.asyncApi.Contact;
 import io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric;
@@ -30,15 +30,15 @@ import io.github.abelgomez.asyncapi.asyncApi.NamedMessage;
 import io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedParameter;
-import io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric;
 import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
-import io.github.abelgomez.asyncapi.asyncApi.ORCondition;
 import io.github.abelgomez.asyncapi.asyncApi.Operation;
 import io.github.abelgomez.asyncapi.asyncApi.OperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.Operator;
+import io.github.abelgomez.asyncapi.asyncApi.OrExpression;
 import io.github.abelgomez.asyncapi.asyncApi.Parameter;
 import io.github.abelgomez.asyncapi.asyncApi.Protocol;
 import io.github.abelgomez.asyncapi.asyncApi.QoSMetric;
+import io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference;
 import io.github.abelgomez.asyncapi.asyncApi.QoSMetricType;
 import io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit;
 import io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition;
@@ -291,6 +291,13 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass qoSMetricReferenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass qoSMetricEClass = null;
 
   /**
@@ -305,42 +312,28 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass atomicQoSMetricEClass = null;
+  private EClass booleanExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass namedQoSMetricEClass = null;
+  private EClass andExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass booleanConditionEClass = null;
+  private EClass orExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass andConditionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass orConditionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass atomicBooleanConditionEClass = null;
+  private EClass comparisonExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -361,7 +354,7 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum qoSMetricUnitEEnum = null;
+  private EEnum aggregationFunctionEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -369,6 +362,13 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   private EEnum qoSMetricTypeEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum qoSMetricUnitEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1772,7 +1772,7 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EReference getGuaranteeTerm_Scope()
+  public EReference getGuaranteeTerm_QualifyingConditions()
   {
     return (EReference)guaranteeTermEClass.getEStructuralFeatures().get(1);
   }
@@ -1783,42 +1783,9 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EReference getGuaranteeTerm_QualifyingConditions()
-  {
-    return (EReference)guaranteeTermEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getGuaranteeTerm_QualifyingCondition()
-  {
-    return (EReference)guaranteeTermEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getGuaranteeTerm_Slos()
   {
-    return (EReference)guaranteeTermEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getGuaranteeTerm_Slo()
-  {
-    return (EReference)guaranteeTermEClass.getEStructuralFeatures().get(5);
+    return (EReference)guaranteeTermEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1937,6 +1904,28 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
+  public EClass getQoSMetricReference()
+  {
+    return qoSMetricReferenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getQoSMetricReference_Metric()
+  {
+    return (EReference)qoSMetricReferenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getQoSMetric()
   {
     return qoSMetricEClass;
@@ -1948,7 +1937,7 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EAttribute getQoSMetric_Description()
+  public EAttribute getQoSMetric_Name()
   {
     return (EAttribute)qoSMetricEClass.getEStructuralFeatures().get(0);
   }
@@ -1959,7 +1948,7 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EAttribute getQoSMetric_Unit()
+  public EAttribute getQoSMetric_MetricType()
   {
     return (EAttribute)qoSMetricEClass.getEStructuralFeatures().get(1);
   }
@@ -1970,9 +1959,31 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EAttribute getQoSMetric_DataType()
+  public EAttribute getQoSMetric_Description()
   {
     return (EAttribute)qoSMetricEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getQoSMetric_Unit()
+  {
+    return (EAttribute)qoSMetricEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getQoSMetric_GroupedByEvent()
+  {
+    return (EAttribute)qoSMetricEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -2025,9 +2036,9 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EReference getDerivedQoSMetric_AtomicMetric()
+  public EClass getBooleanExpression()
   {
-    return (EReference)derivedQoSMetricEClass.getEStructuralFeatures().get(3);
+    return booleanExpressionEClass;
   }
 
   /**
@@ -2036,9 +2047,9 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EClass getAtomicQoSMetric()
+  public EClass getAndExpression()
   {
-    return atomicQoSMetricEClass;
+    return andExpressionEClass;
   }
 
   /**
@@ -2047,9 +2058,9 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EClass getNamedQoSMetric()
+  public EReference getAndExpression_Conditions()
   {
-    return namedQoSMetricEClass;
+    return (EReference)andExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2058,9 +2069,9 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EAttribute getNamedQoSMetric_Name()
+  public EClass getOrExpression()
   {
-    return (EAttribute)namedQoSMetricEClass.getEStructuralFeatures().get(0);
+    return orExpressionEClass;
   }
 
   /**
@@ -2069,9 +2080,9 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EReference getNamedQoSMetric_QosMetric()
+  public EReference getOrExpression_Conditions()
   {
-    return (EReference)namedQoSMetricEClass.getEStructuralFeatures().get(1);
+    return (EReference)orExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2080,9 +2091,9 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EClass getBooleanCondition()
+  public EClass getComparisonExpression()
   {
-    return booleanConditionEClass;
+    return comparisonExpressionEClass;
   }
 
   /**
@@ -2091,9 +2102,9 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EClass getANDCondition()
+  public EReference getComparisonExpression_QosMetric()
   {
-    return andConditionEClass;
+    return (EReference)comparisonExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2102,9 +2113,9 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EReference getANDCondition_Conditions()
+  public EAttribute getComparisonExpression_Operator()
   {
-    return (EReference)andConditionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)comparisonExpressionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2113,53 +2124,9 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EClass getORCondition()
+  public EAttribute getComparisonExpression_Value()
   {
-    return orConditionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getAtomicBooleanCondition()
-  {
-    return atomicBooleanConditionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getAtomicBooleanCondition_QosMetric()
-  {
-    return (EReference)atomicBooleanConditionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getAtomicBooleanCondition_Operator()
-  {
-    return (EAttribute)atomicBooleanConditionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getAtomicBooleanCondition_Value()
-  {
-    return (EAttribute)atomicBooleanConditionEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)comparisonExpressionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2201,9 +2168,9 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
    * @generated
    */
   @Override
-  public EEnum getQoSMetricUnit()
+  public EEnum getAggregationFunction()
   {
-    return qoSMetricUnitEEnum;
+    return aggregationFunctionEEnum;
   }
 
   /**
@@ -2215,6 +2182,17 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
   public EEnum getQoSMetricType()
   {
     return qoSMetricTypeEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getQoSMetricUnit()
+  {
+    return qoSMetricUnitEEnum;
   }
 
   /**
@@ -2447,11 +2425,8 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
 
     guaranteeTermEClass = createEClass(GUARANTEE_TERM);
     createEReference(guaranteeTermEClass, GUARANTEE_TERM__SCOPES);
-    createEReference(guaranteeTermEClass, GUARANTEE_TERM__SCOPE);
     createEReference(guaranteeTermEClass, GUARANTEE_TERM__QUALIFYING_CONDITIONS);
-    createEReference(guaranteeTermEClass, GUARANTEE_TERM__QUALIFYING_CONDITION);
     createEReference(guaranteeTermEClass, GUARANTEE_TERM__SLOS);
-    createEReference(guaranteeTermEClass, GUARANTEE_TERM__SLO);
 
     scopeEClass = createEClass(SCOPE);
     createEAttribute(scopeEClass, SCOPE__NAME);
@@ -2467,42 +2442,42 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
 
     abstractQoSMetricEClass = createEClass(ABSTRACT_QO_SMETRIC);
 
+    qoSMetricReferenceEClass = createEClass(QO_SMETRIC_REFERENCE);
+    createEReference(qoSMetricReferenceEClass, QO_SMETRIC_REFERENCE__METRIC);
+
     qoSMetricEClass = createEClass(QO_SMETRIC);
+    createEAttribute(qoSMetricEClass, QO_SMETRIC__NAME);
+    createEAttribute(qoSMetricEClass, QO_SMETRIC__METRIC_TYPE);
     createEAttribute(qoSMetricEClass, QO_SMETRIC__DESCRIPTION);
     createEAttribute(qoSMetricEClass, QO_SMETRIC__UNIT);
-    createEAttribute(qoSMetricEClass, QO_SMETRIC__DATA_TYPE);
+    createEAttribute(qoSMetricEClass, QO_SMETRIC__GROUPED_BY_EVENT);
 
     derivedQoSMetricEClass = createEClass(DERIVED_QO_SMETRIC);
     createEAttribute(derivedQoSMetricEClass, DERIVED_QO_SMETRIC__WINDOW);
     createEAttribute(derivedQoSMetricEClass, DERIVED_QO_SMETRIC__WINDOW_UNIT);
     createEAttribute(derivedQoSMetricEClass, DERIVED_QO_SMETRIC__AGGREGATION_FUNCTION);
-    createEReference(derivedQoSMetricEClass, DERIVED_QO_SMETRIC__ATOMIC_METRIC);
 
-    atomicQoSMetricEClass = createEClass(ATOMIC_QO_SMETRIC);
+    booleanExpressionEClass = createEClass(BOOLEAN_EXPRESSION);
 
-    namedQoSMetricEClass = createEClass(NAMED_QO_SMETRIC);
-    createEAttribute(namedQoSMetricEClass, NAMED_QO_SMETRIC__NAME);
-    createEReference(namedQoSMetricEClass, NAMED_QO_SMETRIC__QOS_METRIC);
+    andExpressionEClass = createEClass(AND_EXPRESSION);
+    createEReference(andExpressionEClass, AND_EXPRESSION__CONDITIONS);
 
-    booleanConditionEClass = createEClass(BOOLEAN_CONDITION);
+    orExpressionEClass = createEClass(OR_EXPRESSION);
+    createEReference(orExpressionEClass, OR_EXPRESSION__CONDITIONS);
 
-    andConditionEClass = createEClass(AND_CONDITION);
-    createEReference(andConditionEClass, AND_CONDITION__CONDITIONS);
-
-    orConditionEClass = createEClass(OR_CONDITION);
-
-    atomicBooleanConditionEClass = createEClass(ATOMIC_BOOLEAN_CONDITION);
-    createEReference(atomicBooleanConditionEClass, ATOMIC_BOOLEAN_CONDITION__QOS_METRIC);
-    createEAttribute(atomicBooleanConditionEClass, ATOMIC_BOOLEAN_CONDITION__OPERATOR);
-    createEAttribute(atomicBooleanConditionEClass, ATOMIC_BOOLEAN_CONDITION__VALUE);
+    comparisonExpressionEClass = createEClass(COMPARISON_EXPRESSION);
+    createEReference(comparisonExpressionEClass, COMPARISON_EXPRESSION__QOS_METRIC);
+    createEAttribute(comparisonExpressionEClass, COMPARISON_EXPRESSION__OPERATOR);
+    createEAttribute(comparisonExpressionEClass, COMPARISON_EXPRESSION__VALUE);
 
     referenceEClass = createEClass(REFERENCE);
     createEAttribute(referenceEClass, REFERENCE__URI);
 
     // Create enums
     windowUnitEEnum = createEEnum(WINDOW_UNIT);
-    qoSMetricUnitEEnum = createEEnum(QO_SMETRIC_UNIT);
+    aggregationFunctionEEnum = createEEnum(AGGREGATION_FUNCTION);
     qoSMetricTypeEEnum = createEEnum(QO_SMETRIC_TYPE);
+    qoSMetricUnitEEnum = createEEnum(QO_SMETRIC_UNIT);
     operatorEEnum = createEEnum(OPERATOR);
     jsonTypeEEnum = createEEnum(JSON_TYPE);
     booleanEEnum = createEEnum(BOOLEAN);
@@ -2544,19 +2519,17 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
     parameterEClass.getESuperTypes().add(this.getAbstractParameter());
     operationTraitEClass.getESuperTypes().add(this.getAbstractOperationTrait());
     messageTraitEClass.getESuperTypes().add(this.getAbstractMessageTrait());
+    qoSMetricReferenceEClass.getESuperTypes().add(this.getAbstractQoSMetric());
     qoSMetricEClass.getESuperTypes().add(this.getAbstractQoSMetric());
     derivedQoSMetricEClass.getESuperTypes().add(this.getQoSMetric());
-    atomicQoSMetricEClass.getESuperTypes().add(this.getQoSMetric());
-    andConditionEClass.getESuperTypes().add(this.getBooleanCondition());
-    andConditionEClass.getESuperTypes().add(this.getORCondition());
-    orConditionEClass.getESuperTypes().add(this.getBooleanCondition());
-    atomicBooleanConditionEClass.getESuperTypes().add(this.getBooleanCondition());
+    andExpressionEClass.getESuperTypes().add(this.getBooleanExpression());
+    orExpressionEClass.getESuperTypes().add(this.getBooleanExpression());
+    comparisonExpressionEClass.getESuperTypes().add(this.getBooleanExpression());
     referenceEClass.getESuperTypes().add(this.getAbstractMessage());
     referenceEClass.getESuperTypes().add(this.getAbstractSchema());
     referenceEClass.getESuperTypes().add(this.getAbstractParameter());
     referenceEClass.getESuperTypes().add(this.getAbstractOperationTrait());
     referenceEClass.getESuperTypes().add(this.getAbstractMessageTrait());
-    referenceEClass.getESuperTypes().add(this.getAbstractQoSMetric());
 
     // Initialize classes and features; add operations and parameters
     initEClass(asyncAPIEClass, AsyncAPI.class, "AsyncAPI", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2696,61 +2669,57 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
     initEReference(getComponents_Parameters(), this.getNamedParameter(), null, "parameters", null, 0, -1, Components.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponents_OperationTraits(), this.getNamedOperationTrait(), null, "operationTraits", null, 0, -1, Components.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponents_MessageTraits(), this.getNamedMessageTrait(), null, "messageTraits", null, 0, -1, Components.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponents_QosMetrics(), this.getNamedQoSMetric(), null, "qosMetrics", null, 0, -1, Components.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponents_QosMetrics(), this.getQoSMetric(), null, "qosMetrics", null, 0, -1, Components.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(slaEClass, Sla.class, "Sla", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSla_GuaranteeTerm(), this.getGuaranteeTerm(), null, "guaranteeTerm", null, 0, -1, Sla.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(guaranteeTermEClass, GuaranteeTerm.class, "GuaranteeTerm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getGuaranteeTerm_Scopes(), this.getScope(), null, "scopes", null, 0, -1, GuaranteeTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGuaranteeTerm_Scope(), this.getScope(), null, "scope", null, 0, -1, GuaranteeTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGuaranteeTerm_QualifyingConditions(), this.getQualifyingCondition(), null, "qualifyingConditions", null, 0, -1, GuaranteeTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGuaranteeTerm_QualifyingCondition(), this.getQualifyingCondition(), null, "qualifyingCondition", null, 0, -1, GuaranteeTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGuaranteeTerm_Slos(), this.getSlo(), null, "slos", null, 0, -1, GuaranteeTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGuaranteeTerm_Slo(), this.getSlo(), null, "slo", null, 0, -1, GuaranteeTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(scopeEClass, Scope.class, "Scope", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getScope_Name(), ecorePackage.getEString(), "name", null, 0, 1, Scope.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScope_Reference(), ecorePackage.getEObject(), null, "reference", null, 0, 1, Scope.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScope_Reference(), this.getChannel(), null, "reference", null, 0, 1, Scope.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(qualifyingConditionEClass, QualifyingCondition.class, "QualifyingCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getQualifyingCondition_Name(), ecorePackage.getEString(), "name", null, 0, 1, QualifyingCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getQualifyingCondition_Condition(), this.getBooleanCondition(), null, "condition", null, 0, 1, QualifyingCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getQualifyingCondition_Condition(), this.getBooleanExpression(), null, "condition", null, 0, 1, QualifyingCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sloEClass, Slo.class, "Slo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSlo_Name(), ecorePackage.getEString(), "name", null, 0, 1, Slo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSlo_Condition(), this.getBooleanCondition(), null, "condition", null, 0, 1, Slo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSlo_Condition(), this.getBooleanExpression(), null, "condition", null, 0, 1, Slo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractQoSMetricEClass, AbstractQoSMetric.class, "AbstractQoSMetric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(qoSMetricReferenceEClass, QoSMetricReference.class, "QoSMetricReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getQoSMetricReference_Metric(), this.getQoSMetric(), null, "metric", null, 0, 1, QoSMetricReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(qoSMetricEClass, QoSMetric.class, "QoSMetric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getQoSMetric_Name(), ecorePackage.getEString(), "name", null, 0, 1, QoSMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQoSMetric_MetricType(), this.getQoSMetricType(), "metricType", null, 0, 1, QoSMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getQoSMetric_Description(), ecorePackage.getEString(), "description", null, 0, 1, QoSMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getQoSMetric_Unit(), this.getQoSMetricUnit(), "unit", null, 0, 1, QoSMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getQoSMetric_DataType(), this.getQoSMetricType(), "dataType", null, 0, 1, QoSMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQoSMetric_GroupedByEvent(), this.getBoolean(), "groupedByEvent", null, 0, 1, QoSMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(derivedQoSMetricEClass, DerivedQoSMetric.class, "DerivedQoSMetric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDerivedQoSMetric_Window(), ecorePackage.getEString(), "window", null, 0, 1, DerivedQoSMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDerivedQoSMetric_WindowUnit(), this.getWindowUnit(), "windowUnit", null, 0, 1, DerivedQoSMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDerivedQoSMetric_AggregationFunction(), ecorePackage.getEString(), "aggregationFunction", null, 0, 1, DerivedQoSMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDerivedQoSMetric_AtomicMetric(), this.getAbstractQoSMetric(), null, "atomicMetric", null, 0, 1, DerivedQoSMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDerivedQoSMetric_AggregationFunction(), this.getAggregationFunction(), "aggregationFunction", null, 0, 1, DerivedQoSMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(atomicQoSMetricEClass, AtomicQoSMetric.class, "AtomicQoSMetric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(booleanExpressionEClass, BooleanExpression.class, "BooleanExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(namedQoSMetricEClass, NamedQoSMetric.class, "NamedQoSMetric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNamedQoSMetric_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedQoSMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNamedQoSMetric_QosMetric(), this.getAbstractQoSMetric(), null, "qosMetric", null, 0, 1, NamedQoSMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(andExpressionEClass, AndExpression.class, "AndExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAndExpression_Conditions(), this.getBooleanExpression(), null, "conditions", null, 0, -1, AndExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(booleanConditionEClass, BooleanCondition.class, "BooleanCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(orExpressionEClass, OrExpression.class, "OrExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOrExpression_Conditions(), this.getBooleanExpression(), null, "conditions", null, 0, -1, OrExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(andConditionEClass, ANDCondition.class, "ANDCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getANDCondition_Conditions(), this.getBooleanCondition(), null, "conditions", null, 0, -1, ANDCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(orConditionEClass, ORCondition.class, "ORCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(atomicBooleanConditionEClass, AtomicBooleanCondition.class, "AtomicBooleanCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAtomicBooleanCondition_QosMetric(), this.getAbstractQoSMetric(), null, "qosMetric", null, 0, 1, AtomicBooleanCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAtomicBooleanCondition_Operator(), this.getOperator(), "operator", null, 0, 1, AtomicBooleanCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAtomicBooleanCondition_Value(), ecorePackage.getEString(), "value", null, 0, 1, AtomicBooleanCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(comparisonExpressionEClass, ComparisonExpression.class, "ComparisonExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getComparisonExpression_QosMetric(), this.getAbstractQoSMetric(), null, "qosMetric", null, 0, 1, ComparisonExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComparisonExpression_Operator(), this.getOperator(), "operator", null, 0, 1, ComparisonExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComparisonExpression_Value(), ecorePackage.getEString(), "value", null, 0, 1, ComparisonExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getReference_Uri(), ecorePackage.getEString(), "uri", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2763,17 +2732,46 @@ public class AsyncApiPackageImpl extends EPackageImpl implements AsyncApiPackage
     addEEnumLiteral(windowUnitEEnum, WindowUnit.DAYS);
     addEEnumLiteral(windowUnitEEnum, WindowUnit.MESSAGES);
 
+    initEEnum(aggregationFunctionEEnum, AggregationFunction.class, "AggregationFunction");
+    addEEnumLiteral(aggregationFunctionEEnum, AggregationFunction.AVG);
+    addEEnumLiteral(aggregationFunctionEEnum, AggregationFunction.MEDIAN);
+    addEEnumLiteral(aggregationFunctionEEnum, AggregationFunction.MAX);
+    addEEnumLiteral(aggregationFunctionEEnum, AggregationFunction.MIN);
+
+    initEEnum(qoSMetricTypeEEnum, QoSMetricType.class, "QoSMetricType");
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.AVAILABILITY);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.BANDWITH);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.CPU);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.CAPACITY);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.DISASTER);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.RESILIANCE);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.DISCOVERABILITY);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.DOCUMENTATION);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.EXCEPTION_HANDLING);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.EXPECTED_FAILURES);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.FAILOVER);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.JITTER);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.LATENCY);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.LOAD_BALANCING);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.MAXIMUM_THROUGHPUT);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.MEMORY_AAPACITY);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.PACKET_LOSS);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.PRECISION);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.PROBABILITY_OF_CORRECTNESS);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.ROUND_TRIP_TIME);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.THROUGHPUT);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.TIME_TO_TAIL);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.TIME_TO_TEPAIR);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.TYPE_CONSISTENCY);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.UPTIME);
+    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.UP_TO_DATENESS);
+
     initEEnum(qoSMetricUnitEEnum, QoSMetricUnit.class, "QoSMetricUnit");
     addEEnumLiteral(qoSMetricUnitEEnum, QoSMetricUnit.MILLISECONDS);
     addEEnumLiteral(qoSMetricUnitEEnum, QoSMetricUnit.SECONDS);
     addEEnumLiteral(qoSMetricUnitEEnum, QoSMetricUnit.MINUTES);
     addEEnumLiteral(qoSMetricUnitEEnum, QoSMetricUnit.HOURS);
     addEEnumLiteral(qoSMetricUnitEEnum, QoSMetricUnit.NULL);
-
-    initEEnum(qoSMetricTypeEEnum, QoSMetricType.class, "QoSMetricType");
-    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.REAL);
-    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.INTEGER);
-    addEEnumLiteral(qoSMetricTypeEEnum, QoSMetricType.BOOLEAN);
 
     initEEnum(operatorEEnum, Operator.class, "Operator");
     addEEnumLiteral(operatorEEnum, Operator.GREATER);

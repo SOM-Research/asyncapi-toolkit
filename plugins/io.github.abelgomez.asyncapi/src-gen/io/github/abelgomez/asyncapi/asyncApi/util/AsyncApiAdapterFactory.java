@@ -3,19 +3,18 @@
  */
 package io.github.abelgomez.asyncapi.asyncApi.util;
 
-import io.github.abelgomez.asyncapi.asyncApi.ANDCondition;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractMessage;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractMessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractOperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractParameter;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractQoSMetric;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema;
+import io.github.abelgomez.asyncapi.asyncApi.AndExpression;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
-import io.github.abelgomez.asyncapi.asyncApi.AtomicBooleanCondition;
-import io.github.abelgomez.asyncapi.asyncApi.AtomicQoSMetric;
-import io.github.abelgomez.asyncapi.asyncApi.BooleanCondition;
+import io.github.abelgomez.asyncapi.asyncApi.BooleanExpression;
 import io.github.abelgomez.asyncapi.asyncApi.Channel;
+import io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression;
 import io.github.abelgomez.asyncapi.asyncApi.Components;
 import io.github.abelgomez.asyncapi.asyncApi.Contact;
 import io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric;
@@ -28,13 +27,13 @@ import io.github.abelgomez.asyncapi.asyncApi.NamedMessage;
 import io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedParameter;
-import io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric;
 import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
-import io.github.abelgomez.asyncapi.asyncApi.ORCondition;
 import io.github.abelgomez.asyncapi.asyncApi.Operation;
 import io.github.abelgomez.asyncapi.asyncApi.OperationTrait;
+import io.github.abelgomez.asyncapi.asyncApi.OrExpression;
 import io.github.abelgomez.asyncapi.asyncApi.Parameter;
 import io.github.abelgomez.asyncapi.asyncApi.QoSMetric;
+import io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference;
 import io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition;
 import io.github.abelgomez.asyncapi.asyncApi.Reference;
 import io.github.abelgomez.asyncapi.asyncApi.Schema;
@@ -271,6 +270,11 @@ public class AsyncApiAdapterFactory extends AdapterFactoryImpl
         return createAbstractQoSMetricAdapter();
       }
       @Override
+      public Adapter caseQoSMetricReference(QoSMetricReference object)
+      {
+        return createQoSMetricReferenceAdapter();
+      }
+      @Override
       public Adapter caseQoSMetric(QoSMetric object)
       {
         return createQoSMetricAdapter();
@@ -281,34 +285,24 @@ public class AsyncApiAdapterFactory extends AdapterFactoryImpl
         return createDerivedQoSMetricAdapter();
       }
       @Override
-      public Adapter caseAtomicQoSMetric(AtomicQoSMetric object)
+      public Adapter caseBooleanExpression(BooleanExpression object)
       {
-        return createAtomicQoSMetricAdapter();
+        return createBooleanExpressionAdapter();
       }
       @Override
-      public Adapter caseNamedQoSMetric(NamedQoSMetric object)
+      public Adapter caseAndExpression(AndExpression object)
       {
-        return createNamedQoSMetricAdapter();
+        return createAndExpressionAdapter();
       }
       @Override
-      public Adapter caseBooleanCondition(BooleanCondition object)
+      public Adapter caseOrExpression(OrExpression object)
       {
-        return createBooleanConditionAdapter();
+        return createOrExpressionAdapter();
       }
       @Override
-      public Adapter caseANDCondition(ANDCondition object)
+      public Adapter caseComparisonExpression(ComparisonExpression object)
       {
-        return createANDConditionAdapter();
-      }
-      @Override
-      public Adapter caseORCondition(ORCondition object)
-      {
-        return createORConditionAdapter();
-      }
-      @Override
-      public Adapter caseAtomicBooleanCondition(AtomicBooleanCondition object)
-      {
-        return createAtomicBooleanConditionAdapter();
+        return createComparisonExpressionAdapter();
       }
       @Override
       public Adapter caseReference(Reference object)
@@ -803,6 +797,21 @@ public class AsyncApiAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference <em>Qo SMetric Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference
+   * @generated
+   */
+  public Adapter createQoSMetricReferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric <em>Qo SMetric</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -833,91 +842,61 @@ public class AsyncApiAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AtomicQoSMetric <em>Atomic Qo SMetric</em>}'.
+   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.BooleanExpression <em>Boolean Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AtomicQoSMetric
+   * @see io.github.abelgomez.asyncapi.asyncApi.BooleanExpression
    * @generated
    */
-  public Adapter createAtomicQoSMetricAdapter()
+  public Adapter createBooleanExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric <em>Named Qo SMetric</em>}'.
+   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AndExpression <em>And Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric
+   * @see io.github.abelgomez.asyncapi.asyncApi.AndExpression
    * @generated
    */
-  public Adapter createNamedQoSMetricAdapter()
+  public Adapter createAndExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.BooleanCondition <em>Boolean Condition</em>}'.
+   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.OrExpression <em>Or Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.BooleanCondition
+   * @see io.github.abelgomez.asyncapi.asyncApi.OrExpression
    * @generated
    */
-  public Adapter createBooleanConditionAdapter()
+  public Adapter createOrExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.ANDCondition <em>AND Condition</em>}'.
+   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression <em>Comparison Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.ANDCondition
+   * @see io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression
    * @generated
    */
-  public Adapter createANDConditionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.ORCondition <em>OR Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.ORCondition
-   * @generated
-   */
-  public Adapter createORConditionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AtomicBooleanCondition <em>Atomic Boolean Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AtomicBooleanCondition
-   * @generated
-   */
-  public Adapter createAtomicBooleanConditionAdapter()
+  public Adapter createComparisonExpressionAdapter()
   {
     return null;
   }

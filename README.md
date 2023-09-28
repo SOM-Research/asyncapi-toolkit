@@ -14,6 +14,7 @@ The tools hosted in this repository aim to provide the toolset necessary to deve
 * [Generating an AsyncAPI Specification from an Ecore model](doc/AsyncApiFromEcore.md)
 * [Generating an AsyncAPI Specification from an annotated UML model](doc/AsyncApiFromUml.md)
 * [AsyncAPI metamodel and grammar](doc/MetamodelAndGrammar.md)
+* [Extended AsyncAPI metamodel with Service Level Agreement (SLA) primitives](doc/SlaMetamodelAndGrammar.md)
 * [Project contents](doc/Contents.md)
 * [Building instructions](doc/Building.md)
 * [Changelog](doc/Changelog.md)

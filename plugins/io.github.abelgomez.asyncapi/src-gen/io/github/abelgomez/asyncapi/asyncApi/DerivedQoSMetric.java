@@ -16,7 +16,6 @@ package io.github.abelgomez.asyncapi.asyncApi;
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getWindow <em>Window</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getWindowUnit <em>Window Unit</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getAggregationFunction <em>Aggregation Function</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getAtomicMetric <em>Atomic Metric</em>}</li>
  * </ul>
  *
  * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getDerivedQoSMetric()
@@ -74,46 +73,27 @@ public interface DerivedQoSMetric extends QoSMetric
 
   /**
    * Returns the value of the '<em><b>Aggregation Function</b></em>' attribute.
+   * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.AggregationFunction}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Aggregation Function</em>' attribute.
-   * @see #setAggregationFunction(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AggregationFunction
+   * @see #setAggregationFunction(AggregationFunction)
    * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getDerivedQoSMetric_AggregationFunction()
    * @model
    * @generated
    */
-  String getAggregationFunction();
+  AggregationFunction getAggregationFunction();
 
   /**
    * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getAggregationFunction <em>Aggregation Function</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Aggregation Function</em>' attribute.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AggregationFunction
    * @see #getAggregationFunction()
    * @generated
    */
-  void setAggregationFunction(String value);
-
-  /**
-   * Returns the value of the '<em><b>Atomic Metric</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Atomic Metric</em>' containment reference.
-   * @see #setAtomicMetric(AbstractQoSMetric)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getDerivedQoSMetric_AtomicMetric()
-   * @model containment="true"
-   * @generated
-   */
-  AbstractQoSMetric getAtomicMetric();
-
-  /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getAtomicMetric <em>Atomic Metric</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Atomic Metric</em>' containment reference.
-   * @see #getAtomicMetric()
-   * @generated
-   */
-  void setAtomicMetric(AbstractQoSMetric value);
+  void setAggregationFunction(AggregationFunction value);
 
 } // DerivedQoSMetric

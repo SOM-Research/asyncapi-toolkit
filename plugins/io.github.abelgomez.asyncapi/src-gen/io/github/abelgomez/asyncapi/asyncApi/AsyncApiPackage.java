@@ -1382,31 +1382,13 @@ public interface AsyncApiPackage extends EPackage
   int GUARANTEE_TERM__SCOPES = 0;
 
   /**
-   * The feature id for the '<em><b>Scope</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GUARANTEE_TERM__SCOPE = 1;
-
-  /**
    * The feature id for the '<em><b>Qualifying Conditions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GUARANTEE_TERM__QUALIFYING_CONDITIONS = 2;
-
-  /**
-   * The feature id for the '<em><b>Qualifying Condition</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GUARANTEE_TERM__QUALIFYING_CONDITION = 3;
+  int GUARANTEE_TERM__QUALIFYING_CONDITIONS = 1;
 
   /**
    * The feature id for the '<em><b>Slos</b></em>' containment reference list.
@@ -1415,16 +1397,7 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GUARANTEE_TERM__SLOS = 4;
-
-  /**
-   * The feature id for the '<em><b>Slo</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GUARANTEE_TERM__SLO = 5;
+  int GUARANTEE_TERM__SLOS = 2;
 
   /**
    * The number of structural features of the '<em>Guarantee Term</em>' class.
@@ -1433,7 +1406,7 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GUARANTEE_TERM_FEATURE_COUNT = 6;
+  int GUARANTEE_TERM_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ScopeImpl <em>Scope</em>}' class.
@@ -1566,6 +1539,34 @@ public interface AsyncApiPackage extends EPackage
   int ABSTRACT_QO_SMETRIC_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricReferenceImpl <em>Qo SMetric Reference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricReferenceImpl
+   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricReference()
+   * @generated
+   */
+  int QO_SMETRIC_REFERENCE = 31;
+
+  /**
+   * The feature id for the '<em><b>Metric</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QO_SMETRIC_REFERENCE__METRIC = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Qo SMetric Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QO_SMETRIC_REFERENCE_FEATURE_COUNT = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricImpl <em>Qo SMetric</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1573,7 +1574,25 @@ public interface AsyncApiPackage extends EPackage
    * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetric()
    * @generated
    */
-  int QO_SMETRIC = 31;
+  int QO_SMETRIC = 32;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QO_SMETRIC__NAME = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Metric Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QO_SMETRIC__METRIC_TYPE = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1582,7 +1601,7 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QO_SMETRIC__DESCRIPTION = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 0;
+  int QO_SMETRIC__DESCRIPTION = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Unit</b></em>' attribute.
@@ -1591,16 +1610,16 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QO_SMETRIC__UNIT = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 1;
+  int QO_SMETRIC__UNIT = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Data Type</b></em>' attribute.
+   * The feature id for the '<em><b>Grouped By Event</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int QO_SMETRIC__DATA_TYPE = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 2;
+  int QO_SMETRIC__GROUPED_BY_EVENT = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Qo SMetric</em>' class.
@@ -1609,7 +1628,7 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QO_SMETRIC_FEATURE_COUNT = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 3;
+  int QO_SMETRIC_FEATURE_COUNT = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.DerivedQoSMetricImpl <em>Derived Qo SMetric</em>}' class.
@@ -1619,7 +1638,25 @@ public interface AsyncApiPackage extends EPackage
    * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getDerivedQoSMetric()
    * @generated
    */
-  int DERIVED_QO_SMETRIC = 32;
+  int DERIVED_QO_SMETRIC = 33;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DERIVED_QO_SMETRIC__NAME = QO_SMETRIC__NAME;
+
+  /**
+   * The feature id for the '<em><b>Metric Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DERIVED_QO_SMETRIC__METRIC_TYPE = QO_SMETRIC__METRIC_TYPE;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1640,13 +1677,13 @@ public interface AsyncApiPackage extends EPackage
   int DERIVED_QO_SMETRIC__UNIT = QO_SMETRIC__UNIT;
 
   /**
-   * The feature id for the '<em><b>Data Type</b></em>' attribute.
+   * The feature id for the '<em><b>Grouped By Event</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DERIVED_QO_SMETRIC__DATA_TYPE = QO_SMETRIC__DATA_TYPE;
+  int DERIVED_QO_SMETRIC__GROUPED_BY_EVENT = QO_SMETRIC__GROUPED_BY_EVENT;
 
   /**
    * The feature id for the '<em><b>Window</b></em>' attribute.
@@ -1676,134 +1713,42 @@ public interface AsyncApiPackage extends EPackage
   int DERIVED_QO_SMETRIC__AGGREGATION_FUNCTION = QO_SMETRIC_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Atomic Metric</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DERIVED_QO_SMETRIC__ATOMIC_METRIC = QO_SMETRIC_FEATURE_COUNT + 3;
-
-  /**
    * The number of structural features of the '<em>Derived Qo SMetric</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DERIVED_QO_SMETRIC_FEATURE_COUNT = QO_SMETRIC_FEATURE_COUNT + 4;
+  int DERIVED_QO_SMETRIC_FEATURE_COUNT = QO_SMETRIC_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AtomicQoSMetricImpl <em>Atomic Qo SMetric</em>}' class.
+   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AtomicQoSMetricImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAtomicQoSMetric()
+   * @see io.github.abelgomez.asyncapi.asyncApi.impl.BooleanExpressionImpl
+   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getBooleanExpression()
    * @generated
    */
-  int ATOMIC_QO_SMETRIC = 33;
+  int BOOLEAN_EXPRESSION = 34;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOMIC_QO_SMETRIC__DESCRIPTION = QO_SMETRIC__DESCRIPTION;
-
-  /**
-   * The feature id for the '<em><b>Unit</b></em>' attribute.
+   * The number of structural features of the '<em>Boolean Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATOMIC_QO_SMETRIC__UNIT = QO_SMETRIC__UNIT;
+  int BOOLEAN_EXPRESSION_FEATURE_COUNT = 0;
 
   /**
-   * The feature id for the '<em><b>Data Type</b></em>' attribute.
+   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AndExpressionImpl <em>And Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOMIC_QO_SMETRIC__DATA_TYPE = QO_SMETRIC__DATA_TYPE;
-
-  /**
-   * The number of structural features of the '<em>Atomic Qo SMetric</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOMIC_QO_SMETRIC_FEATURE_COUNT = QO_SMETRIC_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedQoSMetricImpl <em>Named Qo SMetric</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedQoSMetricImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedQoSMetric()
+   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AndExpressionImpl
+   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAndExpression()
    * @generated
    */
-  int NAMED_QO_SMETRIC = 34;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAMED_QO_SMETRIC__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Qos Metric</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAMED_QO_SMETRIC__QOS_METRIC = 1;
-
-  /**
-   * The number of structural features of the '<em>Named Qo SMetric</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAMED_QO_SMETRIC_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.BooleanConditionImpl <em>Boolean Condition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.BooleanConditionImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getBooleanCondition()
-   * @generated
-   */
-  int BOOLEAN_CONDITION = 35;
-
-  /**
-   * The number of structural features of the '<em>Boolean Condition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_CONDITION_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ANDConditionImpl <em>AND Condition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.ANDConditionImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getANDCondition()
-   * @generated
-   */
-  int AND_CONDITION = 36;
+  int AND_EXPRESSION = 35;
 
   /**
    * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
@@ -1812,45 +1757,54 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AND_CONDITION__CONDITIONS = BOOLEAN_CONDITION_FEATURE_COUNT + 0;
+  int AND_EXPRESSION__CONDITIONS = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>AND Condition</em>' class.
+   * The number of structural features of the '<em>And Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AND_CONDITION_FEATURE_COUNT = BOOLEAN_CONDITION_FEATURE_COUNT + 1;
+  int AND_EXPRESSION_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ORConditionImpl <em>OR Condition</em>}' class.
+   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.OrExpressionImpl <em>Or Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.ORConditionImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getORCondition()
+   * @see io.github.abelgomez.asyncapi.asyncApi.impl.OrExpressionImpl
+   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOrExpression()
    * @generated
    */
-  int OR_CONDITION = 37;
+  int OR_EXPRESSION = 36;
 
   /**
-   * The number of structural features of the '<em>OR Condition</em>' class.
+   * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OR_CONDITION_FEATURE_COUNT = BOOLEAN_CONDITION_FEATURE_COUNT + 0;
+  int OR_EXPRESSION__CONDITIONS = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AtomicBooleanConditionImpl <em>Atomic Boolean Condition</em>}' class.
+   * The number of structural features of the '<em>Or Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AtomicBooleanConditionImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAtomicBooleanCondition()
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ComparisonExpressionImpl <em>Comparison Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.github.abelgomez.asyncapi.asyncApi.impl.ComparisonExpressionImpl
+   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getComparisonExpression()
    * @generated
    */
-  int ATOMIC_BOOLEAN_CONDITION = 38;
+  int COMPARISON_EXPRESSION = 37;
 
   /**
    * The feature id for the '<em><b>Qos Metric</b></em>' containment reference.
@@ -1859,7 +1813,7 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATOMIC_BOOLEAN_CONDITION__QOS_METRIC = BOOLEAN_CONDITION_FEATURE_COUNT + 0;
+  int COMPARISON_EXPRESSION__QOS_METRIC = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -1868,7 +1822,7 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATOMIC_BOOLEAN_CONDITION__OPERATOR = BOOLEAN_CONDITION_FEATURE_COUNT + 1;
+  int COMPARISON_EXPRESSION__OPERATOR = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1877,16 +1831,16 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATOMIC_BOOLEAN_CONDITION__VALUE = BOOLEAN_CONDITION_FEATURE_COUNT + 2;
+  int COMPARISON_EXPRESSION__VALUE = BOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Atomic Boolean Condition</em>' class.
+   * The number of structural features of the '<em>Comparison Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATOMIC_BOOLEAN_CONDITION_FEATURE_COUNT = BOOLEAN_CONDITION_FEATURE_COUNT + 3;
+  int COMPARISON_EXPRESSION_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ReferenceImpl <em>Reference</em>}' class.
@@ -1896,7 +1850,7 @@ public interface AsyncApiPackage extends EPackage
    * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getReference()
    * @generated
    */
-  int REFERENCE = 39;
+  int REFERENCE = 38;
 
   /**
    * The feature id for the '<em><b>Uri</b></em>' attribute.
@@ -1924,17 +1878,17 @@ public interface AsyncApiPackage extends EPackage
    * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getWindowUnit()
    * @generated
    */
-  int WINDOW_UNIT = 40;
+  int WINDOW_UNIT = 39;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit <em>Qo SMetric Unit</em>}' enum.
+   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.AggregationFunction <em>Aggregation Function</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricUnit()
+   * @see io.github.abelgomez.asyncapi.asyncApi.AggregationFunction
+   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAggregationFunction()
    * @generated
    */
-  int QO_SMETRIC_UNIT = 41;
+  int AGGREGATION_FUNCTION = 40;
 
   /**
    * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricType <em>Qo SMetric Type</em>}' enum.
@@ -1944,7 +1898,17 @@ public interface AsyncApiPackage extends EPackage
    * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricType()
    * @generated
    */
-  int QO_SMETRIC_TYPE = 42;
+  int QO_SMETRIC_TYPE = 41;
+
+  /**
+   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit <em>Qo SMetric Unit</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit
+   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricUnit()
+   * @generated
+   */
+  int QO_SMETRIC_UNIT = 42;
 
   /**
    * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.Operator <em>Operator</em>}' enum.
@@ -3269,17 +3233,6 @@ public interface AsyncApiPackage extends EPackage
   EReference getGuaranteeTerm_Scopes();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getScope <em>Scope</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Scope</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getScope()
-   * @see #getGuaranteeTerm()
-   * @generated
-   */
-  EReference getGuaranteeTerm_Scope();
-
-  /**
    * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getQualifyingConditions <em>Qualifying Conditions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3291,17 +3244,6 @@ public interface AsyncApiPackage extends EPackage
   EReference getGuaranteeTerm_QualifyingConditions();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getQualifyingCondition <em>Qualifying Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Qualifying Condition</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getQualifyingCondition()
-   * @see #getGuaranteeTerm()
-   * @generated
-   */
-  EReference getGuaranteeTerm_QualifyingCondition();
-
-  /**
    * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getSlos <em>Slos</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3311,17 +3253,6 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    */
   EReference getGuaranteeTerm_Slos();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getSlo <em>Slo</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Slo</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getSlo()
-   * @see #getGuaranteeTerm()
-   * @generated
-   */
-  EReference getGuaranteeTerm_Slo();
 
   /**
    * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Scope <em>Scope</em>}'.
@@ -3430,6 +3361,27 @@ public interface AsyncApiPackage extends EPackage
   EClass getAbstractQoSMetric();
 
   /**
+   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference <em>Qo SMetric Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Qo SMetric Reference</em>'.
+   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference
+   * @generated
+   */
+  EClass getQoSMetricReference();
+
+  /**
+   * Returns the meta object for the reference '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference#getMetric <em>Metric</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Metric</em>'.
+   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference#getMetric()
+   * @see #getQoSMetricReference()
+   * @generated
+   */
+  EReference getQoSMetricReference_Metric();
+
+  /**
    * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric <em>Qo SMetric</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3438,6 +3390,28 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    */
   EClass getQoSMetric();
+
+  /**
+   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getName()
+   * @see #getQoSMetric()
+   * @generated
+   */
+  EAttribute getQoSMetric_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getMetricType <em>Metric Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Metric Type</em>'.
+   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getMetricType()
+   * @see #getQoSMetric()
+   * @generated
+   */
+  EAttribute getQoSMetric_MetricType();
 
   /**
    * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getDescription <em>Description</em>}'.
@@ -3462,15 +3436,15 @@ public interface AsyncApiPackage extends EPackage
   EAttribute getQoSMetric_Unit();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getDataType <em>Data Type</em>}'.
+   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getGroupedByEvent <em>Grouped By Event</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Data Type</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getDataType()
+   * @return the meta object for the attribute '<em>Grouped By Event</em>'.
+   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getGroupedByEvent()
    * @see #getQoSMetric()
    * @generated
    */
-  EAttribute getQoSMetric_DataType();
+  EAttribute getQoSMetric_GroupedByEvent();
 
   /**
    * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric <em>Derived Qo SMetric</em>}'.
@@ -3516,141 +3490,99 @@ public interface AsyncApiPackage extends EPackage
   EAttribute getDerivedQoSMetric_AggregationFunction();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getAtomicMetric <em>Atomic Metric</em>}'.
+   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.BooleanExpression <em>Boolean Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Atomic Metric</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getAtomicMetric()
-   * @see #getDerivedQoSMetric()
+   * @return the meta object for class '<em>Boolean Expression</em>'.
+   * @see io.github.abelgomez.asyncapi.asyncApi.BooleanExpression
    * @generated
    */
-  EReference getDerivedQoSMetric_AtomicMetric();
+  EClass getBooleanExpression();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AtomicQoSMetric <em>Atomic Qo SMetric</em>}'.
+   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AndExpression <em>And Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Atomic Qo SMetric</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AtomicQoSMetric
+   * @return the meta object for class '<em>And Expression</em>'.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AndExpression
    * @generated
    */
-  EClass getAtomicQoSMetric();
+  EClass getAndExpression();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric <em>Named Qo SMetric</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Named Qo SMetric</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric
-   * @generated
-   */
-  EClass getNamedQoSMetric();
-
-  /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric#getName()
-   * @see #getNamedQoSMetric()
-   * @generated
-   */
-  EAttribute getNamedQoSMetric_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric#getQosMetric <em>Qos Metric</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Qos Metric</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric#getQosMetric()
-   * @see #getNamedQoSMetric()
-   * @generated
-   */
-  EReference getNamedQoSMetric_QosMetric();
-
-  /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.BooleanCondition <em>Boolean Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Boolean Condition</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.BooleanCondition
-   * @generated
-   */
-  EClass getBooleanCondition();
-
-  /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.ANDCondition <em>AND Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>AND Condition</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.ANDCondition
-   * @generated
-   */
-  EClass getANDCondition();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.ANDCondition#getConditions <em>Conditions</em>}'.
+   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.AndExpression#getConditions <em>Conditions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Conditions</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.ANDCondition#getConditions()
-   * @see #getANDCondition()
+   * @see io.github.abelgomez.asyncapi.asyncApi.AndExpression#getConditions()
+   * @see #getAndExpression()
    * @generated
    */
-  EReference getANDCondition_Conditions();
+  EReference getAndExpression_Conditions();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.ORCondition <em>OR Condition</em>}'.
+   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.OrExpression <em>Or Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>OR Condition</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.ORCondition
+   * @return the meta object for class '<em>Or Expression</em>'.
+   * @see io.github.abelgomez.asyncapi.asyncApi.OrExpression
    * @generated
    */
-  EClass getORCondition();
+  EClass getOrExpression();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AtomicBooleanCondition <em>Atomic Boolean Condition</em>}'.
+   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.OrExpression#getConditions <em>Conditions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Atomic Boolean Condition</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AtomicBooleanCondition
+   * @return the meta object for the containment reference list '<em>Conditions</em>'.
+   * @see io.github.abelgomez.asyncapi.asyncApi.OrExpression#getConditions()
+   * @see #getOrExpression()
    * @generated
    */
-  EClass getAtomicBooleanCondition();
+  EReference getOrExpression_Conditions();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.AtomicBooleanCondition#getQosMetric <em>Qos Metric</em>}'.
+   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression <em>Comparison Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comparison Expression</em>'.
+   * @see io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression
+   * @generated
+   */
+  EClass getComparisonExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getQosMetric <em>Qos Metric</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Qos Metric</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AtomicBooleanCondition#getQosMetric()
-   * @see #getAtomicBooleanCondition()
+   * @see io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getQosMetric()
+   * @see #getComparisonExpression()
    * @generated
    */
-  EReference getAtomicBooleanCondition_QosMetric();
+  EReference getComparisonExpression_QosMetric();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.AtomicBooleanCondition#getOperator <em>Operator</em>}'.
+   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getOperator <em>Operator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Operator</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AtomicBooleanCondition#getOperator()
-   * @see #getAtomicBooleanCondition()
+   * @see io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getOperator()
+   * @see #getComparisonExpression()
    * @generated
    */
-  EAttribute getAtomicBooleanCondition_Operator();
+  EAttribute getComparisonExpression_Operator();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.AtomicBooleanCondition#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AtomicBooleanCondition#getValue()
-   * @see #getAtomicBooleanCondition()
+   * @see io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getValue()
+   * @see #getComparisonExpression()
    * @generated
    */
-  EAttribute getAtomicBooleanCondition_Value();
+  EAttribute getComparisonExpression_Value();
 
   /**
    * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Reference <em>Reference</em>}'.
@@ -3684,14 +3616,14 @@ public interface AsyncApiPackage extends EPackage
   EEnum getWindowUnit();
 
   /**
-   * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit <em>Qo SMetric Unit</em>}'.
+   * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.AggregationFunction <em>Aggregation Function</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Qo SMetric Unit</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit
+   * @return the meta object for enum '<em>Aggregation Function</em>'.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AggregationFunction
    * @generated
    */
-  EEnum getQoSMetricUnit();
+  EEnum getAggregationFunction();
 
   /**
    * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricType <em>Qo SMetric Type</em>}'.
@@ -3702,6 +3634,16 @@ public interface AsyncApiPackage extends EPackage
    * @generated
    */
   EEnum getQoSMetricType();
+
+  /**
+   * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit <em>Qo SMetric Unit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Qo SMetric Unit</em>'.
+   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit
+   * @generated
+   */
+  EEnum getQoSMetricUnit();
 
   /**
    * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.Operator <em>Operator</em>}'.
@@ -4775,14 +4717,6 @@ public interface AsyncApiPackage extends EPackage
     EReference GUARANTEE_TERM__SCOPES = eINSTANCE.getGuaranteeTerm_Scopes();
 
     /**
-     * The meta object literal for the '<em><b>Scope</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GUARANTEE_TERM__SCOPE = eINSTANCE.getGuaranteeTerm_Scope();
-
-    /**
      * The meta object literal for the '<em><b>Qualifying Conditions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4791,28 +4725,12 @@ public interface AsyncApiPackage extends EPackage
     EReference GUARANTEE_TERM__QUALIFYING_CONDITIONS = eINSTANCE.getGuaranteeTerm_QualifyingConditions();
 
     /**
-     * The meta object literal for the '<em><b>Qualifying Condition</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GUARANTEE_TERM__QUALIFYING_CONDITION = eINSTANCE.getGuaranteeTerm_QualifyingCondition();
-
-    /**
      * The meta object literal for the '<em><b>Slos</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference GUARANTEE_TERM__SLOS = eINSTANCE.getGuaranteeTerm_Slos();
-
-    /**
-     * The meta object literal for the '<em><b>Slo</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GUARANTEE_TERM__SLO = eINSTANCE.getGuaranteeTerm_Slo();
 
     /**
      * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ScopeImpl <em>Scope</em>}' class.
@@ -4903,6 +4821,24 @@ public interface AsyncApiPackage extends EPackage
     EClass ABSTRACT_QO_SMETRIC = eINSTANCE.getAbstractQoSMetric();
 
     /**
+     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricReferenceImpl <em>Qo SMetric Reference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricReferenceImpl
+     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricReference()
+     * @generated
+     */
+    EClass QO_SMETRIC_REFERENCE = eINSTANCE.getQoSMetricReference();
+
+    /**
+     * The meta object literal for the '<em><b>Metric</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference QO_SMETRIC_REFERENCE__METRIC = eINSTANCE.getQoSMetricReference_Metric();
+
+    /**
      * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricImpl <em>Qo SMetric</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4911,6 +4847,22 @@ public interface AsyncApiPackage extends EPackage
      * @generated
      */
     EClass QO_SMETRIC = eINSTANCE.getQoSMetric();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute QO_SMETRIC__NAME = eINSTANCE.getQoSMetric_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Metric Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute QO_SMETRIC__METRIC_TYPE = eINSTANCE.getQoSMetric_MetricType();
 
     /**
      * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -4929,12 +4881,12 @@ public interface AsyncApiPackage extends EPackage
     EAttribute QO_SMETRIC__UNIT = eINSTANCE.getQoSMetric_Unit();
 
     /**
-     * The meta object literal for the '<em><b>Data Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Grouped By Event</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute QO_SMETRIC__DATA_TYPE = eINSTANCE.getQoSMetric_DataType();
+    EAttribute QO_SMETRIC__GROUPED_BY_EVENT = eINSTANCE.getQoSMetric_GroupedByEvent();
 
     /**
      * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.DerivedQoSMetricImpl <em>Derived Qo SMetric</em>}' class.
@@ -4971,68 +4923,24 @@ public interface AsyncApiPackage extends EPackage
     EAttribute DERIVED_QO_SMETRIC__AGGREGATION_FUNCTION = eINSTANCE.getDerivedQoSMetric_AggregationFunction();
 
     /**
-     * The meta object literal for the '<em><b>Atomic Metric</b></em>' containment reference feature.
+     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see io.github.abelgomez.asyncapi.asyncApi.impl.BooleanExpressionImpl
+     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getBooleanExpression()
      * @generated
      */
-    EReference DERIVED_QO_SMETRIC__ATOMIC_METRIC = eINSTANCE.getDerivedQoSMetric_AtomicMetric();
+    EClass BOOLEAN_EXPRESSION = eINSTANCE.getBooleanExpression();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AtomicQoSMetricImpl <em>Atomic Qo SMetric</em>}' class.
+     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AndExpressionImpl <em>And Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AtomicQoSMetricImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAtomicQoSMetric()
+     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AndExpressionImpl
+     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAndExpression()
      * @generated
      */
-    EClass ATOMIC_QO_SMETRIC = eINSTANCE.getAtomicQoSMetric();
-
-    /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedQoSMetricImpl <em>Named Qo SMetric</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedQoSMetricImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedQoSMetric()
-     * @generated
-     */
-    EClass NAMED_QO_SMETRIC = eINSTANCE.getNamedQoSMetric();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute NAMED_QO_SMETRIC__NAME = eINSTANCE.getNamedQoSMetric_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Qos Metric</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NAMED_QO_SMETRIC__QOS_METRIC = eINSTANCE.getNamedQoSMetric_QosMetric();
-
-    /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.BooleanConditionImpl <em>Boolean Condition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.BooleanConditionImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getBooleanCondition()
-     * @generated
-     */
-    EClass BOOLEAN_CONDITION = eINSTANCE.getBooleanCondition();
-
-    /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ANDConditionImpl <em>AND Condition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.ANDConditionImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getANDCondition()
-     * @generated
-     */
-    EClass AND_CONDITION = eINSTANCE.getANDCondition();
+    EClass AND_EXPRESSION = eINSTANCE.getAndExpression();
 
     /**
      * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
@@ -5040,27 +4948,35 @@ public interface AsyncApiPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference AND_CONDITION__CONDITIONS = eINSTANCE.getANDCondition_Conditions();
+    EReference AND_EXPRESSION__CONDITIONS = eINSTANCE.getAndExpression_Conditions();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ORConditionImpl <em>OR Condition</em>}' class.
+     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.OrExpressionImpl <em>Or Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.ORConditionImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getORCondition()
+     * @see io.github.abelgomez.asyncapi.asyncApi.impl.OrExpressionImpl
+     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOrExpression()
      * @generated
      */
-    EClass OR_CONDITION = eINSTANCE.getORCondition();
+    EClass OR_EXPRESSION = eINSTANCE.getOrExpression();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AtomicBooleanConditionImpl <em>Atomic Boolean Condition</em>}' class.
+     * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AtomicBooleanConditionImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAtomicBooleanCondition()
      * @generated
      */
-    EClass ATOMIC_BOOLEAN_CONDITION = eINSTANCE.getAtomicBooleanCondition();
+    EReference OR_EXPRESSION__CONDITIONS = eINSTANCE.getOrExpression_Conditions();
+
+    /**
+     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ComparisonExpressionImpl <em>Comparison Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.github.abelgomez.asyncapi.asyncApi.impl.ComparisonExpressionImpl
+     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getComparisonExpression()
+     * @generated
+     */
+    EClass COMPARISON_EXPRESSION = eINSTANCE.getComparisonExpression();
 
     /**
      * The meta object literal for the '<em><b>Qos Metric</b></em>' containment reference feature.
@@ -5068,7 +4984,7 @@ public interface AsyncApiPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ATOMIC_BOOLEAN_CONDITION__QOS_METRIC = eINSTANCE.getAtomicBooleanCondition_QosMetric();
+    EReference COMPARISON_EXPRESSION__QOS_METRIC = eINSTANCE.getComparisonExpression_QosMetric();
 
     /**
      * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
@@ -5076,7 +4992,7 @@ public interface AsyncApiPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATOMIC_BOOLEAN_CONDITION__OPERATOR = eINSTANCE.getAtomicBooleanCondition_Operator();
+    EAttribute COMPARISON_EXPRESSION__OPERATOR = eINSTANCE.getComparisonExpression_Operator();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -5084,7 +5000,7 @@ public interface AsyncApiPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATOMIC_BOOLEAN_CONDITION__VALUE = eINSTANCE.getAtomicBooleanCondition_Value();
+    EAttribute COMPARISON_EXPRESSION__VALUE = eINSTANCE.getComparisonExpression_Value();
 
     /**
      * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ReferenceImpl <em>Reference</em>}' class.
@@ -5115,14 +5031,14 @@ public interface AsyncApiPackage extends EPackage
     EEnum WINDOW_UNIT = eINSTANCE.getWindowUnit();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit <em>Qo SMetric Unit</em>}' enum.
+     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.AggregationFunction <em>Aggregation Function</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricUnit()
+     * @see io.github.abelgomez.asyncapi.asyncApi.AggregationFunction
+     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAggregationFunction()
      * @generated
      */
-    EEnum QO_SMETRIC_UNIT = eINSTANCE.getQoSMetricUnit();
+    EEnum AGGREGATION_FUNCTION = eINSTANCE.getAggregationFunction();
 
     /**
      * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricType <em>Qo SMetric Type</em>}' enum.
@@ -5133,6 +5049,16 @@ public interface AsyncApiPackage extends EPackage
      * @generated
      */
     EEnum QO_SMETRIC_TYPE = eINSTANCE.getQoSMetricType();
+
+    /**
+     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit <em>Qo SMetric Unit</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit
+     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricUnit()
+     * @generated
+     */
+    EEnum QO_SMETRIC_UNIT = eINSTANCE.getQoSMetricUnit();
 
     /**
      * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.Operator <em>Operator</em>}' enum.

@@ -41,6 +41,11 @@ Workflow {
 			projectWizard = {
 				generate = true
 			}
+			parserGenerator = {
+				options = {
+					classSplitting = true
+				}
+			}
 		}
 	}
 }

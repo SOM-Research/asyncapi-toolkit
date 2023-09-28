@@ -3,16 +3,14 @@
  */
 package io.github.abelgomez.asyncapi.asyncApi.impl;
 
-import io.github.abelgomez.asyncapi.asyncApi.AbstractQoSMetric;
+import io.github.abelgomez.asyncapi.asyncApi.AggregationFunction;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
 import io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric;
 import io.github.abelgomez.asyncapi.asyncApi.WindowUnit;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -27,7 +25,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.DerivedQoSMetricImpl#getWindow <em>Window</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.DerivedQoSMetricImpl#getWindowUnit <em>Window Unit</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.DerivedQoSMetricImpl#getAggregationFunction <em>Aggregation Function</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.DerivedQoSMetricImpl#getAtomicMetric <em>Atomic Metric</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,7 +79,7 @@ public class DerivedQoSMetricImpl extends QoSMetricImpl implements DerivedQoSMet
    * @generated
    * @ordered
    */
-  protected static final String AGGREGATION_FUNCTION_EDEFAULT = null;
+  protected static final AggregationFunction AGGREGATION_FUNCTION_EDEFAULT = AggregationFunction.AVG;
 
   /**
    * The cached value of the '{@link #getAggregationFunction() <em>Aggregation Function</em>}' attribute.
@@ -92,17 +89,7 @@ public class DerivedQoSMetricImpl extends QoSMetricImpl implements DerivedQoSMet
    * @generated
    * @ordered
    */
-  protected String aggregationFunction = AGGREGATION_FUNCTION_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getAtomicMetric() <em>Atomic Metric</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAtomicMetric()
-   * @generated
-   * @ordered
-   */
-  protected AbstractQoSMetric atomicMetric;
+  protected AggregationFunction aggregationFunction = AGGREGATION_FUNCTION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -181,7 +168,7 @@ public class DerivedQoSMetricImpl extends QoSMetricImpl implements DerivedQoSMet
    * @generated
    */
   @Override
-  public String getAggregationFunction()
+  public AggregationFunction getAggregationFunction()
   {
     return aggregationFunction;
   }
@@ -192,78 +179,12 @@ public class DerivedQoSMetricImpl extends QoSMetricImpl implements DerivedQoSMet
    * @generated
    */
   @Override
-  public void setAggregationFunction(String newAggregationFunction)
+  public void setAggregationFunction(AggregationFunction newAggregationFunction)
   {
-    String oldAggregationFunction = aggregationFunction;
-    aggregationFunction = newAggregationFunction;
+    AggregationFunction oldAggregationFunction = aggregationFunction;
+    aggregationFunction = newAggregationFunction == null ? AGGREGATION_FUNCTION_EDEFAULT : newAggregationFunction;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.DERIVED_QO_SMETRIC__AGGREGATION_FUNCTION, oldAggregationFunction, aggregationFunction));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AbstractQoSMetric getAtomicMetric()
-  {
-    return atomicMetric;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAtomicMetric(AbstractQoSMetric newAtomicMetric, NotificationChain msgs)
-  {
-    AbstractQoSMetric oldAtomicMetric = atomicMetric;
-    atomicMetric = newAtomicMetric;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.DERIVED_QO_SMETRIC__ATOMIC_METRIC, oldAtomicMetric, newAtomicMetric);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setAtomicMetric(AbstractQoSMetric newAtomicMetric)
-  {
-    if (newAtomicMetric != atomicMetric)
-    {
-      NotificationChain msgs = null;
-      if (atomicMetric != null)
-        msgs = ((InternalEObject)atomicMetric).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.DERIVED_QO_SMETRIC__ATOMIC_METRIC, null, msgs);
-      if (newAtomicMetric != null)
-        msgs = ((InternalEObject)newAtomicMetric).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.DERIVED_QO_SMETRIC__ATOMIC_METRIC, null, msgs);
-      msgs = basicSetAtomicMetric(newAtomicMetric, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.DERIVED_QO_SMETRIC__ATOMIC_METRIC, newAtomicMetric, newAtomicMetric));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case AsyncApiPackage.DERIVED_QO_SMETRIC__ATOMIC_METRIC:
-        return basicSetAtomicMetric(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -282,8 +203,6 @@ public class DerivedQoSMetricImpl extends QoSMetricImpl implements DerivedQoSMet
         return getWindowUnit();
       case AsyncApiPackage.DERIVED_QO_SMETRIC__AGGREGATION_FUNCTION:
         return getAggregationFunction();
-      case AsyncApiPackage.DERIVED_QO_SMETRIC__ATOMIC_METRIC:
-        return getAtomicMetric();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -305,10 +224,7 @@ public class DerivedQoSMetricImpl extends QoSMetricImpl implements DerivedQoSMet
         setWindowUnit((WindowUnit)newValue);
         return;
       case AsyncApiPackage.DERIVED_QO_SMETRIC__AGGREGATION_FUNCTION:
-        setAggregationFunction((String)newValue);
-        return;
-      case AsyncApiPackage.DERIVED_QO_SMETRIC__ATOMIC_METRIC:
-        setAtomicMetric((AbstractQoSMetric)newValue);
+        setAggregationFunction((AggregationFunction)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -333,9 +249,6 @@ public class DerivedQoSMetricImpl extends QoSMetricImpl implements DerivedQoSMet
       case AsyncApiPackage.DERIVED_QO_SMETRIC__AGGREGATION_FUNCTION:
         setAggregationFunction(AGGREGATION_FUNCTION_EDEFAULT);
         return;
-      case AsyncApiPackage.DERIVED_QO_SMETRIC__ATOMIC_METRIC:
-        setAtomicMetric((AbstractQoSMetric)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -355,9 +268,7 @@ public class DerivedQoSMetricImpl extends QoSMetricImpl implements DerivedQoSMet
       case AsyncApiPackage.DERIVED_QO_SMETRIC__WINDOW_UNIT:
         return windowUnit != WINDOW_UNIT_EDEFAULT;
       case AsyncApiPackage.DERIVED_QO_SMETRIC__AGGREGATION_FUNCTION:
-        return AGGREGATION_FUNCTION_EDEFAULT == null ? aggregationFunction != null : !AGGREGATION_FUNCTION_EDEFAULT.equals(aggregationFunction);
-      case AsyncApiPackage.DERIVED_QO_SMETRIC__ATOMIC_METRIC:
-        return atomicMetric != null;
+        return aggregationFunction != AGGREGATION_FUNCTION_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }

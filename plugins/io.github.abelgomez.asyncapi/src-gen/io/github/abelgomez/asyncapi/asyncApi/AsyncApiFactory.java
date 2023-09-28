@@ -303,6 +303,15 @@ public interface AsyncApiFactory extends EFactory
   AbstractQoSMetric createAbstractQoSMetric();
 
   /**
+   * Returns a new object of class '<em>Qo SMetric Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Qo SMetric Reference</em>'.
+   * @generated
+   */
+  QoSMetricReference createQoSMetricReference();
+
+  /**
    * Returns a new object of class '<em>Qo SMetric</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -321,58 +330,40 @@ public interface AsyncApiFactory extends EFactory
   DerivedQoSMetric createDerivedQoSMetric();
 
   /**
-   * Returns a new object of class '<em>Atomic Qo SMetric</em>'.
+   * Returns a new object of class '<em>Boolean Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Atomic Qo SMetric</em>'.
+   * @return a new object of class '<em>Boolean Expression</em>'.
    * @generated
    */
-  AtomicQoSMetric createAtomicQoSMetric();
+  BooleanExpression createBooleanExpression();
 
   /**
-   * Returns a new object of class '<em>Named Qo SMetric</em>'.
+   * Returns a new object of class '<em>And Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Named Qo SMetric</em>'.
+   * @return a new object of class '<em>And Expression</em>'.
    * @generated
    */
-  NamedQoSMetric createNamedQoSMetric();
+  AndExpression createAndExpression();
 
   /**
-   * Returns a new object of class '<em>Boolean Condition</em>'.
+   * Returns a new object of class '<em>Or Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Boolean Condition</em>'.
+   * @return a new object of class '<em>Or Expression</em>'.
    * @generated
    */
-  BooleanCondition createBooleanCondition();
+  OrExpression createOrExpression();
 
   /**
-   * Returns a new object of class '<em>AND Condition</em>'.
+   * Returns a new object of class '<em>Comparison Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>AND Condition</em>'.
+   * @return a new object of class '<em>Comparison Expression</em>'.
    * @generated
    */
-  ANDCondition createANDCondition();
-
-  /**
-   * Returns a new object of class '<em>OR Condition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>OR Condition</em>'.
-   * @generated
-   */
-  ORCondition createORCondition();
-
-  /**
-   * Returns a new object of class '<em>Atomic Boolean Condition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Atomic Boolean Condition</em>'.
-   * @generated
-   */
-  AtomicBooleanCondition createAtomicBooleanCondition();
+  ComparisonExpression createComparisonExpression();
 
   /**
    * Returns a new object of class '<em>Reference</em>'.

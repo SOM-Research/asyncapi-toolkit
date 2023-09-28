@@ -183,7 +183,7 @@ Components:
 		& ( '"parameters"' ':' '{' parameters+=NamedParameter (',' parameters+=NamedParameter)* '}' ','? )?
 		& ( '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait (',' operationTraits+=NamedOperationTrait)* '}' ','? )?
 		& ( '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait (',' messageTraits+=NamedMessageTrait)* '}' ','? )?
-		& ( '"x-qosMetrics"' ':' '{' qosMetrics+=NamedQoSMetric (',' qosMetrics+=NamedQoSMetric)* '}' ','? )?
+		& ( '"x-qosMetrics"' ':' '[' qosMetrics+=QoSMetric (',' qosMetrics+=QoSMetric)* ']' ','? )?
 //		& ( GenericJsonTupleButRef ','? )*
 	) '}';
 
@@ -195,65 +195,62 @@ Sla:
 	
 GuaranteeTerm:
 	{GuaranteeTerm} '{' (
-		  ( '"scopes"' ':' '{' scopes+=Scope (',' scope+=Scope)* '}' ',' )
-		  ( '"qualifyingConditions"' ':' '{' qualifyingConditions+=QualifyingCondition (',' qualifyingCondition+=QualifyingCondition)* '}'',')?
-		  ( '"slos"' ':' '{' slos+=Slo (',' slo+=Slo)* '}')	  
+		  ( '"scopes"' ':' '{' scopes+=Scope (',' scopes+=Scope)* '}' ',' )
+		  ( '"qualifyingConditions"' ':' '{' qualifyingConditions+=QualifyingCondition (',' qualifyingConditions+=QualifyingCondition)* '}'',')?
+		  ( '"slos"' ':' '{' slos+=Slo (',' slos+=Slo)* '}')	  
 	) '}';
 
 Scope:
 	{Scope}(
-	   name=AnyString ':' '{' '"$ref"' ':' ( reference= [Channel|AnyString] |  reference= [Operation])'}' 
+	   name=AnyString ':' reference= [Channel|AnyString]  
 	);
  
 QualifyingCondition:
-	{QualifyingCondition} name=AnyString ':' condition=BooleanCondition  
+	{QualifyingCondition} name=AnyString ':' condition=BooleanExpression  
 ;
 	
 Slo:
-	{Slo} name=AnyString ':' condition=BooleanCondition 
+	{Slo} name=AnyString ':' condition=BooleanExpression 
 ;		
 	
 AbstractQoSMetric:
-	Reference | QoSMetric;
+  QoSMetricReference | QoSMetric;
+
+QoSMetricReference:
+  metric= [QoSMetric|AnyString]	
+;
 	
 QoSMetric:
 	('{' 
-		(AtomicQoSMetric | DerivedQoSMetric) ','
 		(
-		  ( '"description"' ':' description=AnyString ','? )?
+		  ( '"name"' ':' name=AnyString ','? )						
+		& ( '"metricType"' ':' metricType=QoSMetricType ','? )			
+		& ( '"description"' ':' description=AnyString ','? )?
 		& ( '"unit"' ':' unit=QoSMetricUnit ','? )
-		& ( '"dataType"' ':' dataType=QoSMetricType ','? )			
-		)
+		& ( '"groupedByEvent"' ':' groupedByEvent=Boolean ','? )		
+		) (DerivedQoSMetric)?	// Això està al final de tot, pq Xtext es queixa que no pot haver-hi una unasssigned rule dins d'una unordered list.		
 	'}');
 
  DerivedQoSMetric:
 	{DerivedQoSMetric}(
-	      ('"metricType"' ':' '"derived"' ',' )	
-		& ('"window"' ':'  window = AnyString ','? )
+		'"derivedQoSMetricDefinition"' ':' '{' (
+		  ('"window"' ':'  window = AnyString ','? )
 		& ('"windowUnit"' ':'  windowUnit = WindowUnit ','? )
-		& ('"aggregationFunction"' ':'  aggregationFunction = AnyString ','? )
-		& ('"atomicMetric"' ':'  atomicMetric = AbstractQoSMetric  ','? )
-	)
+		& ('"aggregationFunction"' ':'  aggregationFunction = AggregationFunction ','? )
+	) '}' )
 ;
 
-AtomicQoSMetric:	
-	{AtomicQoSMetric} ('"metricType"' ':' '"atomic"' )   
-; 
+BooleanExpression:
+	AndExpression | OrExpression | ComparisonExpression;
 
-NamedQoSMetric:
-	{NamedQoSMetric} name=AnyString ':' qosMetric=AbstractQoSMetric;
-
-BooleanCondition:
-	ANDCondition | ORCondition | AtomicBooleanCondition;
-
-ANDCondition:
-  {ANDCondition} '{' '"AND"' ':'  '['  conditions+=BooleanCondition (',' conditions+=BooleanCondition)* ']' '}' ;
+AndExpression:
+  {AndExpression} '{' '"AND"' ':'  '['  conditions+=BooleanExpression (',' conditions+=BooleanExpression)* ']' '}' ;
   	
-ORCondition:
-  {ANDCondition} '{' '"OR"' ':' '['  conditions+=BooleanCondition (',' conditions+=BooleanCondition)* ']' '}';
+OrExpression:
+  {OrExpression} '{' '"OR"' ':' '['  conditions+=BooleanExpression (',' conditions+=BooleanExpression)* ']' '}';
 
-AtomicBooleanCondition:
-	{AtomicBooleanCondition}
+ComparisonExpression:
+	{ComparisonExpression}
 		'{'
 	    '"qosMetric"' ':'  qosMetric = AbstractQoSMetric   ','
 	    '"operator"' ':' operator = Operator ','
@@ -288,19 +285,47 @@ enum WindowUnit:
 	| messages = '"messages"'
 ;
 
+enum AggregationFunction:
+	AVG = '"AVG"'
+	| MEDIAN = '"MEDIAN"'
+	| MAX = '"MAX"'
+    | MIN = '"MIN"'
+;
+
+enum QoSMetricType:
+	availability = '"availability"'
+	| bandwith = '"bandwith"'
+	| cpu = '"cpu"'
+	| capacity = '"capacity"'
+	| disaster = '"disaster"' | resiliance = '"resiliance"'
+	| discoverability = '"discoverability"'
+	| documentation = '"documentation"'
+	| exception_handling = '"exception_handling"'
+	| expected_failures = '"expected_failures"'
+	| failover = '"failover"'
+	| jitter = '"jitter"'
+	| latency = '"latency"'
+	| load_balancing = '"load_balancing"'
+	| maximum_throughput = '"maximum_throughput"'
+	| memory_aapacity = '"memory_aapacity"'
+	| packet_loss = '"packet_loss"'
+	| precision = '"precision"'
+	| probability_of_correctness = '"probability_of_correctness"'
+	| round_trip_time = '"round_trip_time"'
+	| throughput = '"throughput"'
+	| time_to_tail = '"time_to_tail"'
+	| time_to_tepair = '"time_to_tepair"'
+	| type_consistency = '"type_consistency"'
+	| uptime = '"uptime"'
+	| up_to_dateness = '"up-to-dateness"'
+;
+
 enum QoSMetricUnit:
 	milliseconds = '"milliseconds"'
 	| seconds = '"seconds"'
 	| minutes = '"minutes"'
 	| hours = '"hours"'
 	| null = '"null"'
-;
-
-
-enum QoSMetricType:
-	real = '"real"'
-	| integer = '"integer"'
-	| boolean = '"boolean"'
 ;
 
 enum Operator: 
@@ -380,6 +405,10 @@ Keyword:
         | '">"'
         | '">="'
         | '"AND"'
+        | '"AVG"'
+        | '"MAX"'
+        | '"MEDIAN"'
+        | '"MIN"'
         | '"OR"'
         | '"aggregationFunction"'
         | '"amqp"'
@@ -387,21 +416,30 @@ Keyword:
         | '"any"'
         | '"array"'
         | '"asyncapi"'
-        | '"atomic"'
-        | '"atomicMetric"'
+        | '"availability"'
+        | '"bandwith"'
         | '"boolean"'
+        | '"capacity"'
         | '"channels"'
         | '"components"'
         | '"contact"'
+        | '"cpu"'
         | '"dataType"'
         | '"days"'
         | '"default"'
         | '"deprecated"'
-        | '"derived"'
+        | '"derivedQoSMetricDefinition"'
         | '"description"'
+        | '"disaster"'
+        | '"discoverability"'
+        | '"documentation"'
         | '"email"'
         | '"enum"'
+        | '"exception_handling"'
+        | '"expected_failures"'
+        | '"failover"'
         | '"format"'
+        | '"groupedByEvent"'
         | '"guaranteeTerm"'
         | '"headers"'
         | '"hours"'
@@ -410,13 +448,18 @@ Keyword:
         | '"info"'
         | '"integer"'
         | '"items"'
+        | '"jitter"'
         | '"jms"'
         | '"kafka"'
         | '"kafka-secure"'
+        | '"latency"'
         | '"license"'
+        | '"load_balancing"'
         | '"location"'
         | '"maxItems"'
         | '"maximum"'
+        | '"maximum_throughput"'
+        | '"memory_aapacity"'
         | '"message"'
         | '"messageTraits"'
         | '"messages"'
@@ -426,6 +469,7 @@ Keyword:
         | '"minimum"'
         | '"minutes"'
         | '"mqtt"'
+        | '"mqtts"'
         | '"name"'
         | '"null"'
         | '"number"'
@@ -433,15 +477,19 @@ Keyword:
         | '"operationId"'
         | '"operationTraits"'
         | '"operator"'
+        | '"packet_loss"'
         | '"parameters"'
         | '"payload"'
+        | '"precision"'
+        | '"probability_of_correctness"'
         | '"properties"'
         | '"protocol"'
         | '"publish"'
         | '"qosMetric"'
         | '"qualifyingConditions"'
-        | '"real"'
         | '"required"'
+        | '"resiliance"'
+        | '"round_trip_time"'
         | '"schema"'
         | '"schemas"'
         | '"scopes"'
@@ -456,10 +504,16 @@ Keyword:
         | '"summary"'
         | '"tags"'
         | '"termsOfService"'
+        | '"throughput"'
+        | '"time_to_tail"'
+        | '"time_to_tepair"'
         | '"title"'
         | '"traits"'
         | '"type"'
+        | '"type_consistency"'
         | '"unit"'
+        | '"up-to-dateness"'
+        | '"uptime"'
         | '"url"'
         | '"value"'
         | '"variables"'
@@ -472,4 +526,3 @@ Keyword:
         | '"x-qosMetrics"'
         | '"x-sla"'
         | '"x-title"';
-

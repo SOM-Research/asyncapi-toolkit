@@ -51,12 +51,12 @@ public interface Scope extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Reference</em>' reference.
-   * @see #setReference(EObject)
+   * @see #setReference(Channel)
    * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getScope_Reference()
    * @model
    * @generated
    */
-  EObject getReference();
+  Channel getReference();
 
   /**
    * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Scope#getReference <em>Reference</em>}' reference.
@@ -66,6 +66,6 @@ public interface Scope extends EObject
    * @see #getReference()
    * @generated
    */
-  void setReference(EObject value);
+  void setReference(Channel value);
 
 } // Scope

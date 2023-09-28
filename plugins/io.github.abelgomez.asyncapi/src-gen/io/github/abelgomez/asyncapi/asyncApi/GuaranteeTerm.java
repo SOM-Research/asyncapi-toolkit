@@ -17,11 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getScopes <em>Scopes</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getScope <em>Scope</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getQualifyingConditions <em>Qualifying Conditions</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getQualifyingCondition <em>Qualifying Condition</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getSlos <em>Slos</em>}</li>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getSlo <em>Slo</em>}</li>
  * </ul>
  *
  * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getGuaranteeTerm()
@@ -43,18 +40,6 @@ public interface GuaranteeTerm extends EObject
   EList<Scope> getScopes();
 
   /**
-   * Returns the value of the '<em><b>Scope</b></em>' containment reference list.
-   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.Scope}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Scope</em>' containment reference list.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getGuaranteeTerm_Scope()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Scope> getScope();
-
-  /**
    * Returns the value of the '<em><b>Qualifying Conditions</b></em>' containment reference list.
    * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition}.
    * <!-- begin-user-doc -->
@@ -67,18 +52,6 @@ public interface GuaranteeTerm extends EObject
   EList<QualifyingCondition> getQualifyingConditions();
 
   /**
-   * Returns the value of the '<em><b>Qualifying Condition</b></em>' containment reference list.
-   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Qualifying Condition</em>' containment reference list.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getGuaranteeTerm_QualifyingCondition()
-   * @model containment="true"
-   * @generated
-   */
-  EList<QualifyingCondition> getQualifyingCondition();
-
-  /**
    * Returns the value of the '<em><b>Slos</b></em>' containment reference list.
    * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.Slo}.
    * <!-- begin-user-doc -->
@@ -89,17 +62,5 @@ public interface GuaranteeTerm extends EObject
    * @generated
    */
   EList<Slo> getSlos();
-
-  /**
-   * Returns the value of the '<em><b>Slo</b></em>' containment reference list.
-   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.Slo}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Slo</em>' containment reference list.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getGuaranteeTerm_Slo()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Slo> getSlo();
 
 } // GuaranteeTerm

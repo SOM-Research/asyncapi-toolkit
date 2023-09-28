@@ -3,20 +3,20 @@
  */
 package io.github.abelgomez.asyncapi.asyncApi.impl;
 
-import io.github.abelgomez.asyncapi.asyncApi.ANDCondition;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractMessage;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractMessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractOperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractParameter;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractQoSMetric;
 import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema;
+import io.github.abelgomez.asyncapi.asyncApi.AggregationFunction;
+import io.github.abelgomez.asyncapi.asyncApi.AndExpression;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiFactory;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
-import io.github.abelgomez.asyncapi.asyncApi.AtomicBooleanCondition;
-import io.github.abelgomez.asyncapi.asyncApi.AtomicQoSMetric;
-import io.github.abelgomez.asyncapi.asyncApi.BooleanCondition;
+import io.github.abelgomez.asyncapi.asyncApi.BooleanExpression;
 import io.github.abelgomez.asyncapi.asyncApi.Channel;
+import io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression;
 import io.github.abelgomez.asyncapi.asyncApi.Components;
 import io.github.abelgomez.asyncapi.asyncApi.Contact;
 import io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric;
@@ -30,15 +30,15 @@ import io.github.abelgomez.asyncapi.asyncApi.NamedMessage;
 import io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedParameter;
-import io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric;
 import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
-import io.github.abelgomez.asyncapi.asyncApi.ORCondition;
 import io.github.abelgomez.asyncapi.asyncApi.Operation;
 import io.github.abelgomez.asyncapi.asyncApi.OperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.Operator;
+import io.github.abelgomez.asyncapi.asyncApi.OrExpression;
 import io.github.abelgomez.asyncapi.asyncApi.Parameter;
 import io.github.abelgomez.asyncapi.asyncApi.Protocol;
 import io.github.abelgomez.asyncapi.asyncApi.QoSMetric;
+import io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference;
 import io.github.abelgomez.asyncapi.asyncApi.QoSMetricType;
 import io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit;
 import io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition;
@@ -145,14 +145,13 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
       case AsyncApiPackage.QUALIFYING_CONDITION: return createQualifyingCondition();
       case AsyncApiPackage.SLO: return createSlo();
       case AsyncApiPackage.ABSTRACT_QO_SMETRIC: return createAbstractQoSMetric();
+      case AsyncApiPackage.QO_SMETRIC_REFERENCE: return createQoSMetricReference();
       case AsyncApiPackage.QO_SMETRIC: return createQoSMetric();
       case AsyncApiPackage.DERIVED_QO_SMETRIC: return createDerivedQoSMetric();
-      case AsyncApiPackage.ATOMIC_QO_SMETRIC: return createAtomicQoSMetric();
-      case AsyncApiPackage.NAMED_QO_SMETRIC: return createNamedQoSMetric();
-      case AsyncApiPackage.BOOLEAN_CONDITION: return createBooleanCondition();
-      case AsyncApiPackage.AND_CONDITION: return createANDCondition();
-      case AsyncApiPackage.OR_CONDITION: return createORCondition();
-      case AsyncApiPackage.ATOMIC_BOOLEAN_CONDITION: return createAtomicBooleanCondition();
+      case AsyncApiPackage.BOOLEAN_EXPRESSION: return createBooleanExpression();
+      case AsyncApiPackage.AND_EXPRESSION: return createAndExpression();
+      case AsyncApiPackage.OR_EXPRESSION: return createOrExpression();
+      case AsyncApiPackage.COMPARISON_EXPRESSION: return createComparisonExpression();
       case AsyncApiPackage.REFERENCE: return createReference();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -171,10 +170,12 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
     {
       case AsyncApiPackage.WINDOW_UNIT:
         return createWindowUnitFromString(eDataType, initialValue);
-      case AsyncApiPackage.QO_SMETRIC_UNIT:
-        return createQoSMetricUnitFromString(eDataType, initialValue);
+      case AsyncApiPackage.AGGREGATION_FUNCTION:
+        return createAggregationFunctionFromString(eDataType, initialValue);
       case AsyncApiPackage.QO_SMETRIC_TYPE:
         return createQoSMetricTypeFromString(eDataType, initialValue);
+      case AsyncApiPackage.QO_SMETRIC_UNIT:
+        return createQoSMetricUnitFromString(eDataType, initialValue);
       case AsyncApiPackage.OPERATOR:
         return createOperatorFromString(eDataType, initialValue);
       case AsyncApiPackage.JSON_TYPE:
@@ -202,10 +203,12 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
     {
       case AsyncApiPackage.WINDOW_UNIT:
         return convertWindowUnitToString(eDataType, instanceValue);
-      case AsyncApiPackage.QO_SMETRIC_UNIT:
-        return convertQoSMetricUnitToString(eDataType, instanceValue);
+      case AsyncApiPackage.AGGREGATION_FUNCTION:
+        return convertAggregationFunctionToString(eDataType, instanceValue);
       case AsyncApiPackage.QO_SMETRIC_TYPE:
         return convertQoSMetricTypeToString(eDataType, instanceValue);
+      case AsyncApiPackage.QO_SMETRIC_UNIT:
+        return convertQoSMetricUnitToString(eDataType, instanceValue);
       case AsyncApiPackage.OPERATOR:
         return convertOperatorToString(eDataType, instanceValue);
       case AsyncApiPackage.JSON_TYPE:
@@ -599,6 +602,18 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
    * @generated
    */
   @Override
+  public QoSMetricReference createQoSMetricReference()
+  {
+    QoSMetricReferenceImpl qoSMetricReference = new QoSMetricReferenceImpl();
+    return qoSMetricReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public QoSMetric createQoSMetric()
   {
     QoSMetricImpl qoSMetric = new QoSMetricImpl();
@@ -623,10 +638,10 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
    * @generated
    */
   @Override
-  public AtomicQoSMetric createAtomicQoSMetric()
+  public BooleanExpression createBooleanExpression()
   {
-    AtomicQoSMetricImpl atomicQoSMetric = new AtomicQoSMetricImpl();
-    return atomicQoSMetric;
+    BooleanExpressionImpl booleanExpression = new BooleanExpressionImpl();
+    return booleanExpression;
   }
 
   /**
@@ -635,10 +650,10 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
    * @generated
    */
   @Override
-  public NamedQoSMetric createNamedQoSMetric()
+  public AndExpression createAndExpression()
   {
-    NamedQoSMetricImpl namedQoSMetric = new NamedQoSMetricImpl();
-    return namedQoSMetric;
+    AndExpressionImpl andExpression = new AndExpressionImpl();
+    return andExpression;
   }
 
   /**
@@ -647,10 +662,10 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
    * @generated
    */
   @Override
-  public BooleanCondition createBooleanCondition()
+  public OrExpression createOrExpression()
   {
-    BooleanConditionImpl booleanCondition = new BooleanConditionImpl();
-    return booleanCondition;
+    OrExpressionImpl orExpression = new OrExpressionImpl();
+    return orExpression;
   }
 
   /**
@@ -659,34 +674,10 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
    * @generated
    */
   @Override
-  public ANDCondition createANDCondition()
+  public ComparisonExpression createComparisonExpression()
   {
-    ANDConditionImpl andCondition = new ANDConditionImpl();
-    return andCondition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ORCondition createORCondition()
-  {
-    ORConditionImpl orCondition = new ORConditionImpl();
-    return orCondition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AtomicBooleanCondition createAtomicBooleanCondition()
-  {
-    AtomicBooleanConditionImpl atomicBooleanCondition = new AtomicBooleanConditionImpl();
-    return atomicBooleanCondition;
+    ComparisonExpressionImpl comparisonExpression = new ComparisonExpressionImpl();
+    return comparisonExpression;
   }
 
   /**
@@ -728,9 +719,9 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public QoSMetricUnit createQoSMetricUnitFromString(EDataType eDataType, String initialValue)
+  public AggregationFunction createAggregationFunctionFromString(EDataType eDataType, String initialValue)
   {
-    QoSMetricUnit result = QoSMetricUnit.get(initialValue);
+    AggregationFunction result = AggregationFunction.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -740,7 +731,7 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertQoSMetricUnitToString(EDataType eDataType, Object instanceValue)
+  public String convertAggregationFunctionToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -763,6 +754,28 @@ public class AsyncApiFactoryImpl extends EFactoryImpl implements AsyncApiFactory
    * @generated
    */
   public String convertQoSMetricTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public QoSMetricUnit createQoSMetricUnitFromString(EDataType eDataType, String initialValue)
+  {
+    QoSMetricUnit result = QoSMetricUnit.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertQoSMetricUnitToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

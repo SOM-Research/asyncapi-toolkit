@@ -168,7 +168,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="messageTraits" upperBound="-1"
         eType="#//NamedMessageTrait" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="qosMetrics" upperBound="-1"
-        eType="#//NamedQoSMetric" containment="true"/>
+        eType="#//QoSMetric" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sla">
     <eStructuralFeatures xsi:type="ecore:EReference" name="guaranteeTerm" upperBound="-1"
@@ -177,63 +177,57 @@
   <eClassifiers xsi:type="ecore:EClass" name="GuaranteeTerm">
     <eStructuralFeatures xsi:type="ecore:EReference" name="scopes" upperBound="-1"
         eType="#//Scope" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scope" upperBound="-1"
-        eType="#//Scope" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="qualifyingConditions" upperBound="-1"
         eType="#//QualifyingCondition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifyingCondition" upperBound="-1"
-        eType="#//QualifyingCondition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="slos" upperBound="-1" eType="#//Slo"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="slo" upperBound="-1" eType="#//Slo"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Scope">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//Channel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QualifyingCondition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//BooleanCondition"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//BooleanExpression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Slo">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//BooleanCondition"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//BooleanExpression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractQoSMetric"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QoSMetricReference" eSuperTypes="#//AbstractQoSMetric">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metric" eType="#//QoSMetric"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QoSMetric" eSuperTypes="#//AbstractQoSMetric">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metricType" eType="#//QoSMetricType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//QoSMetricUnit"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataType" eType="#//QoSMetricType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="groupedByEvent" eType="#//Boolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DerivedQoSMetric" eSuperTypes="#//QoSMetric">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="window" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="windowUnit" eType="#//WindowUnit"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aggregationFunction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="atomicMetric" eType="#//AbstractQoSMetric"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aggregationFunction" eType="#//AggregationFunction"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AtomicQoSMetric" eSuperTypes="#//QoSMetric"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NamedQoSMetric">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="qosMetric" eType="#//AbstractQoSMetric"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BooleanCondition"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ANDCondition" eSuperTypes="#//BooleanCondition #//ORCondition">
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AndExpression" eSuperTypes="#//BooleanExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
-        eType="#//BooleanCondition" containment="true"/>
+        eType="#//BooleanExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ORCondition" eSuperTypes="#//BooleanCondition"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AtomicBooleanCondition" eSuperTypes="#//BooleanCondition">
+  <eClassifiers xsi:type="ecore:EClass" name="OrExpression" eSuperTypes="#//BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
+        eType="#//BooleanExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComparisonExpression" eSuperTypes="#//BooleanExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="qosMetric" eType="#//AbstractQoSMetric"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//Operator"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="#//AbstractMessage #//AbstractSchema #//AbstractParameter #//AbstractOperationTrait #//AbstractMessageTrait #//AbstractQoSMetric">
+  <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="#//AbstractMessage #//AbstractSchema #//AbstractParameter #//AbstractOperationTrait #//AbstractMessageTrait">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="WindowUnit">
@@ -243,17 +237,46 @@
     <eLiterals name="days" value="3" literal="&quot;days&quot;"/>
     <eLiterals name="messages" value="4" literal="&quot;messages&quot;"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AggregationFunction">
+    <eLiterals name="AVG" literal="&quot;AVG&quot;"/>
+    <eLiterals name="MEDIAN" value="1" literal="&quot;MEDIAN&quot;"/>
+    <eLiterals name="MAX" value="2" literal="&quot;MAX&quot;"/>
+    <eLiterals name="MIN" value="3" literal="&quot;MIN&quot;"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="QoSMetricType">
+    <eLiterals name="availability" literal="&quot;availability&quot;"/>
+    <eLiterals name="bandwith" value="1" literal="&quot;bandwith&quot;"/>
+    <eLiterals name="cpu" value="2" literal="&quot;cpu&quot;"/>
+    <eLiterals name="capacity" value="3" literal="&quot;capacity&quot;"/>
+    <eLiterals name="disaster" value="4" literal="&quot;disaster&quot;"/>
+    <eLiterals name="resiliance" value="5" literal="&quot;resiliance&quot;"/>
+    <eLiterals name="discoverability" value="6" literal="&quot;discoverability&quot;"/>
+    <eLiterals name="documentation" value="7" literal="&quot;documentation&quot;"/>
+    <eLiterals name="exception_handling" value="8" literal="&quot;exception_handling&quot;"/>
+    <eLiterals name="expected_failures" value="9" literal="&quot;expected_failures&quot;"/>
+    <eLiterals name="failover" value="10" literal="&quot;failover&quot;"/>
+    <eLiterals name="jitter" value="11" literal="&quot;jitter&quot;"/>
+    <eLiterals name="latency" value="12" literal="&quot;latency&quot;"/>
+    <eLiterals name="load_balancing" value="13" literal="&quot;load_balancing&quot;"/>
+    <eLiterals name="maximum_throughput" value="14" literal="&quot;maximum_throughput&quot;"/>
+    <eLiterals name="memory_aapacity" value="15" literal="&quot;memory_aapacity&quot;"/>
+    <eLiterals name="packet_loss" value="16" literal="&quot;packet_loss&quot;"/>
+    <eLiterals name="precision" value="17" literal="&quot;precision&quot;"/>
+    <eLiterals name="probability_of_correctness" value="18" literal="&quot;probability_of_correctness&quot;"/>
+    <eLiterals name="round_trip_time" value="19" literal="&quot;round_trip_time&quot;"/>
+    <eLiterals name="throughput" value="20" literal="&quot;throughput&quot;"/>
+    <eLiterals name="time_to_tail" value="21" literal="&quot;time_to_tail&quot;"/>
+    <eLiterals name="time_to_tepair" value="22" literal="&quot;time_to_tepair&quot;"/>
+    <eLiterals name="type_consistency" value="23" literal="&quot;type_consistency&quot;"/>
+    <eLiterals name="uptime" value="24" literal="&quot;uptime&quot;"/>
+    <eLiterals name="up_to_dateness" value="25" literal="&quot;up-to-dateness&quot;"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="QoSMetricUnit">
     <eLiterals name="milliseconds" literal="&quot;milliseconds&quot;"/>
     <eLiterals name="seconds" value="1" literal="&quot;seconds&quot;"/>
     <eLiterals name="minutes" value="2" literal="&quot;minutes&quot;"/>
     <eLiterals name="hours" value="3" literal="&quot;hours&quot;"/>
     <eLiterals name="null" value="4" literal="&quot;null&quot;"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="QoSMetricType">
-    <eLiterals name="real" literal="&quot;real&quot;"/>
-    <eLiterals name="integer" value="1" literal="&quot;integer&quot;"/>
-    <eLiterals name="boolean" value="2" literal="&quot;boolean&quot;"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Operator">
     <eLiterals name="greater" literal="&quot;>&quot;"/>

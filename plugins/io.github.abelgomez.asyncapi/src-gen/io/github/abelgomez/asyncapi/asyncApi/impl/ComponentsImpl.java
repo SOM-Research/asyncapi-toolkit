@@ -9,8 +9,8 @@ import io.github.abelgomez.asyncapi.asyncApi.NamedMessage;
 import io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedParameter;
-import io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric;
 import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
+import io.github.abelgomez.asyncapi.asyncApi.QoSMetric;
 
 import java.util.Collection;
 
@@ -104,7 +104,7 @@ public class ComponentsImpl extends MinimalEObjectImpl.Container implements Comp
    * @generated
    * @ordered
    */
-  protected EList<NamedQoSMetric> qosMetrics;
+  protected EList<QoSMetric> qosMetrics;
 
   /**
    * <!-- begin-user-doc -->
@@ -208,11 +208,11 @@ public class ComponentsImpl extends MinimalEObjectImpl.Container implements Comp
    * @generated
    */
   @Override
-  public EList<NamedQoSMetric> getQosMetrics()
+  public EList<QoSMetric> getQosMetrics()
   {
     if (qosMetrics == null)
     {
-      qosMetrics = new EObjectContainmentEList<NamedQoSMetric>(NamedQoSMetric.class, this, AsyncApiPackage.COMPONENTS__QOS_METRICS);
+      qosMetrics = new EObjectContainmentEList<QoSMetric>(QoSMetric.class, this, AsyncApiPackage.COMPONENTS__QOS_METRICS);
     }
     return qosMetrics;
   }
@@ -302,7 +302,7 @@ public class ComponentsImpl extends MinimalEObjectImpl.Container implements Comp
         return;
       case AsyncApiPackage.COMPONENTS__QOS_METRICS:
         getQosMetrics().clear();
-        getQosMetrics().addAll((Collection<? extends NamedQoSMetric>)newValue);
+        getQosMetrics().addAll((Collection<? extends QoSMetric>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

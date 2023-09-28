@@ -51,12 +51,12 @@ public interface Slo extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Condition</em>' containment reference.
-   * @see #setCondition(BooleanCondition)
+   * @see #setCondition(BooleanExpression)
    * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSlo_Condition()
    * @model containment="true"
    * @generated
    */
-  BooleanCondition getCondition();
+  BooleanExpression getCondition();
 
   /**
    * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Slo#getCondition <em>Condition</em>}' containment reference.
@@ -66,6 +66,6 @@ public interface Slo extends EObject
    * @see #getCondition()
    * @generated
    */
-  void setCondition(BooleanCondition value);
+  void setCondition(BooleanExpression value);
 
 } // Slo

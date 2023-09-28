@@ -6,4 +6,4 @@ Below you can find the simplified [AsyncAPI v2.0.0](https://www.asyncapi.com/doc
 
 ## AsyncAPI Grammar
 
-See the simplified AsyncAPI/JSON Xtext Grammar in the file [`/plugins/io.github.abelgomez.asyncapi/src/io/github/abelgomez/asyncapi/AsyncApi.xtext`](/plugins/io.github.abelgomez.asyncapi/src/io/github/abelgomez/asyncapi/AsyncApi.xtext).
+You can find the information about the AsyncAPI/JSON Xtext Grammar in the section [Extended AsyncAPI metamodel with Service Level Agreement (SLA) primitives](SlaMetamodelAndGrammar.md).

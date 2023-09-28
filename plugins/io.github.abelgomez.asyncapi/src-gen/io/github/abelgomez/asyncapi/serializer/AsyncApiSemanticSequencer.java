@@ -4,12 +4,11 @@
 package io.github.abelgomez.asyncapi.serializer;
 
 import com.google.inject.Inject;
-import io.github.abelgomez.asyncapi.asyncApi.ANDCondition;
+import io.github.abelgomez.asyncapi.asyncApi.AndExpression;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI;
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage;
-import io.github.abelgomez.asyncapi.asyncApi.AtomicBooleanCondition;
-import io.github.abelgomez.asyncapi.asyncApi.AtomicQoSMetric;
 import io.github.abelgomez.asyncapi.asyncApi.Channel;
+import io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression;
 import io.github.abelgomez.asyncapi.asyncApi.Components;
 import io.github.abelgomez.asyncapi.asyncApi.Contact;
 import io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric;
@@ -22,10 +21,12 @@ import io.github.abelgomez.asyncapi.asyncApi.NamedMessage;
 import io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedParameter;
-import io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric;
 import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
 import io.github.abelgomez.asyncapi.asyncApi.Operation;
 import io.github.abelgomez.asyncapi.asyncApi.OperationTrait;
+import io.github.abelgomez.asyncapi.asyncApi.OrExpression;
+import io.github.abelgomez.asyncapi.asyncApi.QoSMetric;
+import io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference;
 import io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition;
 import io.github.abelgomez.asyncapi.asyncApi.Reference;
 import io.github.abelgomez.asyncapi.asyncApi.Schema;
@@ -61,39 +62,17 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == AsyncApiPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case AsyncApiPackage.AND_CONDITION:
-				if (rule == grammarAccess.getANDConditionRule()) {
-					sequence_ANDCondition(context, (ANDCondition) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getBooleanConditionRule()) {
-					sequence_ANDCondition_ORCondition(context, (ANDCondition) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getORConditionRule()) {
-					sequence_ORCondition(context, (ANDCondition) semanticObject); 
-					return; 
-				}
-				else break;
+			case AsyncApiPackage.AND_EXPRESSION:
+				sequence_AndExpression(context, (AndExpression) semanticObject); 
+				return; 
 			case AsyncApiPackage.ASYNC_API:
 				sequence_AsyncAPI(context, (AsyncAPI) semanticObject); 
 				return; 
-			case AsyncApiPackage.ATOMIC_BOOLEAN_CONDITION:
-				sequence_AtomicBooleanCondition(context, (AtomicBooleanCondition) semanticObject); 
-				return; 
-			case AsyncApiPackage.ATOMIC_QO_SMETRIC:
-				if (rule == grammarAccess.getAtomicQoSMetricRule()) {
-					sequence_AtomicQoSMetric(context, (AtomicQoSMetric) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getAbstractQoSMetricRule()
-						|| rule == grammarAccess.getQoSMetricRule()) {
-					sequence_AtomicQoSMetric_QoSMetric(context, (AtomicQoSMetric) semanticObject); 
-					return; 
-				}
-				else break;
 			case AsyncApiPackage.CHANNEL:
 				sequence_Channel(context, (Channel) semanticObject); 
+				return; 
+			case AsyncApiPackage.COMPARISON_EXPRESSION:
+				sequence_ComparisonExpression(context, (ComparisonExpression) semanticObject); 
 				return; 
 			case AsyncApiPackage.COMPONENTS:
 				sequence_Components(context, (Components) semanticObject); 
@@ -102,16 +81,8 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				sequence_Contact(context, (Contact) semanticObject); 
 				return; 
 			case AsyncApiPackage.DERIVED_QO_SMETRIC:
-				if (rule == grammarAccess.getDerivedQoSMetricRule()) {
-					sequence_DerivedQoSMetric(context, (DerivedQoSMetric) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getAbstractQoSMetricRule()
-						|| rule == grammarAccess.getQoSMetricRule()) {
-					sequence_DerivedQoSMetric_QoSMetric(context, (DerivedQoSMetric) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_DerivedQoSMetric(context, (DerivedQoSMetric) semanticObject); 
+				return; 
 			case AsyncApiPackage.GUARANTEE_TERM:
 				sequence_GuaranteeTerm(context, (GuaranteeTerm) semanticObject); 
 				return; 
@@ -139,9 +110,6 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case AsyncApiPackage.NAMED_PARAMETER:
 				sequence_NamedParameter(context, (NamedParameter) semanticObject); 
 				return; 
-			case AsyncApiPackage.NAMED_QO_SMETRIC:
-				sequence_NamedQoSMetric(context, (NamedQoSMetric) semanticObject); 
-				return; 
 			case AsyncApiPackage.NAMED_SCHEMA:
 				sequence_NamedSchema(context, (NamedSchema) semanticObject); 
 				return; 
@@ -151,8 +119,17 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case AsyncApiPackage.OPERATION_TRAIT:
 				sequence_OperationTrait(context, (OperationTrait) semanticObject); 
 				return; 
+			case AsyncApiPackage.OR_EXPRESSION:
+				sequence_OrExpression(context, (OrExpression) semanticObject); 
+				return; 
 			case AsyncApiPackage.PARAMETER:
 				sequence_Parameter(context, (io.github.abelgomez.asyncapi.asyncApi.Parameter) semanticObject); 
+				return; 
+			case AsyncApiPackage.QO_SMETRIC:
+				sequence_QoSMetric(context, (QoSMetric) semanticObject); 
+				return; 
+			case AsyncApiPackage.QO_SMETRIC_REFERENCE:
+				sequence_QoSMetricReference(context, (QoSMetricReference) semanticObject); 
 				return; 
 			case AsyncApiPackage.QUALIFYING_CONDITION:
 				sequence_QualifyingCondition(context, (QualifyingCondition) semanticObject); 
@@ -189,27 +166,14 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     ANDCondition returns ANDCondition
+	 *     BooleanExpression returns AndExpression
+	 *     AndExpression returns AndExpression
 	 *
 	 * Constraint:
-	 *     (conditions+=BooleanCondition conditions+=BooleanCondition*)
+	 *     (conditions+=BooleanExpression conditions+=BooleanExpression*)
 	 * </pre>
 	 */
-	protected void sequence_ANDCondition(ISerializationContext context, ANDCondition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     BooleanCondition returns ANDCondition
-	 *
-	 * Constraint:
-	 *     ((conditions+=BooleanCondition conditions+=BooleanCondition*) | (conditions+=BooleanCondition conditions+=BooleanCondition*))
-	 * </pre>
-	 */
-	protected void sequence_ANDCondition_ORCondition(ISerializationContext context, ANDCondition semanticObject) {
+	protected void sequence_AndExpression(ISerializationContext context, AndExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -228,62 +192,6 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 * </pre>
 	 */
 	protected void sequence_AsyncAPI(ISerializationContext context, AsyncAPI semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     BooleanCondition returns AtomicBooleanCondition
-	 *     AtomicBooleanCondition returns AtomicBooleanCondition
-	 *
-	 * Constraint:
-	 *     (qosMetric=AbstractQoSMetric operator=Operator value=AnyString)
-	 * </pre>
-	 */
-	protected void sequence_AtomicBooleanCondition(ISerializationContext context, AtomicBooleanCondition semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.ATOMIC_BOOLEAN_CONDITION__QOS_METRIC) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.ATOMIC_BOOLEAN_CONDITION__QOS_METRIC));
-			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.ATOMIC_BOOLEAN_CONDITION__OPERATOR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.ATOMIC_BOOLEAN_CONDITION__OPERATOR));
-			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.ATOMIC_BOOLEAN_CONDITION__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.ATOMIC_BOOLEAN_CONDITION__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtomicBooleanConditionAccess().getQosMetricAbstractQoSMetricParserRuleCall_4_0(), semanticObject.getQosMetric());
-		feeder.accept(grammarAccess.getAtomicBooleanConditionAccess().getOperatorOperatorEnumRuleCall_8_0(), semanticObject.getOperator());
-		feeder.accept(grammarAccess.getAtomicBooleanConditionAccess().getValueAnyStringParserRuleCall_12_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     AtomicQoSMetric returns AtomicQoSMetric
-	 *
-	 * Constraint:
-	 *     {AtomicQoSMetric}
-	 * </pre>
-	 */
-	protected void sequence_AtomicQoSMetric(ISerializationContext context, AtomicQoSMetric semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     AbstractQoSMetric returns AtomicQoSMetric
-	 *     QoSMetric returns AtomicQoSMetric
-	 *
-	 * Constraint:
-	 *     (description=AnyString | unit=QoSMetricUnit | dataType=QoSMetricType)*
-	 * </pre>
-	 */
-	protected void sequence_AtomicQoSMetric_QoSMetric(ISerializationContext context, AtomicQoSMetric semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -311,6 +219,33 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     BooleanExpression returns ComparisonExpression
+	 *     ComparisonExpression returns ComparisonExpression
+	 *
+	 * Constraint:
+	 *     (qosMetric=AbstractQoSMetric operator=Operator value=AnyString)
+	 * </pre>
+	 */
+	protected void sequence_ComparisonExpression(ISerializationContext context, ComparisonExpression semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.COMPARISON_EXPRESSION__QOS_METRIC) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.COMPARISON_EXPRESSION__QOS_METRIC));
+			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.COMPARISON_EXPRESSION__OPERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.COMPARISON_EXPRESSION__OPERATOR));
+			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.COMPARISON_EXPRESSION__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.COMPARISON_EXPRESSION__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getComparisonExpressionAccess().getQosMetricAbstractQoSMetricParserRuleCall_4_0(), semanticObject.getQosMetric());
+		feeder.accept(grammarAccess.getComparisonExpressionAccess().getOperatorOperatorEnumRuleCall_8_0(), semanticObject.getOperator());
+		feeder.accept(grammarAccess.getComparisonExpressionAccess().getValueAnyStringParserRuleCall_12_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Components returns Components
 	 *
 	 * Constraint:
@@ -320,7 +255,7 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         (parameters+=NamedParameter parameters+=NamedParameter*) | 
 	 *         (operationTraits+=NamedOperationTrait operationTraits+=NamedOperationTrait*) | 
 	 *         (messageTraits+=NamedMessageTrait messageTraits+=NamedMessageTrait*) | 
-	 *         (qosMetrics+=NamedQoSMetric qosMetrics+=NamedQoSMetric*)
+	 *         (qosMetrics+=QoSMetric qosMetrics+=QoSMetric*)
 	 *     )*
 	 * </pre>
 	 */
@@ -346,10 +281,12 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     AbstractQoSMetric returns DerivedQoSMetric
+	 *     QoSMetric returns DerivedQoSMetric
 	 *     DerivedQoSMetric returns DerivedQoSMetric
 	 *
 	 * Constraint:
-	 *     (window=AnyString | windowUnit=WindowUnit | aggregationFunction=AnyString | atomicMetric=AbstractQoSMetric)*
+	 *     (window=AnyString | windowUnit=WindowUnit | aggregationFunction=AggregationFunction)+
 	 * </pre>
 	 */
 	protected void sequence_DerivedQoSMetric(ISerializationContext context, DerivedQoSMetric semanticObject) {
@@ -360,29 +297,10 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     AbstractQoSMetric returns DerivedQoSMetric
-	 *     QoSMetric returns DerivedQoSMetric
-	 *
-	 * Constraint:
-	 *     (
-	 *         (window=AnyString | windowUnit=WindowUnit | aggregationFunction=AnyString | atomicMetric=AbstractQoSMetric)* 
-	 *         dataType=QoSMetricType? 
-	 *         ((description=AnyString | unit=QoSMetricUnit)? dataType=QoSMetricType?)*
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_DerivedQoSMetric_QoSMetric(ISerializationContext context, DerivedQoSMetric semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     GuaranteeTerm returns GuaranteeTerm
 	 *
 	 * Constraint:
-	 *     (scopes+=Scope scope+=Scope* (qualifyingConditions+=QualifyingCondition qualifyingCondition+=QualifyingCondition*)? slos+=Slo slo+=Slo*)
+	 *     (scopes+=Scope scopes+=Scope* (qualifyingConditions+=QualifyingCondition qualifyingConditions+=QualifyingCondition*)? slos+=Slo slos+=Slo*)
 	 * </pre>
 	 */
 	protected void sequence_GuaranteeTerm(ISerializationContext context, GuaranteeTerm semanticObject) {
@@ -563,29 +481,6 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     NamedQoSMetric returns NamedQoSMetric
-	 *
-	 * Constraint:
-	 *     (name=AnyString qosMetric=AbstractQoSMetric)
-	 * </pre>
-	 */
-	protected void sequence_NamedQoSMetric(ISerializationContext context, NamedQoSMetric semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.NAMED_QO_SMETRIC__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.NAMED_QO_SMETRIC__NAME));
-			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.NAMED_QO_SMETRIC__QOS_METRIC) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.NAMED_QO_SMETRIC__QOS_METRIC));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNamedQoSMetricAccess().getNameAnyStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getNamedQoSMetricAccess().getQosMetricAbstractQoSMetricParserRuleCall_3_0(), semanticObject.getQosMetric());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     NamedSchema returns NamedSchema
 	 *
 	 * Constraint:
@@ -603,20 +498,6 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		feeder.accept(grammarAccess.getNamedSchemaAccess().getNameAnyStringParserRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getNamedSchemaAccess().getSchemaAbstractSchemaParserRuleCall_3_0(), semanticObject.getSchema());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ORCondition returns ANDCondition
-	 *
-	 * Constraint:
-	 *     (conditions+=BooleanCondition conditions+=BooleanCondition*)
-	 * </pre>
-	 */
-	protected void sequence_ORCondition(ISerializationContext context, ANDCondition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -655,6 +536,21 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     BooleanExpression returns OrExpression
+	 *     OrExpression returns OrExpression
+	 *
+	 * Constraint:
+	 *     (conditions+=BooleanExpression conditions+=BooleanExpression*)
+	 * </pre>
+	 */
+	protected void sequence_OrExpression(ISerializationContext context, OrExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     AbstractParameter returns Parameter
 	 *     Parameter returns Parameter
 	 *
@@ -670,10 +566,46 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     AbstractQoSMetric returns QoSMetricReference
+	 *     QoSMetricReference returns QoSMetricReference
+	 *
+	 * Constraint:
+	 *     metric=[QoSMetric|AnyString]
+	 * </pre>
+	 */
+	protected void sequence_QoSMetricReference(ISerializationContext context, QoSMetricReference semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.QO_SMETRIC_REFERENCE__METRIC) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.QO_SMETRIC_REFERENCE__METRIC));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getQoSMetricReferenceAccess().getMetricQoSMetricAnyStringParserRuleCall_0_1(), semanticObject.eGet(AsyncApiPackage.Literals.QO_SMETRIC_REFERENCE__METRIC, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     AbstractQoSMetric returns QoSMetric
+	 *     QoSMetric returns QoSMetric
+	 *
+	 * Constraint:
+	 *     (name=AnyString | metricType=QoSMetricType | description=AnyString | unit=QoSMetricUnit | groupedByEvent=Boolean)+
+	 * </pre>
+	 */
+	protected void sequence_QoSMetric(ISerializationContext context, QoSMetric semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     QualifyingCondition returns QualifyingCondition
 	 *
 	 * Constraint:
-	 *     (name=AnyString condition=BooleanCondition)
+	 *     (name=AnyString condition=BooleanExpression)
 	 * </pre>
 	 */
 	protected void sequence_QualifyingCondition(ISerializationContext context, QualifyingCondition semanticObject) {
@@ -685,7 +617,7 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getQualifyingConditionAccess().getNameAnyStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getQualifyingConditionAccess().getConditionBooleanConditionParserRuleCall_3_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getQualifyingConditionAccess().getConditionBooleanExpressionParserRuleCall_3_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	
@@ -698,7 +630,6 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     AbstractParameter returns Reference
 	 *     AbstractOperationTrait returns Reference
 	 *     AbstractMessageTrait returns Reference
-	 *     AbstractQoSMetric returns Reference
 	 *     Reference returns Reference
 	 *
 	 * Constraint:
@@ -737,8 +668,8 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *             items=AbstractSchema
 	 *         )? 
 	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)? 
-	 *         (required+=AnyString required+=AnyString*)? 
-	 *         (properties+=NamedSchema properties+=NamedSchema*)?
+	 *         (properties+=NamedSchema properties+=NamedSchema*)? 
+	 *         (required+=AnyString required+=AnyString*)?
 	 *     )+
 	 * </pre>
 	 */
@@ -753,11 +684,20 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Scope returns Scope
 	 *
 	 * Constraint:
-	 *     (name=AnyString (reference=[Channel|AnyString] | reference=[Operation|ID]))
+	 *     (name=AnyString reference=[Channel|AnyString])
 	 * </pre>
 	 */
 	protected void sequence_Scope(ISerializationContext context, Scope semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.SCOPE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.SCOPE__NAME));
+			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.SCOPE__REFERENCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.SCOPE__REFERENCE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getScopeAccess().getNameAnyStringParserRuleCall_1_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getScopeAccess().getReferenceChannelAnyStringParserRuleCall_1_2_0_1(), semanticObject.eGet(AsyncApiPackage.Literals.SCOPE__REFERENCE, false));
+		feeder.finish();
 	}
 	
 	
@@ -795,7 +735,7 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Slo returns Slo
 	 *
 	 * Constraint:
-	 *     (name=AnyString condition=BooleanCondition)
+	 *     (name=AnyString condition=BooleanExpression)
 	 * </pre>
 	 */
 	protected void sequence_Slo(ISerializationContext context, Slo semanticObject) {
@@ -807,7 +747,7 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSloAccess().getNameAnyStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getSloAccess().getConditionBooleanConditionParserRuleCall_3_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getSloAccess().getConditionBooleanExpressionParserRuleCall_3_0(), semanticObject.getCondition());
 		feeder.finish();
 	}
 	

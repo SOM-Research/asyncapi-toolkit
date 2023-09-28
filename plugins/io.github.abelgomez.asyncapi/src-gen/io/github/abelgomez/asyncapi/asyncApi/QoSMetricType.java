@@ -21,67 +21,550 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum QoSMetricType implements Enumerator
 {
   /**
-   * The '<em><b>Real</b></em>' literal object.
+   * The '<em><b>Availability</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #REAL_VALUE
+   * @see #AVAILABILITY_VALUE
    * @generated
    * @ordered
    */
-  REAL(0, "real", "\"real\""),
+  AVAILABILITY(0, "availability", "\"availability\""),
 
   /**
-   * The '<em><b>Integer</b></em>' literal object.
+   * The '<em><b>Bandwith</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #INTEGER_VALUE
+   * @see #BANDWITH_VALUE
    * @generated
    * @ordered
    */
-  INTEGER(1, "integer", "\"integer\""),
+  BANDWITH(1, "bandwith", "\"bandwith\""),
 
   /**
-   * The '<em><b>Boolean</b></em>' literal object.
+   * The '<em><b>Cpu</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #BOOLEAN_VALUE
+   * @see #CPU_VALUE
    * @generated
    * @ordered
    */
-  BOOLEAN(2, "boolean", "\"boolean\"");
+  CPU(2, "cpu", "\"cpu\""),
 
   /**
-   * The '<em><b>Real</b></em>' literal value.
+   * The '<em><b>Capacity</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #REAL
-   * @model name="real" literal="\"real\""
+   * @see #CAPACITY_VALUE
    * @generated
    * @ordered
    */
-  public static final int REAL_VALUE = 0;
+  CAPACITY(3, "capacity", "\"capacity\""),
 
   /**
-   * The '<em><b>Integer</b></em>' literal value.
+   * The '<em><b>Disaster</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #INTEGER
-   * @model name="integer" literal="\"integer\""
+   * @see #DISASTER_VALUE
    * @generated
    * @ordered
    */
-  public static final int INTEGER_VALUE = 1;
+  DISASTER(4, "disaster", "\"disaster\""),
 
   /**
-   * The '<em><b>Boolean</b></em>' literal value.
+   * The '<em><b>Resiliance</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #BOOLEAN
-   * @model name="boolean" literal="\"boolean\""
+   * @see #RESILIANCE_VALUE
    * @generated
    * @ordered
    */
-  public static final int BOOLEAN_VALUE = 2;
+  RESILIANCE(5, "resiliance", "\"resiliance\""),
+
+  /**
+   * The '<em><b>Discoverability</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #DISCOVERABILITY_VALUE
+   * @generated
+   * @ordered
+   */
+  DISCOVERABILITY(6, "discoverability", "\"discoverability\""),
+
+  /**
+   * The '<em><b>Documentation</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #DOCUMENTATION_VALUE
+   * @generated
+   * @ordered
+   */
+  DOCUMENTATION(7, "documentation", "\"documentation\""),
+
+  /**
+   * The '<em><b>Exception handling</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #EXCEPTION_HANDLING_VALUE
+   * @generated
+   * @ordered
+   */
+  EXCEPTION_HANDLING(8, "exception_handling", "\"exception_handling\""),
+
+  /**
+   * The '<em><b>Expected failures</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #EXPECTED_FAILURES_VALUE
+   * @generated
+   * @ordered
+   */
+  EXPECTED_FAILURES(9, "expected_failures", "\"expected_failures\""),
+
+  /**
+   * The '<em><b>Failover</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #FAILOVER_VALUE
+   * @generated
+   * @ordered
+   */
+  FAILOVER(10, "failover", "\"failover\""),
+
+  /**
+   * The '<em><b>Jitter</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #JITTER_VALUE
+   * @generated
+   * @ordered
+   */
+  JITTER(11, "jitter", "\"jitter\""),
+
+  /**
+   * The '<em><b>Latency</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #LATENCY_VALUE
+   * @generated
+   * @ordered
+   */
+  LATENCY(12, "latency", "\"latency\""),
+
+  /**
+   * The '<em><b>Load balancing</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #LOAD_BALANCING_VALUE
+   * @generated
+   * @ordered
+   */
+  LOAD_BALANCING(13, "load_balancing", "\"load_balancing\""),
+
+  /**
+   * The '<em><b>Maximum throughput</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #MAXIMUM_THROUGHPUT_VALUE
+   * @generated
+   * @ordered
+   */
+  MAXIMUM_THROUGHPUT(14, "maximum_throughput", "\"maximum_throughput\""),
+
+  /**
+   * The '<em><b>Memory aapacity</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #MEMORY_AAPACITY_VALUE
+   * @generated
+   * @ordered
+   */
+  MEMORY_AAPACITY(15, "memory_aapacity", "\"memory_aapacity\""),
+
+  /**
+   * The '<em><b>Packet loss</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #PACKET_LOSS_VALUE
+   * @generated
+   * @ordered
+   */
+  PACKET_LOSS(16, "packet_loss", "\"packet_loss\""),
+
+  /**
+   * The '<em><b>Precision</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #PRECISION_VALUE
+   * @generated
+   * @ordered
+   */
+  PRECISION(17, "precision", "\"precision\""),
+
+  /**
+   * The '<em><b>Probability of correctness</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #PROBABILITY_OF_CORRECTNESS_VALUE
+   * @generated
+   * @ordered
+   */
+  PROBABILITY_OF_CORRECTNESS(18, "probability_of_correctness", "\"probability_of_correctness\""),
+
+  /**
+   * The '<em><b>Round trip time</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #ROUND_TRIP_TIME_VALUE
+   * @generated
+   * @ordered
+   */
+  ROUND_TRIP_TIME(19, "round_trip_time", "\"round_trip_time\""),
+
+  /**
+   * The '<em><b>Throughput</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #THROUGHPUT_VALUE
+   * @generated
+   * @ordered
+   */
+  THROUGHPUT(20, "throughput", "\"throughput\""),
+
+  /**
+   * The '<em><b>Time to tail</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #TIME_TO_TAIL_VALUE
+   * @generated
+   * @ordered
+   */
+  TIME_TO_TAIL(21, "time_to_tail", "\"time_to_tail\""),
+
+  /**
+   * The '<em><b>Time to tepair</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #TIME_TO_TEPAIR_VALUE
+   * @generated
+   * @ordered
+   */
+  TIME_TO_TEPAIR(22, "time_to_tepair", "\"time_to_tepair\""),
+
+  /**
+   * The '<em><b>Type consistency</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #TYPE_CONSISTENCY_VALUE
+   * @generated
+   * @ordered
+   */
+  TYPE_CONSISTENCY(23, "type_consistency", "\"type_consistency\""),
+
+  /**
+   * The '<em><b>Uptime</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #UPTIME_VALUE
+   * @generated
+   * @ordered
+   */
+  UPTIME(24, "uptime", "\"uptime\""),
+
+  /**
+   * The '<em><b>Up to dateness</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #UP_TO_DATENESS_VALUE
+   * @generated
+   * @ordered
+   */
+  UP_TO_DATENESS(25, "up_to_dateness", "\"up-to-dateness\"");
+
+  /**
+   * The '<em><b>Availability</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #AVAILABILITY
+   * @model name="availability" literal="\"availability\""
+   * @generated
+   * @ordered
+   */
+  public static final int AVAILABILITY_VALUE = 0;
+
+  /**
+   * The '<em><b>Bandwith</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #BANDWITH
+   * @model name="bandwith" literal="\"bandwith\""
+   * @generated
+   * @ordered
+   */
+  public static final int BANDWITH_VALUE = 1;
+
+  /**
+   * The '<em><b>Cpu</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #CPU
+   * @model name="cpu" literal="\"cpu\""
+   * @generated
+   * @ordered
+   */
+  public static final int CPU_VALUE = 2;
+
+  /**
+   * The '<em><b>Capacity</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #CAPACITY
+   * @model name="capacity" literal="\"capacity\""
+   * @generated
+   * @ordered
+   */
+  public static final int CAPACITY_VALUE = 3;
+
+  /**
+   * The '<em><b>Disaster</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #DISASTER
+   * @model name="disaster" literal="\"disaster\""
+   * @generated
+   * @ordered
+   */
+  public static final int DISASTER_VALUE = 4;
+
+  /**
+   * The '<em><b>Resiliance</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #RESILIANCE
+   * @model name="resiliance" literal="\"resiliance\""
+   * @generated
+   * @ordered
+   */
+  public static final int RESILIANCE_VALUE = 5;
+
+  /**
+   * The '<em><b>Discoverability</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #DISCOVERABILITY
+   * @model name="discoverability" literal="\"discoverability\""
+   * @generated
+   * @ordered
+   */
+  public static final int DISCOVERABILITY_VALUE = 6;
+
+  /**
+   * The '<em><b>Documentation</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #DOCUMENTATION
+   * @model name="documentation" literal="\"documentation\""
+   * @generated
+   * @ordered
+   */
+  public static final int DOCUMENTATION_VALUE = 7;
+
+  /**
+   * The '<em><b>Exception handling</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #EXCEPTION_HANDLING
+   * @model name="exception_handling" literal="\"exception_handling\""
+   * @generated
+   * @ordered
+   */
+  public static final int EXCEPTION_HANDLING_VALUE = 8;
+
+  /**
+   * The '<em><b>Expected failures</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #EXPECTED_FAILURES
+   * @model name="expected_failures" literal="\"expected_failures\""
+   * @generated
+   * @ordered
+   */
+  public static final int EXPECTED_FAILURES_VALUE = 9;
+
+  /**
+   * The '<em><b>Failover</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #FAILOVER
+   * @model name="failover" literal="\"failover\""
+   * @generated
+   * @ordered
+   */
+  public static final int FAILOVER_VALUE = 10;
+
+  /**
+   * The '<em><b>Jitter</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #JITTER
+   * @model name="jitter" literal="\"jitter\""
+   * @generated
+   * @ordered
+   */
+  public static final int JITTER_VALUE = 11;
+
+  /**
+   * The '<em><b>Latency</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #LATENCY
+   * @model name="latency" literal="\"latency\""
+   * @generated
+   * @ordered
+   */
+  public static final int LATENCY_VALUE = 12;
+
+  /**
+   * The '<em><b>Load balancing</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #LOAD_BALANCING
+   * @model name="load_balancing" literal="\"load_balancing\""
+   * @generated
+   * @ordered
+   */
+  public static final int LOAD_BALANCING_VALUE = 13;
+
+  /**
+   * The '<em><b>Maximum throughput</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #MAXIMUM_THROUGHPUT
+   * @model name="maximum_throughput" literal="\"maximum_throughput\""
+   * @generated
+   * @ordered
+   */
+  public static final int MAXIMUM_THROUGHPUT_VALUE = 14;
+
+  /**
+   * The '<em><b>Memory aapacity</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #MEMORY_AAPACITY
+   * @model name="memory_aapacity" literal="\"memory_aapacity\""
+   * @generated
+   * @ordered
+   */
+  public static final int MEMORY_AAPACITY_VALUE = 15;
+
+  /**
+   * The '<em><b>Packet loss</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #PACKET_LOSS
+   * @model name="packet_loss" literal="\"packet_loss\""
+   * @generated
+   * @ordered
+   */
+  public static final int PACKET_LOSS_VALUE = 16;
+
+  /**
+   * The '<em><b>Precision</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #PRECISION
+   * @model name="precision" literal="\"precision\""
+   * @generated
+   * @ordered
+   */
+  public static final int PRECISION_VALUE = 17;
+
+  /**
+   * The '<em><b>Probability of correctness</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #PROBABILITY_OF_CORRECTNESS
+   * @model name="probability_of_correctness" literal="\"probability_of_correctness\""
+   * @generated
+   * @ordered
+   */
+  public static final int PROBABILITY_OF_CORRECTNESS_VALUE = 18;
+
+  /**
+   * The '<em><b>Round trip time</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #ROUND_TRIP_TIME
+   * @model name="round_trip_time" literal="\"round_trip_time\""
+   * @generated
+   * @ordered
+   */
+  public static final int ROUND_TRIP_TIME_VALUE = 19;
+
+  /**
+   * The '<em><b>Throughput</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #THROUGHPUT
+   * @model name="throughput" literal="\"throughput\""
+   * @generated
+   * @ordered
+   */
+  public static final int THROUGHPUT_VALUE = 20;
+
+  /**
+   * The '<em><b>Time to tail</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #TIME_TO_TAIL
+   * @model name="time_to_tail" literal="\"time_to_tail\""
+   * @generated
+   * @ordered
+   */
+  public static final int TIME_TO_TAIL_VALUE = 21;
+
+  /**
+   * The '<em><b>Time to tepair</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #TIME_TO_TEPAIR
+   * @model name="time_to_tepair" literal="\"time_to_tepair\""
+   * @generated
+   * @ordered
+   */
+  public static final int TIME_TO_TEPAIR_VALUE = 22;
+
+  /**
+   * The '<em><b>Type consistency</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #TYPE_CONSISTENCY
+   * @model name="type_consistency" literal="\"type_consistency\""
+   * @generated
+   * @ordered
+   */
+  public static final int TYPE_CONSISTENCY_VALUE = 23;
+
+  /**
+   * The '<em><b>Uptime</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #UPTIME
+   * @model name="uptime" literal="\"uptime\""
+   * @generated
+   * @ordered
+   */
+  public static final int UPTIME_VALUE = 24;
+
+  /**
+   * The '<em><b>Up to dateness</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #UP_TO_DATENESS
+   * @model name="up_to_dateness" literal="\"up-to-dateness\""
+   * @generated
+   * @ordered
+   */
+  public static final int UP_TO_DATENESS_VALUE = 25;
 
   /**
    * An array of all the '<em><b>Qo SMetric Type</b></em>' enumerators.
@@ -92,9 +575,32 @@ public enum QoSMetricType implements Enumerator
   private static final QoSMetricType[] VALUES_ARRAY =
     new QoSMetricType[]
     {
-      REAL,
-      INTEGER,
-      BOOLEAN,
+      AVAILABILITY,
+      BANDWITH,
+      CPU,
+      CAPACITY,
+      DISASTER,
+      RESILIANCE,
+      DISCOVERABILITY,
+      DOCUMENTATION,
+      EXCEPTION_HANDLING,
+      EXPECTED_FAILURES,
+      FAILOVER,
+      JITTER,
+      LATENCY,
+      LOAD_BALANCING,
+      MAXIMUM_THROUGHPUT,
+      MEMORY_AAPACITY,
+      PACKET_LOSS,
+      PRECISION,
+      PROBABILITY_OF_CORRECTNESS,
+      ROUND_TRIP_TIME,
+      THROUGHPUT,
+      TIME_TO_TAIL,
+      TIME_TO_TEPAIR,
+      TYPE_CONSISTENCY,
+      UPTIME,
+      UP_TO_DATENESS,
     };
 
   /**
@@ -159,9 +665,32 @@ public enum QoSMetricType implements Enumerator
   {
     switch (value)
     {
-      case REAL_VALUE: return REAL;
-      case INTEGER_VALUE: return INTEGER;
-      case BOOLEAN_VALUE: return BOOLEAN;
+      case AVAILABILITY_VALUE: return AVAILABILITY;
+      case BANDWITH_VALUE: return BANDWITH;
+      case CPU_VALUE: return CPU;
+      case CAPACITY_VALUE: return CAPACITY;
+      case DISASTER_VALUE: return DISASTER;
+      case RESILIANCE_VALUE: return RESILIANCE;
+      case DISCOVERABILITY_VALUE: return DISCOVERABILITY;
+      case DOCUMENTATION_VALUE: return DOCUMENTATION;
+      case EXCEPTION_HANDLING_VALUE: return EXCEPTION_HANDLING;
+      case EXPECTED_FAILURES_VALUE: return EXPECTED_FAILURES;
+      case FAILOVER_VALUE: return FAILOVER;
+      case JITTER_VALUE: return JITTER;
+      case LATENCY_VALUE: return LATENCY;
+      case LOAD_BALANCING_VALUE: return LOAD_BALANCING;
+      case MAXIMUM_THROUGHPUT_VALUE: return MAXIMUM_THROUGHPUT;
+      case MEMORY_AAPACITY_VALUE: return MEMORY_AAPACITY;
+      case PACKET_LOSS_VALUE: return PACKET_LOSS;
+      case PRECISION_VALUE: return PRECISION;
+      case PROBABILITY_OF_CORRECTNESS_VALUE: return PROBABILITY_OF_CORRECTNESS;
+      case ROUND_TRIP_TIME_VALUE: return ROUND_TRIP_TIME;
+      case THROUGHPUT_VALUE: return THROUGHPUT;
+      case TIME_TO_TAIL_VALUE: return TIME_TO_TAIL;
+      case TIME_TO_TEPAIR_VALUE: return TIME_TO_TEPAIR;
+      case TYPE_CONSISTENCY_VALUE: return TYPE_CONSISTENCY;
+      case UPTIME_VALUE: return UPTIME;
+      case UP_TO_DATENESS_VALUE: return UP_TO_DATENESS;
     }
     return null;
   }
