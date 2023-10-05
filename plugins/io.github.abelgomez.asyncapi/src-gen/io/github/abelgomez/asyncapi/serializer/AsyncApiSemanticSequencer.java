@@ -374,7 +374,8 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *             description=AnyString | 
 	 *             deprecated=Boolean | 
 	 *             headers=AbstractSchema | 
-	 *             payload=AbstractSchema
+	 *             payload=AbstractSchema | 
+	 *             identifier=MessageIdentifier
 	 *         )? 
 	 *         (traits+=AbstractMessageTrait traits+=AbstractMessageTrait*)? 
 	 *         (tags+=Tag tags+=Tag*)?
@@ -707,7 +708,10 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Server returns Server
 	 *
 	 * Constraint:
-	 *     (name=AnyString ((url=AnyString | protocol=Protocol | description=AnyString)? (variables+=Variable variables+=Variable*)?)+)
+	 *     (
+	 *         name=AnyString 
+	 *         ((url=AnyString | protocol=Protocol | description=AnyString | isMonitored=Boolean)? (variables+=Variable variables+=Variable*)?)+
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_Server(ISerializationContext context, Server semanticObject) {

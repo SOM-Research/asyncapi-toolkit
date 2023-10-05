@@ -6,6 +6,7 @@ import io.github.abelgomez.asyncapi.generator.target.channels.OperationInterface
 import io.github.abelgomez.asyncapi.generator.target.json.JsonSerializableInterface
 import io.github.abelgomez.asyncapi.generator.target.messages.MessageInterface
 import io.github.abelgomez.asyncapi.generator.target.parameters.ParametersInterface
+import io.github.abelgomez.asyncapi.generator.target.servers.MonitoredServerInterface
 import io.github.abelgomez.asyncapi.generator.target.servers.ServerInterface
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
@@ -17,6 +18,7 @@ class RootPackage extends AbstractPackage {
 	AsyncAPI api
 	ServersPackage serversPackage
 	ServerInterface serverInterface
+	MonitoredServerInterface monitoredServerInterface
 	ChannelInterface channelInterface
 	OperationInterface operationInterface
 	ParametersInterface parametersInterface
@@ -36,6 +38,7 @@ class RootPackage extends AbstractPackage {
 	def initialize() {
 		serversPackage = ServersPackage.createFrom(api.servers)
 		serverInterface = ServerInterface.createFrom(api)
+		monitoredServerInterface = MonitoredServerInterface.createFrom(api)
 		channelInterface = ChannelInterface.createFrom(api)
 		operationInterface = OperationInterface.createFrom(api)
 		parametersInterface = ParametersInterface.createFrom(api)
@@ -49,6 +52,10 @@ class RootPackage extends AbstractPackage {
 
 	def serverInterface() {
 		return serverInterface
+	}
+
+	def monitoredServerInterface() {
+		return monitoredServerInterface
 	}
 
 	def channelInterface() {
@@ -82,6 +89,7 @@ class RootPackage extends AbstractPackage {
 	override saveContents(IFileSystemAccess2 fsa, IGeneratorContext context) {
 		serversPackage.saveContents(fsa, context)
 		serverInterface?.generate(fsa)
+		monitoredServerInterface?.generate(fsa)
 		channelInterface?.generate(fsa)
 		operationInterface?.generate(fsa)
 		parametersInterface?.generate(fsa)

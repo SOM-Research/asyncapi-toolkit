@@ -25,72 +25,72 @@ package io.github.abelgomez.asyncapi.asyncApi;
 public interface ComparisonExpression extends BooleanExpression
 {
   /**
-   * Returns the value of the '<em><b>Qos Metric</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Qos Metric</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Qos Metric</em>' containment reference.
-   * @see #setQosMetric(AbstractQoSMetric)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComparisonExpression_QosMetric()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Qos Metric</em>' containment reference.
+	 * @see #setQosMetric(AbstractQoSMetric)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComparisonExpression_QosMetric()
+	 * @model containment="true"
+	 * @generated
+	 */
   AbstractQoSMetric getQosMetric();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getQosMetric <em>Qos Metric</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getQosMetric <em>Qos Metric</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Qos Metric</em>' containment reference.
-   * @see #getQosMetric()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Qos Metric</em>' containment reference.
+	 * @see #getQosMetric()
+	 * @generated
+	 */
   void setQosMetric(AbstractQoSMetric value);
 
   /**
-   * Returns the value of the '<em><b>Operator</b></em>' attribute.
-   * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.Operator}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
+	 * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.Operator}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Operator</em>' attribute.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Operator
-   * @see #setOperator(Operator)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComparisonExpression_Operator()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Operator</em>' attribute.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Operator
+	 * @see #setOperator(Operator)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComparisonExpression_Operator()
+	 * @model
+	 * @generated
+	 */
   Operator getOperator();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getOperator <em>Operator</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getOperator <em>Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Operator</em>' attribute.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Operator
-   * @see #getOperator()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Operator</em>' attribute.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Operator
+	 * @see #getOperator()
+	 * @generated
+	 */
   void setOperator(Operator value);
 
   /**
-   * Returns the value of the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(String)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComparisonExpression_Value()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Value</em>' attribute.
+	 * @see #setValue(String)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComparisonExpression_Value()
+	 * @model
+	 * @generated
+	 */
   String getValue();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getValue <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getValue <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' attribute.
-   * @see #getValue()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * @see #getValue()
+	 * @generated
+	 */
   void setValue(String value);
 
 } // ComparisonExpression

@@ -50,17 +50,23 @@ class MessageInterface extends AbstractType implements IType {
 		/**
 		 * Base interface for messages
 		 */
-		public interface «name» {
+		public interface «name» extends «jsonSerializableInterface.name» {
 
 			/**
 			 * Returns the headers of the {@link «name»}
 			 */
-			Optional<? extends «jsonSerializableInterface.name»> getHeaders();
+			Optional<?> getHeaders();
 			
 			/**
 			 * Returns the payload of the {@link «name»}
 			 */
-			Optional<? extends «jsonSerializableInterface.name»> getPayload();
+			Optional<?> getPayload();
+			
+			/**
+			 * Returns the internal identifier of the {@link «name»}
+			 * It may be empty if the "x-identifier" property is not set or set to "none"
+			 */
+			Optional<String> getIdentifier();
 		}
 	'''
 }

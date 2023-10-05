@@ -1378,6 +1378,50 @@ ruleServer returns [EObject current=null]
 						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getServerAccess().getUnorderedGroup_4());
 					}
 				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getServerAccess().getUnorderedGroup_4(), 4)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getServerAccess().getUnorderedGroup_4(), 4);
+					}
+								({true}?=>(otherlv_25='"x-isMonitored"'
+								{
+									newLeafNode(otherlv_25, grammarAccess.getServerAccess().getXIsMonitoredKeyword_4_4_0());
+								}
+								otherlv_26=':'
+								{
+									newLeafNode(otherlv_26, grammarAccess.getServerAccess().getColonKeyword_4_4_1());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getServerAccess().getIsMonitoredBooleanEnumRuleCall_4_4_2_0());
+										}
+										lv_isMonitored_27_0=ruleBoolean
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getServerRule());
+											}
+											set(
+												$current,
+												"isMonitored",
+												lv_isMonitored_27_0,
+												"io.github.abelgomez.asyncapi.AsyncApi.Boolean");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								(
+									otherlv_28=','
+									{
+										newLeafNode(otherlv_28, grammarAccess.getServerAccess().getCommaKeyword_4_4_3());
+									}
+								)?
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getServerAccess().getUnorderedGroup_4());
+					}
+				)
 			)
 					)+
 					{getUnorderedGroupHelper().canLeave(grammarAccess.getServerAccess().getUnorderedGroup_4())}?
@@ -1387,9 +1431,9 @@ ruleServer returns [EObject current=null]
 				  getUnorderedGroupHelper().leave(grammarAccess.getServerAccess().getUnorderedGroup_4());
 				}
 		)
-		otherlv_25='}'
+		otherlv_29='}'
 		{
-			newLeafNode(otherlv_25, grammarAccess.getServerAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_29, grammarAccess.getServerAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;
@@ -2786,6 +2830,44 @@ ruleMessage returns [EObject current=null]
 						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMessageAccess().getUnorderedGroup_2());
 					}
 				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getMessageAccess().getUnorderedGroup_2(), 9)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getMessageAccess().getUnorderedGroup_2(), 9);
+					}
+								({true}?=>(otherlv_47='"x-identifier"'
+								{
+									newLeafNode(otherlv_47, grammarAccess.getMessageAccess().getXIdentifierKeyword_2_9_0());
+								}
+								otherlv_48=':'
+								{
+									newLeafNode(otherlv_48, grammarAccess.getMessageAccess().getColonKeyword_2_9_1());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getMessageAccess().getIdentifierMessageIdentifierEnumRuleCall_2_9_2_0());
+										}
+										lv_identifier_49_0=ruleMessageIdentifier
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getMessageRule());
+											}
+											set(
+												$current,
+												"identifier",
+												lv_identifier_49_0,
+												"io.github.abelgomez.asyncapi.AsyncApi.MessageIdentifier");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMessageAccess().getUnorderedGroup_2());
+					}
+				)
 			)
 					)*
 				)
@@ -2794,9 +2876,9 @@ ruleMessage returns [EObject current=null]
 				  getUnorderedGroupHelper().leave(grammarAccess.getMessageAccess().getUnorderedGroup_2());
 				}
 		)
-		otherlv_47='}'
+		otherlv_50='}'
 		{
-			newLeafNode(otherlv_47, grammarAccess.getMessageAccess().getRightCurlyBracketKeyword_3());
+			newLeafNode(otherlv_50, grammarAccess.getMessageAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;
@@ -8186,6 +8268,49 @@ ruleVersionNumber returns [Enumerator current=null]
 			$current = grammarAccess.getVersionNumberAccess().get_200EnumLiteralDeclaration().getEnumLiteral().getInstance();
 			newLeafNode(enumLiteral_0, grammarAccess.getVersionNumberAccess().get_200EnumLiteralDeclaration());
 		}
+	)
+;
+
+// Rule MessageIdentifier
+ruleMessageIdentifier returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='"none"'
+			{
+				$current = grammarAccess.getMessageIdentifierAccess().getNoneEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getMessageIdentifierAccess().getNoneEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='"generated"'
+			{
+				$current = grammarAccess.getMessageIdentifierAccess().getGeneratedEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getMessageIdentifierAccess().getGeneratedEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='"md5"'
+			{
+				$current = grammarAccess.getMessageIdentifierAccess().getMd5EnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getMessageIdentifierAccess().getMd5EnumLiteralDeclaration_2());
+			}
+		)
+		    |
+		(
+			enumLiteral_3='"sha-256"'
+			{
+				$current = grammarAccess.getMessageIdentifierAccess().getSha256EnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getMessageIdentifierAccess().getSha256EnumLiteralDeclaration_3());
+			}
+		)
 	)
 ;
 

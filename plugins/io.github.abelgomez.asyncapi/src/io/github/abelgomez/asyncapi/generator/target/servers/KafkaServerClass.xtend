@@ -59,38 +59,6 @@ class KafkaServerClass extends ServerClass implements IClass {
 		}
 	}
 	
-	private def serverExceptionClass() {
-		return server.api.transform.serverInterface.serverExceptionClass
-	}
-	
-	private def serverInterface() {
-		return server.api.transform.serverInterface
-	}
-	
-	private def channelInterface() {
-		return server.api.transform.channelInterface
-	}
-	
-	private def operationInterface() {
-		return server.api.transform.operationInterface
-	}
-	
-	private def messageInterface() {
-		return server.api.transform.messageInterface
-	}
-	
-	private def channelPublishConfigurationInterface() {
-		return server.api.transform.channelInterface.channelPublishConfigurationInterface
-	} 
-
-	private def channelSubscribeConfigurationInterface() {
-		return server.api.transform.channelInterface.channelSubscribeConfigurationInterface
-	} 
-	
-	private def receivedClass() {
-		return server.api.transform.serverInterface.receivedClass
-	}
-	
 	override serialize() '''
 		package «pkg»;
 		

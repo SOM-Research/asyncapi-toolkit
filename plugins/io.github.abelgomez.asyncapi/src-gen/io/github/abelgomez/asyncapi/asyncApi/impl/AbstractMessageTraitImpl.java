@@ -20,24 +20,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class AbstractMessageTraitImpl extends MinimalEObjectImpl.Container implements AbstractMessageTrait
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected AbstractMessageTraitImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return AsyncApiPackage.Literals.ABSTRACT_MESSAGE_TRAIT;
-  }
+		return AsyncApiPackage.Literals.ABSTRACT_MESSAGE_TRAIT;
+	}
 
 } //AbstractMessageTraitImpl

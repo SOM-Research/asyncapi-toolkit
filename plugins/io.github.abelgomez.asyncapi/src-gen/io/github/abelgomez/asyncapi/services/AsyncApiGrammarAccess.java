@@ -731,6 +731,12 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final RuleCall cVariablesVariableParserRuleCall_4_3_4_1_0 = (RuleCall)cVariablesAssignment_4_3_4_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4_3_5 = (Keyword)cGroup_4_3.eContents().get(5);
 		private final Keyword cCommaKeyword_4_3_6 = (Keyword)cGroup_4_3.eContents().get(6);
+		private final Group cGroup_4_4 = (Group)cUnorderedGroup_4.eContents().get(4);
+		private final Keyword cXIsMonitoredKeyword_4_4_0 = (Keyword)cGroup_4_4.eContents().get(0);
+		private final Keyword cColonKeyword_4_4_1 = (Keyword)cGroup_4_4.eContents().get(1);
+		private final Assignment cIsMonitoredAssignment_4_4_2 = (Assignment)cGroup_4_4.eContents().get(2);
+		private final RuleCall cIsMonitoredBooleanEnumRuleCall_4_4_2_0 = (RuleCall)cIsMonitoredAssignment_4_4_2.eContents().get(0);
+		private final Keyword cCommaKeyword_4_4_3 = (Keyword)cGroup_4_4.eContents().get(3);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Server:
@@ -739,6 +745,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//        & ( '"protocol"' ':' protocol=Protocol ','? )
 		//        & ( '"description"' ':' description=AnyString ','? )?
 		//        & ( '"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','? )?
+		//        & ( '"x-isMonitored"' ':' isMonitored=Boolean ','?  )?
 		////        & ( GenericJsonTuple ','? )*
 		//    ) '}';
 		@Override public ParserRule getRule() { return rule; }
@@ -748,6 +755,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//        & ( '"protocol"' ':' protocol=Protocol ','? )
 		//        & ( '"description"' ':' description=AnyString ','? )?
 		//        & ( '"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','? )?
+		//        & ( '"x-isMonitored"' ':' isMonitored=Boolean ','?  )?
 		////        & ( GenericJsonTuple ','? )*
 		//    ) '}'
 		public Group getGroup() { return cGroup; }
@@ -772,6 +780,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//        & ( '"protocol"' ':' protocol=Protocol ','? )
 		//        & ( '"description"' ':' description=AnyString ','? )?
 		//        & ( '"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','? )?
+		//        & ( '"x-isMonitored"' ':' isMonitored=Boolean ','?  )?
 		////        & ( GenericJsonTuple ','? )*
 		//    )
 		public UnorderedGroup getUnorderedGroup_4() { return cUnorderedGroup_4; }
@@ -865,6 +874,24 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		
 		//','?
 		public Keyword getCommaKeyword_4_3_6() { return cCommaKeyword_4_3_6; }
+		
+		//( '"x-isMonitored"' ':' isMonitored=Boolean ','?  )?
+		public Group getGroup_4_4() { return cGroup_4_4; }
+		
+		//'"x-isMonitored"'
+		public Keyword getXIsMonitoredKeyword_4_4_0() { return cXIsMonitoredKeyword_4_4_0; }
+		
+		//':'
+		public Keyword getColonKeyword_4_4_1() { return cColonKeyword_4_4_1; }
+		
+		//isMonitored=Boolean
+		public Assignment getIsMonitoredAssignment_4_4_2() { return cIsMonitoredAssignment_4_4_2; }
+		
+		//Boolean
+		public RuleCall getIsMonitoredBooleanEnumRuleCall_4_4_2_0() { return cIsMonitoredBooleanEnumRuleCall_4_4_2_0; }
+		
+		//','?
+		public Keyword getCommaKeyword_4_4_3() { return cCommaKeyword_4_4_3; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
@@ -1506,6 +1533,11 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final RuleCall cTraitsAbstractMessageTraitParserRuleCall_2_8_4_1_0 = (RuleCall)cTraitsAssignment_2_8_4_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_2_8_5 = (Keyword)cGroup_2_8.eContents().get(5);
 		private final Keyword cCommaKeyword_2_8_6 = (Keyword)cGroup_2_8.eContents().get(6);
+		private final Group cGroup_2_9 = (Group)cUnorderedGroup_2.eContents().get(9);
+		private final Keyword cXIdentifierKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
+		private final Keyword cColonKeyword_2_9_1 = (Keyword)cGroup_2_9.eContents().get(1);
+		private final Assignment cIdentifierAssignment_2_9_2 = (Assignment)cGroup_2_9.eContents().get(2);
+		private final RuleCall cIdentifierMessageIdentifierEnumRuleCall_2_9_2_0 = (RuleCall)cIdentifierAssignment_2_9_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Message:
@@ -1519,6 +1551,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//        & ( '"tags"' ':' '[' tags+=Tag ( ',' tags+=Tag )* ']' ','? )?
 		//        & ( '"payload"' ':' payload=AbstractSchema ','? )?
 		//        & ( '"traits"' ':' '[' traits+=AbstractMessageTrait ( ',' traits+=AbstractMessageTrait )* ']' ','?  )?
+		//        & ( '"x-identifier"' ':' identifier=MessageIdentifier )?
 		////        & ( GenericJsonTupleButRef ','? )*
 		//    ) '}';
 		@Override public ParserRule getRule() { return rule; }
@@ -1533,6 +1566,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//        & ( '"tags"' ':' '[' tags+=Tag ( ',' tags+=Tag )* ']' ','? )?
 		//        & ( '"payload"' ':' payload=AbstractSchema ','? )?
 		//        & ( '"traits"' ':' '[' traits+=AbstractMessageTrait ( ',' traits+=AbstractMessageTrait )* ']' ','?  )?
+		//        & ( '"x-identifier"' ':' identifier=MessageIdentifier )?
 		////        & ( GenericJsonTupleButRef ','? )*
 		//    ) '}'
 		public Group getGroup() { return cGroup; }
@@ -1553,6 +1587,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//        & ( '"tags"' ':' '[' tags+=Tag ( ',' tags+=Tag )* ']' ','? )?
 		//        & ( '"payload"' ':' payload=AbstractSchema ','? )?
 		//        & ( '"traits"' ':' '[' traits+=AbstractMessageTrait ( ',' traits+=AbstractMessageTrait )* ']' ','?  )?
+		//        & ( '"x-identifier"' ':' identifier=MessageIdentifier )?
 		////        & ( GenericJsonTupleButRef ','? )*
 		//    )
 		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
@@ -1754,6 +1789,21 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		
 		//','?
 		public Keyword getCommaKeyword_2_8_6() { return cCommaKeyword_2_8_6; }
+		
+		//( '"x-identifier"' ':' identifier=MessageIdentifier )?
+		public Group getGroup_2_9() { return cGroup_2_9; }
+		
+		//'"x-identifier"'
+		public Keyword getXIdentifierKeyword_2_9_0() { return cXIdentifierKeyword_2_9_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2_9_1() { return cColonKeyword_2_9_1; }
+		
+		//identifier=MessageIdentifier
+		public Assignment getIdentifierAssignment_2_9_2() { return cIdentifierAssignment_2_9_2; }
+		
+		//MessageIdentifier
+		public RuleCall getIdentifierMessageIdentifierEnumRuleCall_2_9_2_0() { return cIdentifierMessageIdentifierEnumRuleCall_2_9_2_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
@@ -5798,6 +5848,55 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//'"2.0.0"'
 		public Keyword get_200200Keyword_0() { return c_200200Keyword_0; }
 	}
+	public class MessageIdentifierElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.MessageIdentifier");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cNoneEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cNoneNoneKeyword_0_0 = (Keyword)cNoneEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cGeneratedEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cGeneratedGeneratedKeyword_1_0 = (Keyword)cGeneratedEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cMd5EnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cMd5Md5Keyword_2_0 = (Keyword)cMd5EnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cSha256EnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cSha256Sha256Keyword_3_0 = (Keyword)cSha256EnumLiteralDeclaration_3.eContents().get(0);
+		
+		//enum MessageIdentifier:
+		//    none ='"none"'
+		//    | generated = '"generated"'
+		//    | md5 = '"md5"'
+		//    | sha256 = '"sha-256"';
+		public EnumRule getRule() { return rule; }
+		
+		//none ='"none"'
+		//| generated = '"generated"'
+		//| md5 = '"md5"'
+		//| sha256 = '"sha-256"'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//none ='"none"'
+		public EnumLiteralDeclaration getNoneEnumLiteralDeclaration_0() { return cNoneEnumLiteralDeclaration_0; }
+		
+		//'"none"'
+		public Keyword getNoneNoneKeyword_0_0() { return cNoneNoneKeyword_0_0; }
+		
+		//generated = '"generated"'
+		public EnumLiteralDeclaration getGeneratedEnumLiteralDeclaration_1() { return cGeneratedEnumLiteralDeclaration_1; }
+		
+		//'"generated"'
+		public Keyword getGeneratedGeneratedKeyword_1_0() { return cGeneratedGeneratedKeyword_1_0; }
+		
+		//md5 = '"md5"'
+		public EnumLiteralDeclaration getMd5EnumLiteralDeclaration_2() { return cMd5EnumLiteralDeclaration_2; }
+		
+		//'"md5"'
+		public Keyword getMd5Md5Keyword_2_0() { return cMd5Md5Keyword_2_0; }
+		
+		//sha256 = '"sha-256"'
+		public EnumLiteralDeclaration getSha256EnumLiteralDeclaration_3() { return cSha256EnumLiteralDeclaration_3; }
+		
+		//'"sha-256"'
+		public Keyword getSha256Sha256Keyword_3_0() { return cSha256Sha256Keyword_3_0; }
+	}
 	public class ProtocolElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.Protocol");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -5985,6 +6084,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	private final JsonTypeElements eJsonType;
 	private final BooleanElements eBoolean;
 	private final VersionNumberElements eVersionNumber;
+	private final MessageIdentifierElements eMessageIdentifier;
 	private final ProtocolElements eProtocol;
 	private final PrimitiveValueElements pPrimitiveValue;
 	private final AnyStringButRefElements pAnyStringButRef;
@@ -6047,6 +6147,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		this.eJsonType = new JsonTypeElements();
 		this.eBoolean = new BooleanElements();
 		this.eVersionNumber = new VersionNumberElements();
+		this.eMessageIdentifier = new MessageIdentifierElements();
 		this.eProtocol = new ProtocolElements();
 		this.pPrimitiveValue = new PrimitiveValueElements();
 		this.pAnyStringButRef = new AnyStringButRefElements();
@@ -6153,6 +6254,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//        & ( '"protocol"' ':' protocol=Protocol ','? )
 	//        & ( '"description"' ':' description=AnyString ','? )?
 	//        & ( '"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','? )?
+	//        & ( '"x-isMonitored"' ':' isMonitored=Boolean ','?  )?
 	////        & ( GenericJsonTuple ','? )*
 	//    ) '}';
 	public ServerElements getServerAccess() {
@@ -6233,6 +6335,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//        & ( '"tags"' ':' '[' tags+=Tag ( ',' tags+=Tag )* ']' ','? )?
 	//        & ( '"payload"' ':' payload=AbstractSchema ','? )?
 	//        & ( '"traits"' ':' '[' traits+=AbstractMessageTrait ( ',' traits+=AbstractMessageTrait )* ']' ','?  )?
+	//        & ( '"x-identifier"' ':' identifier=MessageIdentifier )?
 	////        & ( GenericJsonTupleButRef ','? )*
 	//    ) '}';
 	public MessageElements getMessageAccess() {
@@ -6752,6 +6855,19 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	public EnumRule getVersionNumberRule() {
 		return getVersionNumberAccess().getRule();
+	}
+	
+	//enum MessageIdentifier:
+	//    none ='"none"'
+	//    | generated = '"generated"'
+	//    | md5 = '"md5"'
+	//    | sha256 = '"sha-256"';
+	public MessageIdentifierElements getMessageIdentifierAccess() {
+		return eMessageIdentifier;
+	}
+	
+	public EnumRule getMessageIdentifierRule() {
+		return getMessageIdentifierAccess().getRule();
 	}
 	
 	//enum Protocol:

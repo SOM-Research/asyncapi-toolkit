@@ -21,274 +21,268 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum WindowUnit implements Enumerator
 {
   /**
-   * The '<em><b>Seconds</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Seconds</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #SECONDS_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #SECONDS_VALUE
+	 * @generated
+	 * @ordered
+	 */
   SECONDS(0, "seconds", "\"seconds\""),
 
   /**
-   * The '<em><b>Minutes</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Minutes</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #MINUTES_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #MINUTES_VALUE
+	 * @generated
+	 * @ordered
+	 */
   MINUTES(1, "minutes", "\"minutes\""),
 
   /**
-   * The '<em><b>Hours</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Hours</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #HOURS_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #HOURS_VALUE
+	 * @generated
+	 * @ordered
+	 */
   HOURS(2, "hours", "\"hours\""),
 
   /**
-   * The '<em><b>Days</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Days</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #DAYS_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #DAYS_VALUE
+	 * @generated
+	 * @ordered
+	 */
   DAYS(3, "days", "\"days\""),
 
   /**
-   * The '<em><b>Messages</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Messages</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #MESSAGES_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #MESSAGES_VALUE
+	 * @generated
+	 * @ordered
+	 */
   MESSAGES(4, "messages", "\"messages\"");
 
   /**
-   * The '<em><b>Seconds</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Seconds</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #SECONDS
-   * @model name="seconds" literal="\"seconds\""
-   * @generated
-   * @ordered
-   */
+	 * @see #SECONDS
+	 * @model name="seconds" literal="\"seconds\""
+	 * @generated
+	 * @ordered
+	 */
   public static final int SECONDS_VALUE = 0;
 
   /**
-   * The '<em><b>Minutes</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Minutes</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #MINUTES
-   * @model name="minutes" literal="\"minutes\""
-   * @generated
-   * @ordered
-   */
+	 * @see #MINUTES
+	 * @model name="minutes" literal="\"minutes\""
+	 * @generated
+	 * @ordered
+	 */
   public static final int MINUTES_VALUE = 1;
 
   /**
-   * The '<em><b>Hours</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Hours</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #HOURS
-   * @model name="hours" literal="\"hours\""
-   * @generated
-   * @ordered
-   */
+	 * @see #HOURS
+	 * @model name="hours" literal="\"hours\""
+	 * @generated
+	 * @ordered
+	 */
   public static final int HOURS_VALUE = 2;
 
   /**
-   * The '<em><b>Days</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Days</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #DAYS
-   * @model name="days" literal="\"days\""
-   * @generated
-   * @ordered
-   */
+	 * @see #DAYS
+	 * @model name="days" literal="\"days\""
+	 * @generated
+	 * @ordered
+	 */
   public static final int DAYS_VALUE = 3;
 
   /**
-   * The '<em><b>Messages</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Messages</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #MESSAGES
-   * @model name="messages" literal="\"messages\""
-   * @generated
-   * @ordered
-   */
+	 * @see #MESSAGES
+	 * @model name="messages" literal="\"messages\""
+	 * @generated
+	 * @ordered
+	 */
   public static final int MESSAGES_VALUE = 4;
 
   /**
-   * An array of all the '<em><b>Window Unit</b></em>' enumerators.
-   * <!-- begin-user-doc -->
+	 * An array of all the '<em><b>Window Unit</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private static final WindowUnit[] VALUES_ARRAY =
-    new WindowUnit[]
-    {
-      SECONDS,
-      MINUTES,
-      HOURS,
-      DAYS,
-      MESSAGES,
-    };
+    new WindowUnit[] {
+			SECONDS,
+			MINUTES,
+			HOURS,
+			DAYS,
+			MESSAGES,
+		};
 
   /**
-   * A public read-only list of all the '<em><b>Window Unit</b></em>' enumerators.
-   * <!-- begin-user-doc -->
+	 * A public read-only list of all the '<em><b>Window Unit</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static final List<WindowUnit> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-   * Returns the '<em><b>Window Unit</b></em>' literal with the specified literal value.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Window Unit</b></em>' literal with the specified literal value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param literal the literal.
-   * @return the matching enumerator or <code>null</code>.
-   * @generated
-   */
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
+	 * @generated
+	 */
   public static WindowUnit get(String literal)
   {
-    for (int i = 0; i < VALUES_ARRAY.length; ++i)
-    {
-      WindowUnit result = VALUES_ARRAY[i];
-      if (result.toString().equals(literal))
-      {
-        return result;
-      }
-    }
-    return null;
-  }
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			WindowUnit result = VALUES_ARRAY[i];
+			if (result.toString().equals(literal)) {
+				return result;
+			}
+		}
+		return null;
+	}
 
   /**
-   * Returns the '<em><b>Window Unit</b></em>' literal with the specified name.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Window Unit</b></em>' literal with the specified name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param name the name.
-   * @return the matching enumerator or <code>null</code>.
-   * @generated
-   */
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
+	 * @generated
+	 */
   public static WindowUnit getByName(String name)
   {
-    for (int i = 0; i < VALUES_ARRAY.length; ++i)
-    {
-      WindowUnit result = VALUES_ARRAY[i];
-      if (result.getName().equals(name))
-      {
-        return result;
-      }
-    }
-    return null;
-  }
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			WindowUnit result = VALUES_ARRAY[i];
+			if (result.getName().equals(name)) {
+				return result;
+			}
+		}
+		return null;
+	}
 
   /**
-   * Returns the '<em><b>Window Unit</b></em>' literal with the specified integer value.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Window Unit</b></em>' literal with the specified integer value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the integer value.
-   * @return the matching enumerator or <code>null</code>.
-   * @generated
-   */
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
+	 * @generated
+	 */
   public static WindowUnit get(int value)
   {
-    switch (value)
-    {
-      case SECONDS_VALUE: return SECONDS;
-      case MINUTES_VALUE: return MINUTES;
-      case HOURS_VALUE: return HOURS;
-      case DAYS_VALUE: return DAYS;
-      case MESSAGES_VALUE: return MESSAGES;
-    }
-    return null;
-  }
+		switch (value) {
+			case SECONDS_VALUE: return SECONDS;
+			case MINUTES_VALUE: return MINUTES;
+			case HOURS_VALUE: return HOURS;
+			case DAYS_VALUE: return DAYS;
+			case MESSAGES_VALUE: return MESSAGES;
+		}
+		return null;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final int value;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final String name;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final String literal;
 
   /**
-   * Only this class can construct instances.
-   * <!-- begin-user-doc -->
+	 * Only this class can construct instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private WindowUnit(int value, String name, String literal)
   {
-    this.value = value;
-    this.name = name;
-    this.literal = literal;
-  }
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int getValue()
   {
-    return value;
-  }
+	  return value;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String getName()
   {
-    return name;
-  }
+	  return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String getLiteral()
   {
-    return literal;
-  }
+	  return literal;
+	}
 
   /**
-   * Returns the literal value of the enumerator, which is its string representation.
-   * <!-- begin-user-doc -->
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    return literal;
-  }
+		return literal;
+	}
   
 } //WindowUnit

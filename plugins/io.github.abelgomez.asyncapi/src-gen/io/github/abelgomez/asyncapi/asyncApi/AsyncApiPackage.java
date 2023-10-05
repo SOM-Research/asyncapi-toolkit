@@ -27,3685 +27,3745 @@ import org.eclipse.emf.ecore.EReference;
 public interface AsyncApiPackage extends EPackage
 {
   /**
-   * The package name.
-   * <!-- begin-user-doc -->
+	 * The package name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   String eNAME = "asyncApi";
 
   /**
-   * The package namespace URI.
-   * <!-- begin-user-doc -->
+	 * The package namespace URI.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   String eNS_URI = "http://io.github.abelgomez/asyncapi/AsyncApi";
 
   /**
-   * The package namespace name.
-   * <!-- begin-user-doc -->
+	 * The package namespace name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   String eNS_PREFIX = "asyncApi";
 
   /**
-   * The singleton instance of the package.
-   * <!-- begin-user-doc -->
+	 * The singleton instance of the package.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   AsyncApiPackage eINSTANCE = io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AsyncAPIImpl <em>Async API</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AsyncAPIImpl <em>Async API</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncAPIImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAsyncAPI()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncAPIImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAsyncAPI()
+	 * @generated
+	 */
   int ASYNC_API = 0;
 
   /**
-   * The feature id for the '<em><b>Version</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int ASYNC_API__VERSION = 0;
 
   /**
-   * The feature id for the '<em><b>Info</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int ASYNC_API__INFO = 1;
 
   /**
-   * The feature id for the '<em><b>Servers</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Servers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int ASYNC_API__SERVERS = 2;
 
   /**
-   * The feature id for the '<em><b>Channels</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Channels</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int ASYNC_API__CHANNELS = 3;
 
   /**
-   * The feature id for the '<em><b>Components</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Components</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int ASYNC_API__COMPONENTS = 4;
 
   /**
-   * The feature id for the '<em><b>Sla</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Sla</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int ASYNC_API__SLA = 5;
 
   /**
-   * The number of structural features of the '<em>Async API</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Async API</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int ASYNC_API_FEATURE_COUNT = 6;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.InfoImpl <em>Info</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.InfoImpl <em>Info</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.InfoImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getInfo()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.InfoImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getInfo()
+	 * @generated
+	 */
   int INFO = 1;
 
   /**
-   * The feature id for the '<em><b>Title</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int INFO__TITLE = 0;
 
   /**
-   * The feature id for the '<em><b>Version</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int INFO__VERSION = 1;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int INFO__DESCRIPTION = 2;
 
   /**
-   * The feature id for the '<em><b>Terms Of Service</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Terms Of Service</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int INFO__TERMS_OF_SERVICE = 3;
 
   /**
-   * The feature id for the '<em><b>Contact</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Contact</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int INFO__CONTACT = 4;
 
   /**
-   * The feature id for the '<em><b>License</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>License</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int INFO__LICENSE = 5;
 
   /**
-   * The feature id for the '<em><b>Base Package</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Base Package</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int INFO__BASE_PACKAGE = 6;
 
   /**
-   * The number of structural features of the '<em>Info</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Info</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int INFO_FEATURE_COUNT = 7;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ContactImpl <em>Contact</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ContactImpl <em>Contact</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.ContactImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getContact()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.ContactImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getContact()
+	 * @generated
+	 */
   int CONTACT = 2;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int CONTACT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Url</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int CONTACT__URL = 1;
 
   /**
-   * The feature id for the '<em><b>Email</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int CONTACT__EMAIL = 2;
 
   /**
-   * The number of structural features of the '<em>Contact</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Contact</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int CONTACT_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.LicenseImpl <em>License</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.LicenseImpl <em>License</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.LicenseImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getLicense()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.LicenseImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getLicense()
+	 * @generated
+	 */
   int LICENSE = 3;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int LICENSE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Url</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int LICENSE__URL = 1;
 
   /**
-   * The number of structural features of the '<em>License</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>License</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int LICENSE_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl <em>Server</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl <em>Server</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getServer()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getServer()
+	 * @generated
+	 */
   int SERVER = 4;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SERVER__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Url</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SERVER__URL = 1;
 
   /**
-   * The feature id for the '<em><b>Protocol</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Protocol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SERVER__PROTOCOL = 2;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SERVER__DESCRIPTION = 3;
 
   /**
-   * The feature id for the '<em><b>Variables</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SERVER__VARIABLES = 4;
 
   /**
-   * The number of structural features of the '<em>Server</em>' class.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Is Monitored</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVER_FEATURE_COUNT = 5;
+	 * @generated
+	 * @ordered
+	 */
+  int SERVER__IS_MONITORED = 5;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.VariableImpl <em>Variable</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Server</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.VariableImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getVariable()
-   * @generated
-   */
+	 * @generated
+	 * @ordered
+	 */
+  int SERVER_FEATURE_COUNT = 6;
+
+  /**
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.VariableImpl <em>Variable</em>}' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.VariableImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getVariable()
+	 * @generated
+	 */
   int VARIABLE = 5;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int VARIABLE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int VARIABLE__DESCRIPTION = 1;
 
   /**
-   * The feature id for the '<em><b>Default</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Default</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int VARIABLE__DEFAULT = 2;
 
   /**
-   * The feature id for the '<em><b>Enum</b></em>' attribute list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Enum</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int VARIABLE__ENUM = 3;
 
   /**
-   * The number of structural features of the '<em>Variable</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Variable</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int VARIABLE_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ChannelImpl <em>Channel</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ChannelImpl <em>Channel</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.ChannelImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getChannel()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.ChannelImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getChannel()
+	 * @generated
+	 */
   int CHANNEL = 6;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int CHANNEL__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int CHANNEL__DESCRIPTION = 1;
 
   /**
-   * The feature id for the '<em><b>Publish</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Publish</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int CHANNEL__PUBLISH = 2;
 
   /**
-   * The feature id for the '<em><b>Subscribe</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Subscribe</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int CHANNEL__SUBSCRIBE = 3;
 
   /**
-   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int CHANNEL__PARAMETERS = 4;
 
   /**
-   * The feature id for the '<em><b>Title</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int CHANNEL__TITLE = 5;
 
   /**
-   * The number of structural features of the '<em>Channel</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Channel</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int CHANNEL_FEATURE_COUNT = 6;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.OperationImpl <em>Operation</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.OperationImpl <em>Operation</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.OperationImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOperation()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.OperationImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOperation()
+	 * @generated
+	 */
   int OPERATION = 7;
 
   /**
-   * The feature id for the '<em><b>Operation Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Operation Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int OPERATION__OPERATION_ID = 0;
 
   /**
-   * The feature id for the '<em><b>Summary</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int OPERATION__SUMMARY = 1;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int OPERATION__DESCRIPTION = 2;
 
   /**
-   * The feature id for the '<em><b>Message</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Message</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int OPERATION__MESSAGE = 3;
 
   /**
-   * The feature id for the '<em><b>Traits</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Traits</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int OPERATION__TRAITS = 4;
 
   /**
-   * The number of structural features of the '<em>Operation</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Operation</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int OPERATION_FEATURE_COUNT = 5;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractMessageImpl <em>Abstract Message</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractMessageImpl <em>Abstract Message</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractMessageImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractMessage()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractMessageImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractMessage()
+	 * @generated
+	 */
   int ABSTRACT_MESSAGE = 8;
 
   /**
-   * The number of structural features of the '<em>Abstract Message</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Abstract Message</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int ABSTRACT_MESSAGE_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl <em>Message</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl <em>Message</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getMessage()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getMessage()
+	 * @generated
+	 */
   int MESSAGE = 9;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int MESSAGE__NAME = ABSTRACT_MESSAGE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Title</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int MESSAGE__TITLE = ABSTRACT_MESSAGE_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Summary</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int MESSAGE__SUMMARY = ABSTRACT_MESSAGE_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int MESSAGE__DESCRIPTION = ABSTRACT_MESSAGE_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Deprecated</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Deprecated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int MESSAGE__DEPRECATED = ABSTRACT_MESSAGE_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>Headers</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Headers</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int MESSAGE__HEADERS = ABSTRACT_MESSAGE_FEATURE_COUNT + 5;
 
   /**
-   * The feature id for the '<em><b>Tags</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int MESSAGE__TAGS = ABSTRACT_MESSAGE_FEATURE_COUNT + 6;
 
   /**
-   * The feature id for the '<em><b>Payload</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Payload</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int MESSAGE__PAYLOAD = ABSTRACT_MESSAGE_FEATURE_COUNT + 7;
 
   /**
-   * The feature id for the '<em><b>Traits</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Traits</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int MESSAGE__TRAITS = ABSTRACT_MESSAGE_FEATURE_COUNT + 8;
 
   /**
-   * The number of structural features of the '<em>Message</em>' class.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MESSAGE_FEATURE_COUNT = ABSTRACT_MESSAGE_FEATURE_COUNT + 9;
+	 * @generated
+	 * @ordered
+	 */
+  int MESSAGE__IDENTIFIER = ABSTRACT_MESSAGE_FEATURE_COUNT + 9;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageImpl <em>Named Message</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Message</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedMessage()
-   * @generated
-   */
+	 * @generated
+	 * @ordered
+	 */
+  int MESSAGE_FEATURE_COUNT = ABSTRACT_MESSAGE_FEATURE_COUNT + 10;
+
+  /**
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageImpl <em>Named Message</em>}' class.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedMessage()
+	 * @generated
+	 */
   int NAMED_MESSAGE = 10;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int NAMED_MESSAGE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Message</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Message</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int NAMED_MESSAGE__MESSAGE = 1;
 
   /**
-   * The number of structural features of the '<em>Named Message</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Named Message</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int NAMED_MESSAGE_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.TagImpl <em>Tag</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.TagImpl <em>Tag</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.TagImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getTag()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.TagImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getTag()
+	 * @generated
+	 */
   int TAG = 11;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int TAG__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int TAG__DESCRIPTION = 1;
 
   /**
-   * The number of structural features of the '<em>Tag</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Tag</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int TAG_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractSchemaImpl <em>Abstract Schema</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractSchemaImpl <em>Abstract Schema</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractSchemaImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractSchema()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractSchemaImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractSchema()
+	 * @generated
+	 */
   int ABSTRACT_SCHEMA = 12;
 
   /**
-   * The number of structural features of the '<em>Abstract Schema</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Abstract Schema</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int ABSTRACT_SCHEMA_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl <em>Schema</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl <em>Schema</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getSchema()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getSchema()
+	 * @generated
+	 */
   int SCHEMA = 13;
 
   /**
-   * The feature id for the '<em><b>Title</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCHEMA__TITLE = ABSTRACT_SCHEMA_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCHEMA__TYPE = ABSTRACT_SCHEMA_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCHEMA__DESCRIPTION = ABSTRACT_SCHEMA_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Format</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCHEMA__FORMAT = ABSTRACT_SCHEMA_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Minimum</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Minimum</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCHEMA__MINIMUM = ABSTRACT_SCHEMA_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>Maximum</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Maximum</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCHEMA__MAXIMUM = ABSTRACT_SCHEMA_FEATURE_COUNT + 5;
 
   /**
-   * The feature id for the '<em><b>Min Items</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Min Items</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCHEMA__MIN_ITEMS = ABSTRACT_SCHEMA_FEATURE_COUNT + 6;
 
   /**
-   * The feature id for the '<em><b>Max Items</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Max Items</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCHEMA__MAX_ITEMS = ABSTRACT_SCHEMA_FEATURE_COUNT + 7;
 
   /**
-   * The feature id for the '<em><b>Default</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Default</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCHEMA__DEFAULT = ABSTRACT_SCHEMA_FEATURE_COUNT + 8;
 
   /**
-   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCHEMA__PROPERTIES = ABSTRACT_SCHEMA_FEATURE_COUNT + 9;
 
   /**
-   * The feature id for the '<em><b>Enum</b></em>' attribute list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Enum</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCHEMA__ENUM = ABSTRACT_SCHEMA_FEATURE_COUNT + 10;
 
   /**
-   * The feature id for the '<em><b>Items</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Items</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCHEMA__ITEMS = ABSTRACT_SCHEMA_FEATURE_COUNT + 11;
 
   /**
-   * The feature id for the '<em><b>Required</b></em>' attribute list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Required</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCHEMA__REQUIRED = ABSTRACT_SCHEMA_FEATURE_COUNT + 12;
 
   /**
-   * The number of structural features of the '<em>Schema</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Schema</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCHEMA_FEATURE_COUNT = ABSTRACT_SCHEMA_FEATURE_COUNT + 13;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedSchemaImpl <em>Named Schema</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedSchemaImpl <em>Named Schema</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedSchemaImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedSchema()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedSchemaImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedSchema()
+	 * @generated
+	 */
   int NAMED_SCHEMA = 14;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int NAMED_SCHEMA__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Schema</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Schema</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int NAMED_SCHEMA__SCHEMA = 1;
 
   /**
-   * The number of structural features of the '<em>Named Schema</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Named Schema</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int NAMED_SCHEMA_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractParameterImpl <em>Abstract Parameter</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractParameterImpl <em>Abstract Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractParameterImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractParameter()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractParameterImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractParameter()
+	 * @generated
+	 */
   int ABSTRACT_PARAMETER = 15;
 
   /**
-   * The number of structural features of the '<em>Abstract Parameter</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Abstract Parameter</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int ABSTRACT_PARAMETER_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ParameterImpl <em>Parameter</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ParameterImpl <em>Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.ParameterImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getParameter()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.ParameterImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getParameter()
+	 * @generated
+	 */
   int PARAMETER = 16;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int PARAMETER__DESCRIPTION = ABSTRACT_PARAMETER_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Schema</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Schema</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int PARAMETER__SCHEMA = ABSTRACT_PARAMETER_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Location</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int PARAMETER__LOCATION = ABSTRACT_PARAMETER_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Parameter</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Parameter</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int PARAMETER_FEATURE_COUNT = ABSTRACT_PARAMETER_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedParameterImpl <em>Named Parameter</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedParameterImpl <em>Named Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedParameterImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedParameter()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedParameterImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedParameter()
+	 * @generated
+	 */
   int NAMED_PARAMETER = 17;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int NAMED_PARAMETER__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Parameter</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int NAMED_PARAMETER__PARAMETER = 1;
 
   /**
-   * The number of structural features of the '<em>Named Parameter</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Named Parameter</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int NAMED_PARAMETER_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractOperationTraitImpl <em>Abstract Operation Trait</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractOperationTraitImpl <em>Abstract Operation Trait</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractOperationTraitImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractOperationTrait()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractOperationTraitImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractOperationTrait()
+	 * @generated
+	 */
   int ABSTRACT_OPERATION_TRAIT = 18;
 
   /**
-   * The number of structural features of the '<em>Abstract Operation Trait</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Abstract Operation Trait</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int ABSTRACT_OPERATION_TRAIT_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.OperationTraitImpl <em>Operation Trait</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.OperationTraitImpl <em>Operation Trait</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.OperationTraitImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOperationTrait()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.OperationTraitImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOperationTrait()
+	 * @generated
+	 */
   int OPERATION_TRAIT = 19;
 
   /**
-   * The feature id for the '<em><b>Operation Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Operation Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int OPERATION_TRAIT__OPERATION_ID = ABSTRACT_OPERATION_TRAIT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Summary</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int OPERATION_TRAIT__SUMMARY = ABSTRACT_OPERATION_TRAIT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int OPERATION_TRAIT__DESCRIPTION = ABSTRACT_OPERATION_TRAIT_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Operation Trait</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Operation Trait</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int OPERATION_TRAIT_FEATURE_COUNT = ABSTRACT_OPERATION_TRAIT_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedOperationTraitImpl <em>Named Operation Trait</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedOperationTraitImpl <em>Named Operation Trait</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedOperationTraitImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedOperationTrait()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedOperationTraitImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedOperationTrait()
+	 * @generated
+	 */
   int NAMED_OPERATION_TRAIT = 20;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int NAMED_OPERATION_TRAIT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Operation Trait</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Operation Trait</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int NAMED_OPERATION_TRAIT__OPERATION_TRAIT = 1;
 
   /**
-   * The number of structural features of the '<em>Named Operation Trait</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Named Operation Trait</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int NAMED_OPERATION_TRAIT_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractMessageTraitImpl <em>Abstract Message Trait</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractMessageTraitImpl <em>Abstract Message Trait</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractMessageTraitImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractMessageTrait()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractMessageTraitImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractMessageTrait()
+	 * @generated
+	 */
   int ABSTRACT_MESSAGE_TRAIT = 21;
 
   /**
-   * The number of structural features of the '<em>Abstract Message Trait</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Abstract Message Trait</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int ABSTRACT_MESSAGE_TRAIT_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageTraitImpl <em>Message Trait</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageTraitImpl <em>Message Trait</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.MessageTraitImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getMessageTrait()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.MessageTraitImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getMessageTrait()
+	 * @generated
+	 */
   int MESSAGE_TRAIT = 22;
 
   /**
-   * The feature id for the '<em><b>Summary</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int MESSAGE_TRAIT__SUMMARY = ABSTRACT_MESSAGE_TRAIT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int MESSAGE_TRAIT__DESCRIPTION = ABSTRACT_MESSAGE_TRAIT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Deprecated</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Deprecated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int MESSAGE_TRAIT__DEPRECATED = ABSTRACT_MESSAGE_TRAIT_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Headers</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Headers</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int MESSAGE_TRAIT__HEADERS = ABSTRACT_MESSAGE_TRAIT_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Tags</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int MESSAGE_TRAIT__TAGS = ABSTRACT_MESSAGE_TRAIT_FEATURE_COUNT + 4;
 
   /**
-   * The number of structural features of the '<em>Message Trait</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Message Trait</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int MESSAGE_TRAIT_FEATURE_COUNT = ABSTRACT_MESSAGE_TRAIT_FEATURE_COUNT + 5;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageTraitImpl <em>Named Message Trait</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageTraitImpl <em>Named Message Trait</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageTraitImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedMessageTrait()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageTraitImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedMessageTrait()
+	 * @generated
+	 */
   int NAMED_MESSAGE_TRAIT = 23;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int NAMED_MESSAGE_TRAIT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Message Trait</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Message Trait</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int NAMED_MESSAGE_TRAIT__MESSAGE_TRAIT = 1;
 
   /**
-   * The number of structural features of the '<em>Named Message Trait</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Named Message Trait</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int NAMED_MESSAGE_TRAIT_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ComponentsImpl <em>Components</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ComponentsImpl <em>Components</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.ComponentsImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getComponents()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.ComponentsImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getComponents()
+	 * @generated
+	 */
   int COMPONENTS = 24;
 
   /**
-   * The feature id for the '<em><b>Schemas</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Schemas</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int COMPONENTS__SCHEMAS = 0;
 
   /**
-   * The feature id for the '<em><b>Messages</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Messages</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int COMPONENTS__MESSAGES = 1;
 
   /**
-   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int COMPONENTS__PARAMETERS = 2;
 
   /**
-   * The feature id for the '<em><b>Operation Traits</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Operation Traits</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int COMPONENTS__OPERATION_TRAITS = 3;
 
   /**
-   * The feature id for the '<em><b>Message Traits</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Message Traits</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int COMPONENTS__MESSAGE_TRAITS = 4;
 
   /**
-   * The feature id for the '<em><b>Qos Metrics</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Qos Metrics</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int COMPONENTS__QOS_METRICS = 5;
 
   /**
-   * The number of structural features of the '<em>Components</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Components</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int COMPONENTS_FEATURE_COUNT = 6;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.SlaImpl <em>Sla</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.SlaImpl <em>Sla</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.SlaImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getSla()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.SlaImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getSla()
+	 * @generated
+	 */
   int SLA = 25;
 
   /**
-   * The feature id for the '<em><b>Guarantee Term</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Guarantee Term</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SLA__GUARANTEE_TERM = 0;
 
   /**
-   * The number of structural features of the '<em>Sla</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Sla</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SLA_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.GuaranteeTermImpl <em>Guarantee Term</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.GuaranteeTermImpl <em>Guarantee Term</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.GuaranteeTermImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getGuaranteeTerm()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.GuaranteeTermImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getGuaranteeTerm()
+	 * @generated
+	 */
   int GUARANTEE_TERM = 26;
 
   /**
-   * The feature id for the '<em><b>Scopes</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Scopes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int GUARANTEE_TERM__SCOPES = 0;
 
   /**
-   * The feature id for the '<em><b>Qualifying Conditions</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Qualifying Conditions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int GUARANTEE_TERM__QUALIFYING_CONDITIONS = 1;
 
   /**
-   * The feature id for the '<em><b>Slos</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Slos</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int GUARANTEE_TERM__SLOS = 2;
 
   /**
-   * The number of structural features of the '<em>Guarantee Term</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Guarantee Term</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int GUARANTEE_TERM_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ScopeImpl <em>Scope</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ScopeImpl <em>Scope</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.ScopeImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getScope()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.ScopeImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getScope()
+	 * @generated
+	 */
   int SCOPE = 27;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCOPE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Reference</b></em>' reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCOPE__REFERENCE = 1;
 
   /**
-   * The number of structural features of the '<em>Scope</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Scope</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SCOPE_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.QualifyingConditionImpl <em>Qualifying Condition</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.QualifyingConditionImpl <em>Qualifying Condition</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.QualifyingConditionImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQualifyingCondition()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.QualifyingConditionImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQualifyingCondition()
+	 * @generated
+	 */
   int QUALIFYING_CONDITION = 28;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int QUALIFYING_CONDITION__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int QUALIFYING_CONDITION__CONDITION = 1;
 
   /**
-   * The number of structural features of the '<em>Qualifying Condition</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Qualifying Condition</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int QUALIFYING_CONDITION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.SloImpl <em>Slo</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.SloImpl <em>Slo</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.SloImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getSlo()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.SloImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getSlo()
+	 * @generated
+	 */
   int SLO = 29;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SLO__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SLO__CONDITION = 1;
 
   /**
-   * The number of structural features of the '<em>Slo</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Slo</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int SLO_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractQoSMetricImpl <em>Abstract Qo SMetric</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractQoSMetricImpl <em>Abstract Qo SMetric</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractQoSMetricImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractQoSMetric()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractQoSMetricImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractQoSMetric()
+	 * @generated
+	 */
   int ABSTRACT_QO_SMETRIC = 30;
 
   /**
-   * The number of structural features of the '<em>Abstract Qo SMetric</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Abstract Qo SMetric</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int ABSTRACT_QO_SMETRIC_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricReferenceImpl <em>Qo SMetric Reference</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricReferenceImpl <em>Qo SMetric Reference</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricReferenceImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricReference()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricReferenceImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricReference()
+	 * @generated
+	 */
   int QO_SMETRIC_REFERENCE = 31;
 
   /**
-   * The feature id for the '<em><b>Metric</b></em>' reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Metric</b></em>' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int QO_SMETRIC_REFERENCE__METRIC = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Qo SMetric Reference</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Qo SMetric Reference</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int QO_SMETRIC_REFERENCE_FEATURE_COUNT = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricImpl <em>Qo SMetric</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricImpl <em>Qo SMetric</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetric()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetric()
+	 * @generated
+	 */
   int QO_SMETRIC = 32;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int QO_SMETRIC__NAME = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Metric Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Metric Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int QO_SMETRIC__METRIC_TYPE = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int QO_SMETRIC__DESCRIPTION = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Unit</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int QO_SMETRIC__UNIT = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Grouped By Event</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Grouped By Event</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int QO_SMETRIC__GROUPED_BY_EVENT = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 4;
 
   /**
-   * The number of structural features of the '<em>Qo SMetric</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Qo SMetric</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int QO_SMETRIC_FEATURE_COUNT = ABSTRACT_QO_SMETRIC_FEATURE_COUNT + 5;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.DerivedQoSMetricImpl <em>Derived Qo SMetric</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.DerivedQoSMetricImpl <em>Derived Qo SMetric</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.DerivedQoSMetricImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getDerivedQoSMetric()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.DerivedQoSMetricImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getDerivedQoSMetric()
+	 * @generated
+	 */
   int DERIVED_QO_SMETRIC = 33;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int DERIVED_QO_SMETRIC__NAME = QO_SMETRIC__NAME;
 
   /**
-   * The feature id for the '<em><b>Metric Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Metric Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int DERIVED_QO_SMETRIC__METRIC_TYPE = QO_SMETRIC__METRIC_TYPE;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int DERIVED_QO_SMETRIC__DESCRIPTION = QO_SMETRIC__DESCRIPTION;
 
   /**
-   * The feature id for the '<em><b>Unit</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int DERIVED_QO_SMETRIC__UNIT = QO_SMETRIC__UNIT;
 
   /**
-   * The feature id for the '<em><b>Grouped By Event</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Grouped By Event</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int DERIVED_QO_SMETRIC__GROUPED_BY_EVENT = QO_SMETRIC__GROUPED_BY_EVENT;
 
   /**
-   * The feature id for the '<em><b>Window</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Window</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int DERIVED_QO_SMETRIC__WINDOW = QO_SMETRIC_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Window Unit</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Window Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int DERIVED_QO_SMETRIC__WINDOW_UNIT = QO_SMETRIC_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Aggregation Function</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Aggregation Function</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int DERIVED_QO_SMETRIC__AGGREGATION_FUNCTION = QO_SMETRIC_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Derived Qo SMetric</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Derived Qo SMetric</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int DERIVED_QO_SMETRIC_FEATURE_COUNT = QO_SMETRIC_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.BooleanExpressionImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getBooleanExpression()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.BooleanExpressionImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getBooleanExpression()
+	 * @generated
+	 */
   int BOOLEAN_EXPRESSION = 34;
 
   /**
-   * The number of structural features of the '<em>Boolean Expression</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Boolean Expression</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int BOOLEAN_EXPRESSION_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AndExpressionImpl <em>And Expression</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AndExpressionImpl <em>And Expression</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AndExpressionImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAndExpression()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AndExpressionImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAndExpression()
+	 * @generated
+	 */
   int AND_EXPRESSION = 35;
 
   /**
-   * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int AND_EXPRESSION__CONDITIONS = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>And Expression</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>And Expression</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int AND_EXPRESSION_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.OrExpressionImpl <em>Or Expression</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.OrExpressionImpl <em>Or Expression</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.OrExpressionImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOrExpression()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.OrExpressionImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOrExpression()
+	 * @generated
+	 */
   int OR_EXPRESSION = 36;
 
   /**
-   * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int OR_EXPRESSION__CONDITIONS = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Or Expression</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Or Expression</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int OR_EXPRESSION_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ComparisonExpressionImpl <em>Comparison Expression</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ComparisonExpressionImpl <em>Comparison Expression</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.ComparisonExpressionImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getComparisonExpression()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.ComparisonExpressionImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getComparisonExpression()
+	 * @generated
+	 */
   int COMPARISON_EXPRESSION = 37;
 
   /**
-   * The feature id for the '<em><b>Qos Metric</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Qos Metric</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int COMPARISON_EXPRESSION__QOS_METRIC = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Operator</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int COMPARISON_EXPRESSION__OPERATOR = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int COMPARISON_EXPRESSION__VALUE = BOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Comparison Expression</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Comparison Expression</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int COMPARISON_EXPRESSION_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ReferenceImpl <em>Reference</em>}' class.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ReferenceImpl <em>Reference</em>}' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.ReferenceImpl
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getReference()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.ReferenceImpl
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getReference()
+	 * @generated
+	 */
   int REFERENCE = 38;
 
   /**
-   * The feature id for the '<em><b>Uri</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Uri</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int REFERENCE__URI = ABSTRACT_MESSAGE_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Reference</em>' class.
-   * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>Reference</em>' class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
+	 * @generated
+	 * @ordered
+	 */
   int REFERENCE_FEATURE_COUNT = ABSTRACT_MESSAGE_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.WindowUnit <em>Window Unit</em>}' enum.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.WindowUnit <em>Window Unit</em>}' enum.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.WindowUnit
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getWindowUnit()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.WindowUnit
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getWindowUnit()
+	 * @generated
+	 */
   int WINDOW_UNIT = 39;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.AggregationFunction <em>Aggregation Function</em>}' enum.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.AggregationFunction <em>Aggregation Function</em>}' enum.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.AggregationFunction
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAggregationFunction()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AggregationFunction
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAggregationFunction()
+	 * @generated
+	 */
   int AGGREGATION_FUNCTION = 40;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricType <em>Qo SMetric Type</em>}' enum.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricType <em>Qo SMetric Type</em>}' enum.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricType
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricType()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricType
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricType()
+	 * @generated
+	 */
   int QO_SMETRIC_TYPE = 41;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit <em>Qo SMetric Unit</em>}' enum.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit <em>Qo SMetric Unit</em>}' enum.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricUnit()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricUnit()
+	 * @generated
+	 */
   int QO_SMETRIC_UNIT = 42;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.Operator <em>Operator</em>}' enum.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.Operator <em>Operator</em>}' enum.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.Operator
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOperator()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Operator
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOperator()
+	 * @generated
+	 */
   int OPERATOR = 43;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.JsonType <em>Json Type</em>}' enum.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.JsonType <em>Json Type</em>}' enum.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.JsonType
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getJsonType()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.JsonType
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getJsonType()
+	 * @generated
+	 */
   int JSON_TYPE = 44;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.Boolean <em>Boolean</em>}' enum.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.Boolean <em>Boolean</em>}' enum.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.Boolean
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getBoolean()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Boolean
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getBoolean()
+	 * @generated
+	 */
   int BOOLEAN = 45;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.VersionNumber <em>Version Number</em>}' enum.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.VersionNumber <em>Version Number</em>}' enum.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.VersionNumber
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getVersionNumber()
-   * @generated
-   */
+	 * @see io.github.abelgomez.asyncapi.asyncApi.VersionNumber
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getVersionNumber()
+	 * @generated
+	 */
   int VERSION_NUMBER = 46;
 
   /**
-   * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.Protocol <em>Protocol</em>}' enum.
-   * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.MessageIdentifier <em>Message Identifier</em>}' enum.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see io.github.abelgomez.asyncapi.asyncApi.Protocol
-   * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getProtocol()
-   * @generated
-   */
-  int PROTOCOL = 47;
+	 * @see io.github.abelgomez.asyncapi.asyncApi.MessageIdentifier
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getMessageIdentifier()
+	 * @generated
+	 */
+  int MESSAGE_IDENTIFIER = 47;
+
+  /**
+	 * The meta object id for the '{@link io.github.abelgomez.asyncapi.asyncApi.Protocol <em>Protocol</em>}' enum.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Protocol
+	 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getProtocol()
+	 * @generated
+	 */
+  int PROTOCOL = 48;
 
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI <em>Async API</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI <em>Async API</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Async API</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
-   * @generated
-   */
+	 * @return the meta object for class '<em>Async API</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
+	 * @generated
+	 */
   EClass getAsyncAPI();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getVersion <em>Version</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getVersion <em>Version</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Version</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getVersion()
-   * @see #getAsyncAPI()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Version</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getVersion()
+	 * @see #getAsyncAPI()
+	 * @generated
+	 */
   EAttribute getAsyncAPI_Version();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getInfo <em>Info</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getInfo <em>Info</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Info</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getInfo()
-   * @see #getAsyncAPI()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Info</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getInfo()
+	 * @see #getAsyncAPI()
+	 * @generated
+	 */
   EReference getAsyncAPI_Info();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getServers <em>Servers</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getServers <em>Servers</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Servers</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getServers()
-   * @see #getAsyncAPI()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Servers</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getServers()
+	 * @see #getAsyncAPI()
+	 * @generated
+	 */
   EReference getAsyncAPI_Servers();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getChannels <em>Channels</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getChannels <em>Channels</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Channels</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getChannels()
-   * @see #getAsyncAPI()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Channels</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getChannels()
+	 * @see #getAsyncAPI()
+	 * @generated
+	 */
   EReference getAsyncAPI_Channels();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getComponents <em>Components</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getComponents <em>Components</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Components</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getComponents()
-   * @see #getAsyncAPI()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Components</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getComponents()
+	 * @see #getAsyncAPI()
+	 * @generated
+	 */
   EReference getAsyncAPI_Components();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getSla <em>Sla</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getSla <em>Sla</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Sla</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getSla()
-   * @see #getAsyncAPI()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Sla</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI#getSla()
+	 * @see #getAsyncAPI()
+	 * @generated
+	 */
   EReference getAsyncAPI_Sla();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Info <em>Info</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Info <em>Info</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Info</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Info
-   * @generated
-   */
+	 * @return the meta object for class '<em>Info</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Info
+	 * @generated
+	 */
   EClass getInfo();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Info#getTitle <em>Title</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Info#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Title</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Info#getTitle()
-   * @see #getInfo()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Info#getTitle()
+	 * @see #getInfo()
+	 * @generated
+	 */
   EAttribute getInfo_Title();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Info#getVersion <em>Version</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Info#getVersion <em>Version</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Version</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Info#getVersion()
-   * @see #getInfo()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Version</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Info#getVersion()
+	 * @see #getInfo()
+	 * @generated
+	 */
   EAttribute getInfo_Version();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Info#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Info#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Info#getDescription()
-   * @see #getInfo()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Info#getDescription()
+	 * @see #getInfo()
+	 * @generated
+	 */
   EAttribute getInfo_Description();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Info#getTermsOfService <em>Terms Of Service</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Info#getTermsOfService <em>Terms Of Service</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Terms Of Service</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Info#getTermsOfService()
-   * @see #getInfo()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Terms Of Service</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Info#getTermsOfService()
+	 * @see #getInfo()
+	 * @generated
+	 */
   EAttribute getInfo_TermsOfService();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Info#getContact <em>Contact</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Info#getContact <em>Contact</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Contact</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Info#getContact()
-   * @see #getInfo()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Contact</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Info#getContact()
+	 * @see #getInfo()
+	 * @generated
+	 */
   EReference getInfo_Contact();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Info#getLicense <em>License</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Info#getLicense <em>License</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>License</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Info#getLicense()
-   * @see #getInfo()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>License</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Info#getLicense()
+	 * @see #getInfo()
+	 * @generated
+	 */
   EReference getInfo_License();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Info#getBasePackage <em>Base Package</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Info#getBasePackage <em>Base Package</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Base Package</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Info#getBasePackage()
-   * @see #getInfo()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Base Package</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Info#getBasePackage()
+	 * @see #getInfo()
+	 * @generated
+	 */
   EAttribute getInfo_BasePackage();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Contact <em>Contact</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Contact <em>Contact</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Contact</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Contact
-   * @generated
-   */
+	 * @return the meta object for class '<em>Contact</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Contact
+	 * @generated
+	 */
   EClass getContact();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Contact#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Contact#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Contact#getName()
-   * @see #getContact()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Contact#getName()
+	 * @see #getContact()
+	 * @generated
+	 */
   EAttribute getContact_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Contact#getUrl <em>Url</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Contact#getUrl <em>Url</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Url</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Contact#getUrl()
-   * @see #getContact()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Url</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Contact#getUrl()
+	 * @see #getContact()
+	 * @generated
+	 */
   EAttribute getContact_Url();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Contact#getEmail <em>Email</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Contact#getEmail <em>Email</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Email</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Contact#getEmail()
-   * @see #getContact()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Email</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Contact#getEmail()
+	 * @see #getContact()
+	 * @generated
+	 */
   EAttribute getContact_Email();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.License <em>License</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.License <em>License</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>License</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.License
-   * @generated
-   */
+	 * @return the meta object for class '<em>License</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.License
+	 * @generated
+	 */
   EClass getLicense();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.License#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.License#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.License#getName()
-   * @see #getLicense()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.License#getName()
+	 * @see #getLicense()
+	 * @generated
+	 */
   EAttribute getLicense_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.License#getUrl <em>Url</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.License#getUrl <em>Url</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Url</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.License#getUrl()
-   * @see #getLicense()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Url</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.License#getUrl()
+	 * @see #getLicense()
+	 * @generated
+	 */
   EAttribute getLicense_Url();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Server <em>Server</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Server <em>Server</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Server</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Server
-   * @generated
-   */
+	 * @return the meta object for class '<em>Server</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Server
+	 * @generated
+	 */
   EClass getServer();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Server#getName()
-   * @see #getServer()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Server#getName()
+	 * @see #getServer()
+	 * @generated
+	 */
   EAttribute getServer_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getUrl <em>Url</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getUrl <em>Url</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Url</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Server#getUrl()
-   * @see #getServer()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Url</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Server#getUrl()
+	 * @see #getServer()
+	 * @generated
+	 */
   EAttribute getServer_Url();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getProtocol <em>Protocol</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getProtocol <em>Protocol</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Protocol</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Server#getProtocol()
-   * @see #getServer()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Protocol</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Server#getProtocol()
+	 * @see #getServer()
+	 * @generated
+	 */
   EAttribute getServer_Protocol();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Server#getDescription()
-   * @see #getServer()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Server#getDescription()
+	 * @see #getServer()
+	 * @generated
+	 */
   EAttribute getServer_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getVariables <em>Variables</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getVariables <em>Variables</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Variables</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Server#getVariables()
-   * @see #getServer()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Variables</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Server#getVariables()
+	 * @see #getServer()
+	 * @generated
+	 */
   EReference getServer_Variables();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Variable <em>Variable</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Server#getIsMonitored <em>Is Monitored</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Variable
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Is Monitored</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Server#getIsMonitored()
+	 * @see #getServer()
+	 * @generated
+	 */
+  EAttribute getServer_IsMonitored();
+
+  /**
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Variable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Variable</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Variable
+	 * @generated
+	 */
   EClass getVariable();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Variable#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Variable#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Variable#getName()
-   * @see #getVariable()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Variable#getName()
+	 * @see #getVariable()
+	 * @generated
+	 */
   EAttribute getVariable_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Variable#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Variable#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Variable#getDescription()
-   * @see #getVariable()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Variable#getDescription()
+	 * @see #getVariable()
+	 * @generated
+	 */
   EAttribute getVariable_Description();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Variable#getDefault <em>Default</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Variable#getDefault <em>Default</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Default</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Variable#getDefault()
-   * @see #getVariable()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Default</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Variable#getDefault()
+	 * @see #getVariable()
+	 * @generated
+	 */
   EAttribute getVariable_Default();
 
   /**
-   * Returns the meta object for the attribute list '{@link io.github.abelgomez.asyncapi.asyncApi.Variable#getEnum <em>Enum</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute list '{@link io.github.abelgomez.asyncapi.asyncApi.Variable#getEnum <em>Enum</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Enum</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Variable#getEnum()
-   * @see #getVariable()
-   * @generated
-   */
+	 * @return the meta object for the attribute list '<em>Enum</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Variable#getEnum()
+	 * @see #getVariable()
+	 * @generated
+	 */
   EAttribute getVariable_Enum();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Channel <em>Channel</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Channel <em>Channel</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Channel</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Channel
-   * @generated
-   */
+	 * @return the meta object for class '<em>Channel</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Channel
+	 * @generated
+	 */
   EClass getChannel();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Channel#getName()
-   * @see #getChannel()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Channel#getName()
+	 * @see #getChannel()
+	 * @generated
+	 */
   EAttribute getChannel_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Channel#getDescription()
-   * @see #getChannel()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Channel#getDescription()
+	 * @see #getChannel()
+	 * @generated
+	 */
   EAttribute getChannel_Description();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getPublish <em>Publish</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getPublish <em>Publish</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Publish</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Channel#getPublish()
-   * @see #getChannel()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Publish</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Channel#getPublish()
+	 * @see #getChannel()
+	 * @generated
+	 */
   EReference getChannel_Publish();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getSubscribe <em>Subscribe</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getSubscribe <em>Subscribe</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Subscribe</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Channel#getSubscribe()
-   * @see #getChannel()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Subscribe</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Channel#getSubscribe()
+	 * @see #getChannel()
+	 * @generated
+	 */
   EReference getChannel_Subscribe();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getParameters <em>Parameters</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Parameters</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Channel#getParameters()
-   * @see #getChannel()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Channel#getParameters()
+	 * @see #getChannel()
+	 * @generated
+	 */
   EReference getChannel_Parameters();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getTitle <em>Title</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Title</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Channel#getTitle()
-   * @see #getChannel()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Channel#getTitle()
+	 * @see #getChannel()
+	 * @generated
+	 */
   EAttribute getChannel_Title();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Operation <em>Operation</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Operation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Operation</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Operation
-   * @generated
-   */
+	 * @return the meta object for class '<em>Operation</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Operation
+	 * @generated
+	 */
   EClass getOperation();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Operation#getOperationId <em>Operation Id</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Operation#getOperationId <em>Operation Id</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Operation Id</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Operation#getOperationId()
-   * @see #getOperation()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Operation Id</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Operation#getOperationId()
+	 * @see #getOperation()
+	 * @generated
+	 */
   EAttribute getOperation_OperationId();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Operation#getSummary <em>Summary</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Operation#getSummary <em>Summary</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Summary</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Operation#getSummary()
-   * @see #getOperation()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Summary</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Operation#getSummary()
+	 * @see #getOperation()
+	 * @generated
+	 */
   EAttribute getOperation_Summary();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Operation#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Operation#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Operation#getDescription()
-   * @see #getOperation()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Operation#getDescription()
+	 * @see #getOperation()
+	 * @generated
+	 */
   EAttribute getOperation_Description();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Operation#getMessage <em>Message</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Operation#getMessage <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Message</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Operation#getMessage()
-   * @see #getOperation()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Message</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Operation#getMessage()
+	 * @see #getOperation()
+	 * @generated
+	 */
   EReference getOperation_Message();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Operation#getTraits <em>Traits</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Operation#getTraits <em>Traits</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Traits</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Operation#getTraits()
-   * @see #getOperation()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Traits</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Operation#getTraits()
+	 * @see #getOperation()
+	 * @generated
+	 */
   EReference getOperation_Traits();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractMessage <em>Abstract Message</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractMessage <em>Abstract Message</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Abstract Message</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AbstractMessage
-   * @generated
-   */
+	 * @return the meta object for class '<em>Abstract Message</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AbstractMessage
+	 * @generated
+	 */
   EClass getAbstractMessage();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Message <em>Message</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Message <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Message</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Message
-   * @generated
-   */
+	 * @return the meta object for class '<em>Message</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Message
+	 * @generated
+	 */
   EClass getMessage();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Message#getName()
-   * @see #getMessage()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Message#getName()
+	 * @see #getMessage()
+	 * @generated
+	 */
   EAttribute getMessage_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getTitle <em>Title</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Title</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Message#getTitle()
-   * @see #getMessage()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Message#getTitle()
+	 * @see #getMessage()
+	 * @generated
+	 */
   EAttribute getMessage_Title();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getSummary <em>Summary</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getSummary <em>Summary</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Summary</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Message#getSummary()
-   * @see #getMessage()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Summary</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Message#getSummary()
+	 * @see #getMessage()
+	 * @generated
+	 */
   EAttribute getMessage_Summary();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Message#getDescription()
-   * @see #getMessage()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Message#getDescription()
+	 * @see #getMessage()
+	 * @generated
+	 */
   EAttribute getMessage_Description();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getDeprecated <em>Deprecated</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getDeprecated <em>Deprecated</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Deprecated</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Message#getDeprecated()
-   * @see #getMessage()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Deprecated</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Message#getDeprecated()
+	 * @see #getMessage()
+	 * @generated
+	 */
   EAttribute getMessage_Deprecated();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getHeaders <em>Headers</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getHeaders <em>Headers</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Headers</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Message#getHeaders()
-   * @see #getMessage()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Headers</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Message#getHeaders()
+	 * @see #getMessage()
+	 * @generated
+	 */
   EReference getMessage_Headers();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getTags <em>Tags</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getTags <em>Tags</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Tags</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Message#getTags()
-   * @see #getMessage()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Tags</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Message#getTags()
+	 * @see #getMessage()
+	 * @generated
+	 */
   EReference getMessage_Tags();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getPayload <em>Payload</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getPayload <em>Payload</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Payload</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Message#getPayload()
-   * @see #getMessage()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Payload</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Message#getPayload()
+	 * @see #getMessage()
+	 * @generated
+	 */
   EReference getMessage_Payload();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getTraits <em>Traits</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getTraits <em>Traits</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Traits</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Message#getTraits()
-   * @see #getMessage()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Traits</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Message#getTraits()
+	 * @see #getMessage()
+	 * @generated
+	 */
   EReference getMessage_Traits();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessage <em>Named Message</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Message#getIdentifier <em>Identifier</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Named Message</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedMessage
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Identifier</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Message#getIdentifier()
+	 * @see #getMessage()
+	 * @generated
+	 */
+  EAttribute getMessage_Identifier();
+
+  /**
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessage <em>Named Message</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Named Message</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedMessage
+	 * @generated
+	 */
   EClass getNamedMessage();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessage#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessage#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedMessage#getName()
-   * @see #getNamedMessage()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedMessage#getName()
+	 * @see #getNamedMessage()
+	 * @generated
+	 */
   EAttribute getNamedMessage_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessage#getMessage <em>Message</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessage#getMessage <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Message</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedMessage#getMessage()
-   * @see #getNamedMessage()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Message</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedMessage#getMessage()
+	 * @see #getNamedMessage()
+	 * @generated
+	 */
   EReference getNamedMessage_Message();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Tag <em>Tag</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Tag <em>Tag</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Tag</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Tag
-   * @generated
-   */
+	 * @return the meta object for class '<em>Tag</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Tag
+	 * @generated
+	 */
   EClass getTag();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Tag#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Tag#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Tag#getName()
-   * @see #getTag()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Tag#getName()
+	 * @see #getTag()
+	 * @generated
+	 */
   EAttribute getTag_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Tag#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Tag#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Tag#getDescription()
-   * @see #getTag()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Tag#getDescription()
+	 * @see #getTag()
+	 * @generated
+	 */
   EAttribute getTag_Description();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractSchema <em>Abstract Schema</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractSchema <em>Abstract Schema</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Abstract Schema</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AbstractSchema
-   * @generated
-   */
+	 * @return the meta object for class '<em>Abstract Schema</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AbstractSchema
+	 * @generated
+	 */
   EClass getAbstractSchema();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Schema <em>Schema</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Schema <em>Schema</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Schema</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Schema
-   * @generated
-   */
+	 * @return the meta object for class '<em>Schema</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema
+	 * @generated
+	 */
   EClass getSchema();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getTitle <em>Title</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Title</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getTitle()
-   * @see #getSchema()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getTitle()
+	 * @see #getSchema()
+	 * @generated
+	 */
   EAttribute getSchema_Title();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getType()
-   * @see #getSchema()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getType()
+	 * @see #getSchema()
+	 * @generated
+	 */
   EAttribute getSchema_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getDescription()
-   * @see #getSchema()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getDescription()
+	 * @see #getSchema()
+	 * @generated
+	 */
   EAttribute getSchema_Description();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getFormat <em>Format</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getFormat <em>Format</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Format</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getFormat()
-   * @see #getSchema()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Format</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getFormat()
+	 * @see #getSchema()
+	 * @generated
+	 */
   EAttribute getSchema_Format();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMinimum <em>Minimum</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMinimum <em>Minimum</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Minimum</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getMinimum()
-   * @see #getSchema()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Minimum</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getMinimum()
+	 * @see #getSchema()
+	 * @generated
+	 */
   EAttribute getSchema_Minimum();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMaximum <em>Maximum</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMaximum <em>Maximum</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Maximum</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getMaximum()
-   * @see #getSchema()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Maximum</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getMaximum()
+	 * @see #getSchema()
+	 * @generated
+	 */
   EAttribute getSchema_Maximum();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMinItems <em>Min Items</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMinItems <em>Min Items</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Min Items</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getMinItems()
-   * @see #getSchema()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Min Items</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getMinItems()
+	 * @see #getSchema()
+	 * @generated
+	 */
   EAttribute getSchema_MinItems();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMaxItems <em>Max Items</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getMaxItems <em>Max Items</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Max Items</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getMaxItems()
-   * @see #getSchema()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Max Items</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getMaxItems()
+	 * @see #getSchema()
+	 * @generated
+	 */
   EAttribute getSchema_MaxItems();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getDefault <em>Default</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getDefault <em>Default</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Default</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getDefault()
-   * @see #getSchema()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Default</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getDefault()
+	 * @see #getSchema()
+	 * @generated
+	 */
   EAttribute getSchema_Default();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getProperties <em>Properties</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getProperties <em>Properties</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Properties</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getProperties()
-   * @see #getSchema()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Properties</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getProperties()
+	 * @see #getSchema()
+	 * @generated
+	 */
   EReference getSchema_Properties();
 
   /**
-   * Returns the meta object for the attribute list '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getEnum <em>Enum</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute list '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getEnum <em>Enum</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Enum</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getEnum()
-   * @see #getSchema()
-   * @generated
-   */
+	 * @return the meta object for the attribute list '<em>Enum</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getEnum()
+	 * @see #getSchema()
+	 * @generated
+	 */
   EAttribute getSchema_Enum();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getItems <em>Items</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getItems <em>Items</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Items</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getItems()
-   * @see #getSchema()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Items</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getItems()
+	 * @see #getSchema()
+	 * @generated
+	 */
   EReference getSchema_Items();
 
   /**
-   * Returns the meta object for the attribute list '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getRequired <em>Required</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute list '{@link io.github.abelgomez.asyncapi.asyncApi.Schema#getRequired <em>Required</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Required</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getRequired()
-   * @see #getSchema()
-   * @generated
-   */
+	 * @return the meta object for the attribute list '<em>Required</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema#getRequired()
+	 * @see #getSchema()
+	 * @generated
+	 */
   EAttribute getSchema_Required();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema <em>Named Schema</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema <em>Named Schema</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Named Schema</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedSchema
-   * @generated
-   */
+	 * @return the meta object for class '<em>Named Schema</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedSchema
+	 * @generated
+	 */
   EClass getNamedSchema();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedSchema#getName()
-   * @see #getNamedSchema()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedSchema#getName()
+	 * @see #getNamedSchema()
+	 * @generated
+	 */
   EAttribute getNamedSchema_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema#getSchema <em>Schema</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema#getSchema <em>Schema</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Schema</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedSchema#getSchema()
-   * @see #getNamedSchema()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Schema</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedSchema#getSchema()
+	 * @see #getNamedSchema()
+	 * @generated
+	 */
   EReference getNamedSchema_Schema();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractParameter <em>Abstract Parameter</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractParameter <em>Abstract Parameter</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Abstract Parameter</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AbstractParameter
-   * @generated
-   */
+	 * @return the meta object for class '<em>Abstract Parameter</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AbstractParameter
+	 * @generated
+	 */
   EClass getAbstractParameter();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Parameter <em>Parameter</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Parameter</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Parameter
-   * @generated
-   */
+	 * @return the meta object for class '<em>Parameter</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Parameter
+	 * @generated
+	 */
   EClass getParameter();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Parameter#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Parameter#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Parameter#getDescription()
-   * @see #getParameter()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Parameter#getDescription()
+	 * @see #getParameter()
+	 * @generated
+	 */
   EAttribute getParameter_Description();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Parameter#getSchema <em>Schema</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Parameter#getSchema <em>Schema</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Schema</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Parameter#getSchema()
-   * @see #getParameter()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Schema</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Parameter#getSchema()
+	 * @see #getParameter()
+	 * @generated
+	 */
   EReference getParameter_Schema();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Parameter#getLocation <em>Location</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Parameter#getLocation <em>Location</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Location</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Parameter#getLocation()
-   * @see #getParameter()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Location</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Parameter#getLocation()
+	 * @see #getParameter()
+	 * @generated
+	 */
   EAttribute getParameter_Location();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter <em>Named Parameter</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter <em>Named Parameter</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Named Parameter</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedParameter
-   * @generated
-   */
+	 * @return the meta object for class '<em>Named Parameter</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedParameter
+	 * @generated
+	 */
   EClass getNamedParameter();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedParameter#getName()
-   * @see #getNamedParameter()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedParameter#getName()
+	 * @see #getNamedParameter()
+	 * @generated
+	 */
   EAttribute getNamedParameter_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter#getParameter <em>Parameter</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter#getParameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Parameter</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedParameter#getParameter()
-   * @see #getNamedParameter()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Parameter</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedParameter#getParameter()
+	 * @see #getNamedParameter()
+	 * @generated
+	 */
   EReference getNamedParameter_Parameter();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractOperationTrait <em>Abstract Operation Trait</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractOperationTrait <em>Abstract Operation Trait</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Abstract Operation Trait</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AbstractOperationTrait
-   * @generated
-   */
+	 * @return the meta object for class '<em>Abstract Operation Trait</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AbstractOperationTrait
+	 * @generated
+	 */
   EClass getAbstractOperationTrait();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.OperationTrait <em>Operation Trait</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.OperationTrait <em>Operation Trait</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Operation Trait</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.OperationTrait
-   * @generated
-   */
+	 * @return the meta object for class '<em>Operation Trait</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.OperationTrait
+	 * @generated
+	 */
   EClass getOperationTrait();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.OperationTrait#getOperationId <em>Operation Id</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.OperationTrait#getOperationId <em>Operation Id</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Operation Id</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.OperationTrait#getOperationId()
-   * @see #getOperationTrait()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Operation Id</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.OperationTrait#getOperationId()
+	 * @see #getOperationTrait()
+	 * @generated
+	 */
   EAttribute getOperationTrait_OperationId();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.OperationTrait#getSummary <em>Summary</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.OperationTrait#getSummary <em>Summary</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Summary</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.OperationTrait#getSummary()
-   * @see #getOperationTrait()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Summary</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.OperationTrait#getSummary()
+	 * @see #getOperationTrait()
+	 * @generated
+	 */
   EAttribute getOperationTrait_Summary();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.OperationTrait#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.OperationTrait#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.OperationTrait#getDescription()
-   * @see #getOperationTrait()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.OperationTrait#getDescription()
+	 * @see #getOperationTrait()
+	 * @generated
+	 */
   EAttribute getOperationTrait_Description();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait <em>Named Operation Trait</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait <em>Named Operation Trait</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Named Operation Trait</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait
-   * @generated
-   */
+	 * @return the meta object for class '<em>Named Operation Trait</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait
+	 * @generated
+	 */
   EClass getNamedOperationTrait();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait#getName()
-   * @see #getNamedOperationTrait()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait#getName()
+	 * @see #getNamedOperationTrait()
+	 * @generated
+	 */
   EAttribute getNamedOperationTrait_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait#getOperationTrait <em>Operation Trait</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait#getOperationTrait <em>Operation Trait</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Operation Trait</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait#getOperationTrait()
-   * @see #getNamedOperationTrait()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Operation Trait</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait#getOperationTrait()
+	 * @see #getNamedOperationTrait()
+	 * @generated
+	 */
   EReference getNamedOperationTrait_OperationTrait();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractMessageTrait <em>Abstract Message Trait</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractMessageTrait <em>Abstract Message Trait</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Abstract Message Trait</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AbstractMessageTrait
-   * @generated
-   */
+	 * @return the meta object for class '<em>Abstract Message Trait</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AbstractMessageTrait
+	 * @generated
+	 */
   EClass getAbstractMessageTrait();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.MessageTrait <em>Message Trait</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.MessageTrait <em>Message Trait</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Message Trait</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.MessageTrait
-   * @generated
-   */
+	 * @return the meta object for class '<em>Message Trait</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.MessageTrait
+	 * @generated
+	 */
   EClass getMessageTrait();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getSummary <em>Summary</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getSummary <em>Summary</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Summary</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getSummary()
-   * @see #getMessageTrait()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Summary</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getSummary()
+	 * @see #getMessageTrait()
+	 * @generated
+	 */
   EAttribute getMessageTrait_Summary();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getDescription()
-   * @see #getMessageTrait()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getDescription()
+	 * @see #getMessageTrait()
+	 * @generated
+	 */
   EAttribute getMessageTrait_Description();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getDeprecated <em>Deprecated</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getDeprecated <em>Deprecated</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Deprecated</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getDeprecated()
-   * @see #getMessageTrait()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Deprecated</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getDeprecated()
+	 * @see #getMessageTrait()
+	 * @generated
+	 */
   EAttribute getMessageTrait_Deprecated();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getHeaders <em>Headers</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getHeaders <em>Headers</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Headers</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getHeaders()
-   * @see #getMessageTrait()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Headers</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getHeaders()
+	 * @see #getMessageTrait()
+	 * @generated
+	 */
   EReference getMessageTrait_Headers();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getTags <em>Tags</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getTags <em>Tags</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Tags</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getTags()
-   * @see #getMessageTrait()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Tags</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.MessageTrait#getTags()
+	 * @see #getMessageTrait()
+	 * @generated
+	 */
   EReference getMessageTrait_Tags();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait <em>Named Message Trait</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait <em>Named Message Trait</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Named Message Trait</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait
-   * @generated
-   */
+	 * @return the meta object for class '<em>Named Message Trait</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait
+	 * @generated
+	 */
   EClass getNamedMessageTrait();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait#getName()
-   * @see #getNamedMessageTrait()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait#getName()
+	 * @see #getNamedMessageTrait()
+	 * @generated
+	 */
   EAttribute getNamedMessageTrait_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait#getMessageTrait <em>Message Trait</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait#getMessageTrait <em>Message Trait</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Message Trait</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait#getMessageTrait()
-   * @see #getNamedMessageTrait()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Message Trait</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait#getMessageTrait()
+	 * @see #getNamedMessageTrait()
+	 * @generated
+	 */
   EReference getNamedMessageTrait_MessageTrait();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Components <em>Components</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Components <em>Components</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Components</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Components
-   * @generated
-   */
+	 * @return the meta object for class '<em>Components</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Components
+	 * @generated
+	 */
   EClass getComponents();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Components#getSchemas <em>Schemas</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Components#getSchemas <em>Schemas</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Schemas</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Components#getSchemas()
-   * @see #getComponents()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Schemas</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Components#getSchemas()
+	 * @see #getComponents()
+	 * @generated
+	 */
   EReference getComponents_Schemas();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Components#getMessages <em>Messages</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Components#getMessages <em>Messages</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Messages</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Components#getMessages()
-   * @see #getComponents()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Messages</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Components#getMessages()
+	 * @see #getComponents()
+	 * @generated
+	 */
   EReference getComponents_Messages();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Components#getParameters <em>Parameters</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Components#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Parameters</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Components#getParameters()
-   * @see #getComponents()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Components#getParameters()
+	 * @see #getComponents()
+	 * @generated
+	 */
   EReference getComponents_Parameters();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Components#getOperationTraits <em>Operation Traits</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Components#getOperationTraits <em>Operation Traits</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Operation Traits</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Components#getOperationTraits()
-   * @see #getComponents()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Operation Traits</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Components#getOperationTraits()
+	 * @see #getComponents()
+	 * @generated
+	 */
   EReference getComponents_OperationTraits();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Components#getMessageTraits <em>Message Traits</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Components#getMessageTraits <em>Message Traits</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Message Traits</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Components#getMessageTraits()
-   * @see #getComponents()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Message Traits</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Components#getMessageTraits()
+	 * @see #getComponents()
+	 * @generated
+	 */
   EReference getComponents_MessageTraits();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Components#getQosMetrics <em>Qos Metrics</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Components#getQosMetrics <em>Qos Metrics</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Qos Metrics</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Components#getQosMetrics()
-   * @see #getComponents()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Qos Metrics</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Components#getQosMetrics()
+	 * @see #getComponents()
+	 * @generated
+	 */
   EReference getComponents_QosMetrics();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Sla <em>Sla</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Sla <em>Sla</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Sla</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Sla
-   * @generated
-   */
+	 * @return the meta object for class '<em>Sla</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Sla
+	 * @generated
+	 */
   EClass getSla();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Sla#getGuaranteeTerm <em>Guarantee Term</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.Sla#getGuaranteeTerm <em>Guarantee Term</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Guarantee Term</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Sla#getGuaranteeTerm()
-   * @see #getSla()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Guarantee Term</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Sla#getGuaranteeTerm()
+	 * @see #getSla()
+	 * @generated
+	 */
   EReference getSla_GuaranteeTerm();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm <em>Guarantee Term</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm <em>Guarantee Term</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Guarantee Term</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm
-   * @generated
-   */
+	 * @return the meta object for class '<em>Guarantee Term</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm
+	 * @generated
+	 */
   EClass getGuaranteeTerm();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getScopes <em>Scopes</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getScopes <em>Scopes</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Scopes</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getScopes()
-   * @see #getGuaranteeTerm()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Scopes</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getScopes()
+	 * @see #getGuaranteeTerm()
+	 * @generated
+	 */
   EReference getGuaranteeTerm_Scopes();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getQualifyingConditions <em>Qualifying Conditions</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getQualifyingConditions <em>Qualifying Conditions</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Qualifying Conditions</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getQualifyingConditions()
-   * @see #getGuaranteeTerm()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Qualifying Conditions</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getQualifyingConditions()
+	 * @see #getGuaranteeTerm()
+	 * @generated
+	 */
   EReference getGuaranteeTerm_QualifyingConditions();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getSlos <em>Slos</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getSlos <em>Slos</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Slos</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getSlos()
-   * @see #getGuaranteeTerm()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Slos</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm#getSlos()
+	 * @see #getGuaranteeTerm()
+	 * @generated
+	 */
   EReference getGuaranteeTerm_Slos();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Scope <em>Scope</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Scope <em>Scope</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Scope</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Scope
-   * @generated
-   */
+	 * @return the meta object for class '<em>Scope</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Scope
+	 * @generated
+	 */
   EClass getScope();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Scope#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Scope#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Scope#getName()
-   * @see #getScope()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Scope#getName()
+	 * @see #getScope()
+	 * @generated
+	 */
   EAttribute getScope_Name();
 
   /**
-   * Returns the meta object for the reference '{@link io.github.abelgomez.asyncapi.asyncApi.Scope#getReference <em>Reference</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the reference '{@link io.github.abelgomez.asyncapi.asyncApi.Scope#getReference <em>Reference</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Reference</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Scope#getReference()
-   * @see #getScope()
-   * @generated
-   */
+	 * @return the meta object for the reference '<em>Reference</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Scope#getReference()
+	 * @see #getScope()
+	 * @generated
+	 */
   EReference getScope_Reference();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition <em>Qualifying Condition</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition <em>Qualifying Condition</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Qualifying Condition</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition
-   * @generated
-   */
+	 * @return the meta object for class '<em>Qualifying Condition</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition
+	 * @generated
+	 */
   EClass getQualifyingCondition();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition#getName()
-   * @see #getQualifyingCondition()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition#getName()
+	 * @see #getQualifyingCondition()
+	 * @generated
+	 */
   EAttribute getQualifyingCondition_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Condition</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition#getCondition()
-   * @see #getQualifyingCondition()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Condition</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition#getCondition()
+	 * @see #getQualifyingCondition()
+	 * @generated
+	 */
   EReference getQualifyingCondition_Condition();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Slo <em>Slo</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Slo <em>Slo</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Slo</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Slo
-   * @generated
-   */
+	 * @return the meta object for class '<em>Slo</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Slo
+	 * @generated
+	 */
   EClass getSlo();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Slo#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Slo#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Slo#getName()
-   * @see #getSlo()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Slo#getName()
+	 * @see #getSlo()
+	 * @generated
+	 */
   EAttribute getSlo_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Slo#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.Slo#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Condition</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Slo#getCondition()
-   * @see #getSlo()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Condition</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Slo#getCondition()
+	 * @see #getSlo()
+	 * @generated
+	 */
   EReference getSlo_Condition();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractQoSMetric <em>Abstract Qo SMetric</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractQoSMetric <em>Abstract Qo SMetric</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Abstract Qo SMetric</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AbstractQoSMetric
-   * @generated
-   */
+	 * @return the meta object for class '<em>Abstract Qo SMetric</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AbstractQoSMetric
+	 * @generated
+	 */
   EClass getAbstractQoSMetric();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference <em>Qo SMetric Reference</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference <em>Qo SMetric Reference</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Qo SMetric Reference</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference
-   * @generated
-   */
+	 * @return the meta object for class '<em>Qo SMetric Reference</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference
+	 * @generated
+	 */
   EClass getQoSMetricReference();
 
   /**
-   * Returns the meta object for the reference '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference#getMetric <em>Metric</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the reference '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference#getMetric <em>Metric</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Metric</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference#getMetric()
-   * @see #getQoSMetricReference()
-   * @generated
-   */
+	 * @return the meta object for the reference '<em>Metric</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference#getMetric()
+	 * @see #getQoSMetricReference()
+	 * @generated
+	 */
   EReference getQoSMetricReference_Metric();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric <em>Qo SMetric</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric <em>Qo SMetric</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Qo SMetric</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric
-   * @generated
-   */
+	 * @return the meta object for class '<em>Qo SMetric</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric
+	 * @generated
+	 */
   EClass getQoSMetric();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getName()
-   * @see #getQoSMetric()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getName()
+	 * @see #getQoSMetric()
+	 * @generated
+	 */
   EAttribute getQoSMetric_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getMetricType <em>Metric Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getMetricType <em>Metric Type</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Metric Type</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getMetricType()
-   * @see #getQoSMetric()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Metric Type</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getMetricType()
+	 * @see #getQoSMetric()
+	 * @generated
+	 */
   EAttribute getQoSMetric_MetricType();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getDescription()
-   * @see #getQoSMetric()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getDescription()
+	 * @see #getQoSMetric()
+	 * @generated
+	 */
   EAttribute getQoSMetric_Description();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getUnit <em>Unit</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getUnit <em>Unit</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Unit</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getUnit()
-   * @see #getQoSMetric()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Unit</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getUnit()
+	 * @see #getQoSMetric()
+	 * @generated
+	 */
   EAttribute getQoSMetric_Unit();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getGroupedByEvent <em>Grouped By Event</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getGroupedByEvent <em>Grouped By Event</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Grouped By Event</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getGroupedByEvent()
-   * @see #getQoSMetric()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Grouped By Event</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric#getGroupedByEvent()
+	 * @see #getQoSMetric()
+	 * @generated
+	 */
   EAttribute getQoSMetric_GroupedByEvent();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric <em>Derived Qo SMetric</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric <em>Derived Qo SMetric</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Derived Qo SMetric</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric
-   * @generated
-   */
+	 * @return the meta object for class '<em>Derived Qo SMetric</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric
+	 * @generated
+	 */
   EClass getDerivedQoSMetric();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getWindow <em>Window</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getWindow <em>Window</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Window</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getWindow()
-   * @see #getDerivedQoSMetric()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Window</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getWindow()
+	 * @see #getDerivedQoSMetric()
+	 * @generated
+	 */
   EAttribute getDerivedQoSMetric_Window();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getWindowUnit <em>Window Unit</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getWindowUnit <em>Window Unit</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Window Unit</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getWindowUnit()
-   * @see #getDerivedQoSMetric()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Window Unit</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getWindowUnit()
+	 * @see #getDerivedQoSMetric()
+	 * @generated
+	 */
   EAttribute getDerivedQoSMetric_WindowUnit();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getAggregationFunction <em>Aggregation Function</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getAggregationFunction <em>Aggregation Function</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Aggregation Function</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getAggregationFunction()
-   * @see #getDerivedQoSMetric()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Aggregation Function</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getAggregationFunction()
+	 * @see #getDerivedQoSMetric()
+	 * @generated
+	 */
   EAttribute getDerivedQoSMetric_AggregationFunction();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.BooleanExpression <em>Boolean Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.BooleanExpression <em>Boolean Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Boolean Expression</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.BooleanExpression
-   * @generated
-   */
+	 * @return the meta object for class '<em>Boolean Expression</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.BooleanExpression
+	 * @generated
+	 */
   EClass getBooleanExpression();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AndExpression <em>And Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.AndExpression <em>And Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>And Expression</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AndExpression
-   * @generated
-   */
+	 * @return the meta object for class '<em>And Expression</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AndExpression
+	 * @generated
+	 */
   EClass getAndExpression();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.AndExpression#getConditions <em>Conditions</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.AndExpression#getConditions <em>Conditions</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Conditions</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AndExpression#getConditions()
-   * @see #getAndExpression()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Conditions</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AndExpression#getConditions()
+	 * @see #getAndExpression()
+	 * @generated
+	 */
   EReference getAndExpression_Conditions();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.OrExpression <em>Or Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.OrExpression <em>Or Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Or Expression</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.OrExpression
-   * @generated
-   */
+	 * @return the meta object for class '<em>Or Expression</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.OrExpression
+	 * @generated
+	 */
   EClass getOrExpression();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.OrExpression#getConditions <em>Conditions</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link io.github.abelgomez.asyncapi.asyncApi.OrExpression#getConditions <em>Conditions</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Conditions</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.OrExpression#getConditions()
-   * @see #getOrExpression()
-   * @generated
-   */
+	 * @return the meta object for the containment reference list '<em>Conditions</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.OrExpression#getConditions()
+	 * @see #getOrExpression()
+	 * @generated
+	 */
   EReference getOrExpression_Conditions();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression <em>Comparison Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression <em>Comparison Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Comparison Expression</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression
-   * @generated
-   */
+	 * @return the meta object for class '<em>Comparison Expression</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression
+	 * @generated
+	 */
   EClass getComparisonExpression();
 
   /**
-   * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getQosMetric <em>Qos Metric</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getQosMetric <em>Qos Metric</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Qos Metric</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getQosMetric()
-   * @see #getComparisonExpression()
-   * @generated
-   */
+	 * @return the meta object for the containment reference '<em>Qos Metric</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getQosMetric()
+	 * @see #getComparisonExpression()
+	 * @generated
+	 */
   EReference getComparisonExpression_QosMetric();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getOperator <em>Operator</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getOperator <em>Operator</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Operator</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getOperator()
-   * @see #getComparisonExpression()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Operator</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getOperator()
+	 * @see #getComparisonExpression()
+	 * @generated
+	 */
   EAttribute getComparisonExpression_Operator();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getValue()
-   * @see #getComparisonExpression()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression#getValue()
+	 * @see #getComparisonExpression()
+	 * @generated
+	 */
   EAttribute getComparisonExpression_Value();
 
   /**
-   * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Reference <em>Reference</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link io.github.abelgomez.asyncapi.asyncApi.Reference <em>Reference</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Reference</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Reference
-   * @generated
-   */
+	 * @return the meta object for class '<em>Reference</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Reference
+	 * @generated
+	 */
   EClass getReference();
 
   /**
-   * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Reference#getUri <em>Uri</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link io.github.abelgomez.asyncapi.asyncApi.Reference#getUri <em>Uri</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Uri</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Reference#getUri()
-   * @see #getReference()
-   * @generated
-   */
+	 * @return the meta object for the attribute '<em>Uri</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Reference#getUri()
+	 * @see #getReference()
+	 * @generated
+	 */
   EAttribute getReference_Uri();
 
   /**
-   * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.WindowUnit <em>Window Unit</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.WindowUnit <em>Window Unit</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Window Unit</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.WindowUnit
-   * @generated
-   */
+	 * @return the meta object for enum '<em>Window Unit</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.WindowUnit
+	 * @generated
+	 */
   EEnum getWindowUnit();
 
   /**
-   * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.AggregationFunction <em>Aggregation Function</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.AggregationFunction <em>Aggregation Function</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Aggregation Function</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AggregationFunction
-   * @generated
-   */
+	 * @return the meta object for enum '<em>Aggregation Function</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AggregationFunction
+	 * @generated
+	 */
   EEnum getAggregationFunction();
 
   /**
-   * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricType <em>Qo SMetric Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricType <em>Qo SMetric Type</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Qo SMetric Type</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricType
-   * @generated
-   */
+	 * @return the meta object for enum '<em>Qo SMetric Type</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricType
+	 * @generated
+	 */
   EEnum getQoSMetricType();
 
   /**
-   * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit <em>Qo SMetric Unit</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit <em>Qo SMetric Unit</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Qo SMetric Unit</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit
-   * @generated
-   */
+	 * @return the meta object for enum '<em>Qo SMetric Unit</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit
+	 * @generated
+	 */
   EEnum getQoSMetricUnit();
 
   /**
-   * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.Operator <em>Operator</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.Operator <em>Operator</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Operator</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Operator
-   * @generated
-   */
+	 * @return the meta object for enum '<em>Operator</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Operator
+	 * @generated
+	 */
   EEnum getOperator();
 
   /**
-   * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.JsonType <em>Json Type</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.JsonType <em>Json Type</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Json Type</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.JsonType
-   * @generated
-   */
+	 * @return the meta object for enum '<em>Json Type</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.JsonType
+	 * @generated
+	 */
   EEnum getJsonType();
 
   /**
-   * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.Boolean <em>Boolean</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.Boolean <em>Boolean</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Boolean</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Boolean
-   * @generated
-   */
+	 * @return the meta object for enum '<em>Boolean</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Boolean
+	 * @generated
+	 */
   EEnum getBoolean();
 
   /**
-   * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.VersionNumber <em>Version Number</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.VersionNumber <em>Version Number</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Version Number</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.VersionNumber
-   * @generated
-   */
+	 * @return the meta object for enum '<em>Version Number</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.VersionNumber
+	 * @generated
+	 */
   EEnum getVersionNumber();
 
   /**
-   * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.Protocol <em>Protocol</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.MessageIdentifier <em>Message Identifier</em>}'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Protocol</em>'.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Protocol
-   * @generated
-   */
+	 * @return the meta object for enum '<em>Message Identifier</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.MessageIdentifier
+	 * @generated
+	 */
+  EEnum getMessageIdentifier();
+
+  /**
+	 * Returns the meta object for enum '{@link io.github.abelgomez.asyncapi.asyncApi.Protocol <em>Protocol</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Protocol</em>'.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Protocol
+	 * @generated
+	 */
   EEnum getProtocol();
 
   /**
-   * Returns the factory that creates the instances of the model.
-   * <!-- begin-user-doc -->
+	 * Returns the factory that creates the instances of the model.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the factory that creates the instances of the model.
-   * @generated
-   */
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
   AsyncApiFactory getAsyncApiFactory();
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * Defines literals for the meta objects that represent
    * <ul>
    *   <li>each class,</li>
@@ -3714,1400 +3774,1426 @@ public interface AsyncApiPackage extends EPackage
    *   <li>and each data type</li>
    * </ul>
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AsyncAPIImpl <em>Async API</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AsyncAPIImpl <em>Async API</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncAPIImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAsyncAPI()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncAPIImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAsyncAPI()
+		 * @generated
+		 */
     EClass ASYNC_API = eINSTANCE.getAsyncAPI();
 
     /**
-     * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute ASYNC_API__VERSION = eINSTANCE.getAsyncAPI_Version();
 
     /**
-     * The meta object literal for the '<em><b>Info</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Info</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference ASYNC_API__INFO = eINSTANCE.getAsyncAPI_Info();
 
     /**
-     * The meta object literal for the '<em><b>Servers</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Servers</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference ASYNC_API__SERVERS = eINSTANCE.getAsyncAPI_Servers();
 
     /**
-     * The meta object literal for the '<em><b>Channels</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Channels</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference ASYNC_API__CHANNELS = eINSTANCE.getAsyncAPI_Channels();
 
     /**
-     * The meta object literal for the '<em><b>Components</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Components</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference ASYNC_API__COMPONENTS = eINSTANCE.getAsyncAPI_Components();
 
     /**
-     * The meta object literal for the '<em><b>Sla</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Sla</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference ASYNC_API__SLA = eINSTANCE.getAsyncAPI_Sla();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.InfoImpl <em>Info</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.InfoImpl <em>Info</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.InfoImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getInfo()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.InfoImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getInfo()
+		 * @generated
+		 */
     EClass INFO = eINSTANCE.getInfo();
 
     /**
-     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute INFO__TITLE = eINSTANCE.getInfo_Title();
 
     /**
-     * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute INFO__VERSION = eINSTANCE.getInfo_Version();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute INFO__DESCRIPTION = eINSTANCE.getInfo_Description();
 
     /**
-     * The meta object literal for the '<em><b>Terms Of Service</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Terms Of Service</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute INFO__TERMS_OF_SERVICE = eINSTANCE.getInfo_TermsOfService();
 
     /**
-     * The meta object literal for the '<em><b>Contact</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Contact</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference INFO__CONTACT = eINSTANCE.getInfo_Contact();
 
     /**
-     * The meta object literal for the '<em><b>License</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>License</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference INFO__LICENSE = eINSTANCE.getInfo_License();
 
     /**
-     * The meta object literal for the '<em><b>Base Package</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Base Package</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute INFO__BASE_PACKAGE = eINSTANCE.getInfo_BasePackage();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ContactImpl <em>Contact</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ContactImpl <em>Contact</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.ContactImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getContact()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.ContactImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getContact()
+		 * @generated
+		 */
     EClass CONTACT = eINSTANCE.getContact();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute CONTACT__NAME = eINSTANCE.getContact_Name();
 
     /**
-     * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute CONTACT__URL = eINSTANCE.getContact_Url();
 
     /**
-     * The meta object literal for the '<em><b>Email</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Email</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute CONTACT__EMAIL = eINSTANCE.getContact_Email();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.LicenseImpl <em>License</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.LicenseImpl <em>License</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.LicenseImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getLicense()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.LicenseImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getLicense()
+		 * @generated
+		 */
     EClass LICENSE = eINSTANCE.getLicense();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute LICENSE__NAME = eINSTANCE.getLicense_Name();
 
     /**
-     * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute LICENSE__URL = eINSTANCE.getLicense_Url();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl <em>Server</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl <em>Server</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getServer()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.ServerImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getServer()
+		 * @generated
+		 */
     EClass SERVER = eINSTANCE.getServer();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SERVER__NAME = eINSTANCE.getServer_Name();
 
     /**
-     * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SERVER__URL = eINSTANCE.getServer_Url();
 
     /**
-     * The meta object literal for the '<em><b>Protocol</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Protocol</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SERVER__PROTOCOL = eINSTANCE.getServer_Protocol();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SERVER__DESCRIPTION = eINSTANCE.getServer_Description();
 
     /**
-     * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference SERVER__VARIABLES = eINSTANCE.getServer_Variables();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.VariableImpl <em>Variable</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Is Monitored</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.VariableImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getVariable()
-     * @generated
-     */
+		 * @generated
+		 */
+    EAttribute SERVER__IS_MONITORED = eINSTANCE.getServer_IsMonitored();
+
+    /**
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.VariableImpl <em>Variable</em>}' class.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.VariableImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getVariable()
+		 * @generated
+		 */
     EClass VARIABLE = eINSTANCE.getVariable();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute VARIABLE__DESCRIPTION = eINSTANCE.getVariable_Description();
 
     /**
-     * The meta object literal for the '<em><b>Default</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Default</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute VARIABLE__DEFAULT = eINSTANCE.getVariable_Default();
 
     /**
-     * The meta object literal for the '<em><b>Enum</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Enum</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute VARIABLE__ENUM = eINSTANCE.getVariable_Enum();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ChannelImpl <em>Channel</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ChannelImpl <em>Channel</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.ChannelImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getChannel()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.ChannelImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getChannel()
+		 * @generated
+		 */
     EClass CHANNEL = eINSTANCE.getChannel();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute CHANNEL__NAME = eINSTANCE.getChannel_Name();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute CHANNEL__DESCRIPTION = eINSTANCE.getChannel_Description();
 
     /**
-     * The meta object literal for the '<em><b>Publish</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Publish</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference CHANNEL__PUBLISH = eINSTANCE.getChannel_Publish();
 
     /**
-     * The meta object literal for the '<em><b>Subscribe</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Subscribe</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference CHANNEL__SUBSCRIBE = eINSTANCE.getChannel_Subscribe();
 
     /**
-     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference CHANNEL__PARAMETERS = eINSTANCE.getChannel_Parameters();
 
     /**
-     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute CHANNEL__TITLE = eINSTANCE.getChannel_Title();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.OperationImpl <em>Operation</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.OperationImpl <em>Operation</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.OperationImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOperation()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.OperationImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOperation()
+		 * @generated
+		 */
     EClass OPERATION = eINSTANCE.getOperation();
 
     /**
-     * The meta object literal for the '<em><b>Operation Id</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Operation Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute OPERATION__OPERATION_ID = eINSTANCE.getOperation_OperationId();
 
     /**
-     * The meta object literal for the '<em><b>Summary</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Summary</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute OPERATION__SUMMARY = eINSTANCE.getOperation_Summary();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute OPERATION__DESCRIPTION = eINSTANCE.getOperation_Description();
 
     /**
-     * The meta object literal for the '<em><b>Message</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Message</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference OPERATION__MESSAGE = eINSTANCE.getOperation_Message();
 
     /**
-     * The meta object literal for the '<em><b>Traits</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Traits</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference OPERATION__TRAITS = eINSTANCE.getOperation_Traits();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractMessageImpl <em>Abstract Message</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractMessageImpl <em>Abstract Message</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractMessageImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractMessage()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractMessageImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractMessage()
+		 * @generated
+		 */
     EClass ABSTRACT_MESSAGE = eINSTANCE.getAbstractMessage();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl <em>Message</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl <em>Message</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getMessage()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.MessageImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getMessage()
+		 * @generated
+		 */
     EClass MESSAGE = eINSTANCE.getMessage();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute MESSAGE__NAME = eINSTANCE.getMessage_Name();
 
     /**
-     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute MESSAGE__TITLE = eINSTANCE.getMessage_Title();
 
     /**
-     * The meta object literal for the '<em><b>Summary</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Summary</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute MESSAGE__SUMMARY = eINSTANCE.getMessage_Summary();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute MESSAGE__DESCRIPTION = eINSTANCE.getMessage_Description();
 
     /**
-     * The meta object literal for the '<em><b>Deprecated</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Deprecated</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute MESSAGE__DEPRECATED = eINSTANCE.getMessage_Deprecated();
 
     /**
-     * The meta object literal for the '<em><b>Headers</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Headers</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference MESSAGE__HEADERS = eINSTANCE.getMessage_Headers();
 
     /**
-     * The meta object literal for the '<em><b>Tags</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Tags</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference MESSAGE__TAGS = eINSTANCE.getMessage_Tags();
 
     /**
-     * The meta object literal for the '<em><b>Payload</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Payload</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference MESSAGE__PAYLOAD = eINSTANCE.getMessage_Payload();
 
     /**
-     * The meta object literal for the '<em><b>Traits</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Traits</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference MESSAGE__TRAITS = eINSTANCE.getMessage_Traits();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageImpl <em>Named Message</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Identifier</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedMessage()
-     * @generated
-     */
+		 * @generated
+		 */
+    EAttribute MESSAGE__IDENTIFIER = eINSTANCE.getMessage_Identifier();
+
+    /**
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageImpl <em>Named Message</em>}' class.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedMessage()
+		 * @generated
+		 */
     EClass NAMED_MESSAGE = eINSTANCE.getNamedMessage();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute NAMED_MESSAGE__NAME = eINSTANCE.getNamedMessage_Name();
 
     /**
-     * The meta object literal for the '<em><b>Message</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Message</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference NAMED_MESSAGE__MESSAGE = eINSTANCE.getNamedMessage_Message();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.TagImpl <em>Tag</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.TagImpl <em>Tag</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.TagImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getTag()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.TagImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getTag()
+		 * @generated
+		 */
     EClass TAG = eINSTANCE.getTag();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute TAG__NAME = eINSTANCE.getTag_Name();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute TAG__DESCRIPTION = eINSTANCE.getTag_Description();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractSchemaImpl <em>Abstract Schema</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractSchemaImpl <em>Abstract Schema</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractSchemaImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractSchema()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractSchemaImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractSchema()
+		 * @generated
+		 */
     EClass ABSTRACT_SCHEMA = eINSTANCE.getAbstractSchema();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl <em>Schema</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl <em>Schema</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getSchema()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.SchemaImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getSchema()
+		 * @generated
+		 */
     EClass SCHEMA = eINSTANCE.getSchema();
 
     /**
-     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SCHEMA__TITLE = eINSTANCE.getSchema_Title();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SCHEMA__TYPE = eINSTANCE.getSchema_Type();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SCHEMA__DESCRIPTION = eINSTANCE.getSchema_Description();
 
     /**
-     * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SCHEMA__FORMAT = eINSTANCE.getSchema_Format();
 
     /**
-     * The meta object literal for the '<em><b>Minimum</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Minimum</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SCHEMA__MINIMUM = eINSTANCE.getSchema_Minimum();
 
     /**
-     * The meta object literal for the '<em><b>Maximum</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Maximum</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SCHEMA__MAXIMUM = eINSTANCE.getSchema_Maximum();
 
     /**
-     * The meta object literal for the '<em><b>Min Items</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Min Items</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SCHEMA__MIN_ITEMS = eINSTANCE.getSchema_MinItems();
 
     /**
-     * The meta object literal for the '<em><b>Max Items</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Max Items</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SCHEMA__MAX_ITEMS = eINSTANCE.getSchema_MaxItems();
 
     /**
-     * The meta object literal for the '<em><b>Default</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Default</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SCHEMA__DEFAULT = eINSTANCE.getSchema_Default();
 
     /**
-     * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference SCHEMA__PROPERTIES = eINSTANCE.getSchema_Properties();
 
     /**
-     * The meta object literal for the '<em><b>Enum</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Enum</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SCHEMA__ENUM = eINSTANCE.getSchema_Enum();
 
     /**
-     * The meta object literal for the '<em><b>Items</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Items</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference SCHEMA__ITEMS = eINSTANCE.getSchema_Items();
 
     /**
-     * The meta object literal for the '<em><b>Required</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Required</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SCHEMA__REQUIRED = eINSTANCE.getSchema_Required();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedSchemaImpl <em>Named Schema</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedSchemaImpl <em>Named Schema</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedSchemaImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedSchema()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedSchemaImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedSchema()
+		 * @generated
+		 */
     EClass NAMED_SCHEMA = eINSTANCE.getNamedSchema();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute NAMED_SCHEMA__NAME = eINSTANCE.getNamedSchema_Name();
 
     /**
-     * The meta object literal for the '<em><b>Schema</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Schema</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference NAMED_SCHEMA__SCHEMA = eINSTANCE.getNamedSchema_Schema();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractParameterImpl <em>Abstract Parameter</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractParameterImpl <em>Abstract Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractParameterImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractParameter()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractParameterImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractParameter()
+		 * @generated
+		 */
     EClass ABSTRACT_PARAMETER = eINSTANCE.getAbstractParameter();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ParameterImpl <em>Parameter</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ParameterImpl <em>Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.ParameterImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getParameter()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.ParameterImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getParameter()
+		 * @generated
+		 */
     EClass PARAMETER = eINSTANCE.getParameter();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute PARAMETER__DESCRIPTION = eINSTANCE.getParameter_Description();
 
     /**
-     * The meta object literal for the '<em><b>Schema</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Schema</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference PARAMETER__SCHEMA = eINSTANCE.getParameter_Schema();
 
     /**
-     * The meta object literal for the '<em><b>Location</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Location</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute PARAMETER__LOCATION = eINSTANCE.getParameter_Location();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedParameterImpl <em>Named Parameter</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedParameterImpl <em>Named Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedParameterImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedParameter()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedParameterImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedParameter()
+		 * @generated
+		 */
     EClass NAMED_PARAMETER = eINSTANCE.getNamedParameter();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute NAMED_PARAMETER__NAME = eINSTANCE.getNamedParameter_Name();
 
     /**
-     * The meta object literal for the '<em><b>Parameter</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference NAMED_PARAMETER__PARAMETER = eINSTANCE.getNamedParameter_Parameter();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractOperationTraitImpl <em>Abstract Operation Trait</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractOperationTraitImpl <em>Abstract Operation Trait</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractOperationTraitImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractOperationTrait()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractOperationTraitImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractOperationTrait()
+		 * @generated
+		 */
     EClass ABSTRACT_OPERATION_TRAIT = eINSTANCE.getAbstractOperationTrait();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.OperationTraitImpl <em>Operation Trait</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.OperationTraitImpl <em>Operation Trait</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.OperationTraitImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOperationTrait()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.OperationTraitImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOperationTrait()
+		 * @generated
+		 */
     EClass OPERATION_TRAIT = eINSTANCE.getOperationTrait();
 
     /**
-     * The meta object literal for the '<em><b>Operation Id</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Operation Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute OPERATION_TRAIT__OPERATION_ID = eINSTANCE.getOperationTrait_OperationId();
 
     /**
-     * The meta object literal for the '<em><b>Summary</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Summary</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute OPERATION_TRAIT__SUMMARY = eINSTANCE.getOperationTrait_Summary();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute OPERATION_TRAIT__DESCRIPTION = eINSTANCE.getOperationTrait_Description();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedOperationTraitImpl <em>Named Operation Trait</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedOperationTraitImpl <em>Named Operation Trait</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedOperationTraitImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedOperationTrait()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedOperationTraitImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedOperationTrait()
+		 * @generated
+		 */
     EClass NAMED_OPERATION_TRAIT = eINSTANCE.getNamedOperationTrait();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute NAMED_OPERATION_TRAIT__NAME = eINSTANCE.getNamedOperationTrait_Name();
 
     /**
-     * The meta object literal for the '<em><b>Operation Trait</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Operation Trait</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference NAMED_OPERATION_TRAIT__OPERATION_TRAIT = eINSTANCE.getNamedOperationTrait_OperationTrait();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractMessageTraitImpl <em>Abstract Message Trait</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractMessageTraitImpl <em>Abstract Message Trait</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractMessageTraitImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractMessageTrait()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractMessageTraitImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractMessageTrait()
+		 * @generated
+		 */
     EClass ABSTRACT_MESSAGE_TRAIT = eINSTANCE.getAbstractMessageTrait();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageTraitImpl <em>Message Trait</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.MessageTraitImpl <em>Message Trait</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.MessageTraitImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getMessageTrait()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.MessageTraitImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getMessageTrait()
+		 * @generated
+		 */
     EClass MESSAGE_TRAIT = eINSTANCE.getMessageTrait();
 
     /**
-     * The meta object literal for the '<em><b>Summary</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Summary</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute MESSAGE_TRAIT__SUMMARY = eINSTANCE.getMessageTrait_Summary();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute MESSAGE_TRAIT__DESCRIPTION = eINSTANCE.getMessageTrait_Description();
 
     /**
-     * The meta object literal for the '<em><b>Deprecated</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Deprecated</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute MESSAGE_TRAIT__DEPRECATED = eINSTANCE.getMessageTrait_Deprecated();
 
     /**
-     * The meta object literal for the '<em><b>Headers</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Headers</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference MESSAGE_TRAIT__HEADERS = eINSTANCE.getMessageTrait_Headers();
 
     /**
-     * The meta object literal for the '<em><b>Tags</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Tags</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference MESSAGE_TRAIT__TAGS = eINSTANCE.getMessageTrait_Tags();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageTraitImpl <em>Named Message Trait</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageTraitImpl <em>Named Message Trait</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageTraitImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedMessageTrait()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.NamedMessageTraitImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getNamedMessageTrait()
+		 * @generated
+		 */
     EClass NAMED_MESSAGE_TRAIT = eINSTANCE.getNamedMessageTrait();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute NAMED_MESSAGE_TRAIT__NAME = eINSTANCE.getNamedMessageTrait_Name();
 
     /**
-     * The meta object literal for the '<em><b>Message Trait</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Message Trait</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference NAMED_MESSAGE_TRAIT__MESSAGE_TRAIT = eINSTANCE.getNamedMessageTrait_MessageTrait();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ComponentsImpl <em>Components</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ComponentsImpl <em>Components</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.ComponentsImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getComponents()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.ComponentsImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getComponents()
+		 * @generated
+		 */
     EClass COMPONENTS = eINSTANCE.getComponents();
 
     /**
-     * The meta object literal for the '<em><b>Schemas</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Schemas</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference COMPONENTS__SCHEMAS = eINSTANCE.getComponents_Schemas();
 
     /**
-     * The meta object literal for the '<em><b>Messages</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Messages</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference COMPONENTS__MESSAGES = eINSTANCE.getComponents_Messages();
 
     /**
-     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference COMPONENTS__PARAMETERS = eINSTANCE.getComponents_Parameters();
 
     /**
-     * The meta object literal for the '<em><b>Operation Traits</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Operation Traits</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference COMPONENTS__OPERATION_TRAITS = eINSTANCE.getComponents_OperationTraits();
 
     /**
-     * The meta object literal for the '<em><b>Message Traits</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Message Traits</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference COMPONENTS__MESSAGE_TRAITS = eINSTANCE.getComponents_MessageTraits();
 
     /**
-     * The meta object literal for the '<em><b>Qos Metrics</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Qos Metrics</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference COMPONENTS__QOS_METRICS = eINSTANCE.getComponents_QosMetrics();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.SlaImpl <em>Sla</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.SlaImpl <em>Sla</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.SlaImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getSla()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.SlaImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getSla()
+		 * @generated
+		 */
     EClass SLA = eINSTANCE.getSla();
 
     /**
-     * The meta object literal for the '<em><b>Guarantee Term</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Guarantee Term</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference SLA__GUARANTEE_TERM = eINSTANCE.getSla_GuaranteeTerm();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.GuaranteeTermImpl <em>Guarantee Term</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.GuaranteeTermImpl <em>Guarantee Term</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.GuaranteeTermImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getGuaranteeTerm()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.GuaranteeTermImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getGuaranteeTerm()
+		 * @generated
+		 */
     EClass GUARANTEE_TERM = eINSTANCE.getGuaranteeTerm();
 
     /**
-     * The meta object literal for the '<em><b>Scopes</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Scopes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference GUARANTEE_TERM__SCOPES = eINSTANCE.getGuaranteeTerm_Scopes();
 
     /**
-     * The meta object literal for the '<em><b>Qualifying Conditions</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Qualifying Conditions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference GUARANTEE_TERM__QUALIFYING_CONDITIONS = eINSTANCE.getGuaranteeTerm_QualifyingConditions();
 
     /**
-     * The meta object literal for the '<em><b>Slos</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Slos</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference GUARANTEE_TERM__SLOS = eINSTANCE.getGuaranteeTerm_Slos();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ScopeImpl <em>Scope</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ScopeImpl <em>Scope</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.ScopeImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getScope()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.ScopeImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getScope()
+		 * @generated
+		 */
     EClass SCOPE = eINSTANCE.getScope();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SCOPE__NAME = eINSTANCE.getScope_Name();
 
     /**
-     * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference SCOPE__REFERENCE = eINSTANCE.getScope_Reference();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.QualifyingConditionImpl <em>Qualifying Condition</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.QualifyingConditionImpl <em>Qualifying Condition</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.QualifyingConditionImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQualifyingCondition()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.QualifyingConditionImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQualifyingCondition()
+		 * @generated
+		 */
     EClass QUALIFYING_CONDITION = eINSTANCE.getQualifyingCondition();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute QUALIFYING_CONDITION__NAME = eINSTANCE.getQualifyingCondition_Name();
 
     /**
-     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference QUALIFYING_CONDITION__CONDITION = eINSTANCE.getQualifyingCondition_Condition();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.SloImpl <em>Slo</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.SloImpl <em>Slo</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.SloImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getSlo()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.SloImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getSlo()
+		 * @generated
+		 */
     EClass SLO = eINSTANCE.getSlo();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute SLO__NAME = eINSTANCE.getSlo_Name();
 
     /**
-     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference SLO__CONDITION = eINSTANCE.getSlo_Condition();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractQoSMetricImpl <em>Abstract Qo SMetric</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AbstractQoSMetricImpl <em>Abstract Qo SMetric</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractQoSMetricImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractQoSMetric()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AbstractQoSMetricImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAbstractQoSMetric()
+		 * @generated
+		 */
     EClass ABSTRACT_QO_SMETRIC = eINSTANCE.getAbstractQoSMetric();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricReferenceImpl <em>Qo SMetric Reference</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricReferenceImpl <em>Qo SMetric Reference</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricReferenceImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricReference()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricReferenceImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricReference()
+		 * @generated
+		 */
     EClass QO_SMETRIC_REFERENCE = eINSTANCE.getQoSMetricReference();
 
     /**
-     * The meta object literal for the '<em><b>Metric</b></em>' reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Metric</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference QO_SMETRIC_REFERENCE__METRIC = eINSTANCE.getQoSMetricReference_Metric();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricImpl <em>Qo SMetric</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricImpl <em>Qo SMetric</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetric()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.QoSMetricImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetric()
+		 * @generated
+		 */
     EClass QO_SMETRIC = eINSTANCE.getQoSMetric();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute QO_SMETRIC__NAME = eINSTANCE.getQoSMetric_Name();
 
     /**
-     * The meta object literal for the '<em><b>Metric Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Metric Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute QO_SMETRIC__METRIC_TYPE = eINSTANCE.getQoSMetric_MetricType();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute QO_SMETRIC__DESCRIPTION = eINSTANCE.getQoSMetric_Description();
 
     /**
-     * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute QO_SMETRIC__UNIT = eINSTANCE.getQoSMetric_Unit();
 
     /**
-     * The meta object literal for the '<em><b>Grouped By Event</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Grouped By Event</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute QO_SMETRIC__GROUPED_BY_EVENT = eINSTANCE.getQoSMetric_GroupedByEvent();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.DerivedQoSMetricImpl <em>Derived Qo SMetric</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.DerivedQoSMetricImpl <em>Derived Qo SMetric</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.DerivedQoSMetricImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getDerivedQoSMetric()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.DerivedQoSMetricImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getDerivedQoSMetric()
+		 * @generated
+		 */
     EClass DERIVED_QO_SMETRIC = eINSTANCE.getDerivedQoSMetric();
 
     /**
-     * The meta object literal for the '<em><b>Window</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Window</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute DERIVED_QO_SMETRIC__WINDOW = eINSTANCE.getDerivedQoSMetric_Window();
 
     /**
-     * The meta object literal for the '<em><b>Window Unit</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Window Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute DERIVED_QO_SMETRIC__WINDOW_UNIT = eINSTANCE.getDerivedQoSMetric_WindowUnit();
 
     /**
-     * The meta object literal for the '<em><b>Aggregation Function</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Aggregation Function</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute DERIVED_QO_SMETRIC__AGGREGATION_FUNCTION = eINSTANCE.getDerivedQoSMetric_AggregationFunction();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.BooleanExpressionImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getBooleanExpression()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.BooleanExpressionImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getBooleanExpression()
+		 * @generated
+		 */
     EClass BOOLEAN_EXPRESSION = eINSTANCE.getBooleanExpression();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AndExpressionImpl <em>And Expression</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.AndExpressionImpl <em>And Expression</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AndExpressionImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAndExpression()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AndExpressionImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAndExpression()
+		 * @generated
+		 */
     EClass AND_EXPRESSION = eINSTANCE.getAndExpression();
 
     /**
-     * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference AND_EXPRESSION__CONDITIONS = eINSTANCE.getAndExpression_Conditions();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.OrExpressionImpl <em>Or Expression</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.OrExpressionImpl <em>Or Expression</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.OrExpressionImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOrExpression()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.OrExpressionImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOrExpression()
+		 * @generated
+		 */
     EClass OR_EXPRESSION = eINSTANCE.getOrExpression();
 
     /**
-     * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference OR_EXPRESSION__CONDITIONS = eINSTANCE.getOrExpression_Conditions();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ComparisonExpressionImpl <em>Comparison Expression</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ComparisonExpressionImpl <em>Comparison Expression</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.ComparisonExpressionImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getComparisonExpression()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.ComparisonExpressionImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getComparisonExpression()
+		 * @generated
+		 */
     EClass COMPARISON_EXPRESSION = eINSTANCE.getComparisonExpression();
 
     /**
-     * The meta object literal for the '<em><b>Qos Metric</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Qos Metric</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EReference COMPARISON_EXPRESSION__QOS_METRIC = eINSTANCE.getComparisonExpression_QosMetric();
 
     /**
-     * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute COMPARISON_EXPRESSION__OPERATOR = eINSTANCE.getComparisonExpression_Operator();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute COMPARISON_EXPRESSION__VALUE = eINSTANCE.getComparisonExpression_Value();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ReferenceImpl <em>Reference</em>}' class.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.impl.ReferenceImpl <em>Reference</em>}' class.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.ReferenceImpl
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getReference()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.ReferenceImpl
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getReference()
+		 * @generated
+		 */
     EClass REFERENCE = eINSTANCE.getReference();
 
     /**
-     * The meta object literal for the '<em><b>Uri</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Uri</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+		 * @generated
+		 */
     EAttribute REFERENCE__URI = eINSTANCE.getReference_Uri();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.WindowUnit <em>Window Unit</em>}' enum.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.WindowUnit <em>Window Unit</em>}' enum.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.WindowUnit
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getWindowUnit()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.WindowUnit
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getWindowUnit()
+		 * @generated
+		 */
     EEnum WINDOW_UNIT = eINSTANCE.getWindowUnit();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.AggregationFunction <em>Aggregation Function</em>}' enum.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.AggregationFunction <em>Aggregation Function</em>}' enum.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.AggregationFunction
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAggregationFunction()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.AggregationFunction
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getAggregationFunction()
+		 * @generated
+		 */
     EEnum AGGREGATION_FUNCTION = eINSTANCE.getAggregationFunction();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricType <em>Qo SMetric Type</em>}' enum.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricType <em>Qo SMetric Type</em>}' enum.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricType
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricType()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricType
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricType()
+		 * @generated
+		 */
     EEnum QO_SMETRIC_TYPE = eINSTANCE.getQoSMetricType();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit <em>Qo SMetric Unit</em>}' enum.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit <em>Qo SMetric Unit</em>}' enum.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricUnit()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricUnit
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getQoSMetricUnit()
+		 * @generated
+		 */
     EEnum QO_SMETRIC_UNIT = eINSTANCE.getQoSMetricUnit();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.Operator <em>Operator</em>}' enum.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.Operator <em>Operator</em>}' enum.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.Operator
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOperator()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.Operator
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getOperator()
+		 * @generated
+		 */
     EEnum OPERATOR = eINSTANCE.getOperator();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.JsonType <em>Json Type</em>}' enum.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.JsonType <em>Json Type</em>}' enum.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.JsonType
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getJsonType()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.JsonType
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getJsonType()
+		 * @generated
+		 */
     EEnum JSON_TYPE = eINSTANCE.getJsonType();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.Boolean <em>Boolean</em>}' enum.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.Boolean <em>Boolean</em>}' enum.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.Boolean
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getBoolean()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.Boolean
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getBoolean()
+		 * @generated
+		 */
     EEnum BOOLEAN = eINSTANCE.getBoolean();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.VersionNumber <em>Version Number</em>}' enum.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.VersionNumber <em>Version Number</em>}' enum.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.VersionNumber
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getVersionNumber()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.VersionNumber
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getVersionNumber()
+		 * @generated
+		 */
     EEnum VERSION_NUMBER = eINSTANCE.getVersionNumber();
 
     /**
-     * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.Protocol <em>Protocol</em>}' enum.
-     * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.MessageIdentifier <em>Message Identifier</em>}' enum.
+		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see io.github.abelgomez.asyncapi.asyncApi.Protocol
-     * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getProtocol()
-     * @generated
-     */
+		 * @see io.github.abelgomez.asyncapi.asyncApi.MessageIdentifier
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getMessageIdentifier()
+		 * @generated
+		 */
+    EEnum MESSAGE_IDENTIFIER = eINSTANCE.getMessageIdentifier();
+
+    /**
+		 * The meta object literal for the '{@link io.github.abelgomez.asyncapi.asyncApi.Protocol <em>Protocol</em>}' enum.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @see io.github.abelgomez.asyncapi.asyncApi.Protocol
+		 * @see io.github.abelgomez.asyncapi.asyncApi.impl.AsyncApiPackageImpl#getProtocol()
+		 * @generated
+		 */
     EEnum PROTOCOL = eINSTANCE.getProtocol();
 
   }

@@ -23,25 +23,25 @@ package io.github.abelgomez.asyncapi.asyncApi;
 public interface QoSMetricReference extends AbstractQoSMetric
 {
   /**
-   * Returns the value of the '<em><b>Metric</b></em>' reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Metric</b></em>' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Metric</em>' reference.
-   * @see #setMetric(QoSMetric)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getQoSMetricReference_Metric()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Metric</em>' reference.
+	 * @see #setMetric(QoSMetric)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getQoSMetricReference_Metric()
+	 * @model
+	 * @generated
+	 */
   QoSMetric getMetric();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference#getMetric <em>Metric</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference#getMetric <em>Metric</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Metric</em>' reference.
-   * @see #getMetric()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Metric</em>' reference.
+	 * @see #getMetric()
+	 * @generated
+	 */
   void setMetric(QoSMetric value);
 
 } // QoSMetricReference

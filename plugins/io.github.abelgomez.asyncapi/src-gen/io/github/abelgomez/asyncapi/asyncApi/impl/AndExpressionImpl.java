@@ -35,133 +35,127 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class AndExpressionImpl extends BooleanExpressionImpl implements AndExpression
 {
   /**
-   * The cached value of the '{@link #getConditions() <em>Conditions</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getConditions() <em>Conditions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConditions()
-   * @generated
-   * @ordered
-   */
+	 * @see #getConditions()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<BooleanExpression> conditions;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected AndExpressionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return AsyncApiPackage.Literals.AND_EXPRESSION;
-  }
+		return AsyncApiPackage.Literals.AND_EXPRESSION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EList<BooleanExpression> getConditions()
   {
-    if (conditions == null)
-    {
-      conditions = new EObjectContainmentEList<BooleanExpression>(BooleanExpression.class, this, AsyncApiPackage.AND_EXPRESSION__CONDITIONS);
-    }
-    return conditions;
-  }
+		if (conditions == null) {
+			conditions = new EObjectContainmentEList<BooleanExpression>(BooleanExpression.class, this, AsyncApiPackage.AND_EXPRESSION__CONDITIONS);
+		}
+		return conditions;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.AND_EXPRESSION__CONDITIONS:
-        return ((InternalEList<?>)getConditions()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.AND_EXPRESSION__CONDITIONS:
+				return ((InternalEList<?>)getConditions()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.AND_EXPRESSION__CONDITIONS:
-        return getConditions();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.AND_EXPRESSION__CONDITIONS:
+				return getConditions();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.AND_EXPRESSION__CONDITIONS:
-        getConditions().clear();
-        getConditions().addAll((Collection<? extends BooleanExpression>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.AND_EXPRESSION__CONDITIONS:
+				getConditions().clear();
+				getConditions().addAll((Collection<? extends BooleanExpression>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.AND_EXPRESSION__CONDITIONS:
-        getConditions().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.AND_EXPRESSION__CONDITIONS:
+				getConditions().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.AND_EXPRESSION__CONDITIONS:
-        return conditions != null && !conditions.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.AND_EXPRESSION__CONDITIONS:
+				return conditions != null && !conditions.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //AndExpressionImpl

@@ -11,155 +11,133 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Operator</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Message Identifier</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getOperator()
+ * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getMessageIdentifier()
  * @model
  * @generated
  */
-public enum Operator implements Enumerator
+public enum MessageIdentifier implements Enumerator
 {
   /**
-	 * The '<em><b>Greater</b></em>' literal object.
+	 * The '<em><b>None</b></em>' literal object.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #GREATER_VALUE
+	 * @see #NONE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-  GREATER(0, "greater", "\">\""),
+  NONE(0, "none", "\"none\""),
 
   /**
-	 * The '<em><b>Greater equal</b></em>' literal object.
+	 * The '<em><b>Generated</b></em>' literal object.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #GREATER_EQUAL_VALUE
+	 * @see #GENERATED_VALUE
 	 * @generated
 	 * @ordered
 	 */
-  GREATER_EQUAL(1, "greater_equal", "\">=\""),
+  GENERATED(1, "generated", "\"generated\""),
 
   /**
-	 * The '<em><b>Equal</b></em>' literal object.
+	 * The '<em><b>Md5</b></em>' literal object.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #EQUAL_VALUE
+	 * @see #MD5_VALUE
 	 * @generated
 	 * @ordered
 	 */
-  EQUAL(2, "equal", "\"=\""),
+  MD5(2, "md5", "\"md5\""),
 
   /**
-	 * The '<em><b>Less equal</b></em>' literal object.
+	 * The '<em><b>Sha256</b></em>' literal object.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #LESS_EQUAL_VALUE
+	 * @see #SHA256_VALUE
 	 * @generated
 	 * @ordered
 	 */
-  LESS_EQUAL(3, "less_equal", "\"<=\""),
+  SHA256(3, "sha256", "\"sha-256\"");
 
   /**
-	 * The '<em><b>Less</b></em>' literal object.
+	 * The '<em><b>None</b></em>' literal value.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #LESS_VALUE
+	 * @see #NONE
+	 * @model name="none" literal="\"none\""
 	 * @generated
 	 * @ordered
 	 */
-  LESS(4, "less", "\"<\"");
+  public static final int NONE_VALUE = 0;
 
   /**
-	 * The '<em><b>Greater</b></em>' literal value.
+	 * The '<em><b>Generated</b></em>' literal value.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #GREATER
-	 * @model name="greater" literal="\"&gt;\""
+	 * @see #GENERATED
+	 * @model name="generated" literal="\"generated\""
 	 * @generated
 	 * @ordered
 	 */
-  public static final int GREATER_VALUE = 0;
+  public static final int GENERATED_VALUE = 1;
 
   /**
-	 * The '<em><b>Greater equal</b></em>' literal value.
+	 * The '<em><b>Md5</b></em>' literal value.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #GREATER_EQUAL
-	 * @model name="greater_equal" literal="\"&gt;=\""
+	 * @see #MD5
+	 * @model name="md5" literal="\"md5\""
 	 * @generated
 	 * @ordered
 	 */
-  public static final int GREATER_EQUAL_VALUE = 1;
+  public static final int MD5_VALUE = 2;
 
   /**
-	 * The '<em><b>Equal</b></em>' literal value.
+	 * The '<em><b>Sha256</b></em>' literal value.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #EQUAL
-	 * @model name="equal" literal="\"=\""
+	 * @see #SHA256
+	 * @model name="sha256" literal="\"sha-256\""
 	 * @generated
 	 * @ordered
 	 */
-  public static final int EQUAL_VALUE = 2;
+  public static final int SHA256_VALUE = 3;
 
   /**
-	 * The '<em><b>Less equal</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #LESS_EQUAL
-	 * @model name="less_equal" literal="\"&lt;=\""
-	 * @generated
-	 * @ordered
-	 */
-  public static final int LESS_EQUAL_VALUE = 3;
-
-  /**
-	 * The '<em><b>Less</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #LESS
-	 * @model name="less" literal="\"&lt;\""
-	 * @generated
-	 * @ordered
-	 */
-  public static final int LESS_VALUE = 4;
-
-  /**
-	 * An array of all the '<em><b>Operator</b></em>' enumerators.
+	 * An array of all the '<em><b>Message Identifier</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  private static final Operator[] VALUES_ARRAY =
-    new Operator[] {
-			GREATER,
-			GREATER_EQUAL,
-			EQUAL,
-			LESS_EQUAL,
-			LESS,
+  private static final MessageIdentifier[] VALUES_ARRAY =
+    new MessageIdentifier[] {
+			NONE,
+			GENERATED,
+			MD5,
+			SHA256,
 		};
 
   /**
-	 * A public read-only list of all the '<em><b>Operator</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Message Identifier</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static final List<Operator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+  public static final List<MessageIdentifier> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-	 * Returns the '<em><b>Operator</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Message Identifier</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-  public static Operator get(String literal)
+  public static MessageIdentifier get(String literal)
   {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Operator result = VALUES_ARRAY[i];
+			MessageIdentifier result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -168,17 +146,17 @@ public enum Operator implements Enumerator
 	}
 
   /**
-	 * Returns the '<em><b>Operator</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Message Identifier</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-  public static Operator getByName(String name)
+  public static MessageIdentifier getByName(String name)
   {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Operator result = VALUES_ARRAY[i];
+			MessageIdentifier result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -187,21 +165,20 @@ public enum Operator implements Enumerator
 	}
 
   /**
-	 * Returns the '<em><b>Operator</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Message Identifier</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-  public static Operator get(int value)
+  public static MessageIdentifier get(int value)
   {
 		switch (value) {
-			case GREATER_VALUE: return GREATER;
-			case GREATER_EQUAL_VALUE: return GREATER_EQUAL;
-			case EQUAL_VALUE: return EQUAL;
-			case LESS_EQUAL_VALUE: return LESS_EQUAL;
-			case LESS_VALUE: return LESS;
+			case NONE_VALUE: return NONE;
+			case GENERATED_VALUE: return GENERATED;
+			case MD5_VALUE: return MD5;
+			case SHA256_VALUE: return SHA256;
 		}
 		return null;
 	}
@@ -233,7 +210,7 @@ public enum Operator implements Enumerator
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  private Operator(int value, String name, String literal)
+  private MessageIdentifier(int value, String name, String literal)
   {
 		this.value = value;
 		this.name = name;
@@ -285,4 +262,4 @@ public enum Operator implements Enumerator
 		return literal;
 	}
   
-} //Operator
+} //MessageIdentifier

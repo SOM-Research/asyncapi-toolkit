@@ -99,6 +99,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Server_CommaKeyword_4_1_3_q;
 	protected AbstractElementAlias match_Server_CommaKeyword_4_2_3_q;
 	protected AbstractElementAlias match_Server_CommaKeyword_4_3_6_q;
+	protected AbstractElementAlias match_Server_CommaKeyword_4_4_3_q;
 	protected AbstractElementAlias match_Tag_CommaKeyword_2_0_3_q;
 	protected AbstractElementAlias match_Tag_CommaKeyword_2_1_3_q;
 	protected AbstractElementAlias match_Variable_CommaKeyword_4_0_3_q;
@@ -187,6 +188,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Server_CommaKeyword_4_1_3_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_4_1_3());
 		match_Server_CommaKeyword_4_2_3_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_4_2_3());
 		match_Server_CommaKeyword_4_3_6_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_4_3_6());
+		match_Server_CommaKeyword_4_4_3_q = new TokenAlias(false, true, grammarAccess.getServerAccess().getCommaKeyword_4_4_3());
 		match_Tag_CommaKeyword_2_0_3_q = new TokenAlias(false, true, grammarAccess.getTagAccess().getCommaKeyword_2_0_3());
 		match_Tag_CommaKeyword_2_1_3_q = new TokenAlias(false, true, grammarAccess.getTagAccess().getCommaKeyword_2_1_3());
 		match_Variable_CommaKeyword_4_0_3_q = new TokenAlias(false, true, grammarAccess.getVariableAccess().getCommaKeyword_4_0_3());
@@ -364,6 +366,8 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Server_CommaKeyword_4_2_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Server_CommaKeyword_4_3_6_q.equals(syntax))
 				emit_Server_CommaKeyword_4_3_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Server_CommaKeyword_4_4_3_q.equals(syntax))
+				emit_Server_CommaKeyword_4_4_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Tag_CommaKeyword_2_0_3_q.equals(syntax))
 				emit_Tag_CommaKeyword_2_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Tag_CommaKeyword_2_1_3_q.equals(syntax))
@@ -1107,6 +1111,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     name=AnyString (ambiguity) '"tags"' ':' '[' tags+=Tag
 	 *     name=AnyString (ambiguity) '"title"' ':' title=AnyString
 	 *     name=AnyString (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     name=AnyString (ambiguity) '"x-identifier"' ':' identifier=MessageIdentifier
 	 *     name=AnyString (ambiguity) '}' (rule end)
 	 
 	 * </pre>
@@ -1130,6 +1135,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     title=AnyString (ambiguity) '"tags"' ':' '[' tags+=Tag
 	 *     title=AnyString (ambiguity) '"title"' ':' title=AnyString
 	 *     title=AnyString (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     title=AnyString (ambiguity) '"x-identifier"' ':' identifier=MessageIdentifier
 	 *     title=AnyString (ambiguity) '}' (rule end)
 	 
 	 * </pre>
@@ -1153,6 +1159,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     summary=AnyString (ambiguity) '"tags"' ':' '[' tags+=Tag
 	 *     summary=AnyString (ambiguity) '"title"' ':' title=AnyString
 	 *     summary=AnyString (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     summary=AnyString (ambiguity) '"x-identifier"' ':' identifier=MessageIdentifier
 	 *     summary=AnyString (ambiguity) '}' (rule end)
 	 
 	 * </pre>
@@ -1176,6 +1183,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     description=AnyString (ambiguity) '"tags"' ':' '[' tags+=Tag
 	 *     description=AnyString (ambiguity) '"title"' ':' title=AnyString
 	 *     description=AnyString (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     description=AnyString (ambiguity) '"x-identifier"' ':' identifier=MessageIdentifier
 	 *     description=AnyString (ambiguity) '}' (rule end)
 	 
 	 * </pre>
@@ -1199,6 +1207,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     deprecated=Boolean (ambiguity) '"tags"' ':' '[' tags+=Tag
 	 *     deprecated=Boolean (ambiguity) '"title"' ':' title=AnyString
 	 *     deprecated=Boolean (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     deprecated=Boolean (ambiguity) '"x-identifier"' ':' identifier=MessageIdentifier
 	 *     deprecated=Boolean (ambiguity) '}' (rule end)
 	 
 	 * </pre>
@@ -1222,6 +1231,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     headers=AbstractSchema (ambiguity) '"tags"' ':' '[' tags+=Tag
 	 *     headers=AbstractSchema (ambiguity) '"title"' ':' title=AnyString
 	 *     headers=AbstractSchema (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     headers=AbstractSchema (ambiguity) '"x-identifier"' ':' identifier=MessageIdentifier
 	 *     headers=AbstractSchema (ambiguity) '}' (rule end)
 	 
 	 * </pre>
@@ -1245,6 +1255,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     tags+=Tag ']' (ambiguity) '"tags"' ':' '[' tags+=Tag
 	 *     tags+=Tag ']' (ambiguity) '"title"' ':' title=AnyString
 	 *     tags+=Tag ']' (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     tags+=Tag ']' (ambiguity) '"x-identifier"' ':' identifier=MessageIdentifier
 	 *     tags+=Tag ']' (ambiguity) '}' (rule end)
 	 
 	 * </pre>
@@ -1268,6 +1279,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     payload=AbstractSchema (ambiguity) '"tags"' ':' '[' tags+=Tag
 	 *     payload=AbstractSchema (ambiguity) '"title"' ':' title=AnyString
 	 *     payload=AbstractSchema (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     payload=AbstractSchema (ambiguity) '"x-identifier"' ':' identifier=MessageIdentifier
 	 *     payload=AbstractSchema (ambiguity) '}' (rule end)
 	 
 	 * </pre>
@@ -1291,6 +1303,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     traits+=AbstractMessageTrait ']' (ambiguity) '"tags"' ':' '[' tags+=Tag
 	 *     traits+=AbstractMessageTrait ']' (ambiguity) '"title"' ':' title=AnyString
 	 *     traits+=AbstractMessageTrait ']' (ambiguity) '"traits"' ':' '[' traits+=AbstractMessageTrait
+	 *     traits+=AbstractMessageTrait ']' (ambiguity) '"x-identifier"' ':' identifier=MessageIdentifier
 	 *     traits+=AbstractMessageTrait ']' (ambiguity) '}' (rule end)
 	 
 	 * </pre>
@@ -1952,6 +1965,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     url=AnyString (ambiguity) '"protocol"' ':' protocol=Protocol
 	 *     url=AnyString (ambiguity) '"url"' ':' url=AnyString
 	 *     url=AnyString (ambiguity) '"variables"' ':' '{' variables+=Variable
+	 *     url=AnyString (ambiguity) '"x-isMonitored"' ':' isMonitored=Boolean
 	 *     url=AnyString (ambiguity) '}' (rule end)
 	 
 	 * </pre>
@@ -1970,6 +1984,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     protocol=Protocol (ambiguity) '"protocol"' ':' protocol=Protocol
 	 *     protocol=Protocol (ambiguity) '"url"' ':' url=AnyString
 	 *     protocol=Protocol (ambiguity) '"variables"' ':' '{' variables+=Variable
+	 *     protocol=Protocol (ambiguity) '"x-isMonitored"' ':' isMonitored=Boolean
 	 *     protocol=Protocol (ambiguity) '}' (rule end)
 	 
 	 * </pre>
@@ -1988,6 +2003,7 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     description=AnyString (ambiguity) '"protocol"' ':' protocol=Protocol
 	 *     description=AnyString (ambiguity) '"url"' ':' url=AnyString
 	 *     description=AnyString (ambiguity) '"variables"' ':' '{' variables+=Variable
+	 *     description=AnyString (ambiguity) '"x-isMonitored"' ':' isMonitored=Boolean
 	 *     description=AnyString (ambiguity) '}' (rule end)
 	 
 	 * </pre>
@@ -2006,11 +2022,31 @@ public class AsyncApiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     variables+=Variable '}' (ambiguity) '"protocol"' ':' protocol=Protocol
 	 *     variables+=Variable '}' (ambiguity) '"url"' ':' url=AnyString
 	 *     variables+=Variable '}' (ambiguity) '"variables"' ':' '{' variables+=Variable
+	 *     variables+=Variable '}' (ambiguity) '"x-isMonitored"' ':' isMonitored=Boolean
 	 *     variables+=Variable '}' (ambiguity) '}' (rule end)
 	 
 	 * </pre>
 	 */
 	protected void emit_Server_CommaKeyword_4_3_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     isMonitored=Boolean (ambiguity) '"description"' ':' description=AnyString
+	 *     isMonitored=Boolean (ambiguity) '"protocol"' ':' protocol=Protocol
+	 *     isMonitored=Boolean (ambiguity) '"url"' ':' url=AnyString
+	 *     isMonitored=Boolean (ambiguity) '"variables"' ':' '{' variables+=Variable
+	 *     isMonitored=Boolean (ambiguity) '"x-isMonitored"' ':' isMonitored=Boolean
+	 *     isMonitored=Boolean (ambiguity) '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Server_CommaKeyword_4_4_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

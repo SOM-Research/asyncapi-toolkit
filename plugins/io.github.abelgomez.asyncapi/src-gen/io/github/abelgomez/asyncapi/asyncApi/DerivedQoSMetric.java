@@ -25,75 +25,75 @@ package io.github.abelgomez.asyncapi.asyncApi;
 public interface DerivedQoSMetric extends QoSMetric
 {
   /**
-   * Returns the value of the '<em><b>Window</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Window</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Window</em>' attribute.
-   * @see #setWindow(String)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getDerivedQoSMetric_Window()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Window</em>' attribute.
+	 * @see #setWindow(String)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getDerivedQoSMetric_Window()
+	 * @model
+	 * @generated
+	 */
   String getWindow();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getWindow <em>Window</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getWindow <em>Window</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Window</em>' attribute.
-   * @see #getWindow()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Window</em>' attribute.
+	 * @see #getWindow()
+	 * @generated
+	 */
   void setWindow(String value);
 
   /**
-   * Returns the value of the '<em><b>Window Unit</b></em>' attribute.
-   * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.WindowUnit}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Window Unit</b></em>' attribute.
+	 * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.WindowUnit}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Window Unit</em>' attribute.
-   * @see io.github.abelgomez.asyncapi.asyncApi.WindowUnit
-   * @see #setWindowUnit(WindowUnit)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getDerivedQoSMetric_WindowUnit()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Window Unit</em>' attribute.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.WindowUnit
+	 * @see #setWindowUnit(WindowUnit)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getDerivedQoSMetric_WindowUnit()
+	 * @model
+	 * @generated
+	 */
   WindowUnit getWindowUnit();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getWindowUnit <em>Window Unit</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getWindowUnit <em>Window Unit</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Window Unit</em>' attribute.
-   * @see io.github.abelgomez.asyncapi.asyncApi.WindowUnit
-   * @see #getWindowUnit()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Window Unit</em>' attribute.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.WindowUnit
+	 * @see #getWindowUnit()
+	 * @generated
+	 */
   void setWindowUnit(WindowUnit value);
 
   /**
-   * Returns the value of the '<em><b>Aggregation Function</b></em>' attribute.
-   * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.AggregationFunction}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Aggregation Function</b></em>' attribute.
+	 * The literals are from the enumeration {@link io.github.abelgomez.asyncapi.asyncApi.AggregationFunction}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Aggregation Function</em>' attribute.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AggregationFunction
-   * @see #setAggregationFunction(AggregationFunction)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getDerivedQoSMetric_AggregationFunction()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Aggregation Function</em>' attribute.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AggregationFunction
+	 * @see #setAggregationFunction(AggregationFunction)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getDerivedQoSMetric_AggregationFunction()
+	 * @model
+	 * @generated
+	 */
   AggregationFunction getAggregationFunction();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getAggregationFunction <em>Aggregation Function</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric#getAggregationFunction <em>Aggregation Function</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Aggregation Function</em>' attribute.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AggregationFunction
-   * @see #getAggregationFunction()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Aggregation Function</em>' attribute.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AggregationFunction
+	 * @see #getAggregationFunction()
+	 * @generated
+	 */
   void setAggregationFunction(AggregationFunction value);
 
 } // DerivedQoSMetric

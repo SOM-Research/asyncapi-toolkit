@@ -45,463 +45,453 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ChannelImpl extends MinimalEObjectImpl.Container implements Channel
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String DESCRIPTION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getPublish() <em>Publish</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPublish() <em>Publish</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPublish()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPublish()
+	 * @generated
+	 * @ordered
+	 */
   protected Operation publish;
 
   /**
-   * The cached value of the '{@link #getSubscribe() <em>Subscribe</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSubscribe() <em>Subscribe</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSubscribe()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSubscribe()
+	 * @generated
+	 * @ordered
+	 */
   protected Operation subscribe;
 
   /**
-   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParameters()
-   * @generated
-   * @ordered
-   */
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<NamedParameter> parameters;
 
   /**
-   * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTitle()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String TITLE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTitle()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
   protected String title = TITLE_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ChannelImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return AsyncApiPackage.Literals.CHANNEL;
-  }
+		return AsyncApiPackage.Literals.CHANNEL;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String getName()
   {
-    return name;
-  }
+		return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void setName(String newName)
   {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CHANNEL__NAME, oldName, name));
-  }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CHANNEL__NAME, oldName, name));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String getDescription()
   {
-    return description;
-  }
+		return description;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void setDescription(String newDescription)
   {
-    String oldDescription = description;
-    description = newDescription;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CHANNEL__DESCRIPTION, oldDescription, description));
-  }
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CHANNEL__DESCRIPTION, oldDescription, description));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Operation getPublish()
   {
-    return publish;
-  }
+		return publish;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetPublish(Operation newPublish, NotificationChain msgs)
   {
-    Operation oldPublish = publish;
-    publish = newPublish;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CHANNEL__PUBLISH, oldPublish, newPublish);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		Operation oldPublish = publish;
+		publish = newPublish;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CHANNEL__PUBLISH, oldPublish, newPublish);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void setPublish(Operation newPublish)
   {
-    if (newPublish != publish)
-    {
-      NotificationChain msgs = null;
-      if (publish != null)
-        msgs = ((InternalEObject)publish).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.CHANNEL__PUBLISH, null, msgs);
-      if (newPublish != null)
-        msgs = ((InternalEObject)newPublish).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.CHANNEL__PUBLISH, null, msgs);
-      msgs = basicSetPublish(newPublish, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CHANNEL__PUBLISH, newPublish, newPublish));
-  }
+		if (newPublish != publish) {
+			NotificationChain msgs = null;
+			if (publish != null)
+				msgs = ((InternalEObject)publish).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.CHANNEL__PUBLISH, null, msgs);
+			if (newPublish != null)
+				msgs = ((InternalEObject)newPublish).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.CHANNEL__PUBLISH, null, msgs);
+			msgs = basicSetPublish(newPublish, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CHANNEL__PUBLISH, newPublish, newPublish));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Operation getSubscribe()
   {
-    return subscribe;
-  }
+		return subscribe;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetSubscribe(Operation newSubscribe, NotificationChain msgs)
   {
-    Operation oldSubscribe = subscribe;
-    subscribe = newSubscribe;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CHANNEL__SUBSCRIBE, oldSubscribe, newSubscribe);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		Operation oldSubscribe = subscribe;
+		subscribe = newSubscribe;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CHANNEL__SUBSCRIBE, oldSubscribe, newSubscribe);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void setSubscribe(Operation newSubscribe)
   {
-    if (newSubscribe != subscribe)
-    {
-      NotificationChain msgs = null;
-      if (subscribe != null)
-        msgs = ((InternalEObject)subscribe).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.CHANNEL__SUBSCRIBE, null, msgs);
-      if (newSubscribe != null)
-        msgs = ((InternalEObject)newSubscribe).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.CHANNEL__SUBSCRIBE, null, msgs);
-      msgs = basicSetSubscribe(newSubscribe, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CHANNEL__SUBSCRIBE, newSubscribe, newSubscribe));
-  }
+		if (newSubscribe != subscribe) {
+			NotificationChain msgs = null;
+			if (subscribe != null)
+				msgs = ((InternalEObject)subscribe).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.CHANNEL__SUBSCRIBE, null, msgs);
+			if (newSubscribe != null)
+				msgs = ((InternalEObject)newSubscribe).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.CHANNEL__SUBSCRIBE, null, msgs);
+			msgs = basicSetSubscribe(newSubscribe, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CHANNEL__SUBSCRIBE, newSubscribe, newSubscribe));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EList<NamedParameter> getParameters()
   {
-    if (parameters == null)
-    {
-      parameters = new EObjectContainmentEList<NamedParameter>(NamedParameter.class, this, AsyncApiPackage.CHANNEL__PARAMETERS);
-    }
-    return parameters;
-  }
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<NamedParameter>(NamedParameter.class, this, AsyncApiPackage.CHANNEL__PARAMETERS);
+		}
+		return parameters;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String getTitle()
   {
-    return title;
-  }
+		return title;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void setTitle(String newTitle)
   {
-    String oldTitle = title;
-    title = newTitle;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CHANNEL__TITLE, oldTitle, title));
-  }
+		String oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.CHANNEL__TITLE, oldTitle, title));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.CHANNEL__PUBLISH:
-        return basicSetPublish(null, msgs);
-      case AsyncApiPackage.CHANNEL__SUBSCRIBE:
-        return basicSetSubscribe(null, msgs);
-      case AsyncApiPackage.CHANNEL__PARAMETERS:
-        return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.CHANNEL__PUBLISH:
+				return basicSetPublish(null, msgs);
+			case AsyncApiPackage.CHANNEL__SUBSCRIBE:
+				return basicSetSubscribe(null, msgs);
+			case AsyncApiPackage.CHANNEL__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.CHANNEL__NAME:
-        return getName();
-      case AsyncApiPackage.CHANNEL__DESCRIPTION:
-        return getDescription();
-      case AsyncApiPackage.CHANNEL__PUBLISH:
-        return getPublish();
-      case AsyncApiPackage.CHANNEL__SUBSCRIBE:
-        return getSubscribe();
-      case AsyncApiPackage.CHANNEL__PARAMETERS:
-        return getParameters();
-      case AsyncApiPackage.CHANNEL__TITLE:
-        return getTitle();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.CHANNEL__NAME:
+				return getName();
+			case AsyncApiPackage.CHANNEL__DESCRIPTION:
+				return getDescription();
+			case AsyncApiPackage.CHANNEL__PUBLISH:
+				return getPublish();
+			case AsyncApiPackage.CHANNEL__SUBSCRIBE:
+				return getSubscribe();
+			case AsyncApiPackage.CHANNEL__PARAMETERS:
+				return getParameters();
+			case AsyncApiPackage.CHANNEL__TITLE:
+				return getTitle();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.CHANNEL__NAME:
-        setName((String)newValue);
-        return;
-      case AsyncApiPackage.CHANNEL__DESCRIPTION:
-        setDescription((String)newValue);
-        return;
-      case AsyncApiPackage.CHANNEL__PUBLISH:
-        setPublish((Operation)newValue);
-        return;
-      case AsyncApiPackage.CHANNEL__SUBSCRIBE:
-        setSubscribe((Operation)newValue);
-        return;
-      case AsyncApiPackage.CHANNEL__PARAMETERS:
-        getParameters().clear();
-        getParameters().addAll((Collection<? extends NamedParameter>)newValue);
-        return;
-      case AsyncApiPackage.CHANNEL__TITLE:
-        setTitle((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.CHANNEL__NAME:
+				setName((String)newValue);
+				return;
+			case AsyncApiPackage.CHANNEL__DESCRIPTION:
+				setDescription((String)newValue);
+				return;
+			case AsyncApiPackage.CHANNEL__PUBLISH:
+				setPublish((Operation)newValue);
+				return;
+			case AsyncApiPackage.CHANNEL__SUBSCRIBE:
+				setSubscribe((Operation)newValue);
+				return;
+			case AsyncApiPackage.CHANNEL__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends NamedParameter>)newValue);
+				return;
+			case AsyncApiPackage.CHANNEL__TITLE:
+				setTitle((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.CHANNEL__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case AsyncApiPackage.CHANNEL__DESCRIPTION:
-        setDescription(DESCRIPTION_EDEFAULT);
-        return;
-      case AsyncApiPackage.CHANNEL__PUBLISH:
-        setPublish((Operation)null);
-        return;
-      case AsyncApiPackage.CHANNEL__SUBSCRIBE:
-        setSubscribe((Operation)null);
-        return;
-      case AsyncApiPackage.CHANNEL__PARAMETERS:
-        getParameters().clear();
-        return;
-      case AsyncApiPackage.CHANNEL__TITLE:
-        setTitle(TITLE_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.CHANNEL__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case AsyncApiPackage.CHANNEL__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case AsyncApiPackage.CHANNEL__PUBLISH:
+				setPublish((Operation)null);
+				return;
+			case AsyncApiPackage.CHANNEL__SUBSCRIBE:
+				setSubscribe((Operation)null);
+				return;
+			case AsyncApiPackage.CHANNEL__PARAMETERS:
+				getParameters().clear();
+				return;
+			case AsyncApiPackage.CHANNEL__TITLE:
+				setTitle(TITLE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.CHANNEL__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AsyncApiPackage.CHANNEL__DESCRIPTION:
-        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-      case AsyncApiPackage.CHANNEL__PUBLISH:
-        return publish != null;
-      case AsyncApiPackage.CHANNEL__SUBSCRIBE:
-        return subscribe != null;
-      case AsyncApiPackage.CHANNEL__PARAMETERS:
-        return parameters != null && !parameters.isEmpty();
-      case AsyncApiPackage.CHANNEL__TITLE:
-        return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.CHANNEL__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case AsyncApiPackage.CHANNEL__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case AsyncApiPackage.CHANNEL__PUBLISH:
+				return publish != null;
+			case AsyncApiPackage.CHANNEL__SUBSCRIBE:
+				return subscribe != null;
+			case AsyncApiPackage.CHANNEL__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
+			case AsyncApiPackage.CHANNEL__TITLE:
+				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", description: ");
-    result.append(description);
-    result.append(", title: ");
-    result.append(title);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", description: ");
+		result.append(description);
+		result.append(", title: ");
+		result.append(title);
+		result.append(')');
+		return result.toString();
+	}
 
 } //ChannelImpl

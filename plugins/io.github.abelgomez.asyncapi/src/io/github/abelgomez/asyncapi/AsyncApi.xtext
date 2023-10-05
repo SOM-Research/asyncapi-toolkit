@@ -48,9 +48,10 @@ Server:
 		& ( '"protocol"' ':' protocol=Protocol ','? )
 		& ( '"description"' ':' description=AnyString ','? )?
 		& ( '"variables"' ':' '{' variables+=Variable (',' variables+=Variable)* '}' ','? )?
+		& ( '"x-isMonitored"' ':' isMonitored=Boolean ','?  )?
 //		& ( GenericJsonTuple ','? )*
 	) '}';
-
+	
 Variable:
 	{Variable} name=AnyString ':' '{' (
 		  ( '"description"' ':' description=AnyString ','?  )?
@@ -93,6 +94,7 @@ Message:
 		& ( '"tags"' ':' '[' tags+=Tag ( ',' tags+=Tag )* ']' ','? )?
 		& ( '"payload"' ':' payload=AbstractSchema ','? )?
 		& ( '"traits"' ':' '[' traits+=AbstractMessageTrait ( ',' traits+=AbstractMessageTrait )* ']' ','?  )?
+		& ( '"x-identifier"' ':' identifier=MessageIdentifier )?
 //		& ( GenericJsonTupleButRef ','? )*
 	) '}';
 
@@ -353,6 +355,12 @@ enum Boolean:
 
 enum VersionNumber:
 	_200 = '"2.0.0"';
+	
+enum MessageIdentifier:
+	none ='"none"'
+	| generated = '"generated"'
+	| md5 = '"md5"'
+	| sha256 = '"sha-256"';
 	
 enum Protocol:
 	amqp = '"amqp"'

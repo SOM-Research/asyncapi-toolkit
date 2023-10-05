@@ -11,6 +11,7 @@ import static extension io.github.abelgomez.asyncapi.generator.ModelExtensions.*
 import static extension io.github.abelgomez.asyncapi.generator.TransformationContext.*
 import static extension io.github.abelgomez.asyncapi.generator.utils.StringUtils.*
 import static extension java.text.MessageFormat.*
+import io.github.abelgomez.asyncapi.generator.AsyncApiGeneratorDelegate
 
 class MqttServerClass extends ServerClass implements IClass {
 
@@ -38,6 +39,7 @@ class MqttServerClass extends ServerClass implements IClass {
 		result += "java.util.Map"
 		result += "java.util.HashMap"
 		result += "java.util.function.Consumer"
+		result += "java.util.function.Function"
 		result += "java.util.regex.Pattern"
 		result += "java.util.regex.Matcher"
 		result += "org.eclipse.paho.client.mqttv3.MqttClient"
@@ -48,12 +50,17 @@ class MqttServerClass extends ServerClass implements IClass {
 		result += "org.eclipse.paho.client.mqttv3.IMqttDeliveryToken"
 		result += "org.eclipse.paho.client.mqttv3.persist.MemoryPersistence"
 		result += server.api.transform.parametersInterface.parameterLiteralInterface.fqn
+		result += implementedInterface.fqn
+		result += serverInterface.fqn
 		result += messageInterface.fqn
 		result += operationInterface.fqn
 		result += channelInterface.fqn
-		result += serverInterface.fqn
 		result += channelPublishConfigurationInterface.fqn
 		result += channelSubscribeConfigurationInterface.fqn
+		if (isMonitored) {
+			result += "java.util.Calendar"
+			result += sendMonitoringEventOperationClass.fqn
+		}
 		return Collections.unmodifiableNavigableSet(result)
 	}
 	
@@ -63,38 +70,6 @@ class MqttServerClass extends ServerClass implements IClass {
 			case Protocol.SECURE_MQTT: "ssl"
 			default: server.protocol.getName
 		}
-	}
-	
-	private def serverExceptionClass() {
-		return server.api.transform.serverInterface.serverExceptionClass
-	}
-	
-	private def serverInterface() {
-		return server.api.transform.serverInterface
-	}
-	
-	private def channelInterface() {
-		return server.api.transform.channelInterface
-	}
-	
-	private def messageInterface() {
-		return server.api.transform.messageInterface
-	}
-	
-	private def operationInterface() {
-		return server.api.transform.operationInterface
-	}
-	
-	private def channelPublishConfigurationInterface() {
-		return server.api.transform.channelInterface.channelPublishConfigurationInterface
-	} 
-
-	private def channelSubscribeConfigurationInterface() {
-		return server.api.transform.channelInterface.channelSubscribeConfigurationInterface
-	} 
-	
-	private def receivedClass() {
-		return server.api.transform.serverInterface.receivedClass
 	}
 	
 	override serialize() '''
@@ -111,7 +86,7 @@ class MqttServerClass extends ServerClass implements IClass {
 		 «ENDIF»
 		 *
 		 */
-		public class «name» implements «serverInterface.name» {
+		public class «name» implements «implementedInterface.name» {
 			
 			private static final int DEFAULT_QOS = 2;
 			
@@ -150,15 +125,9 @@ class MqttServerClass extends ServerClass implements IClass {
 			 */
 			private Map<MqttClient, Consumer<«receivedClass.name»>> callbacks = new HashMap<>();
 			
-			
-			public static «name» create() throws «serverExceptionClass.name» {
-				return create(null, null);
-			}
-			
-			public static «name» create(String username, String password) throws «serverExceptionClass.name» {
-				return new «name»(username, password);
-			}
-			
+			«monitoringProperties»
+			«staticMethods»
+
 			private «name»(String username, String password) throws «serverExceptionClass.name» {
 				options.setCleanSession(true);
 				if (username != null) {
@@ -177,7 +146,16 @@ class MqttServerClass extends ServerClass implements IClass {
 				    	client.connect(options);
 					} catch (MqttException e) {
 						throw new ServerException(e);
-					}	
+					}
+					«IF isMonitored»
+					// Notify that the client has successfully connected
+					«sendMonitoringEventOperationClass.name».publish(monitoringServer, 
+						SendMonitoringEventOperation.Message.Payload.newBuilder()
+							.withTimestamp(Calendar.getInstance().toInstant().toString())
+							.withClientId(client.getClientId())
+							.withEvent(«sendMonitoringEventOperationClass.name».Message.Payload.Event.CLIENT_CONNECTED)
+							.build());
+					«ENDIF»
 				} 
 			}
 			
@@ -195,7 +173,16 @@ class MqttServerClass extends ServerClass implements IClass {
 				    	client.disconnect();
 					} catch (MqttException e) {
 						throw new ServerException(e);
-					}	
+					}
+					«IF isMonitored»
+					// Notify that the client has cleanly disconnected
+					«sendMonitoringEventOperationClass.name».publish(monitoringServer, 
+						SendMonitoringEventOperation.Message.Payload.newBuilder()
+							.withTimestamp(Calendar.getInstance().toInstant().toString())
+							.withClientId(client.getClientId())
+							.withEvent(«sendMonitoringEventOperationClass.name».Message.Payload.Event.CLIENT_DISCONNECTED)
+							.build());
+					«ENDIF»
 				} 
 			}
 			
@@ -235,14 +222,7 @@ class MqttServerClass extends ServerClass implements IClass {
 			
 			@Override
 			public void publish(«channelPublishConfigurationInterface.name» config, «messageInterface.name» message) throws «serverExceptionClass.name» {
-				if (message.getHeaders().isPresent()) {
-					throw new UnsupportedOperationException("The MQTT protocol does not support headers in the messages");
-				}
-				byte[] data = new byte[]{};
-				if (message.getPayload().isPresent()) {
-					data = message.getPayload().get().toJson().getBytes();
-				}
-			    MqttMessage mqttMessage = new MqttMessage(data);
+			    MqttMessage mqttMessage = new MqttMessage(message.toJson().getBytes());
 			    mqttMessage.setQos(DEFAULT_QOS);
 				MqttClient client = getClientFor(config.getOperation());
 				connect(config.getOperation());
@@ -251,11 +231,20 @@ class MqttServerClass extends ServerClass implements IClass {
 				} catch (MqttException e) {
 					throw new «serverExceptionClass.name»(e);
 				}
-			
+				«IF isMonitored»
+				// Notify that a message has been sent
+				«sendMonitoringEventOperationClass.name».publish(monitoringServer, 
+					«sendMonitoringEventOperationClass.name».Message.Payload.newBuilder()
+						.withTimestamp(Calendar.getInstance().toInstant().toString())
+						.withClientId(client.getClientId())
+						.withMessageId(message.getIdentifier().orElse(null))
+						.withEvent(«sendMonitoringEventOperationClass.name».Message.Payload.Event.MESSAGE_SENT)
+						.build());
+				«ENDIF»
 			}
 			
 			@Override
-			public void subscribe(«channelSubscribeConfigurationInterface.name» config, Consumer<«receivedClass.name»> callback) throws «serverExceptionClass.name» {
+			public void subscribe(«channelSubscribeConfigurationInterface.name» config, Consumer<«receivedClass.name»> callback, Function<String, «server.api.transform.messageInterface.name»> reifyMessageFunction) throws «serverExceptionClass.name» {
 			    MqttClient client = getClientFor(config.getOperation());
 			    if (callbacks.containsKey(client)) {
 			    	throw new IllegalStateException(
@@ -266,8 +255,19 @@ class MqttServerClass extends ServerClass implements IClass {
 				client.setCallback(new MqttCallback() {
 					@Override
 					public void messageArrived(String topic, MqttMessage message) throws Exception {
-						callback.accept(Received.from(null, message.getPayload(),
-						parseParams(topic, config.getChannel().getName(), config.getChannel().getParameterLiterals())));
+						Received received = Received.from(message.getPayload(),
+								parseParams(topic, config.getChannel().getName(), config.getChannel().getParameterLiterals()));
+						«IF isMonitored»
+						// Notify that a message has been received
+						«sendMonitoringEventOperationClass.name».publish(monitoringServer, 
+							«sendMonitoringEventOperationClass.name».Message.Payload.newBuilder()
+								.withTimestamp(Calendar.getInstance().toInstant().toString())
+								.withClientId(client.getClientId())
+								.withMessageId(reifyMessageFunction.apply(new String(received.getRawData())).getIdentifier().orElse(null))
+								.withEvent(«sendMonitoringEventOperationClass.name».Message.Payload.Event.MESSAGE_RECEIVED)
+								.build());
+						«ENDIF»
+						callback.accept(received);
 					}
 					@Override
 					public void deliveryComplete(IMqttDeliveryToken token) {
@@ -280,6 +280,15 @@ class MqttServerClass extends ServerClass implements IClass {
 
 				try {
 			    	client.subscribe(config.getSubscriptionPattern(), DEFAULT_QOS);
+					«IF isMonitored»
+					// Notify that a client has subscribed
+					«sendMonitoringEventOperationClass.name».publish(monitoringServer, 
+						«sendMonitoringEventOperationClass.name».Message.Payload.newBuilder()
+							.withTimestamp(Calendar.getInstance().toInstant().toString())
+							.withClientId(client.getClientId())
+							.withEvent(«sendMonitoringEventOperationClass.name».Message.Payload.Event.CLIENT_SUBSCRIBED)
+							.build());
+					«ENDIF»
 				} catch (MqttException e) {
 					throw new ServerException(e);
 				}
@@ -291,6 +300,15 @@ class MqttServerClass extends ServerClass implements IClass {
 				connect(config.getOperation());
 				try {
 			    	client.unsubscribe(config.getSubscriptionPattern());
+					«IF isMonitored»
+					// Notify that a client has unsubscribed
+					«sendMonitoringEventOperationClass.name».publish(monitoringServer, 
+						«sendMonitoringEventOperationClass.name».Message.Payload.newBuilder()
+							.withTimestamp(Calendar.getInstance().toInstant().toString())
+							.withClientId(client.getClientId())
+							.withEvent(«sendMonitoringEventOperationClass.name».Message.Payload.Event.CLIENT_UNSUBSCRIBED)
+							.build());
+					«ENDIF»
 			    	client.setCallback(null);
 			    	callbacks.remove(client);
 				} catch (MqttException e) {
@@ -332,6 +350,7 @@ class MqttServerClass extends ServerClass implements IClass {
 				}
 				return result;
 			}
+			«monitoringMethods»
 		}
 	'''
 }

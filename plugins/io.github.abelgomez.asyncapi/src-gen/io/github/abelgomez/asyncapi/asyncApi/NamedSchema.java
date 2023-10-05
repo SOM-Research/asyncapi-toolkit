@@ -25,47 +25,47 @@ import org.eclipse.emf.ecore.EObject;
 public interface NamedSchema extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getNamedSchema_Name()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getNamedSchema_Name()
+	 * @model
+	 * @generated
+	 */
   String getName();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Schema</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Schema</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Schema</em>' containment reference.
-   * @see #setSchema(AbstractSchema)
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getNamedSchema_Schema()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Schema</em>' containment reference.
+	 * @see #setSchema(AbstractSchema)
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getNamedSchema_Schema()
+	 * @model containment="true"
+	 * @generated
+	 */
   AbstractSchema getSchema();
 
   /**
-   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema#getSchema <em>Schema</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema#getSchema <em>Schema</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Schema</em>' containment reference.
-   * @see #getSchema()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Schema</em>' containment reference.
+	 * @see #getSchema()
+	 * @generated
+	 */
   void setSchema(AbstractSchema value);
 
 } // NamedSchema

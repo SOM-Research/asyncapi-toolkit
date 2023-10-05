@@ -34,295 +34,288 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ComparisonExpressionImpl extends BooleanExpressionImpl implements ComparisonExpression
 {
   /**
-   * The cached value of the '{@link #getQosMetric() <em>Qos Metric</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getQosMetric() <em>Qos Metric</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQosMetric()
-   * @generated
-   * @ordered
-   */
+	 * @see #getQosMetric()
+	 * @generated
+	 * @ordered
+	 */
   protected AbstractQoSMetric qosMetric;
 
   /**
-   * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOperator()
-   * @generated
-   * @ordered
-   */
+	 * @see #getOperator()
+	 * @generated
+	 * @ordered
+	 */
   protected static final Operator OPERATOR_EDEFAULT = Operator.GREATER;
 
   /**
-   * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOperator()
-   * @generated
-   * @ordered
-   */
+	 * @see #getOperator()
+	 * @generated
+	 * @ordered
+	 */
   protected Operator operator = OPERATOR_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String VALUE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
   protected String value = VALUE_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ComparisonExpressionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return AsyncApiPackage.Literals.COMPARISON_EXPRESSION;
-  }
+		return AsyncApiPackage.Literals.COMPARISON_EXPRESSION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public AbstractQoSMetric getQosMetric()
   {
-    return qosMetric;
-  }
+		return qosMetric;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetQosMetric(AbstractQoSMetric newQosMetric, NotificationChain msgs)
   {
-    AbstractQoSMetric oldQosMetric = qosMetric;
-    qosMetric = newQosMetric;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC, oldQosMetric, newQosMetric);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		AbstractQoSMetric oldQosMetric = qosMetric;
+		qosMetric = newQosMetric;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC, oldQosMetric, newQosMetric);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void setQosMetric(AbstractQoSMetric newQosMetric)
   {
-    if (newQosMetric != qosMetric)
-    {
-      NotificationChain msgs = null;
-      if (qosMetric != null)
-        msgs = ((InternalEObject)qosMetric).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC, null, msgs);
-      if (newQosMetric != null)
-        msgs = ((InternalEObject)newQosMetric).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC, null, msgs);
-      msgs = basicSetQosMetric(newQosMetric, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC, newQosMetric, newQosMetric));
-  }
+		if (newQosMetric != qosMetric) {
+			NotificationChain msgs = null;
+			if (qosMetric != null)
+				msgs = ((InternalEObject)qosMetric).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC, null, msgs);
+			if (newQosMetric != null)
+				msgs = ((InternalEObject)newQosMetric).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC, null, msgs);
+			msgs = basicSetQosMetric(newQosMetric, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC, newQosMetric, newQosMetric));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Operator getOperator()
   {
-    return operator;
-  }
+		return operator;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void setOperator(Operator newOperator)
   {
-    Operator oldOperator = operator;
-    operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.COMPARISON_EXPRESSION__OPERATOR, oldOperator, operator));
-  }
+		Operator oldOperator = operator;
+		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.COMPARISON_EXPRESSION__OPERATOR, oldOperator, operator));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String getValue()
   {
-    return value;
-  }
+		return value;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void setValue(String newValue)
   {
-    String oldValue = value;
-    value = newValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.COMPARISON_EXPRESSION__VALUE, oldValue, value));
-  }
+		String oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.COMPARISON_EXPRESSION__VALUE, oldValue, value));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC:
-        return basicSetQosMetric(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC:
+				return basicSetQosMetric(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC:
-        return getQosMetric();
-      case AsyncApiPackage.COMPARISON_EXPRESSION__OPERATOR:
-        return getOperator();
-      case AsyncApiPackage.COMPARISON_EXPRESSION__VALUE:
-        return getValue();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC:
+				return getQosMetric();
+			case AsyncApiPackage.COMPARISON_EXPRESSION__OPERATOR:
+				return getOperator();
+			case AsyncApiPackage.COMPARISON_EXPRESSION__VALUE:
+				return getValue();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC:
-        setQosMetric((AbstractQoSMetric)newValue);
-        return;
-      case AsyncApiPackage.COMPARISON_EXPRESSION__OPERATOR:
-        setOperator((Operator)newValue);
-        return;
-      case AsyncApiPackage.COMPARISON_EXPRESSION__VALUE:
-        setValue((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC:
+				setQosMetric((AbstractQoSMetric)newValue);
+				return;
+			case AsyncApiPackage.COMPARISON_EXPRESSION__OPERATOR:
+				setOperator((Operator)newValue);
+				return;
+			case AsyncApiPackage.COMPARISON_EXPRESSION__VALUE:
+				setValue((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC:
-        setQosMetric((AbstractQoSMetric)null);
-        return;
-      case AsyncApiPackage.COMPARISON_EXPRESSION__OPERATOR:
-        setOperator(OPERATOR_EDEFAULT);
-        return;
-      case AsyncApiPackage.COMPARISON_EXPRESSION__VALUE:
-        setValue(VALUE_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC:
+				setQosMetric((AbstractQoSMetric)null);
+				return;
+			case AsyncApiPackage.COMPARISON_EXPRESSION__OPERATOR:
+				setOperator(OPERATOR_EDEFAULT);
+				return;
+			case AsyncApiPackage.COMPARISON_EXPRESSION__VALUE:
+				setValue(VALUE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC:
-        return qosMetric != null;
-      case AsyncApiPackage.COMPARISON_EXPRESSION__OPERATOR:
-        return operator != OPERATOR_EDEFAULT;
-      case AsyncApiPackage.COMPARISON_EXPRESSION__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case AsyncApiPackage.COMPARISON_EXPRESSION__QOS_METRIC:
+				return qosMetric != null;
+			case AsyncApiPackage.COMPARISON_EXPRESSION__OPERATOR:
+				return operator != OPERATOR_EDEFAULT;
+			case AsyncApiPackage.COMPARISON_EXPRESSION__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (operator: ");
-    result.append(operator);
-    result.append(", value: ");
-    result.append(value);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (operator: ");
+		result.append(operator);
+		result.append(", value: ");
+		result.append(value);
+		result.append(')');
+		return result.toString();
+	}
 
 } //ComparisonExpressionImpl

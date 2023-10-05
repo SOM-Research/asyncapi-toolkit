@@ -78,6 +78,12 @@
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="AsyncApi.ecore#//VersionNumber">
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//VersionNumber/_200"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="AsyncApi.ecore#//MessageIdentifier">
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//MessageIdentifier/none"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//MessageIdentifier/generated"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//MessageIdentifier/md5"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//MessageIdentifier/sha256"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="AsyncApi.ecore#//Protocol">
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Protocol/amqp"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//Protocol/amqps"/>
@@ -125,6 +131,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Server/protocol"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Server/description"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//Server/variables"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Server/isMonitored"/>
     </genClasses>
     <genClasses ecoreClass="AsyncApi.ecore#//Variable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Variable/name"/>
@@ -158,6 +165,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//Message/tags"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//Message/payload"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//Message/traits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//Message/identifier"/>
     </genClasses>
     <genClasses ecoreClass="AsyncApi.ecore#//NamedMessage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//NamedMessage/name"/>

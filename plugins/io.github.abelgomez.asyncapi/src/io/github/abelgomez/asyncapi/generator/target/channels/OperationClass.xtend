@@ -301,8 +301,8 @@ class SubscribeOperationClass extends OperationClass {
 		/**
 		 * Register the {@link «callbackInterface.name»} callback to be called
 		 * using the default {@link «channelSubscribeConfigurationInterface.name»}
-		 * when a message is published in the given {@link IServer} is published
-		 * on the {@link «channel.transform.name»} channel
+		 * when a message in the given {@link IServer} is published
+		 * on the {@link «channel.transform.channelClass.name»} channel
 		 *
 		 * @throws IllegalStateException if a {@link «callbackInterface.name»} is already registered.
 		 *                               In such a case, it is necessary to call
@@ -316,31 +316,33 @@ class SubscribeOperationClass extends OperationClass {
 		/**
 		 * Register the {@link «callbackInterface.name»} callback to be called
 		 * using the provided {@link «channelSubscribeConfigurationInterface.name»}
-		 * when a message is published in the given {@link IServer} is published
-		 * on the {@link «channel.transform.name»} channel 
+		 * when a message in the given {@link IServer} is published
+		 * on the {@link «channel.transform.channelClass.name»} channel 
 		 *
 		 * @throws IllegalStateException if a {@link «callbackInterface.name»} is already registered.
 		 *                               In such a case, it is necessary to call
 		 *                               {@link #unsubscribe(IServer)} first
 		 */
 		public static void subscribe(IServer server, «channelSubscribeConfigurationInterface.name» config, «callbackInterface.name» callback) throws «serverExceptionClass.name» {
-		    server.subscribe(config, (received) -> {
-		    	«messageClass.name» message = «messageClass.name».fromJson(
-		    			"{ \"headers\" :" +  (received.getHeaders() != null ? new String(received.getHeaders()) : "\"\"") + "," +
-		    			"  \"payload\" :" +  (received.getData() != null ? new String(received.getData()) : "\"\"") + " }"
-		    		); 
-		    	«IF parametersClass === null»
-		    	callback.messageArrived(message);
-		    	«ELSE»
-		    	«parametersClass.name» parameters = new «parametersClass.name»(received.getParameters());
-		    	callback.messageArrived(message, parameters);
-		    	«ENDIF»
-		    });
+		    server.subscribe(config,
+		    	(received) -> {
+			    	«messageClass.name» message = «messageClass.name».fromJson(new String(received.getRawData()));
+			    	«IF parametersClass === null»
+			    		callback.messageArrived(message);
+			    	«ELSE»
+			    		«parametersClass.name» parameters = new «parametersClass.name»(received.getParameters());
+			    		callback.messageArrived(message, parameters);
+			    	«ENDIF»
+			    },
+			    (rawData) -> {
+			    	return «messageClass.name».fromJson(rawData);
+				}
+			);
 		}
 		
 		/**
 		 * Unregister the previously registered {@link «callbackInterface.name»} callback 
-		 * from the given {@link IServer} on the {@link «channel.transform.name»} channel
+		 * from the given {@link IServer} on the {@link «channel.transform.channelClass.name»} channel
 		 */
 		public static void unsubscribe(IServer server) throws «serverExceptionClass.name» {
 			«channelSubscribeConfigurationInterface.name» config = newConfiguration();

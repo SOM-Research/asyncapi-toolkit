@@ -24,15 +24,15 @@ import org.eclipse.emf.common.util.EList;
 public interface AndExpression extends BooleanExpression
 {
   /**
-   * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.
-   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.BooleanExpression}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.
+	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.BooleanExpression}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Conditions</em>' containment reference list.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAndExpression_Conditions()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Conditions</em>' containment reference list.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getAndExpression_Conditions()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<BooleanExpression> getConditions();
 
 } // AndExpression

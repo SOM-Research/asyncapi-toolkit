@@ -39,7 +39,17 @@ class ModelExtensions {
 		for (Variable v : server.variables) {
 			result = result.replaceAll("\\{" + v.name + "\\}", v.^default);
 		}
-		return result;
+		return result.contains("@") ? result.split("@").get(1) : result;
+	}
+
+	static def String getUserName(Server server) {
+		var result = server.url;
+		return result.contains("@") ? result.split("@").get(0).split(":").get(0) : null;
+	}
+
+	static def String getPassword(Server server) {
+		var result = server.url;
+		return result.matches(".*:.+@.*") ? result.split("@").get(0).split(":").get(1) : null;
 	}
 	
 	static def AsyncAPI api(EObject eObject) {

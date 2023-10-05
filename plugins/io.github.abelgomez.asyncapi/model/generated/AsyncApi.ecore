@@ -40,6 +40,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
         eType="#//Variable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMonitored" eType="#//Boolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -83,6 +84,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="traits" upperBound="-1"
         eType="#//AbstractMessageTrait" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" eType="#//MessageIdentifier"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NamedMessage">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -301,6 +303,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="VersionNumber">
     <eLiterals name="_200" literal="&quot;2.0.0&quot;"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MessageIdentifier">
+    <eLiterals name="none" literal="&quot;none&quot;"/>
+    <eLiterals name="generated" value="1" literal="&quot;generated&quot;"/>
+    <eLiterals name="md5" value="2" literal="&quot;md5&quot;"/>
+    <eLiterals name="sha256" value="3" literal="&quot;sha-256&quot;"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Protocol">
     <eLiterals name="amqp" literal="&quot;amqp&quot;"/>

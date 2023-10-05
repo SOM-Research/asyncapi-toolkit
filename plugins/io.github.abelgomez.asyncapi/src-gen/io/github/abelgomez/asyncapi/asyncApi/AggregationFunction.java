@@ -21,251 +21,245 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum AggregationFunction implements Enumerator
 {
   /**
-   * The '<em><b>AVG</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>AVG</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #AVG_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #AVG_VALUE
+	 * @generated
+	 * @ordered
+	 */
   AVG(0, "AVG", "\"AVG\""),
 
   /**
-   * The '<em><b>MEDIAN</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>MEDIAN</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #MEDIAN_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #MEDIAN_VALUE
+	 * @generated
+	 * @ordered
+	 */
   MEDIAN(1, "MEDIAN", "\"MEDIAN\""),
 
   /**
-   * The '<em><b>MAX</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>MAX</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #MAX_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #MAX_VALUE
+	 * @generated
+	 * @ordered
+	 */
   MAX(2, "MAX", "\"MAX\""),
 
   /**
-   * The '<em><b>MIN</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>MIN</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #MIN_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #MIN_VALUE
+	 * @generated
+	 * @ordered
+	 */
   MIN(3, "MIN", "\"MIN\"");
 
   /**
-   * The '<em><b>AVG</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>AVG</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #AVG
-   * @model literal="\"AVG\""
-   * @generated
-   * @ordered
-   */
+	 * @see #AVG
+	 * @model literal="\"AVG\""
+	 * @generated
+	 * @ordered
+	 */
   public static final int AVG_VALUE = 0;
 
   /**
-   * The '<em><b>MEDIAN</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>MEDIAN</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #MEDIAN
-   * @model literal="\"MEDIAN\""
-   * @generated
-   * @ordered
-   */
+	 * @see #MEDIAN
+	 * @model literal="\"MEDIAN\""
+	 * @generated
+	 * @ordered
+	 */
   public static final int MEDIAN_VALUE = 1;
 
   /**
-   * The '<em><b>MAX</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>MAX</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #MAX
-   * @model literal="\"MAX\""
-   * @generated
-   * @ordered
-   */
+	 * @see #MAX
+	 * @model literal="\"MAX\""
+	 * @generated
+	 * @ordered
+	 */
   public static final int MAX_VALUE = 2;
 
   /**
-   * The '<em><b>MIN</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>MIN</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #MIN
-   * @model literal="\"MIN\""
-   * @generated
-   * @ordered
-   */
+	 * @see #MIN
+	 * @model literal="\"MIN\""
+	 * @generated
+	 * @ordered
+	 */
   public static final int MIN_VALUE = 3;
 
   /**
-   * An array of all the '<em><b>Aggregation Function</b></em>' enumerators.
-   * <!-- begin-user-doc -->
+	 * An array of all the '<em><b>Aggregation Function</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private static final AggregationFunction[] VALUES_ARRAY =
-    new AggregationFunction[]
-    {
-      AVG,
-      MEDIAN,
-      MAX,
-      MIN,
-    };
+    new AggregationFunction[] {
+			AVG,
+			MEDIAN,
+			MAX,
+			MIN,
+		};
 
   /**
-   * A public read-only list of all the '<em><b>Aggregation Function</b></em>' enumerators.
-   * <!-- begin-user-doc -->
+	 * A public read-only list of all the '<em><b>Aggregation Function</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static final List<AggregationFunction> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-   * Returns the '<em><b>Aggregation Function</b></em>' literal with the specified literal value.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Aggregation Function</b></em>' literal with the specified literal value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param literal the literal.
-   * @return the matching enumerator or <code>null</code>.
-   * @generated
-   */
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
+	 * @generated
+	 */
   public static AggregationFunction get(String literal)
   {
-    for (int i = 0; i < VALUES_ARRAY.length; ++i)
-    {
-      AggregationFunction result = VALUES_ARRAY[i];
-      if (result.toString().equals(literal))
-      {
-        return result;
-      }
-    }
-    return null;
-  }
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			AggregationFunction result = VALUES_ARRAY[i];
+			if (result.toString().equals(literal)) {
+				return result;
+			}
+		}
+		return null;
+	}
 
   /**
-   * Returns the '<em><b>Aggregation Function</b></em>' literal with the specified name.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Aggregation Function</b></em>' literal with the specified name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param name the name.
-   * @return the matching enumerator or <code>null</code>.
-   * @generated
-   */
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
+	 * @generated
+	 */
   public static AggregationFunction getByName(String name)
   {
-    for (int i = 0; i < VALUES_ARRAY.length; ++i)
-    {
-      AggregationFunction result = VALUES_ARRAY[i];
-      if (result.getName().equals(name))
-      {
-        return result;
-      }
-    }
-    return null;
-  }
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			AggregationFunction result = VALUES_ARRAY[i];
+			if (result.getName().equals(name)) {
+				return result;
+			}
+		}
+		return null;
+	}
 
   /**
-   * Returns the '<em><b>Aggregation Function</b></em>' literal with the specified integer value.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Aggregation Function</b></em>' literal with the specified integer value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the integer value.
-   * @return the matching enumerator or <code>null</code>.
-   * @generated
-   */
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
+	 * @generated
+	 */
   public static AggregationFunction get(int value)
   {
-    switch (value)
-    {
-      case AVG_VALUE: return AVG;
-      case MEDIAN_VALUE: return MEDIAN;
-      case MAX_VALUE: return MAX;
-      case MIN_VALUE: return MIN;
-    }
-    return null;
-  }
+		switch (value) {
+			case AVG_VALUE: return AVG;
+			case MEDIAN_VALUE: return MEDIAN;
+			case MAX_VALUE: return MAX;
+			case MIN_VALUE: return MIN;
+		}
+		return null;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final int value;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final String name;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final String literal;
 
   /**
-   * Only this class can construct instances.
-   * <!-- begin-user-doc -->
+	 * Only this class can construct instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private AggregationFunction(int value, String name, String literal)
   {
-    this.value = value;
-    this.name = name;
-    this.literal = literal;
-  }
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int getValue()
   {
-    return value;
-  }
+	  return value;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String getName()
   {
-    return name;
-  }
+	  return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String getLiteral()
   {
-    return literal;
-  }
+	  return literal;
+	}
 
   /**
-   * Returns the literal value of the enumerator, which is its string representation.
-   * <!-- begin-user-doc -->
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    return literal;
-  }
+		return literal;
+	}
   
 } //AggregationFunction

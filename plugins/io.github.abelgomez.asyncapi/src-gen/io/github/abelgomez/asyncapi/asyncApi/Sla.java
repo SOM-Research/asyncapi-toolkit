@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface Sla extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Guarantee Term</b></em>' containment reference list.
-   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Guarantee Term</b></em>' containment reference list.
+	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Guarantee Term</em>' containment reference list.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSla_GuaranteeTerm()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Guarantee Term</em>' containment reference list.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getSla_GuaranteeTerm()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<GuaranteeTerm> getGuaranteeTerm();
 
 } // Sla

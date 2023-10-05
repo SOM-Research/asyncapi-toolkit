@@ -49,6 +49,7 @@ public class AsyncApiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOperatorAccess().getAlternatives(), "rule__Operator__Alternatives");
 			builder.put(grammarAccess.getJsonTypeAccess().getAlternatives(), "rule__JsonType__Alternatives");
 			builder.put(grammarAccess.getBooleanAccess().getAlternatives(), "rule__Boolean__Alternatives");
+			builder.put(grammarAccess.getMessageIdentifierAccess().getAlternatives(), "rule__MessageIdentifier__Alternatives");
 			builder.put(grammarAccess.getProtocolAccess().getAlternatives(), "rule__Protocol__Alternatives");
 			builder.put(grammarAccess.getAsyncAPIAccess().getGroup(), "rule__AsyncAPI__Group__0");
 			builder.put(grammarAccess.getAsyncAPIAccess().getGroup_2_0(), "rule__AsyncAPI__Group_2_0__0");
@@ -80,6 +81,7 @@ public class AsyncApiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getServerAccess().getGroup_4_2(), "rule__Server__Group_4_2__0");
 			builder.put(grammarAccess.getServerAccess().getGroup_4_3(), "rule__Server__Group_4_3__0");
 			builder.put(grammarAccess.getServerAccess().getGroup_4_3_4(), "rule__Server__Group_4_3_4__0");
+			builder.put(grammarAccess.getServerAccess().getGroup_4_4(), "rule__Server__Group_4_4__0");
 			builder.put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
 			builder.put(grammarAccess.getVariableAccess().getGroup_4_0(), "rule__Variable__Group_4_0__0");
 			builder.put(grammarAccess.getVariableAccess().getGroup_4_1(), "rule__Variable__Group_4_1__0");
@@ -111,6 +113,7 @@ public class AsyncApiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMessageAccess().getGroup_2_7(), "rule__Message__Group_2_7__0");
 			builder.put(grammarAccess.getMessageAccess().getGroup_2_8(), "rule__Message__Group_2_8__0");
 			builder.put(grammarAccess.getMessageAccess().getGroup_2_8_4(), "rule__Message__Group_2_8_4__0");
+			builder.put(grammarAccess.getMessageAccess().getGroup_2_9(), "rule__Message__Group_2_9__0");
 			builder.put(grammarAccess.getNamedMessageAccess().getGroup(), "rule__NamedMessage__Group__0");
 			builder.put(grammarAccess.getTagAccess().getGroup(), "rule__Tag__Group__0");
 			builder.put(grammarAccess.getTagAccess().getGroup_2_0(), "rule__Tag__Group_2_0__0");
@@ -222,6 +225,7 @@ public class AsyncApiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getServerAccess().getDescriptionAssignment_4_2_2(), "rule__Server__DescriptionAssignment_4_2_2");
 			builder.put(grammarAccess.getServerAccess().getVariablesAssignment_4_3_3(), "rule__Server__VariablesAssignment_4_3_3");
 			builder.put(grammarAccess.getServerAccess().getVariablesAssignment_4_3_4_1(), "rule__Server__VariablesAssignment_4_3_4_1");
+			builder.put(grammarAccess.getServerAccess().getIsMonitoredAssignment_4_4_2(), "rule__Server__IsMonitoredAssignment_4_4_2");
 			builder.put(grammarAccess.getVariableAccess().getNameAssignment_1(), "rule__Variable__NameAssignment_1");
 			builder.put(grammarAccess.getVariableAccess().getDescriptionAssignment_4_0_2(), "rule__Variable__DescriptionAssignment_4_0_2");
 			builder.put(grammarAccess.getVariableAccess().getDefaultAssignment_4_1_2(), "rule__Variable__DefaultAssignment_4_1_2");
@@ -251,6 +255,7 @@ public class AsyncApiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMessageAccess().getPayloadAssignment_2_7_2(), "rule__Message__PayloadAssignment_2_7_2");
 			builder.put(grammarAccess.getMessageAccess().getTraitsAssignment_2_8_3(), "rule__Message__TraitsAssignment_2_8_3");
 			builder.put(grammarAccess.getMessageAccess().getTraitsAssignment_2_8_4_1(), "rule__Message__TraitsAssignment_2_8_4_1");
+			builder.put(grammarAccess.getMessageAccess().getIdentifierAssignment_2_9_2(), "rule__Message__IdentifierAssignment_2_9_2");
 			builder.put(grammarAccess.getNamedMessageAccess().getNameAssignment_1(), "rule__NamedMessage__NameAssignment_1");
 			builder.put(grammarAccess.getNamedMessageAccess().getMessageAssignment_3(), "rule__NamedMessage__MessageAssignment_3");
 			builder.put(grammarAccess.getTagAccess().getNameAssignment_2_0_2(), "rule__Tag__NameAssignment_2_0_2");

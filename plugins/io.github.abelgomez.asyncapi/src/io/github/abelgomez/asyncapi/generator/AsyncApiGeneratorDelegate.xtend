@@ -1,6 +1,7 @@
 package io.github.abelgomez.asyncapi.generator
 
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
+import io.github.abelgomez.asyncapi.asyncApi.AsyncApiFactory
 import io.github.abelgomez.asyncapi.asyncApi.Channel
 import io.github.abelgomez.asyncapi.asyncApi.Components
 import io.github.abelgomez.asyncapi.asyncApi.Message
@@ -22,11 +23,14 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 
 import static extension io.github.abelgomez.asyncapi.generator.TransformationContext.*
-
+import org.eclipse.emf.ecore.util.EcoreUtil
+import io.github.abelgomez.asyncapi.asyncApi.JsonType
 
 class AsyncApiGeneratorDelegate {
 
 	public static val SRC_FOLDER = "src/main/java" 
+	public static val MONITORING_TOPIC = "infra/monitoring/events"
+	
 
 	val IFileSystemAccess2 fsa
 	val IGeneratorContext generatorContext
@@ -42,6 +46,9 @@ class AsyncApiGeneratorDelegate {
 	def generate() {
 		TransformationContext.initialize()
 		try {
+			if (!api?.servers?.filter[isMonitored == io.github.abelgomez.asyncapi.asyncApi.Boolean._TRUE].empty) {
+				api.injectMonitoringInfrastructure
+			}
 			api?.transform?.saveContents(fsa, generatorContext)
 			api?.channels?.forEach[c | c.transform?.saveContents(fsa, generatorContext)]
 			api?.components?.transform?.saveContents(fsa, generatorContext)
@@ -51,6 +58,62 @@ class AsyncApiGeneratorDelegate {
 		}
 	}
 
+	static def injectMonitoringInfrastructure(AsyncAPI api) {
+		val msg = AsyncApiFactory.eINSTANCE.createMessage => [
+			description = "Message of a monitoring event. This is an internal class of the AsyncAPI Toolkit."
+			payload = AsyncApiFactory.eINSTANCE.createSchema => [
+				description = "Payload of a monitoring event"
+				properties += AsyncApiFactory.eINSTANCE.createNamedSchema => [
+					name = "timestamp"
+					schema = AsyncApiFactory.eINSTANCE.createSchema => [
+						description = "Timestamp of the exact moment where the event took place."
+						type = JsonType.STRING
+					]
+				]
+				properties += AsyncApiFactory.eINSTANCE.createNamedSchema => [
+					name = "clientId"
+					schema = AsyncApiFactory.eINSTANCE.createSchema => [
+						description = "Identifier of the client generating the event."
+						type = JsonType.STRING
+					]
+				]
+				properties += AsyncApiFactory.eINSTANCE.createNamedSchema => [
+					name = "messageId"
+					schema = AsyncApiFactory.eINSTANCE.createSchema => [
+						description = "Identifier of the message involved in the event. It may be null if the " 
+								+ "event is not associated to a message, or the message involved does not specify an ID."
+						type = JsonType.STRING
+					]
+				]
+				properties += AsyncApiFactory.eINSTANCE.createNamedSchema => [
+					name = "event"
+					schema = AsyncApiFactory.eINSTANCE.createSchema => [
+						description = "Event type"
+						type = JsonType.STRING
+						enum += "client-connected"
+						enum += "client-disconnected"
+						enum += "client-subscribed"
+						enum += "client-unsubscribed"
+						enum += "message-sent"
+						enum += "message-received"
+					]
+				]
+			]
+		]
+		api.channels += AsyncApiFactory.eINSTANCE.createChannel => [
+			name = MONITORING_TOPIC
+			publish = AsyncApiFactory.eINSTANCE.createOperation => [
+				operationId = "SendMonitoringEvent"
+				description = "Class to publish a monitoring event. This is an internal class of the AsyncAPI Toolkit and should not be used by the clients."
+				message = EcoreUtil.copy(msg)
+			]
+			subscribe = AsyncApiFactory.eINSTANCE.createOperation => [
+				operationId = "ReceiveMonitoringEvent"
+				description = "Class to publish a monitoring event. This is an internal class of the AsyncAPI Toolkit and should not be used by the clients."
+				message = EcoreUtil.copy(msg)
+			]
+		]
+	}
 }
 
 class TransformationContext {

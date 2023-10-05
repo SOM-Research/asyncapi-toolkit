@@ -62,871 +62,827 @@ import org.eclipse.emf.ecore.EObject;
 public class AsyncApiAdapterFactory extends AdapterFactoryImpl
 {
   /**
-   * The cached model package.
-   * <!-- begin-user-doc -->
+	 * The cached model package.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected static AsyncApiPackage modelPackage;
 
   /**
-   * Creates an instance of the adapter factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the adapter factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public AsyncApiAdapterFactory()
   {
-    if (modelPackage == null)
-    {
-      modelPackage = AsyncApiPackage.eINSTANCE;
-    }
-  }
+		if (modelPackage == null) {
+			modelPackage = AsyncApiPackage.eINSTANCE;
+		}
+	}
 
   /**
-   * Returns whether this factory is applicable for the type of the object.
-   * <!-- begin-user-doc -->
+	 * Returns whether this factory is applicable for the type of the object.
+	 * <!-- begin-user-doc -->
    * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
    * <!-- end-user-doc -->
-   * @return whether this factory is applicable for the type of the object.
-   * @generated
-   */
+	 * @return whether this factory is applicable for the type of the object.
+	 * @generated
+	 */
   @Override
   public boolean isFactoryForType(Object object)
   {
-    if (object == modelPackage)
-    {
-      return true;
-    }
-    if (object instanceof EObject)
-    {
-      return ((EObject)object).eClass().getEPackage() == modelPackage;
-    }
-    return false;
-  }
+		if (object == modelPackage) {
+			return true;
+		}
+		if (object instanceof EObject) {
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
+		}
+		return false;
+	}
 
   /**
-   * The switch that delegates to the <code>createXXX</code> methods.
-   * <!-- begin-user-doc -->
+	 * The switch that delegates to the <code>createXXX</code> methods.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected AsyncApiSwitch<Adapter> modelSwitch =
-    new AsyncApiSwitch<Adapter>()
-    {
-      @Override
-      public Adapter caseAsyncAPI(AsyncAPI object)
-      {
-        return createAsyncAPIAdapter();
-      }
-      @Override
-      public Adapter caseInfo(Info object)
-      {
-        return createInfoAdapter();
-      }
-      @Override
-      public Adapter caseContact(Contact object)
-      {
-        return createContactAdapter();
-      }
-      @Override
-      public Adapter caseLicense(License object)
-      {
-        return createLicenseAdapter();
-      }
-      @Override
-      public Adapter caseServer(Server object)
-      {
-        return createServerAdapter();
-      }
-      @Override
-      public Adapter caseVariable(Variable object)
-      {
-        return createVariableAdapter();
-      }
-      @Override
-      public Adapter caseChannel(Channel object)
-      {
-        return createChannelAdapter();
-      }
-      @Override
-      public Adapter caseOperation(Operation object)
-      {
-        return createOperationAdapter();
-      }
-      @Override
-      public Adapter caseAbstractMessage(AbstractMessage object)
-      {
-        return createAbstractMessageAdapter();
-      }
-      @Override
-      public Adapter caseMessage(Message object)
-      {
-        return createMessageAdapter();
-      }
-      @Override
-      public Adapter caseNamedMessage(NamedMessage object)
-      {
-        return createNamedMessageAdapter();
-      }
-      @Override
-      public Adapter caseTag(Tag object)
-      {
-        return createTagAdapter();
-      }
-      @Override
-      public Adapter caseAbstractSchema(AbstractSchema object)
-      {
-        return createAbstractSchemaAdapter();
-      }
-      @Override
-      public Adapter caseSchema(Schema object)
-      {
-        return createSchemaAdapter();
-      }
-      @Override
-      public Adapter caseNamedSchema(NamedSchema object)
-      {
-        return createNamedSchemaAdapter();
-      }
-      @Override
-      public Adapter caseAbstractParameter(AbstractParameter object)
-      {
-        return createAbstractParameterAdapter();
-      }
-      @Override
-      public Adapter caseParameter(Parameter object)
-      {
-        return createParameterAdapter();
-      }
-      @Override
-      public Adapter caseNamedParameter(NamedParameter object)
-      {
-        return createNamedParameterAdapter();
-      }
-      @Override
-      public Adapter caseAbstractOperationTrait(AbstractOperationTrait object)
-      {
-        return createAbstractOperationTraitAdapter();
-      }
-      @Override
-      public Adapter caseOperationTrait(OperationTrait object)
-      {
-        return createOperationTraitAdapter();
-      }
-      @Override
-      public Adapter caseNamedOperationTrait(NamedOperationTrait object)
-      {
-        return createNamedOperationTraitAdapter();
-      }
-      @Override
-      public Adapter caseAbstractMessageTrait(AbstractMessageTrait object)
-      {
-        return createAbstractMessageTraitAdapter();
-      }
-      @Override
-      public Adapter caseMessageTrait(MessageTrait object)
-      {
-        return createMessageTraitAdapter();
-      }
-      @Override
-      public Adapter caseNamedMessageTrait(NamedMessageTrait object)
-      {
-        return createNamedMessageTraitAdapter();
-      }
-      @Override
-      public Adapter caseComponents(Components object)
-      {
-        return createComponentsAdapter();
-      }
-      @Override
-      public Adapter caseSla(Sla object)
-      {
-        return createSlaAdapter();
-      }
-      @Override
-      public Adapter caseGuaranteeTerm(GuaranteeTerm object)
-      {
-        return createGuaranteeTermAdapter();
-      }
-      @Override
-      public Adapter caseScope(Scope object)
-      {
-        return createScopeAdapter();
-      }
-      @Override
-      public Adapter caseQualifyingCondition(QualifyingCondition object)
-      {
-        return createQualifyingConditionAdapter();
-      }
-      @Override
-      public Adapter caseSlo(Slo object)
-      {
-        return createSloAdapter();
-      }
-      @Override
-      public Adapter caseAbstractQoSMetric(AbstractQoSMetric object)
-      {
-        return createAbstractQoSMetricAdapter();
-      }
-      @Override
-      public Adapter caseQoSMetricReference(QoSMetricReference object)
-      {
-        return createQoSMetricReferenceAdapter();
-      }
-      @Override
-      public Adapter caseQoSMetric(QoSMetric object)
-      {
-        return createQoSMetricAdapter();
-      }
-      @Override
-      public Adapter caseDerivedQoSMetric(DerivedQoSMetric object)
-      {
-        return createDerivedQoSMetricAdapter();
-      }
-      @Override
-      public Adapter caseBooleanExpression(BooleanExpression object)
-      {
-        return createBooleanExpressionAdapter();
-      }
-      @Override
-      public Adapter caseAndExpression(AndExpression object)
-      {
-        return createAndExpressionAdapter();
-      }
-      @Override
-      public Adapter caseOrExpression(OrExpression object)
-      {
-        return createOrExpressionAdapter();
-      }
-      @Override
-      public Adapter caseComparisonExpression(ComparisonExpression object)
-      {
-        return createComparisonExpressionAdapter();
-      }
-      @Override
-      public Adapter caseReference(Reference object)
-      {
-        return createReferenceAdapter();
-      }
-      @Override
-      public Adapter defaultCase(EObject object)
-      {
-        return createEObjectAdapter();
-      }
-    };
+    new AsyncApiSwitch<Adapter>() {
+			@Override
+			public Adapter caseAsyncAPI(AsyncAPI object) {
+				return createAsyncAPIAdapter();
+			}
+			@Override
+			public Adapter caseInfo(Info object) {
+				return createInfoAdapter();
+			}
+			@Override
+			public Adapter caseContact(Contact object) {
+				return createContactAdapter();
+			}
+			@Override
+			public Adapter caseLicense(License object) {
+				return createLicenseAdapter();
+			}
+			@Override
+			public Adapter caseServer(Server object) {
+				return createServerAdapter();
+			}
+			@Override
+			public Adapter caseVariable(Variable object) {
+				return createVariableAdapter();
+			}
+			@Override
+			public Adapter caseChannel(Channel object) {
+				return createChannelAdapter();
+			}
+			@Override
+			public Adapter caseOperation(Operation object) {
+				return createOperationAdapter();
+			}
+			@Override
+			public Adapter caseAbstractMessage(AbstractMessage object) {
+				return createAbstractMessageAdapter();
+			}
+			@Override
+			public Adapter caseMessage(Message object) {
+				return createMessageAdapter();
+			}
+			@Override
+			public Adapter caseNamedMessage(NamedMessage object) {
+				return createNamedMessageAdapter();
+			}
+			@Override
+			public Adapter caseTag(Tag object) {
+				return createTagAdapter();
+			}
+			@Override
+			public Adapter caseAbstractSchema(AbstractSchema object) {
+				return createAbstractSchemaAdapter();
+			}
+			@Override
+			public Adapter caseSchema(Schema object) {
+				return createSchemaAdapter();
+			}
+			@Override
+			public Adapter caseNamedSchema(NamedSchema object) {
+				return createNamedSchemaAdapter();
+			}
+			@Override
+			public Adapter caseAbstractParameter(AbstractParameter object) {
+				return createAbstractParameterAdapter();
+			}
+			@Override
+			public Adapter caseParameter(Parameter object) {
+				return createParameterAdapter();
+			}
+			@Override
+			public Adapter caseNamedParameter(NamedParameter object) {
+				return createNamedParameterAdapter();
+			}
+			@Override
+			public Adapter caseAbstractOperationTrait(AbstractOperationTrait object) {
+				return createAbstractOperationTraitAdapter();
+			}
+			@Override
+			public Adapter caseOperationTrait(OperationTrait object) {
+				return createOperationTraitAdapter();
+			}
+			@Override
+			public Adapter caseNamedOperationTrait(NamedOperationTrait object) {
+				return createNamedOperationTraitAdapter();
+			}
+			@Override
+			public Adapter caseAbstractMessageTrait(AbstractMessageTrait object) {
+				return createAbstractMessageTraitAdapter();
+			}
+			@Override
+			public Adapter caseMessageTrait(MessageTrait object) {
+				return createMessageTraitAdapter();
+			}
+			@Override
+			public Adapter caseNamedMessageTrait(NamedMessageTrait object) {
+				return createNamedMessageTraitAdapter();
+			}
+			@Override
+			public Adapter caseComponents(Components object) {
+				return createComponentsAdapter();
+			}
+			@Override
+			public Adapter caseSla(Sla object) {
+				return createSlaAdapter();
+			}
+			@Override
+			public Adapter caseGuaranteeTerm(GuaranteeTerm object) {
+				return createGuaranteeTermAdapter();
+			}
+			@Override
+			public Adapter caseScope(Scope object) {
+				return createScopeAdapter();
+			}
+			@Override
+			public Adapter caseQualifyingCondition(QualifyingCondition object) {
+				return createQualifyingConditionAdapter();
+			}
+			@Override
+			public Adapter caseSlo(Slo object) {
+				return createSloAdapter();
+			}
+			@Override
+			public Adapter caseAbstractQoSMetric(AbstractQoSMetric object) {
+				return createAbstractQoSMetricAdapter();
+			}
+			@Override
+			public Adapter caseQoSMetricReference(QoSMetricReference object) {
+				return createQoSMetricReferenceAdapter();
+			}
+			@Override
+			public Adapter caseQoSMetric(QoSMetric object) {
+				return createQoSMetricAdapter();
+			}
+			@Override
+			public Adapter caseDerivedQoSMetric(DerivedQoSMetric object) {
+				return createDerivedQoSMetricAdapter();
+			}
+			@Override
+			public Adapter caseBooleanExpression(BooleanExpression object) {
+				return createBooleanExpressionAdapter();
+			}
+			@Override
+			public Adapter caseAndExpression(AndExpression object) {
+				return createAndExpressionAdapter();
+			}
+			@Override
+			public Adapter caseOrExpression(OrExpression object) {
+				return createOrExpressionAdapter();
+			}
+			@Override
+			public Adapter caseComparisonExpression(ComparisonExpression object) {
+				return createComparisonExpressionAdapter();
+			}
+			@Override
+			public Adapter caseReference(Reference object) {
+				return createReferenceAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+				return createEObjectAdapter();
+			}
+		};
 
   /**
-   * Creates an adapter for the <code>target</code>.
-   * <!-- begin-user-doc -->
+	 * Creates an adapter for the <code>target</code>.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param target the object to adapt.
-   * @return the adapter for the <code>target</code>.
-   * @generated
-   */
+	 * @param target the object to adapt.
+	 * @return the adapter for the <code>target</code>.
+	 * @generated
+	 */
   @Override
   public Adapter createAdapter(Notifier target)
   {
-    return modelSwitch.doSwitch((EObject)target);
-  }
+		return modelSwitch.doSwitch((EObject)target);
+	}
 
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI <em>Async API</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AsyncAPI <em>Async API</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
+	 * @generated
+	 */
   public Adapter createAsyncAPIAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Info <em>Info</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Info <em>Info</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Info
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Info
+	 * @generated
+	 */
   public Adapter createInfoAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Contact <em>Contact</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Contact <em>Contact</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Contact
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Contact
+	 * @generated
+	 */
   public Adapter createContactAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.License <em>License</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.License <em>License</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.License
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.License
+	 * @generated
+	 */
   public Adapter createLicenseAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Server <em>Server</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Server <em>Server</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Server
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Server
+	 * @generated
+	 */
   public Adapter createServerAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Variable <em>Variable</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Variable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Variable
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Variable
+	 * @generated
+	 */
   public Adapter createVariableAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Channel <em>Channel</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Channel <em>Channel</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Channel
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Channel
+	 * @generated
+	 */
   public Adapter createChannelAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Operation <em>Operation</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Operation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Operation
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Operation
+	 * @generated
+	 */
   public Adapter createOperationAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractMessage <em>Abstract Message</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractMessage <em>Abstract Message</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AbstractMessage
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AbstractMessage
+	 * @generated
+	 */
   public Adapter createAbstractMessageAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Message <em>Message</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Message <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Message
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Message
+	 * @generated
+	 */
   public Adapter createMessageAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessage <em>Named Message</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessage <em>Named Message</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedMessage
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedMessage
+	 * @generated
+	 */
   public Adapter createNamedMessageAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Tag <em>Tag</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Tag <em>Tag</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Tag
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Tag
+	 * @generated
+	 */
   public Adapter createTagAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractSchema <em>Abstract Schema</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractSchema <em>Abstract Schema</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AbstractSchema
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AbstractSchema
+	 * @generated
+	 */
   public Adapter createAbstractSchemaAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Schema <em>Schema</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Schema <em>Schema</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Schema
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Schema
+	 * @generated
+	 */
   public Adapter createSchemaAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema <em>Named Schema</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema <em>Named Schema</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedSchema
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedSchema
+	 * @generated
+	 */
   public Adapter createNamedSchemaAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractParameter <em>Abstract Parameter</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractParameter <em>Abstract Parameter</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AbstractParameter
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AbstractParameter
+	 * @generated
+	 */
   public Adapter createAbstractParameterAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Parameter <em>Parameter</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Parameter
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Parameter
+	 * @generated
+	 */
   public Adapter createParameterAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter <em>Named Parameter</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter <em>Named Parameter</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedParameter
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedParameter
+	 * @generated
+	 */
   public Adapter createNamedParameterAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractOperationTrait <em>Abstract Operation Trait</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractOperationTrait <em>Abstract Operation Trait</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AbstractOperationTrait
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AbstractOperationTrait
+	 * @generated
+	 */
   public Adapter createAbstractOperationTraitAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.OperationTrait <em>Operation Trait</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.OperationTrait <em>Operation Trait</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.OperationTrait
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.OperationTrait
+	 * @generated
+	 */
   public Adapter createOperationTraitAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait <em>Named Operation Trait</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait <em>Named Operation Trait</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait
+	 * @generated
+	 */
   public Adapter createNamedOperationTraitAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractMessageTrait <em>Abstract Message Trait</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractMessageTrait <em>Abstract Message Trait</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AbstractMessageTrait
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AbstractMessageTrait
+	 * @generated
+	 */
   public Adapter createAbstractMessageTraitAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.MessageTrait <em>Message Trait</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.MessageTrait <em>Message Trait</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.MessageTrait
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.MessageTrait
+	 * @generated
+	 */
   public Adapter createMessageTraitAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait <em>Named Message Trait</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait <em>Named Message Trait</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait
+	 * @generated
+	 */
   public Adapter createNamedMessageTraitAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Components <em>Components</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Components <em>Components</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Components
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Components
+	 * @generated
+	 */
   public Adapter createComponentsAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Sla <em>Sla</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Sla <em>Sla</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Sla
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Sla
+	 * @generated
+	 */
   public Adapter createSlaAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm <em>Guarantee Term</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm <em>Guarantee Term</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm
+	 * @generated
+	 */
   public Adapter createGuaranteeTermAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Scope <em>Scope</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Scope <em>Scope</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Scope
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Scope
+	 * @generated
+	 */
   public Adapter createScopeAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition <em>Qualifying Condition</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition <em>Qualifying Condition</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition
+	 * @generated
+	 */
   public Adapter createQualifyingConditionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Slo <em>Slo</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Slo <em>Slo</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Slo
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Slo
+	 * @generated
+	 */
   public Adapter createSloAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractQoSMetric <em>Abstract Qo SMetric</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AbstractQoSMetric <em>Abstract Qo SMetric</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AbstractQoSMetric
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AbstractQoSMetric
+	 * @generated
+	 */
   public Adapter createAbstractQoSMetricAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference <em>Qo SMetric Reference</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference <em>Qo SMetric Reference</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference
+	 * @generated
+	 */
   public Adapter createQoSMetricReferenceAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric <em>Qo SMetric</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric <em>Qo SMetric</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.QoSMetric
+	 * @generated
+	 */
   public Adapter createQoSMetricAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric <em>Derived Qo SMetric</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric <em>Derived Qo SMetric</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.DerivedQoSMetric
+	 * @generated
+	 */
   public Adapter createDerivedQoSMetricAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.BooleanExpression <em>Boolean Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.BooleanExpression <em>Boolean Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.BooleanExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.BooleanExpression
+	 * @generated
+	 */
   public Adapter createBooleanExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AndExpression <em>And Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.AndExpression <em>And Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.AndExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.AndExpression
+	 * @generated
+	 */
   public Adapter createAndExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.OrExpression <em>Or Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.OrExpression <em>Or Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.OrExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.OrExpression
+	 * @generated
+	 */
   public Adapter createOrExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression <em>Comparison Expression</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression <em>Comparison Expression</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression
+	 * @generated
+	 */
   public Adapter createComparisonExpressionAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Reference <em>Reference</em>}'.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for an object of class '{@link io.github.abelgomez.asyncapi.asyncApi.Reference <em>Reference</em>}'.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.github.abelgomez.asyncapi.asyncApi.Reference
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @see io.github.abelgomez.asyncapi.asyncApi.Reference
+	 * @generated
+	 */
   public Adapter createReferenceAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * Creates a new adapter for the default case.
-   * <!-- begin-user-doc -->
+	 * Creates a new adapter for the default case.
+	 * <!-- begin-user-doc -->
    * This default implementation returns null.
    * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @generated
-   */
+	 * @return the new adapter.
+	 * @generated
+	 */
   public Adapter createEObjectAdapter()
   {
-    return null;
-  }
+		return null;
+	}
 
 } //AsyncApiAdapterFactory

@@ -47,46 +47,34 @@ class ServerInterface extends AbstractType implements IClass {
 			 */
 			public final class «name» {
 				
-				private final byte[] headers;
-
-				private final byte[] data;
+				private final byte[] rawData;
 
 				private final Map<String, String> parameters = new HashMap<>();;
 
 				/**
 				 * Creates a new instance of {@link «name»}
 				 */
-				public static «name» from(byte[] headers, byte[] data, Map<String, String> parameters) {
-					return new «name»(headers, data, parameters);
+				public static «name» from(byte[] data, Map<String, String> parameters) {
+					return new «name»(data, parameters);
 				}
 				
 				/**
 				 * Private constructor. Use the {@link #from} method instead
 				 */
-				private «name»(byte[] headers, byte[] data, Map<String, String> parameters) {
-					this.headers = headers;
-					this.data = data;
+				private «name»(byte[] rawData, Map<String, String> parameters) {
+					this.rawData = rawData;
 					if (parameters != null) {
 						this.parameters.putAll(parameters);
 					}
 				}
 				
 				/**
-				 * Returns the raw headersreceived
+				 * Returns the raw message data received
 				 *
-				 * @return The headers
+				 * @return The raw message data
 				 */
-				public byte[] getHeaders() {
-					return headers;
-				}
-				
-				/**
-				 * Returns the raw data received
-				 *
-				 * @return The data
-				 */
-				public byte[] getData() {
-					return data;
+				public byte[] getRawData() {
+					return rawData;
 				}
 				
 				/**
@@ -189,6 +177,7 @@ class ServerInterface extends AbstractType implements IClass {
 	override imports() {
 		val result = new TreeSet		
 		result += "java.util.function.Consumer"
+		result += "java.util.function.Function"
 		result += channelPublishConfigurationInterface.fqn
 		result += channelSubscribeConfigurationInterface.fqn
 		result += receivedClass.imports
@@ -213,7 +202,7 @@ class ServerInterface extends AbstractType implements IClass {
 		«imports.join(System.lineSeparator, [i | "import {0};".format(i)])»
 		
 		/**
-		 * Base interface for parameters
+		 * Base interface for asynchronous servers
 		 */
 		public interface «name» {
 			
@@ -296,7 +285,7 @@ class ServerInterface extends AbstractType implements IClass {
 			 *                               In such a case, it is necessary to call
 			 *                               {@link #unsubscribe(«name»)} first
 			 */
-			void subscribe(«channelSubscribeConfigurationInterface.name» config, Consumer<«receivedClass.name»> callback) throws «serverExceptionClass.name»;
+			void subscribe(«channelSubscribeConfigurationInterface.name» config, Consumer<«receivedClass.name»> callback, Function<String, «api.transform.messageInterface.name»> reifyMessageFunction) throws «serverExceptionClass.name»;
 			
 			/**
 			 * Unsubscribes from the events specified in the given {@link «channelSubscribeConfigurationInterface.name»}

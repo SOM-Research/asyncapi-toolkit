@@ -80,6 +80,7 @@ class RootPomFile implements IGenerable, ISerializable {
 		        <com.google.guava.version>31.1-jre</com.google.guava.version>
 		        <org.eclipse.paho.version>1.2.5</org.eclipse.paho.version>
 		        <org.apache.kafka.version>3.2.0</org.apache.kafka.version>
+		        <commons-codec.version>1.16.0</commons-codec.version>
 			</properties>
 			<groupId>io.github.abelgomez.asyncapi.generated</groupId>
 			<artifactId>root</artifactId>
@@ -105,6 +106,11 @@ class RootPomFile implements IGenerable, ISerializable {
 				    <version>${org.apache.kafka.version}</version>
 				</dependency>
 				«ENDIF»
+				<dependency>
+				    <groupId>commons-codec</groupId>
+				    <artifactId>commons-codec</artifactId>
+				    <version>${commons-codec.version}</version>
+				</dependency>
 			</dependencies>
 			<build>
 				<plugins>
