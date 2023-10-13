@@ -2,10 +2,14 @@ package io.github.abelgomez.asyncapi.generator
 
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
 import io.github.abelgomez.asyncapi.asyncApi.AsyncApiFactory
+import io.github.abelgomez.asyncapi.asyncApi.Boolean
 import io.github.abelgomez.asyncapi.asyncApi.Channel
 import io.github.abelgomez.asyncapi.asyncApi.Components
+import io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm
+import io.github.abelgomez.asyncapi.asyncApi.JsonType
 import io.github.abelgomez.asyncapi.asyncApi.Message
 import io.github.abelgomez.asyncapi.asyncApi.Operation
+import io.github.abelgomez.asyncapi.asyncApi.QoSMetric
 import io.github.abelgomez.asyncapi.asyncApi.Schema
 import io.github.abelgomez.asyncapi.asyncApi.Server
 import io.github.abelgomez.asyncapi.generator.infra.ITargetElement
@@ -15,16 +19,17 @@ import io.github.abelgomez.asyncapi.generator.target.PomFile
 import io.github.abelgomez.asyncapi.generator.target.RootPackage
 import io.github.abelgomez.asyncapi.generator.target.channels.OperationClass
 import io.github.abelgomez.asyncapi.generator.target.messages.MessageClass
+import io.github.abelgomez.asyncapi.generator.target.monitor.guaranteeterms.GuaranteeTermClass
 import io.github.abelgomez.asyncapi.generator.target.schemas.SchemaAbstractType
 import io.github.abelgomez.asyncapi.generator.target.servers.ServerClass
 import java.util.HashMap
 import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 
 import static extension io.github.abelgomez.asyncapi.generator.TransformationContext.*
-import org.eclipse.emf.ecore.util.EcoreUtil
-import io.github.abelgomez.asyncapi.asyncApi.JsonType
+import io.github.abelgomez.asyncapi.generator.target.monitor.metrics.QoSMetricClass
 
 class AsyncApiGeneratorDelegate {
 
@@ -46,7 +51,7 @@ class AsyncApiGeneratorDelegate {
 	def generate() {
 		TransformationContext.initialize()
 		try {
-			if (!api?.servers?.filter[isMonitored == io.github.abelgomez.asyncapi.asyncApi.Boolean._TRUE].empty) {
+			if (!api?.servers?.filter[isMonitored == Boolean._TRUE].empty) {
 				api.injectMonitoringInfrastructure
 			}
 			api?.transform?.saveContents(fsa, generatorContext)
@@ -157,6 +162,16 @@ class TransformationContext {
 	static def MessageClass transform(Message message) {
 		traces.get().putIfAbsent(message, MessageClass.createFrom(message))
 		return traces.get().get(message) as MessageClass
+	}
+
+	static def QoSMetricClass transform(QoSMetric metric) {
+		traces.get().putIfAbsent(metric, QoSMetricClass.createFrom(metric))
+		return traces.get().get(metric) as QoSMetricClass
+	}
+
+	static def GuaranteeTermClass transform(GuaranteeTerm guaranteeTerm) {
+		traces.get().putIfAbsent(guaranteeTerm, GuaranteeTermClass.createFrom(guaranteeTerm))
+		return traces.get().get(guaranteeTerm) as GuaranteeTermClass
 	}
 
 	static def cleanup() {

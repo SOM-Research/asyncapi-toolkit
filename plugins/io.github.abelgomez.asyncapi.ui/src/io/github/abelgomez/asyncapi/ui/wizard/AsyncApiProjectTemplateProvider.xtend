@@ -19,7 +19,7 @@ class AsyncApiProjectTemplateProvider implements IProjectTemplateProvider {
 	static final String PROJECT_TEMPLATE_ID = "io.github.abelgomez.asyncapi.ui.projectTemplate"
 	
 	override getProjectTemplates() {
-		#[new EmptyAsyncApiProject, new StreetlightsApiProject, new EcoreAsyncApiProject, new ExampleEcoreAsyncApiProject ] + contributedProjectTemplates
+		#[new EmptyAsyncApiProject, new StreetlightsApiProject, new StreetlightsQoSProject, new EcoreAsyncApiProject, new ExampleEcoreAsyncApiProject] + contributedProjectTemplates
 	}
 	
 	def AbstractProjectTemplate[] contributedProjectTemplates() {

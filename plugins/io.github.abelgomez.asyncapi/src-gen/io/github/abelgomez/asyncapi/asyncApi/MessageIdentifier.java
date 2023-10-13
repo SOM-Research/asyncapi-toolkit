@@ -21,245 +21,251 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum MessageIdentifier implements Enumerator
 {
   /**
-	 * The '<em><b>None</b></em>' literal object.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>None</b></em>' literal object.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #NONE_VALUE
-	 * @generated
-	 * @ordered
-	 */
+   * @see #NONE_VALUE
+   * @generated
+   * @ordered
+   */
   NONE(0, "none", "\"none\""),
 
   /**
-	 * The '<em><b>Generated</b></em>' literal object.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Generated</b></em>' literal object.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #GENERATED_VALUE
-	 * @generated
-	 * @ordered
-	 */
+   * @see #GENERATED_VALUE
+   * @generated
+   * @ordered
+   */
   GENERATED(1, "generated", "\"generated\""),
 
   /**
-	 * The '<em><b>Md5</b></em>' literal object.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Md5</b></em>' literal object.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #MD5_VALUE
-	 * @generated
-	 * @ordered
-	 */
+   * @see #MD5_VALUE
+   * @generated
+   * @ordered
+   */
   MD5(2, "md5", "\"md5\""),
 
   /**
-	 * The '<em><b>Sha256</b></em>' literal object.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Sha256</b></em>' literal object.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #SHA256_VALUE
-	 * @generated
-	 * @ordered
-	 */
+   * @see #SHA256_VALUE
+   * @generated
+   * @ordered
+   */
   SHA256(3, "sha256", "\"sha-256\"");
 
   /**
-	 * The '<em><b>None</b></em>' literal value.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>None</b></em>' literal value.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #NONE
-	 * @model name="none" literal="\"none\""
-	 * @generated
-	 * @ordered
-	 */
+   * @see #NONE
+   * @model name="none" literal="\"none\""
+   * @generated
+   * @ordered
+   */
   public static final int NONE_VALUE = 0;
 
   /**
-	 * The '<em><b>Generated</b></em>' literal value.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Generated</b></em>' literal value.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #GENERATED
-	 * @model name="generated" literal="\"generated\""
-	 * @generated
-	 * @ordered
-	 */
+   * @see #GENERATED
+   * @model name="generated" literal="\"generated\""
+   * @generated
+   * @ordered
+   */
   public static final int GENERATED_VALUE = 1;
 
   /**
-	 * The '<em><b>Md5</b></em>' literal value.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Md5</b></em>' literal value.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #MD5
-	 * @model name="md5" literal="\"md5\""
-	 * @generated
-	 * @ordered
-	 */
+   * @see #MD5
+   * @model name="md5" literal="\"md5\""
+   * @generated
+   * @ordered
+   */
   public static final int MD5_VALUE = 2;
 
   /**
-	 * The '<em><b>Sha256</b></em>' literal value.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Sha256</b></em>' literal value.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #SHA256
-	 * @model name="sha256" literal="\"sha-256\""
-	 * @generated
-	 * @ordered
-	 */
+   * @see #SHA256
+   * @model name="sha256" literal="\"sha-256\""
+   * @generated
+   * @ordered
+   */
   public static final int SHA256_VALUE = 3;
 
   /**
-	 * An array of all the '<em><b>Message Identifier</b></em>' enumerators.
-	 * <!-- begin-user-doc -->
+   * An array of all the '<em><b>Message Identifier</b></em>' enumerators.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private static final MessageIdentifier[] VALUES_ARRAY =
-    new MessageIdentifier[] {
-			NONE,
-			GENERATED,
-			MD5,
-			SHA256,
-		};
+    new MessageIdentifier[]
+    {
+      NONE,
+      GENERATED,
+      MD5,
+      SHA256,
+    };
 
   /**
-	 * A public read-only list of all the '<em><b>Message Identifier</b></em>' enumerators.
-	 * <!-- begin-user-doc -->
+   * A public read-only list of all the '<em><b>Message Identifier</b></em>' enumerators.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public static final List<MessageIdentifier> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-	 * Returns the '<em><b>Message Identifier</b></em>' literal with the specified literal value.
-	 * <!-- begin-user-doc -->
+   * Returns the '<em><b>Message Identifier</b></em>' literal with the specified literal value.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param literal the literal.
-	 * @return the matching enumerator or <code>null</code>.
-	 * @generated
-	 */
+   * @param literal the literal.
+   * @return the matching enumerator or <code>null</code>.
+   * @generated
+   */
   public static MessageIdentifier get(String literal)
   {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			MessageIdentifier result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
-				return result;
-			}
-		}
-		return null;
-	}
+    for (int i = 0; i < VALUES_ARRAY.length; ++i)
+    {
+      MessageIdentifier result = VALUES_ARRAY[i];
+      if (result.toString().equals(literal))
+      {
+        return result;
+      }
+    }
+    return null;
+  }
 
   /**
-	 * Returns the '<em><b>Message Identifier</b></em>' literal with the specified name.
-	 * <!-- begin-user-doc -->
+   * Returns the '<em><b>Message Identifier</b></em>' literal with the specified name.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param name the name.
-	 * @return the matching enumerator or <code>null</code>.
-	 * @generated
-	 */
+   * @param name the name.
+   * @return the matching enumerator or <code>null</code>.
+   * @generated
+   */
   public static MessageIdentifier getByName(String name)
   {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			MessageIdentifier result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
-				return result;
-			}
-		}
-		return null;
-	}
+    for (int i = 0; i < VALUES_ARRAY.length; ++i)
+    {
+      MessageIdentifier result = VALUES_ARRAY[i];
+      if (result.getName().equals(name))
+      {
+        return result;
+      }
+    }
+    return null;
+  }
 
   /**
-	 * Returns the '<em><b>Message Identifier</b></em>' literal with the specified integer value.
-	 * <!-- begin-user-doc -->
+   * Returns the '<em><b>Message Identifier</b></em>' literal with the specified integer value.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the integer value.
-	 * @return the matching enumerator or <code>null</code>.
-	 * @generated
-	 */
+   * @param value the integer value.
+   * @return the matching enumerator or <code>null</code>.
+   * @generated
+   */
   public static MessageIdentifier get(int value)
   {
-		switch (value) {
-			case NONE_VALUE: return NONE;
-			case GENERATED_VALUE: return GENERATED;
-			case MD5_VALUE: return MD5;
-			case SHA256_VALUE: return SHA256;
-		}
-		return null;
-	}
+    switch (value)
+    {
+      case NONE_VALUE: return NONE;
+      case GENERATED_VALUE: return GENERATED;
+      case MD5_VALUE: return MD5;
+      case SHA256_VALUE: return SHA256;
+    }
+    return null;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private final int value;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private final String name;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private final String literal;
 
   /**
-	 * Only this class can construct instances.
-	 * <!-- begin-user-doc -->
+   * Only this class can construct instances.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private MessageIdentifier(int value, String name, String literal)
   {
-		this.value = value;
-		this.name = name;
-		this.literal = literal;
-	}
+    this.value = value;
+    this.name = name;
+    this.literal = literal;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public int getValue()
   {
-	  return value;
-	}
+    return value;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String getName()
   {
-	  return name;
-	}
+    return name;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String getLiteral()
   {
-	  return literal;
-	}
+    return literal;
+  }
 
   /**
-	 * Returns the literal value of the enumerator, which is its string representation.
-	 * <!-- begin-user-doc -->
+   * Returns the literal value of the enumerator, which is its string representation.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String toString()
   {
-		return literal;
-	}
+    return literal;
+  }
   
 } //MessageIdentifier

@@ -288,7 +288,8 @@ class ServerInterface extends AbstractType implements IClass {
 			void subscribe(«channelSubscribeConfigurationInterface.name» config, Consumer<«receivedClass.name»> callback, Function<String, «api.transform.messageInterface.name»> reifyMessageFunction) throws «serverExceptionClass.name»;
 			
 			/**
-			 * Unsubscribes from the events specified in the given {@link «channelSubscribeConfigurationInterface.name»}
+			 * Unsubscribes the given {@link Consumer} callback from the events specified 
+			 * in the given {@link «channelSubscribeConfigurationInterface.name»}
 			 * in the {@link «name»}. If {@link «name»} is not connected to 
 			 * {@link «channelPublishConfigurationInterface.name»}, a connection is done prior to the unsubscription.
 			 * 
@@ -296,7 +297,7 @@ class ServerInterface extends AbstractType implements IClass {
 			 *         if any error prevents from unsubscribing. The underlying cause may be 
 			 *         wrapped in this {@link Exception}
 			 */
-			void unsubscribe(«channelSubscribeConfigurationInterface.name» config) throws «serverExceptionClass.name»;
+			void unsubscribe(«channelSubscribeConfigurationInterface.name» config, Consumer<«receivedClass.name»> callback) throws «serverExceptionClass.name»;
 			
 			«receivedClass.serialize»
 			

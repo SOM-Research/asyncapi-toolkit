@@ -4,6 +4,7 @@ import io.github.abelgomez.asyncapi.asyncApi.Channel
 import io.github.abelgomez.asyncapi.generator.infra.IClass
 import io.github.abelgomez.asyncapi.generator.infra.ISerializable
 import io.github.abelgomez.asyncapi.generator.target.AbstractType
+import io.github.abelgomez.asyncapi.generator.target.parameters.EmptyParametersClass
 import io.github.abelgomez.asyncapi.generator.target.parameters.ParametersClass
 import java.util.Collections
 import java.util.TreeSet
@@ -31,6 +32,8 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 	def initialize() {
 		if (!channel.parameters.isEmpty) {
 			parametersClass = ParametersClass.createFrom(channel)
+		} else {
+			parametersClass = EmptyParametersClass.createFrom(channel)
 		}
 	}
 	
@@ -63,10 +66,8 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 			result += "java.util.Collections"
 			result += "java.util.Map"
 		}
-		if (!channel.parameters.isEmpty) {
-			result += "java.util.Map.Entry"
-		}
 		if (parametersClass !== null) {
+			result += "java.util.Map.Entry"
 			result += parametersInterface.fqn
 			result += parametersClass.asBuilder.fqn
 			result += parametersClass.imports
@@ -94,6 +95,14 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 		return channel.api.transform.channelInterface.channelSubscribeConfigurationInterface
 	}
 	
+	def publishOperationClass() {
+		return channel.publish?.transform
+	}
+	
+	def subscribeOperationClass() {
+		return channel.subscribe?.transform
+	}
+	
 	override serialize() '''
 		package «pkg»;
 
@@ -114,6 +123,14 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 			
 			static final String TOPIC_PATTERN = "«channel.wildcardify»";
 			
+			«IF channel.publish !== null»
+			public static final «channel.publish.transform.name» «channel.publish.transform.name» = new «channel.publish.transform.name»();
+			
+			«ENDIF»
+			«IF channel.subscribe !== null»
+			public static final «channel.subscribe.transform.name» «channel.subscribe.transform.name» = new «channel.subscribe.transform.name»();
+			
+			«ENDIF»
 			/**
 			 * Private constructor. This class is a singleton and should not be extended or instantiated
 			 */
@@ -148,36 +165,11 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 			«ENDIF»
 			
 			«IF channel.publish !== null»
-			«IF channel.parameters.isEmpty»
-			/**
-			 * Creates a new {@link «channelPublishConfigurationInterface.name»} for this {@link IChannel} 
-			 */
-			«channelPublishConfigurationInterface.name» newPublishConfiguration() {
-				return new  «channelPublishConfigurationInterface.name»() {
-					@Override
-					public Map<String, String> getParameters() {
-						return Collections.emptyMap();
-					}
-					@Override
-					public «name» getChannel() {
-						return «name».this;
-					}
-					@Override
-					public String getActualChannelName() {
-						return getChannel().getName();
-					}
-					@Override
-					public Class<? extends «channelInterface.operationInterface.name»> getOperation() {
-						return «channel.publish.transform.name».class;
-					}
-				}; 
-			}
-			«ELSE»
 			/**
 			 * Creates a new {@link «channelPublishConfigurationInterface.name»} for this {@link IChannel} for the 
 			 * given {@link «parametersClass.name»} 
 			 */
-			«channelPublishConfigurationInterface.name» newPublishConfiguration(«parametersClass.name» params) {
+			«channelPublishConfigurationInterface.name» newPublishConfiguration(«channel.api.transform.parametersInterface.name» params) {
 				return new  «channelPublishConfigurationInterface.name»() {
 					@Override
 					public Map<String, String> getParameters() {
@@ -212,7 +204,6 @@ class ChannelClass extends AbstractType implements IClass, ISerializable {
 			}
 			
 			«parametersClass.serialize»
-			«ENDIF»
 			«ENDIF»
 			
 			@Override

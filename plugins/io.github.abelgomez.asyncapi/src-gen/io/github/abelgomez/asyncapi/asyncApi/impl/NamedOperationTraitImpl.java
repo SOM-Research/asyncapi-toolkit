@@ -33,231 +33,238 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class NamedOperationTraitImpl extends MinimalEObjectImpl.Container implements NamedOperationTrait
 {
   /**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
   protected String name = NAME_EDEFAULT;
 
   /**
-	 * The cached value of the '{@link #getOperationTrait() <em>Operation Trait</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getOperationTrait() <em>Operation Trait</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getOperationTrait()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getOperationTrait()
+   * @generated
+   * @ordered
+   */
   protected AbstractOperationTrait operationTrait;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected NamedOperationTraitImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return AsyncApiPackage.Literals.NAMED_OPERATION_TRAIT;
-	}
+    return AsyncApiPackage.Literals.NAMED_OPERATION_TRAIT;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String getName()
   {
-		return name;
-	}
+    return name;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void setName(String newName)
   {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.NAMED_OPERATION_TRAIT__NAME, oldName, name));
-	}
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.NAMED_OPERATION_TRAIT__NAME, oldName, name));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public AbstractOperationTrait getOperationTrait()
   {
-		return operationTrait;
-	}
+    return operationTrait;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public NotificationChain basicSetOperationTrait(AbstractOperationTrait newOperationTrait, NotificationChain msgs)
   {
-		AbstractOperationTrait oldOperationTrait = operationTrait;
-		operationTrait = newOperationTrait;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT, oldOperationTrait, newOperationTrait);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+    AbstractOperationTrait oldOperationTrait = operationTrait;
+    operationTrait = newOperationTrait;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT, oldOperationTrait, newOperationTrait);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void setOperationTrait(AbstractOperationTrait newOperationTrait)
   {
-		if (newOperationTrait != operationTrait) {
-			NotificationChain msgs = null;
-			if (operationTrait != null)
-				msgs = ((InternalEObject)operationTrait).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT, null, msgs);
-			if (newOperationTrait != null)
-				msgs = ((InternalEObject)newOperationTrait).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT, null, msgs);
-			msgs = basicSetOperationTrait(newOperationTrait, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT, newOperationTrait, newOperationTrait));
-	}
+    if (newOperationTrait != operationTrait)
+    {
+      NotificationChain msgs = null;
+      if (operationTrait != null)
+        msgs = ((InternalEObject)operationTrait).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT, null, msgs);
+      if (newOperationTrait != null)
+        msgs = ((InternalEObject)newOperationTrait).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT, null, msgs);
+      msgs = basicSetOperationTrait(newOperationTrait, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT, newOperationTrait, newOperationTrait));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT:
-				return basicSetOperationTrait(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT:
+        return basicSetOperationTrait(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case AsyncApiPackage.NAMED_OPERATION_TRAIT__NAME:
-				return getName();
-			case AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT:
-				return getOperationTrait();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.NAMED_OPERATION_TRAIT__NAME:
+        return getName();
+      case AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT:
+        return getOperationTrait();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case AsyncApiPackage.NAMED_OPERATION_TRAIT__NAME:
-				setName((String)newValue);
-				return;
-			case AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT:
-				setOperationTrait((AbstractOperationTrait)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.NAMED_OPERATION_TRAIT__NAME:
+        setName((String)newValue);
+        return;
+      case AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT:
+        setOperationTrait((AbstractOperationTrait)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case AsyncApiPackage.NAMED_OPERATION_TRAIT__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT:
-				setOperationTrait((AbstractOperationTrait)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.NAMED_OPERATION_TRAIT__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT:
+        setOperationTrait((AbstractOperationTrait)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case AsyncApiPackage.NAMED_OPERATION_TRAIT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT:
-				return operationTrait != null;
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.NAMED_OPERATION_TRAIT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AsyncApiPackage.NAMED_OPERATION_TRAIT__OPERATION_TRAIT:
+        return operationTrait != null;
+    }
+    return super.eIsSet(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String toString()
   {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
+  }
 
 } //NamedOperationTraitImpl

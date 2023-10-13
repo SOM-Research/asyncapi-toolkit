@@ -3,10 +3,71 @@
  */
 package io.github.abelgomez.asyncapi.ui.contentassist
 
+import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtext.Assignment
+import org.eclipse.xtext.EcoreUtil2
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
 
 /**
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#content-assist
  * on how to customize the content assistant.
  */
 class AsyncApiProposalProvider extends AbstractAsyncApiProposalProvider {
+	
+	
+//	override complete_AbstractMessageReference(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+//		super.complete_AbstractMessageReference(model, ruleCall, context, acceptor)
+//	}
+//	
+//	override complete_AbstractMessageTraitReference(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+//		super.complete_AbstractMessageTraitReference(model, ruleCall, context, acceptor)
+//	}
+//	
+//	
+//	override complete_AbstractOperationTraitReference(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+//		super.complete_AbstractOperationTraitReference(model, ruleCall, context, acceptor)
+//	}
+//
+//	override complete_AbstractParameterReference(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+//		super.complete_AbstractParameterReference(model, ruleCall, context, acceptor)
+//	}
+//
+//	override complete_AbstractQoSMetricReference(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+//		super.complete_AbstractQoSMetricReference(model, ruleCall, context, acceptor)
+//	}
+//	
+//	override complete_AbstractSchemaReference(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+//		super.complete_AbstractSchemaReference(model, ruleCall, context, acceptor)
+//	}
+//	
+
+	override completeReference_Uri(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeReference_Uri(model, assignment, context, acceptor)
+		var api = EcoreUtil2.getContainerOfType(model, AsyncAPI);
+		api?.components?.operationTraits?.forEach [
+			acceptor.accept(createCompletionProposal("\"#/components/operationTraits/" + name + "\"", context))
+		]
+		api?.components?.messages?.forEach [
+			acceptor.accept(createCompletionProposal("\"#/components/messages/" + name + "\"", context))
+		]
+		api?.components?.messageTraits?.forEach [
+			acceptor.accept(createCompletionProposal("\"#/components/messageTraits/" + name + "\"", context))
+		]
+		api?.components?.schemas?.forEach [
+			acceptor.accept(createCompletionProposal("\"#/components/schemas/" + name + "\"", context))
+		]
+		api?.components?.parameters?.forEach [
+			acceptor.accept(createCompletionProposal("\"#/components/parameters/" + name + "\"", context))
+		]
+		api?.components?.schemas?.forEach [
+			acceptor.accept(createCompletionProposal("\"#/components/schemas/" + name + "\"", context))
+		]
+		api?.components?.qosMetrics?.forEach [
+			acceptor.accept(createCompletionProposal("\"#/components/x-qosMetrics/" + name + "\"", context))
+		]
+		acceptor.accept(createCompletionProposal("\"#/components/", context))
+	}
+	
 }

@@ -20,24 +20,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class AbstractParameterImpl extends MinimalEObjectImpl.Container implements AbstractParameter
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected AbstractParameterImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return AsyncApiPackage.Literals.ABSTRACT_PARAMETER;
-	}
+    return AsyncApiPackage.Literals.ABSTRACT_PARAMETER;
+  }
 
 } //AbstractParameterImpl

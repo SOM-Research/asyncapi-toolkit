@@ -1,9 +1,11 @@
 package main;
 
 import java.text.MessageFormat;
+import java.util.function.Consumer;
 
 import example.architecture.infra.IServer;
-import example.architecture.iotbox._id_.monitor.ReceiveStatusOperation;
+import example.architecture.infra.IServer.Received;
+import example.architecture.iotbox._id_.monitor.MonitorChannel;
 import example.architecture.servers.ProductionServer;
 
 public class SubscribeExample {
@@ -12,10 +14,12 @@ public class SubscribeExample {
 		// Create Server
 		IServer production = ProductionServer.create();
 		
+		Consumer<Received> consumer = null;
+
 		try {
 			
 			// Subscribe to channel on server, and set the callback function
-			ReceiveStatusOperation.subscribe(production, (message, params) -> {
+			consumer = MonitorChannel.ReceiveStatusOperation.subscribe(production, (message, params) -> {
 				System.out.println(MessageFormat.format(
 					"Message received from IoTBox ''{0}''!",
 					params.getId()
@@ -40,7 +44,7 @@ public class SubscribeExample {
 			System.in.read();
 		} finally { 
 			// Unsubscribe and disconnect
-			ReceiveStatusOperation.unsubscribe(production);
+			MonitorChannel.ReceiveStatusOperation.unsubscribe(production, consumer);
 			production.disconnect();
 		}
 	}

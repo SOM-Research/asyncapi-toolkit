@@ -73,6 +73,7 @@ class ParametersInterface extends AbstractType implements IType {
 	override imports() {
 		val result = new TreeSet
 		result += "java.util.List"
+		result += "java.util.Map"
 		return Collections.unmodifiableNavigableSet(result)
 	}
 	
@@ -91,6 +92,12 @@ class ParametersInterface extends AbstractType implements IType {
 			«parameterLiteralInterface.serialize»
 			
 			List<IParameterLiteral> getParameterLiterals();
+			
+			/**
+			 * Returns the parameters as a {@link Map}
+			 */
+			public Map<String, String> asMap();
+		
 		}
 	'''
 }

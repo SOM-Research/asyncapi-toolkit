@@ -7,8 +7,8 @@ import example.architecture.components.schemas.BeltInfo;
 import example.architecture.components.schemas.PathInfo;
 import example.architecture.infra.IChannel.IChannelPublishConfiguration;
 import example.architecture.infra.IServer;
+import example.architecture.iotbox._id_.monitor.MonitorChannel;
 import example.architecture.iotbox._id_.monitor.MonitorChannel.MonitorChannelParameters;
-import example.architecture.iotbox._id_.monitor.SendStatusOperation;
 import example.architecture.servers.ProductionServer;
 
 public class PublishExample  {
@@ -38,15 +38,15 @@ public class PublishExample  {
 				.build();
 			
 			// Create configuration parameters for Channel
-			MonitorChannelParameters params = SendStatusOperation.newParametersBuilder()
+			MonitorChannelParameters params = MonitorChannel.SendStatusOperation.newParametersBuilder()
 					.withId("box1")
 				.build();
 			
 			// Create configuration
-			IChannelPublishConfiguration config = SendStatusOperation.newConfiguration(params);
+			IChannelPublishConfiguration config = MonitorChannel.SendStatusOperation.newConfiguration(params);
 
 			// Publish message
-			SendStatusOperation.publish(production, config, payload);
+			MonitorChannel.SendStatusOperation.publish(production, config, payload);
 			System.out.println(MessageFormat.format(
 					"Publishing on topic ''{0}'':\n{1}", 
 					config.getActualChannelName(), 

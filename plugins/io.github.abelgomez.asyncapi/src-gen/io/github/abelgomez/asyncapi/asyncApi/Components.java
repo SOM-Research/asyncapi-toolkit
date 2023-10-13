@@ -31,75 +31,75 @@ import org.eclipse.emf.ecore.EObject;
 public interface Components extends EObject
 {
   /**
-	 * Returns the value of the '<em><b>Schemas</b></em>' containment reference list.
-	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Schemas</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedSchema}.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Schemas</em>' containment reference list.
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_Schemas()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Schemas</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_Schemas()
+   * @model containment="true"
+   * @generated
+   */
   EList<NamedSchema> getSchemas();
 
   /**
-	 * Returns the value of the '<em><b>Messages</b></em>' containment reference list.
-	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedMessage}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Messages</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedMessage}.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Messages</em>' containment reference list.
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_Messages()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Messages</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_Messages()
+   * @model containment="true"
+   * @generated
+   */
   EList<NamedMessage> getMessages();
 
   /**
-	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter}.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' containment reference list.
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_Parameters()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Parameters</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_Parameters()
+   * @model containment="true"
+   * @generated
+   */
   EList<NamedParameter> getParameters();
 
   /**
-	 * Returns the value of the '<em><b>Operation Traits</b></em>' containment reference list.
-	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Operation Traits</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait}.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Operation Traits</em>' containment reference list.
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_OperationTraits()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Operation Traits</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_OperationTraits()
+   * @model containment="true"
+   * @generated
+   */
   EList<NamedOperationTrait> getOperationTraits();
 
   /**
-	 * Returns the value of the '<em><b>Message Traits</b></em>' containment reference list.
-	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Message Traits</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait}.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Message Traits</em>' containment reference list.
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_MessageTraits()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Message Traits</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_MessageTraits()
+   * @model containment="true"
+   * @generated
+   */
   EList<NamedMessageTrait> getMessageTraits();
 
   /**
-	 * Returns the value of the '<em><b>Qos Metrics</b></em>' containment reference list.
-	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.QoSMetric}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Qos Metrics</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric}.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Qos Metrics</em>' containment reference list.
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_QosMetrics()
-	 * @model containment="true"
-	 * @generated
-	 */
-  EList<QoSMetric> getQosMetrics();
+   * @return the value of the '<em>Qos Metrics</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getComponents_QosMetrics()
+   * @model containment="true"
+   * @generated
+   */
+  EList<NamedQoSMetric> getQosMetrics();
 
 } // Components

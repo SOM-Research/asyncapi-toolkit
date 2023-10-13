@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SlaImpl#getGuaranteeTerm <em>Guarantee Term</em>}</li>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.SlaImpl#getGuaranteeTerms <em>Guarantee Terms</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,127 +37,133 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class SlaImpl extends MinimalEObjectImpl.Container implements Sla
 {
   /**
-	 * The cached value of the '{@link #getGuaranteeTerm() <em>Guarantee Term</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getGuaranteeTerms() <em>Guarantee Terms</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getGuaranteeTerm()
-	 * @generated
-	 * @ordered
-	 */
-  protected EList<GuaranteeTerm> guaranteeTerm;
+   * @see #getGuaranteeTerms()
+   * @generated
+   * @ordered
+   */
+  protected EList<GuaranteeTerm> guaranteeTerms;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected SlaImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return AsyncApiPackage.Literals.SLA;
-	}
+    return AsyncApiPackage.Literals.SLA;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
-  public EList<GuaranteeTerm> getGuaranteeTerm()
+  public EList<GuaranteeTerm> getGuaranteeTerms()
   {
-		if (guaranteeTerm == null) {
-			guaranteeTerm = new EObjectContainmentEList<GuaranteeTerm>(GuaranteeTerm.class, this, AsyncApiPackage.SLA__GUARANTEE_TERM);
-		}
-		return guaranteeTerm;
-	}
+    if (guaranteeTerms == null)
+    {
+      guaranteeTerms = new EObjectContainmentEList<GuaranteeTerm>(GuaranteeTerm.class, this, AsyncApiPackage.SLA__GUARANTEE_TERMS);
+    }
+    return guaranteeTerms;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case AsyncApiPackage.SLA__GUARANTEE_TERM:
-				return ((InternalEList<?>)getGuaranteeTerm()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.SLA__GUARANTEE_TERMS:
+        return ((InternalEList<?>)getGuaranteeTerms()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case AsyncApiPackage.SLA__GUARANTEE_TERM:
-				return getGuaranteeTerm();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.SLA__GUARANTEE_TERMS:
+        return getGuaranteeTerms();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case AsyncApiPackage.SLA__GUARANTEE_TERM:
-				getGuaranteeTerm().clear();
-				getGuaranteeTerm().addAll((Collection<? extends GuaranteeTerm>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.SLA__GUARANTEE_TERMS:
+        getGuaranteeTerms().clear();
+        getGuaranteeTerms().addAll((Collection<? extends GuaranteeTerm>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case AsyncApiPackage.SLA__GUARANTEE_TERM:
-				getGuaranteeTerm().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.SLA__GUARANTEE_TERMS:
+        getGuaranteeTerms().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case AsyncApiPackage.SLA__GUARANTEE_TERM:
-				return guaranteeTerm != null && !guaranteeTerm.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.SLA__GUARANTEE_TERMS:
+        return guaranteeTerms != null && !guaranteeTerms.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
 
 } //SlaImpl

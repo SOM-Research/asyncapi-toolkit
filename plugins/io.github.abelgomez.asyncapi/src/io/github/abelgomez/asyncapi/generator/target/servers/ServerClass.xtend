@@ -68,8 +68,8 @@ abstract class ServerClass extends AbstractType implements IClass {
 		return server.api.transform.serverInterface.receivedClass
 	}
 	
-	protected def sendMonitoringEventOperationClass() {
-		return server.api.channels.findFirst[getName() == AsyncApiGeneratorDelegate.MONITORING_TOPIC]?.publish?.transform
+	protected def monitoringEventChannelClass() {
+		return server.api.channels.findFirst[getName() == AsyncApiGeneratorDelegate.MONITORING_TOPIC]?.transform.channelClass
 	}
 	
 	protected def boolean isMonitored() {
@@ -98,6 +98,8 @@ abstract class ServerClass extends AbstractType implements IClass {
 		«ENDIF»
 	'''
 
+
+	// TODO: change "create(user, password, ...)" methods to "create(Map properties, ...)"
 	protected def staticMethods() '''
 		«IF isMonitored»
 			/**
@@ -135,14 +137,14 @@ abstract class ServerClass extends AbstractType implements IClass {
 	'''
 
 	protected def monitoringMethods() '''
-«««		«IF isMonitored»
-«««
-«««			/**
-«««			 * Return the {@link «serverInterface.name»} that should monitor this {@link «serverInterface.name»}
-«««			 */
-«««			public «serverInterface.name» getMonitoringServer() {
-«««				return monitoringServer;
-«««			}
-«««		«ENDIF»
+		«IF isMonitored»
+
+			/**
+			 * Return the {@link «serverInterface.name»} that should monitor this {@link «serverInterface.name»}
+			 */
+			public «serverInterface.name» getMonitoringServer() {
+				return monitoringServer;
+			}
+		«ENDIF»
 	'''
 }

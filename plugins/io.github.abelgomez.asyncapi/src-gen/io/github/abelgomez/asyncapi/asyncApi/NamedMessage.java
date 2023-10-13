@@ -25,47 +25,47 @@ import org.eclipse.emf.ecore.EObject;
 public interface NamedMessage extends EObject
 {
   /**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getNamedMessage_Name()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getNamedMessage_Name()
+   * @model
+   * @generated
+   */
   String getName();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessage#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessage#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
   void setName(String value);
 
   /**
-	 * Returns the value of the '<em><b>Message</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Message</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Message</em>' containment reference.
-	 * @see #setMessage(AbstractMessage)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getNamedMessage_Message()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Message</em>' containment reference.
+   * @see #setMessage(AbstractMessage)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getNamedMessage_Message()
+   * @model containment="true"
+   * @generated
+   */
   AbstractMessage getMessage();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessage#getMessage <em>Message</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessage#getMessage <em>Message</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Message</em>' containment reference.
-	 * @see #getMessage()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Message</em>' containment reference.
+   * @see #getMessage()
+   * @generated
+   */
   void setMessage(AbstractMessage value);
 
 } // NamedMessage

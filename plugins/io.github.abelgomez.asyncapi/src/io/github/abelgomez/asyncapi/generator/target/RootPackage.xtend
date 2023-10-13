@@ -1,6 +1,7 @@
 package io.github.abelgomez.asyncapi.generator.target
 
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
+import io.github.abelgomez.asyncapi.asyncApi.Boolean
 import io.github.abelgomez.asyncapi.generator.target.channels.ChannelInterface
 import io.github.abelgomez.asyncapi.generator.target.channels.OperationInterface
 import io.github.abelgomez.asyncapi.generator.target.json.JsonSerializableInterface
@@ -16,7 +17,9 @@ import static extension io.github.abelgomez.asyncapi.generator.utils.StringUtils
 class RootPackage extends AbstractPackage {
 
 	AsyncAPI api
+	
 	ServersPackage serversPackage
+	
 	ServerInterface serverInterface
 	MonitoredServerInterface monitoredServerInterface
 	ChannelInterface channelInterface
@@ -24,7 +27,12 @@ class RootPackage extends AbstractPackage {
 	ParametersInterface parametersInterface
 	MessageInterface messageInterface
 	JsonSerializableInterface jsonSerializableInterface
-	
+
+	MonitoringPackage monitoringPackage
+	ExpressionsPackage expressionsPackage
+	GuaranteeTermsPackage guaranteeTermsPackage
+	MetricsPackage metricsPackage
+	InstrumentsPackage instrumentsPackage
 
 	static def createFrom(AsyncAPI api) {
 		return new RootPackage(api)
@@ -44,6 +52,14 @@ class RootPackage extends AbstractPackage {
 		parametersInterface = ParametersInterface.createFrom(api)
 		messageInterface = MessageInterface.createFrom(api)
 		jsonSerializableInterface = JsonSerializableInterface.createFrom(api)
+
+		if (api?.servers.exists[isMonitored == Boolean._TRUE]) {
+			monitoringPackage = MonitoringPackage.createFrom(api)
+			expressionsPackage = ExpressionsPackage.createFrom(api)
+			metricsPackage = MetricsPackage.createFrom(api)
+			instrumentsPackage = InstrumentsPackage.createFrom(api)
+			guaranteeTermsPackage = GuaranteeTermsPackage.createFrom(api?.sla)
+		}		
 	}
 	
 	def serversPackage() {
@@ -65,7 +81,7 @@ class RootPackage extends AbstractPackage {
 	def operationInterface() {
 		return operationInterface
 	}
-	
+
 	def parametersInterface() {
 		return parametersInterface
 	}
@@ -76,6 +92,26 @@ class RootPackage extends AbstractPackage {
 
 	def jsonSerializableInterface() {
 		return jsonSerializableInterface
+	}
+
+	def monitoringPackage() {
+		return monitoringPackage
+	}
+	
+	def expressionsPackage() {
+		return expressionsPackage
+	}
+	
+	def guaranteeTermsPackage() {
+		return guaranteeTermsPackage
+	}
+
+	def metricsPackage() {
+		return metricsPackage
+	}
+	
+	def instrumentsPackage() {
+		return instrumentsPackage
 	}
 
 	override name() {
@@ -95,5 +131,12 @@ class RootPackage extends AbstractPackage {
 		parametersInterface?.generate(fsa)
 		messageInterface?.generate(fsa)
 		jsonSerializableInterface?.generate(fsa)
+
+		monitoringPackage?.saveContents(fsa, context)
+		expressionsPackage?.saveContents(fsa, context)
+		guaranteeTermsPackage?.saveContents(fsa, context)
+		metricsPackage?.saveContents(fsa, context)
+		instrumentsPackage?.saveContents(fsa, context)
+
 	}
 }

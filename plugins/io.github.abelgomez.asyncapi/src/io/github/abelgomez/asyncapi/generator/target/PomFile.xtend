@@ -77,7 +77,7 @@ class RootPomFile implements IGenerable, ISerializable {
 			<modelVersion>4.0.0</modelVersion>
 			<properties>
 		        <com.google.code.gson.version>2.8.9</com.google.code.gson.version>
-		        <com.google.guava.version>31.1-jre</com.google.guava.version>
+		        <com.google.guava.version>32.1.3-jre</com.google.guava.version>
 		        <org.eclipse.paho.version>1.2.5</org.eclipse.paho.version>
 		        <org.apache.kafka.version>3.2.0</org.apache.kafka.version>
 		        <commons-codec.version>1.16.0</commons-codec.version>
@@ -91,6 +91,11 @@ class RootPomFile implements IGenerable, ISerializable {
 					<groupId>com.google.code.gson</groupId>
 					<artifactId>gson</artifactId>
 					<version>${com.google.code.gson.version}</version>
+				</dependency>
+				<dependency>
+				    <groupId>com.google.guava</groupId>
+				    <artifactId>guava</artifactId>
+				    <version>${com.google.guava.version}</version>
 				</dependency>
 				«IF api.servers.exists[s | s.protocol == Protocol.MQTT || s.protocol == Protocol.SECURE_MQTT]»
 				<dependency>

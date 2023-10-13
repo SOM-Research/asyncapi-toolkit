@@ -11,6 +11,7 @@ import io.github.abelgomez.asyncapi.asyncApi.Slo;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -18,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -31,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.GuaranteeTermImpl#getName <em>Name</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.GuaranteeTermImpl#getScopes <em>Scopes</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.GuaranteeTermImpl#getQualifyingConditions <em>Qualifying Conditions</em>}</li>
  *   <li>{@link io.github.abelgomez.asyncapi.asyncApi.impl.GuaranteeTermImpl#getSlos <em>Slos</em>}</li>
@@ -41,201 +44,281 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class GuaranteeTermImpl extends MinimalEObjectImpl.Container implements GuaranteeTerm
 {
   /**
-	 * The cached value of the '{@link #getScopes() <em>Scopes</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getScopes()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getScopes() <em>Scopes</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getScopes()
+   * @generated
+   * @ordered
+   */
   protected EList<Scope> scopes;
 
   /**
-	 * The cached value of the '{@link #getQualifyingConditions() <em>Qualifying Conditions</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getQualifyingConditions() <em>Qualifying Conditions</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getQualifyingConditions()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getQualifyingConditions()
+   * @generated
+   * @ordered
+   */
   protected EList<QualifyingCondition> qualifyingConditions;
 
   /**
-	 * The cached value of the '{@link #getSlos() <em>Slos</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getSlos() <em>Slos</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getSlos()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getSlos()
+   * @generated
+   * @ordered
+   */
   protected EList<Slo> slos;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected GuaranteeTermImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return AsyncApiPackage.Literals.GUARANTEE_TERM;
-	}
+    return AsyncApiPackage.Literals.GUARANTEE_TERM;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
+  @Override
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.GUARANTEE_TERM__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public EList<Scope> getScopes()
   {
-		if (scopes == null) {
-			scopes = new EObjectContainmentEList<Scope>(Scope.class, this, AsyncApiPackage.GUARANTEE_TERM__SCOPES);
-		}
-		return scopes;
-	}
+    if (scopes == null)
+    {
+      scopes = new EObjectContainmentEList<Scope>(Scope.class, this, AsyncApiPackage.GUARANTEE_TERM__SCOPES);
+    }
+    return scopes;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EList<QualifyingCondition> getQualifyingConditions()
   {
-		if (qualifyingConditions == null) {
-			qualifyingConditions = new EObjectContainmentEList<QualifyingCondition>(QualifyingCondition.class, this, AsyncApiPackage.GUARANTEE_TERM__QUALIFYING_CONDITIONS);
-		}
-		return qualifyingConditions;
-	}
+    if (qualifyingConditions == null)
+    {
+      qualifyingConditions = new EObjectContainmentEList<QualifyingCondition>(QualifyingCondition.class, this, AsyncApiPackage.GUARANTEE_TERM__QUALIFYING_CONDITIONS);
+    }
+    return qualifyingConditions;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EList<Slo> getSlos()
   {
-		if (slos == null) {
-			slos = new EObjectContainmentEList<Slo>(Slo.class, this, AsyncApiPackage.GUARANTEE_TERM__SLOS);
-		}
-		return slos;
-	}
+    if (slos == null)
+    {
+      slos = new EObjectContainmentEList<Slo>(Slo.class, this, AsyncApiPackage.GUARANTEE_TERM__SLOS);
+    }
+    return slos;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case AsyncApiPackage.GUARANTEE_TERM__SCOPES:
-				return ((InternalEList<?>)getScopes()).basicRemove(otherEnd, msgs);
-			case AsyncApiPackage.GUARANTEE_TERM__QUALIFYING_CONDITIONS:
-				return ((InternalEList<?>)getQualifyingConditions()).basicRemove(otherEnd, msgs);
-			case AsyncApiPackage.GUARANTEE_TERM__SLOS:
-				return ((InternalEList<?>)getSlos()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.GUARANTEE_TERM__SCOPES:
+        return ((InternalEList<?>)getScopes()).basicRemove(otherEnd, msgs);
+      case AsyncApiPackage.GUARANTEE_TERM__QUALIFYING_CONDITIONS:
+        return ((InternalEList<?>)getQualifyingConditions()).basicRemove(otherEnd, msgs);
+      case AsyncApiPackage.GUARANTEE_TERM__SLOS:
+        return ((InternalEList<?>)getSlos()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case AsyncApiPackage.GUARANTEE_TERM__SCOPES:
-				return getScopes();
-			case AsyncApiPackage.GUARANTEE_TERM__QUALIFYING_CONDITIONS:
-				return getQualifyingConditions();
-			case AsyncApiPackage.GUARANTEE_TERM__SLOS:
-				return getSlos();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.GUARANTEE_TERM__NAME:
+        return getName();
+      case AsyncApiPackage.GUARANTEE_TERM__SCOPES:
+        return getScopes();
+      case AsyncApiPackage.GUARANTEE_TERM__QUALIFYING_CONDITIONS:
+        return getQualifyingConditions();
+      case AsyncApiPackage.GUARANTEE_TERM__SLOS:
+        return getSlos();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case AsyncApiPackage.GUARANTEE_TERM__SCOPES:
-				getScopes().clear();
-				getScopes().addAll((Collection<? extends Scope>)newValue);
-				return;
-			case AsyncApiPackage.GUARANTEE_TERM__QUALIFYING_CONDITIONS:
-				getQualifyingConditions().clear();
-				getQualifyingConditions().addAll((Collection<? extends QualifyingCondition>)newValue);
-				return;
-			case AsyncApiPackage.GUARANTEE_TERM__SLOS:
-				getSlos().clear();
-				getSlos().addAll((Collection<? extends Slo>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.GUARANTEE_TERM__NAME:
+        setName((String)newValue);
+        return;
+      case AsyncApiPackage.GUARANTEE_TERM__SCOPES:
+        getScopes().clear();
+        getScopes().addAll((Collection<? extends Scope>)newValue);
+        return;
+      case AsyncApiPackage.GUARANTEE_TERM__QUALIFYING_CONDITIONS:
+        getQualifyingConditions().clear();
+        getQualifyingConditions().addAll((Collection<? extends QualifyingCondition>)newValue);
+        return;
+      case AsyncApiPackage.GUARANTEE_TERM__SLOS:
+        getSlos().clear();
+        getSlos().addAll((Collection<? extends Slo>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case AsyncApiPackage.GUARANTEE_TERM__SCOPES:
-				getScopes().clear();
-				return;
-			case AsyncApiPackage.GUARANTEE_TERM__QUALIFYING_CONDITIONS:
-				getQualifyingConditions().clear();
-				return;
-			case AsyncApiPackage.GUARANTEE_TERM__SLOS:
-				getSlos().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.GUARANTEE_TERM__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case AsyncApiPackage.GUARANTEE_TERM__SCOPES:
+        getScopes().clear();
+        return;
+      case AsyncApiPackage.GUARANTEE_TERM__QUALIFYING_CONDITIONS:
+        getQualifyingConditions().clear();
+        return;
+      case AsyncApiPackage.GUARANTEE_TERM__SLOS:
+        getSlos().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case AsyncApiPackage.GUARANTEE_TERM__SCOPES:
-				return scopes != null && !scopes.isEmpty();
-			case AsyncApiPackage.GUARANTEE_TERM__QUALIFYING_CONDITIONS:
-				return qualifyingConditions != null && !qualifyingConditions.isEmpty();
-			case AsyncApiPackage.GUARANTEE_TERM__SLOS:
-				return slos != null && !slos.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.GUARANTEE_TERM__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AsyncApiPackage.GUARANTEE_TERM__SCOPES:
+        return scopes != null && !scopes.isEmpty();
+      case AsyncApiPackage.GUARANTEE_TERM__QUALIFYING_CONDITIONS:
+        return qualifyingConditions != null && !qualifyingConditions.isEmpty();
+      case AsyncApiPackage.GUARANTEE_TERM__SLOS:
+        return slos != null && !slos.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
+  }
 
 } //GuaranteeTermImpl

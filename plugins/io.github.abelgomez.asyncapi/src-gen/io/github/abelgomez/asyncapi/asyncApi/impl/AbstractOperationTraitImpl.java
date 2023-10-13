@@ -20,24 +20,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class AbstractOperationTraitImpl extends MinimalEObjectImpl.Container implements AbstractOperationTrait
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected AbstractOperationTraitImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return AsyncApiPackage.Literals.ABSTRACT_OPERATION_TRAIT;
-	}
+    return AsyncApiPackage.Literals.ABSTRACT_OPERATION_TRAIT;
+  }
 
 } //AbstractOperationTraitImpl

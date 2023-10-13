@@ -1,20 +1,26 @@
 package io.github.abelgomez.asyncapi.generator
 
 import io.github.abelgomez.asyncapi.asyncApi.AbstractMessage
+import io.github.abelgomez.asyncapi.asyncApi.AbstractParameter
+import io.github.abelgomez.asyncapi.asyncApi.AbstractQoSMetric
 import io.github.abelgomez.asyncapi.asyncApi.AbstractSchema
 import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
 import io.github.abelgomez.asyncapi.asyncApi.Channel
+import io.github.abelgomez.asyncapi.asyncApi.ComparisonExpression
 import io.github.abelgomez.asyncapi.asyncApi.Components
 import io.github.abelgomez.asyncapi.asyncApi.JsonType
 import io.github.abelgomez.asyncapi.asyncApi.Message
 import io.github.abelgomez.asyncapi.asyncApi.NamedMessage
 import io.github.abelgomez.asyncapi.asyncApi.NamedParameter
+import io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric
 import io.github.abelgomez.asyncapi.asyncApi.NamedSchema
 import io.github.abelgomez.asyncapi.asyncApi.Operation
 import io.github.abelgomez.asyncapi.asyncApi.Parameter
+import io.github.abelgomez.asyncapi.asyncApi.QoSMetric
 import io.github.abelgomez.asyncapi.asyncApi.Reference
 import io.github.abelgomez.asyncapi.asyncApi.Schema
 import io.github.abelgomez.asyncapi.asyncApi.Server
+import io.github.abelgomez.asyncapi.asyncApi.Slo
 import io.github.abelgomez.asyncapi.asyncApi.Variable
 import io.github.abelgomez.asyncapi.generator.infra.ITargetElement
 import io.github.abelgomez.asyncapi.generator.utils.Assertions
@@ -24,7 +30,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.EcoreUtil2
 
 import static extension java.text.MessageFormat.*
-import io.github.abelgomez.asyncapi.asyncApi.AbstractParameter
+import io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition
+import io.github.abelgomez.asyncapi.asyncApi.GuaranteeTerm
 
 class ModelExtensions {
 	
@@ -86,6 +93,10 @@ class ModelExtensions {
 		return abstractMessage instanceof Message
 	}
 	
+	static def isQoSMetric(AbstractQoSMetric abstractQoSMetric) {
+		return abstractQoSMetric instanceof QoSMetric
+	}
+	
 	static def isPublish(Operation o) {
 		return (o.eContainer as Channel)?.publish == o	
 	}
@@ -98,7 +109,6 @@ class ModelExtensions {
 		nm.parameter.resolve
 	}
 	
-	// TODO: make private again to check usages of this method
 	static def Parameter resolve(AbstractParameter p) {
 		return switch p {
 			Parameter:
@@ -114,7 +124,6 @@ class ModelExtensions {
 		ns.schema.resolve
 	}
 	
-	// TODO: make private again to check usages of this method
 	static def Schema resolve(AbstractSchema s) {
 		return switch s {
 			Schema:
@@ -130,7 +139,6 @@ class ModelExtensions {
 		nm.message.resolve
 	}
 	
-	// TODO: make private again to check usages of this method
 	static def Message resolve(AbstractMessage m) {
 		return switch m {
 			Message:
@@ -139,6 +147,21 @@ class ModelExtensions {
 				m.resolve(NamedMessage).message.resolve
 			default:
 				Assertions.fail("Unexpected abstract message: ''{0}''".format(m))
+		}
+	}
+	
+	static def QoSMetric resolve(NamedQoSMetric nm) {
+		nm.qosMetric.resolve
+	}
+	
+	static def QoSMetric resolve(AbstractQoSMetric m) {
+		return switch m {
+			QoSMetric:
+				m
+			Reference:
+				m.resolve(NamedQoSMetric).qosMetric.resolve
+			default:
+				Assertions.fail("Unexpected abstract QoS Metric: ''{0}''".format(m))
 		}
 	}
 	
@@ -159,6 +182,18 @@ class ModelExtensions {
 			default: s?.eContainmentFeature?.name
 		}
 	}
+
+	static def name(QoSMetric m) {
+		val eContainer = m.eContainer
+		return switch (eContainer) {
+			NamedQoSMetric: eContainer.name
+			ComparisonExpression: 
+				if (eContainer.eContainer instanceof Slo) (eContainer.eContainer as Slo).name
+				else if (eContainer.eContainer instanceof QualifyingCondition) (eContainer.eContainer as QualifyingCondition).name
+				else m?.eContainmentFeature?.name
+			default: m?.eContainmentFeature?.name
+		}
+	}
 	
 	static def String wildcardify(Channel channel) {
 		var result = channel.name;
@@ -167,7 +202,7 @@ class ModelExtensions {
 		}
 		return result;
 	}
-	
+
 	static def friendlyName(Schema s) {
 		return s.title ?: s.name
 	}
@@ -188,6 +223,10 @@ class ModelExtensions {
 		return c.schemas.filter[ns | ns.schema.isSchema].map[ns | ns.schema as Schema].filter[s | s.isObjectType || s.isEnumType]
 	}
 
+	static def nestedMetrics(Components c) {
+		return c.qosMetrics.filter[nm | nm.qosMetric.isQoSMetric].map[nm | nm.qosMetric as QoSMetric]
+	}
+	
 	static def nestedPayload(Message m) {
 		return if (m.payload.isSchema) m.payload as Schema
 	}
@@ -204,12 +243,20 @@ class ModelExtensions {
 		return if (s.items.isSchema) s.items as Schema
 	}
 	
+	static def nestedMetrics(GuaranteeTerm t) {
+		return t.eAllContents.filter(QoSMetric).toIterable
+	}
+	
 	static def isReusable(Message m) {
 		return m?.eContainer instanceof NamedMessage && m?.eContainer?.eContainer instanceof Components  
 	}
 	
 	static def isReusable(Schema s) {
 		return s?.eContainer instanceof NamedSchema && s?.eContainer?.eContainer instanceof Components  
+	}
+	
+	static def isReusable(QoSMetric m) {
+		return m?.eContainer instanceof NamedQoSMetric && m?.eContainer?.eContainer instanceof Components  
 	}
 	
 	static def isObjectType(Schema s) {
@@ -264,7 +311,7 @@ class ModelExtensions {
 		while (!stack.isEmpty) {
 			val eClass = elt.eClass
 			val featureName = stack.pop
-			var featureValue = elt.eGet(eClass.EAllReferences.findFirst[ref | ref.name == featureName])
+			var featureValue = elt.eGet(eClass.EAllReferences.findFirst[name == featureName || 'x-' + name == featureName])
 			switch featureValue {
 				EObject:
 					elt = featureValue

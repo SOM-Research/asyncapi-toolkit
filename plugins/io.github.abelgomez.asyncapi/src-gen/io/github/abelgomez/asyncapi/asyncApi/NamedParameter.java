@@ -25,47 +25,47 @@ import org.eclipse.emf.ecore.EObject;
 public interface NamedParameter extends EObject
 {
   /**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getNamedParameter_Name()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getNamedParameter_Name()
+   * @model
+   * @generated
+   */
   String getName();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
   void setName(String value);
 
   /**
-	 * Returns the value of the '<em><b>Parameter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Parameter</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameter</em>' containment reference.
-	 * @see #setParameter(AbstractParameter)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getNamedParameter_Parameter()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Parameter</em>' containment reference.
+   * @see #setParameter(AbstractParameter)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getNamedParameter_Parameter()
+   * @model containment="true"
+   * @generated
+   */
   AbstractParameter getParameter();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter#getParameter <em>Parameter</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter#getParameter <em>Parameter</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parameter</em>' containment reference.
-	 * @see #getParameter()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Parameter</em>' containment reference.
+   * @see #getParameter()
+   * @generated
+   */
   void setParameter(AbstractParameter value);
 
 } // NamedParameter

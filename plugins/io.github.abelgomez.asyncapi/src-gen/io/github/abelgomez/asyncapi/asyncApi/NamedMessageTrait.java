@@ -25,47 +25,47 @@ import org.eclipse.emf.ecore.EObject;
 public interface NamedMessageTrait extends EObject
 {
   /**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getNamedMessageTrait_Name()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getNamedMessageTrait_Name()
+   * @model
+   * @generated
+   */
   String getName();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
   void setName(String value);
 
   /**
-	 * Returns the value of the '<em><b>Message Trait</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Message Trait</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Message Trait</em>' containment reference.
-	 * @see #setMessageTrait(AbstractMessageTrait)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getNamedMessageTrait_MessageTrait()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Message Trait</em>' containment reference.
+   * @see #setMessageTrait(AbstractMessageTrait)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getNamedMessageTrait_MessageTrait()
+   * @model containment="true"
+   * @generated
+   */
   AbstractMessageTrait getMessageTrait();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait#getMessageTrait <em>Message Trait</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait#getMessageTrait <em>Message Trait</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Message Trait</em>' containment reference.
-	 * @see #getMessageTrait()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Message Trait</em>' containment reference.
+   * @see #getMessageTrait()
+   * @generated
+   */
   void setMessageTrait(AbstractMessageTrait value);
 
 } // NamedMessageTrait

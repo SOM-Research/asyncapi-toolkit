@@ -11,7 +11,6 @@ import static extension io.github.abelgomez.asyncapi.generator.ModelExtensions.*
 import static extension io.github.abelgomez.asyncapi.generator.TransformationContext.*
 import static extension io.github.abelgomez.asyncapi.generator.utils.StringUtils.*
 import static extension java.text.MessageFormat.*
-import io.github.abelgomez.asyncapi.generator.AsyncApiGeneratorDelegate
 
 class MqttServerClass extends ServerClass implements IClass {
 
@@ -34,7 +33,6 @@ class MqttServerClass extends ServerClass implements IClass {
 		
 	override imports() {
 		val result = new TreeSet		
-		result += "java.text.MessageFormat"
 		result += "java.util.List"
 		result += "java.util.Map"
 		result += "java.util.HashMap"
@@ -42,6 +40,8 @@ class MqttServerClass extends ServerClass implements IClass {
 		result += "java.util.function.Function"
 		result += "java.util.regex.Pattern"
 		result += "java.util.regex.Matcher"
+		result += "com.google.common.collect.Multimap"
+		result += "com.google.common.collect.MultimapBuilder"
 		result += "org.eclipse.paho.client.mqttv3.MqttClient"
 		result += "org.eclipse.paho.client.mqttv3.MqttConnectOptions"
 		result += "org.eclipse.paho.client.mqttv3.MqttException"
@@ -59,7 +59,8 @@ class MqttServerClass extends ServerClass implements IClass {
 		result += channelSubscribeConfigurationInterface.fqn
 		if (isMonitored) {
 			result += "java.util.Calendar"
-			result += sendMonitoringEventOperationClass.fqn
+			result += monitoringEventChannelClass.fqn
+			result += monitoringEventChannelClass.publishOperationClass.fqn
 		}
 		return Collections.unmodifiableNavigableSet(result)
 	}
@@ -123,7 +124,7 @@ class MqttServerClass extends ServerClass implements IClass {
 			/**
 			 * Map containing the registered {@link MqttCallbacks}s for the different {@link MqttClients}s
 			 */
-			private Map<MqttClient, Consumer<«receivedClass.name»>> callbacks = new HashMap<>();
+			private Multimap<MqttClient, Consumer<Received>> callbacks = MultimapBuilder.hashKeys().arrayListValues().build();
 			
 			«monitoringProperties»
 			«staticMethods»
@@ -149,11 +150,11 @@ class MqttServerClass extends ServerClass implements IClass {
 					}
 					«IF isMonitored»
 					// Notify that the client has successfully connected
-					«sendMonitoringEventOperationClass.name».publish(monitoringServer, 
+					«monitoringEventChannelClass.name».«monitoringEventChannelClass.publishOperationClass.name».publish(monitoringServer, 
 						SendMonitoringEventOperation.Message.Payload.newBuilder()
 							.withTimestamp(Calendar.getInstance().toInstant().toString())
 							.withClientId(client.getClientId())
-							.withEvent(«sendMonitoringEventOperationClass.name».Message.Payload.Event.CLIENT_CONNECTED)
+							.withEvent(«monitoringEventChannelClass.publishOperationClass.name».Message.Payload.Event.CLIENT_CONNECTED)
 							.build());
 					«ENDIF»
 				} 
@@ -176,11 +177,11 @@ class MqttServerClass extends ServerClass implements IClass {
 					}
 					«IF isMonitored»
 					// Notify that the client has cleanly disconnected
-					«sendMonitoringEventOperationClass.name».publish(monitoringServer, 
-						SendMonitoringEventOperation.Message.Payload.newBuilder()
+					«monitoringEventChannelClass.name».«monitoringEventChannelClass.publishOperationClass.name».publish(monitoringServer, 
+						«monitoringEventChannelClass.publishOperationClass.name».Message.Payload.newBuilder()
 							.withTimestamp(Calendar.getInstance().toInstant().toString())
 							.withClientId(client.getClientId())
-							.withEvent(«sendMonitoringEventOperationClass.name».Message.Payload.Event.CLIENT_DISCONNECTED)
+							.withEvent(«monitoringEventChannelClass.publishOperationClass.name».Message.Payload.Event.CLIENT_DISCONNECTED)
 							.build());
 					«ENDIF»
 				} 
@@ -233,12 +234,12 @@ class MqttServerClass extends ServerClass implements IClass {
 				}
 				«IF isMonitored»
 				// Notify that a message has been sent
-				«sendMonitoringEventOperationClass.name».publish(monitoringServer, 
-					«sendMonitoringEventOperationClass.name».Message.Payload.newBuilder()
+				«monitoringEventChannelClass.name».«monitoringEventChannelClass.publishOperationClass.name».publish(monitoringServer, 
+					«monitoringEventChannelClass.publishOperationClass.name».Message.Payload.newBuilder()
 						.withTimestamp(Calendar.getInstance().toInstant().toString())
 						.withClientId(client.getClientId())
 						.withMessageId(message.getIdentifier().orElse(null))
-						.withEvent(«sendMonitoringEventOperationClass.name».Message.Payload.Event.MESSAGE_SENT)
+						.withEvent(«monitoringEventChannelClass.publishOperationClass.name».Message.Payload.Event.MESSAGE_SENT)
 						.build());
 				«ENDIF»
 			}
@@ -246,71 +247,75 @@ class MqttServerClass extends ServerClass implements IClass {
 			@Override
 			public void subscribe(«channelSubscribeConfigurationInterface.name» config, Consumer<«receivedClass.name»> callback, Function<String, «server.api.transform.messageInterface.name»> reifyMessageFunction) throws «serverExceptionClass.name» {
 			    MqttClient client = getClientFor(config.getOperation());
-			    if (callbacks.containsKey(client)) {
-			    	throw new IllegalStateException(
-			    		MessageFormat.format("Callback function already registered for ''{0}''. Unsubscribe from ''{0}'' before trying to register a new callback.", 
-			    		config.getChannel().getName()));
-			    }
 				connect(config.getOperation());
-				client.setCallback(new MqttCallback() {
-					@Override
-					public void messageArrived(String topic, MqttMessage message) throws Exception {
-						Received received = Received.from(message.getPayload(),
-								parseParams(topic, config.getChannel().getName(), config.getChannel().getParameterLiterals()));
+				if (callbacks.get(client).isEmpty()) {
+					MqttCallback mqttCallback = new MqttCallback() {
+						@Override
+						public void messageArrived(String topic, MqttMessage message) throws Exception {
+							Received received = Received.from(message.getPayload(),
+									parseParams(topic, config.getChannel().getName(), config.getChannel().getParameterLiterals()));
+							«IF isMonitored»
+							// Notify that a message has been received
+							«monitoringEventChannelClass.name».«monitoringEventChannelClass.publishOperationClass.name».publish(monitoringServer, 
+								«monitoringEventChannelClass.publishOperationClass.name».Message.Payload.newBuilder()
+									.withTimestamp(Calendar.getInstance().toInstant().toString())
+									.withClientId(client.getClientId())
+									.withMessageId(reifyMessageFunction.apply(new String(received.getRawData())).getIdentifier().orElse(null))
+									.withEvent(«monitoringEventChannelClass.publishOperationClass.name».Message.Payload.Event.MESSAGE_RECEIVED)
+									.build());
+							«ENDIF»
+							callbacks.get(client).stream().forEach(c -> c.accept(received));
+						}
+						@Override
+						public void deliveryComplete(IMqttDeliveryToken token) {
+						}
+						@Override
+						public void connectionLost(Throwable cause) {
+						}
+					};
+					client.setCallback(mqttCallback);
+					// Clients may subscribe multiple times to the same topic with different callbacks
+					// We only issue a new subscription the first time a callback is registered for 
+					// a given topic pattern
+					try {
+				    	client.subscribe(config.getSubscriptionPattern(), DEFAULT_QOS);
 						«IF isMonitored»
-						// Notify that a message has been received
-						«sendMonitoringEventOperationClass.name».publish(monitoringServer, 
-							«sendMonitoringEventOperationClass.name».Message.Payload.newBuilder()
+						// Notify that a client has subscribed
+						«monitoringEventChannelClass.name».«monitoringEventChannelClass.publishOperationClass.name».publish(monitoringServer, 
+							«monitoringEventChannelClass.publishOperationClass.name».Message.Payload.newBuilder()
 								.withTimestamp(Calendar.getInstance().toInstant().toString())
 								.withClientId(client.getClientId())
-								.withMessageId(reifyMessageFunction.apply(new String(received.getRawData())).getIdentifier().orElse(null))
-								.withEvent(«sendMonitoringEventOperationClass.name».Message.Payload.Event.MESSAGE_RECEIVED)
+								.withEvent(«monitoringEventChannelClass.publishOperationClass.name».Message.Payload.Event.CLIENT_SUBSCRIBED)
 								.build());
 						«ENDIF»
-						callback.accept(received);
+					} catch (MqttException e) {
+						throw new ServerException(e);
 					}
-					@Override
-					public void deliveryComplete(IMqttDeliveryToken token) {
-					}
-					@Override
-					public void connectionLost(Throwable cause) {
-					}
-				});
+				}
 				callbacks.put(client, callback);
 
-				try {
-			    	client.subscribe(config.getSubscriptionPattern(), DEFAULT_QOS);
-					«IF isMonitored»
-					// Notify that a client has subscribed
-					«sendMonitoringEventOperationClass.name».publish(monitoringServer, 
-						«sendMonitoringEventOperationClass.name».Message.Payload.newBuilder()
-							.withTimestamp(Calendar.getInstance().toInstant().toString())
-							.withClientId(client.getClientId())
-							.withEvent(«sendMonitoringEventOperationClass.name».Message.Payload.Event.CLIENT_SUBSCRIBED)
-							.build());
-					«ENDIF»
-				} catch (MqttException e) {
-					throw new ServerException(e);
-				}
 			}
 			
 			@Override
-			public void unsubscribe(«channelSubscribeConfigurationInterface.name» config) throws «serverExceptionClass.name» {
+			public void unsubscribe(«channelSubscribeConfigurationInterface.name» config, Consumer<«serverInterface.receivedClass.name»> callback) throws «serverExceptionClass.name» {
 				MqttClient client = getClientFor(config.getOperation());
 				connect(config.getOperation());
 				try {
-			    	client.unsubscribe(config.getSubscriptionPattern());
-					«IF isMonitored»
-					// Notify that a client has unsubscribed
-					«sendMonitoringEventOperationClass.name».publish(monitoringServer, 
-						«sendMonitoringEventOperationClass.name».Message.Payload.newBuilder()
-							.withTimestamp(Calendar.getInstance().toInstant().toString())
-							.withClientId(client.getClientId())
-							.withEvent(«sendMonitoringEventOperationClass.name».Message.Payload.Event.CLIENT_UNSUBSCRIBED)
-							.build());
-					«ENDIF»
-			    	client.setCallback(null);
-			    	callbacks.remove(client);
+					// Clients may subscribe multiple times to the same topic with different callbacks
+					// We only issue a complete unsubscription when all callbacks have been de-registered.
+					if (callbacks.get(client).isEmpty()) {
+			    		client.unsubscribe(config.getSubscriptionPattern());
+						«IF isMonitored»
+						// Notify that a client has unsubscribed
+						«monitoringEventChannelClass.name».«monitoringEventChannelClass.publishOperationClass.name».publish(monitoringServer, 
+							«monitoringEventChannelClass.publishOperationClass.name».Message.Payload.newBuilder()
+								.withTimestamp(Calendar.getInstance().toInstant().toString())
+								.withClientId(client.getClientId())
+								.withEvent(«monitoringEventChannelClass.publishOperationClass.name».Message.Payload.Event.CLIENT_UNSUBSCRIBED)
+								.build());
+						«ENDIF»
+			    	}
+			    	callbacks.remove(client, callback);
 				} catch (MqttException e) {
 					throw new ServerException(e);
 				}

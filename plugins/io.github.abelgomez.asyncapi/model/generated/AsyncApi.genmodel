@@ -21,6 +21,7 @@
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="AsyncApi.ecore#//QoSMetricType">
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/availability"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/period"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/bandwith"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/cpu"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/capacity"/>
@@ -35,14 +36,14 @@
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/latency"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/load_balancing"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/maximum_throughput"/>
-      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/memory_aapacity"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/memory_capacity"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/packet_loss"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/precision"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/probability_of_correctness"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/round_trip_time"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/throughput"/>
-      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/time_to_tail"/>
-      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/time_to_tepair"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/time_to_fail"/>
+      <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/time_to_repair"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/type_consistency"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/uptime"/>
       <genEnumLiterals ecoreEnumLiteral="AsyncApi.ecore#//QoSMetricType/up_to_dateness"/>
@@ -236,9 +237,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//Components/qosMetrics"/>
     </genClasses>
     <genClasses ecoreClass="AsyncApi.ecore#//Sla">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//Sla/guaranteeTerm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//Sla/guaranteeTerms"/>
     </genClasses>
     <genClasses ecoreClass="AsyncApi.ecore#//GuaranteeTerm">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//GuaranteeTerm/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//GuaranteeTerm/scopes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//GuaranteeTerm/qualifyingConditions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//GuaranteeTerm/slos"/>
@@ -256,15 +258,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//Slo/condition"/>
     </genClasses>
     <genClasses ecoreClass="AsyncApi.ecore#//AbstractQoSMetric"/>
-    <genClasses ecoreClass="AsyncApi.ecore#//QoSMetricReference">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//QoSMetricReference/metric"/>
-    </genClasses>
     <genClasses ecoreClass="AsyncApi.ecore#//QoSMetric">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//QoSMetric/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//QoSMetric/metricType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//QoSMetric/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//QoSMetric/unit"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//QoSMetric/groupedByEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="AsyncApi.ecore#//NamedQoSMetric">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//NamedQoSMetric/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AsyncApi.ecore#//NamedQoSMetric/qosMetric"/>
     </genClasses>
     <genClasses ecoreClass="AsyncApi.ecore#//DerivedQoSMetric">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AsyncApi.ecore#//DerivedQoSMetric/window"/>

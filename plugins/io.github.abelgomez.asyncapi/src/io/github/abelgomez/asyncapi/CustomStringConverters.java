@@ -9,7 +9,7 @@ import com.google.inject.Inject;
 
 public class CustomStringConverters extends DefaultTerminalConverters {
 
-	// TODO: This converter will raise a warning when used with a non-terminal
+	// FIXME: This converter will raise a warning when used with a non-terminal
 	// rule, but for the moment, it works...
 	@Inject
 	private STRINGValueConverter stringValueConverter;

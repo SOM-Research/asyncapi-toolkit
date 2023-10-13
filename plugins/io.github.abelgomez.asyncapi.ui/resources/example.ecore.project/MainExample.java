@@ -1,6 +1,7 @@
 package main;
 
 import java.text.MessageFormat;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import events.components.schemas.Event;
@@ -8,18 +9,19 @@ import events.components.schemas.Sensor;
 import events.components.schemas.Timestamp;
 import events.infra.IChannel.IChannelPublishConfiguration;
 import events.infra.IServer;
+import events.infra.IServer.Received;
+import events.sensors._group_.events.EventsChannel;
 import events.sensors._group_.events.EventsChannel.EventsChannelParameters;
-import events.sensors._group_.events.PublishOperation;
-import events.sensors._group_.events.SubscribeOperation;
 import events.servers.ProductionServer;
 
 public class MainExample {
 	public static void main(String[] args) throws Exception {
 		// Create a connection to the Production server
 		IServer production = ProductionServer.create();
+		Consumer<Received> consumer = null;
 		try {
 			// Register a new subscription to the LightMeasured operation
-			SubscribeOperation.subscribe(production, (message, params) -> {
+			consumer = EventsChannel.SubscribeOperation.subscribe(production, (message, params) -> {
 				// Inform about the message received
 				System.err.println(MessageFormat.format("Received message from sensor ''{0}'' in group ''{1}'':\n{2}",
 						message.getPayload().orElseThrow().getName(), params.getGroup(), message.getPayload().orElseThrow().getEvents().stream()
@@ -42,8 +44,8 @@ public class MainExample {
 						.build();
 
 				// Create the parameters
-				EventsChannelParameters params = PublishOperation.newParametersBuilder().withGroup("MyGroup").build();
-				IChannelPublishConfiguration configuration = PublishOperation.newConfiguration(params);
+				EventsChannelParameters params = EventsChannel.PublishOperation.newParametersBuilder().withGroup("MyGroup").build();
+				IChannelPublishConfiguration configuration = EventsChannel.PublishOperation.newConfiguration(params);
 				// Inform about the message to be sent
 				// Note that the "retrieveTopicName" method allows getting the topic (channel)
 				// with the parameters set to
@@ -53,11 +55,11 @@ public class MainExample {
 						payload.toJson(true)));
 
 				// Publish the LightMeasured message
-				PublishOperation.publish(production, configuration, payload);
+				EventsChannel.PublishOperation.publish(production, configuration, payload);
 			}
 		} finally {
 			// Unsubscribe from the topic and disconnect
-			SubscribeOperation.unsubscribe(production);
+			EventsChannel.SubscribeOperation.unsubscribe(production, consumer);
 			production.disconnect();
 		}
 	}

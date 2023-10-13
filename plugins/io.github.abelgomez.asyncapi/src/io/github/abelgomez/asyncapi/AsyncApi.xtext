@@ -185,62 +185,58 @@ Components:
 		& ( '"parameters"' ':' '{' parameters+=NamedParameter (',' parameters+=NamedParameter)* '}' ','? )?
 		& ( '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait (',' operationTraits+=NamedOperationTrait)* '}' ','? )?
 		& ( '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait (',' messageTraits+=NamedMessageTrait)* '}' ','? )?
-		& ( '"x-qosMetrics"' ':' '[' qosMetrics+=QoSMetric (',' qosMetrics+=QoSMetric)* ']' ','? )?
+		& ( '"x-qosMetrics"' ':' '{' qosMetrics+=NamedQoSMetric (',' qosMetrics+=NamedQoSMetric)* '}' ','? )?
 //		& ( GenericJsonTupleButRef ','? )*
 	) '}';
 
 
 Sla:
 	{Sla} '{' (
-		  ( '"guaranteeTerm"' ':' guaranteeTerm+=GuaranteeTerm (',' guaranteeTerm+=GuaranteeTerm)* )
+		  ( '"guaranteeTerms"' ':' '{' guaranteeTerms+=GuaranteeTerm (',' guaranteeTerms+=GuaranteeTerm)* '}' )?
 	) '}';
 	
 GuaranteeTerm:
-	{GuaranteeTerm} '{' (
-		  ( '"scopes"' ':' '{' scopes+=Scope (',' scopes+=Scope)* '}' ',' )
-		  ( '"qualifyingConditions"' ':' '{' qualifyingConditions+=QualifyingCondition (',' qualifyingConditions+=QualifyingCondition)* '}'',')?
-		  ( '"slos"' ':' '{' slos+=Slo (',' slos+=Slo)* '}')	  
+	{GuaranteeTerm} name=AnyString ':' '{' (
+		  ( '"scopes"' ':' '{' scopes+=Scope (',' scopes+=Scope)* '}' ','? )
+		  & ( '"qualifyingConditions"' ':' '{' qualifyingConditions+=QualifyingCondition (',' qualifyingConditions+=QualifyingCondition)* '}' ','? )?
+		  & ( '"slos"' ':' '{' slos+=Slo (',' slos+=Slo)* '}' ','? )	  
 	) '}';
 
 Scope:
-	{Scope}(
-	   name=AnyString ':' reference= [Channel|AnyString]  
+	{Scope} (
+	   name=AnyString ':' reference= [Channel|AnyString]
 	);
  
 QualifyingCondition:
-	{QualifyingCondition} name=AnyString ':' condition=BooleanExpression  
-;
+	{QualifyingCondition} name=AnyString ':' condition=BooleanExpression;
 	
 Slo:
-	{Slo} name=AnyString ':' condition=BooleanExpression 
-;		
+	{Slo} name=AnyString ':' condition=BooleanExpression;		
 	
 AbstractQoSMetric:
-  QoSMetricReference | QoSMetric;
+  Reference | QoSMetric;
 
-QoSMetricReference:
-  metric= [QoSMetric|AnyString]	
-;
-	
 QoSMetric:
 	('{' 
 		(
-		  ( '"name"' ':' name=AnyString ','? )						
-		& ( '"metricType"' ':' metricType=QoSMetricType ','? )			
+		( '"metricType"' ':' metricType=QoSMetricType ','? )			
 		& ( '"description"' ':' description=AnyString ','? )?
 		& ( '"unit"' ':' unit=QoSMetricUnit ','? )
-		& ( '"groupedByEvent"' ':' groupedByEvent=Boolean ','? )		
+		& ( '"groupedByEvent"' ':' groupedByEvent=Boolean ','? )
 		) (DerivedQoSMetric)?	// Això està al final de tot, pq Xtext es queixa que no pot haver-hi una unasssigned rule dins d'una unordered list.		
 	'}');
 
- DerivedQoSMetric:
+NamedQoSMetric:
+	{NamedQoSMetric} name=AnyString ':' qosMetric=AbstractQoSMetric;
+
+
+DerivedQoSMetric:
 	{DerivedQoSMetric}(
 		'"derivedQoSMetricDefinition"' ':' '{' (
 		  ('"window"' ':'  window = AnyString ','? )
 		& ('"windowUnit"' ':'  windowUnit = WindowUnit ','? )
 		& ('"aggregationFunction"' ':'  aggregationFunction = AggregationFunction ','? )
-	) '}' )
-;
+	) '}' );
 
 BooleanExpression:
 	AndExpression | OrExpression | ComparisonExpression;
@@ -284,22 +280,22 @@ enum WindowUnit:
 	| minutes = '"minutes"'
 	| hours = '"hours"'
 	| days = '"days"'
-	| messages = '"messages"'
-;
+	| messages = '"messages"';
 
 enum AggregationFunction:
 	AVG = '"AVG"'
 	| MEDIAN = '"MEDIAN"'
 	| MAX = '"MAX"'
-    | MIN = '"MIN"'
-;
+    | MIN = '"MIN"';
 
 enum QoSMetricType:
 	availability = '"availability"'
+	| period = '"period"'
 	| bandwith = '"bandwith"'
 	| cpu = '"cpu"'
 	| capacity = '"capacity"'
-	| disaster = '"disaster"' | resiliance = '"resiliance"'
+	| disaster = '"disaster"'
+	| resiliance = '"resiliance"'
 	| discoverability = '"discoverability"'
 	| documentation = '"documentation"'
 	| exception_handling = '"exception_handling"'
@@ -309,34 +305,31 @@ enum QoSMetricType:
 	| latency = '"latency"'
 	| load_balancing = '"load_balancing"'
 	| maximum_throughput = '"maximum_throughput"'
-	| memory_aapacity = '"memory_aapacity"'
+	| memory_capacity = '"memory_capacity"'
 	| packet_loss = '"packet_loss"'
 	| precision = '"precision"'
 	| probability_of_correctness = '"probability_of_correctness"'
 	| round_trip_time = '"round_trip_time"'
 	| throughput = '"throughput"'
-	| time_to_tail = '"time_to_tail"'
-	| time_to_tepair = '"time_to_tepair"'
+	| time_to_fail = '"time_to_fail"'
+	| time_to_repair = '"time_to_repair"'
 	| type_consistency = '"type_consistency"'
 	| uptime = '"uptime"'
-	| up_to_dateness = '"up-to-dateness"'
-;
+	| up_to_dateness = '"up-to-dateness"';
 
 enum QoSMetricUnit:
 	milliseconds = '"milliseconds"'
 	| seconds = '"seconds"'
 	| minutes = '"minutes"'
 	| hours = '"hours"'
-	| null = '"null"'
-;
+	| null = '"null"';
 
 enum Operator: 
 	greater = '">"'
 	| greater_equal = '">="'
 	| equal = '"="'
 	| less_equal = '"<="'
-	| less = '"<"'	
-;
+	| less = '"<"';
 	
 
 enum JsonType:

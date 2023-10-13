@@ -3,15 +3,15 @@ package main;
 import java.text.MessageFormat;
 import java.time.LocalDateTime;
 import java.util.UUID;
+import java.util.function.Consumer;
 
 import streetlights.api.components.schemas.LightMeasuredPayload;
 import streetlights.api.infra.IChannel.IChannelPublishConfiguration;
 import streetlights.api.infra.IServer;
+import streetlights.api.infra.IServer.Received;
 import streetlights.api.servers.ProductionServer;
 import streetlights.api.smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.MeasuredChannel;
 import streetlights.api.smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.MeasuredChannel.MeasuredChannelParameters;
-import streetlights.api.smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.ReceiveLightMeasurementOperation;
-import streetlights.api.smartylighting.streetlights._1._0.event._streetlightId_.lighting.measured.SendLightMeasurementOperation;
 
 /**
  * Example program demonstrating how the generated code can be used. To execute
@@ -26,9 +26,10 @@ public class MainExample {
 	public static void main(String[] args) throws Exception {
 		// Create a connection to the Production server
 		IServer production = ProductionServer.create();
+		Consumer<Received> consumer = null;
 		try {
 			// Register a new subscription to the LightMeasured operation
-			ReceiveLightMeasurementOperation.subscribe(production, 
+			consumer = MeasuredChannel.ReceiveLightMeasurementOperation.subscribe(production, 
 					(message, params) -> {
 				// Inform about the message received
 				System.err.println(MessageFormat.format(
@@ -53,11 +54,11 @@ public class MainExample {
 						.build();
 				
 				// Set the value of the parameters. Notice that a setter is also provided
-				MeasuredChannelParameters params = SendLightMeasurementOperation.newParametersBuilder()
+				MeasuredChannelParameters params = MeasuredChannel.SendLightMeasurementOperation.newParametersBuilder()
 						.withStreetlightId(UUID.randomUUID().toString()).build();
 
 				// Create an IChannelPublishConfiguration so that we can query the actual topic name in the IServer
-				IChannelPublishConfiguration config = SendLightMeasurementOperation.newConfiguration(params);
+				IChannelPublishConfiguration config = MeasuredChannel.SendLightMeasurementOperation.newConfiguration(params);
 
 				// Inform about the message to be sent
 				System.out.println(MessageFormat.format(
@@ -65,11 +66,11 @@ public class MainExample {
 						config.getActualChannelName(),
 						payload.toJson(true)));
 				
-				SendLightMeasurementOperation.publish(production, config, payload);
+				MeasuredChannel.SendLightMeasurementOperation.publish(production, config, payload);
 			}
 		} finally {
 			// Unsubscribe from the topic and disconnect
-			ReceiveLightMeasurementOperation.unsubscribe(production);
+			MeasuredChannel.ReceiveLightMeasurementOperation.unsubscribe(production, consumer);
 			production.disconnect();
 		}
 	}

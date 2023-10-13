@@ -3091,14 +3091,14 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Group cGroup_2_5 = (Group)cUnorderedGroup_2.eContents().get(5);
 		private final Keyword cXQosMetricsKeyword_2_5_0 = (Keyword)cGroup_2_5.eContents().get(0);
 		private final Keyword cColonKeyword_2_5_1 = (Keyword)cGroup_2_5.eContents().get(1);
-		private final Keyword cLeftSquareBracketKeyword_2_5_2 = (Keyword)cGroup_2_5.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_2_5_2 = (Keyword)cGroup_2_5.eContents().get(2);
 		private final Assignment cQosMetricsAssignment_2_5_3 = (Assignment)cGroup_2_5.eContents().get(3);
-		private final RuleCall cQosMetricsQoSMetricParserRuleCall_2_5_3_0 = (RuleCall)cQosMetricsAssignment_2_5_3.eContents().get(0);
+		private final RuleCall cQosMetricsNamedQoSMetricParserRuleCall_2_5_3_0 = (RuleCall)cQosMetricsAssignment_2_5_3.eContents().get(0);
 		private final Group cGroup_2_5_4 = (Group)cGroup_2_5.eContents().get(4);
 		private final Keyword cCommaKeyword_2_5_4_0 = (Keyword)cGroup_2_5_4.eContents().get(0);
 		private final Assignment cQosMetricsAssignment_2_5_4_1 = (Assignment)cGroup_2_5_4.eContents().get(1);
-		private final RuleCall cQosMetricsQoSMetricParserRuleCall_2_5_4_1_0 = (RuleCall)cQosMetricsAssignment_2_5_4_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_2_5_5 = (Keyword)cGroup_2_5.eContents().get(5);
+		private final RuleCall cQosMetricsNamedQoSMetricParserRuleCall_2_5_4_1_0 = (RuleCall)cQosMetricsAssignment_2_5_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2_5_5 = (Keyword)cGroup_2_5.eContents().get(5);
 		private final Keyword cCommaKeyword_2_5_6 = (Keyword)cGroup_2_5.eContents().get(6);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
@@ -3109,7 +3109,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//        & ( '"parameters"' ':' '{' parameters+=NamedParameter (',' parameters+=NamedParameter)* '}' ','? )?
 		//        & ( '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait (',' operationTraits+=NamedOperationTrait)* '}' ','? )?
 		//        & ( '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait (',' messageTraits+=NamedMessageTrait)* '}' ','? )?
-		//        & ( '"x-qosMetrics"' ':' '[' qosMetrics+=QoSMetric (',' qosMetrics+=QoSMetric)* ']' ','? )?
+		//        & ( '"x-qosMetrics"' ':' '{' qosMetrics+=NamedQoSMetric (',' qosMetrics+=NamedQoSMetric)* '}' ','? )?
 		////        & ( GenericJsonTupleButRef ','? )*
 		//    ) '}';
 		@Override public ParserRule getRule() { return rule; }
@@ -3120,7 +3120,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//        & ( '"parameters"' ':' '{' parameters+=NamedParameter (',' parameters+=NamedParameter)* '}' ','? )?
 		//        & ( '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait (',' operationTraits+=NamedOperationTrait)* '}' ','? )?
 		//        & ( '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait (',' messageTraits+=NamedMessageTrait)* '}' ','? )?
-		//        & ( '"x-qosMetrics"' ':' '[' qosMetrics+=QoSMetric (',' qosMetrics+=QoSMetric)* ']' ','? )?
+		//        & ( '"x-qosMetrics"' ':' '{' qosMetrics+=NamedQoSMetric (',' qosMetrics+=NamedQoSMetric)* '}' ','? )?
 		////        & ( GenericJsonTupleButRef ','? )*
 		//    ) '}'
 		public Group getGroup() { return cGroup; }
@@ -3137,7 +3137,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//        & ( '"parameters"' ':' '{' parameters+=NamedParameter (',' parameters+=NamedParameter)* '}' ','? )?
 		//        & ( '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait (',' operationTraits+=NamedOperationTrait)* '}' ','? )?
 		//        & ( '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait (',' messageTraits+=NamedMessageTrait)* '}' ','? )?
-		//        & ( '"x-qosMetrics"' ':' '[' qosMetrics+=QoSMetric (',' qosMetrics+=QoSMetric)* ']' ','? )?
+		//        & ( '"x-qosMetrics"' ':' '{' qosMetrics+=NamedQoSMetric (',' qosMetrics+=NamedQoSMetric)* '}' ','? )?
 		////        & ( GenericJsonTupleButRef ','? )*
 		//    )
 		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
@@ -3322,7 +3322,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//','?
 		public Keyword getCommaKeyword_2_4_6() { return cCommaKeyword_2_4_6; }
 		
-		//( '"x-qosMetrics"' ':' '[' qosMetrics+=QoSMetric (',' qosMetrics+=QoSMetric)* ']' ','? )?
+		//( '"x-qosMetrics"' ':' '{' qosMetrics+=NamedQoSMetric (',' qosMetrics+=NamedQoSMetric)* '}' ','? )?
 		public Group getGroup_2_5() { return cGroup_2_5; }
 		
 		//'"x-qosMetrics"'
@@ -3331,29 +3331,29 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//':'
 		public Keyword getColonKeyword_2_5_1() { return cColonKeyword_2_5_1; }
 		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_2_5_2() { return cLeftSquareBracketKeyword_2_5_2; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_5_2() { return cLeftCurlyBracketKeyword_2_5_2; }
 		
-		//qosMetrics+=QoSMetric
+		//qosMetrics+=NamedQoSMetric
 		public Assignment getQosMetricsAssignment_2_5_3() { return cQosMetricsAssignment_2_5_3; }
 		
-		//QoSMetric
-		public RuleCall getQosMetricsQoSMetricParserRuleCall_2_5_3_0() { return cQosMetricsQoSMetricParserRuleCall_2_5_3_0; }
+		//NamedQoSMetric
+		public RuleCall getQosMetricsNamedQoSMetricParserRuleCall_2_5_3_0() { return cQosMetricsNamedQoSMetricParserRuleCall_2_5_3_0; }
 		
-		//(',' qosMetrics+=QoSMetric)*
+		//(',' qosMetrics+=NamedQoSMetric)*
 		public Group getGroup_2_5_4() { return cGroup_2_5_4; }
 		
 		//','
 		public Keyword getCommaKeyword_2_5_4_0() { return cCommaKeyword_2_5_4_0; }
 		
-		//qosMetrics+=QoSMetric
+		//qosMetrics+=NamedQoSMetric
 		public Assignment getQosMetricsAssignment_2_5_4_1() { return cQosMetricsAssignment_2_5_4_1; }
 		
-		//QoSMetric
-		public RuleCall getQosMetricsQoSMetricParserRuleCall_2_5_4_1_0() { return cQosMetricsQoSMetricParserRuleCall_2_5_4_1_0; }
+		//NamedQoSMetric
+		public RuleCall getQosMetricsNamedQoSMetricParserRuleCall_2_5_4_1_0() { return cQosMetricsNamedQoSMetricParserRuleCall_2_5_4_1_0; }
 		
-		//']'
-		public Keyword getRightSquareBracketKeyword_2_5_5() { return cRightSquareBracketKeyword_2_5_5; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_5_5() { return cRightCurlyBracketKeyword_2_5_5; }
 		
 		//','?
 		public Keyword getCommaKeyword_2_5_6() { return cCommaKeyword_2_5_6; }
@@ -3367,24 +3367,26 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Action cSlaAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cGuaranteeTermKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cGuaranteeTermsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
-		private final Assignment cGuaranteeTermAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cGuaranteeTermGuaranteeTermParserRuleCall_2_2_0 = (RuleCall)cGuaranteeTermAssignment_2_2.eContents().get(0);
-		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
-		private final Keyword cCommaKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
-		private final Assignment cGuaranteeTermAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
-		private final RuleCall cGuaranteeTermGuaranteeTermParserRuleCall_2_3_1_0 = (RuleCall)cGuaranteeTermAssignment_2_3_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Assignment cGuaranteeTermsAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
+		private final RuleCall cGuaranteeTermsGuaranteeTermParserRuleCall_2_3_0 = (RuleCall)cGuaranteeTermsAssignment_2_3.eContents().get(0);
+		private final Group cGroup_2_4 = (Group)cGroup_2.eContents().get(4);
+		private final Keyword cCommaKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
+		private final Assignment cGuaranteeTermsAssignment_2_4_1 = (Assignment)cGroup_2_4.eContents().get(1);
+		private final RuleCall cGuaranteeTermsGuaranteeTermParserRuleCall_2_4_1_0 = (RuleCall)cGuaranteeTermsAssignment_2_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2_5 = (Keyword)cGroup_2.eContents().get(5);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Sla:
 		//    {Sla} '{' (
-		//          ( '"guaranteeTerm"' ':' guaranteeTerm+=GuaranteeTerm (',' guaranteeTerm+=GuaranteeTerm)* )
+		//          ( '"guaranteeTerms"' ':' '{' guaranteeTerms+=GuaranteeTerm (',' guaranteeTerms+=GuaranteeTerm)* '}' )?
 		//    ) '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Sla} '{' (
-		//      ( '"guaranteeTerm"' ':' guaranteeTerm+=GuaranteeTerm (',' guaranteeTerm+=GuaranteeTerm)* )
+		//      ( '"guaranteeTerms"' ':' '{' guaranteeTerms+=GuaranteeTerm (',' guaranteeTerms+=GuaranteeTerm)* '}' )?
 		//) '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -3395,33 +3397,39 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
 		//(
-		//         ( '"guaranteeTerm"' ':' guaranteeTerm+=GuaranteeTerm (',' guaranteeTerm+=GuaranteeTerm)* )
+		//         ( '"guaranteeTerms"' ':' '{' guaranteeTerms+=GuaranteeTerm (',' guaranteeTerms+=GuaranteeTerm)* '}' )?
 		//   )
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//'"guaranteeTerm"'
-		public Keyword getGuaranteeTermKeyword_2_0() { return cGuaranteeTermKeyword_2_0; }
+		//'"guaranteeTerms"'
+		public Keyword getGuaranteeTermsKeyword_2_0() { return cGuaranteeTermsKeyword_2_0; }
 		
 		//':'
 		public Keyword getColonKeyword_2_1() { return cColonKeyword_2_1; }
 		
-		//guaranteeTerm+=GuaranteeTerm
-		public Assignment getGuaranteeTermAssignment_2_2() { return cGuaranteeTermAssignment_2_2; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_2() { return cLeftCurlyBracketKeyword_2_2; }
+		
+		//guaranteeTerms+=GuaranteeTerm
+		public Assignment getGuaranteeTermsAssignment_2_3() { return cGuaranteeTermsAssignment_2_3; }
 		
 		//GuaranteeTerm
-		public RuleCall getGuaranteeTermGuaranteeTermParserRuleCall_2_2_0() { return cGuaranteeTermGuaranteeTermParserRuleCall_2_2_0; }
+		public RuleCall getGuaranteeTermsGuaranteeTermParserRuleCall_2_3_0() { return cGuaranteeTermsGuaranteeTermParserRuleCall_2_3_0; }
 		
-		//(',' guaranteeTerm+=GuaranteeTerm)*
-		public Group getGroup_2_3() { return cGroup_2_3; }
+		//(',' guaranteeTerms+=GuaranteeTerm)*
+		public Group getGroup_2_4() { return cGroup_2_4; }
 		
 		//','
-		public Keyword getCommaKeyword_2_3_0() { return cCommaKeyword_2_3_0; }
+		public Keyword getCommaKeyword_2_4_0() { return cCommaKeyword_2_4_0; }
 		
-		//guaranteeTerm+=GuaranteeTerm
-		public Assignment getGuaranteeTermAssignment_2_3_1() { return cGuaranteeTermAssignment_2_3_1; }
+		//guaranteeTerms+=GuaranteeTerm
+		public Assignment getGuaranteeTermsAssignment_2_4_1() { return cGuaranteeTermsAssignment_2_4_1; }
 		
 		//GuaranteeTerm
-		public RuleCall getGuaranteeTermGuaranteeTermParserRuleCall_2_3_1_0() { return cGuaranteeTermGuaranteeTermParserRuleCall_2_3_1_0; }
+		public RuleCall getGuaranteeTermsGuaranteeTermParserRuleCall_2_4_1_0() { return cGuaranteeTermsGuaranteeTermParserRuleCall_2_4_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_5() { return cRightCurlyBracketKeyword_2_5; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
@@ -3430,180 +3438,196 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.GuaranteeTerm");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cGuaranteeTermAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Group cGroup_2_0 = (Group)cGroup_2.eContents().get(0);
-		private final Keyword cScopesKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
-		private final Keyword cColonKeyword_2_0_1 = (Keyword)cGroup_2_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2_0_2 = (Keyword)cGroup_2_0.eContents().get(2);
-		private final Assignment cScopesAssignment_2_0_3 = (Assignment)cGroup_2_0.eContents().get(3);
-		private final RuleCall cScopesScopeParserRuleCall_2_0_3_0 = (RuleCall)cScopesAssignment_2_0_3.eContents().get(0);
-		private final Group cGroup_2_0_4 = (Group)cGroup_2_0.eContents().get(4);
-		private final Keyword cCommaKeyword_2_0_4_0 = (Keyword)cGroup_2_0_4.eContents().get(0);
-		private final Assignment cScopesAssignment_2_0_4_1 = (Assignment)cGroup_2_0_4.eContents().get(1);
-		private final RuleCall cScopesScopeParserRuleCall_2_0_4_1_0 = (RuleCall)cScopesAssignment_2_0_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_2_0_5 = (Keyword)cGroup_2_0.eContents().get(5);
-		private final Keyword cCommaKeyword_2_0_6 = (Keyword)cGroup_2_0.eContents().get(6);
-		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
-		private final Keyword cQualifyingConditionsKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
-		private final Keyword cColonKeyword_2_1_1 = (Keyword)cGroup_2_1.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2_1_2 = (Keyword)cGroup_2_1.eContents().get(2);
-		private final Assignment cQualifyingConditionsAssignment_2_1_3 = (Assignment)cGroup_2_1.eContents().get(3);
-		private final RuleCall cQualifyingConditionsQualifyingConditionParserRuleCall_2_1_3_0 = (RuleCall)cQualifyingConditionsAssignment_2_1_3.eContents().get(0);
-		private final Group cGroup_2_1_4 = (Group)cGroup_2_1.eContents().get(4);
-		private final Keyword cCommaKeyword_2_1_4_0 = (Keyword)cGroup_2_1_4.eContents().get(0);
-		private final Assignment cQualifyingConditionsAssignment_2_1_4_1 = (Assignment)cGroup_2_1_4.eContents().get(1);
-		private final RuleCall cQualifyingConditionsQualifyingConditionParserRuleCall_2_1_4_1_0 = (RuleCall)cQualifyingConditionsAssignment_2_1_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_2_1_5 = (Keyword)cGroup_2_1.eContents().get(5);
-		private final Keyword cCommaKeyword_2_1_6 = (Keyword)cGroup_2_1.eContents().get(6);
-		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
-		private final Keyword cSlosKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
-		private final Keyword cColonKeyword_2_2_1 = (Keyword)cGroup_2_2.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2_2_2 = (Keyword)cGroup_2_2.eContents().get(2);
-		private final Assignment cSlosAssignment_2_2_3 = (Assignment)cGroup_2_2.eContents().get(3);
-		private final RuleCall cSlosSloParserRuleCall_2_2_3_0 = (RuleCall)cSlosAssignment_2_2_3.eContents().get(0);
-		private final Group cGroup_2_2_4 = (Group)cGroup_2_2.eContents().get(4);
-		private final Keyword cCommaKeyword_2_2_4_0 = (Keyword)cGroup_2_2_4.eContents().get(0);
-		private final Assignment cSlosAssignment_2_2_4_1 = (Assignment)cGroup_2_2_4.eContents().get(1);
-		private final RuleCall cSlosSloParserRuleCall_2_2_4_1_0 = (RuleCall)cSlosAssignment_2_2_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_2_2_5 = (Keyword)cGroup_2_2.eContents().get(5);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameAnyStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final UnorderedGroup cUnorderedGroup_4 = (UnorderedGroup)cGroup.eContents().get(4);
+		private final Group cGroup_4_0 = (Group)cUnorderedGroup_4.eContents().get(0);
+		private final Keyword cScopesKeyword_4_0_0 = (Keyword)cGroup_4_0.eContents().get(0);
+		private final Keyword cColonKeyword_4_0_1 = (Keyword)cGroup_4_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_4_0_2 = (Keyword)cGroup_4_0.eContents().get(2);
+		private final Assignment cScopesAssignment_4_0_3 = (Assignment)cGroup_4_0.eContents().get(3);
+		private final RuleCall cScopesScopeParserRuleCall_4_0_3_0 = (RuleCall)cScopesAssignment_4_0_3.eContents().get(0);
+		private final Group cGroup_4_0_4 = (Group)cGroup_4_0.eContents().get(4);
+		private final Keyword cCommaKeyword_4_0_4_0 = (Keyword)cGroup_4_0_4.eContents().get(0);
+		private final Assignment cScopesAssignment_4_0_4_1 = (Assignment)cGroup_4_0_4.eContents().get(1);
+		private final RuleCall cScopesScopeParserRuleCall_4_0_4_1_0 = (RuleCall)cScopesAssignment_4_0_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_0_5 = (Keyword)cGroup_4_0.eContents().get(5);
+		private final Keyword cCommaKeyword_4_0_6 = (Keyword)cGroup_4_0.eContents().get(6);
+		private final Group cGroup_4_1 = (Group)cUnorderedGroup_4.eContents().get(1);
+		private final Keyword cQualifyingConditionsKeyword_4_1_0 = (Keyword)cGroup_4_1.eContents().get(0);
+		private final Keyword cColonKeyword_4_1_1 = (Keyword)cGroup_4_1.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_4_1_2 = (Keyword)cGroup_4_1.eContents().get(2);
+		private final Assignment cQualifyingConditionsAssignment_4_1_3 = (Assignment)cGroup_4_1.eContents().get(3);
+		private final RuleCall cQualifyingConditionsQualifyingConditionParserRuleCall_4_1_3_0 = (RuleCall)cQualifyingConditionsAssignment_4_1_3.eContents().get(0);
+		private final Group cGroup_4_1_4 = (Group)cGroup_4_1.eContents().get(4);
+		private final Keyword cCommaKeyword_4_1_4_0 = (Keyword)cGroup_4_1_4.eContents().get(0);
+		private final Assignment cQualifyingConditionsAssignment_4_1_4_1 = (Assignment)cGroup_4_1_4.eContents().get(1);
+		private final RuleCall cQualifyingConditionsQualifyingConditionParserRuleCall_4_1_4_1_0 = (RuleCall)cQualifyingConditionsAssignment_4_1_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_1_5 = (Keyword)cGroup_4_1.eContents().get(5);
+		private final Keyword cCommaKeyword_4_1_6 = (Keyword)cGroup_4_1.eContents().get(6);
+		private final Group cGroup_4_2 = (Group)cUnorderedGroup_4.eContents().get(2);
+		private final Keyword cSlosKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
+		private final Keyword cColonKeyword_4_2_1 = (Keyword)cGroup_4_2.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_4_2_2 = (Keyword)cGroup_4_2.eContents().get(2);
+		private final Assignment cSlosAssignment_4_2_3 = (Assignment)cGroup_4_2.eContents().get(3);
+		private final RuleCall cSlosSloParserRuleCall_4_2_3_0 = (RuleCall)cSlosAssignment_4_2_3.eContents().get(0);
+		private final Group cGroup_4_2_4 = (Group)cGroup_4_2.eContents().get(4);
+		private final Keyword cCommaKeyword_4_2_4_0 = (Keyword)cGroup_4_2_4.eContents().get(0);
+		private final Assignment cSlosAssignment_4_2_4_1 = (Assignment)cGroup_4_2_4.eContents().get(1);
+		private final RuleCall cSlosSloParserRuleCall_4_2_4_1_0 = (RuleCall)cSlosAssignment_4_2_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_2_5 = (Keyword)cGroup_4_2.eContents().get(5);
+		private final Keyword cCommaKeyword_4_2_6 = (Keyword)cGroup_4_2.eContents().get(6);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//GuaranteeTerm:
-		//    {GuaranteeTerm} '{' (
-		//          ( '"scopes"' ':' '{' scopes+=Scope (',' scopes+=Scope)* '}' ',' )
-		//          ( '"qualifyingConditions"' ':' '{' qualifyingConditions+=QualifyingCondition (',' qualifyingConditions+=QualifyingCondition)* '}'',')?
-		//          ( '"slos"' ':' '{' slos+=Slo (',' slos+=Slo)* '}')
+		//    {GuaranteeTerm} name=AnyString ':' '{' (
+		//          ( '"scopes"' ':' '{' scopes+=Scope (',' scopes+=Scope)* '}' ','? )
+		//          & ( '"qualifyingConditions"' ':' '{' qualifyingConditions+=QualifyingCondition (',' qualifyingConditions+=QualifyingCondition)* '}' ','? )?
+		//          & ( '"slos"' ':' '{' slos+=Slo (',' slos+=Slo)* '}' ','? )
 		//    ) '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{GuaranteeTerm} '{' (
-		//      ( '"scopes"' ':' '{' scopes+=Scope (',' scopes+=Scope)* '}' ',' )
-		//      ( '"qualifyingConditions"' ':' '{' qualifyingConditions+=QualifyingCondition (',' qualifyingConditions+=QualifyingCondition)* '}'',')?
-		//      ( '"slos"' ':' '{' slos+=Slo (',' slos+=Slo)* '}')
+		//{GuaranteeTerm} name=AnyString ':' '{' (
+		//      ( '"scopes"' ':' '{' scopes+=Scope (',' scopes+=Scope)* '}' ','? )
+		//      & ( '"qualifyingConditions"' ':' '{' qualifyingConditions+=QualifyingCondition (',' qualifyingConditions+=QualifyingCondition)* '}' ','? )?
+		//      & ( '"slos"' ':' '{' slos+=Slo (',' slos+=Slo)* '}' ','? )
 		//) '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{GuaranteeTerm}
 		public Action getGuaranteeTermAction_0() { return cGuaranteeTermAction_0; }
 		
+		//name=AnyString
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//AnyString
+		public RuleCall getNameAnyStringParserRuleCall_1_0() { return cNameAnyStringParserRuleCall_1_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
 		//(
-		//         ( '"scopes"' ':' '{' scopes+=Scope (',' scopes+=Scope)* '}' ',' )
-		//         ( '"qualifyingConditions"' ':' '{' qualifyingConditions+=QualifyingCondition (',' qualifyingConditions+=QualifyingCondition)* '}'',')?
-		//         ( '"slos"' ':' '{' slos+=Slo (',' slos+=Slo)* '}')
+		//         ( '"scopes"' ':' '{' scopes+=Scope (',' scopes+=Scope)* '}' ','? )
+		//         & ( '"qualifyingConditions"' ':' '{' qualifyingConditions+=QualifyingCondition (',' qualifyingConditions+=QualifyingCondition)* '}' ','? )?
+		//         & ( '"slos"' ':' '{' slos+=Slo (',' slos+=Slo)* '}' ','? )
 		//   )
-		public Group getGroup_2() { return cGroup_2; }
+		public UnorderedGroup getUnorderedGroup_4() { return cUnorderedGroup_4; }
 		
-		//( '"scopes"' ':' '{' scopes+=Scope (',' scopes+=Scope)* '}' ',' )
-		public Group getGroup_2_0() { return cGroup_2_0; }
+		//( '"scopes"' ':' '{' scopes+=Scope (',' scopes+=Scope)* '}' ','? )
+		public Group getGroup_4_0() { return cGroup_4_0; }
 		
 		//'"scopes"'
-		public Keyword getScopesKeyword_2_0_0() { return cScopesKeyword_2_0_0; }
+		public Keyword getScopesKeyword_4_0_0() { return cScopesKeyword_4_0_0; }
 		
 		//':'
-		public Keyword getColonKeyword_2_0_1() { return cColonKeyword_2_0_1; }
+		public Keyword getColonKeyword_4_0_1() { return cColonKeyword_4_0_1; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2_0_2() { return cLeftCurlyBracketKeyword_2_0_2; }
+		public Keyword getLeftCurlyBracketKeyword_4_0_2() { return cLeftCurlyBracketKeyword_4_0_2; }
 		
 		//scopes+=Scope
-		public Assignment getScopesAssignment_2_0_3() { return cScopesAssignment_2_0_3; }
+		public Assignment getScopesAssignment_4_0_3() { return cScopesAssignment_4_0_3; }
 		
 		//Scope
-		public RuleCall getScopesScopeParserRuleCall_2_0_3_0() { return cScopesScopeParserRuleCall_2_0_3_0; }
+		public RuleCall getScopesScopeParserRuleCall_4_0_3_0() { return cScopesScopeParserRuleCall_4_0_3_0; }
 		
 		//(',' scopes+=Scope)*
-		public Group getGroup_2_0_4() { return cGroup_2_0_4; }
+		public Group getGroup_4_0_4() { return cGroup_4_0_4; }
 		
 		//','
-		public Keyword getCommaKeyword_2_0_4_0() { return cCommaKeyword_2_0_4_0; }
+		public Keyword getCommaKeyword_4_0_4_0() { return cCommaKeyword_4_0_4_0; }
 		
 		//scopes+=Scope
-		public Assignment getScopesAssignment_2_0_4_1() { return cScopesAssignment_2_0_4_1; }
+		public Assignment getScopesAssignment_4_0_4_1() { return cScopesAssignment_4_0_4_1; }
 		
 		//Scope
-		public RuleCall getScopesScopeParserRuleCall_2_0_4_1_0() { return cScopesScopeParserRuleCall_2_0_4_1_0; }
+		public RuleCall getScopesScopeParserRuleCall_4_0_4_1_0() { return cScopesScopeParserRuleCall_4_0_4_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_2_0_5() { return cRightCurlyBracketKeyword_2_0_5; }
+		public Keyword getRightCurlyBracketKeyword_4_0_5() { return cRightCurlyBracketKeyword_4_0_5; }
 		
-		//','
-		public Keyword getCommaKeyword_2_0_6() { return cCommaKeyword_2_0_6; }
+		//','?
+		public Keyword getCommaKeyword_4_0_6() { return cCommaKeyword_4_0_6; }
 		
-		//( '"qualifyingConditions"' ':' '{' qualifyingConditions+=QualifyingCondition (',' qualifyingConditions+=QualifyingCondition)* '}'',')?
-		public Group getGroup_2_1() { return cGroup_2_1; }
+		//( '"qualifyingConditions"' ':' '{' qualifyingConditions+=QualifyingCondition (',' qualifyingConditions+=QualifyingCondition)* '}' ','? )?
+		public Group getGroup_4_1() { return cGroup_4_1; }
 		
 		//'"qualifyingConditions"'
-		public Keyword getQualifyingConditionsKeyword_2_1_0() { return cQualifyingConditionsKeyword_2_1_0; }
+		public Keyword getQualifyingConditionsKeyword_4_1_0() { return cQualifyingConditionsKeyword_4_1_0; }
 		
 		//':'
-		public Keyword getColonKeyword_2_1_1() { return cColonKeyword_2_1_1; }
+		public Keyword getColonKeyword_4_1_1() { return cColonKeyword_4_1_1; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2_1_2() { return cLeftCurlyBracketKeyword_2_1_2; }
+		public Keyword getLeftCurlyBracketKeyword_4_1_2() { return cLeftCurlyBracketKeyword_4_1_2; }
 		
 		//qualifyingConditions+=QualifyingCondition
-		public Assignment getQualifyingConditionsAssignment_2_1_3() { return cQualifyingConditionsAssignment_2_1_3; }
+		public Assignment getQualifyingConditionsAssignment_4_1_3() { return cQualifyingConditionsAssignment_4_1_3; }
 		
 		//QualifyingCondition
-		public RuleCall getQualifyingConditionsQualifyingConditionParserRuleCall_2_1_3_0() { return cQualifyingConditionsQualifyingConditionParserRuleCall_2_1_3_0; }
+		public RuleCall getQualifyingConditionsQualifyingConditionParserRuleCall_4_1_3_0() { return cQualifyingConditionsQualifyingConditionParserRuleCall_4_1_3_0; }
 		
 		//(',' qualifyingConditions+=QualifyingCondition)*
-		public Group getGroup_2_1_4() { return cGroup_2_1_4; }
+		public Group getGroup_4_1_4() { return cGroup_4_1_4; }
 		
 		//','
-		public Keyword getCommaKeyword_2_1_4_0() { return cCommaKeyword_2_1_4_0; }
+		public Keyword getCommaKeyword_4_1_4_0() { return cCommaKeyword_4_1_4_0; }
 		
 		//qualifyingConditions+=QualifyingCondition
-		public Assignment getQualifyingConditionsAssignment_2_1_4_1() { return cQualifyingConditionsAssignment_2_1_4_1; }
+		public Assignment getQualifyingConditionsAssignment_4_1_4_1() { return cQualifyingConditionsAssignment_4_1_4_1; }
 		
 		//QualifyingCondition
-		public RuleCall getQualifyingConditionsQualifyingConditionParserRuleCall_2_1_4_1_0() { return cQualifyingConditionsQualifyingConditionParserRuleCall_2_1_4_1_0; }
+		public RuleCall getQualifyingConditionsQualifyingConditionParserRuleCall_4_1_4_1_0() { return cQualifyingConditionsQualifyingConditionParserRuleCall_4_1_4_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_2_1_5() { return cRightCurlyBracketKeyword_2_1_5; }
+		public Keyword getRightCurlyBracketKeyword_4_1_5() { return cRightCurlyBracketKeyword_4_1_5; }
 		
-		//','
-		public Keyword getCommaKeyword_2_1_6() { return cCommaKeyword_2_1_6; }
+		//','?
+		public Keyword getCommaKeyword_4_1_6() { return cCommaKeyword_4_1_6; }
 		
-		//( '"slos"' ':' '{' slos+=Slo (',' slos+=Slo)* '}')
-		public Group getGroup_2_2() { return cGroup_2_2; }
+		//( '"slos"' ':' '{' slos+=Slo (',' slos+=Slo)* '}' ','? )
+		public Group getGroup_4_2() { return cGroup_4_2; }
 		
 		//'"slos"'
-		public Keyword getSlosKeyword_2_2_0() { return cSlosKeyword_2_2_0; }
+		public Keyword getSlosKeyword_4_2_0() { return cSlosKeyword_4_2_0; }
 		
 		//':'
-		public Keyword getColonKeyword_2_2_1() { return cColonKeyword_2_2_1; }
+		public Keyword getColonKeyword_4_2_1() { return cColonKeyword_4_2_1; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2_2_2() { return cLeftCurlyBracketKeyword_2_2_2; }
+		public Keyword getLeftCurlyBracketKeyword_4_2_2() { return cLeftCurlyBracketKeyword_4_2_2; }
 		
 		//slos+=Slo
-		public Assignment getSlosAssignment_2_2_3() { return cSlosAssignment_2_2_3; }
+		public Assignment getSlosAssignment_4_2_3() { return cSlosAssignment_4_2_3; }
 		
 		//Slo
-		public RuleCall getSlosSloParserRuleCall_2_2_3_0() { return cSlosSloParserRuleCall_2_2_3_0; }
+		public RuleCall getSlosSloParserRuleCall_4_2_3_0() { return cSlosSloParserRuleCall_4_2_3_0; }
 		
 		//(',' slos+=Slo)*
-		public Group getGroup_2_2_4() { return cGroup_2_2_4; }
+		public Group getGroup_4_2_4() { return cGroup_4_2_4; }
 		
 		//','
-		public Keyword getCommaKeyword_2_2_4_0() { return cCommaKeyword_2_2_4_0; }
+		public Keyword getCommaKeyword_4_2_4_0() { return cCommaKeyword_4_2_4_0; }
 		
 		//slos+=Slo
-		public Assignment getSlosAssignment_2_2_4_1() { return cSlosAssignment_2_2_4_1; }
+		public Assignment getSlosAssignment_4_2_4_1() { return cSlosAssignment_4_2_4_1; }
 		
 		//Slo
-		public RuleCall getSlosSloParserRuleCall_2_2_4_1_0() { return cSlosSloParserRuleCall_2_2_4_1_0; }
+		public RuleCall getSlosSloParserRuleCall_4_2_4_1_0() { return cSlosSloParserRuleCall_4_2_4_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_2_2_5() { return cRightCurlyBracketKeyword_2_2_5; }
+		public Keyword getRightCurlyBracketKeyword_4_2_5() { return cRightCurlyBracketKeyword_4_2_5; }
+		
+		//','?
+		public Keyword getCommaKeyword_4_2_6() { return cCommaKeyword_4_2_6; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class ScopeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.Scope");
@@ -3618,12 +3642,12 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final RuleCall cReferenceChannelAnyStringParserRuleCall_1_2_0_1 = (RuleCall)cReferenceChannelCrossReference_1_2_0.eContents().get(1);
 		
 		//Scope:
-		//    {Scope}(
+		//    {Scope} (
 		//       name=AnyString ':' reference= [Channel|AnyString]
 		//    );
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Scope}(
+		//{Scope} (
 		//   name=AnyString ':' reference= [Channel|AnyString]
 		//)
 		public Group getGroup() { return cGroup; }
@@ -3632,8 +3656,8 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		public Action getScopeAction_0() { return cScopeAction_0; }
 		
 		//(
-		//       name=AnyString ':' reference= [Channel|AnyString]
-		//    )
+		//      name=AnyString ':' reference= [Channel|AnyString]
+		//   )
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//name=AnyString
@@ -3665,8 +3689,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final RuleCall cConditionBooleanExpressionParserRuleCall_3_0 = (RuleCall)cConditionAssignment_3.eContents().get(0);
 		
 		//QualifyingCondition:
-		//    {QualifyingCondition} name=AnyString ':' condition=BooleanExpression
-		//;
+		//    {QualifyingCondition} name=AnyString ':' condition=BooleanExpression;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{QualifyingCondition} name=AnyString ':' condition=BooleanExpression
@@ -3701,8 +3724,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final RuleCall cConditionBooleanExpressionParserRuleCall_3_0 = (RuleCall)cConditionAssignment_3.eContents().get(0);
 		
 		//Slo:
-		//    {Slo} name=AnyString ':' condition=BooleanExpression
-		//;
+		//    {Slo} name=AnyString ':' condition=BooleanExpression;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Slo} name=AnyString ':' condition=BooleanExpression
@@ -3729,41 +3751,21 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	public class AbstractQoSMetricElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.AbstractQoSMetric");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cQoSMetricReferenceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cReferenceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cQoSMetricParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//AbstractQoSMetric:
-		//  QoSMetricReference | QoSMetric;
+		//  Reference | QoSMetric;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//QoSMetricReference | QoSMetric
+		//Reference | QoSMetric
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//QoSMetricReference
-		public RuleCall getQoSMetricReferenceParserRuleCall_0() { return cQoSMetricReferenceParserRuleCall_0; }
+		//Reference
+		public RuleCall getReferenceParserRuleCall_0() { return cReferenceParserRuleCall_0; }
 		
 		//QoSMetric
 		public RuleCall getQoSMetricParserRuleCall_1() { return cQoSMetricParserRuleCall_1; }
-	}
-	public class QoSMetricReferenceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.QoSMetricReference");
-		private final Assignment cMetricAssignment = (Assignment)rule.eContents().get(1);
-		private final CrossReference cMetricQoSMetricCrossReference_0 = (CrossReference)cMetricAssignment.eContents().get(0);
-		private final RuleCall cMetricQoSMetricAnyStringParserRuleCall_0_1 = (RuleCall)cMetricQoSMetricCrossReference_0.eContents().get(1);
-		
-		//QoSMetricReference:
-		//  metric= [QoSMetric|AnyString]
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//metric= [QoSMetric|AnyString]
-		public Assignment getMetricAssignment() { return cMetricAssignment; }
-		
-		//[QoSMetric|AnyString]
-		public CrossReference getMetricQoSMetricCrossReference_0() { return cMetricQoSMetricCrossReference_0; }
-		
-		//AnyString
-		public RuleCall getMetricQoSMetricAnyStringParserRuleCall_0_1() { return cMetricQoSMetricAnyStringParserRuleCall_0_1; }
 	}
 	public class QoSMetricElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.QoSMetric");
@@ -3771,43 +3773,36 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final UnorderedGroup cUnorderedGroup_1 = (UnorderedGroup)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cUnorderedGroup_1.eContents().get(0);
-		private final Keyword cNameKeyword_1_0_0 = (Keyword)cGroup_1_0.eContents().get(0);
+		private final Keyword cMetricTypeKeyword_1_0_0 = (Keyword)cGroup_1_0.eContents().get(0);
 		private final Keyword cColonKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
-		private final Assignment cNameAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
-		private final RuleCall cNameAnyStringParserRuleCall_1_0_2_0 = (RuleCall)cNameAssignment_1_0_2.eContents().get(0);
+		private final Assignment cMetricTypeAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
+		private final RuleCall cMetricTypeQoSMetricTypeEnumRuleCall_1_0_2_0 = (RuleCall)cMetricTypeAssignment_1_0_2.eContents().get(0);
 		private final Keyword cCommaKeyword_1_0_3 = (Keyword)cGroup_1_0.eContents().get(3);
 		private final Group cGroup_1_1 = (Group)cUnorderedGroup_1.eContents().get(1);
-		private final Keyword cMetricTypeKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
+		private final Keyword cDescriptionKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
 		private final Keyword cColonKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
-		private final Assignment cMetricTypeAssignment_1_1_2 = (Assignment)cGroup_1_1.eContents().get(2);
-		private final RuleCall cMetricTypeQoSMetricTypeEnumRuleCall_1_1_2_0 = (RuleCall)cMetricTypeAssignment_1_1_2.eContents().get(0);
+		private final Assignment cDescriptionAssignment_1_1_2 = (Assignment)cGroup_1_1.eContents().get(2);
+		private final RuleCall cDescriptionAnyStringParserRuleCall_1_1_2_0 = (RuleCall)cDescriptionAssignment_1_1_2.eContents().get(0);
 		private final Keyword cCommaKeyword_1_1_3 = (Keyword)cGroup_1_1.eContents().get(3);
 		private final Group cGroup_1_2 = (Group)cUnorderedGroup_1.eContents().get(2);
-		private final Keyword cDescriptionKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
+		private final Keyword cUnitKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
 		private final Keyword cColonKeyword_1_2_1 = (Keyword)cGroup_1_2.eContents().get(1);
-		private final Assignment cDescriptionAssignment_1_2_2 = (Assignment)cGroup_1_2.eContents().get(2);
-		private final RuleCall cDescriptionAnyStringParserRuleCall_1_2_2_0 = (RuleCall)cDescriptionAssignment_1_2_2.eContents().get(0);
+		private final Assignment cUnitAssignment_1_2_2 = (Assignment)cGroup_1_2.eContents().get(2);
+		private final RuleCall cUnitQoSMetricUnitEnumRuleCall_1_2_2_0 = (RuleCall)cUnitAssignment_1_2_2.eContents().get(0);
 		private final Keyword cCommaKeyword_1_2_3 = (Keyword)cGroup_1_2.eContents().get(3);
 		private final Group cGroup_1_3 = (Group)cUnorderedGroup_1.eContents().get(3);
-		private final Keyword cUnitKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
+		private final Keyword cGroupedByEventKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
 		private final Keyword cColonKeyword_1_3_1 = (Keyword)cGroup_1_3.eContents().get(1);
-		private final Assignment cUnitAssignment_1_3_2 = (Assignment)cGroup_1_3.eContents().get(2);
-		private final RuleCall cUnitQoSMetricUnitEnumRuleCall_1_3_2_0 = (RuleCall)cUnitAssignment_1_3_2.eContents().get(0);
+		private final Assignment cGroupedByEventAssignment_1_3_2 = (Assignment)cGroup_1_3.eContents().get(2);
+		private final RuleCall cGroupedByEventBooleanEnumRuleCall_1_3_2_0 = (RuleCall)cGroupedByEventAssignment_1_3_2.eContents().get(0);
 		private final Keyword cCommaKeyword_1_3_3 = (Keyword)cGroup_1_3.eContents().get(3);
-		private final Group cGroup_1_4 = (Group)cUnorderedGroup_1.eContents().get(4);
-		private final Keyword cGroupedByEventKeyword_1_4_0 = (Keyword)cGroup_1_4.eContents().get(0);
-		private final Keyword cColonKeyword_1_4_1 = (Keyword)cGroup_1_4.eContents().get(1);
-		private final Assignment cGroupedByEventAssignment_1_4_2 = (Assignment)cGroup_1_4.eContents().get(2);
-		private final RuleCall cGroupedByEventBooleanEnumRuleCall_1_4_2_0 = (RuleCall)cGroupedByEventAssignment_1_4_2.eContents().get(0);
-		private final Keyword cCommaKeyword_1_4_3 = (Keyword)cGroup_1_4.eContents().get(3);
 		private final RuleCall cDerivedQoSMetricParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//QoSMetric:
 		//    ('{'
 		//        (
-		//          ( '"name"' ':' name=AnyString ','? )
-		//        & ( '"metricType"' ':' metricType=QoSMetricType ','? )
+		//        ( '"metricType"' ':' metricType=QoSMetricType ','? )
 		//        & ( '"description"' ':' description=AnyString ','? )?
 		//        & ( '"unit"' ':' unit=QoSMetricUnit ','? )
 		//        & ( '"groupedByEvent"' ':' groupedByEvent=Boolean ','? )
@@ -3817,8 +3812,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		
 		//('{'
 		//    (
-		//      ( '"name"' ':' name=AnyString ','? )
-		//    & ( '"metricType"' ':' metricType=QoSMetricType ','? )
+		//    ( '"metricType"' ':' metricType=QoSMetricType ','? )
 		//    & ( '"description"' ':' description=AnyString ','? )?
 		//    & ( '"unit"' ':' unit=QoSMetricUnit ','? )
 		//    & ( '"groupedByEvent"' ':' groupedByEvent=Boolean ','? )
@@ -3830,103 +3824,84 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
 		
 		//(
-		//  ( '"name"' ':' name=AnyString ','? )
-		//& ( '"metricType"' ':' metricType=QoSMetricType ','? )
+		//( '"metricType"' ':' metricType=QoSMetricType ','? )
 		//& ( '"description"' ':' description=AnyString ','? )?
 		//& ( '"unit"' ':' unit=QoSMetricUnit ','? )
 		//& ( '"groupedByEvent"' ':' groupedByEvent=Boolean ','? )
 		//)
 		public UnorderedGroup getUnorderedGroup_1() { return cUnorderedGroup_1; }
 		
-		//( '"name"' ':' name=AnyString ','? )
+		//( '"metricType"' ':' metricType=QoSMetricType ','? )
 		public Group getGroup_1_0() { return cGroup_1_0; }
 		
-		//'"name"'
-		public Keyword getNameKeyword_1_0_0() { return cNameKeyword_1_0_0; }
+		//'"metricType"'
+		public Keyword getMetricTypeKeyword_1_0_0() { return cMetricTypeKeyword_1_0_0; }
 		
 		//':'
 		public Keyword getColonKeyword_1_0_1() { return cColonKeyword_1_0_1; }
 		
-		//name=AnyString
-		public Assignment getNameAssignment_1_0_2() { return cNameAssignment_1_0_2; }
+		//metricType=QoSMetricType
+		public Assignment getMetricTypeAssignment_1_0_2() { return cMetricTypeAssignment_1_0_2; }
 		
-		//AnyString
-		public RuleCall getNameAnyStringParserRuleCall_1_0_2_0() { return cNameAnyStringParserRuleCall_1_0_2_0; }
+		//QoSMetricType
+		public RuleCall getMetricTypeQoSMetricTypeEnumRuleCall_1_0_2_0() { return cMetricTypeQoSMetricTypeEnumRuleCall_1_0_2_0; }
 		
 		//','?
 		public Keyword getCommaKeyword_1_0_3() { return cCommaKeyword_1_0_3; }
 		
-		//( '"metricType"' ':' metricType=QoSMetricType ','? )
+		//( '"description"' ':' description=AnyString ','? )?
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
-		//'"metricType"'
-		public Keyword getMetricTypeKeyword_1_1_0() { return cMetricTypeKeyword_1_1_0; }
+		//'"description"'
+		public Keyword getDescriptionKeyword_1_1_0() { return cDescriptionKeyword_1_1_0; }
 		
 		//':'
 		public Keyword getColonKeyword_1_1_1() { return cColonKeyword_1_1_1; }
 		
-		//metricType=QoSMetricType
-		public Assignment getMetricTypeAssignment_1_1_2() { return cMetricTypeAssignment_1_1_2; }
+		//description=AnyString
+		public Assignment getDescriptionAssignment_1_1_2() { return cDescriptionAssignment_1_1_2; }
 		
-		//QoSMetricType
-		public RuleCall getMetricTypeQoSMetricTypeEnumRuleCall_1_1_2_0() { return cMetricTypeQoSMetricTypeEnumRuleCall_1_1_2_0; }
+		//AnyString
+		public RuleCall getDescriptionAnyStringParserRuleCall_1_1_2_0() { return cDescriptionAnyStringParserRuleCall_1_1_2_0; }
 		
 		//','?
 		public Keyword getCommaKeyword_1_1_3() { return cCommaKeyword_1_1_3; }
 		
-		//( '"description"' ':' description=AnyString ','? )?
+		//( '"unit"' ':' unit=QoSMetricUnit ','? )
 		public Group getGroup_1_2() { return cGroup_1_2; }
 		
-		//'"description"'
-		public Keyword getDescriptionKeyword_1_2_0() { return cDescriptionKeyword_1_2_0; }
+		//'"unit"'
+		public Keyword getUnitKeyword_1_2_0() { return cUnitKeyword_1_2_0; }
 		
 		//':'
 		public Keyword getColonKeyword_1_2_1() { return cColonKeyword_1_2_1; }
 		
-		//description=AnyString
-		public Assignment getDescriptionAssignment_1_2_2() { return cDescriptionAssignment_1_2_2; }
+		//unit=QoSMetricUnit
+		public Assignment getUnitAssignment_1_2_2() { return cUnitAssignment_1_2_2; }
 		
-		//AnyString
-		public RuleCall getDescriptionAnyStringParserRuleCall_1_2_2_0() { return cDescriptionAnyStringParserRuleCall_1_2_2_0; }
+		//QoSMetricUnit
+		public RuleCall getUnitQoSMetricUnitEnumRuleCall_1_2_2_0() { return cUnitQoSMetricUnitEnumRuleCall_1_2_2_0; }
 		
 		//','?
 		public Keyword getCommaKeyword_1_2_3() { return cCommaKeyword_1_2_3; }
 		
-		//( '"unit"' ':' unit=QoSMetricUnit ','? )
+		//( '"groupedByEvent"' ':' groupedByEvent=Boolean ','? )
 		public Group getGroup_1_3() { return cGroup_1_3; }
 		
-		//'"unit"'
-		public Keyword getUnitKeyword_1_3_0() { return cUnitKeyword_1_3_0; }
+		//'"groupedByEvent"'
+		public Keyword getGroupedByEventKeyword_1_3_0() { return cGroupedByEventKeyword_1_3_0; }
 		
 		//':'
 		public Keyword getColonKeyword_1_3_1() { return cColonKeyword_1_3_1; }
 		
-		//unit=QoSMetricUnit
-		public Assignment getUnitAssignment_1_3_2() { return cUnitAssignment_1_3_2; }
+		//groupedByEvent=Boolean
+		public Assignment getGroupedByEventAssignment_1_3_2() { return cGroupedByEventAssignment_1_3_2; }
 		
-		//QoSMetricUnit
-		public RuleCall getUnitQoSMetricUnitEnumRuleCall_1_3_2_0() { return cUnitQoSMetricUnitEnumRuleCall_1_3_2_0; }
+		//Boolean
+		public RuleCall getGroupedByEventBooleanEnumRuleCall_1_3_2_0() { return cGroupedByEventBooleanEnumRuleCall_1_3_2_0; }
 		
 		//','?
 		public Keyword getCommaKeyword_1_3_3() { return cCommaKeyword_1_3_3; }
-		
-		//( '"groupedByEvent"' ':' groupedByEvent=Boolean ','? )
-		public Group getGroup_1_4() { return cGroup_1_4; }
-		
-		//'"groupedByEvent"'
-		public Keyword getGroupedByEventKeyword_1_4_0() { return cGroupedByEventKeyword_1_4_0; }
-		
-		//':'
-		public Keyword getColonKeyword_1_4_1() { return cColonKeyword_1_4_1; }
-		
-		//groupedByEvent=Boolean
-		public Assignment getGroupedByEventAssignment_1_4_2() { return cGroupedByEventAssignment_1_4_2; }
-		
-		//Boolean
-		public RuleCall getGroupedByEventBooleanEnumRuleCall_1_4_2_0() { return cGroupedByEventBooleanEnumRuleCall_1_4_2_0; }
-		
-		//','?
-		public Keyword getCommaKeyword_1_4_3() { return cCommaKeyword_1_4_3; }
 		
 		//(DerivedQoSMetric)?
 		public RuleCall getDerivedQoSMetricParserRuleCall_2() { return cDerivedQoSMetricParserRuleCall_2; }
@@ -3934,6 +3909,41 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//// Això està al final de tot, pq Xtext es queixa que no pot haver-hi una unasssigned rule dins d'una unordered list.
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class NamedQoSMetricElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.NamedQoSMetric");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cNamedQoSMetricAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameAnyStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cQosMetricAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cQosMetricAbstractQoSMetricParserRuleCall_3_0 = (RuleCall)cQosMetricAssignment_3.eContents().get(0);
+		
+		//NamedQoSMetric:
+		//    {NamedQoSMetric} name=AnyString ':' qosMetric=AbstractQoSMetric;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{NamedQoSMetric} name=AnyString ':' qosMetric=AbstractQoSMetric
+		public Group getGroup() { return cGroup; }
+		
+		//{NamedQoSMetric}
+		public Action getNamedQoSMetricAction_0() { return cNamedQoSMetricAction_0; }
+		
+		//name=AnyString
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//AnyString
+		public RuleCall getNameAnyStringParserRuleCall_1_0() { return cNameAnyStringParserRuleCall_1_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//qosMetric=AbstractQoSMetric
+		public Assignment getQosMetricAssignment_3() { return cQosMetricAssignment_3; }
+		
+		//AbstractQoSMetric
+		public RuleCall getQosMetricAbstractQoSMetricParserRuleCall_3_0() { return cQosMetricAbstractQoSMetricParserRuleCall_3_0; }
 	}
 	public class DerivedQoSMetricElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.DerivedQoSMetric");
@@ -3964,14 +3974,13 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Keyword cCommaKeyword_1_3_2_3 = (Keyword)cGroup_1_3_2.eContents().get(3);
 		private final Keyword cRightCurlyBracketKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
 		
-		// DerivedQoSMetric:
+		//DerivedQoSMetric:
 		//    {DerivedQoSMetric}(
 		//        '"derivedQoSMetricDefinition"' ':' '{' (
 		//          ('"window"' ':'  window = AnyString ','? )
 		//        & ('"windowUnit"' ':'  windowUnit = WindowUnit ','? )
 		//        & ('"aggregationFunction"' ':'  aggregationFunction = AggregationFunction ','? )
-		//    ) '}' )
-		//;
+		//    ) '}' );
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{DerivedQoSMetric}(
@@ -5236,8 +5245,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//    | minutes = '"minutes"'
 		//    | hours = '"hours"'
 		//    | days = '"days"'
-		//    | messages = '"messages"'
-		//;
+		//    | messages = '"messages"';
 		public EnumRule getRule() { return rule; }
 		
 		//seconds = '"seconds"'
@@ -5293,8 +5301,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//    AVG = '"AVG"'
 		//    | MEDIAN = '"MEDIAN"'
 		//    | MAX = '"MAX"'
-		//    | MIN = '"MIN"'
-		//;
+		//    | MIN = '"MIN"';
 		public EnumRule getRule() { return rule; }
 		
 		//AVG = '"AVG"'
@@ -5332,63 +5339,67 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cAvailabilityEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cAvailabilityAvailabilityKeyword_0_0 = (Keyword)cAvailabilityEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cBandwithEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cBandwithBandwithKeyword_1_0 = (Keyword)cBandwithEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cCpuEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cCpuCpuKeyword_2_0 = (Keyword)cCpuEnumLiteralDeclaration_2.eContents().get(0);
-		private final EnumLiteralDeclaration cCapacityEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cCapacityCapacityKeyword_3_0 = (Keyword)cCapacityEnumLiteralDeclaration_3.eContents().get(0);
-		private final EnumLiteralDeclaration cDisasterEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cDisasterDisasterKeyword_4_0 = (Keyword)cDisasterEnumLiteralDeclaration_4.eContents().get(0);
-		private final EnumLiteralDeclaration cResilianceEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
-		private final Keyword cResilianceResilianceKeyword_5_0 = (Keyword)cResilianceEnumLiteralDeclaration_5.eContents().get(0);
-		private final EnumLiteralDeclaration cDiscoverabilityEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
-		private final Keyword cDiscoverabilityDiscoverabilityKeyword_6_0 = (Keyword)cDiscoverabilityEnumLiteralDeclaration_6.eContents().get(0);
-		private final EnumLiteralDeclaration cDocumentationEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
-		private final Keyword cDocumentationDocumentationKeyword_7_0 = (Keyword)cDocumentationEnumLiteralDeclaration_7.eContents().get(0);
-		private final EnumLiteralDeclaration cException_handlingEnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
-		private final Keyword cException_handlingException_handlingKeyword_8_0 = (Keyword)cException_handlingEnumLiteralDeclaration_8.eContents().get(0);
-		private final EnumLiteralDeclaration cExpected_failuresEnumLiteralDeclaration_9 = (EnumLiteralDeclaration)cAlternatives.eContents().get(9);
-		private final Keyword cExpected_failuresExpected_failuresKeyword_9_0 = (Keyword)cExpected_failuresEnumLiteralDeclaration_9.eContents().get(0);
-		private final EnumLiteralDeclaration cFailoverEnumLiteralDeclaration_10 = (EnumLiteralDeclaration)cAlternatives.eContents().get(10);
-		private final Keyword cFailoverFailoverKeyword_10_0 = (Keyword)cFailoverEnumLiteralDeclaration_10.eContents().get(0);
-		private final EnumLiteralDeclaration cJitterEnumLiteralDeclaration_11 = (EnumLiteralDeclaration)cAlternatives.eContents().get(11);
-		private final Keyword cJitterJitterKeyword_11_0 = (Keyword)cJitterEnumLiteralDeclaration_11.eContents().get(0);
-		private final EnumLiteralDeclaration cLatencyEnumLiteralDeclaration_12 = (EnumLiteralDeclaration)cAlternatives.eContents().get(12);
-		private final Keyword cLatencyLatencyKeyword_12_0 = (Keyword)cLatencyEnumLiteralDeclaration_12.eContents().get(0);
-		private final EnumLiteralDeclaration cLoad_balancingEnumLiteralDeclaration_13 = (EnumLiteralDeclaration)cAlternatives.eContents().get(13);
-		private final Keyword cLoad_balancingLoad_balancingKeyword_13_0 = (Keyword)cLoad_balancingEnumLiteralDeclaration_13.eContents().get(0);
-		private final EnumLiteralDeclaration cMaximum_throughputEnumLiteralDeclaration_14 = (EnumLiteralDeclaration)cAlternatives.eContents().get(14);
-		private final Keyword cMaximum_throughputMaximum_throughputKeyword_14_0 = (Keyword)cMaximum_throughputEnumLiteralDeclaration_14.eContents().get(0);
-		private final EnumLiteralDeclaration cMemory_aapacityEnumLiteralDeclaration_15 = (EnumLiteralDeclaration)cAlternatives.eContents().get(15);
-		private final Keyword cMemory_aapacityMemory_aapacityKeyword_15_0 = (Keyword)cMemory_aapacityEnumLiteralDeclaration_15.eContents().get(0);
-		private final EnumLiteralDeclaration cPacket_lossEnumLiteralDeclaration_16 = (EnumLiteralDeclaration)cAlternatives.eContents().get(16);
-		private final Keyword cPacket_lossPacket_lossKeyword_16_0 = (Keyword)cPacket_lossEnumLiteralDeclaration_16.eContents().get(0);
-		private final EnumLiteralDeclaration cPrecisionEnumLiteralDeclaration_17 = (EnumLiteralDeclaration)cAlternatives.eContents().get(17);
-		private final Keyword cPrecisionPrecisionKeyword_17_0 = (Keyword)cPrecisionEnumLiteralDeclaration_17.eContents().get(0);
-		private final EnumLiteralDeclaration cProbability_of_correctnessEnumLiteralDeclaration_18 = (EnumLiteralDeclaration)cAlternatives.eContents().get(18);
-		private final Keyword cProbability_of_correctnessProbability_of_correctnessKeyword_18_0 = (Keyword)cProbability_of_correctnessEnumLiteralDeclaration_18.eContents().get(0);
-		private final EnumLiteralDeclaration cRound_trip_timeEnumLiteralDeclaration_19 = (EnumLiteralDeclaration)cAlternatives.eContents().get(19);
-		private final Keyword cRound_trip_timeRound_trip_timeKeyword_19_0 = (Keyword)cRound_trip_timeEnumLiteralDeclaration_19.eContents().get(0);
-		private final EnumLiteralDeclaration cThroughputEnumLiteralDeclaration_20 = (EnumLiteralDeclaration)cAlternatives.eContents().get(20);
-		private final Keyword cThroughputThroughputKeyword_20_0 = (Keyword)cThroughputEnumLiteralDeclaration_20.eContents().get(0);
-		private final EnumLiteralDeclaration cTime_to_tailEnumLiteralDeclaration_21 = (EnumLiteralDeclaration)cAlternatives.eContents().get(21);
-		private final Keyword cTime_to_tailTime_to_tailKeyword_21_0 = (Keyword)cTime_to_tailEnumLiteralDeclaration_21.eContents().get(0);
-		private final EnumLiteralDeclaration cTime_to_tepairEnumLiteralDeclaration_22 = (EnumLiteralDeclaration)cAlternatives.eContents().get(22);
-		private final Keyword cTime_to_tepairTime_to_tepairKeyword_22_0 = (Keyword)cTime_to_tepairEnumLiteralDeclaration_22.eContents().get(0);
-		private final EnumLiteralDeclaration cType_consistencyEnumLiteralDeclaration_23 = (EnumLiteralDeclaration)cAlternatives.eContents().get(23);
-		private final Keyword cType_consistencyType_consistencyKeyword_23_0 = (Keyword)cType_consistencyEnumLiteralDeclaration_23.eContents().get(0);
-		private final EnumLiteralDeclaration cUptimeEnumLiteralDeclaration_24 = (EnumLiteralDeclaration)cAlternatives.eContents().get(24);
-		private final Keyword cUptimeUptimeKeyword_24_0 = (Keyword)cUptimeEnumLiteralDeclaration_24.eContents().get(0);
-		private final EnumLiteralDeclaration cUp_to_datenessEnumLiteralDeclaration_25 = (EnumLiteralDeclaration)cAlternatives.eContents().get(25);
-		private final Keyword cUp_to_datenessUpToDatenessKeyword_25_0 = (Keyword)cUp_to_datenessEnumLiteralDeclaration_25.eContents().get(0);
+		private final EnumLiteralDeclaration cPeriodEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cPeriodPeriodKeyword_1_0 = (Keyword)cPeriodEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cBandwithEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cBandwithBandwithKeyword_2_0 = (Keyword)cBandwithEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cCpuEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cCpuCpuKeyword_3_0 = (Keyword)cCpuEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cCapacityEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cCapacityCapacityKeyword_4_0 = (Keyword)cCapacityEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cDisasterEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cDisasterDisasterKeyword_5_0 = (Keyword)cDisasterEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cResilianceEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cResilianceResilianceKeyword_6_0 = (Keyword)cResilianceEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cDiscoverabilityEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
+		private final Keyword cDiscoverabilityDiscoverabilityKeyword_7_0 = (Keyword)cDiscoverabilityEnumLiteralDeclaration_7.eContents().get(0);
+		private final EnumLiteralDeclaration cDocumentationEnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
+		private final Keyword cDocumentationDocumentationKeyword_8_0 = (Keyword)cDocumentationEnumLiteralDeclaration_8.eContents().get(0);
+		private final EnumLiteralDeclaration cException_handlingEnumLiteralDeclaration_9 = (EnumLiteralDeclaration)cAlternatives.eContents().get(9);
+		private final Keyword cException_handlingException_handlingKeyword_9_0 = (Keyword)cException_handlingEnumLiteralDeclaration_9.eContents().get(0);
+		private final EnumLiteralDeclaration cExpected_failuresEnumLiteralDeclaration_10 = (EnumLiteralDeclaration)cAlternatives.eContents().get(10);
+		private final Keyword cExpected_failuresExpected_failuresKeyword_10_0 = (Keyword)cExpected_failuresEnumLiteralDeclaration_10.eContents().get(0);
+		private final EnumLiteralDeclaration cFailoverEnumLiteralDeclaration_11 = (EnumLiteralDeclaration)cAlternatives.eContents().get(11);
+		private final Keyword cFailoverFailoverKeyword_11_0 = (Keyword)cFailoverEnumLiteralDeclaration_11.eContents().get(0);
+		private final EnumLiteralDeclaration cJitterEnumLiteralDeclaration_12 = (EnumLiteralDeclaration)cAlternatives.eContents().get(12);
+		private final Keyword cJitterJitterKeyword_12_0 = (Keyword)cJitterEnumLiteralDeclaration_12.eContents().get(0);
+		private final EnumLiteralDeclaration cLatencyEnumLiteralDeclaration_13 = (EnumLiteralDeclaration)cAlternatives.eContents().get(13);
+		private final Keyword cLatencyLatencyKeyword_13_0 = (Keyword)cLatencyEnumLiteralDeclaration_13.eContents().get(0);
+		private final EnumLiteralDeclaration cLoad_balancingEnumLiteralDeclaration_14 = (EnumLiteralDeclaration)cAlternatives.eContents().get(14);
+		private final Keyword cLoad_balancingLoad_balancingKeyword_14_0 = (Keyword)cLoad_balancingEnumLiteralDeclaration_14.eContents().get(0);
+		private final EnumLiteralDeclaration cMaximum_throughputEnumLiteralDeclaration_15 = (EnumLiteralDeclaration)cAlternatives.eContents().get(15);
+		private final Keyword cMaximum_throughputMaximum_throughputKeyword_15_0 = (Keyword)cMaximum_throughputEnumLiteralDeclaration_15.eContents().get(0);
+		private final EnumLiteralDeclaration cMemory_capacityEnumLiteralDeclaration_16 = (EnumLiteralDeclaration)cAlternatives.eContents().get(16);
+		private final Keyword cMemory_capacityMemory_capacityKeyword_16_0 = (Keyword)cMemory_capacityEnumLiteralDeclaration_16.eContents().get(0);
+		private final EnumLiteralDeclaration cPacket_lossEnumLiteralDeclaration_17 = (EnumLiteralDeclaration)cAlternatives.eContents().get(17);
+		private final Keyword cPacket_lossPacket_lossKeyword_17_0 = (Keyword)cPacket_lossEnumLiteralDeclaration_17.eContents().get(0);
+		private final EnumLiteralDeclaration cPrecisionEnumLiteralDeclaration_18 = (EnumLiteralDeclaration)cAlternatives.eContents().get(18);
+		private final Keyword cPrecisionPrecisionKeyword_18_0 = (Keyword)cPrecisionEnumLiteralDeclaration_18.eContents().get(0);
+		private final EnumLiteralDeclaration cProbability_of_correctnessEnumLiteralDeclaration_19 = (EnumLiteralDeclaration)cAlternatives.eContents().get(19);
+		private final Keyword cProbability_of_correctnessProbability_of_correctnessKeyword_19_0 = (Keyword)cProbability_of_correctnessEnumLiteralDeclaration_19.eContents().get(0);
+		private final EnumLiteralDeclaration cRound_trip_timeEnumLiteralDeclaration_20 = (EnumLiteralDeclaration)cAlternatives.eContents().get(20);
+		private final Keyword cRound_trip_timeRound_trip_timeKeyword_20_0 = (Keyword)cRound_trip_timeEnumLiteralDeclaration_20.eContents().get(0);
+		private final EnumLiteralDeclaration cThroughputEnumLiteralDeclaration_21 = (EnumLiteralDeclaration)cAlternatives.eContents().get(21);
+		private final Keyword cThroughputThroughputKeyword_21_0 = (Keyword)cThroughputEnumLiteralDeclaration_21.eContents().get(0);
+		private final EnumLiteralDeclaration cTime_to_failEnumLiteralDeclaration_22 = (EnumLiteralDeclaration)cAlternatives.eContents().get(22);
+		private final Keyword cTime_to_failTime_to_failKeyword_22_0 = (Keyword)cTime_to_failEnumLiteralDeclaration_22.eContents().get(0);
+		private final EnumLiteralDeclaration cTime_to_repairEnumLiteralDeclaration_23 = (EnumLiteralDeclaration)cAlternatives.eContents().get(23);
+		private final Keyword cTime_to_repairTime_to_repairKeyword_23_0 = (Keyword)cTime_to_repairEnumLiteralDeclaration_23.eContents().get(0);
+		private final EnumLiteralDeclaration cType_consistencyEnumLiteralDeclaration_24 = (EnumLiteralDeclaration)cAlternatives.eContents().get(24);
+		private final Keyword cType_consistencyType_consistencyKeyword_24_0 = (Keyword)cType_consistencyEnumLiteralDeclaration_24.eContents().get(0);
+		private final EnumLiteralDeclaration cUptimeEnumLiteralDeclaration_25 = (EnumLiteralDeclaration)cAlternatives.eContents().get(25);
+		private final Keyword cUptimeUptimeKeyword_25_0 = (Keyword)cUptimeEnumLiteralDeclaration_25.eContents().get(0);
+		private final EnumLiteralDeclaration cUp_to_datenessEnumLiteralDeclaration_26 = (EnumLiteralDeclaration)cAlternatives.eContents().get(26);
+		private final Keyword cUp_to_datenessUpToDatenessKeyword_26_0 = (Keyword)cUp_to_datenessEnumLiteralDeclaration_26.eContents().get(0);
 		
 		//enum QoSMetricType:
 		//    availability = '"availability"'
+		//    | period = '"period"'
 		//    | bandwith = '"bandwith"'
 		//    | cpu = '"cpu"'
 		//    | capacity = '"capacity"'
-		//    | disaster = '"disaster"' | resiliance = '"resiliance"'
+		//    | disaster = '"disaster"'
+		//    | resiliance = '"resiliance"'
 		//    | discoverability = '"discoverability"'
 		//    | documentation = '"documentation"'
 		//    | exception_handling = '"exception_handling"'
@@ -5398,25 +5409,26 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//    | latency = '"latency"'
 		//    | load_balancing = '"load_balancing"'
 		//    | maximum_throughput = '"maximum_throughput"'
-		//    | memory_aapacity = '"memory_aapacity"'
+		//    | memory_capacity = '"memory_capacity"'
 		//    | packet_loss = '"packet_loss"'
 		//    | precision = '"precision"'
 		//    | probability_of_correctness = '"probability_of_correctness"'
 		//    | round_trip_time = '"round_trip_time"'
 		//    | throughput = '"throughput"'
-		//    | time_to_tail = '"time_to_tail"'
-		//    | time_to_tepair = '"time_to_tepair"'
+		//    | time_to_fail = '"time_to_fail"'
+		//    | time_to_repair = '"time_to_repair"'
 		//    | type_consistency = '"type_consistency"'
 		//    | uptime = '"uptime"'
-		//    | up_to_dateness = '"up-to-dateness"'
-		//;
+		//    | up_to_dateness = '"up-to-dateness"';
 		public EnumRule getRule() { return rule; }
 		
 		//availability = '"availability"'
+		//| period = '"period"'
 		//| bandwith = '"bandwith"'
 		//| cpu = '"cpu"'
 		//| capacity = '"capacity"'
-		//| disaster = '"disaster"' | resiliance = '"resiliance"'
+		//| disaster = '"disaster"'
+		//| resiliance = '"resiliance"'
 		//| discoverability = '"discoverability"'
 		//| documentation = '"documentation"'
 		//| exception_handling = '"exception_handling"'
@@ -5426,14 +5438,14 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//| latency = '"latency"'
 		//| load_balancing = '"load_balancing"'
 		//| maximum_throughput = '"maximum_throughput"'
-		//| memory_aapacity = '"memory_aapacity"'
+		//| memory_capacity = '"memory_capacity"'
 		//| packet_loss = '"packet_loss"'
 		//| precision = '"precision"'
 		//| probability_of_correctness = '"probability_of_correctness"'
 		//| round_trip_time = '"round_trip_time"'
 		//| throughput = '"throughput"'
-		//| time_to_tail = '"time_to_tail"'
-		//| time_to_tepair = '"time_to_tepair"'
+		//| time_to_fail = '"time_to_fail"'
+		//| time_to_repair = '"time_to_repair"'
 		//| type_consistency = '"type_consistency"'
 		//| uptime = '"uptime"'
 		//| up_to_dateness = '"up-to-dateness"'
@@ -5445,155 +5457,161 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//'"availability"'
 		public Keyword getAvailabilityAvailabilityKeyword_0_0() { return cAvailabilityAvailabilityKeyword_0_0; }
 		
+		//period = '"period"'
+		public EnumLiteralDeclaration getPeriodEnumLiteralDeclaration_1() { return cPeriodEnumLiteralDeclaration_1; }
+		
+		//'"period"'
+		public Keyword getPeriodPeriodKeyword_1_0() { return cPeriodPeriodKeyword_1_0; }
+		
 		//bandwith = '"bandwith"'
-		public EnumLiteralDeclaration getBandwithEnumLiteralDeclaration_1() { return cBandwithEnumLiteralDeclaration_1; }
+		public EnumLiteralDeclaration getBandwithEnumLiteralDeclaration_2() { return cBandwithEnumLiteralDeclaration_2; }
 		
 		//'"bandwith"'
-		public Keyword getBandwithBandwithKeyword_1_0() { return cBandwithBandwithKeyword_1_0; }
+		public Keyword getBandwithBandwithKeyword_2_0() { return cBandwithBandwithKeyword_2_0; }
 		
 		//cpu = '"cpu"'
-		public EnumLiteralDeclaration getCpuEnumLiteralDeclaration_2() { return cCpuEnumLiteralDeclaration_2; }
+		public EnumLiteralDeclaration getCpuEnumLiteralDeclaration_3() { return cCpuEnumLiteralDeclaration_3; }
 		
 		//'"cpu"'
-		public Keyword getCpuCpuKeyword_2_0() { return cCpuCpuKeyword_2_0; }
+		public Keyword getCpuCpuKeyword_3_0() { return cCpuCpuKeyword_3_0; }
 		
 		//capacity = '"capacity"'
-		public EnumLiteralDeclaration getCapacityEnumLiteralDeclaration_3() { return cCapacityEnumLiteralDeclaration_3; }
+		public EnumLiteralDeclaration getCapacityEnumLiteralDeclaration_4() { return cCapacityEnumLiteralDeclaration_4; }
 		
 		//'"capacity"'
-		public Keyword getCapacityCapacityKeyword_3_0() { return cCapacityCapacityKeyword_3_0; }
+		public Keyword getCapacityCapacityKeyword_4_0() { return cCapacityCapacityKeyword_4_0; }
 		
 		//disaster = '"disaster"'
-		public EnumLiteralDeclaration getDisasterEnumLiteralDeclaration_4() { return cDisasterEnumLiteralDeclaration_4; }
+		public EnumLiteralDeclaration getDisasterEnumLiteralDeclaration_5() { return cDisasterEnumLiteralDeclaration_5; }
 		
 		//'"disaster"'
-		public Keyword getDisasterDisasterKeyword_4_0() { return cDisasterDisasterKeyword_4_0; }
+		public Keyword getDisasterDisasterKeyword_5_0() { return cDisasterDisasterKeyword_5_0; }
 		
 		//resiliance = '"resiliance"'
-		public EnumLiteralDeclaration getResilianceEnumLiteralDeclaration_5() { return cResilianceEnumLiteralDeclaration_5; }
+		public EnumLiteralDeclaration getResilianceEnumLiteralDeclaration_6() { return cResilianceEnumLiteralDeclaration_6; }
 		
 		//'"resiliance"'
-		public Keyword getResilianceResilianceKeyword_5_0() { return cResilianceResilianceKeyword_5_0; }
+		public Keyword getResilianceResilianceKeyword_6_0() { return cResilianceResilianceKeyword_6_0; }
 		
 		//discoverability = '"discoverability"'
-		public EnumLiteralDeclaration getDiscoverabilityEnumLiteralDeclaration_6() { return cDiscoverabilityEnumLiteralDeclaration_6; }
+		public EnumLiteralDeclaration getDiscoverabilityEnumLiteralDeclaration_7() { return cDiscoverabilityEnumLiteralDeclaration_7; }
 		
 		//'"discoverability"'
-		public Keyword getDiscoverabilityDiscoverabilityKeyword_6_0() { return cDiscoverabilityDiscoverabilityKeyword_6_0; }
+		public Keyword getDiscoverabilityDiscoverabilityKeyword_7_0() { return cDiscoverabilityDiscoverabilityKeyword_7_0; }
 		
 		//documentation = '"documentation"'
-		public EnumLiteralDeclaration getDocumentationEnumLiteralDeclaration_7() { return cDocumentationEnumLiteralDeclaration_7; }
+		public EnumLiteralDeclaration getDocumentationEnumLiteralDeclaration_8() { return cDocumentationEnumLiteralDeclaration_8; }
 		
 		//'"documentation"'
-		public Keyword getDocumentationDocumentationKeyword_7_0() { return cDocumentationDocumentationKeyword_7_0; }
+		public Keyword getDocumentationDocumentationKeyword_8_0() { return cDocumentationDocumentationKeyword_8_0; }
 		
 		//exception_handling = '"exception_handling"'
-		public EnumLiteralDeclaration getException_handlingEnumLiteralDeclaration_8() { return cException_handlingEnumLiteralDeclaration_8; }
+		public EnumLiteralDeclaration getException_handlingEnumLiteralDeclaration_9() { return cException_handlingEnumLiteralDeclaration_9; }
 		
 		//'"exception_handling"'
-		public Keyword getException_handlingException_handlingKeyword_8_0() { return cException_handlingException_handlingKeyword_8_0; }
+		public Keyword getException_handlingException_handlingKeyword_9_0() { return cException_handlingException_handlingKeyword_9_0; }
 		
 		//expected_failures = '"expected_failures"'
-		public EnumLiteralDeclaration getExpected_failuresEnumLiteralDeclaration_9() { return cExpected_failuresEnumLiteralDeclaration_9; }
+		public EnumLiteralDeclaration getExpected_failuresEnumLiteralDeclaration_10() { return cExpected_failuresEnumLiteralDeclaration_10; }
 		
 		//'"expected_failures"'
-		public Keyword getExpected_failuresExpected_failuresKeyword_9_0() { return cExpected_failuresExpected_failuresKeyword_9_0; }
+		public Keyword getExpected_failuresExpected_failuresKeyword_10_0() { return cExpected_failuresExpected_failuresKeyword_10_0; }
 		
 		//failover = '"failover"'
-		public EnumLiteralDeclaration getFailoverEnumLiteralDeclaration_10() { return cFailoverEnumLiteralDeclaration_10; }
+		public EnumLiteralDeclaration getFailoverEnumLiteralDeclaration_11() { return cFailoverEnumLiteralDeclaration_11; }
 		
 		//'"failover"'
-		public Keyword getFailoverFailoverKeyword_10_0() { return cFailoverFailoverKeyword_10_0; }
+		public Keyword getFailoverFailoverKeyword_11_0() { return cFailoverFailoverKeyword_11_0; }
 		
 		//jitter = '"jitter"'
-		public EnumLiteralDeclaration getJitterEnumLiteralDeclaration_11() { return cJitterEnumLiteralDeclaration_11; }
+		public EnumLiteralDeclaration getJitterEnumLiteralDeclaration_12() { return cJitterEnumLiteralDeclaration_12; }
 		
 		//'"jitter"'
-		public Keyword getJitterJitterKeyword_11_0() { return cJitterJitterKeyword_11_0; }
+		public Keyword getJitterJitterKeyword_12_0() { return cJitterJitterKeyword_12_0; }
 		
 		//latency = '"latency"'
-		public EnumLiteralDeclaration getLatencyEnumLiteralDeclaration_12() { return cLatencyEnumLiteralDeclaration_12; }
+		public EnumLiteralDeclaration getLatencyEnumLiteralDeclaration_13() { return cLatencyEnumLiteralDeclaration_13; }
 		
 		//'"latency"'
-		public Keyword getLatencyLatencyKeyword_12_0() { return cLatencyLatencyKeyword_12_0; }
+		public Keyword getLatencyLatencyKeyword_13_0() { return cLatencyLatencyKeyword_13_0; }
 		
 		//load_balancing = '"load_balancing"'
-		public EnumLiteralDeclaration getLoad_balancingEnumLiteralDeclaration_13() { return cLoad_balancingEnumLiteralDeclaration_13; }
+		public EnumLiteralDeclaration getLoad_balancingEnumLiteralDeclaration_14() { return cLoad_balancingEnumLiteralDeclaration_14; }
 		
 		//'"load_balancing"'
-		public Keyword getLoad_balancingLoad_balancingKeyword_13_0() { return cLoad_balancingLoad_balancingKeyword_13_0; }
+		public Keyword getLoad_balancingLoad_balancingKeyword_14_0() { return cLoad_balancingLoad_balancingKeyword_14_0; }
 		
 		//maximum_throughput = '"maximum_throughput"'
-		public EnumLiteralDeclaration getMaximum_throughputEnumLiteralDeclaration_14() { return cMaximum_throughputEnumLiteralDeclaration_14; }
+		public EnumLiteralDeclaration getMaximum_throughputEnumLiteralDeclaration_15() { return cMaximum_throughputEnumLiteralDeclaration_15; }
 		
 		//'"maximum_throughput"'
-		public Keyword getMaximum_throughputMaximum_throughputKeyword_14_0() { return cMaximum_throughputMaximum_throughputKeyword_14_0; }
+		public Keyword getMaximum_throughputMaximum_throughputKeyword_15_0() { return cMaximum_throughputMaximum_throughputKeyword_15_0; }
 		
-		//memory_aapacity = '"memory_aapacity"'
-		public EnumLiteralDeclaration getMemory_aapacityEnumLiteralDeclaration_15() { return cMemory_aapacityEnumLiteralDeclaration_15; }
+		//memory_capacity = '"memory_capacity"'
+		public EnumLiteralDeclaration getMemory_capacityEnumLiteralDeclaration_16() { return cMemory_capacityEnumLiteralDeclaration_16; }
 		
-		//'"memory_aapacity"'
-		public Keyword getMemory_aapacityMemory_aapacityKeyword_15_0() { return cMemory_aapacityMemory_aapacityKeyword_15_0; }
+		//'"memory_capacity"'
+		public Keyword getMemory_capacityMemory_capacityKeyword_16_0() { return cMemory_capacityMemory_capacityKeyword_16_0; }
 		
 		//packet_loss = '"packet_loss"'
-		public EnumLiteralDeclaration getPacket_lossEnumLiteralDeclaration_16() { return cPacket_lossEnumLiteralDeclaration_16; }
+		public EnumLiteralDeclaration getPacket_lossEnumLiteralDeclaration_17() { return cPacket_lossEnumLiteralDeclaration_17; }
 		
 		//'"packet_loss"'
-		public Keyword getPacket_lossPacket_lossKeyword_16_0() { return cPacket_lossPacket_lossKeyword_16_0; }
+		public Keyword getPacket_lossPacket_lossKeyword_17_0() { return cPacket_lossPacket_lossKeyword_17_0; }
 		
 		//precision = '"precision"'
-		public EnumLiteralDeclaration getPrecisionEnumLiteralDeclaration_17() { return cPrecisionEnumLiteralDeclaration_17; }
+		public EnumLiteralDeclaration getPrecisionEnumLiteralDeclaration_18() { return cPrecisionEnumLiteralDeclaration_18; }
 		
 		//'"precision"'
-		public Keyword getPrecisionPrecisionKeyword_17_0() { return cPrecisionPrecisionKeyword_17_0; }
+		public Keyword getPrecisionPrecisionKeyword_18_0() { return cPrecisionPrecisionKeyword_18_0; }
 		
 		//probability_of_correctness = '"probability_of_correctness"'
-		public EnumLiteralDeclaration getProbability_of_correctnessEnumLiteralDeclaration_18() { return cProbability_of_correctnessEnumLiteralDeclaration_18; }
+		public EnumLiteralDeclaration getProbability_of_correctnessEnumLiteralDeclaration_19() { return cProbability_of_correctnessEnumLiteralDeclaration_19; }
 		
 		//'"probability_of_correctness"'
-		public Keyword getProbability_of_correctnessProbability_of_correctnessKeyword_18_0() { return cProbability_of_correctnessProbability_of_correctnessKeyword_18_0; }
+		public Keyword getProbability_of_correctnessProbability_of_correctnessKeyword_19_0() { return cProbability_of_correctnessProbability_of_correctnessKeyword_19_0; }
 		
 		//round_trip_time = '"round_trip_time"'
-		public EnumLiteralDeclaration getRound_trip_timeEnumLiteralDeclaration_19() { return cRound_trip_timeEnumLiteralDeclaration_19; }
+		public EnumLiteralDeclaration getRound_trip_timeEnumLiteralDeclaration_20() { return cRound_trip_timeEnumLiteralDeclaration_20; }
 		
 		//'"round_trip_time"'
-		public Keyword getRound_trip_timeRound_trip_timeKeyword_19_0() { return cRound_trip_timeRound_trip_timeKeyword_19_0; }
+		public Keyword getRound_trip_timeRound_trip_timeKeyword_20_0() { return cRound_trip_timeRound_trip_timeKeyword_20_0; }
 		
 		//throughput = '"throughput"'
-		public EnumLiteralDeclaration getThroughputEnumLiteralDeclaration_20() { return cThroughputEnumLiteralDeclaration_20; }
+		public EnumLiteralDeclaration getThroughputEnumLiteralDeclaration_21() { return cThroughputEnumLiteralDeclaration_21; }
 		
 		//'"throughput"'
-		public Keyword getThroughputThroughputKeyword_20_0() { return cThroughputThroughputKeyword_20_0; }
+		public Keyword getThroughputThroughputKeyword_21_0() { return cThroughputThroughputKeyword_21_0; }
 		
-		//time_to_tail = '"time_to_tail"'
-		public EnumLiteralDeclaration getTime_to_tailEnumLiteralDeclaration_21() { return cTime_to_tailEnumLiteralDeclaration_21; }
+		//time_to_fail = '"time_to_fail"'
+		public EnumLiteralDeclaration getTime_to_failEnumLiteralDeclaration_22() { return cTime_to_failEnumLiteralDeclaration_22; }
 		
-		//'"time_to_tail"'
-		public Keyword getTime_to_tailTime_to_tailKeyword_21_0() { return cTime_to_tailTime_to_tailKeyword_21_0; }
+		//'"time_to_fail"'
+		public Keyword getTime_to_failTime_to_failKeyword_22_0() { return cTime_to_failTime_to_failKeyword_22_0; }
 		
-		//time_to_tepair = '"time_to_tepair"'
-		public EnumLiteralDeclaration getTime_to_tepairEnumLiteralDeclaration_22() { return cTime_to_tepairEnumLiteralDeclaration_22; }
+		//time_to_repair = '"time_to_repair"'
+		public EnumLiteralDeclaration getTime_to_repairEnumLiteralDeclaration_23() { return cTime_to_repairEnumLiteralDeclaration_23; }
 		
-		//'"time_to_tepair"'
-		public Keyword getTime_to_tepairTime_to_tepairKeyword_22_0() { return cTime_to_tepairTime_to_tepairKeyword_22_0; }
+		//'"time_to_repair"'
+		public Keyword getTime_to_repairTime_to_repairKeyword_23_0() { return cTime_to_repairTime_to_repairKeyword_23_0; }
 		
 		//type_consistency = '"type_consistency"'
-		public EnumLiteralDeclaration getType_consistencyEnumLiteralDeclaration_23() { return cType_consistencyEnumLiteralDeclaration_23; }
+		public EnumLiteralDeclaration getType_consistencyEnumLiteralDeclaration_24() { return cType_consistencyEnumLiteralDeclaration_24; }
 		
 		//'"type_consistency"'
-		public Keyword getType_consistencyType_consistencyKeyword_23_0() { return cType_consistencyType_consistencyKeyword_23_0; }
+		public Keyword getType_consistencyType_consistencyKeyword_24_0() { return cType_consistencyType_consistencyKeyword_24_0; }
 		
 		//uptime = '"uptime"'
-		public EnumLiteralDeclaration getUptimeEnumLiteralDeclaration_24() { return cUptimeEnumLiteralDeclaration_24; }
+		public EnumLiteralDeclaration getUptimeEnumLiteralDeclaration_25() { return cUptimeEnumLiteralDeclaration_25; }
 		
 		//'"uptime"'
-		public Keyword getUptimeUptimeKeyword_24_0() { return cUptimeUptimeKeyword_24_0; }
+		public Keyword getUptimeUptimeKeyword_25_0() { return cUptimeUptimeKeyword_25_0; }
 		
 		//up_to_dateness = '"up-to-dateness"'
-		public EnumLiteralDeclaration getUp_to_datenessEnumLiteralDeclaration_25() { return cUp_to_datenessEnumLiteralDeclaration_25; }
+		public EnumLiteralDeclaration getUp_to_datenessEnumLiteralDeclaration_26() { return cUp_to_datenessEnumLiteralDeclaration_26; }
 		
 		//'"up-to-dateness"'
-		public Keyword getUp_to_datenessUpToDatenessKeyword_25_0() { return cUp_to_datenessUpToDatenessKeyword_25_0; }
+		public Keyword getUp_to_datenessUpToDatenessKeyword_26_0() { return cUp_to_datenessUpToDatenessKeyword_26_0; }
 	}
 	public class QoSMetricUnitElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "io.github.abelgomez.asyncapi.AsyncApi.QoSMetricUnit");
@@ -5614,8 +5632,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//    | seconds = '"seconds"'
 		//    | minutes = '"minutes"'
 		//    | hours = '"hours"'
-		//    | null = '"null"'
-		//;
+		//    | null = '"null"';
 		public EnumRule getRule() { return rule; }
 		
 		//milliseconds = '"milliseconds"'
@@ -5674,8 +5691,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//    | greater_equal = '">="'
 		//    | equal = '"="'
 		//    | less_equal = '"<="'
-		//    | less = '"<"'
-		//;
+		//    | less = '"<"';
 		public EnumRule getRule() { return rule; }
 		
 		//greater = '">"'
@@ -6068,8 +6084,8 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	private final QualifyingConditionElements pQualifyingCondition;
 	private final SloElements pSlo;
 	private final AbstractQoSMetricElements pAbstractQoSMetric;
-	private final QoSMetricReferenceElements pQoSMetricReference;
 	private final QoSMetricElements pQoSMetric;
+	private final NamedQoSMetricElements pNamedQoSMetric;
 	private final DerivedQoSMetricElements pDerivedQoSMetric;
 	private final BooleanExpressionElements pBooleanExpression;
 	private final AndExpressionElements pAndExpression;
@@ -6131,8 +6147,8 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		this.pQualifyingCondition = new QualifyingConditionElements();
 		this.pSlo = new SloElements();
 		this.pAbstractQoSMetric = new AbstractQoSMetricElements();
-		this.pQoSMetricReference = new QoSMetricReferenceElements();
 		this.pQoSMetric = new QoSMetricElements();
+		this.pNamedQoSMetric = new NamedQoSMetricElements();
 		this.pDerivedQoSMetric = new DerivedQoSMetricElements();
 		this.pBooleanExpression = new BooleanExpressionElements();
 		this.pAndExpression = new AndExpressionElements();
@@ -6529,7 +6545,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//        & ( '"parameters"' ':' '{' parameters+=NamedParameter (',' parameters+=NamedParameter)* '}' ','? )?
 	//        & ( '"operationTraits"' ':' '{' operationTraits+=NamedOperationTrait (',' operationTraits+=NamedOperationTrait)* '}' ','? )?
 	//        & ( '"messageTraits"' ':' '{' messageTraits+=NamedMessageTrait (',' messageTraits+=NamedMessageTrait)* '}' ','? )?
-	//        & ( '"x-qosMetrics"' ':' '[' qosMetrics+=QoSMetric (',' qosMetrics+=QoSMetric)* ']' ','? )?
+	//        & ( '"x-qosMetrics"' ':' '{' qosMetrics+=NamedQoSMetric (',' qosMetrics+=NamedQoSMetric)* '}' ','? )?
 	////        & ( GenericJsonTupleButRef ','? )*
 	//    ) '}';
 	public ComponentsElements getComponentsAccess() {
@@ -6542,7 +6558,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	//Sla:
 	//    {Sla} '{' (
-	//          ( '"guaranteeTerm"' ':' guaranteeTerm+=GuaranteeTerm (',' guaranteeTerm+=GuaranteeTerm)* )
+	//          ( '"guaranteeTerms"' ':' '{' guaranteeTerms+=GuaranteeTerm (',' guaranteeTerms+=GuaranteeTerm)* '}' )?
 	//    ) '}';
 	public SlaElements getSlaAccess() {
 		return pSla;
@@ -6553,10 +6569,10 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//GuaranteeTerm:
-	//    {GuaranteeTerm} '{' (
-	//          ( '"scopes"' ':' '{' scopes+=Scope (',' scopes+=Scope)* '}' ',' )
-	//          ( '"qualifyingConditions"' ':' '{' qualifyingConditions+=QualifyingCondition (',' qualifyingConditions+=QualifyingCondition)* '}'',')?
-	//          ( '"slos"' ':' '{' slos+=Slo (',' slos+=Slo)* '}')
+	//    {GuaranteeTerm} name=AnyString ':' '{' (
+	//          ( '"scopes"' ':' '{' scopes+=Scope (',' scopes+=Scope)* '}' ','? )
+	//          & ( '"qualifyingConditions"' ':' '{' qualifyingConditions+=QualifyingCondition (',' qualifyingConditions+=QualifyingCondition)* '}' ','? )?
+	//          & ( '"slos"' ':' '{' slos+=Slo (',' slos+=Slo)* '}' ','? )
 	//    ) '}';
 	public GuaranteeTermElements getGuaranteeTermAccess() {
 		return pGuaranteeTerm;
@@ -6567,7 +6583,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//Scope:
-	//    {Scope}(
+	//    {Scope} (
 	//       name=AnyString ':' reference= [Channel|AnyString]
 	//    );
 	public ScopeElements getScopeAccess() {
@@ -6579,8 +6595,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//QualifyingCondition:
-	//    {QualifyingCondition} name=AnyString ':' condition=BooleanExpression
-	//;
+	//    {QualifyingCondition} name=AnyString ':' condition=BooleanExpression;
 	public QualifyingConditionElements getQualifyingConditionAccess() {
 		return pQualifyingCondition;
 	}
@@ -6590,8 +6605,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//Slo:
-	//    {Slo} name=AnyString ':' condition=BooleanExpression
-	//;
+	//    {Slo} name=AnyString ':' condition=BooleanExpression;
 	public SloElements getSloAccess() {
 		return pSlo;
 	}
@@ -6601,7 +6615,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//AbstractQoSMetric:
-	//  QoSMetricReference | QoSMetric;
+	//  Reference | QoSMetric;
 	public AbstractQoSMetricElements getAbstractQoSMetricAccess() {
 		return pAbstractQoSMetric;
 	}
@@ -6610,22 +6624,10 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		return getAbstractQoSMetricAccess().getRule();
 	}
 	
-	//QoSMetricReference:
-	//  metric= [QoSMetric|AnyString]
-	//;
-	public QoSMetricReferenceElements getQoSMetricReferenceAccess() {
-		return pQoSMetricReference;
-	}
-	
-	public ParserRule getQoSMetricReferenceRule() {
-		return getQoSMetricReferenceAccess().getRule();
-	}
-	
 	//QoSMetric:
 	//    ('{'
 	//        (
-	//          ( '"name"' ':' name=AnyString ','? )
-	//        & ( '"metricType"' ':' metricType=QoSMetricType ','? )
+	//        ( '"metricType"' ':' metricType=QoSMetricType ','? )
 	//        & ( '"description"' ':' description=AnyString ','? )?
 	//        & ( '"unit"' ':' unit=QoSMetricUnit ','? )
 	//        & ( '"groupedByEvent"' ':' groupedByEvent=Boolean ','? )
@@ -6639,14 +6641,23 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		return getQoSMetricAccess().getRule();
 	}
 	
-	// DerivedQoSMetric:
+	//NamedQoSMetric:
+	//    {NamedQoSMetric} name=AnyString ':' qosMetric=AbstractQoSMetric;
+	public NamedQoSMetricElements getNamedQoSMetricAccess() {
+		return pNamedQoSMetric;
+	}
+	
+	public ParserRule getNamedQoSMetricRule() {
+		return getNamedQoSMetricAccess().getRule();
+	}
+	
+	//DerivedQoSMetric:
 	//    {DerivedQoSMetric}(
 	//        '"derivedQoSMetricDefinition"' ':' '{' (
 	//          ('"window"' ':'  window = AnyString ','? )
 	//        & ('"windowUnit"' ':'  windowUnit = WindowUnit ','? )
 	//        & ('"aggregationFunction"' ':'  aggregationFunction = AggregationFunction ','? )
-	//    ) '}' )
-	//;
+	//    ) '}' );
 	public DerivedQoSMetricElements getDerivedQoSMetricAccess() {
 		return pDerivedQoSMetric;
 	}
@@ -6730,8 +6741,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//    | minutes = '"minutes"'
 	//    | hours = '"hours"'
 	//    | days = '"days"'
-	//    | messages = '"messages"'
-	//;
+	//    | messages = '"messages"';
 	public WindowUnitElements getWindowUnitAccess() {
 		return eWindowUnit;
 	}
@@ -6744,8 +6754,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//    AVG = '"AVG"'
 	//    | MEDIAN = '"MEDIAN"'
 	//    | MAX = '"MAX"'
-	//    | MIN = '"MIN"'
-	//;
+	//    | MIN = '"MIN"';
 	public AggregationFunctionElements getAggregationFunctionAccess() {
 		return eAggregationFunction;
 	}
@@ -6756,10 +6765,12 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	//enum QoSMetricType:
 	//    availability = '"availability"'
+	//    | period = '"period"'
 	//    | bandwith = '"bandwith"'
 	//    | cpu = '"cpu"'
 	//    | capacity = '"capacity"'
-	//    | disaster = '"disaster"' | resiliance = '"resiliance"'
+	//    | disaster = '"disaster"'
+	//    | resiliance = '"resiliance"'
 	//    | discoverability = '"discoverability"'
 	//    | documentation = '"documentation"'
 	//    | exception_handling = '"exception_handling"'
@@ -6769,18 +6780,17 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//    | latency = '"latency"'
 	//    | load_balancing = '"load_balancing"'
 	//    | maximum_throughput = '"maximum_throughput"'
-	//    | memory_aapacity = '"memory_aapacity"'
+	//    | memory_capacity = '"memory_capacity"'
 	//    | packet_loss = '"packet_loss"'
 	//    | precision = '"precision"'
 	//    | probability_of_correctness = '"probability_of_correctness"'
 	//    | round_trip_time = '"round_trip_time"'
 	//    | throughput = '"throughput"'
-	//    | time_to_tail = '"time_to_tail"'
-	//    | time_to_tepair = '"time_to_tepair"'
+	//    | time_to_fail = '"time_to_fail"'
+	//    | time_to_repair = '"time_to_repair"'
 	//    | type_consistency = '"type_consistency"'
 	//    | uptime = '"uptime"'
-	//    | up_to_dateness = '"up-to-dateness"'
-	//;
+	//    | up_to_dateness = '"up-to-dateness"';
 	public QoSMetricTypeElements getQoSMetricTypeAccess() {
 		return eQoSMetricType;
 	}
@@ -6794,8 +6804,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//    | seconds = '"seconds"'
 	//    | minutes = '"minutes"'
 	//    | hours = '"hours"'
-	//    | null = '"null"'
-	//;
+	//    | null = '"null"';
 	public QoSMetricUnitElements getQoSMetricUnitAccess() {
 		return eQoSMetricUnit;
 	}
@@ -6809,8 +6818,7 @@ public class AsyncApiGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//    | greater_equal = '">="'
 	//    | equal = '"="'
 	//    | less_equal = '"<="'
-	//    | less = '"<"'
-	//;
+	//    | less = '"<"';
 	public OperatorElements getOperatorAccess() {
 		return eOperator;
 	}

@@ -45,427 +45,433 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ServerImpl extends MinimalEObjectImpl.Container implements Server
 {
   /**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
   protected String name = NAME_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getUrl()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getUrl()
+   * @generated
+   * @ordered
+   */
   protected static final String URL_EDEFAULT = null;
 
   /**
-	 * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getUrl()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getUrl()
+   * @generated
+   * @ordered
+   */
   protected String url = URL_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getProtocol()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getProtocol()
+   * @generated
+   * @ordered
+   */
   protected static final Protocol PROTOCOL_EDEFAULT = Protocol.AMQP;
 
   /**
-	 * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getProtocol()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getProtocol()
+   * @generated
+   * @ordered
+   */
   protected Protocol protocol = PROTOCOL_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
   protected static final String DESCRIPTION_EDEFAULT = null;
 
   /**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-	 * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getVariables()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getVariables()
+   * @generated
+   * @ordered
+   */
   protected EList<Variable> variables;
 
   /**
-	 * The default value of the '{@link #getIsMonitored() <em>Is Monitored</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getIsMonitored() <em>Is Monitored</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getIsMonitored()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getIsMonitored()
+   * @generated
+   * @ordered
+   */
   protected static final io.github.abelgomez.asyncapi.asyncApi.Boolean IS_MONITORED_EDEFAULT = io.github.abelgomez.asyncapi.asyncApi.Boolean._FALSE;
 
   /**
-	 * The cached value of the '{@link #getIsMonitored() <em>Is Monitored</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getIsMonitored() <em>Is Monitored</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getIsMonitored()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getIsMonitored()
+   * @generated
+   * @ordered
+   */
   protected io.github.abelgomez.asyncapi.asyncApi.Boolean isMonitored = IS_MONITORED_EDEFAULT;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected ServerImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return AsyncApiPackage.Literals.SERVER;
-	}
+    return AsyncApiPackage.Literals.SERVER;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String getName()
   {
-		return name;
-	}
+    return name;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void setName(String newName)
   {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__NAME, oldName, name));
-	}
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__NAME, oldName, name));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String getUrl()
   {
-		return url;
-	}
+    return url;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void setUrl(String newUrl)
   {
-		String oldUrl = url;
-		url = newUrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__URL, oldUrl, url));
-	}
+    String oldUrl = url;
+    url = newUrl;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__URL, oldUrl, url));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Protocol getProtocol()
   {
-		return protocol;
-	}
+    return protocol;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void setProtocol(Protocol newProtocol)
   {
-		Protocol oldProtocol = protocol;
-		protocol = newProtocol == null ? PROTOCOL_EDEFAULT : newProtocol;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__PROTOCOL, oldProtocol, protocol));
-	}
+    Protocol oldProtocol = protocol;
+    protocol = newProtocol == null ? PROTOCOL_EDEFAULT : newProtocol;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__PROTOCOL, oldProtocol, protocol));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String getDescription()
   {
-		return description;
-	}
+    return description;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void setDescription(String newDescription)
   {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__DESCRIPTION, oldDescription, description));
-	}
+    String oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__DESCRIPTION, oldDescription, description));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public EList<Variable> getVariables()
   {
-		if (variables == null) {
-			variables = new EObjectContainmentEList<Variable>(Variable.class, this, AsyncApiPackage.SERVER__VARIABLES);
-		}
-		return variables;
-	}
+    if (variables == null)
+    {
+      variables = new EObjectContainmentEList<Variable>(Variable.class, this, AsyncApiPackage.SERVER__VARIABLES);
+    }
+    return variables;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public io.github.abelgomez.asyncapi.asyncApi.Boolean getIsMonitored()
   {
-		return isMonitored;
-	}
+    return isMonitored;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void setIsMonitored(io.github.abelgomez.asyncapi.asyncApi.Boolean newIsMonitored)
   {
-		io.github.abelgomez.asyncapi.asyncApi.Boolean oldIsMonitored = isMonitored;
-		isMonitored = newIsMonitored == null ? IS_MONITORED_EDEFAULT : newIsMonitored;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__IS_MONITORED, oldIsMonitored, isMonitored));
-	}
+    io.github.abelgomez.asyncapi.asyncApi.Boolean oldIsMonitored = isMonitored;
+    isMonitored = newIsMonitored == null ? IS_MONITORED_EDEFAULT : newIsMonitored;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AsyncApiPackage.SERVER__IS_MONITORED, oldIsMonitored, isMonitored));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case AsyncApiPackage.SERVER__VARIABLES:
-				return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.SERVER__VARIABLES:
+        return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case AsyncApiPackage.SERVER__NAME:
-				return getName();
-			case AsyncApiPackage.SERVER__URL:
-				return getUrl();
-			case AsyncApiPackage.SERVER__PROTOCOL:
-				return getProtocol();
-			case AsyncApiPackage.SERVER__DESCRIPTION:
-				return getDescription();
-			case AsyncApiPackage.SERVER__VARIABLES:
-				return getVariables();
-			case AsyncApiPackage.SERVER__IS_MONITORED:
-				return getIsMonitored();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.SERVER__NAME:
+        return getName();
+      case AsyncApiPackage.SERVER__URL:
+        return getUrl();
+      case AsyncApiPackage.SERVER__PROTOCOL:
+        return getProtocol();
+      case AsyncApiPackage.SERVER__DESCRIPTION:
+        return getDescription();
+      case AsyncApiPackage.SERVER__VARIABLES:
+        return getVariables();
+      case AsyncApiPackage.SERVER__IS_MONITORED:
+        return getIsMonitored();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case AsyncApiPackage.SERVER__NAME:
-				setName((String)newValue);
-				return;
-			case AsyncApiPackage.SERVER__URL:
-				setUrl((String)newValue);
-				return;
-			case AsyncApiPackage.SERVER__PROTOCOL:
-				setProtocol((Protocol)newValue);
-				return;
-			case AsyncApiPackage.SERVER__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case AsyncApiPackage.SERVER__VARIABLES:
-				getVariables().clear();
-				getVariables().addAll((Collection<? extends Variable>)newValue);
-				return;
-			case AsyncApiPackage.SERVER__IS_MONITORED:
-				setIsMonitored((io.github.abelgomez.asyncapi.asyncApi.Boolean)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.SERVER__NAME:
+        setName((String)newValue);
+        return;
+      case AsyncApiPackage.SERVER__URL:
+        setUrl((String)newValue);
+        return;
+      case AsyncApiPackage.SERVER__PROTOCOL:
+        setProtocol((Protocol)newValue);
+        return;
+      case AsyncApiPackage.SERVER__DESCRIPTION:
+        setDescription((String)newValue);
+        return;
+      case AsyncApiPackage.SERVER__VARIABLES:
+        getVariables().clear();
+        getVariables().addAll((Collection<? extends Variable>)newValue);
+        return;
+      case AsyncApiPackage.SERVER__IS_MONITORED:
+        setIsMonitored((io.github.abelgomez.asyncapi.asyncApi.Boolean)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case AsyncApiPackage.SERVER__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case AsyncApiPackage.SERVER__URL:
-				setUrl(URL_EDEFAULT);
-				return;
-			case AsyncApiPackage.SERVER__PROTOCOL:
-				setProtocol(PROTOCOL_EDEFAULT);
-				return;
-			case AsyncApiPackage.SERVER__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case AsyncApiPackage.SERVER__VARIABLES:
-				getVariables().clear();
-				return;
-			case AsyncApiPackage.SERVER__IS_MONITORED:
-				setIsMonitored(IS_MONITORED_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.SERVER__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case AsyncApiPackage.SERVER__URL:
+        setUrl(URL_EDEFAULT);
+        return;
+      case AsyncApiPackage.SERVER__PROTOCOL:
+        setProtocol(PROTOCOL_EDEFAULT);
+        return;
+      case AsyncApiPackage.SERVER__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
+        return;
+      case AsyncApiPackage.SERVER__VARIABLES:
+        getVariables().clear();
+        return;
+      case AsyncApiPackage.SERVER__IS_MONITORED:
+        setIsMonitored(IS_MONITORED_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case AsyncApiPackage.SERVER__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case AsyncApiPackage.SERVER__URL:
-				return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
-			case AsyncApiPackage.SERVER__PROTOCOL:
-				return protocol != PROTOCOL_EDEFAULT;
-			case AsyncApiPackage.SERVER__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case AsyncApiPackage.SERVER__VARIABLES:
-				return variables != null && !variables.isEmpty();
-			case AsyncApiPackage.SERVER__IS_MONITORED:
-				return isMonitored != IS_MONITORED_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case AsyncApiPackage.SERVER__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AsyncApiPackage.SERVER__URL:
+        return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
+      case AsyncApiPackage.SERVER__PROTOCOL:
+        return protocol != PROTOCOL_EDEFAULT;
+      case AsyncApiPackage.SERVER__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+      case AsyncApiPackage.SERVER__VARIABLES:
+        return variables != null && !variables.isEmpty();
+      case AsyncApiPackage.SERVER__IS_MONITORED:
+        return isMonitored != IS_MONITORED_EDEFAULT;
+    }
+    return super.eIsSet(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String toString()
   {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", url: ");
-		result.append(url);
-		result.append(", protocol: ");
-		result.append(protocol);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", isMonitored: ");
-		result.append(isMonitored);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", url: ");
+    result.append(url);
+    result.append(", protocol: ");
+    result.append(protocol);
+    result.append(", description: ");
+    result.append(description);
+    result.append(", isMonitored: ");
+    result.append(isMonitored);
+    result.append(')');
+    return result.toString();
+  }
 
 } //ServerImpl

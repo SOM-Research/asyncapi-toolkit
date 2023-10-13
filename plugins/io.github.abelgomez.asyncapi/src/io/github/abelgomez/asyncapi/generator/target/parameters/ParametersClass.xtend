@@ -160,10 +160,9 @@ class ParametersClass extends AbstractType implements IBuildableType {
 			public List<«parametersInterface.parameterLiteralInterface.name»> getParameterLiterals() {
 				return Arrays.asList(LITERALS.values());
 			}
-			/**
-			 * Returns the parameters as a {@link Map}
-			 */
-			protected Map<String, String> asMap() {
+			
+			@Override
+			public Map<String, String> asMap() {
 				return Collections.unmodifiableMap(parameters);
 			}
 			

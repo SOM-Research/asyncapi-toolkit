@@ -170,13 +170,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="messageTraits" upperBound="-1"
         eType="#//NamedMessageTrait" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="qosMetrics" upperBound="-1"
-        eType="#//QoSMetric" containment="true"/>
+        eType="#//NamedQoSMetric" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sla">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="guaranteeTerm" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guaranteeTerms" upperBound="-1"
         eType="#//GuaranteeTerm" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GuaranteeTerm">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scopes" upperBound="-1"
         eType="#//Scope" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="qualifyingConditions" upperBound="-1"
@@ -199,15 +200,16 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractQoSMetric"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QoSMetricReference" eSuperTypes="#//AbstractQoSMetric">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="metric" eType="#//QoSMetric"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QoSMetric" eSuperTypes="#//AbstractQoSMetric">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="metricType" eType="#//QoSMetricType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//QoSMetricUnit"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="groupedByEvent" eType="#//Boolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedQoSMetric">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qosMetric" eType="#//AbstractQoSMetric"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DerivedQoSMetric" eSuperTypes="#//QoSMetric">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="window" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -229,7 +231,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//Operator"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="#//AbstractMessage #//AbstractSchema #//AbstractParameter #//AbstractOperationTrait #//AbstractMessageTrait">
+  <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="#//AbstractMessage #//AbstractSchema #//AbstractParameter #//AbstractOperationTrait #//AbstractMessageTrait #//AbstractQoSMetric">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="WindowUnit">
@@ -247,31 +249,32 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="QoSMetricType">
     <eLiterals name="availability" literal="&quot;availability&quot;"/>
-    <eLiterals name="bandwith" value="1" literal="&quot;bandwith&quot;"/>
-    <eLiterals name="cpu" value="2" literal="&quot;cpu&quot;"/>
-    <eLiterals name="capacity" value="3" literal="&quot;capacity&quot;"/>
-    <eLiterals name="disaster" value="4" literal="&quot;disaster&quot;"/>
-    <eLiterals name="resiliance" value="5" literal="&quot;resiliance&quot;"/>
-    <eLiterals name="discoverability" value="6" literal="&quot;discoverability&quot;"/>
-    <eLiterals name="documentation" value="7" literal="&quot;documentation&quot;"/>
-    <eLiterals name="exception_handling" value="8" literal="&quot;exception_handling&quot;"/>
-    <eLiterals name="expected_failures" value="9" literal="&quot;expected_failures&quot;"/>
-    <eLiterals name="failover" value="10" literal="&quot;failover&quot;"/>
-    <eLiterals name="jitter" value="11" literal="&quot;jitter&quot;"/>
-    <eLiterals name="latency" value="12" literal="&quot;latency&quot;"/>
-    <eLiterals name="load_balancing" value="13" literal="&quot;load_balancing&quot;"/>
-    <eLiterals name="maximum_throughput" value="14" literal="&quot;maximum_throughput&quot;"/>
-    <eLiterals name="memory_aapacity" value="15" literal="&quot;memory_aapacity&quot;"/>
-    <eLiterals name="packet_loss" value="16" literal="&quot;packet_loss&quot;"/>
-    <eLiterals name="precision" value="17" literal="&quot;precision&quot;"/>
-    <eLiterals name="probability_of_correctness" value="18" literal="&quot;probability_of_correctness&quot;"/>
-    <eLiterals name="round_trip_time" value="19" literal="&quot;round_trip_time&quot;"/>
-    <eLiterals name="throughput" value="20" literal="&quot;throughput&quot;"/>
-    <eLiterals name="time_to_tail" value="21" literal="&quot;time_to_tail&quot;"/>
-    <eLiterals name="time_to_tepair" value="22" literal="&quot;time_to_tepair&quot;"/>
-    <eLiterals name="type_consistency" value="23" literal="&quot;type_consistency&quot;"/>
-    <eLiterals name="uptime" value="24" literal="&quot;uptime&quot;"/>
-    <eLiterals name="up_to_dateness" value="25" literal="&quot;up-to-dateness&quot;"/>
+    <eLiterals name="period" value="1" literal="&quot;period&quot;"/>
+    <eLiterals name="bandwith" value="2" literal="&quot;bandwith&quot;"/>
+    <eLiterals name="cpu" value="3" literal="&quot;cpu&quot;"/>
+    <eLiterals name="capacity" value="4" literal="&quot;capacity&quot;"/>
+    <eLiterals name="disaster" value="5" literal="&quot;disaster&quot;"/>
+    <eLiterals name="resiliance" value="6" literal="&quot;resiliance&quot;"/>
+    <eLiterals name="discoverability" value="7" literal="&quot;discoverability&quot;"/>
+    <eLiterals name="documentation" value="8" literal="&quot;documentation&quot;"/>
+    <eLiterals name="exception_handling" value="9" literal="&quot;exception_handling&quot;"/>
+    <eLiterals name="expected_failures" value="10" literal="&quot;expected_failures&quot;"/>
+    <eLiterals name="failover" value="11" literal="&quot;failover&quot;"/>
+    <eLiterals name="jitter" value="12" literal="&quot;jitter&quot;"/>
+    <eLiterals name="latency" value="13" literal="&quot;latency&quot;"/>
+    <eLiterals name="load_balancing" value="14" literal="&quot;load_balancing&quot;"/>
+    <eLiterals name="maximum_throughput" value="15" literal="&quot;maximum_throughput&quot;"/>
+    <eLiterals name="memory_capacity" value="16" literal="&quot;memory_capacity&quot;"/>
+    <eLiterals name="packet_loss" value="17" literal="&quot;packet_loss&quot;"/>
+    <eLiterals name="precision" value="18" literal="&quot;precision&quot;"/>
+    <eLiterals name="probability_of_correctness" value="19" literal="&quot;probability_of_correctness&quot;"/>
+    <eLiterals name="round_trip_time" value="20" literal="&quot;round_trip_time&quot;"/>
+    <eLiterals name="throughput" value="21" literal="&quot;throughput&quot;"/>
+    <eLiterals name="time_to_fail" value="22" literal="&quot;time_to_fail&quot;"/>
+    <eLiterals name="time_to_repair" value="23" literal="&quot;time_to_repair&quot;"/>
+    <eLiterals name="type_consistency" value="24" literal="&quot;type_consistency&quot;"/>
+    <eLiterals name="uptime" value="25" literal="&quot;uptime&quot;"/>
+    <eLiterals name="up_to_dateness" value="26" literal="&quot;up-to-dateness&quot;"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="QoSMetricUnit">
     <eLiterals name="milliseconds" literal="&quot;milliseconds&quot;"/>

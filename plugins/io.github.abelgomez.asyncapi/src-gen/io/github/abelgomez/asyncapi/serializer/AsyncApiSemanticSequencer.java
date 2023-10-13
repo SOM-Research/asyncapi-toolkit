@@ -21,12 +21,12 @@ import io.github.abelgomez.asyncapi.asyncApi.NamedMessage;
 import io.github.abelgomez.asyncapi.asyncApi.NamedMessageTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedOperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.NamedParameter;
+import io.github.abelgomez.asyncapi.asyncApi.NamedQoSMetric;
 import io.github.abelgomez.asyncapi.asyncApi.NamedSchema;
 import io.github.abelgomez.asyncapi.asyncApi.Operation;
 import io.github.abelgomez.asyncapi.asyncApi.OperationTrait;
 import io.github.abelgomez.asyncapi.asyncApi.OrExpression;
 import io.github.abelgomez.asyncapi.asyncApi.QoSMetric;
-import io.github.abelgomez.asyncapi.asyncApi.QoSMetricReference;
 import io.github.abelgomez.asyncapi.asyncApi.QualifyingCondition;
 import io.github.abelgomez.asyncapi.asyncApi.Reference;
 import io.github.abelgomez.asyncapi.asyncApi.Schema;
@@ -110,6 +110,9 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case AsyncApiPackage.NAMED_PARAMETER:
 				sequence_NamedParameter(context, (NamedParameter) semanticObject); 
 				return; 
+			case AsyncApiPackage.NAMED_QO_SMETRIC:
+				sequence_NamedQoSMetric(context, (NamedQoSMetric) semanticObject); 
+				return; 
 			case AsyncApiPackage.NAMED_SCHEMA:
 				sequence_NamedSchema(context, (NamedSchema) semanticObject); 
 				return; 
@@ -127,9 +130,6 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case AsyncApiPackage.QO_SMETRIC:
 				sequence_QoSMetric(context, (QoSMetric) semanticObject); 
-				return; 
-			case AsyncApiPackage.QO_SMETRIC_REFERENCE:
-				sequence_QoSMetricReference(context, (QoSMetricReference) semanticObject); 
 				return; 
 			case AsyncApiPackage.QUALIFYING_CONDITION:
 				sequence_QualifyingCondition(context, (QualifyingCondition) semanticObject); 
@@ -255,7 +255,7 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         (parameters+=NamedParameter parameters+=NamedParameter*) | 
 	 *         (operationTraits+=NamedOperationTrait operationTraits+=NamedOperationTrait*) | 
 	 *         (messageTraits+=NamedMessageTrait messageTraits+=NamedMessageTrait*) | 
-	 *         (qosMetrics+=QoSMetric qosMetrics+=QoSMetric*)
+	 *         (qosMetrics+=NamedQoSMetric qosMetrics+=NamedQoSMetric*)
 	 *     )*
 	 * </pre>
 	 */
@@ -300,7 +300,10 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     GuaranteeTerm returns GuaranteeTerm
 	 *
 	 * Constraint:
-	 *     (scopes+=Scope scopes+=Scope* (qualifyingConditions+=QualifyingCondition qualifyingConditions+=QualifyingCondition*)? slos+=Slo slos+=Slo*)
+	 *     (
+	 *         name=AnyString 
+	 *         ((scopes+=Scope scopes+=Scope*) | (qualifyingConditions+=QualifyingCondition qualifyingConditions+=QualifyingCondition*) | (slos+=Slo slos+=Slo*))*
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_GuaranteeTerm(ISerializationContext context, GuaranteeTerm semanticObject) {
@@ -377,8 +380,8 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *             payload=AbstractSchema | 
 	 *             identifier=MessageIdentifier
 	 *         )? 
-	 *         (traits+=AbstractMessageTrait traits+=AbstractMessageTrait*)? 
-	 *         (tags+=Tag tags+=Tag*)?
+	 *         (tags+=Tag tags+=Tag*)? 
+	 *         (traits+=AbstractMessageTrait traits+=AbstractMessageTrait*)?
 	 *     )+
 	 * </pre>
 	 */
@@ -482,6 +485,29 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     NamedQoSMetric returns NamedQoSMetric
+	 *
+	 * Constraint:
+	 *     (name=AnyString qosMetric=AbstractQoSMetric)
+	 * </pre>
+	 */
+	protected void sequence_NamedQoSMetric(ISerializationContext context, NamedQoSMetric semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.NAMED_QO_SMETRIC__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.NAMED_QO_SMETRIC__NAME));
+			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.NAMED_QO_SMETRIC__QOS_METRIC) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.NAMED_QO_SMETRIC__QOS_METRIC));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNamedQoSMetricAccess().getNameAnyStringParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getNamedQoSMetricAccess().getQosMetricAbstractQoSMetricParserRuleCall_3_0(), semanticObject.getQosMetric());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     NamedSchema returns NamedSchema
 	 *
 	 * Constraint:
@@ -567,32 +593,11 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     AbstractQoSMetric returns QoSMetricReference
-	 *     QoSMetricReference returns QoSMetricReference
-	 *
-	 * Constraint:
-	 *     metric=[QoSMetric|AnyString]
-	 * </pre>
-	 */
-	protected void sequence_QoSMetricReference(ISerializationContext context, QoSMetricReference semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AsyncApiPackage.Literals.QO_SMETRIC_REFERENCE__METRIC) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AsyncApiPackage.Literals.QO_SMETRIC_REFERENCE__METRIC));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getQoSMetricReferenceAccess().getMetricQoSMetricAnyStringParserRuleCall_0_1(), semanticObject.eGet(AsyncApiPackage.Literals.QO_SMETRIC_REFERENCE__METRIC, false));
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     AbstractQoSMetric returns QoSMetric
 	 *     QoSMetric returns QoSMetric
 	 *
 	 * Constraint:
-	 *     (name=AnyString | metricType=QoSMetricType | description=AnyString | unit=QoSMetricUnit | groupedByEvent=Boolean)+
+	 *     (metricType=QoSMetricType | description=AnyString | unit=QoSMetricUnit | groupedByEvent=Boolean)+
 	 * </pre>
 	 */
 	protected void sequence_QoSMetric(ISerializationContext context, QoSMetric semanticObject) {
@@ -631,6 +636,7 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     AbstractParameter returns Reference
 	 *     AbstractOperationTrait returns Reference
 	 *     AbstractMessageTrait returns Reference
+	 *     AbstractQoSMetric returns Reference
 	 *     Reference returns Reference
 	 *
 	 * Constraint:
@@ -669,8 +675,8 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *             items=AbstractSchema
 	 *         )? 
 	 *         (enum+=PrimitiveValue enum+=PrimitiveValue*)? 
-	 *         (required+=AnyString required+=AnyString*)? 
-	 *         (properties+=NamedSchema properties+=NamedSchema*)?
+	 *         (properties+=NamedSchema properties+=NamedSchema*)? 
+	 *         (required+=AnyString required+=AnyString*)?
 	 *     )+
 	 * </pre>
 	 */
@@ -725,7 +731,7 @@ public class AsyncApiSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Sla returns Sla
 	 *
 	 * Constraint:
-	 *     (guaranteeTerm+=GuaranteeTerm guaranteeTerm+=GuaranteeTerm*)
+	 *     (guaranteeTerms+=GuaranteeTerm guaranteeTerms+=GuaranteeTerm*)?
 	 * </pre>
 	 */
 	protected void sequence_Sla(ISerializationContext context, Sla semanticObject) {

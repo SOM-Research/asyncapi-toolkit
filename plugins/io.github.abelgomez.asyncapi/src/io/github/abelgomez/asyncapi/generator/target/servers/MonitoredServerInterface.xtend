@@ -48,11 +48,11 @@ class MonitoredServerInterface extends AbstractType implements IClass {
 		 */
 		public interface «name» extends «api.transform.serverInterface.name» {
 			
-«««			/**
-«««			 * Returns the {@link «api.transform.serverInterface.name»} where monitoring messages
-«««			 * affecting this {@link «api.transform.serverInterface.name»} must be published 
-«««			 */
-«««			«api.transform.serverInterface.name» getMonitoringServer();
+			/**
+			 * Returns the {@link «api.transform.serverInterface.name»} where monitoring messages
+			 * affecting this {@link «api.transform.serverInterface.name»} must be published 
+			 */
+			«api.transform.serverInterface.name» getMonitoringServer();
 		}
 	'''
 }

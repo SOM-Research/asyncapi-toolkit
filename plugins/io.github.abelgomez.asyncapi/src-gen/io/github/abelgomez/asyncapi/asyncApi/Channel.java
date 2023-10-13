@@ -31,125 +31,125 @@ import org.eclipse.emf.ecore.EObject;
 public interface Channel extends EObject
 {
   /**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getChannel_Name()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getChannel_Name()
+   * @model
+   * @generated
+   */
   String getName();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
   void setName(String value);
 
   /**
-	 * Returns the value of the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Description</em>' attribute.
-	 * @see #setDescription(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getChannel_Description()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Description</em>' attribute.
+   * @see #setDescription(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getChannel_Description()
+   * @model
+   * @generated
+   */
   String getDescription();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getDescription <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getDescription <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
-	 * @see #getDescription()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Description</em>' attribute.
+   * @see #getDescription()
+   * @generated
+   */
   void setDescription(String value);
 
   /**
-	 * Returns the value of the '<em><b>Publish</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Publish</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Publish</em>' containment reference.
-	 * @see #setPublish(Operation)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getChannel_Publish()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Publish</em>' containment reference.
+   * @see #setPublish(Operation)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getChannel_Publish()
+   * @model containment="true"
+   * @generated
+   */
   Operation getPublish();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getPublish <em>Publish</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getPublish <em>Publish</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Publish</em>' containment reference.
-	 * @see #getPublish()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Publish</em>' containment reference.
+   * @see #getPublish()
+   * @generated
+   */
   void setPublish(Operation value);
 
   /**
-	 * Returns the value of the '<em><b>Subscribe</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Subscribe</b></em>' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subscribe</em>' containment reference.
-	 * @see #setSubscribe(Operation)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getChannel_Subscribe()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Subscribe</em>' containment reference.
+   * @see #setSubscribe(Operation)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getChannel_Subscribe()
+   * @model containment="true"
+   * @generated
+   */
   Operation getSubscribe();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getSubscribe <em>Subscribe</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getSubscribe <em>Subscribe</em>}' containment reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Subscribe</em>' containment reference.
-	 * @see #getSubscribe()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Subscribe</em>' containment reference.
+   * @see #getSubscribe()
+   * @generated
+   */
   void setSubscribe(Operation value);
 
   /**
-	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+   * The list contents are of type {@link io.github.abelgomez.asyncapi.asyncApi.NamedParameter}.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' containment reference list.
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getChannel_Parameters()
-	 * @model containment="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Parameters</em>' containment reference list.
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getChannel_Parameters()
+   * @model containment="true"
+   * @generated
+   */
   EList<NamedParameter> getParameters();
 
   /**
-	 * Returns the value of the '<em><b>Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Title</em>' attribute.
-	 * @see #setTitle(String)
-	 * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getChannel_Title()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Title</em>' attribute.
+   * @see #setTitle(String)
+   * @see io.github.abelgomez.asyncapi.asyncApi.AsyncApiPackage#getChannel_Title()
+   * @model
+   * @generated
+   */
   String getTitle();
 
   /**
-	 * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getTitle <em>Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link io.github.abelgomez.asyncapi.asyncApi.Channel#getTitle <em>Title</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Title</em>' attribute.
-	 * @see #getTitle()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Title</em>' attribute.
+   * @see #getTitle()
+   * @generated
+   */
   void setTitle(String value);
 
 } // Channel

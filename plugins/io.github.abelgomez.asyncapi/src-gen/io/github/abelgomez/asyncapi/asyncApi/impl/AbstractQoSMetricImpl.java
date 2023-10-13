@@ -20,24 +20,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class AbstractQoSMetricImpl extends MinimalEObjectImpl.Container implements AbstractQoSMetric
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected AbstractQoSMetricImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return AsyncApiPackage.Literals.ABSTRACT_QO_SMETRIC;
-	}
+    return AsyncApiPackage.Literals.ABSTRACT_QO_SMETRIC;
+  }
 
 } //AbstractQoSMetricImpl
