@@ -20,9 +20,9 @@ import io.github.abelgomez.asyncapi.i40.Parameter
 import io.github.abelgomez.asyncapi.i40.RedefinableProperty
 import io.github.abelgomez.asyncapi.i40.Topic
 import java.io.InputStream
-import java.util.ArrayList
 import java.util.Collections
-import java.util.List
+import java.util.HashSet
+import java.util.Set
 import java.util.Stack
 import org.eclipse.core.runtime.Assert
 import org.eclipse.core.runtime.IPath
@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 import org.eclipse.uml2.common.util.UML2Util
 import org.eclipse.uml2.uml.Class
+import org.eclipse.uml2.uml.Component
 import org.eclipse.uml2.uml.DataType
 import org.eclipse.uml2.uml.Enumeration
 import org.eclipse.uml2.uml.Model
@@ -45,7 +46,6 @@ import org.eclipse.uml2.uml.UMLPackage
 import org.eclipse.xtext.EcoreUtil2
 
 import static extension org.eclipse.uml2.uml.util.UMLUtil.*
-import org.eclipse.uml2.uml.Component
 
 class Uml2AsyncApi {
 	
@@ -140,7 +140,7 @@ class Uml2AsyncApi {
 
 	static def Iterable<NamedSchema> schemas(Model model) {
 		var Stack<StructuredClassifier> candidates = new Stack
-		var List<StructuredClassifier> classifiers = new ArrayList
+		var Set<StructuredClassifier> classifiers = new HashSet
 
 		candidates += EcoreUtil2.getAllContentsOfType(model, StructuredClassifier)
 			.filter[ structuredClassifier | structuredClassifier.getStereotypeApplication(Message) !== null ]
