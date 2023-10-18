@@ -41,7 +41,9 @@ class MonitorClass extends AbstractType implements IClass {
 		result += api.transform.monitoredServerInterface.fqn
 		result += api.transform.serverInterface.serverExceptionClass.fqn
 		result += api.transform.guaranteeTermsPackage.guaranteeTermInterface.fqn
-		result += api.sla?.guaranteeTerms?.map[transform.fqn]
+		if (api.sla !== null) {
+			result += api.sla.guaranteeTerms.map[transform.fqn]
+		}
 		return Collections.unmodifiableNavigableSet(result)
 	}
 	
@@ -63,9 +65,11 @@ class MonitorClass extends AbstractType implements IClass {
 			 * Constructor
 			 */
 			public «name»(«api.transform.monitoredServerInterface.name» server) {
+				«IF api?.sla !== null»
 				«FOR guaranteeTerm : api?.sla?.guaranteeTerms»
 				terms.add(new «guaranteeTerm.transform.name»(server));
 				«ENDFOR»
+				«ENDIF»
 			}
 			
 			/**

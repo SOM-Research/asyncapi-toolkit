@@ -1,6 +1,6 @@
 package io.github.abelgomez.asyncapi.generator.target
 
-import io.github.abelgomez.asyncapi.asyncApi.Sla
+import io.github.abelgomez.asyncapi.asyncApi.AsyncAPI
 import io.github.abelgomez.asyncapi.generator.target.monitor.guaranteeterms.GuaranteeTermAbstractClass
 import io.github.abelgomez.asyncapi.generator.target.monitor.guaranteeterms.GuaranteeTermClass
 import io.github.abelgomez.asyncapi.generator.target.monitor.guaranteeterms.GuaranteeTermInterface
@@ -9,7 +9,6 @@ import java.util.List
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 
-import static extension io.github.abelgomez.asyncapi.generator.ModelExtensions.*
 import static extension io.github.abelgomez.asyncapi.generator.TransformationContext.*
 
 class GuaranteeTermsPackage extends AbstractPackage {
@@ -17,22 +16,24 @@ class GuaranteeTermsPackage extends AbstractPackage {
 	GuaranteeTermInterface guaranteeTermInterface
 	GuaranteeTermAbstractClass guaranteeTermAbstractClass
 	
-	Sla sla
+	AsyncAPI api
 	List<GuaranteeTermClass> guaranteeTermsClasses = new ArrayList
 
-	static def createFrom(Sla sla) {
-		return new GuaranteeTermsPackage(sla)
+	static def createFrom(AsyncAPI api) {
+		return new GuaranteeTermsPackage(api)
 	}
 
-	private new(Sla sla) {
-		this.sla = sla
+	private new(AsyncAPI api) {
+		this.api = api
 		initialize()
 	}
 
 	def initialize() {
-		guaranteeTermInterface = GuaranteeTermInterface.createFrom(sla.api)
-		guaranteeTermAbstractClass = GuaranteeTermAbstractClass.createFrom(sla.api)
-		guaranteeTermsClasses.addAll(sla.guaranteeTerms.map[transform])
+		guaranteeTermInterface = GuaranteeTermInterface.createFrom(api)
+		guaranteeTermAbstractClass = GuaranteeTermAbstractClass.createFrom(api)
+		if (api.sla !== null) {
+			guaranteeTermsClasses += api.sla.guaranteeTerms.map[transform]
+		}
 	}
 	
 	override name() {
@@ -40,7 +41,7 @@ class GuaranteeTermsPackage extends AbstractPackage {
 	}
 	
 	override fqn() {
-		return sla.api.transform.monitoringPackage.fqn + "." + name
+		return api.transform.monitoringPackage.fqn + "." + name
 	}
 	
 	def guaranteeTermInterface() {

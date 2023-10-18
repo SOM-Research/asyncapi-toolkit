@@ -58,7 +58,7 @@ class RootPackage extends AbstractPackage {
 			expressionsPackage = ExpressionsPackage.createFrom(api)
 			metricsPackage = MetricsPackage.createFrom(api)
 			instrumentsPackage = InstrumentsPackage.createFrom(api)
-			guaranteeTermsPackage = GuaranteeTermsPackage.createFrom(api?.sla)
+			guaranteeTermsPackage = GuaranteeTermsPackage.createFrom(api)
 		}		
 	}
 	
