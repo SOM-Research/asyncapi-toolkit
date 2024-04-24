@@ -21,6 +21,7 @@ First, download the [Eclipse installer](https://www.eclipse.org/downloads/packag
 Setup links:
 
 * [AsyncAPI Toolkit (latest)](https://raw.githubusercontent.com/SOM-Research/asyncapi-toolkit/master/releng/setup/io.github.abelgomez.asyncapi.configuration.latest.setup)
+* [AsyncAPI Toolkit (0.9.0)](https://raw.githubusercontent.com/SOM-Research/asyncapi-toolkit/master/releng/setup/io.github.abelgomez.asyncapi.configuration.0.8.0.setup)
 * [AsyncAPI Toolkit (0.8.0)](https://raw.githubusercontent.com/SOM-Research/asyncapi-toolkit/master/releng/setup/io.github.abelgomez.asyncapi.configuration.0.8.0.setup)
 * [AsyncAPI Toolkit (0.7.0)](https://raw.githubusercontent.com/SOM-Research/asyncapi-toolkit/master/releng/setup/io.github.abelgomez.asyncapi.configuration.0.7.0.setup)
 * [AsyncAPI Toolkit (0.6.2)](https://raw.githubusercontent.com/SOM-Research/asyncapi-toolkit/master/releng/setup/io.github.abelgomez.asyncapi.configuration.0.6.2.setup)

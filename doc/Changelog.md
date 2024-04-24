@@ -1,3 +1,22 @@
+## AsyncAPI Toolkit v0.9.0
+
+Major release with incompatible changes:
+
+* Fix duplicate schemas when transforming inheritances from i4.0 models
+* Update the Service Level Agreement extensions to the latest version
+* Latency and Period metrics are supported
+* The subscription callback always receives the channel parameters (even if empty)
+* The subscription operation returns the actual Consumer function passed as a callback
+* Subscriptions now allow multiple calls to register multiple callbacks
+* Operations are no longer used as static classes, but as singletons
+* Operation must be called from the Channel
+* Refactored the methods in IOperations, and IPublishOperation and IsubscribeOperation
+* Added generic publish and subscribe methods, so that they can be used in the measurement instruments
+* Added period measurement instrument
+* Add example project with QoS
+* Also update other example projects accordingly
+* Fix wizard window size
+
 ## AsyncAPI Toolkit v0.8.0
 
 Major release with small but incompatible changes:

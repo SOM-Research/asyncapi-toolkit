@@ -7,10 +7,10 @@
 	<parent>
 		<groupId>io.github.abelgomez.asyncapi</groupId>
 		<artifactId>plugins</artifactId>
-		<version>0.8.0-SNAPSHOT</version>
+		<version>0.9.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>io.github.abelgomez.asyncapi.i40</artifactId>
-	<version>0.8.0-SNAPSHOT</version>
+	<version>0.9.0-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
 	<name>[bundle] AsyncAPI Industry 4.0 Plug-in</name>
 	<organization>
