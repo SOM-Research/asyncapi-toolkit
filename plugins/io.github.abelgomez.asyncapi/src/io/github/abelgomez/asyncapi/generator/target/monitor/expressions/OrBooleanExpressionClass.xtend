@@ -71,7 +71,7 @@ class OrBooleanExpressionClass extends AbstractType implements IType {
 			
 			@Override
 			public String toString() {
-				return expressions.stream().map(e -> e.toString()).collect(Collectors.joining("(", " OR ", ")"));
+				return expressions.stream().map(e -> e.toString()).collect(Collectors.joining(" OR ", "(", ")"));
 			}
 		}
 	'''

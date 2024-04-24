@@ -71,7 +71,7 @@ class AndBooleanExpressionClass extends AbstractType implements IType {
 			
 			@Override
 			public String toString() {
-				return expressions.stream().map(e -> e.toString()).collect(Collectors.joining("(", " AND ", ")"));
+				return expressions.stream().map(e -> e.toString()).collect(Collectors.joining(" AND ", "(", ")"));
 			}
 		}
 	'''
