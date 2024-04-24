@@ -35,6 +35,9 @@ Check our publications and other resources about the AsyncAPI Toolkit!
 * Abel Gómez, Iker Fernandez de Larrea, Markel Iglesias-Urkia, Beatriz Lopez-Davalillo, Aitor Urbieta, Jordi Cabot. _Una Aproximación Basada en Modelos para la Definición de Arquitecturas Asíncronas_. Actas de las XXIV Jornadas de Ingeniería del Software y Bases de Datos (JISBD 2019), Sistedes, 2019. http://hdl.handle.net/11705/JISBD/2019/035 **(only in Spanish)**.<br/>
 [ [Open access publication](http://hdl.handle.net/11705/JISBD/2019/035) ]
 
+* Marc Oriol, Abel Gómez, and Jordi Cabot. AsyncSLA: Towards a Service Level Agreement for Asynchronous Services. In The 39th ACM/SIGAPP Symposium on Applied Computing (SAC ’24), April 8–12, 2024, Avila, Spain. ACM, New York, NY, USA, Article 4, 8 pages. https://doi.org/10.1145/3605098.3636074
+[ [Archived preprint](https://abel.gomez.llana.me/wp-content/uploads/2024/04/oriol-sac-2024.pdf) ]
+
 # License
 
 This project is licensed under the [EPL v2.0 license](LICENSE.txt).
