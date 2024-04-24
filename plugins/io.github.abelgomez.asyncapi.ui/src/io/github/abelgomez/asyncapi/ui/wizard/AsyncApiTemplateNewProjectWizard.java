@@ -36,7 +36,7 @@ public class AsyncApiTemplateNewProjectWizard extends TemplateNewProjectWizard {
 	@Override
 	public void createPageControls(Composite pageContainer) {
 		super.createPageControls(pageContainer);
-		getShell().setSize(610, getShell().getSize().y);
+		getShell().setSize(610, 0);
 	}
 	
 	@Override
